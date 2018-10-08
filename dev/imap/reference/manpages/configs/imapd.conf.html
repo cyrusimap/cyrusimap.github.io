@@ -925,7 +925,7 @@ otherwise go under here</div></blockquote>
 <p><code class="docutils literal"><span class="pre">annotation_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for mailbox annotations.</p>
-<p>Allowed values: <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">annotation_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -1010,6 +1010,12 @@ socket.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">annotation_callout_disable_append:</span></code> 0</p>
 <blockquote>
 <div>Disables annotations on append with xrunannotator</div></blockquote>
+<p><code class="docutils literal"><span class="pre">annotation_enable_legacy_commands:</span></code> 0</p>
+<blockquote>
+<div>Whether to enable the legacy GETANNOTATION/SETANNOTATION commands.
+These commands are deprecated and will be removed in the future,
+but might be useful in the meantime for supporting old clients that
+do not implement the <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5464.html"><strong>RFC 5464</strong></a> IMAP METADATA extension.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">aps_topic:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Topic for Apple Push Service registration.</div></blockquote>
@@ -1210,7 +1216,7 @@ will be kept indefinitely.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the backup locations database.</p>
-<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -1350,7 +1356,7 @@ running server, or the counts will be wrong.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">conversations_db:</span></code> skiplist</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the per-user conversations database.</p>
-<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">conversations_expire_days:</span></code> 90</p>
 <blockquote>
@@ -1453,13 +1459,13 @@ immediately.</p>
 <p><code class="docutils literal"><span class="pre">delete_unsubscribe:</span></code> 0</p>
 <blockquote>
 <div>Whether to also unsubscribe from mailboxes when they are deleted.
-Note that this behaviour contravenes <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a> section 6.3.9, but
+Note that this behaviour contravenes <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a> section 6.3.9, but
 may be useful for avoiding user/client software confusion.
 The default is &#8216;no&#8217;.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">deleteright:</span></code> c</p>
 <blockquote>
 <div>Deprecated - only used for backwards compatibility with existing
-installations.  Lists the old <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2086.html"><strong>RFC 2086</strong></a> right which was used to
+installations.  Lists the old <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2086.html"><strong>RFC 2086</strong></a> right which was used to
 grant the user the ability to delete a mailbox.  If a user has this
 right, they will automatically be given the new &#8216;x&#8217; right.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">disable_user_namespace:</span></code> 0</p>
@@ -1496,7 +1502,7 @@ domain.</div></blockquote>
 <blockquote>
 <div>The cyrusdb backend to use for the duplicate delivery suppression
 and sieve.
-Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></div></blockquote>
+Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></div></blockquote>
 <p><code class="docutils literal"><span class="pre">duplicate_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The absolute path to the duplicate db file.  If not specified,
@@ -1541,7 +1547,7 @@ Set ALL for any folder</div></blockquote>
 <p><code class="docutils literal"><span class="pre">event_notifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Notifyd(8) method to use for &#8220;EVENT&#8221; notifications which are based on
-the <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, &#8220;EVENT&#8221; notifications are disabled.</div></blockquote>
+the <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, &#8220;EVENT&#8221; notifications are disabled.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">expunge_mode:</span></code> delayed</p>
 <blockquote>
 <div>The mode in which messages (and their corresponding cache entries)
@@ -1706,7 +1712,7 @@ mailboxes.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">imipnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Notifyd(8) method to use for &#8220;IMIP&#8221; notifications which are based on
-the <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &#8220;IMIP&#8221; notifications are disabled.</div></blockquote>
+the <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &#8220;IMIP&#8221; notifications are disabled.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">implicit_owner_rights:</span></code> lkxan</p>
 <blockquote>
 <div>The implicit Access Control List (ACL) for the owner of a mailbox.</div></blockquote>
@@ -1750,14 +1756,14 @@ and height 200, then the value of this annotation would be:</p>
 <p><code class="docutils literal"><span class="pre">jmap_inlinedcids_annot:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The name of the per-message annotation, if any, that stores a
-JSON object, mapping <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
+JSON object, mapping <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
 to the respective HTML body part number.</p>
 <p>For example, if message part 1.2 contains HTML and references an
 inlined image at &#8220;<a class="reference external" href="cid:foo">cid:foo</a>&#8221;, then the value of this annotation
 would be:</p>
 <p>{ &#8220;&lt;foo&gt;&#8221; : &#8220;1.2&#8221; }</p>
 <p>Note that the Content-ID key must be URL-unescaped and enclosed in
-angular brackets, as defined in <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
+angular brackets, as defined in <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_preview_length:</span></code> 64</p>
 <blockquote>
@@ -2013,7 +2019,7 @@ set to 3.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">literalminus:</span></code> 0</p>
 <blockquote>
 <div>if enabled, CAPABILITIES will reply with LITERAL- rather than
-LITERAL+ (<span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn&#8217;t actually size-restrict uploads though</div></blockquote>
+LITERAL+ (<span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn&#8217;t actually size-restrict uploads though</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_downcase_rcpt:</span></code> 1</p>
 <blockquote>
 <div>If enabled, lmtpd will convert the recipient addresses to lowercase
@@ -2039,7 +2045,7 @@ will cause the user&#8217;s mailbox to exceed its quota.  By default, the
 failure won&#8217;t occur until the mailbox is already over quota.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_strict_rfc2821:</span></code> 1</p>
 <blockquote>
-<div>By default, lmtpd will be strict (per <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
+<div>By default, lmtpd will be strict (per <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
 envelope addresses are allowed.  If this option is set to false, 8bit
 characters in the local-part of envelope addresses are changed to &#8216;X&#8217;
 instead.  This is useful to avoid generating backscatter with
@@ -2118,12 +2124,12 @@ will allow messages of any size (the default).</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mboxkey_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for mailbox keys.</p>
-<p>Allowed values: <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">mboxlist_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the mailbox list.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">mboxlist_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2168,7 +2174,7 @@ Allowed values: <em>standard</em>, <em>unified</em>, <em>replicated</em></div></
 headers.  The 8-bit characters are changed to `X&#8217;.  If
 <strong>reject8bit</strong> is enabled, setting <strong>munge8bit</strong> has no effect.
 (A proper solution to non-ASCII characters in headers is offered by
-<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
+<span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mupdate_connections_max:</span></code> 128</p>
 <blockquote>
 <div>The max number of connections that a mupdate process will allow, this
@@ -2516,7 +2522,7 @@ DO NOT SET on frontends or things won&#8217;t work properly.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">ptscache_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the pts cache.</p>
-<p>Allowed values: <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">ptscache_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2544,7 +2550,7 @@ Allowed values: <em>cs0</em>, <em>cs1</em>, <em>cs2</em>, <em>cs3</em>, <em>cs4<
 <p><code class="docutils literal"><span class="pre">quota_db:</span></code> quotalegacy</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for quotas.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>quotalegacy</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>quotalegacy</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">quota_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2587,7 +2593,7 @@ authenticating to an IMAP/sync server.</div></blockquote>
 will either add or remove reverse ACL pointers from mailboxes.db</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc2046_strict:</span></code> 0</p>
 <blockquote>
-<div>If enabled, imapd will be strict (per <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
+<div>If enabled, imapd will be strict (per <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
 boundary strings.  This means that boundaries containing other
 boundaries as substrings will be treated as identical.  Since
 enabling this option will break some messages created by Eudora 5.1
@@ -2597,13 +2603,13 @@ there is good reason to do otherwise.</div></blockquote>
 <blockquote>
 <div>If enabled, imapd will parse any non-encoded character sequence in
 MIME header values as UTF8. This is useful for installations that
-either advertise the UTF8SMTP (<span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
+either advertise the UTF8SMTP (<span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
 with improperly escaped UTF-8 byte sequences. It is recommended that
 this option is left disabled unless there is good reason to do
 otherwise.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc3028_strict:</span></code> 1</p>
 <blockquote>
-<div>If enabled, Sieve will be strict (per <span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
+<div>If enabled, Sieve will be strict (per <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
 which headers are allowed to be used in address and envelope tests.
 This means that only those headers which are defined to contain addresses
 will be allowed in address tests and only &#8220;to&#8221; and &#8220;from&#8221; will be
@@ -2691,7 +2697,7 @@ folders.</div></blockquote>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_fuzzy_always:</span></code> 0</p>
 <blockquote>
-<div>Whether to enable <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
+<div>Whether to enable <span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
 on, search attributes will be searched using FUZZY search by default.
 If turned off, clients have to explicitly use the FUZZY search key to
 enable fuzzy search for regular SEARCH commands.</div></blockquote>
@@ -2705,7 +2711,7 @@ headers can still be searched, the searches will just be slower.</div></blockquo
 <p><code class="docutils literal"><span class="pre">search_indexed_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the search latest indexed uid state.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_maxtime:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2715,7 +2721,7 @@ of no value means search &#8220;forever&#8221; until other timeouts.</div></bloc
 <blockquote>
 <div>When searching, should diacriticals be stripped from the search
 terms.  The default is &#8220;true&#8221;, a search for &#8220;hav&#8221; will match
-&#8220;Håvard&#8221;.  This is not <span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
+&#8220;Håvard&#8221;.  This is not <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
 compatible, and may be preferred by some sites.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_skiphtml:</span></code> 0</p>
 <blockquote>
@@ -2757,7 +2763,7 @@ store this tier1&#8217;s search index for the part1 partition.</p>
 <p><code class="docutils literal"><span class="pre">seenstate_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the seen state.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">sendmail:</span></code> /usr/lib/sendmail</p>
 <blockquote>
@@ -2920,8 +2926,8 @@ option smtp_host.</p>
 the executable defined in the config option sendmail.
 The executable must accept &#8220;-bs&#8221; as command line
 argument, read from stdin and must implement the minimum
-SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
-<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
+SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
+<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
 supported extension, then the MAIL FROM command includes
 the AUTH parameter, with its value set to the name of any
 authenticated user which triggered the email. The AUTH
@@ -2964,11 +2970,11 @@ successfully authenticate.  Otherwise lmtpd returns permanent failures
 <blockquote>
 <div>The cyrusdb backend to use for caching sort results (currently only
 used for xconvmultisort)
-Allowed values: <em>skiplist</em>, <em>twoskip</em></div></blockquote>
+Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></div></blockquote>
 <p><code class="docutils literal"><span class="pre">specialuse_extra:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Whitespace separated list of extra special-use attributes
-that can be set on a mailbox. <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
+that can be set on a mailbox. <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</div></blockquote>
@@ -3027,7 +3033,7 @@ use with caution.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">subscription_db:</span></code> flat</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the subscriptions list.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">suppress_capabilities:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -3042,7 +3048,7 @@ confused by new capabilities that some backends don&#8217;t support.</div></bloc
 <p><code class="docutils literal"><span class="pre">statuscache_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the imap status cache.</p>
-<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">statuscache_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -3165,7 +3171,7 @@ in the CYRUS_TIMEZONES_ZONEINFO_DIR path as defined during the
 Cyrus build.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">imapidletimeout:</span></code> 0</p>
 <blockquote>
-<div>Timeout for idling clients (<span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>) in minutes. If set to
+<div>Timeout for idling clients (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>) in minutes. If set to
 zero (the default) or less, the value of &#8220;timeout&#8221; will be
 used instead.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_ca_file:</span></code> &lt;none&gt;</p>
@@ -3257,7 +3263,7 @@ tls_server_cert.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_sessions_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the TLS cache.</p>
-<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_sessions_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -3287,7 +3293,7 @@ Allowed values: <em>uidonly</em>, <em>cyrus</em>, <em>dovecot</em>, <em>courier<
 <p><code class="docutils literal"><span class="pre">userdeny_db:</span></code> flat</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the user access list.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">userdeny_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -3346,7 +3352,7 @@ INBOX, NOT an email address!</div></blockquote>
 <p><code class="docutils literal"><span class="pre">zoneinfo_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for zoneinfo.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em></p>
+<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">zoneinfo_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>

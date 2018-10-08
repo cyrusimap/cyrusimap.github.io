@@ -219,7 +219,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for mailbox annotations. 
 
-        Allowed values: *skiplist*, *twoskip*
+        Allowed values: *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob annotation_db
@@ -344,6 +344,17 @@ FIELD DESCRIPTIONS
 
 
     .. endblob annotation_callout_disable_append
+
+    .. startblob annotation_enable_legacy_commands
+
+    ``annotation_enable_legacy_commands:`` 0
+
+        Whether to enable the legacy GETANNOTATION/SETANNOTATION commands.
+        These commands are deprecated and will be removed in the future,
+        but might be useful in the meantime for supporting old clients that
+        do not implement the :rfc:`5464` IMAP METADATA extension. 
+
+    .. endblob annotation_enable_legacy_commands
 
     .. startblob aps_topic
 
@@ -752,7 +763,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the backup locations database. 
 
-        Allowed values: *skiplist*, *sql*, *twoskip*
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob backup_db
@@ -1048,7 +1059,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the per-user conversations database. 
 
-        Allowed values: *skiplist*, *sql*, *twoskip*
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob conversations_db
@@ -1336,7 +1347,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the duplicate delivery suppression
         and sieve. 
-        Allowed values: *skiplist*, *sql*, *twoskip*
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob duplicate_db
@@ -2661,7 +2672,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for mailbox keys. 
 
-        Allowed values: *skiplist*, *twoskip*
+        Allowed values: *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob mboxkey_db
@@ -2672,7 +2683,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the mailbox list. 
 
-        Allowed values: *flat*, *skiplist*, *sql*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob mboxlist_db
@@ -3391,7 +3402,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the pts cache. 
 
-        Allowed values: *skiplist*, *twoskip*
+        Allowed values: *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob ptscache_db
@@ -3451,7 +3462,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for quotas. 
 
-        Allowed values: *flat*, *skiplist*, *sql*, *quotalegacy*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *sql*, *quotalegacy*, *twoskip*, *zeroskip*
 
 
     .. endblob quota_db
@@ -3765,7 +3776,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the search latest indexed uid state. 
 
-        Allowed values: *flat*, *skiplist*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob search_indexed_db
@@ -3860,7 +3871,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the seen state. 
 
-        Allowed values: *flat*, *skiplist*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob seenstate_db
@@ -4247,7 +4258,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for caching sort results (currently only
         used for xconvmultisort) 
-        Allowed values: *skiplist*, *twoskip*
+        Allowed values: *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob sortcache_db
@@ -4402,7 +4413,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the subscriptions list. 
 
-        Allowed values: *flat*, *skiplist*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob subscription_db
@@ -4434,7 +4445,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the imap status cache. 
 
-        Allowed values: *skiplist*, *sql*, *twoskip*
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob statuscache_db
@@ -4912,7 +4923,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the TLS cache. 
 
-        Allowed values: *skiplist*, *sql*, *twoskip*
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob tls_sessions_db
@@ -4975,7 +4986,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for the user access list. 
 
-        Allowed values: *flat*, *skiplist*, *sql*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *sql*, *twoskip*, *zeroskip*
 
 
     .. endblob userdeny_db
@@ -5087,7 +5098,7 @@ FIELD DESCRIPTIONS
 
         The cyrusdb backend to use for zoneinfo. 
 
-        Allowed values: *flat*, *skiplist*, *twoskip*
+        Allowed values: *flat*, *skiplist*, *twoskip*, *zeroskip*
 
 
     .. endblob zoneinfo_db
