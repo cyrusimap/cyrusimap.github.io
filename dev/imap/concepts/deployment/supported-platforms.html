@@ -542,7 +542,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/faq.html#installation-problems">Installation Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/install-compilationerrors.html">Compilation errors about kssl.h and krb5.h on Red Hat Linux/Fedora</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/install-detecting-berkeley.html">Problems detecting Berkley DB on Red Hat Linux</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going...</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/install-linkerwarnings.html">OpenSSL Version Mismatches</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/install-linkerwarnings.html#libical-v1-0-1-or-v2-0">Libical v1.0.1 or v2.0</a></li>
@@ -558,10 +557,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../reference/faq.html#common-operational-questions">Common Operational Questions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-acls.html">How do I view ACLs on a mailbox?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-annotations.html">What annotations are available?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-berkeleydb.html">Why does ctl_cyrusdb -r take so long with Berkeley DB?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-configdir-tempfs.html">Is it safe to put &lt;configdirectory&gt;/proc and &lt;configdirectory&gt;/lock on a tmpfs filesystem?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-coredump.html">How to enable core dumps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-db3-lockers.html">Is the &#8220;db3: x Lockers&#8221; log message harmful?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-delete-mailbox.html">Why can I not delete a mailbox as an admin user?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-deleted-expired-expunged-purged.html">When is What ... Deleted, Expired, Expunged or Purged?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/faqs/o-deliverdb-size.html">Why is deliver.db so large?</a></li>
@@ -853,16 +850,6 @@
 <div class="section" id="optional-software-components">
 <h3>Optional Software Components<a class="headerlink" href="#optional-software-components" title="Permalink to this headline">¶</a></h3>
 <p>When including the following software components during the build process, and providing the options listed here, additional optional functionality can be implemented;</p>
-<p><strong>Berkeley DB</strong> (Development headers)</p>
-<p>To enable using Berkeley DB as a database backend, include the Berkeley DB development headers and make sure to configure Cyrus IMAP with <code class="docutils literal"><span class="pre">--with-bdb</span></code>.</p>
-<p>Berkeley DB Versions and Conversion</p>
-<p>The Cyrus IMAP <code class="docutils literal"><span class="pre">configure</span></code> process attempts to automatically detect and use the latest Berkeley DB technology available on the system. This may, however, not be the same version on your production systems. Since database conversions between versions of the Berkeley DB technology are particularly difficult and therefor NOT considered fully supported, we recommend you do NOT use Berkeley DB.</p>
-<p>Should the Berkeley DB development headers be installed in a non-standard location, or should you need a specific version when multiple versions are available on the system, please consider using any of the following options;</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">bdb</span><span class="o">=</span><span class="n">DIR</span>            <span class="n">use</span> <span class="n">Berkeley</span> <span class="n">DB</span> <span class="p">(</span><span class="ow">in</span> <span class="n">DIR</span><span class="p">)</span> <span class="p">[</span><span class="n">yes</span><span class="p">]</span>
-<span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">bdb</span><span class="o">-</span><span class="n">libdir</span><span class="o">=</span><span class="n">DIR</span>     <span class="n">Berkeley</span> <span class="n">DB</span> <span class="n">lib</span> <span class="n">files</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">DIR</span>
-<span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">bdb</span><span class="o">-</span><span class="n">incdir</span><span class="o">=</span><span class="n">DIR</span>     <span class="n">Berkeley</span> <span class="n">DB</span> <span class="n">include</span> <span class="n">files</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">DIR</span><span class="o">&lt;/</span><span class="n">screen</span><span class="o">&gt;</span>
-</pre></div>
-</div>
 <p><strong>MySQL</strong> (Development headers)</p>
 <p>To enable using MySQL as a database server backend, include the MySQL development headers and make sure to configure Cyrus IMAP with <code class="docutils literal"><span class="pre">--with-mysql</span></code>.</p>
 <p>Should MySQL - the client libraries or the development headers - be installed in a non-standard location, please consider using any of the following options;</p>
@@ -902,7 +889,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 11 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 30 2018
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

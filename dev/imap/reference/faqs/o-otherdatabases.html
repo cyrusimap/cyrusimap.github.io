@@ -542,7 +542,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../faq.html#installation-problems">Installation Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="install-compilationerrors.html">Compilation errors about kssl.h and krb5.h on Red Hat Linux/Fedora</a></li>
-<li class="toctree-l4"><a class="reference internal" href="install-detecting-berkeley.html">Problems detecting Berkley DB on Red Hat Linux</a></li>
 <li class="toctree-l4"><a class="reference internal" href="install-install-help.html">Help! There must be an easier way to get all this going...</a></li>
 <li class="toctree-l4"><a class="reference internal" href="install-linkerwarnings.html">OpenSSL Version Mismatches</a></li>
 <li class="toctree-l4"><a class="reference internal" href="install-linkerwarnings.html#libical-v1-0-1-or-v2-0">Libical v1.0.1 or v2.0</a></li>
@@ -558,10 +557,8 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../faq.html#common-operational-questions">Common Operational Questions</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="o-acls.html">How do I view ACLs on a mailbox?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-annotations.html">What annotations are available?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="o-berkeleydb.html">Why does ctl_cyrusdb -r take so long with Berkeley DB?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-configdir-tempfs.html">Is it safe to put &lt;configdirectory&gt;/proc and &lt;configdirectory&gt;/lock on a tmpfs filesystem?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-coredump.html">How to enable core dumps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="o-db3-lockers.html">Is the &#8220;db3: x Lockers&#8221; log message harmful?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-delete-mailbox.html">Why can I not delete a mailbox as an admin user?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-deleted-expired-expunged-purged.html">When is What ... Deleted, Expired, Expunged or Purged?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="o-deliverdb-size.html">Why is deliver.db so large?</a></li>
@@ -804,7 +801,7 @@ mailboxes.</p>
 <p>Cyrus DOES have the option of using databases of various types for
 storing some other information, such as authentication data, mailbox
 lists, etc. There may be reasons to add a SQL backend to these databases
-in the future (in addition to flat, skiplist, and berkeley).</p>
+in the future (in addition to flat, and skiplist).</p>
 </div>
 
 
@@ -825,7 +822,7 @@ in the future (in addition to flat, skiplist, and berkeley).</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 26 2016
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 30 2018
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
