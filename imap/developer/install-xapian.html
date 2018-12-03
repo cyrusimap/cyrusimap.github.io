@@ -801,7 +801,7 @@ sh build.sh <span class="nv">$CYRUSLIBS_DIR</span>
 <p>Xapian requires a running <a class="reference internal" href="../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> instance:</p>
 <ul>
 <li><p class="first">In <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> set up a daemon squatter to run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="p">{</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DAEMON</span> <span class="p">{</span>
   <span class="c1"># run a rolling squatter</span>
   <span class="n">squatter</span> <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;squatter -R&quot;</span>
 <span class="p">}</span>
@@ -846,7 +846,7 @@ sh build.sh <span class="nv">$CYRUSLIBS_DIR</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Aug 15 2017
+        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Dec 03 2018
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
