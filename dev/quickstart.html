@@ -972,7 +972,13 @@ documentation at <a class="reference external" href="http://www.postfix.org/post
 <ol class="arabic">
 <li><p class="first">Setup your recipient maps, thus defining for which recipients the
 <code class="docutils literal"><span class="pre">virtual</span></code> destination will be used:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_recipient_maps=hash:/etc/postfix/virtual_recipient_domains,hash:/etc/postfix/virtual_recipients&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_domains=hash:/etc/postfix/virtual_recipient_domains&quot;</span>
+<span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_maps=hash:/etc/postfix/virtual_recipients&quot;</span>
+</pre></div>
+</div>
+<p>or, if you have enabled smmapd you can automatically track mailboxes with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_domains=hash:/etc/postfix/virtual_recipient_domains&quot;</span>
+<span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_maps=socketmap:unix:/run/cyrus/socket/smmap&quot;</span>
 </pre></div>
 </div>
 </li>

@@ -836,6 +836,19 @@ will disable the timeout.  The default is 60.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>smmapd</strong> is commonly included in the SERVICES section of
+<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> like so:</p>
+<pre class="literal-block">
+SERVICES {
+    imap        cmd=&quot;imapd -U 30&quot; listen=&quot;imap&quot; prefork=0
+    imaps       cmd=&quot;imapd -s -U 30&quot; listen=&quot;imaps&quot; prefork=0 maxchild=100
+    lmtpunix    cmd=&quot;lmtpd&quot; listen=&quot;/var/run/cyrus/socket/lmtp&quot; prefork=0 maxchild=20
+    <strong>smmap       cmd=&quot;smmapd&quot; listen=&quot;/var/run/cyrus/socket/smmap&quot; prefork=0</strong>
+    sieve       cmd=&quot;timsieved&quot; listen=&quot;sieve&quot; prefork=0
+    notify      cmd=&quot;notifyd&quot; listen=&quot;/var/run/cyrus/socket/notify&quot; proto=&quot;udp&quot; prefork=1
+    httpd       cmd=&quot;httpd&quot; listen=8080 prefork=1 maxchild=20
+}
+</pre>
 </div>
 <div class="section" id="files">
 <h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
@@ -867,7 +880,7 @@ will disable the timeout.  The default is 60.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Dec 13 2018
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

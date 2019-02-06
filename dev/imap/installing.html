@@ -1175,6 +1175,9 @@ something different.</p>
 <span class="c1">#  lmtp          cmd=&quot;lmtpd&quot; listen=&quot;lmtp&quot; prefork=0</span>
   <span class="n">lmtpunix</span>      <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;lmtpd&quot;</span> <span class="n">listen</span><span class="o">=</span><span class="s2">&quot;/var/imap/socket/lmtp&quot;</span> <span class="n">prefork</span><span class="o">=</span><span class="mi">0</span>
 
+  <span class="c1"># this is requied if using socketmap</span>
+<span class="c1">#  smmap         cmd=&quot;smmapd&quot; listen=&quot;/var/imap/socket/smmap&quot; prefork=0</span>
+
   <span class="c1"># this is required if using notifications</span>
 <span class="c1">#  notify        cmd=&quot;notifyd&quot; listen=&quot;/var/imap/socket/notify&quot; proto=&quot;udp&quot; prefork=1</span>
 <span class="p">}</span>
