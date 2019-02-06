@@ -1864,7 +1864,9 @@ used in the filter string:</p>
 %u   = user
 %U   = user portion of %u (%U = test when %u = <a class="reference external" href="mailto:test&#37;&#52;&#48;domain&#46;tld">test<span>&#64;</span>domain<span>&#46;</span>tld</a>)
 %d   = domain portion of %u if available (%d = domain.tld when %u =
-<a class="reference external" href="mailto:%test&#37;&#52;&#48;domain&#46;tld">%test<span>&#64;</span>domain<span>&#46;</span>tld</a>), otherwise same as %r
+<a class="reference external" href="mailto:test&#37;&#52;&#48;domain&#46;tld">test<span>&#64;</span>domain<span>&#46;</span>tld</a>), otherwise same as %R
+%R   = domain portion of %u starting with &#64; (%R = &#64;domain.tld
+when %u = <a class="reference external" href="mailto:test&#37;&#52;&#48;domain&#46;tld">test<span>&#64;</span>domain<span>&#46;</span>tld</a>)
 %D   = user dn.  (use when ldap_member_method: filter)
 %1-9 = domain tokens (%1 = tld, %2 = domain when %d = domain.tld)</p>
 <p>ldap_filter is not used when ldap_sasl is enabled.</p>
