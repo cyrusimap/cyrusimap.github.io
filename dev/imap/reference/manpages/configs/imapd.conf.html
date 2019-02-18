@@ -1372,6 +1372,11 @@ unix hierarchy separators on, so you get Other <a class="reference external" hre
 <blockquote>
 <div>only show the domain for users in other domains than your own (for
 backwards compatibility if you&#8217;re already sharing</div></blockquote>
+<p><code class="docutils literal"><span class="pre">cyrus_group:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The name of the group Cyrus services will run as.  If not configured, the
+primary group of cyrus_user will be used. Can be further overridden by
+setting the $CYRUS_GROUP environment variable.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">cyrus_user:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The username to use as the &#8216;cyrus&#8217; user.  If not configured, the compile
