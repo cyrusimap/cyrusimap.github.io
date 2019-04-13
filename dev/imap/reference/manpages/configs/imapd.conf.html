@@ -1178,6 +1178,10 @@ to subscribe to.</div></blockquote>
 <blockquote>
 <div>A space separated list of users and/or groups that are allowed their INBOX to be
 automatically created.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">autoexpunge:</span></code> 0</p>
+<blockquote>
+<div>If set to yes, then all Deleted messages will be automatically expunged whenever
+an index is closed, whether CLOSE, UNSELECT, SELECT or on disconnect</div></blockquote>
 <p><code class="docutils literal"><span class="pre">backuppartition-name:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The pathname of the backup partition <em>name</em>.  At least one backup
@@ -1549,9 +1553,6 @@ Set ALL for any folder</div></blockquote>
 <blockquote>
 <div>Notifyd(8) method to use for &#8220;EVENT&#8221; notifications which are based on
 the <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, &#8220;EVENT&#8221; notifications are disabled.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">expunge_deleted_on_open:</span></code> 0</p>
-<blockquote>
-<div>If set to true, expunge any messages marked Deleted when opening a mailbox</div></blockquote>
 <p><code class="docutils literal"><span class="pre">expunge_mode:</span></code> delayed</p>
 <blockquote>
 <div>The mode in which messages (and their corresponding cache entries)

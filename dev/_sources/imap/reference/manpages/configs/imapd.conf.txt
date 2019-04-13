@@ -696,6 +696,15 @@ FIELD DESCRIPTIONS
 
     .. endblob autocreate_users
 
+    .. startblob autoexpunge
+
+    ``autoexpunge:`` 0
+
+        If set to yes, then all \Deleted messages will be automatically expunged whenever
+        an index is closed, whether CLOSE, UNSELECT, SELECT or on disconnect 
+
+    .. endblob autoexpunge
+
     .. startblob backuppartition-name
 
     ``backuppartition-name:`` <none>
@@ -1455,15 +1464,6 @@ FIELD DESCRIPTIONS
         the :rfc:`5423`.  If not set, "EVENT" notifications are disabled. 
 
     .. endblob event_notifier
-
-    .. startblob expunge_deleted_on_open
-
-    ``expunge_deleted_on_open:`` 0
-
-        If set to true, expunge any messages marked \Deleted when opening a mailbox 
-
-
-    .. endblob expunge_deleted_on_open
 
     .. startblob expunge_mode
 
