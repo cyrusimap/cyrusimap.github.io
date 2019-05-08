@@ -935,6 +935,20 @@ FIELD DESCRIPTIONS
 
     .. endblob calendar_user_address_set
 
+    .. startblob calendar_component_set
+
+    ``calendar_component_set:`` VEVENT VTODO VJOURNAL VFREEBUSY VAVAILABILITY VPOLL
+
+        Space-separated list of iCalendar component types that calendar
+        object resources may contain in a calendar collection.
+        This restriction is only set at calendar creation time and only
+        if the CalDAV client hasn't specified a restriction in the creation
+        request. 
+        Allowed values: *VEVENT*, *VTODO*, *VJOURNAL*, *VFREEBUSY*, *VAVAILABILITY*, *VPOLL*
+
+
+    .. endblob calendar_component_set
+
     .. startblob carddav_allowaddmember
 
     ``carddav_allowaddmember:`` 0
