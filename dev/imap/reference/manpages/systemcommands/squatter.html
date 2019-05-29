@@ -787,7 +787,7 @@
             
   <span class="target" id="std:cyrusman-squatter(8)"></span><div class="section" id="squatter">
 <span id="imap-reference-manpages-systemcommands-squatter"></span><h1>5.1.2.57. <strong>squatter</strong><a class="headerlink" href="#squatter" title="Permalink to this headline">¶</a></h1>
-<p>Create SQUAT indexes for mailboxes</p>
+<p>Create SQUAT and Xapian indexes for mailboxes</p>
 <div class="section" id="synopsis">
 <h2>5.1.2.57.1. Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
@@ -795,12 +795,12 @@ general:
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [<strong>mode</strong>] [<strong>options</strong>] [<strong>source</strong>]
 
 i.e.:
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [<strong>-v</strong>] [<strong>-S</strong> <em>seconds</em>] [ <strong>-Z</strong> ]
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-a</strong> ] [ <strong>-i</strong> ] [<strong>-N</strong> <em>name</em>] [<strong>-S</strong> <em>seconds</em>] [ <strong>-r</strong> ] [ <strong>-Z</strong> ] <em>mailbox</em>...
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-a</strong> ] [ <strong>-i</strong> ] [<strong>-N</strong> <em>name</em>] [<strong>-S</strong> <em>seconds</em>] [ <strong>-r</strong> ] [ <strong>-Z</strong> ] <strong>-u</strong> <em>user</em>...
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-R</strong> [ <strong>-n</strong> <em>channel</em> ] [ <strong>-d</strong> ] [<strong>-S</strong> <em>seconds</em>] [ <strong>-Z</strong> ]
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-f</strong> <em>synclogfile</em> [<strong>-S</strong> <em>seconds</em>] [ <strong>-Z</strong> ]
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-t</strong> <em>srctier</em>... <strong>-z</strong> <em>desttier</em> [ <strong>-F</strong> ] [ <strong>-U</strong> ] [ <strong>-T</strong> <em>dir</em> ] [ <strong>-X</strong> ] [ <strong>-o</strong> ] [ <strong>-u</strong> <em>user</em>... ] [<strong>-S</strong> <em>seconds</em>]
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] [ <strong>-i</strong> ] [ <strong>-N</strong> <em>name</em> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-r</strong> ] [ <strong>-Z</strong> ] <em>mailbox</em>...
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] [ <strong>-i</strong> ] [ <strong>-N</strong> <em>name</em> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-r</strong> ] [ <strong>-Z</strong> ] <strong>-u</strong> <em>user</em>...
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-R</strong> [ <strong>-n</strong> <em>channel</em> ] [ <strong>-d</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-f</strong> <em>synclogfile</em> [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-t</strong> <em>srctier(s)</em>... <strong>-z</strong> <em>desttier</em> [ <strong>-F</strong> ] [ <strong>-U</strong> ] [ <strong>-T</strong> <em>dir</em> ] [ <strong>-X</strong> ] [ <strong>-o</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-u</strong> <em>user</em>... ]
 </pre>
 </div>
 <div class="section" id="description">
@@ -820,6 +820,7 @@ which search engine is used.</p>
 The index is a unified index of all of the header and body text
 of each message in a given mailbox.  This index is used to significantly
 reduce IMAP SEARCH times on a mailbox.</p>
+<p><strong>mode</strong> is one of indexer, search, rolling, synclog, compact or audit.</p>
 <p>By default, <strong>squatter</strong> creates an index of ALL messages in the
 mailbox, not just those since the last time that it was run.  The
 <strong>-i</strong> option is used to select incremental updates.  Any messages
@@ -828,10 +829,11 @@ in the index.  To include new messages in the index, <strong>squatter</strong> m
 be run again, or on a regular basis via crontab, an entry in the EVENTS
 section of <a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> or use <em>rolling</em> mode (<strong>-R</strong>).</p>
 <p>In the first synopsis, <strong>squatter</strong> indexes all mailboxes.</p>
-<p>In the second synopsis, <strong>squatter</strong> indexes the specified mailbox(es).</p>
+<p>In the second synopsis, <strong>squatter</strong> indexes the specified mailbox(es).
+The mailboxes are space-separated.</p>
 <p>In the third synopsis, <strong>squatter</strong> indexes the specified user(s)
 mailbox(es).</p>
-<p>For any of those three source modes (default=all, mailbox, user) one
+<p>For the latter two index modes (mailbox, user) one
 may optionally specify <strong>-r</strong> to recurse from the specified start, or
 <strong>-a</strong> to limit action only to mailboxes which have the shared
 <em>/vendor/cmu/cyrus-imapd/squat</em> annotation set to &#8220;true&#8221;.</p>
@@ -845,16 +847,14 @@ affected mailbox (see notes, below).</p>
 <p>In the fifth synopsis, <strong>squatter</strong> reads a single sync log file and
 performs incremental indexing on the mailbox(es) listed therein.  This
 is sometimes useful for cleaning up after problems with rolling mode.</p>
-<p>In the sixth synopsis, <strong>squatter</strong> reads <em>file</em> containing <em>mailbox</em>
-<em>uid</em> tuples and performs indexing on the specified messages.</p>
-<p>In the seventh synopsis, <strong>squatter</strong> will compact indices from
+<p>In the sixth synopsis, <strong>squatter</strong> will compact indices from
 <em>srctier(s)</em> to <em>desttier</em>, optionally reindexing (<strong>-X</strong>) or filtering
-expunged records (<strong>-F</strong>) in the process.  The optional <strong>-T</strong> flag may
-be used to specify a directory to use for temporary files.  The <strong>-o</strong>
-flag may be used to direct that a single index be copied, rather than
-compacted, from <em>srctier</em> to <em>desttier</em>.  The <strong>-U</strong> flag may be used
-to only compact if re-indexing.  The <strong>&#8211;u</strong> flag may be used to
-restrict operation to the specified user.</p>
+expunged records (<strong>-F</strong>) in the process.  <cite>/usr/bin/rsync</cite> and <cite>/bin/rm</cite>
+are needed.  The optional <strong>-T</strong> flag may be used to specify a directory
+to use for temporary files.  The <strong>-o</strong> flag may be used to direct that a
+single index be copied, rather than compacted, from <em>srctier</em> to <em>desttier</em>.
+The <strong>-U</strong> flag may be used to only compact if re-indexing.  The <strong>-u</strong> flag
+may be used to restrict operation to the specified user(s).</p>
 <p>For all modes, the <strong>-S</strong> option may be specified, causing squatter to
 pause <em>seconds</em> seconds after each mailbox, to smooth loads.</p>
 <p>When using the Xapian engine the <strong>-Z</strong> option may be specified, for
@@ -896,6 +896,13 @@ annotation on the root of that tree with a value of &#8220;true&#8221; (or
 <em>/vendor/cmu/cyrus-imapd/squat</em> annotation set on it (or does not
 inherit one), then the mailbox is not indexed. In other words, the
 implicit value of <em>/vendor/cmu/cyrus-imapd/squat</em> is &#8220;false&#8221;.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-squatter-A">
+<code class="descname">-A</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Missing documentation, starts audit mode.
+This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="option">
@@ -961,6 +968,13 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-squatter-P">
+<code class="descname">-P</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Missing documentation, reindex parts mode.
+This feature is only available on the master branch.</p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-squatter-R">
 <code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run in rolling mode; <strong>squatter</strong> runs as a daemon listening to a
@@ -999,8 +1013,8 @@ This feature was introduced in version 3.0.</p>
 <dl class="option">
 <dt id="cmdoption-squatter-t">
 <code class="descname">-t</code><code class="descclassname"> srctier...</code><a class="headerlink" href="#cmdoption-squatter-t" title="Permalink to this definition">¶</a></dt>
-<dd><p>In compact mode, the source tier(s) for the compacted indices.
-At least one source tier must be specified in compact mode.
+<dd><p>In compact mode, the comma-separated source tier(s) for the compacted
+indices.  At least one source tier must be specified in compact mode.
 Xapian only.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
@@ -1009,7 +1023,7 @@ This feature was introduced in version 3.0.</p>
 <dt id="cmdoption-squatter-u">
 <code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra options refer to usernames (e.g. <a class="reference external" href="mailto:foo&#37;&#52;&#48;bar&#46;com">foo<span>&#64;</span>bar<span>&#46;</span>com</a>) rather than
-mailbox names.
+mailbox names.  Usernames are space-separated.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
@@ -1024,7 +1038,10 @@ This feature is only available on the master branch.</p>
 <dl class="option">
 <dt id="cmdoption-squatter-v">
 <code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-v" title="Permalink to this definition">¶</a></dt>
-<dd><p>Increase the verbosity of progress/status messages.</p>
+<dd><p>Increase the verbosity of progress/status messages.  Sometimes additional messages
+are emitted on the terminal with this option and the messages are unconditionally sent
+to syslog.  Sometimes messages are sent to syslog, only if -v is provided.  In rolling and
+synclog modes, -vv sends even more messages to syslog.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1033,7 +1050,8 @@ This feature is only available on the master branch.</p>
 <dd><p>Reindex all the messages before compacting.  This mode reads all
 the lists of messages indexed by the listed tiers, and re-indexes
 them into a temporary database before compacting that into place.
-Xapian only.</p>
+Xapian only.
+This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1127,7 +1145,7 @@ Xapian documentation in this release before using Xapian.</p>
 <p>The following command-line switches were added in version 3.0:</p>
 <blockquote>
 <div><pre class="literal-block">
-<strong>-R -u -d -O -F -A</strong>
+<strong>-F -R -X -d -f -o -u</strong>
 </pre>
 </div></blockquote>
 <p>The following command-line settings were added in version 3.0:</p>
@@ -1167,7 +1185,7 @@ Xapian documentation in this release before using Xapian.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 28 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
