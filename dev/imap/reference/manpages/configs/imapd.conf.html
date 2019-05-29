@@ -2764,6 +2764,10 @@ headers can still be searched, the searches will just be slower.</div></blockquo
 <blockquote>
 <div>The maximum number of seconds to run a search for before aborting.  Default
 of no value means search &#8220;forever&#8221; until other timeouts.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_queryscan:</span></code> 5000</p>
+<blockquote>
+<div>The minimum number of records require to do a direct scan of all G keys
+* rather than indexed lookups.  A value of 0 means always do indexed lookups.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_skipdiacrit:</span></code> 1</p>
 <blockquote>
 <div>When searching, should diacriticals be stripped from the search

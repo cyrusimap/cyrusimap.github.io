@@ -3873,6 +3873,16 @@ FIELD DESCRIPTIONS
 
     .. endblob search_maxtime
 
+    .. startblob search_queryscan
+
+    ``search_queryscan:`` 5000
+
+        The minimum number of records require to do a direct scan of all G keys
+        \* rather than indexed lookups.  A value of 0 means always do indexed lookups.
+
+
+    .. endblob search_queryscan
+
     .. startblob search_skipdiacrit
 
     ``search_skipdiacrit:`` 1
