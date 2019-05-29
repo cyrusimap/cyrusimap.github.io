@@ -2725,6 +2725,12 @@ in the range 4xx, or 200 and an empty response body.</p>
 reasons, the Cyrus indexer attempts to keep-alive the TCP connection
 to the extractor.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_detect_language:</span></code> 0</p>
+<blockquote>
+<div>If enabled, then message bodies and subjects are indexed and searched
+by their detected language, if the cld2 dependency is built into Cyrus.
+Regardless of this flag, bodies and subjects are always indexed and
+searched using the default stemmer.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_normalisation_max:</span></code> 1000</p>
 <blockquote>
 <div>A resource bound for the combinatorial explosion of search expression
