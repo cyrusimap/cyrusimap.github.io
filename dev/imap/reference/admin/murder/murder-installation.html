@@ -1244,6 +1244,12 @@ where you want it to actually live.</dd>
 <dt><strong>Databases are never created on the frontends/slaves</strong></dt>
 <dd>Check to ensure that the mupdate slave process is started, (is
 prefork=1)</dd>
+<dt><strong>mupdate crashes with SIGSERV when using STARTTLS</strong></dt>
+<dd>The OpenSSL code in Cyrus Imap is for single-threaded applications and
+mupdate is a multi-threaded application.  Do not encrypt the communication
+with mupdate.  See also the discussion “SIGSEGV in cyrus-imapd 3.0.7 mupdate”
+on <a class="reference external" href="https://lists.andrew.cmu.edu/pipermail/cyrus-devel/2018-July/">cyrus-devel from July 2018</a>
+and <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2774">https://github.com/cyrusimap/cyrus-imapd/issues/2774</a> .</dd>
 </dl>
 </div>
 </div>
@@ -1266,7 +1272,7 @@ prefork=1)</dd>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 28 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
