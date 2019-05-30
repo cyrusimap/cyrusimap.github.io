@@ -3794,18 +3794,31 @@ FIELD DESCRIPTIONS
 
     .. endblob search_attachment_extractor_url
 
-    .. startblob search_detect_language
+    .. startblob search_index_language
 
-    ``search_detect_language:`` 0
+    ``search_index_language:`` 0
 
 
-        If enabled, then message bodies and subjects are indexed and searched
-        by their detected language, if the cld2 dependency is built into Cyrus.
+        If enabled, then message bodies and subjects are indexed by their
+        detected language, if the cld2 dependency is built into Cyrus.
         Regardless of this flag, bodies and subjects are always indexed and
         searched using the default stemmer.
 
 
-    .. endblob search_detect_language
+    .. endblob search_index_language
+
+    .. startblob search_query_language
+
+    ``search_query_language:`` 0
+
+
+        If enabled, then message bodies and subjects searched by their language
+        that got detected during indexing, if any.
+        Regardless of this flag, bodies and subjects are always searched using
+        the default stemmer.
+
+
+    .. endblob search_query_language
 
     .. startblob search_normalisation_max
 
