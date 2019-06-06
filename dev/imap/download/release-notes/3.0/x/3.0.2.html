@@ -830,6 +830,7 @@ longer optional.</li>
 <li>Cyrus distributions now contain a VERSION file, containing the released
 Cyrus version, which is preserved across autoreconf calls.</li>
 <li>Removed convert-sieve.pl: <a class="reference internal" href="../../../../reference/manpages/systemcommands/translatesieve.html#std:cyrusman-translatesieve(8)">translatesieve(8)</a> does everything you need and more.</li>
+<li>Distribution now contains Cyrus::DList, Cyrus::ImapClone, and Cyrus::SyncProto perl modules</li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
@@ -851,6 +852,7 @@ Cyrus version, which is preserved across autoreconf calls.</li>
 <li>Fixed: pkgconfig files now contain exec_prefix (thanks Дилян Палаузов)</li>
 <li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1993">Issue #1993</a>: crc32c and xsha1 modules now build correctly on big-endian
 platforms (thanks Jason Tibbitts)</li>
+<li>Fixed: reconstruct no longer crashes on non-64bit platforms (thanks Jason Tibbitts)</li>
 </ul>
 </div>
 </div>
@@ -874,7 +876,7 @@ platforms (thanks Jason Tibbitts)</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 08 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
