@@ -2731,6 +2731,10 @@ to the extractor.</p>
 detected language, if the cld2 dependency is built into Cyrus.
 Regardless of this flag, bodies and subjects are always indexed and
 searched using the default stemmer.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_index_parts:</span></code> 0</p>
+<blockquote>
+<div>If enabled, then message parts are each indexed separately into Xapian
+so that matches can be done by part.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_query_language:</span></code> 0</p>
 <blockquote>
 <div>If enabled, then message bodies and subjects searched by their language
