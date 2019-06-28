@@ -3039,6 +3039,12 @@ that can be set on a mailbox. <span class="target" id="index-21"></span><a class
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">specialuse_protect:</span></code> \Archive \Drafts \Important \Junk \Sent \Trash</p>
+<blockquote>
+<div>Whitespace separated list of special-use attributes
+to protect the mailboxes for.  If set, don&#8217;t allow
+mailboxes with these special use attributes to be deleted
+or renamed to have a different parent. Default is the built-in list</div></blockquote>
 <p><code class="docutils literal"><span class="pre">specialusealways:</span></code> 1</p>
 <blockquote>
 <div>If enabled, this option causes LIST and LSUB output to always include
