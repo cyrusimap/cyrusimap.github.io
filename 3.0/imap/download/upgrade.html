@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrading to 3.0 &mdash; Cyrus IMAP 3.0.10 (stable) documentation</title>
+  <title>Upgrading to 3.0 &mdash; Cyrus IMAP 3.0.11 (stable) documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.0.10 (stable) documentation" href="../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.0.11 (stable) documentation" href="../../index.html"/>
         <link rel="up" title="Setup" href="../../setup.html"/>
         <link rel="next" title="Configuration Guide" href="../concepts/deployment.html"/>
         <link rel="prev" title="Virus Scanner" href="installation/virus.html"/> 
@@ -747,7 +747,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html">Docs v3.0.10 (stable)</a> &raquo;</li>
+      <li><a href="../../index.html">Docs v3.0.11 (stable)</a> &raquo;</li>
       
           <li><a href="../../setup.html">Setup</a> &raquo;</li>
       
@@ -1041,6 +1041,14 @@ step 2, remember to re-enable them.  Use something like <code class="docutils li
 </div>
 <div class="section" id="reconstruct-databases-and-cache">
 <h2><a class="toc-backref" href="#id11">8. Reconstruct databases and cache</a><a class="headerlink" href="#reconstruct-databases-and-cache" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Versions of 3.0 prior to 3.0.11 contained a bug (<a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2389">Issue #2389</a>) that
+could lead to loss of seen state/flags during <cite>reconstruct</cite> for some
+messages that already existed prior to Cyrus 2.3.  The <a class="reference internal" href="release-notes/3.0/x/3.0.11.html#relnotes-3-0-11-changes"><span class="std std-ref">3.0.11
+release notes</span></a> contain the specifics.</p>
+<p class="last">Consider upgrading to 3.0.11 rather than an earlier release.</p>
+</div>
 <p>The following steps can each take a long time, so we recommend
 running them one at a time (to reduce locking contention and high I/O load).</p>
 <p>To upgrade all the mailboxes to the latest version. This will take hours, possibly days.</p>
@@ -1116,7 +1124,7 @@ downgrade mailbox versions in transit.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jun 18 2018
+        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jul 30 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
@@ -1136,7 +1144,7 @@ downgrade mailbox versions in transit.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'3.0.10 (stable)',
+            VERSION:'3.0.11 (stable)',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
