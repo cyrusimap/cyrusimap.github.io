@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.1.1.2. imapd.conf &mdash; Cyrus IMAP 3.1.6 (dev) documentation</title>
+  <title>5.1.1.2. imapd.conf &mdash; Cyrus IMAP 3.1.7 (dev) documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.1.6 (dev) documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.1.7 (dev) documentation" href="../../../../index.html"/>
         <link rel="up" title="5.1. Man pages" href="../commands.html"/>
         <link rel="next" title="5.1.1.3. krb.equiv" href="krb.equiv.html"/>
         <link rel="prev" title="5.1.1.1. cyrus.conf" href="cyrus.conf.html"/> 
@@ -766,7 +766,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.1.6 (dev)</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.1.7 (dev)</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">5. Operations</a> &raquo;</li>
       
@@ -1828,12 +1828,18 @@ JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:core">urn:i
 <div>The value (in kilobytes) to return for the maxSizeAttachmentsPerEmail
 property of the JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:mail">urn:ietf:params:jmap:mail</a>&#8221; capabilities object. The Cyrus
 JMAP implementation does not enforce this size limit. Default is 10 Mb.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_nonstandard_extensions:</span></code> 1</p>
+<blockquote>
+<div>If enabled (the default) support non-standard JMAP extensions</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_set_has_attachment:</span></code> 1</p>
 <blockquote>
 <div>If enabled, the $hasAttachment flag is determined and set for new messages
 created with the JMAP Email/set or Email/import methods. This option should
 typically be enabled, but installations using Cyrus-external message
 annatotors to determine the $hasAttachment flag might want to disable it.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_vacation:</span></code> 1</p>
+<blockquote>
+<div>If enabled, support the JMAP vacation extension</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmapuploadfolder:</span></code> #jmap</p>
 <blockquote>
 <div>the name of the folder for JMAP uploads (#jmap)</div></blockquote>
@@ -3528,7 +3534,7 @@ on HTTP 1.1 using a RESTful architecture</div></blockquote>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.1.6 (dev)',
+            VERSION:'3.1.7 (dev)',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
