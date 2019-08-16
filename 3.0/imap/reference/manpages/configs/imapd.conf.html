@@ -3075,14 +3075,26 @@ character &#8216;.&#8217;. Note that with the newnews separator, no dots may
 occur in mailbox names.  The default switched in 3.0 from off to on.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">virtdomains:</span></code> off</p>
 <blockquote>
-<div>Enable virtual domain support.  If enabled, the user&#8217;s domain will
-be determined by splitting a fully qualified userid at the last &#8216;&#64;&#8217;
-or &#8216;%&#8217; symbol.  If the userid is unqualified, and the virtdomains
-option is set to &#8220;on&#8221;, then the domain will be determined by doing
-a reverse lookup on the IP address of the incoming network
-interface, otherwise the user is assumed to be in the default
-domain (if set).
-Allowed values: <em>off</em>, <em>userid</em>, <em>on</em></div></blockquote>
+<div><p>Configure virtual domain support.</p>
+<dl class="docutils">
+<dt>off</dt>
+<dd>Cyrus does not know or care about domains. Only the local part of email
+addresses is ever considered.  This is not recommended for any deployment,
+but is currently the default.</dd>
+<dt>userid</dt>
+<dd>The user&#8217;s domain is determined by splitting a fully qualified userid at the
+last &#8216;&#64;&#8217; or &#8216;%&#8217; symbol.  If the userid is unqualified, the <em>defaultdomain</em>
+will be used.  This is the recommended configuration for all deployments.
+If you wish to provide calendaring services you must use this configuration.</dd>
+<dt>on</dt>
+<dd><p class="first">Fully qualified userids are respected, as per &#8220;userid&#8221;.  Unqualified userids
+will have their domain determined by doing a reverse lookup on the IP address
+of the incoming network interface, or if no record is found, the
+<em>defaultdomain</em> will be used.</p>
+<p class="last">Allowed values: <em>off</em>, <em>userid</em>, <em>on</em></p>
+</dd>
+</dl>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
 <div>Enable support for the XBACKUP command in imapd.  If enabled, admin
