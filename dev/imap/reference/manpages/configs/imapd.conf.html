@@ -1809,6 +1809,12 @@ implementation does not enforce this rate-limit.</div></blockquote>
 <div>The maximum number of calls per JMAP request object.
 Returned as the maxCallsInRequest property value of the
 JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&#8221; capabilities object.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_max_delayed_send:</span></code> 44236800</p>
+<blockquote>
+<div>The value to return for the maxDelayedSend property of
+the JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:emailsubmission">urn:ietf:params:jmap:emailsubmission</a>&#8221; capabilities object
+(which is measured in seconds).
+The Cyrus JMAP implementation does not enforce this limit.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_objects_in_get:</span></code> 4096</p>
 <blockquote>
 <div>The maximum number of ids that a JMAP client may request in

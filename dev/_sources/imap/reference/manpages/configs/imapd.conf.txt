@@ -1933,6 +1933,17 @@ FIELD DESCRIPTIONS
 
     .. endblob jmap_max_calls_in_request
 
+    .. startblob jmap_max_delayed_send
+
+    ``jmap_max_delayed_send:`` 44236800
+
+        The value to return for the maxDelayedSend property of
+        the JMAP \"urn:ietf:params:jmap:emailsubmission\" capabilities object
+        (which is measured in seconds).
+        The Cyrus JMAP implementation does not enforce this limit. 
+
+    .. endblob jmap_max_delayed_send
+
     .. startblob jmap_max_objects_in_get
 
     ``jmap_max_objects_in_get:`` 4096
