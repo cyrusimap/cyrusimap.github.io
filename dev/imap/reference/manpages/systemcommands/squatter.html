@@ -850,12 +850,15 @@ is sometimes useful for cleaning up after problems with rolling mode.</p>
 <p>In the sixth synopsis, <strong>squatter</strong> will compact indices from
 <em>srctier(s)</em> to <em>desttier</em>, optionally reindexing (<strong>-X</strong>) or filtering
 expunged records (<strong>-F</strong>) in the process.  The optional <strong>-T</strong> flag may be
-used to specify a directory to use for temporary files.  The <strong>-o</strong> flag may
-be used to direct that a single index be copied, rather than compacted, from
-<em>srctier</em> to <em>desttier</em>.  The <strong>-U</strong> flag may be used to only compact if
-re-indexing.  The <strong>-u</strong> flag may be used to restrict operation to the
-specified user(s).</p>
-<p>For all modes, the <strong>-S</strong> option may be specified, causing squatter to
+used to specify a directory to use for temporary files.  These files are
+eventually copied with <cite>rsync -a</cite> and then removed by <cite>rm</cite>.
+<cite>rsync</cite> can increase the load average of the system, especially when the
+temporary directory is on <cite>tmpfs</cite>.  To throttle <cite>rsync</cite> it is possible to
+modify the call in <cite>imap/search_xapian.c</cite> and pass <cite>-\-bwlimit=&lt;number&gt;</cite> as further
+parameter.  The <strong>-o</strong> flag may be used to direct that a single index be
+copied, rather than compacted, from <em>srctier</em> to <em>desttier</em>.  The <strong>-u</strong> flag
+may be used to restrict operation to the specified user(s).</p>
+<p>For all modes, the <strong>-S</strong> option may be specified, causing <strong>squatter</strong> to
 pause <em>seconds</em> seconds after each mailbox, to smooth loads.</p>
 <p>When using the Xapian engine the <strong>-Z</strong> option may be specified, for
 the indexing modes.  This tells <strong>squatter</strong> to consult the Xapian

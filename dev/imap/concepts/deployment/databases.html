@@ -823,7 +823,7 @@ Cyrus to automatically convert the file to the new format.</p>
 <li><a class="reference internal" href="#mailbox-keys-userid-mboxkey">Mailbox Keys (&lt;userid&gt;.mboxkey)</a></li>
 <li><a class="reference internal" href="#seen-state-userid-seen">Seen State (&lt;userid&gt;.seen)</a></li>
 <li><a class="reference internal" href="#subscriptions-userid-sub">Subscriptions (&lt;userid&gt;.sub)</a></li>
-<li><a class="reference internal" href="#search-indexes-cyrus-squat-userid-xapianactive">Search Indexes (cyrus.squat, &lt;userid&gt;.xapianactive)</a></li>
+<li><a class="reference internal" href="#search-indexes-cyrus-squat-userid-xapianactive-cyrus-indexed-db">Search Indexes (cyrus.squat, &lt;userid&gt;.xapianactive, cyrus.indexed.db)</a></li>
 </ul>
 <div class="section" id="mailbox-list-mailboxes-db">
 <span id="imap-concepts-deployment-db-mailboxes"></span><h3>4.4.5.2.1. Mailbox List (mailboxes.db)<a class="headerlink" href="#mailbox-list-mailboxes-db" title="Permalink to this headline">¶</a></h3>
@@ -833,7 +833,7 @@ Cyrus to automatically convert the file to the new format.</p>
 <span class="n">Data</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Type</span> <span class="n">Number</span><span class="o">&gt;</span><span class="n">SP</span><span class="o">&lt;</span><span class="n">Partition</span><span class="o">&gt;</span><span class="n">SP</span><span class="o">&lt;</span><span class="n">ACL</span> <span class="p">(</span><span class="n">space</span><span class="o">-</span><span class="n">separated</span> <span class="n">userid</span><span class="o">/</span><span class="n">rights</span> <span class="n">pairs</span><span class="p">)</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>File type can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, <a class="reference internal" href="#skiplist">skiplist</a>, <a class="reference internal" href="#sql">sql</a>, or <a class="reference internal" href="#twoskip">twoskip</a>.</p>
+<p>File type can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, <a class="reference internal" href="#skiplist">skiplist</a>, or <a class="reference internal" href="#sql">sql</a>.</p>
 </div>
 <div class="section" id="annotations-annotations-db">
 <span id="imap-concepts-deployment-db-annotations"></span><h3>4.4.5.2.2. Annotations (annotations.db)<a class="headerlink" href="#annotations-annotations-db" title="Permalink to this headline">¶</a></h3>
@@ -939,11 +939,16 @@ that folder.</p>
 <span id="imap-concepts-deployment-db-fetchnews"></span><h3>4.4.5.2.12. News database (fetchnews.db)<a class="headerlink" href="#news-database-fetchnews-db" title="Permalink to this headline">¶</a></h3>
 <p>File format not selectable.</p>
 </div>
-<div class="section" id="search-indexes-cyrus-squat-userid-xapianactive">
-<span id="imap-concepts-deployment-db-search"></span><h3>4.4.5.2.13. Search Indexes (cyrus.squat, &lt;userid&gt;.xapianactive)<a class="headerlink" href="#search-indexes-cyrus-squat-userid-xapianactive" title="Permalink to this headline">¶</a></h3>
-<p>This is either cyrus.squat in each folder, or if you&#8217;re using xapian a single
-&lt;userid&gt;.xapianactive file listing active databases by tier name and number.</p>
-<p>File type can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, or <a class="reference internal" href="#skiplist">skiplist</a>.</p>
+<div class="section" id="search-indexes-cyrus-squat-userid-xapianactive-cyrus-indexed-db">
+<span id="imap-concepts-deployment-db-search"></span><h3>4.4.5.2.13. Search Indexes (cyrus.squat, &lt;userid&gt;.xapianactive, cyrus.indexed.db)<a class="headerlink" href="#search-indexes-cyrus-squat-userid-xapianactive-cyrus-indexed-db" title="Permalink to this headline">¶</a></h3>
+<p>This is either cyrus.squat in each folder, or if you&#8217;re using Xapian a single
+&lt;userid&gt;.xapianactive file listing active databases with tier name and number.</p>
+<p>cyrus.indexed.db is used by the Xapian search engine.  Its file type
+can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, <a class="reference internal" href="#skiplist">skiplist</a>, or <a href="#id3"><span class="problematic" id="id4">`zeroskip`_</span></a> and is determined
+by <cite>search_indexed_db</cite> in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<p>The xapianactive file contains a space separated list of tiers and databases within
+the tier.  The first element is the active tier/database, to which new entries are
+added by <cite>squatter -R</cite>.</p>
 </div>
 <div class="section" id="zoneinfo-db-zoneinfo-db">
 <span id="imap-concepts-deployment-db-zoneinfo"></span><h3>4.4.5.2.14. Zoneinfo db (zoneinfo.db)<a class="headerlink" href="#zoneinfo-db-zoneinfo-db" title="Permalink to this headline">¶</a></h3>
@@ -1111,7 +1116,7 @@ virtually no lock contention.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 24 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
