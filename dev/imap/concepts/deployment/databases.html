@@ -944,8 +944,8 @@ that folder.</p>
 <p>This is either cyrus.squat in each folder, or if you&#8217;re using Xapian a single
 &lt;userid&gt;.xapianactive file listing active databases with tier name and number.</p>
 <p>cyrus.indexed.db is used by the Xapian search engine.  Its file type
-can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, <a class="reference internal" href="#skiplist">skiplist</a>, or <a href="#id3"><span class="problematic" id="id4">`zeroskip`_</span></a> and is determined
-by <cite>search_indexed_db</cite> in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+can be: <a class="reference internal" href="#twoskip">twoskip</a> (default), <a class="reference internal" href="#flat">flat</a>, <a class="reference internal" href="#skiplist">skiplist</a>, or <code class="docutils literal"><span class="pre">zeroskip</span></code> and is
+determined by <cite>search_indexed_db</cite> in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 <p>The xapianactive file contains a space separated list of tiers and databases within
 the tier.  The first element is the active tier/database, to which new entries are
 added by <cite>squatter -R</cite>.</p>
@@ -1116,7 +1116,7 @@ virtually no lock contention.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 19 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
