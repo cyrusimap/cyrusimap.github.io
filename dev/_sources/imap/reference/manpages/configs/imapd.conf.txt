@@ -5264,6 +5264,26 @@ FIELD DESCRIPTIONS
 
     .. endblob virtdomains
 
+    .. startblob virusscan_notification_subject
+
+    ``virusscan_notification_subject:`` Automatically deleted mail
+
+        The text used in the subject of email notifications created by
+        **cyr_virusscan(8)** when deleting infected mail. 
+
+    .. endblob virusscan_notification_subject
+
+    .. startblob virusscan_notification_template
+
+    ``virusscan_notification_template:`` <none>
+
+        The absolute path to a file containing a template to use to describe
+        infected messages that have been deleted by **cyr_virusscan(8)**.
+        See **cyr_virusscan(8)** for specification of the format of this file.
+        If not specified, the builtin default template will be used. 
+
+    .. endblob virusscan_notification_template
+
     .. startblob xbackup_enabled
 
     ``xbackup_enabled:`` 0

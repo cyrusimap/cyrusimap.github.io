@@ -3434,6 +3434,16 @@ of the incoming network interface, or if no record is found, the
 </dd>
 </dl>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">virusscan_notification_subject:</span></code> Automatically deleted mail</p>
+<blockquote>
+<div>The text used in the subject of email notifications created by
+<strong>cyr_virusscan(8)</strong> when deleting infected mail.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">virusscan_notification_template:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The absolute path to a file containing a template to use to describe
+infected messages that have been deleted by <strong>cyr_virusscan(8)</strong>.
+See <strong>cyr_virusscan(8)</strong> for specification of the format of this file.
+If not specified, the builtin default template will be used.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
 <div>Enable support for the XBACKUP command in imapd.  If enabled, admin
