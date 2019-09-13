@@ -796,7 +796,7 @@
 <li><p class="first">Enable JMAP (and DAV) in Cyrus:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-jmap</span></code> along with your other configuration options.</li>
+<li><code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-jmap</span> <span class="pre">--enable-xapian</span></code> along with your other configuration options.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -822,46 +822,79 @@ Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian">
 <div class="section" id="test-jmap-support">
 <h3>6.3.1.5.2.1. Test JMAP support<a class="headerlink" href="#test-jmap-support" title="Permalink to this headline">¶</a></h3>
 <p>Once Cyrus is running, you can test JMAP on the command line for any existing Cyrus user. The user must at least have an INBOX provisioned but is not required to have any calendars, contacts or messages.</p>
-<p>To obtain the JMAP calendars for user <code class="docutils literal"><span class="pre">test</span></code>, issue the following request:</p>
+<p>To obtain the JMAP mailbox folders for user <code class="docutils literal"><span class="pre">test</span></code>, issue the following request:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
      -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
      -H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
      --user test:test <span class="se">\</span>
-     -d <span class="s1">&#39;[[&quot;getCalendars&quot;, {}, &quot;#1&quot;]]&#39;</span> <span class="se">\</span>
-     http://localhost/jmap
+     -d <span class="s1">&#39;{</span>
+<span class="s1">       &quot;using&quot;: [ &quot;urn:ietf:params:jmap:core&quot;, &quot;urn:ietf:params:jmap:mail&quot; ],</span>
+<span class="s1">       &quot;methodCalls&quot;: [[ &quot;Mailbox/get&quot;, {}, &quot;c1&quot; ]]</span>
+<span class="s1">     }&#39;</span> <span class="se">\</span>
+     http://localhost/jmap/
 </pre></div>
 </div>
 <p>you should get a response which looks similar to</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>[
-    [
-        &quot;calendars&quot;,
-        {
-            &quot;accountId&quot;: &quot;test@localhost&quot;,
-            &quot;list&quot;: [
-                {
-                    &quot;color&quot;: &quot;#FD8208FF&quot;,
-                    &quot;id&quot;: &quot;Default&quot;,
-                    &quot;mayAddItems&quot;: true,
-                    &quot;mayDelete&quot;: true,
-                    &quot;mayModifyItems&quot;: true,
-                    &quot;mayReadFreeBusy&quot;: true,
-                    &quot;mayReadItems&quot;: true,
-                    &quot;mayRemoveItems&quot;: true,
-                    &quot;mayRename&quot;: true,
-                    &quot;name&quot;: &quot;Default&quot;,
-                    &quot;sortOrder&quot;: 1,
-                    &quot;x-href&quot;: &quot;/dav/calendars/user/test@localhost/Default&quot;
-                }
-            ],
-            &quot;notFound&quot;: null,
-            &quot;state&quot;: &quot;184&quot;
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;methodResponses&quot;: [
+    [&quot;Mailbox/get&quot;, {
+      &quot;state&quot;: &quot;0&quot;,
+      &quot;list&quot;: [{
+        &quot;id&quot;: &quot;7c76ec2b-9bd8-4091-a665-640e232e3877&quot;,
+        &quot;name&quot;: &quot;Inbox&quot;,
+        &quot;parentId&quot;: null,
+        &quot;myRights&quot;: {
+          &quot;mayReadItems&quot;: true,
+          &quot;mayAddItems&quot;: true,
+          &quot;mayRemoveItems&quot;: true,
+          &quot;mayCreateChild&quot;: true,
+          &quot;mayDelete&quot;: false,
+          &quot;maySubmit&quot;: true,
+          &quot;maySetSeen&quot;: true,
+          &quot;maySetKeywords&quot;: true,
+          &quot;mayAdmin&quot;: true,
+          &quot;mayRename&quot;: false
         },
-        &quot;#1&quot;
-    ]
-]
+        &quot;role&quot;: &quot;inbox&quot;,
+        &quot;totalEmails&quot;: 0,
+        &quot;unreadEmails&quot;: 0,
+        &quot;totalThreads&quot;: 0,
+        &quot;unreadThreads&quot;: 0,
+        &quot;sortOrder&quot;: 1,
+        &quot;isSubscribed&quot;: false
+      }, {
+        &quot;id&quot;: &quot;5d9e4f44-7df9-4489-b8b3-32625b552aa1&quot;,
+        &quot;name&quot;: &quot;Trash&quot;,
+        &quot;parentId&quot;: null,
+        &quot;myRights&quot;: {
+          &quot;mayReadItems&quot;: true,
+          &quot;mayAddItems&quot;: true,
+          &quot;mayRemoveItems&quot;: true,
+          &quot;mayCreateChild&quot;: true,
+          &quot;mayDelete&quot;: true,
+          &quot;maySubmit&quot;: true,
+          &quot;maySetSeen&quot;: true,
+          &quot;maySetKeywords&quot;: true,
+          &quot;mayAdmin&quot;: true,
+          &quot;mayRename&quot;: true
+        },
+        &quot;role&quot;: null,
+        &quot;totalEmails&quot;: 0,
+        &quot;unreadEmails&quot;: 0,
+        &quot;totalThreads&quot;: 0,
+        &quot;unreadThreads&quot;: 0,
+        &quot;sortOrder&quot;: 10,
+        &quot;isSubscribed&quot;: true
+      }],
+      &quot;notFound&quot;: [],
+      &quot;accountId&quot;: &quot;test&quot;
+    }, &quot;c1&quot;]
+  ],
+  &quot;sessionState&quot;: &quot;0&quot;
+}
 </pre></div>
 </div>
-<p>Similar requests exist to obtain contacts and messages. For details, see the
+<p>Similar requests exist to obtain contacts and calendars. For details, see the
 JMAP specification.</p>
 </div>
 <div class="section" id="optional-install-sample-jmap-client">
@@ -907,7 +940,7 @@ viewed on the main <a class="reference internal" href="../download/installation/
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 22 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 10 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
