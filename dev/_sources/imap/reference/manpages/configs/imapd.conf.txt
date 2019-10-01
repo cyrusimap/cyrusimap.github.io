@@ -2568,10 +2568,14 @@ FIELD DESCRIPTIONS
 
     .. startblob lmtp_exclude_specialuse
 
-    ``lmtp_exclude_specialuse:`` <none>
+    ``lmtp_exclude_specialuse:`` \\Snoozed
 
-        Don't allow delivery to folders with given special-use attributes. 
+        Don't allow delivery to folders with given special-use attributes.
 
+        Note that "snoozing" of emails can currently only be done via the
+        JMAP protocol, so delivery directly to the \Snoozed mailbox is
+        prohibited by default as it will not be moved back into INBOX
+        automatically. 
 
     .. endblob lmtp_exclude_specialuse
 

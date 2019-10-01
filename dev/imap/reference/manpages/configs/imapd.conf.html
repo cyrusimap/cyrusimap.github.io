@@ -2064,9 +2064,14 @@ LITERAL+ (<span class="target" id="index-11"></span><a class="rfc reference exte
 <blockquote>
 <div>If enabled, lmtpd will convert the recipient addresses to lowercase
 (up to a &#8216;+&#8217; character, if present).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">lmtp_exclude_specialuse:</span></code> &lt;none&gt;</p>
+<p><code class="docutils literal"><span class="pre">lmtp_exclude_specialuse:</span></code> \Snoozed</p>
 <blockquote>
-<div>Don&#8217;t allow delivery to folders with given special-use attributes.</div></blockquote>
+<div><p>Don&#8217;t allow delivery to folders with given special-use attributes.</p>
+<p>Note that &#8220;snoozing&#8221; of emails can currently only be done via the
+JMAP protocol, so delivery directly to the Snoozed mailbox is
+prohibited by default as it will not be moved back into INBOX
+automatically.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_fuzzy_mailbox_match:</span></code> 0</p>
 <blockquote>
 <div>If enabled, and the mailbox specified in the detail part of the
