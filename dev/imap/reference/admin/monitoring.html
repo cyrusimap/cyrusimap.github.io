@@ -822,10 +822,13 @@ settings in <a class="reference internal" href="../manpages/configs/imapd.conf.h
 </div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">prometheus_update_freq:</span></code> 10</p>
+<div><p><code class="docutils literal"><span class="pre">prometheus_update_freq:</span></code> 10s</p>
 <blockquote>
-<div>Frequency in seconds at which promstatsd should re-collate its
-statistics report.  The minimum value is 1, the default is 10.</div></blockquote>
+<div><p>Frequency in at which promstatsd should re-collate its statistics
+report.  The minimum value is 1 second, the default is 10 seconds.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 </div></blockquote>
 <blockquote>
 <div><p><code class="docutils literal"><span class="pre">prometheus_stats_dir:</span></code> &lt;none&gt;</p>

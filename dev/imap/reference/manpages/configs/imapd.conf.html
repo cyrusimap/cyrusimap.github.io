@@ -822,6 +822,14 @@ using ``\&#8217;&#8217; character(s) is still considered a single line.</p>
 <p>For boolean and enumerated options, the values ``yes&#8217;&#8216;, ``on&#8217;&#8216;, ``t&#8217;&#8216;,
 ``true&#8217;&#8217; and ``1&#8217;&#8217; turn the option on, the values ``no&#8217;&#8216;, ``off&#8217;&#8216;,
 ``f&#8217;&#8216;, ``false&#8217;&#8217; and ``0&#8217;&#8217; turn the option off.</p>
+<p>Duration options take the form of a number followed by a unit, for example
+<strong>32m</strong> (32 minutes).  Units are <strong>d</strong> (days), <strong>h</strong> (hours), <strong>m</strong>
+(minutes) and <strong>s</strong> (seconds).  Multiple units can be combined and will
+be summed together, for example <strong>1h30m</strong> is equivalent to <strong>90m</strong>.  If
+no unit is specified, an option-specific backward-compatible default unit
+is assumed (documented on an option-by-option basis).  These are simple time
+units: 1d=24h, 1h=60m, 1m=60s (daylight savings, timezones, leap adjustments,
+etc are not considered).</p>
 </div></blockquote>
 </div>
 <div class="section" id="field-descriptions">
@@ -1030,10 +1038,16 @@ do not implement the <span class="target" id="index-4"></span><a class="rfc refe
 archivepartition for the mailbox.  Archiving allows older email
 to be stored on slower, cheaper disks - even within the same
 mailbox, as distinct from partitions.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">archive_days:</span></code> 7</p>
+<p><code class="docutils literal"><span class="pre">archive_days:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>The number of days after which to move messages to the archive partition
-if archiving is enabled</div></blockquote>
+<div>Deprecated in favour of <em>archive_after</em>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">archive_after:</span></code> 7d</p>
+<blockquote>
+<div><p>The duration after which to move messages to the archive partition
+if archiving is enabled.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">archive_maxsize:</span></code> 1024</p>
 <blockquote>
 <div>The size in kilobytes of the largest message that won&#8217;t be archived
@@ -1211,11 +1225,17 @@ is treated as being one.</div></blockquote>
 <blockquote>
 <div>The absolute path of the backup staging area.  If not specified,
 will be temp_path/backup</div></blockquote>
-<p><code class="docutils literal"><span class="pre">backup_retention_days:</span></code> 7</p>
+<p><code class="docutils literal"><span class="pre">backup_retention_days:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>The number of days to keep content in backup after it has been deleted
+<div>Deprecated in favor of <em>backup_retention</em>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">backup_retention:</span></code> 7d</p>
+<blockquote>
+<div><p>How long to keep content in backup after it has been deleted
 from the source.  If set to a negative value or zero, deleted content
-will be kept indefinitely.</div></blockquote>
+will be kept indefinitely.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the backup locations database.</p>
@@ -1262,13 +1282,16 @@ Allowed values: <em>off</em>, <em>on</em>, <em>apple</em></div></blockquote>
 <p><code class="docutils literal"><span class="pre">caldav_create_sched:</span></code> 1</p>
 <blockquote>
 <div>Create the &#8216;Inbox&#8217; and &#8216;Outbox&#8217; calendars if they don&#8217;t already exist</div></blockquote>
-<p><code class="docutils literal"><span class="pre">caldav_historical_age:</span></code> 7</p>
+<p><code class="docutils literal"><span class="pre">caldav_historical_age:</span></code> 7d</p>
 <blockquote>
-<div>Number of days after an occurrence of event or task has concluded
+<div><p>How long after an occurrence of event or task has concluded
 that it is considered &#8216;historical&#8217;.  Changes to historical
 occurrences of events or tasks WILL NOT have invite or reply
-messages sent for them.  A value less than zero means that events
-and tasks are NEVER considered historical.</div></blockquote>
+messages sent for them.  A negative value means that events
+and tasks are NEVER considered historical.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">caldav_maxdatetime:</span></code> 20380119T031407Z</p>
 <blockquote>
 <div><p>The latest date and time accepted by the server (ISO format).  This
@@ -1338,10 +1361,13 @@ connections will use an IP chosen by the operating system.</p>
 <div>IPv4, IPv6 address or hostname to bind for client connections when
 <strong>client_bind</strong> is enabled.  If not set (the default),
 servername will be used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">client_timeout:</span></code> 10</p>
+<p><code class="docutils literal"><span class="pre">client_timeout:</span></code> 10s</p>
 <blockquote>
-<div>Number of seconds to wait before returning a timeout failure when
-performing a client connection (e.g., in a murder environment)</div></blockquote>
+<div><p>Time to wait before returning a timeout failure when performing a
+client connection (e.g. in a murder environment).</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">commandmintimer:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Time in seconds. Any imap command that takes longer than this
@@ -1369,11 +1395,17 @@ running server, or the counts will be wrong.</div></blockquote>
 <div><p>The cyrusdb backend to use for the per-user conversations database.</p>
 <p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">conversations_expire_days:</span></code> 90</p>
+<p><code class="docutils literal"><span class="pre">conversations_expire_days:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>How long the conversations database keeps the message tracking
+<div>Deprecated in favor of <em>conversations_expire_after</em>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">conversations_expire_after:</span></code> 90d</p>
+<blockquote>
+<div><p>How long the conversations database keeps the message tracking
 information needed for receiving new messages in existing
-conversations, in days.</div></blockquote>
+conversations.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">conversations_max_thread:</span></code> 100</p>
 <blockquote>
 <div>maximum size for a single thread.  Threads will split if they have this many
@@ -1413,11 +1445,14 @@ user&#8217;s personal notifications hierarchy will be a child of their Inbox.</d
 <div>The realm to present for HTTP authentication of generic DAV
 resources (principals).  If not set (the default), the value of the
 &#8220;servername&#8221; option will be used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">dav_lock_timeout:</span></code> 20</p>
+<p><code class="docutils literal"><span class="pre">dav_lock_timeout:</span></code> 20s</p>
 <blockquote>
-<div>The maximum time in seconds to wait for a write lock on the per-user
-DAV database before timeout. For HTTP requests, the HTTP status code
-503 is returned if the lock can not be obtained within this time.</div></blockquote>
+<div><p>The maximum time to wait for a write lock on the per-user DAV database
+before timeout. For HTTP requests, the HTTP status code 503 is returned
+if the lock can not be obtained within this time.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">debug_command:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Debug command to be used by processes started with -D option.  The string
@@ -1582,9 +1617,12 @@ This reduces the amount of I/O that takes place at the time of
 EXPUNGE and should result in greater responsiveness for the client,
 especially when expunging a large number of messages.
 Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></div></blockquote>
-<p><code class="docutils literal"><span class="pre">failedloginpause:</span></code> 3</p>
+<p><code class="docutils literal"><span class="pre">failedloginpause:</span></code> 3s</p>
 <blockquote>
-<div>Number of seconds to pause after a failed login.</div></blockquote>
+<div><p>Time to pause after a failed login.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">flushseenstate:</span></code> 1</p>
 <blockquote>
 <div>Deprecated. No longer used</div></blockquote>
@@ -1671,14 +1709,17 @@ by clients anyways.</div></blockquote>
 <div>If set, http will serve the static content (html/text/jpeg/gif
 files, etc) rooted at this directory.  Otherwise, httpd will not
 serve any static content.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">httpkeepalive:</span></code> 20</p>
+<p><code class="docutils literal"><span class="pre">httpkeepalive:</span></code> 20s</p>
 <blockquote>
-<div>Set the length of the HTTP server&#8217;s keepalive heartbeat in seconds.
-The default is 20.  The minimum value is 0, which will disable the
-keepalive heartbeat.  When enabled, if a request takes longer than
-<em>httpkeepalive</em> seconds to process, the server will send the client
-provisional responses every <em>httpkeepalive</em> seconds until the
-final response can be sent</div></blockquote>
+<div><p>Set the length of the HTTP server&#8217;s keepalive heartbeat.  The
+default is 20 seconds.  The minimum value is 0, which will disable
+the keepalive heartbeat.  When enabled, if a request takes longer
+than <em>httpkeepalive</em> to process, the server will send the client
+provisional responses every <em>httpkeepalive</em> until the final
+response can be sent.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">httpmodules:</span></code> &lt;empty string&gt;</p>
 <blockquote>
 <div><p>Space-separated list of HTTP modules that will be enabled in
@@ -1696,11 +1737,14 @@ markup languages (HTML, XML) will utilize line breaks and
 indentation to promote better human-readability in telemetry logs.
 Note that enabling this option will increase the amount of data
 sent across the wire.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">httptimeout:</span></code> 5</p>
+<p><code class="docutils literal"><span class="pre">httptimeout:</span></code> 5m</p>
 <blockquote>
-<div>Set the length of the HTTP server&#8217;s inactivity autologout timer,
-in minutes.  The default is 5.  The minimum value is 0, which will
-disable persistent connections.</div></blockquote>
+<div><p>Set the length of the HTTP server&#8217;s inactivity autologout timer.
+The default is 5 minutes.  The minimum value is 0, which will
+disable persistent connections.</p>
+<p>For backwards compatibility, if no unit is specified, minutes
+is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">idlesocket:</span></code> {configdirectory}/socket/idle</p>
 <blockquote>
 <div>Unix domain socket that idled listens on.</div></blockquote>
@@ -1708,12 +1752,15 @@ disable persistent connections.</div></blockquote>
 <blockquote>
 <div>For backwards compatibility with Cyrus 1.5.10 and earlier &#8211; ignore
 the reference argument in LIST or LSUB commands.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">imapidlepoll:</span></code> 60</p>
+<p><code class="docutils literal"><span class="pre">imapidlepoll:</span></code> 60s</p>
 <blockquote>
-<div>The interval (in seconds) for polling for mailbox changes and
-ALERTs while running the IDLE command.  This option is used when
-idled is not enabled or cannot be contacted.  The minimum value is
-1.  A value of 0 will disable IDLE.</div></blockquote>
+<div><p>The interval for polling for mailbox changes and ALERTs while running
+the IDLE command.  This option is used when idled is not enabled or
+cannot be contacted.  The minimum value is 1 second.  A value of 0
+will disable IDLE.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">imapidresponse:</span></code> 1</p>
 <blockquote>
 <div>If enabled, the server responds to an ID command with a parameter
@@ -1812,12 +1859,14 @@ implementation does not enforce this rate-limit.</div></blockquote>
 <div>The maximum number of calls per JMAP request object.
 Returned as the maxCallsInRequest property value of the
 JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&#8221; capabilities object.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_max_delayed_send:</span></code> 44236800</p>
+<p><code class="docutils literal"><span class="pre">jmap_max_delayed_send:</span></code> 512d</p>
 <blockquote>
-<div>The value to return for the maxDelayedSend property of
-the JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:emailsubmission">urn:ietf:params:jmap:emailsubmission</a>&#8221; capabilities object
-(which is measured in seconds).
-The Cyrus JMAP implementation does not enforce this limit.</div></blockquote>
+<div><p>The value to return for the maxDelayedSend property of
+the JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:emailsubmission">urn:ietf:params:jmap:emailsubmission</a>&#8221; capabilities object.
+The Cyrus JMAP implementation does not enforce this limit.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_objects_in_get:</span></code> 4096</p>
 <blockquote>
 <div>The maximum number of ids that a JMAP client may request in
@@ -2003,12 +2052,18 @@ if they abort prematurely.</div></blockquote>
 <blockquote>
 <div>Use transport layer security for <a class="reference external" href="ldap://">ldap://</a> using STARTTLS. Do not use
 ldaps:// in &#8216;ldap_uri&#8217; with this option enabled.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_time_limit:</span></code> 5</p>
+<p><code class="docutils literal"><span class="pre">ldap_time_limit:</span></code> 5s</p>
 <blockquote>
-<div>Specify a number of seconds for a search request to complete.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_timeout:</span></code> 5</p>
+<div><p>How long to wait for a search request to complete.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">ldap_timeout:</span></code> 5s</p>
 <blockquote>
-<div>Specify a number of seconds a search can take before timing out.</div></blockquote>
+<div><p>How long a search can take before timing out.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">ldap_ca_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Path to a directory with CA (Certificate Authority) certificates.</div></blockquote>
@@ -2099,12 +2154,15 @@ certain MTAs like Postfix or Exim which accept such messages.</div></blockquote>
 <blockquote>
 <div>Unix domain socket that lmtpd listens on, used by deliver(8). This should
 match the path specified in cyrus.conf(5).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">lmtptxn_timeout:</span></code> 300</p>
+<p><code class="docutils literal"><span class="pre">lmtptxn_timeout:</span></code> 5m</p>
 <blockquote>
-<div>Timeout (in seconds) used during a lmtp transaction to a remote backend
-(e.g. in a murder environment).  Can be used to prevent hung lmtpds
-on proxy hosts when a backend server becomes unresponsive during a
-lmtp transaction.  The default is 300 - change to zero for infinite.</div></blockquote>
+<div><p>Timeout used during a lmtp transaction to a remote backend (e.g. in a
+murder environment).  Can be used to prevent hung lmtpds on proxy hosts
+when a backend server becomes unresponsive during a lmtp transaction.
+The default is 5 minutes - change to zero for infinite.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lock_debugtime:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>A floating point number of seconds.  If set, time how long we wait for
@@ -2335,10 +2393,13 @@ IMAP mailbox names.</div></blockquote>
 <blockquote>
 <div>The absolute path to the newsrc db file.  If not specified,
 will be configdirectory/fetchnews.db</div></blockquote>
-<p><code class="docutils literal"><span class="pre">nntptimeout:</span></code> 3</p>
+<p><code class="docutils literal"><span class="pre">nntptimeout:</span></code> 3m</p>
 <blockquote>
-<div>Set the length of the NNTP server&#8217;s inactivity autologout timer,
-in minutes.  The minimum value is 3, the default.</div></blockquote>
+<div><p>Set the length of the NNTP server&#8217;s inactivity autologout timer.
+The minimum value is 3 minutes, also the default.</p>
+<p>For backward compatibility, if no unit is specified, minutes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">notesmailbox:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The top level mailbox in each user&#8217;s account which is used to store
@@ -2422,29 +2483,39 @@ for which partitions usage data are cached.</div></blockquote>
 automatically excluded from selection mode.</p>
 <p>If all partitions are over that limit, this feature is not used anymore.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">plaintextloginpause:</span></code> 0</p>
+<p><code class="docutils literal"><span class="pre">plaintextloginpause:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>Number of seconds to pause after a successful plaintext login.  For
-systems that support strong authentication, this permits users to
-perceive a cost of using plaintext passwords.  (This does not
-affect the use of PLAIN in SASL authentications.)</div></blockquote>
+<div><p>Time to pause after a successful plaintext login.  For systems that
+support strong authentication, this permits users to perceive a cost
+of using plaintext passwords.  (This does not affect the use of PLAIN
+in SASL authentications.)</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">plaintextloginalert:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Message to send to client after a successful plaintext login.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">popexpiretime:</span></code> -1</p>
 <blockquote>
-<div>The number of days advertised as being the minimum a message may be
+<div><p>The duration advertised as being the minimum a message may be
 left on the POP server before it is deleted (via the CAPA command,
 defined in the POP3 Extension Mechanism, which some clients may
-support).  &#8220;NEVER&#8221;, the default, may be specified with a negative
-number.  The Cyrus POP3 server never deletes mail, no matter what
-the value of this parameter is.  However, if a site implements a
-less liberal policy, it needs to change this parameter
-accordingly.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">popminpoll:</span></code> 0</p>
+support).  This duration has a granularity of whole days, with partial
+days truncated (so e.g. &#8220;45m&#8221; is effectively &#8220;0d&#8221;).  &#8220;NEVER&#8221;, the
+default, may be specified with a negative number.</p>
+<p>The Cyrus POP3 server never deletes mail, no matter what the value of
+this parameter is.  However, if a site implements a less liberal policy,
+it needs to change this parameter accordingly.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">popminpoll:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>Set the minimum amount of time the server forces users to wait
-between successive POP logins, in minutes.</div></blockquote>
+<div><p>Set the minimum amount of time the server forces users to wait
+between successive POP logins.</p>
+<p>For backward compatibility, if no unit is specified, minutes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">popsubfolders:</span></code> 0</p>
 <blockquote>
 <div>Allow access to subfolders of INBOX via POP3 by using
@@ -2464,10 +2535,13 @@ will not be able to check mail again until a slot is cleared.  If the
 user waits a sufficient amount of time, they will get back many or all
 of the slots.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">poptimeout:</span></code> 10</p>
+<p><code class="docutils literal"><span class="pre">poptimeout:</span></code> 10m</p>
 <blockquote>
-<div>Set the length of the POP server&#8217;s inactivity autologout timer,
-in minutes.  The minimum value is 10, the default.</div></blockquote>
+<div><p>Set the length of the POP server&#8217;s inactivity autologout timer.
+The minimum value is 10 minutes, the default.</p>
+<p>For backward compatibility, if no unit is specified, minutes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">popuseacl:</span></code> 0</p>
 <blockquote>
 <div>Enforce IMAP ACLs in the pop server.  Due to the nature of the POP3
@@ -2506,10 +2580,13 @@ used.</div></blockquote>
 <div><p>Authentication level required to fetch Prometheus metrics.</p>
 <p>Allowed values: <em>none</em>, <em>user</em>, <em>admin</em></p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">prometheus_update_freq:</span></code> 10</p>
+<p><code class="docutils literal"><span class="pre">prometheus_update_freq:</span></code> 10s</p>
 <blockquote>
-<div>Frequency in seconds at which promstatsd should re-collate its
-statistics report.  The minimum value is 1, the default is 10.</div></blockquote>
+<div><p>Frequency in at which promstatsd should re-collate its statistics
+report.  The minimum value is 1 second, the default is 10 seconds.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">prometheus_stats_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Directory to use for gathering prometheus statistics.  If specified,
@@ -2573,10 +2650,13 @@ DO NOT SET on frontends or things won&#8217;t work properly.</div></blockquote>
 <blockquote>
 <div>The absolute path to the ptscache db file.  If not specified,
 will be configdirectory/ptscache.db</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ptscache_timeout:</span></code> 10800</p>
+<p><code class="docutils literal"><span class="pre">ptscache_timeout:</span></code> 3h</p>
 <blockquote>
-<div>The timeout (in seconds) for the PTS cache database when using the
-auth_krb_pts authorization method (default: 3 hours).</div></blockquote>
+<div><p>The timeout for the PTS cache database when using the auth_krb_pts
+authorization method (default: 3 hours).</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">ptskrb5_convert524:</span></code> 1</p>
 <blockquote>
 <div>When using the AFSKRB ptloader module with Kerberos 5 canonicalization,
@@ -2676,12 +2756,14 @@ URL on the server.</div></blockquote>
 treated as RSS feeds.  Only mailboxes matching the wildmat will
 have their messages available via RSS.  If not set, a default
 wildmat of &#8220;*&#8221; (ALL mailboxes) will be used.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">rss_maxage:</span></code> 0</p>
+<p><code class="docutils literal"><span class="pre">rss_maxage:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>Maximum age (in days) of items to display in an RSS channel.  If
-non-zero, httpd will only display items received within the last
-<em>rss_maxage</em> days.  If set to 0, all available items will be
-displayed (the default).</div></blockquote>
+<div><p>Maximum age of items to display in an RSS channel.  If non-zero,
+httpd will only display items received within this time period.
+If set to 0, all available items will be displayed (the default).</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rss_maxitems:</span></code> 0</p>
 <blockquote>
 <div>Maximum number of items to display in an RSS channel.  If non-zero,
@@ -2927,10 +3009,12 @@ namespace.  The hierarchy delimiter will be automatically appended.</div></block
 <div>If enabled, timsieved will issue referrals to clients when the
 user&#8217;s scripts reside on a remote server (in a Murder).
 Otherwise, timsieved will proxy traffic to the remote server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve_duplicate_max_expiration:</span></code> 7776000 /* 90 days */</p>
+<p><code class="docutils literal"><span class="pre">sieve_duplicate_max_expiration:</span></code> 90d</p>
 <blockquote>
-<div>Maximum expiration time (in seconds) for duplicate message tracking
-records.</div></blockquote>
+<div><p>Maximum expiration time for duplicate message tracking records.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sieve_extensions:</span></code> fileinto reject vacation vacation-seconds imapflags notify include envelope environment body relational regex subaddress copy date index imap4flags mailbox mboxmetadata servermetadata variables editheader extlists duplicate ihave fcc special-use redirect-dsn redirect-deliverby mailboxid x-cyrus-log x-cyrus-jmapquery</p>
 <blockquote>
 <div>Space-separated list of Sieve extensions allowed to be used in
@@ -2961,14 +3045,21 @@ SASL authentication, per draft-martin-managesieve-12.txt .</div></blockquote>
 <blockquote>
 <div>Enabled by default.  If reject can be done via LMTP, then return a 550
 rather than generating the bounce message in Cyrus.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve_vacation_min_response:</span></code> 259200 /* 3 days */</p>
+<p><code class="docutils literal"><span class="pre">sieve_vacation_min_response:</span></code> 3d</p>
 <blockquote>
-<div>Minimum time interval (in seconds) between consecutive vacation responses,
-per draft-ietf-vacation-seconds.txt .</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve_vacation_max_response:</span></code> 7776000 /* 90 days */</p>
+<div><p>Minimum time interval between consecutive vacation responses, per
+draft-ietf-vacation-seconds.txt.  The default is 3 days.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">sieve_vacation_max_response:</span></code> 90d</p>
 <blockquote>
-<div>Maximum time interval (in seconds) between consecutive vacation responses,
-per draft-ietf-vacation-seconds.txt .</div></blockquote>
+<div><p>Maximum time interval between consecutive vacation responses, per
+draft-ietf-vacation-seconds.txt.  The default is 90 days.  The
+minimum is 7 days.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sievedir:</span></code> /usr/sieve</p>
 <blockquote>
 <div>If sieveusehomedir is false, this directory is searched for Sieve
@@ -3200,21 +3291,28 @@ will default to &#8220;csync&#8221; (usually port 2005).</div></blockquote>
 <blockquote>
 <div>The authentication realm to use when authenticating to a sync server.
 Prefix with a channel name to only apply for that channel</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sync_repeat_interval:</span></code> 1</p>
+<p><code class="docutils literal"><span class="pre">sync_repeat_interval:</span></code> 1s</p>
 <blockquote>
-<div>Minimum interval (in seconds) between replication runs in rolling
-replication mode. If a replication run takes longer than this
-time, we repeat immediately.
-Prefix with a channel name to only apply for that channel</div></blockquote>
+<div><p>Minimum interval between replication runs in rolling replication
+mode. If a replication run takes longer than this time, we repeat
+immediately.  Prefix with a channel name to only apply for that
+channel.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sync_shutdown_file:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Simple latch used to tell sync_client(8) that it should shut down at the
 next opportunity. Safer than sending signals to running processes.
 Prefix with a channel name to only apply for that channel</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sync_timeout:</span></code> 1800</p>
+<p><code class="docutils literal"><span class="pre">sync_timeout:</span></code> 30m</p>
 <blockquote>
-<div>Number of seconds to wait for a response before returning a timeout
-failure when talking to a replication peer (client or server).</div></blockquote>
+<div><p>How long to wait for a response before returning a timeout failure
+when talking to a replication peer (client or server).  The minimum
+duration is 3 seconds, the default is 30 minutes.</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sync_try_imap:</span></code> 1</p>
 <blockquote>
 <div>Whether sync_client should try to perform an IMAP connection
@@ -3238,34 +3336,45 @@ through to LOCAL7</div></blockquote>
 connection dead (0 == system default)</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tcp_keepalive_idle:</span></code> 0</p>
 <blockquote>
-<div>Number of seconds a connection must be idle before keepalive
-probes are sent (0 == system default)</div></blockquote>
+<div><p>How long a connection must be idle before keepalive probes are sent
+(0 == system default).</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tcp_keepalive_intvl:</span></code> 0</p>
 <blockquote>
-<div>Number of seconds between keepalive probes (0 == system default)</div></blockquote>
+<div><p>Time between keepalive probes (0 == system default).</p>
+<p>For backward compatibility, if no unit is specified, seconds is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">temp_path:</span></code> /tmp</p>
 <blockquote>
 <div>The pathname to store temporary files in</div></blockquote>
 <p><code class="docutils literal"><span class="pre">telemetry_bysessionid:</span></code> 0</p>
 <blockquote>
 <div>If true, log by sessionid instead of PID for telemetry</div></blockquote>
-<p><code class="docutils literal"><span class="pre">timeout:</span></code> 32</p>
+<p><code class="docutils literal"><span class="pre">timeout:</span></code> 32m</p>
 <blockquote>
-<div>The length of the IMAP server&#8217;s inactivity autologout timer,
-in minutes.  The minimum value is 30.  The default is 32 to
-allow a bit of leeway for clients that try to NOOP every 30
-minutes.</div></blockquote>
+<div><p>The length of the IMAP server&#8217;s inactivity autologout timer.
+The minimum value is 30 minutes.  The default is 32 minutes,
+to allow a bit of leeway for clients that try to NOOP every
+30 minutes.</p>
+<p>For backward compatibility, if no unit is specified, minutes
+is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">zoneinfo_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The directory where timezones generated by the Cyrus IMAPd vzic
 command are located. If not specified, timezones are looked up
 in the CYRUS_TIMEZONES_ZONEINFO_DIR path as defined during the
 Cyrus build.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">imapidletimeout:</span></code> 0</p>
+<p><code class="docutils literal"><span class="pre">imapidletimeout:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>Timeout for idling clients (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>) in minutes. If set to
-zero (the default) or less, the value of &#8220;timeout&#8221; will be
-used instead.</div></blockquote>
+<div><p>Timeout for idling clients (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
+the value of &#8220;timeout&#8221; will be used instead.</p>
+<p>For backward compatibility, if no unit is specified, minutes
+is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_ca_file:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Deprecated in favor of <em>tls_client_ca_file</em>.</div></blockquote>
@@ -3361,11 +3470,14 @@ tls_server_cert.</div></blockquote>
 <blockquote>
 <div>The absolute path to the TLS sessions db file. If not specified,
 will be configdirectory/tls_sessions.db</div></blockquote>
-<p><code class="docutils literal"><span class="pre">tls_session_timeout:</span></code> 1440</p>
+<p><code class="docutils literal"><span class="pre">tls_session_timeout:</span></code> 24h</p>
 <blockquote>
-<div>The length of time (in minutes) that a TLS session will be cached
-for later reuse.  The maximum value is 1440 (24 hours), the
-default.  A value of 0 will disable session caching.</div></blockquote>
+<div><p>The length of time that a TLS session will be cached for later
+reuse.  The maximum value is 24 hours, also the default.  A
+value of 0 will disable session caching.</p>
+<p>For backward compatibility, if no unit is specified, minutes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_versions:</span></code> tls1_0 tls1_1 tls1_2 tls1_3</p>
 <blockquote>
 <div>A list of SSL/TLS versions to not disable. Cyrus IMAP SSL/TLS starts
@@ -3493,10 +3605,10 @@ by the OpenIO&#8217;s SDK to locate its platform entry point.</div></blockquote>
 <div>The OpenIO account used to account for stored emails. Accounts are unique
 in their namespace. They provides virtual partitions, with quotas and QoS
 features.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">openio_rawx_timeout:</span></code> 30</p>
+<p><code class="docutils literal"><span class="pre">openio_rawx_timeout:</span></code> 30s</p>
 <blockquote>
 <div>The OpenIO timeout to query to the RAWX services (default 30 sec).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">openio_proxy_timeout:</span></code> 5</p>
+<p><code class="docutils literal"><span class="pre">openio_proxy_timeout:</span></code> 5s</p>
 <blockquote>
 <div>The OpenIO timeout to query to the PROXY services (default 5 sec).</div></blockquote>
 <p><code class="docutils literal"><span class="pre">openio_autocreate:</span></code> 0</p>
