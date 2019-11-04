@@ -5196,7 +5196,7 @@ FIELD DESCRIPTIONS
     ``tls_server_ca_dir:`` <none>
 
         Path to a directory with CA certificates used to verify certificates
-        offered when this server connects to other servers. This directory must
+        offered by the server, when cyrus acts as client. This directory must
         have filenames with the hashed value of the certificates (see
         openssl(1)). 
 
@@ -5207,7 +5207,7 @@ FIELD DESCRIPTIONS
     ``tls_server_ca_file:`` <none>
 
         Path to a file containing CA certificates used to verify certificates
-        offered when this server connects to other servers. 
+        offered by the server, when cyrus acts as client. 
 
     .. endblob tls_server_ca_file
 
@@ -5215,7 +5215,7 @@ FIELD DESCRIPTIONS
 
     ``tls_server_cert:`` <none>
 
-        File containing the certificate presented to clients. 
+        File containing the certificate, including the full chain, presented to clients. 
 
 
     .. endblob tls_server_cert

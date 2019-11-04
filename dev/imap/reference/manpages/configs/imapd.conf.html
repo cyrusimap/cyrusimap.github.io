@@ -3447,16 +3447,16 @@ prior to ANY authentication mechanisms being advertised or allowed.</div></block
 <p><code class="docutils literal"><span class="pre">tls_server_ca_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Path to a directory with CA certificates used to verify certificates
-offered when this server connects to other servers. This directory must
+offered by the server, when cyrus acts as client. This directory must
 have filenames with the hashed value of the certificates (see
 openssl(1)).</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_ca_file:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Path to a file containing CA certificates used to verify certificates
-offered when this server connects to other servers.</div></blockquote>
+offered by the server, when cyrus acts as client.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_cert:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>File containing the certificate presented to clients.</div></blockquote>
+<div>File containing the certificate, including the full chain, presented to clients.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_dhparam:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>File containing the DH parameters belonging to the certificate in
