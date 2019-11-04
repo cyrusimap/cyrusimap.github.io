@@ -3325,7 +3325,14 @@ sync_client will only use csync.  Prefix with a channel name to
 apply only for that channel</div></blockquote>
 <p><code class="docutils literal"><span class="pre">syslog_prefix:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>String to be prepended to the process name in syslog entries.</div></blockquote>
+<div><p>String to be prepended to the process name in syslog entries. Can
+be further overridden by setting the $CYRUS_SYSLOG_PREFIX environment
+variable.</p>
+<p>Using the $CYRUS_SYSLOG_PREFIX environment variable has the additional
+advantage that it can be set before the <strong>imapd.conf</strong> is read, so
+errors while reading the config file can be syslogged with the correct
+prefix.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">syslog_facility:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Configure a syslog facility.  The default is whatever is compiled
