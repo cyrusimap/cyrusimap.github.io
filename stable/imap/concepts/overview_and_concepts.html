@@ -1308,7 +1308,7 @@ mailbox directory contains the following files:</p>
 <dt><code class="docutils literal"><span class="pre">cyrus.index</span></code></dt>
 <dd>This file contains fixed-length information about the mailbox itself and each message in the mailbox.</dd>
 <dt><code class="docutils literal"><span class="pre">cyrus.cache</span></code></dt>
-<dd>This file contans variable-length information about each message in the mailbox.</dd>
+<dd>This file contains variable-length information about each message in the mailbox.</dd>
 <dt><code class="docutils literal"><span class="pre">cyrus.seen</span></code></dt>
 <dd>This file contains variable-length state information about each reader of the mailbox who has <code class="docutils literal"><span class="pre">s</span></code> permissions.</dd>
 </dl>
@@ -1426,7 +1426,7 @@ IMAP server doesn&#8217;t need to maintain a queue of messages or run an
 MTA.</p>
 <p>The Cyrus server implements LMTP via the <code class="docutils literal"><span class="pre">lmtpd</span></code> daemon.  LMTP
 can either be used over a network via TCP or local via a UNIX domain
-socket. There are security differnces between these two alternatives; read
+socket. There are security differences between these two alternatives; read
 more below.</p>
 <p>For final delivery via LMTP over a TCP socket, it is necessary to use
 LMTP AUTH.  This is accomplished using SASL to authenticate the delivering
@@ -1454,7 +1454,7 @@ recipients of the message.</p>
 <div class="section" id="duplicate-delivery-suppression">
 <h3>Duplicate Delivery Suppression<a class="headerlink" href="#duplicate-delivery-suppression" title="Permalink to this headline">¶</a></h3>
 <p>A message is considered a duplicate if two copies of a message with
-the same message-id and the same envelope receipient are received.
+the same message-id and the same envelope recipient are received.
 Cyrus uses the duplicate delivery database to hold this information,
 and it looks approximately 3 days back in the default install.</p>
 <p>Duplicate delivery suppression can be turned off by using the
@@ -1491,7 +1491,7 @@ servers to allow for horizontal scalability.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 11 2017
+        &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

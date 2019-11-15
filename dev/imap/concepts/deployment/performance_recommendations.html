@@ -392,6 +392,7 @@
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.9. Performance Recommendations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#databases-on-temporary-filesystems">4.4.9.1. Databases on Temporary Filesystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#certificates">4.4.9.2. Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="storage.html">4.4.10. Storage Considerations</a><ul>
@@ -803,6 +804,10 @@
 <p class="last">Cyrus IMAP requires the parent directories to exist, and be writeable by the POSIX user account Cyrus IMAP runs under, prior to starting the <code class="docutils literal"><span class="pre">master</span></code> process.</p>
 </div>
 </div>
+<div class="section" id="certificates">
+<h2>4.4.9.2. Certificates<a class="headerlink" href="#certificates" title="Permalink to this headline">¶</a></h2>
+<p>Cyrus IMAP can be configured to provide as server two kind of certificates: EC and RSA.  The EC certificates are only sent to the client, if the client supports them.  EC certificates have the advantage of requiring less computational resources compared to RSA, while offering comparatively the same security.</p>
+</div>
 </div>
 
 
@@ -823,7 +828,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 26 2016
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 26 2019
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

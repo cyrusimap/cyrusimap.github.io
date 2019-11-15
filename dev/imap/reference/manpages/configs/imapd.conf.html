@@ -392,6 +392,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../concepts/deployment/performance_recommendations.html">4.4.9. Performance Recommendations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/performance_recommendations.html#databases-on-temporary-filesystems">4.4.9.1. Databases on Temporary Filesystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/performance_recommendations.html#certificates">4.4.9.2. Certificates</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../concepts/deployment/storage.html">4.4.10. Storage Considerations</a><ul>
@@ -3463,7 +3464,9 @@ openssl(1)).</div></blockquote>
 offered by the server, when cyrus acts as client.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_cert:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>File containing the certificate, including the full chain, presented to clients.</div></blockquote>
+<div>File containing the certificate, including the full chain, presented to clients.
+Two certificates can be set, e.g RSA and EC, if the filenames are separated with
+comma without spaces.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_dhparam:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>File containing the DH parameters belonging to the certificate in
@@ -3471,7 +3474,9 @@ tls_server_cert.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_server_key:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>File containing the private key belonging to the certificate in
-tls_server_cert.</div></blockquote>
+tls_server_cert.  If not set, tls_server_cert must contain both private and
+public key.  Two files with keys can be set, if two certifates are used, in
+which case the files must be separated with comma without spaces</div></blockquote>
 <p><code class="docutils literal"><span class="pre">tls_sessions_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for the TLS cache.</p>
