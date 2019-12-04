@@ -1,7 +1,7 @@
 :tocdepth: 3
 
 ==========================
-Cyrus IMAP 3.1.7 Tag Notes
+Cyrus IMAP 3.1.8 Tag Notes
 ==========================
 
 Unavailable for download as this is a development branch only.
@@ -15,7 +15,7 @@ Access is via git.
     snapshots at coherent development points, but there will generally be **large
     breaking changes** occurring between releases in this series.
 
-.. _relnotes-3.1.7-changes:
+.. _relnotes-3.1.8-changes:
 
 Major changes since the 3.0.x series
 ====================================
@@ -23,6 +23,9 @@ Major changes since the 3.0.x series
 * Sieve bug fixes and features.
 * Caldav and Carddav improvements.
 * Support for JMAP.
+.. XXX explicate these properly, not just "JMAP"
+.. * Support for JMAP Core and Email standards
+.. * Experimental support for JMAP Calendar, Contacts, ... extensions
 * Xapian bug fixes.
 * Improvements to Annotations handling.
 * DRAC support has been deprecated.
@@ -47,6 +50,15 @@ Major changes since the 3.0.x series
 * All Cyrus binaries now use real sysexits exit codes instead of mapping
   nearly everything to EX_TEMPFAIL
 * CyrusDB errors now syslog the actual error instead of just "cyrusdb error"
+* New `allowdeleted` :cyrusman:`imapd.conf(5)` option (default off), which
+  allows admin users to see deleted mailboxes and expunged messages over IMAP
+* :cyrusman:`cyr_virusscan(8)` now supports custom templates for notifications
+  sent about infected messages that have been deleted
+* :cyrusman:`imapd.conf(5)` options that represent a time duration now accept
+  'd', 'h', 'm', 's' suffixes rather than arbitrary units.
+* The `tls_server_cert` and `tls_server_key` :cyrusman:`imapd.conf(5)` options
+  now allow two certificate/key pairs (e.g. RSA and EC) to be used.  Thanks
+  Дилян Палаузов
 
 
 Updates to default configuration
@@ -63,6 +75,7 @@ Updates to default configuration
 Security fixes
 ==============
 * Contains fix for `CVE-2017-14230 <http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14230>`_
+* Contains fix for `CVE-2019-18928 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18928>`_
 
 Significant bugfixes
 ====================
