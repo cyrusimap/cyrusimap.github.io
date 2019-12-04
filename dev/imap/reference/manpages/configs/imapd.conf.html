@@ -1891,9 +1891,10 @@ JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:core">urn:i
 <div>The value (in kilobytes) to return for the maxSizeAttachmentsPerEmail
 property of the JMAP &#8220;<a class="reference external" href="urn:ietf:params:jmap:mail">urn:ietf:params:jmap:mail</a>&#8221; capabilities object. The Cyrus
 JMAP implementation does not enforce this size limit. Default is 10 Mb.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_nonstandard_extensions:</span></code> 1</p>
+<p><code class="docutils literal"><span class="pre">jmap_nonstandard_extensions:</span></code> 0</p>
 <blockquote>
-<div>If enabled (the default) support non-standard JMAP extensions</div></blockquote>
+<div>If enabled, support non-standard JMAP extensions.  If not enabled,
+only standard JMAP functionality is supported.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_set_has_attachment:</span></code> 1</p>
 <blockquote>
 <div>If enabled, the $hasAttachment flag is determined and set for new messages
