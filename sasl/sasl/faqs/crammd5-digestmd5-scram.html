@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RFCs and drafts &mdash; Cyrus SASL 2.1.27 documentation</title>
+  <title>Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd? &mdash; Cyrus SASL 2.1.27 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Cyrus SASL 2.1.27 documentation" href="../../index.html"/>
         <link rel="up" title="Frequently Asked Questions" href="../faq.html"/>
-        <link rel="next" title="Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?" href="upgrade-saslv2.html"/>
-        <link rel="prev" title="Why does CyrusSasl store plaintext passwords in its databases?" href="plaintextpasswords.html"/> 
+        <link rel="next" title="How do I configure OpenLDAP +SASL+GSSAPI?" href="openldap-sasl-gssapi.html"/>
+        <link rel="prev" title="What is the difference between an Authorization ID and a Authentication ID?" href="authorize-vs-authenticate.html"/> 
 
   
   
@@ -353,10 +353,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rfcs.html">RFCs and drafts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
@@ -479,11 +479,11 @@
       
           <li><a href="../faq.html">Frequently Asked Questions</a> &raquo;</li>
       
-    <li>RFCs and drafts</li>
+    <li>Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-sasl/blob/master/docsrc/sasl/faqs/rfcs.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-sasl/blob/master/docsrc/sasl/faqs/crammd5-digestmd5-scram.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -492,31 +492,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="rfcs-and-drafts">
-<span id="faq-rfcs"></span><h1>RFCs and drafts<a class="headerlink" href="#rfcs-and-drafts" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1939.html#page-15"><strong>RFC 1939#page-15</strong></a> - Post Office Protocol - Version 3 (APOP/sasl_checkapop)</li>
-<li><span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2222.html#section-7.1"><strong>RFC 2222#section-7.1</strong></a> - Simple Authentication and Security Layer (SASL) (KERBEROS_V4)</li>
-<li><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2444.html"><strong>RFC 2444</strong></a> - The One-Time-Password SASL Mechanism (OTP)</li>
-<li><span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2808.html"><strong>RFC 2808</strong></a> - The SecurID(r) SASL Mechanism</li>
-<li><span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2831.html"><strong>RFC 2831</strong></a> - Using Digest Authentication as a SASL Mechanism (historic: <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6331.html"><strong>RFC 6331</strong></a>)</li>
-<li><span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a> - Simple Authentication and Security Layer (SASL)</li>
-<li><span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4505.html"><strong>RFC 4505</strong></a> - Anonymous Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a> - The PLAIN Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4752.html"><strong>RFC 4752</strong></a> - The Kerberos V5 (&#8220;GSSAPI&#8221;) Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4846.html#section-4"><strong>RFC 4846#section-4</strong></a> - Base64 Data Encoding</li>
-<li><span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a> - Using Generic Security Service Application Program Interface (GSS-API) Mechanisms in SASL: The GS2 Mechanism Family</li>
-<li><span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a> - Salted Challenge Response Authentication Mechanism (SCRAM) SASL and GSS-API Mechanisms</li>
-<li><span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5929.html"><strong>RFC 5929</strong></a> - Channel Bindings for TLS</li>
-<li><span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7613.html"><strong>RFC 7613</strong></a> - Preparation, Enforcement, and Comparison of Internationalized Strings Representing Usernames and Passwords</li>
-<li><span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a> - SCRAM-SHA-256 and SCRAM-SHA-256-PLUS: Simple Authentication and Security Layer (SASL) Mechanisms</li>
-<li><span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7804.html"><strong>RFC 7804</strong></a> - Salted Challenge Response HTTP Authentication Mechanism</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-burdis-cat-srp-sasl-08">draft-burdis-cat-srp-sasl</a> - Secure Remote Password SASL Mechanism (SRP)</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5">draft-ietf-sasl-crammd5</a> - The CRAM-MD5 SASL Mechanism (CRAM-MD5)</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-murchison-sasl-login">draft-murchison-sasl-login</a> - The LOGIN SASL Mechanism</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-c-api">draft-newman-sasl-c-api</a> - The SASL C API</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-passdss">draft-newman-sasl-passdss</a> - DSS Secured Password Authentication Mechanism (PASSDSS)</li>
-</ul>
+  <div class="section" id="why-do-cram-md5-digest-md5-and-scram-not-work-with-cyrussaslauthd">
+<h1>Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?<a class="headerlink" href="#why-do-cram-md5-digest-md5-and-scram-not-work-with-cyrussaslauthd" title="Permalink to this headline">¶</a></h1>
+<p>Saslauthd is only capable of verifying plaintext passwords (it takes a
+plaintext password and a username and responds with &#8220;yes&#8221; or &#8220;no&#8221;,
+essentially). Therefore, since the plaintext password isn&#8217;t passed from
+client to server in SCRAM, DIGEST-MD5 and CRAM-MD5, Saslauthd can&#8217;t verify the
+password.</p>
+<p>Authentication in a CyrusSaslauthd-only environment will not only fail
+with these mechanisms, it doesn&#8217;t really make a lot of sense. You&#8217;ll
+want to use an AuxpropPlugin instead (for example, sasldb).</p>
 </div>
 
 
@@ -525,10 +510,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="upgrade-saslv2.html" class="btn btn-neutral float-right" title="Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openldap-sasl-gssapi.html" class="btn btn-neutral float-right" title="How do I configure OpenLDAP +SASL+GSSAPI?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plaintextpasswords.html" class="btn btn-neutral" title="Why does CyrusSasl store plaintext passwords in its databases?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="authorize-vs-authenticate.html" class="btn btn-neutral" title="What is the difference between an Authorization ID and a Authentication ID?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

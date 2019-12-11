@@ -351,7 +351,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sasl/faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sasl/faqs/crammd5-digestmd5.html">Why do CRAM-MD5 and DIGEST-MD5 not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sasl/faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/rfcs.html">RFCs and drafts</a></li>
@@ -1041,7 +1041,7 @@
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-13">RFC 1939#page-15</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-0">RFC 1939#page-15</a>
   </dt>
 
         
@@ -1049,11 +1049,11 @@
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-12">RFC 2222#section-7.1</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-1">RFC 2222#section-7.1</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-8">RFC 2444</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-2">RFC 2444</a>
   </dt>
 
         
@@ -1061,47 +1061,59 @@
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-9">RFC 2808</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-3">RFC 2808</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-10">RFC 2831</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-4">RFC 2831</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-0">RFC 4422</a>, <a href="sasl/reference/manpages/library/sasl_auxprop.html#index-0">[1]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#index-0">[2]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#index-0">[3]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_request.html#index-0">[4]</a>, <a href="sasl/reference/manpages/library/sasl_callbacks.html#index-0">[5]</a>, <a href="sasl/reference/manpages/library/sasl_canon_user_t.html#index-0">[6]</a>, <a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#index-0">[7]</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-1">[8]</a>, <a href="sasl/reference/manpages/library/sasl_checkpass.html#index-0">[9]</a>, <a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#index-0">[10]</a>, <a href="sasl/reference/manpages/library/sasl_client_done.html#index-0">[11]</a>, <a href="sasl/reference/manpages/library/sasl_client_init.html#index-0">[12]</a>, <a href="sasl/reference/manpages/library/sasl_client_new.html#index-0">[13]</a>, <a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#index-0">[14]</a>, <a href="sasl/reference/manpages/library/sasl_client_start.html#index-0">[15]</a>, <a href="sasl/reference/manpages/library/sasl_client_step.html#index-0">[16]</a>, <a href="sasl/reference/manpages/library/sasl_decode.html#index-0">[17]</a>, <a href="sasl/reference/manpages/library/sasl_decode64.html#index-0">[18]</a>, <a href="sasl/reference/manpages/library/sasl_dispose.html#index-0">[19]</a>, <a href="sasl/reference/manpages/library/sasl_done.html#index-0">[20]</a>, <a href="sasl/reference/manpages/library/sasl_encode.html#index-0">[21]</a>, <a href="sasl/reference/manpages/library/sasl_encode64.html#index-0">[22]</a>, <a href="sasl/reference/manpages/library/sasl_encodev.html#index-0">[23]</a>, <a href="sasl/reference/manpages/library/sasl_errdetail.html#index-0">[24]</a>, <a href="sasl/reference/manpages/library/sasl_errors.html#index-0">[25]</a>, <a href="sasl/reference/manpages/library/sasl_errstring.html#index-1">[26]</a>, <a href="sasl/reference/manpages/library/sasl_getcallback_t.html#index-0">[27]</a>, <a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#index-0">[28]</a>, <a href="sasl/reference/manpages/library/sasl_getopt_t.html#index-0">[29]</a>, <a href="sasl/reference/manpages/library/sasl_getpath_t.html#index-0">[30]</a>, <a href="sasl/reference/manpages/library/sasl_getprop.html#index-0">[31]</a>, <a href="sasl/reference/manpages/library/sasl_getrealm_t.html#index-0">[32]</a>, <a href="sasl/reference/manpages/library/sasl_getsecret_t.html#index-0">[33]</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-1">[34]</a>, <a href="sasl/reference/manpages/library/sasl_global_listmech.html#index-0">[35]</a>, <a href="sasl/reference/manpages/library/sasl_idle.html#index-0">[36]</a>, <a href="sasl/reference/manpages/library/sasl_listmech.html#index-0">[37]</a>, <a href="sasl/reference/manpages/library/sasl_log_t.html#index-0">[38]</a>, <a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#index-0">[39]</a>, <a href="sasl/reference/manpages/library/sasl_server_done.html#index-0">[40]</a>, <a href="sasl/reference/manpages/library/sasl_server_init.html#index-0">[41]</a>, <a href="sasl/reference/manpages/library/sasl_server_new.html#index-0">[42]</a>, <a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#index-0">[43]</a>, <a href="sasl/reference/manpages/library/sasl_server_start.html#index-0">[44]</a>, <a href="sasl/reference/manpages/library/sasl_server_step.html#index-0">[45]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#index-0">[46]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#index-0">[47]</a>, <a href="sasl/reference/manpages/library/sasl_setpass.html#index-0">[48]</a>, <a href="sasl/reference/manpages/library/sasl_setprop.html#index-0">[49]</a>, <a href="sasl/reference/manpages/library/sasl_user_exists.html#index-0">[50]</a>, <a href="sasl/reference/manpages/library/sasl_usererr.html#index-0">[51]</a>, <a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#index-0">[52]</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-6">RFC 4422</a>, <a href="sasl/reference/manpages/library/sasl_auxprop.html#index-0">[1]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#index-0">[2]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#index-0">[3]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_request.html#index-0">[4]</a>, <a href="sasl/reference/manpages/library/sasl_callbacks.html#index-0">[5]</a>, <a href="sasl/reference/manpages/library/sasl_canon_user_t.html#index-0">[6]</a>, <a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#index-0">[7]</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-1">[8]</a>, <a href="sasl/reference/manpages/library/sasl_checkpass.html#index-0">[9]</a>, <a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#index-0">[10]</a>, <a href="sasl/reference/manpages/library/sasl_client_done.html#index-0">[11]</a>, <a href="sasl/reference/manpages/library/sasl_client_init.html#index-0">[12]</a>, <a href="sasl/reference/manpages/library/sasl_client_new.html#index-0">[13]</a>, <a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#index-0">[14]</a>, <a href="sasl/reference/manpages/library/sasl_client_start.html#index-0">[15]</a>, <a href="sasl/reference/manpages/library/sasl_client_step.html#index-0">[16]</a>, <a href="sasl/reference/manpages/library/sasl_decode.html#index-0">[17]</a>, <a href="sasl/reference/manpages/library/sasl_decode64.html#index-0">[18]</a>, <a href="sasl/reference/manpages/library/sasl_dispose.html#index-0">[19]</a>, <a href="sasl/reference/manpages/library/sasl_done.html#index-0">[20]</a>, <a href="sasl/reference/manpages/library/sasl_encode.html#index-0">[21]</a>, <a href="sasl/reference/manpages/library/sasl_encode64.html#index-0">[22]</a>, <a href="sasl/reference/manpages/library/sasl_encodev.html#index-0">[23]</a>, <a href="sasl/reference/manpages/library/sasl_errdetail.html#index-0">[24]</a>, <a href="sasl/reference/manpages/library/sasl_errors.html#index-0">[25]</a>, <a href="sasl/reference/manpages/library/sasl_errstring.html#index-1">[26]</a>, <a href="sasl/reference/manpages/library/sasl_getcallback_t.html#index-0">[27]</a>, <a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#index-0">[28]</a>, <a href="sasl/reference/manpages/library/sasl_getopt_t.html#index-0">[29]</a>, <a href="sasl/reference/manpages/library/sasl_getpath_t.html#index-0">[30]</a>, <a href="sasl/reference/manpages/library/sasl_getprop.html#index-0">[31]</a>, <a href="sasl/reference/manpages/library/sasl_getrealm_t.html#index-0">[32]</a>, <a href="sasl/reference/manpages/library/sasl_getsecret_t.html#index-0">[33]</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-1">[34]</a>, <a href="sasl/reference/manpages/library/sasl_global_listmech.html#index-0">[35]</a>, <a href="sasl/reference/manpages/library/sasl_idle.html#index-0">[36]</a>, <a href="sasl/reference/manpages/library/sasl_listmech.html#index-0">[37]</a>, <a href="sasl/reference/manpages/library/sasl_log_t.html#index-0">[38]</a>, <a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#index-0">[39]</a>, <a href="sasl/reference/manpages/library/sasl_server_done.html#index-0">[40]</a>, <a href="sasl/reference/manpages/library/sasl_server_init.html#index-0">[41]</a>, <a href="sasl/reference/manpages/library/sasl_server_new.html#index-0">[42]</a>, <a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#index-0">[43]</a>, <a href="sasl/reference/manpages/library/sasl_server_start.html#index-0">[44]</a>, <a href="sasl/reference/manpages/library/sasl_server_step.html#index-0">[45]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#index-0">[46]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#index-0">[47]</a>, <a href="sasl/reference/manpages/library/sasl_setpass.html#index-0">[48]</a>, <a href="sasl/reference/manpages/library/sasl_setprop.html#index-0">[49]</a>, <a href="sasl/reference/manpages/library/sasl_user_exists.html#index-0">[50]</a>, <a href="sasl/reference/manpages/library/sasl_usererr.html#index-0">[51]</a>, <a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#index-0">[52]</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-3">RFC 4505</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-7">RFC 4505</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-4">RFC 4616</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-8">RFC 4616</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-5">RFC 4752</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-9">RFC 4752</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-2">RFC 4846#section-4</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-10">RFC 4846#section-4</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-6">RFC 5801</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-11">RFC 5801</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-7">RFC 5802</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-12">RFC 5802</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-11">RFC 6331</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-13">RFC 5929</a>
   </dt>
 
         
-  <dt><a href="sasl/faqs/rfcs.html#index-1">RFC 7613</a>
+  <dt><a href="sasl/faqs/rfcs.html#index-5">RFC 6331</a>
+  </dt>
+
+        
+  <dt><a href="sasl/faqs/rfcs.html#index-14">RFC 7613</a>
+  </dt>
+
+        
+  <dt><a href="sasl/faqs/rfcs.html#index-15">RFC 7677</a>
+  </dt>
+
+        
+  <dt><a href="sasl/faqs/rfcs.html#index-16">RFC 7804</a>
   </dt>
 
       </dl></dd>
