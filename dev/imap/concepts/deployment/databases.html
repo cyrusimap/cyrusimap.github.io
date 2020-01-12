@@ -906,7 +906,7 @@ Cyrus to automatically convert the file to the new format.</p>
 </div>
 <div class="section" id="user-access-user-deny-db">
 <span id="imap-concepts-deployment-db-userdeny"></span><h3>4.4.5.2.8. User Access (user_deny.db)<a class="headerlink" href="#user-access-user-deny-db" title="Permalink to this headline">¶</a></h3>
-<p>This database contains a list of users that are denied access to Cyrus services. The database is indexed by userid and each data record contains the database version number (currently 2), a list of wildmat patterns specifying Cyrus services to be denied, and a text message to be displayed to the user upon denial. The service names to be matched are those as used in cyrus.conf(5). The format of each record is as follows:</p>
+<p>This database contains a list of users that are denied access to Cyrus services. The database is indexed by userid and each data record contains the database version number (currently 2), a list of <a class="reference external" href="https://tools.ietf.org/html/rfc3977#section-4">wildmat</a> patterns specifying Cyrus services to be denied, and a text message to be displayed to the user upon denial. The service names to be matched are those as used in <a class="reference internal" href="../../reference/manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>. The format of each record is as follows:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Key</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Userid</span><span class="o">&gt;</span>
 
 <span class="n">Data</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Version</span><span class="o">&gt;</span><span class="n">TAB</span><span class="o">&lt;</span><span class="n">Deny</span> <span class="n">List</span> <span class="p">(</span><span class="n">comma</span><span class="o">-</span><span class="n">separated</span> <span class="n">wildmat</span> <span class="n">patterns</span><span class="p">)</span><span class="o">&gt;</span><span class="n">TAB</span><span class="o">&lt;</span><span class="n">Deny</span> <span class="n">Message</span><span class="o">&gt;</span>
@@ -1117,7 +1117,7 @@ virtually no lock contention.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 08 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 10 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

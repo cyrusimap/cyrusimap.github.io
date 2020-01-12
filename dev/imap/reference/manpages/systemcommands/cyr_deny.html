@@ -803,7 +803,8 @@
 The first synopsis denies user <em>user</em> access to Cyrus services, the
 second synopsis allows access again.  <strong>cyr_deny</strong> works by adding an
 entry to the Cyrus <code class="docutils literal"><span class="pre">user_deny.db</span></code> database; the third synopsis lists
-the entries in the database.</p>
+the entries in the database.  The service names to be matched are those
+as used in <a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</p>
 <p><strong>cyr_deny</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
@@ -879,7 +880,7 @@ being denied.  A default message is used if none is specified.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 10 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
