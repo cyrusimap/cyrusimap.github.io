@@ -639,9 +639,7 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">6.4. Cyrus.Works</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#about-cyrus-works">6.4.1. About Cyrus Works</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#testing">6.4.2. Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-it-works">6.4.3. How it works</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-rules">6.4.4. Adding Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">6.4.2. How it works</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../developers.html#cyrus-internals">6.5. Cyrus Internals</a><ul>
@@ -788,41 +786,19 @@
 <h1>6.4. Cyrus Works<a class="headerlink" href="#cyrus-works" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="about-cyrus-works">
 <h2>6.4.1. About Cyrus Works<a class="headerlink" href="#about-cyrus-works" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://cyrus.works">Cyrus Works</a> is a domain redirection to the Cyrus
+IMAP project&#8217;s Travis CI dashboard.</p>
 <p>Whenever the Cyrus team push changes to
-<a class="reference external" href="https://github.com/cyrusimap/">the project repository</a>, a notification is
-sent to <a class="reference external" href="https://jenkins.io/">Jenkins</a> (open source automation server).
-Our Jenkins server is called Cyrus Works and can be found at
-<a class="reference external" href="https://www.cyrus.works">https://www.cyrus.works</a>.</p>
-</div>
-<div class="section" id="testing">
-<h2>6.4.2. Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
-<p>Once a week Cyrus.Works builds a complete image, fetching all upstream packages.</p>
-<p>Interim builds during the week use the cached weekly image and apply the latest
-Cyrus IMAP code changes from Git.</p>
-<p>Email notifications of build results are sent to the development team.</p>
-<p>Cyrus.works will fail is certain strings are found in the log files.  To view results and filter errors/warnings view:
-<a class="reference external" href="https://cyrus.works/job/master-jessie/lastFailedBuild/parsed_console/">https://cyrus.works/job/master-jessie/lastFailedBuild/parsed_console/</a></p>
+<a class="reference external" href="https://github.com/cyrusimap/">the project repository</a>, Travis CI
+(via github integration) automatically builds the new commits.  This also
+applies to pull requests submitted through the GitHub site.</p>
 </div>
 <div class="section" id="how-it-works">
-<h2>6.4.3. How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<h2>6.4.2. How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/cyrusimap/cassandane">Cassandane</a>, the Cyrus IMAP test
 framework gets pulled in to the
 <a class="reference external" href="https://github.com/cyrusimap/cyrus-docker">Docker Container</a>, confirms
 existing functionality still works and no regression bugs have been introduced.</p>
-<p>You can find out more about Cyrus.Works in the <a class="reference external" href="https://blog.fastmail.com/2016/12/14/cyrus-works/">FastMail 2016 advent series blog post</a>.</p>
-<p>The code used to build Cyrus.works is available <a class="reference external" href="https://github.com/cyrusimap/cyrusworks">https://github.com/cyrusimap/cyrusworks</a>.</p>
-</div>
-<div class="section" id="adding-rules">
-<h2>6.4.4. Adding Rules<a class="headerlink" href="#adding-rules" title="Permalink to this headline">¶</a></h2>
-<p>Instructions on how to add rules:
-<a class="reference external" href="https://wiki.jenkins.io/display/JENKINS/Log+Parser+Plugin">https://wiki.jenkins.io/display/JENKINS/Log+Parser+Plugin</a></p>
-<p>The rules for Cyrus Works are stored within git: <a class="reference external" href="https://github.com/cyrusimap/cyrusworks/blob/master/Scripts/cyrusworksrules">https://github.com/cyrusimap/cyrusworks/blob/master/Scripts/cyrusworksrules</a></p>
-<p>You need to add rules to two places:</p>
-<ol class="arabic simple">
-<li><strong>Git</strong>: so when cyrus.works is reinstalled those rules are not lost</li>
-</ol>
-<p>2. <strong>The server</strong>: so they’re actually used. Changed pushed to git aren’t pushed to the server. This is for security reasons (we don’t want anyone on the internet to be able to push changes to a live server).
-<code class="docutils literal"><span class="pre">root&#64;cyrus.works:/cyrusworks/source/Scripts/cyrusworksrules</span></code></p>
 </div>
 </div>
 
@@ -844,7 +820,7 @@ existing functionality still works and no regression bugs have been introduced.<
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Nov 14 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 15 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
