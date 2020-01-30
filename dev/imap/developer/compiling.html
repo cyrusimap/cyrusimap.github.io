@@ -639,9 +639,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cyrusworks.html">6.4. Cyrus.Works</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cyrusworks.html#about-cyrus-works">6.4.1. About Cyrus Works</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cyrusworks.html#testing">6.4.2. Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cyrusworks.html#how-it-works">6.4.3. How it works</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cyrusworks.html#adding-rules">6.4.4. Adding Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cyrusworks.html#how-it-works">6.4.2. How it works</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../developers.html#cyrus-internals">6.5. Cyrus Internals</a><ul>
@@ -1049,8 +1047,8 @@ it as the backend for its databases.</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="caldav-and-or-carddav">
-<h4>4.1.1.2.4. CalDAV and/or CardDAV<a class="headerlink" href="#caldav-and-or-carddav" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="caldav-carddav-or-jmap">
+<h4>4.1.1.2.4. CalDAV, CardDAV, or JMAP<a class="headerlink" href="#caldav-carddav-or-jmap" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="20%" />
@@ -1072,16 +1070,13 @@ it as the backend for its databases.</p>
 <td>libical-dev</td>
 <td>libical-devel</td>
 <td>no</td>
-<td>libical &gt;= 0.48 required for scheduling support.
-<strong>Note:</strong> Linux distributions Enterprise Linux 6 and Debian Squeeze are
-known to ship outdated <strong>libical</strong> packages versions 0.43 and
-0.44 respectively. The platforms will not support scheduling.</td>
+<td>version 3.0.0 or higher</td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="http://xmlsoft.org/">libxml</a></td>
 <td>libxml2-dev</td>
 <td>libxml2-devel</td>
-<td>&nbsp;</td>
 <td>no</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -1236,10 +1231,10 @@ problems.</p>
 <p>Some features are disabled by default and must be explicitly enabled
 via configure.</p>
 <p>Sieve is enabled by default.</p>
-<div class="section" id="caldav-and-carddav">
-<h4>4.1.2.2.1. CalDAV and CardDAV<a class="headerlink" href="#caldav-and-carddav" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="caldav-carddav-jmap">
+<h4>4.1.2.2.1. CalDAV, CardDAV, JMAP<a class="headerlink" href="#caldav-carddav-jmap" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div><code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-calalarmd</span></code></div></blockquote>
+<div><code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-calalarmd</span> <span class="pre">--enable-jmap</span></code></div></blockquote>
 </div>
 <div class="section" id="murder">
 <h4>4.1.2.2.2. Murder<a class="headerlink" href="#murder" title="Permalink to this headline">¶</a></h4>
@@ -1311,7 +1306,7 @@ version, operating system and affected libraries.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 27 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 20 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
