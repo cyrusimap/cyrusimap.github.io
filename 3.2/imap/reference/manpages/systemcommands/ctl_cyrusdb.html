@@ -819,6 +819,11 @@ the associated mailbox files).</p>
 <p>All mailbox files are also checked to make sure the file format
 matches the configured database type in imapd.conf.  If not, the
 file is automatically converted using the same logic as cvt_cyrusdb.</p>
+<p>If the <code class="docutils literal"><span class="pre">reverseacls</span></code> option in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> is enabled,
+and the RACL entries do not exist in the database, they will be
+generated.  Conversely, if RACL entries do exist in the database,
+but the <code class="docutils literal"><span class="pre">reverseacls</span></code> option is disabled, then the entries will be
+cleaned up.</p>
 </dd></dl>
 
 <dl class="option">
@@ -900,7 +905,7 @@ the <strong>START</strong> section of <a class="reference internal" href="../con
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 17 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
