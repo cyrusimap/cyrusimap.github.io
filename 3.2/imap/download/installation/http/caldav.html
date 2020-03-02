@@ -1134,9 +1134,9 @@ will be configdirectory/zoneinfo.db</div></blockquote>
 <blockquote class="last">
 <div><p><code class="docutils literal"><span class="pre">zoneinfo_db:</span></code> twoskip</p>
 <blockquote>
-<div><p>The cyrusdb backend to use for zoneinfo.</p>
-<p>Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
-</div></blockquote>
+<div>The cyrusdb backend to use for zoneinfo.  This database is used by the
+&#8220;tzdist&#8221; <em>http_modules</em>, and is managed by <strong>ctl_zoneinfo(8)</strong>.
+Allowed values: <em>flat</em>, <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></div></blockquote>
 </div></blockquote>
 </div>
 <p>This module stores time zone data in the <code class="docutils literal"><span class="pre">zoneinfo/</span></code> subdirectory of the Cyrus
