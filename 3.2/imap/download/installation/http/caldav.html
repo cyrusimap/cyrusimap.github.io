@@ -1104,7 +1104,7 @@ their query results.</p>
 <h2>Time Zone Distribution Service (TZDist)<a class="headerlink" href="#time-zone-distribution-service-tzdist" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-is-tzdist">
 <h3>What is TZDist<a class="headerlink" href="#what-is-tzdist" title="Permalink to this headline">¶</a></h3>
-<p>The Time Zone module allows Cyrus to function as a Time Zone Distribution
+<p>The TZDist module allows Cyrus to function as a Time Zone Distribution
 Service (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7808.html"><strong>RFC 7808</strong></a> and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7809.html"><strong>RFC 7809</strong></a>), providing time zone data for CalDAV
 and calendaring clients, without having to wait for their client vendor and/or
 OS vendor to update the timezone information. The responsibility for keeping
@@ -1152,7 +1152,7 @@ be specified.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
-<p>This module requires the <code class="docutils literal"><span class="pre">zoneinfo_dir</span></code> setting in <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
+<p>The TZDist module requires the <code class="docutils literal"><span class="pre">zoneinfo_dir</span></code> setting in <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
 to be set to the directory where your time zone data is stored.</p>
 <p>The data is indexed by a database whose location is specified by the
 <code class="docutils literal"><span class="pre">zoneinfo_db_path</span></code> option, using the format specified by the <code class="docutils literal"><span class="pre">zoneinfo_db</span></code>
@@ -1160,8 +1160,8 @@ option.</p>
 </div>
 <div class="section" id="id3">
 <h3>Administration<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>This module is designed to use the IANA Time Zone Database data (a.k.a. Olson
-Database) converted to the iCalendar format.</p>
+<p>The TZDist module is designed to use the IANA Time Zone Database data (a.k.a.
+Olson Database) converted to the iCalendar format.</p>
 <p>We provide a modified <a class="reference external" href="https://github.com/libical/vzic">vzic</a> to convert IANA
 formatted data into iCalendar format, in the <a class="reference external" href="https://github.com/cyrusimap/cyrus-timezones">cyrus-timezones package</a> to make the following steps
 easier.</p>
@@ -1269,7 +1269,7 @@ or corruption.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 13 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 16 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
