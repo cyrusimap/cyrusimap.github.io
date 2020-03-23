@@ -1425,7 +1425,19 @@ assumed.</p>
 <p><code class="docutils literal"><span class="pre">conversations_max_thread:</span></code> 100</p>
 <blockquote>
 <div>maximum size for a single thread.  Threads will split if they have this many
-* messages in them and another message arrives</div></blockquote>
+messages in them and another message arrives</div></blockquote>
+<p><code class="docutils literal"><span class="pre">conversations_max_guidrecords:</span></code> 5000</p>
+<blockquote>
+<div>maximum records with the same guid.  This is just a sanity check to stop the same
+email being added and removed over and over, so the default is 5000</div></blockquote>
+<p><code class="docutils literal"><span class="pre">conversations_max_guidexists:</span></code> 100</p>
+<blockquote>
+<div>maximum records with the same guid.  This maps to &#8220;labels&#8221;, so with the default
+of 100, you can only have 100 labels on an email in JMAP</div></blockquote>
+<p><code class="docutils literal"><span class="pre">conversations_max_guidinfolder:</span></code> 10</p>
+<blockquote>
+<div>maximum records with the same guid in the same folder. You can&#8217;t do this via JMAP,
+but could via IMAP.  The default of 10 should be heaps normally!</div></blockquote>
 <p><code class="docutils literal"><span class="pre">crossdomains:</span></code> 0</p>
 <blockquote>
 <div>Enable cross domain sharing.  This works best with alt namespace and
@@ -2706,6 +2718,11 @@ Allowed values: <em>cs0</em>, <em>cs1</em>, <em>cs2</em>, <em>cs3</em>, <em>cs4<
 <div>The absolute path for the quota database (if you choose a single-file
 quota DB type - or the base path if you choose quotalegacy).  If
 not specified will be configdirectory/quotas.db or configdirectory/quota/</div></blockquote>
+<p><code class="docutils literal"><span class="pre">quota_use_conversations:</span></code> 0</p>
+<blockquote>
+<div>If conversations it enabled and quotaroot is a user folder, use the
+conversations quota counts, which count multiple copies of exactly the
+same message (by GUID) as only one</div></blockquote>
 <p><code class="docutils literal"><span class="pre">quotawarn:</span></code> 90</p>
 <blockquote>
 <div>The percent of quota utilization over which the server generates

@@ -1190,9 +1190,36 @@ FIELD DESCRIPTIONS
     ``conversations_max_thread:`` 100
 
         maximum size for a single thread.  Threads will split if they have this many
-        \* messages in them and another message arrives 
+        messages in them and another message arrives 
 
     .. endblob conversations_max_thread
+
+    .. startblob conversations_max_guidrecords
+
+    ``conversations_max_guidrecords:`` 5000
+
+        maximum records with the same guid.  This is just a sanity check to stop the same
+        email being added and removed over and over, so the default is 5000 
+
+    .. endblob conversations_max_guidrecords
+
+    .. startblob conversations_max_guidexists
+
+    ``conversations_max_guidexists:`` 100
+
+        maximum records with the same guid.  This maps to "labels", so with the default
+        of 100, you can only have 100 labels on an email in JMAP 
+
+    .. endblob conversations_max_guidexists
+
+    .. startblob conversations_max_guidinfolder
+
+    ``conversations_max_guidinfolder:`` 10
+
+        maximum records with the same guid in the same folder. You can't do this via JMAP,
+        but could via IMAP.  The default of 10 should be heaps normally! 
+
+    .. endblob conversations_max_guidinfolder
 
     .. startblob crossdomains
 
@@ -3711,6 +3738,16 @@ FIELD DESCRIPTIONS
         not specified will be configdirectory/quotas.db or configdirectory/quota/ 
 
     .. endblob quota_db_path
+
+    .. startblob quota_use_conversations
+
+    ``quota_use_conversations:`` 0
+
+        If conversations it enabled and quotaroot is a user folder, use the
+        conversations quota counts, which count multiple copies of exactly the
+        same message (by GUID) as only one 
+
+    .. endblob quota_use_conversations
 
     .. startblob quotawarn
 
