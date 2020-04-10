@@ -1185,6 +1185,15 @@ FIELD DESCRIPTIONS
 
     .. endblob conversations_expire_after
 
+    .. startblob conversations_keep_existing
+
+    ``conversations_keep_existing:`` 0
+
+        during conversations cleanup, don't clean up if there are still existing emails
+        with one of the mentioned CIDs 
+
+    .. endblob conversations_keep_existing
+
     .. startblob conversations_max_thread
 
     ``conversations_max_thread:`` 100
