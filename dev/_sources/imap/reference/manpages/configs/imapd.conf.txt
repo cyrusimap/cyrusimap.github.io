@@ -2850,6 +2850,42 @@ FIELD DESCRIPTIONS
 
     .. endblob mailbox_initial_flags
 
+    .. startblob mailbox_maxmessages_addressbook
+
+    ``mailbox_maxmessages_addressbook:`` 0
+
+        Limit the number of messages that may exist in a single mailbox of
+        "addressbook" type. Default (0) means no limit.  This limit applies
+        after quotas are checked, so if you have both quota limits and this
+        set, then you will be denied if you are either over quota or over
+        this per-mailbox count. 
+
+    .. endblob mailbox_maxmessages_addressbook
+
+    .. startblob mailbox_maxmessages_calendar
+
+    ``mailbox_maxmessages_calendar:`` 0
+
+        Limit the number of messages that may exist in a single mailbox of
+        "calendar" type. Default (0) means no limit.  This limit applies
+        after quotas are checked, so if you have both quota limits and this
+        set, then you will be denied if you are either over quota or over
+        this per-mailbox count. 
+
+    .. endblob mailbox_maxmessages_calendar
+
+    .. startblob mailbox_maxmessages_email
+
+    ``mailbox_maxmessages_email:`` 0
+
+        Limit the number of messages that may exist in a single mailbox of
+        "email" (normal) type. Default (0) means no limit.  This limit applies
+        after quotas are checked, so if you have both quota limits and this
+        set, then you will be denied if you are either over quota or over
+        this per-mailbox count. 
+
+    .. endblob mailbox_maxmessages_email
+
     .. startblob mailnotifier
 
     ``mailnotifier:`` <none>

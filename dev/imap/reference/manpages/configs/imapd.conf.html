@@ -2231,6 +2231,27 @@ newly created mailbox.  If you know you will require particular
 flag names then this avoids a possible race condition against a client
 that fills the entire 128 available slots.  Default is NULL, which is
 no flags.  Example: $Label1 $Label2 $Label3 NotSpam Spam</div></blockquote>
+<p><code class="docutils literal"><span class="pre">mailbox_maxmessages_addressbook:</span></code> 0</p>
+<blockquote>
+<div>Limit the number of messages that may exist in a single mailbox of
+&#8220;addressbook&#8221; type. Default (0) means no limit.  This limit applies
+after quotas are checked, so if you have both quota limits and this
+set, then you will be denied if you are either over quota or over
+this per-mailbox count.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">mailbox_maxmessages_calendar:</span></code> 0</p>
+<blockquote>
+<div>Limit the number of messages that may exist in a single mailbox of
+&#8220;calendar&#8221; type. Default (0) means no limit.  This limit applies
+after quotas are checked, so if you have both quota limits and this
+set, then you will be denied if you are either over quota or over
+this per-mailbox count.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">mailbox_maxmessages_email:</span></code> 0</p>
+<blockquote>
+<div>Limit the number of messages that may exist in a single mailbox of
+&#8220;email&#8221; (normal) type. Default (0) means no limit.  This limit applies
+after quotas are checked, so if you have both quota limits and this
+set, then you will be denied if you are either over quota or over
+this per-mailbox count.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mailnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Notifyd(8) method to use for &#8220;MAIL&#8221; notifications.  If not set, &#8220;MAIL&#8221;
