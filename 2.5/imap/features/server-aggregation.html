@@ -868,7 +868,7 @@ require no server-side processing).</p>
 <p>In the case of IMAP, a commonly used IMAP proxy is NGINX. However,
 NGINX can proxy John&#8217;s connection to only one backend at a time. NGINX
 allows an external script to respond with a target backend address
-based on the authentication of the user <a class="footnote-reference" href="#id4" id="id1">[1]</a>.</p>
+based on the authentication of the user <a class="footnote-reference" href="#id8" id="id1">[1]</a>.</p>
 <p>As such, NGINX is a socket proxy, and not a fully-featured
 application proxy:</p>
 <img src="../../_images/graphviz-f12ccd5576f4a7badda9d85dc1a114f5b529a013.png" alt="digraph joe {
@@ -888,9 +888,9 @@ application proxy:</p>
     }" />
 <p>This means that John could not open a mailbox that does not reside on
 the same backend node his client connection is proxied to, and John nor
-Jane can share their mailboxes with one another <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
+Jane can share their mailboxes with one another <a class="footnote-reference" href="#id9" id="id2">[2]</a>.</p>
 <p>For the proxy to be fully-featured, the proxy would need to catch all
-IMAP commands that John&#8217;s client issues <a class="footnote-reference" href="#id6" id="id3">[3]</a>, and determine what is the
+IMAP commands that John&#8217;s client issues <a class="footnote-reference" href="#id10" id="id3">[3]</a>, and determine what is the
 most appropriate backend to serve the request &#8211; not unlike the
 aforementioned web proxies.</p>
 <p>So, when John&#8217;s client issues a <code class="docutils literal"><span class="pre">SELECT</span> <span class="pre">INBOX</span></code>, the connection is to
@@ -986,7 +986,7 @@ separate systems;</p>
 </ul>
 <p>Each of the systems communicates with one another via the following
 connection model:</p>
-<div class="figure" id="id7">
+<div class="figure" id="id11">
 <img src="../../_images/graphviz-50bd36f10190feceeb7910097ed7f398ee462fcf.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
@@ -1002,7 +1002,7 @@ connection model:</p>
 
         &quot;f+&quot; -&gt; &quot;b+&quot;;
     }" />
-<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p class="first">A frontend (f) connects to the mupdate (m) master server and
@@ -1019,7 +1019,7 @@ to the mupdate server.</p>
 </ol>
 <div class="section" id="murder-backend-startup-process">
 <h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this headline">¶</a></h4>
-<div class="figure" id="id8">
+<div class="figure" id="id12">
 <img src="../../_images/graphviz-8b1ee81495109dc486349f8684f91ced86ce6bb1.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
@@ -1035,9 +1035,9 @@ to the mupdate server.</p>
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
     }" />
-<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure" id="id9">
+<div class="figure" id="id13">
 <img src="../../_images/graphviz-c8eaf7af6ed0d03027ca9a0c855710e4c71deb13.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
@@ -1054,7 +1054,7 @@ to the mupdate server.</p>
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
     }" />
-<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p class="first">The backend (b) pushes its list of mailboxes to the mupdate master
@@ -1107,7 +1107,7 @@ mailboxes to the frontend (f) server.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">Cyrus IMAP documentation is a work in progress. The completion of
 this particular part of the documentation is pending the resolution
-of <a class="reference external" href="https://git.cyrus.foundation/T72">Task #72</a>.</p>
+of <a href="#id4"><span class="problematic" id="id5">:task:`72`</span></a>.</p>
 </div>
 </div>
 <div class="section" id="unified-murder">
@@ -1116,24 +1116,24 @@ of <a class="reference external" href="https://git.cyrus.foundation/T72">Task #7
 <p class="first admonition-title">Note</p>
 <p class="last">Cyrus IMAP documentation is a work in progress. The completion of
 this particular part of the documentation is pending the resolution
-of <a class="reference external" href="https://git.cyrus.foundation/T71">Task #71</a>.</p>
+of <a href="#id6"><span class="problematic" id="id7">:task:`71`</span></a>.</p>
 </div>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">IMAP Features</span></a></p>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>See also: <a class="reference internal" href="../admin/nginx-proxy.html#imap-howto-nginx-proxy"><span class="std std-ref">HOWTO: Using an NGINX IMAP Proxy</span></a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>More literally speaking, John and Jane can <em>share</em>, just neither can
 make use of the privilege.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Including but not limited to <code class="docutils literal"><span class="pre">SELECT</span></code>, <code class="docutils literal"><span class="pre">UID</span> <span class="pre">MOVE</span></code>, <code class="docutils literal"><span class="pre">RENAME</span></code>,

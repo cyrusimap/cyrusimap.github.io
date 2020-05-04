@@ -809,7 +809,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Cyrus IMAP documentation is a work in progress. The completion of
 this particular part of the documentation is pending the resolution
-of <a class="reference external" href="https://git.cyrus.foundation/T43">Task #43</a>.</p>
+of <a href="#id1"><span class="problematic" id="id2">:task:`43`</span></a>.</p>
 </div>
 <p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a> standardizes the emission of message store event
 notifications, and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5465.html"><strong>RFC 5465</strong></a> outlines the IMAP NOTIFY extensions.</p>
@@ -1632,10 +1632,10 @@ the quota root.</p>
 <div class="section" id="quotawithin">
 <span id="imap-features-event-notifications-quotawithin"></span><h3>QuotaWithin<a class="headerlink" href="#quotawithin" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event typically follows a
-<a class="reference internal" href="#imap-features-event-notifications-mailboxdelete"><span class="std std-ref">MailboxDelete</span></a> <a class="footnote-reference" href="#id5" id="id1">[1]</a>,
-<a class="reference internal" href="#imap-features-event-notifications-messageexpunge"><span class="std std-ref">MessageExpunge</span></a> <a class="footnote-reference" href="#id6" id="id2">[2]</a>,
-<a class="reference internal" href="#imap-features-event-notifications-messagemove"><span class="std std-ref">MessageMove</span></a> <a class="footnote-reference" href="#id7" id="id3">[3]</a>, or
-<a class="reference internal" href="#imap-features-event-notifications-quotachange"><span class="std std-ref">QuotaChange</span></a> <a class="footnote-reference" href="#id8" id="id4">[4]</a>.</p>
+<a class="reference internal" href="#imap-features-event-notifications-mailboxdelete"><span class="std std-ref">MailboxDelete</span></a> <a class="footnote-reference" href="#id7" id="id3">[1]</a>,
+<a class="reference internal" href="#imap-features-event-notifications-messageexpunge"><span class="std std-ref">MessageExpunge</span></a> <a class="footnote-reference" href="#id8" id="id4">[2]</a>,
+<a class="reference internal" href="#imap-features-event-notifications-messagemove"><span class="std std-ref">MessageMove</span></a> <a class="footnote-reference" href="#id9" id="id5">[3]</a>, or
+<a class="reference internal" href="#imap-features-event-notifications-quotachange"><span class="std std-ref">QuotaChange</span></a> <a class="footnote-reference" href="#id10" id="id6">[4]</a>.</p>
 <div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1664,27 +1664,27 @@ the quota root.</p>
 </pre></div>
 </td></tr></table></div>
 <p class="rubric">Footnotes for QuotaWithin</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MailboxDelete</span></code> event if the
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MailboxDelete</span></code> event if the
 mailbox deleted resides inside a quota root, and lowers the
 resources used to below the existing quota thresholds.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MessageExpunge</span></code> event if the
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MessageExpunge</span></code> event if the
 messages purged reside inside a quota root, and amount to a number
 or size that lowers the amount of resources used to below the
 existing quota thresholds.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MessageMove</span></code> event if the
+<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">MessageMove</span></code> event if the
 source folder of the messages moved resides inside a quota root, and
 the target folder to which the messages have been moved does not
 reside within the same quota root, and the number or size of the
@@ -1693,10 +1693,10 @@ for the source folder of the messages to below the existing
 quota thresholds.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">QuotaChange</span></code> event if the quota
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td>A <code class="docutils literal"><span class="pre">QuotaWithin</span></code> event follows a <code class="docutils literal"><span class="pre">QuotaChange</span></code> event if the quota
 change raised the threshold on the amount of resources used within
 the quota root to a level higher than the existing amount of
 resources used.</td></tr>

@@ -827,17 +827,17 @@ about the 2.5 series, including upgrading instructions.</p>
 <ul class="simple">
 <li>Fixed: allow SYNC_CRC to be optional, making upgrades easier in future</li>
 <li>Fixed: XFER deletes source mailbox less aggressively, avoiding data loss under pathological conditions</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T163">Task #163</a>: XFER no longer bails out on header CRC mismatch</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T117">Task #117</a>: now error out silently on non-TLS connections to services with implicit TLS</li>
+<li>Fixed <a href="#id1"><span class="problematic" id="id2">:task:`163`</span></a>: XFER no longer bails out on header CRC mismatch</li>
+<li>Fixed <a href="#id3"><span class="problematic" id="id4">:task:`117`</span></a>: now error out silently on non-TLS connections to services with implicit TLS</li>
 <li>Fixed reconstruct bug: upgrading mailbox format now adds GUIDs to shared folders (Thanks Norbert Warmuth)</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T165">Task #165</a>: xfer no longer fails due to bad version comparison</li>
+<li>Fixed <a href="#id5"><span class="problematic" id="id6">:task:`165`</span></a>: xfer no longer fails due to bad version comparison</li>
 <li>Fixed xfer bug: version 2.5 is now detected properly</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T109">Task #109</a>: XLIST behaviour is now compatible with Outlook 2013 (Thanks Leena Heino)</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T116">Task #116</a>: LIST now correctly handles domains starting with &#8220;inbox.&#8221;</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T120">Task #120</a>: admin users can now SETANNOTATION correctly</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T118">Task #118</a>: imapd no longer crashes when selected mailbox is listed</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T156">Task #156</a>: LMTP no longer incorrectly rejects messages delivered using &#8216;deliver&#8217;</li>
-<li>Fixed <a class="reference external" href="https://git.cyrus.foundation/T76">Task #76</a>: lmtpd no longer crashes when delivering to a shared mailbox (Thanks Leena Heino)</li>
+<li>Fixed <a href="#id7"><span class="problematic" id="id8">:task:`109`</span></a>: XLIST behaviour is now compatible with Outlook 2013 (Thanks Leena Heino)</li>
+<li>Fixed <a href="#id9"><span class="problematic" id="id10">:task:`116`</span></a>: LIST now correctly handles domains starting with &#8220;inbox.&#8221;</li>
+<li>Fixed <a href="#id11"><span class="problematic" id="id12">:task:`120`</span></a>: admin users can now SETANNOTATION correctly</li>
+<li>Fixed <a href="#id13"><span class="problematic" id="id14">:task:`118`</span></a>: imapd no longer crashes when selected mailbox is listed</li>
+<li>Fixed <a href="#id15"><span class="problematic" id="id16">:task:`156`</span></a>: LMTP no longer incorrectly rejects messages delivered using &#8216;deliver&#8217;</li>
+<li>Fixed <a href="#id17"><span class="problematic" id="id18">:task:`76`</span></a>: lmtpd no longer crashes when delivering to a shared mailbox (Thanks Leena Heino)</li>
 <li>Fixed quota bug: no longer crash when setting quotas on shared folder hierarchies</li>
 <li>Fixed compilation problem on Solaris 10 (Thanks Leena Heino)</li>
 <li>Fixed bug: QuotaChange event notification now always includes maxMessages parameter</li>
