@@ -969,7 +969,12 @@ of delayed recovery of storage space.</p>
 <a class="reference internal" href="../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
 </li>
 <li><p class="first">Set up a <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> file for it:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SERVICES</span> <span class="p">{</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="p">{</span>
+    <span class="c1"># this is required</span>
+    <span class="n">recover</span> <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;ctl_cyrusdb -r&quot;</span>
+<span class="p">}</span>
+
+<span class="n">SERVICES</span> <span class="p">{</span>
     <span class="c1"># backupd is probably the only service entry your backup server needs</span>
     <span class="n">backupd</span> <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;backupd&quot;</span> <span class="n">listen</span><span class="o">=</span><span class="s2">&quot;csync&quot;</span> <span class="n">prefork</span><span class="o">=</span><span class="mi">0</span>
 <span class="p">}</span>
@@ -1290,7 +1295,7 @@ messages.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 19 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 22 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
