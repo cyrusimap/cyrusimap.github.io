@@ -136,6 +136,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="release-notes/index.html#development-snapshots">Development snapshots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release-notes/3.3/index.html">Cyrus IMAP 3.3 Tags</a></li>
 <li class="toctree-l4"><a class="reference internal" href="release-notes/3.1/index.html">Cyrus IMAP 3.1 Tags</a></li>
 </ul>
 </li>
@@ -297,7 +298,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developer/compiling.html">Compiling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/compiling.html#setting-up-dependencies">Setting up dependencies</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/compiling.html#required-build-dependencies">Required Build Dependencies</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/compiling.html#optional-build-dependencies">Optional Build Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/compiling.html#build-dependencies-for-additional-functionality">Build dependencies for additional functionality</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/compiling.html#compile-cyrus">Compile Cyrus</a><ul>
@@ -984,15 +985,6 @@ storage, such as <code class="docutils literal"><span class="pre">/run/cyrus</sp
 or whatever suitable tmpfs is provided on your distro.  It will place
 less IO load on your disks and run faster.</p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Please be warned that some packages place tasks such as <code class="docutils literal"><span class="pre">tlsprune</span></code>
-(<a class="reference internal" href="../reference/manpages/systemcommands/tls_prune.html#std:cyrusman-tls_prune(8)">tls_prune(8)</a>) in the <code class="docutils literal"><span class="pre">START{}</span></code> stanza of
-<a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.  This will cause a startup problem if the
-<code class="docutils literal"><span class="pre">tls_sessions_db</span></code> is not present.  The solution to this is to
-remove the <code class="docutils literal"><span class="pre">tlsprune</span></code> task from <code class="docutils literal"><span class="pre">START{}</span></code> and schedule it in
-<code class="docutils literal"><span class="pre">EVENTS{}</span></code>, further down.</p>
-</div>
 </div>
 <div class="section" id="copy-config-files-and-update">
 <h2><a class="toc-backref" href="#id10">5. Copy config files and update</a><a class="headerlink" href="#copy-config-files-and-update" title="Permalink to this headline">¶</a></h2>
@@ -1027,11 +1019,6 @@ below.</p>
 <li>unixhierarchysep: on</li>
 <li>altnamespace: on</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If your installation is using groups, don&#8217;t turn <code class="docutils literal"><span class="pre">reverseacls:</span></code> on. Reverseacl support
-only works well for sites without groups.</p>
-</div>
 <p>In <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> move idled from the START section to the
 DAEMON section.</p>
 </div>
@@ -1132,7 +1119,7 @@ be rebuilt</li>
 <div class="section" id="do-you-want-any-new-features">
 <h2><a class="toc-backref" href="#id14">9. Do you want any new features?</a><a class="headerlink" href="#do-you-want-any-new-features" title="Permalink to this headline">¶</a></h2>
 <p>3.3 comes with many lovely new features. Consider which ones you want to enable.
-Check the <span class="xref std std-ref">3.3 release notes</span> for the full list.</p>
+Check the <a class="reference internal" href="release-notes/3.3/index.html#imap-release-notes-3-3"><span class="std std-ref">3.3 release notes</span></a> for the full list.</p>
 </div>
 <div class="section" id="upgrade-complete">
 <h2><a class="toc-backref" href="#id15">10. Upgrade complete</a><a class="headerlink" href="#upgrade-complete" title="Permalink to this headline">¶</a></h2>
@@ -1178,7 +1165,7 @@ downgrade mailbox versions in transit.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Apr 29 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 06 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
