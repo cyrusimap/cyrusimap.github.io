@@ -973,10 +973,25 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-squatter-p">
+<code class="descname">-p</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-p" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>When indexing, allow messages to be partially indexed. This may
+occur if attachment indexing is enabled but indexing failed for
+one or more attachment body parts. If this flag is set, the
+message is partially indexed and squatter continues. Otherwise
+squatter aborts with an error. Also see <strong>-P</strong>.
+Xapian only.
+This feature is only available on the master branch.</div></blockquote>
+<dl class="option">
 <dt id="cmdoption-squatter-P">
 <code class="descname">-P</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-P" title="Permalink to this definition">¶</a></dt>
-<dd><p>Missing documentation, reindex parts mode.
+<dd><p>When reindexing, then attempt to reindex any partially indexed
+messages (see <strong>-p</strong>). Setting this flag implies <strong>-Z</strong>.
+Xapian only.
 This feature is only available on the master branch.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="option">
@@ -1190,7 +1205,7 @@ Xapian documentation in this release before using Xapian.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 22 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
