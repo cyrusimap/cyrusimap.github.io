@@ -794,9 +794,8 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
 <strong>master</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> <em>alternate cyrus.conf</em> ]
-    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ] [ <strong>-P</strong> <em>snmp agentx ping interval</em> ]
+    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ]
     [ <strong>-j</strong> <em>janitor period</em> ] [ <strong>-d</strong> | <strong>-D</strong> ] [ <strong>-L</strong> <em>logfile</em> ]
-    [ <strong>-x</strong> <em>snmp agentx socket</em> ]
 </pre>
 </div>
 <div class="section" id="description">
@@ -850,14 +849,6 @@ entries).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-master-P">
-<code class="descname">-P</code><code class="descclassname">  snmp agentx ping interval</code><a class="headerlink" href="#cmdoption-master-P" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the amount on time in seconds the subagent will try and
-reconnect to the master agent (snmpd) if it ever becomes (or
-starts) disconnected.  Requires net-snmp 5.0 or higher.</p>
-</dd></dl>
-
-<dl class="option">
 <dt id="cmdoption-master-d">
 <code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-master-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start in daemon mode (run in background and disconnect from
@@ -876,13 +867,6 @@ Note that <strong>-d</strong> and <strong>-D</strong> cannot be used together; c
 <dt id="cmdoption-master-L">
 <code class="descname">-L</code><code class="descclassname">  logfile</code><a class="headerlink" href="#cmdoption-master-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Redirect stdout and stderr to the given <em>logfile</em>.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-master-x">
-<code class="descname">-x</code><code class="descclassname">  snmp agentx socket</code><a class="headerlink" href="#cmdoption-master-x" title="Permalink to this definition">¶</a></dt>
-<dd><p>Address the master agent (most likely snmpd) listens on.
-Requires net-snmp 5.0 or higher.</p>
 </dd></dl>
 
 </div>
@@ -946,7 +930,7 @@ Setting it higher results in more log messages being generated.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 12 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 19 2017
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
