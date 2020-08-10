@@ -841,9 +841,13 @@ without one there&#8217;s no benefit to enabling archiving.</div></blockquote>
 <p>And to control the criteria used to manage migration of data between
 partitions:</p>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">archive_days:</span></code> &lt;none&gt;</p>
+<div><p><code class="docutils literal"><span class="pre">archive_after:</span></code> 7d</p>
 <blockquote>
-<div>Deprecated in favour of <em>archive_after</em>.</div></blockquote>
+<div><p>The duration after which to move messages to the archive partition
+if archiving is enabled.</p>
+<p>For backward compatibility, if no unit is specified, days is
+assumed.</p>
+</div></blockquote>
 </div></blockquote>
 <blockquote>
 <div><p><code class="docutils literal"><span class="pre">archive_maxsize:</span></code> 1024</p>
@@ -904,7 +908,7 @@ via <code class="docutils literal"><span class="pre">cron</span></code>):</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Apr 13 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 10 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
