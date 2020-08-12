@@ -3097,7 +3097,7 @@ Otherwise, timsieved will proxy traffic to the remote server.</div></blockquote>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve_extensions:</span></code> fileinto reject vacation vacation-seconds notify include envelope environment body relational regex subaddress copy date index imap4flags mailbox mboxmetadata servermetadata variables editheader extlists duplicate ihave fcc special-use redirect-dsn redirect-deliverby mailboxid vnd.cyrus.log vnd.cyrus.jmapquery vnd.cyrus.snooze</p>
+<p><code class="docutils literal"><span class="pre">sieve_extensions:</span></code> fileinto reject vacation vacation-seconds notify include envelope environment body relational regex subaddress copy date index imap4flags mailbox mboxmetadata servermetadata variables editheader extlists duplicate ihave fcc special-use redirect-dsn redirect-deliverby mailboxid vnd.cyrus.log vnd.cyrus.jmapquery snooze</p>
 <blockquote>
 <div>Space-separated list of Sieve extensions allowed to be used in
 sieve scripts, enforced at submission by timsieved(8).  Any
@@ -3105,7 +3105,7 @@ previously installed script will be unaffected by this option and
 will continue to execute regardless of the extensions used.  This
 option has no effect on options that are disabled at compile time
 (e.g., &#8220;regex&#8221;).
-Allowed values: <em>fileinto</em>, <em>reject</em>, <em>vacation</em>, <em>vacation-seconds</em>, <em>notify</em>, <em>include</em>, <em>envelope</em>, <em>environment</em>, <em>body</em>, <em>relational</em>, <em>regex</em>, <em>subaddress</em>, <em>copy</em>, <em>date</em>, <em>index</em>, <em>imap4flags=imapflags</em>, <em>mailbox</em>, <em>mboxmetadata</em>, <em>servermetadata</em>, <em>variables</em>, <em>editheader</em>, <em>extlists</em>, <em>duplicate</em>, <em>ihave</em>, <em>fcc</em>, <em>special-use</em>, <em>redirect-dsn</em>, <em>redirect-deliverby</em>, <em>mailboxid</em>, <em>vnd.cyrus.log=x-cyrus-log</em>, <em>vnd.cyrus.jmapquery=x-cyrus-jmapquery</em>, <em>vnd.cyrus.snooze=x-cyrus-snooze</em></div></blockquote>
+Allowed values: <em>fileinto</em>, <em>reject</em>, <em>vacation</em>, <em>vacation-seconds</em>, <em>notify</em>, <em>include</em>, <em>envelope</em>, <em>environment</em>, <em>body</em>, <em>relational</em>, <em>regex</em>, <em>subaddress</em>, <em>copy</em>, <em>date</em>, <em>index</em>, <em>imap4flags=imapflags</em>, <em>mailbox</em>, <em>mboxmetadata</em>, <em>servermetadata</em>, <em>variables</em>, <em>editheader</em>, <em>extlists</em>, <em>duplicate</em>, <em>ihave</em>, <em>fcc</em>, <em>special-use</em>, <em>redirect-dsn</em>, <em>redirect-deliverby</em>, <em>mailboxid</em>, <em>vnd.cyrus.log=x-cyrus-log</em>, <em>vnd.cyrus.jmapquery=x-cyrus-jmapquery</em>, <em>snooze=vnd.cyrus.snooze=x-cyrus-snooze</em></div></blockquote>
 <p><code class="docutils literal"><span class="pre">sieve_maxscriptsize:</span></code> 32</p>
 <blockquote>
 <div>Maximum size (in kilobytes) any sieve script can be, enforced at
