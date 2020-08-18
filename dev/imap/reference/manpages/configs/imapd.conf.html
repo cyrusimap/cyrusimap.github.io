@@ -2183,6 +2183,12 @@ falling back to parent) to the specified mailbox name.</div></blockquote>
 <div>If enabled, lmtpd returns a permanent failure code when a user&#8217;s
 mailbox is over quota.  By default, the failure is temporary,
 causing the MTA to queue the message and retry later.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">lmtp_preparse:</span></code> 0</p>
+<blockquote>
+<div>If enabled, lmtpd will map in the email and parse the xapian data
+for jmapsearch.  The advantage is that the parsing is done without
+holding any locks.  The disadvantage is that the parsing is done
+even if it winds up not being needed.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_strict_quota:</span></code> 0</p>
 <blockquote>
 <div>If enabled, lmtpd returns a failure code when the incoming message
