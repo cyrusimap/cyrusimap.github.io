@@ -1207,7 +1207,16 @@ installing SSL certificates.</td>
 <td>It is used by
 <strong>cyr_virusscan</strong>, otherwise not needed.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="http://www.openldap.org/">openldap</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/CLD2Owners/cld2">CLD2</a></td>
+<td>libcld2-dev</td>
+<td>cld2-devel</td>
+<td>yes/no</td>
+<td>Compact Language Detector 2
+(probabilistically detects over 80 languages in Unicode UTF-8 text, either
+plain text or HTML/XML). Required for <strong>Xapian</strong> (<code class="docutils literal"><span class="pre">--enable-xapian</span></code>),
+otherwise not needed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="http://www.openldap.org/">openldap</a></td>
 <td>libldap2-dev</td>
 <td>openldap-devel</td>
 <td>no</td>
@@ -1216,7 +1225,7 @@ to enable <strong>ptloader</strong> to interface with LDAP directly, for canonif
 of login usernames to mailbox names, and verification of login usernames,
 ACL subjects and group membership. Configure option: <code class="docutils literal"><span class="pre">--with-ldap</span></code>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="http://www.pcre.org/">pcre</a></td>
+<tr class="row-odd"><td><a class="reference external" href="http://www.pcre.org/">pcre</a></td>
 <td>libpcre3-dev</td>
 <td>pcre-devel</td>
 <td>yes</td>
@@ -1224,13 +1233,13 @@ ACL subjects and group membership. Configure option: <code class="docutils liter
 regular expression matching. Could be replaced by something else in the
 future. See <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1731#issuecomment-273064554">issues/1731</a> for more information.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="https://metacpan.org/pod/Term::ReadLine">perl(Term::ReadLine)</a></td>
+<tr class="row-even"><td><a class="reference external" href="https://metacpan.org/pod/Term::ReadLine">perl(Term::ReadLine)</a></td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>no</td>
 <td>Perl library needed by <strong>cyradm</strong>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="https://www.libsrs2.org/">libsrs2</a></td>
+<tr class="row-odd"><td><a class="reference external" href="https://www.libsrs2.org/">libsrs2</a></td>
 <td><em>no package</em></td>
 <td><em>no package</em></td>
 <td>no</td>
@@ -1367,7 +1376,7 @@ version, operating system and affected libraries.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 08 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 23 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
