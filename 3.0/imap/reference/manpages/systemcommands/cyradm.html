@@ -806,34 +806,54 @@ available, cyradm will use it.</p>
 </div>
 <div class="section" id="command-line-arguments">
 <h2>COMMAND-LINE ARGUMENTS<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">--u</span></code>, <code class="docutils literal"><span class="pre">--user</span></code> <em>user</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--u</span></code>, <code class="docutils literal"><span class="pre">--user</span></code> <em>user</em></li>
+</ul>
 <blockquote>
 <div>Authenticate with the specified username.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--authz</span></code> <em>user</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--authz</span></code> <em>user</em></li>
+</ul>
 <blockquote>
 <div>Authorize the connection as being the specified username.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--norc</span></code>, <code class="docutils literal"><span class="pre">--rc</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--norc</span></code>, <code class="docutils literal"><span class="pre">--rc</span></code></li>
+</ul>
 <blockquote>
 <div>(Do not) load the configuration files.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--systemrc</span></code> <em>file</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--systemrc</span></code> <em>file</em></li>
+</ul>
 <blockquote>
 <div>Use the system configuration file specified.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--userrc</span></code> <em>file</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--userrc</span></code> <em>file</em></li>
+</ul>
 <blockquote>
 <div>Use the user configuration file specified.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--port</span></code> <em>port</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--port</span></code> <em>port</em></li>
+</ul>
 <blockquote>
 <div>Connect to the *server* specified on the port specified.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--auth</span></code> <em>mechanism</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--auth</span></code> <em>mechanism</em></li>
+</ul>
 <blockquote>
 <div>Use the mechanism specified to authenticate. One of PLAIN, LOGIN, DIGEST-MD5, etc.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--help</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--help</span></code></li>
+</ul>
 <blockquote>
 <div>Show a help message about these command-line options.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--version</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--version</span></code></li>
+</ul>
 <blockquote>
 <div>Display the version of Cyrus IMAP the current ``cyradm`` command is a part of.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">--server</span></code> <em>server</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--server</span></code> <em>server</em></li>
+</ul>
 <blockquote>
 <div>The server address to connect to.</div></blockquote>
 </div>
@@ -865,7 +885,9 @@ Optionally assign a special use to the mailbox.</p>
 their parent mailbox, except for top-level mailboxes such as the user&#8217;s
 INBOX. Mailboxes that are the user&#8217;s INBOX are assigned all to the
 corresponding user.</p>
-<p>Example Usage</p>
+<ul class="simple">
+<li>Example Usage</li>
+</ul>
 <blockquote>
 <div><div class="highlight-perl"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`cm user.john`</span>
 <span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
@@ -880,7 +902,9 @@ hierarchy separator, the <code class="docutils literal"><span class="pre">/</spa
 used as the hierarchy separator, and the example would look as
 follows:</p>
 </div></blockquote>
-<p>Example Usage with <code class="docutils literal"><span class="pre">unixhierarchysep:</span> <span class="pre">1</span></code></p>
+<ul class="simple">
+<li>Example Usage with <code class="docutils literal"><span class="pre">unixhierarchysep:</span> <span class="pre">1</span></code></li>
+</ul>
 <blockquote>
 <div><div class="highlight-perl"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`cm user/john`</span>
 <span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
@@ -890,7 +914,9 @@ follows:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Note</p>
+<ul class="simple">
+<li>Note</li>
+</ul>
 <blockquote>
 <div><p>The above examples use the unqualified, shorthand user
 identifier john as the mailbox name.</p>
@@ -983,32 +1009,46 @@ find the quota root for a mailbox.</p>
 <p>Set mailbox metadata, optionally set the private instead of the shared
 version of the metadata. A value of &#8220;none&#8221; will remove the attribute.</p>
 <p>The currently supported attributes are:</p>
-<p><code class="docutils literal"><span class="pre">comment</span></code> <em>description</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">comment</span></code> <em>description</em></li>
+</ul>
 <blockquote>
 <div>Sets a comment or description associated with the mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">expire</span></code> <em>days</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">expire</span></code> <em>days</em></li>
+</ul>
 <blockquote>
 <div>Sets the number of days after which messages will be expired from the mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">news2mail</span></code> <em>address</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">news2mail</span></code> <em>address</em></li>
+</ul>
 <blockquote>
 <div>Sets an email address to which messages injected into the server via NNTP
 will be sent.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">pop3showafter</span></code> <em>time</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">pop3showafter</span></code> <em>time</em></li>
+</ul>
 <blockquote>
 <div>Sets a time (in RFC3501 format, for example &#8220;6-Jan-2011 11:45:32 +1100&#8221;)
 which specifies a cutoff date such that POP3 fetching of the folder does
 not see messages whose internaldate is before or equal to the date.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sharedseen</span></code> <em>true|false</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sharedseen</span></code> <em>true|false</em></li>
+</ul>
 <blockquote>
 <div>Enables the use of a shared Seen flag on messages rather than a
 per-user Seen flag.  The &#8216;s&#8217; right in the mailbox ACL still controls
 whether a user can set the shared Seen flag.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve</span></code> <em>scriptname</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sieve</span></code> <em>scriptname</em></li>
+</ul>
 <blockquote>
 <div>Indicates the name of the global sieve script that should be run when
 a message is delivered to the shared mailbox (not used for personal
 mailboxes).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">squat</span></code> <em>true|false</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">squat</span></code> <em>true|false</em></li>
+</ul>
 <blockquote>
 <div>Indicates that the mailbox should have a squat index created for it.</div></blockquote>
 <p>aliases: <code class="docutils literal"><span class="pre">mboxcfg</span></code></p>
@@ -1046,37 +1086,59 @@ of the connected server.</p>
 <p>Set ACLs on a mailbox.  The ACL may be one of the special strings <code class="docutils literal"><span class="pre">none</span></code>,
 <code class="docutils literal"><span class="pre">read</span></code> (<code class="docutils literal"><span class="pre">lrs</span></code>), <code class="docutils literal"><span class="pre">post</span></code> (<code class="docutils literal"><span class="pre">lrsp</span></code>), <code class="docutils literal"><span class="pre">append</span></code> (<code class="docutils literal"><span class="pre">lrsip</span></code>), <code class="docutils literal"><span class="pre">write</span></code>(<code class="docutils literal"><span class="pre">lrswipkxte</span></code>), <code class="docutils literal"><span class="pre">delete</span></code> (<code class="docutils literal"><span class="pre">lrxte</span></code>), or <code class="docutils literal"><span class="pre">all</span></code> (<code class="docutils literal"><span class="pre">lrswipkxte</span></code>), or
 any combinations of the ACL codes:</p>
-<p><strong>l</strong></p>
+<ul class="simple">
+<li><strong>l</strong></li>
+</ul>
 <blockquote>
 <div>Lookup (mailbox is visible to LIST/LSUB, SUBSCRIBE mailbox)</div></blockquote>
-<p><strong>r</strong></p>
+<ul class="simple">
+<li><strong>r</strong></li>
+</ul>
 <blockquote>
 <div>Read (SELECT/EXAMINE the mailbox, perform STATUS)</div></blockquote>
-<p><strong>s</strong></p>
+<ul class="simple">
+<li><strong>s</strong></li>
+</ul>
 <blockquote>
 <div>Seen (set/clear SEEN flag via STORE, also set SEEN flag during APPEND/COPY/FETCH BODY[...])</div></blockquote>
-<p><strong>w</strong></p>
+<ul class="simple">
+<li><strong>w</strong></li>
+</ul>
 <blockquote>
 <div>Write flags other than SEEN and DELETED</div></blockquote>
-<p><strong>i</strong></p>
+<ul class="simple">
+<li><strong>i</strong></li>
+</ul>
 <blockquote>
 <div>Insert (APPEND, COPY destination)</div></blockquote>
-<p><strong>p</strong></p>
+<ul class="simple">
+<li><strong>p</strong></li>
+</ul>
 <blockquote>
 <div>Post (send mail to mailbox)</div></blockquote>
-<p><strong>k</strong></p>
+<ul class="simple">
+<li><strong>k</strong></li>
+</ul>
 <blockquote>
 <div>Create mailbox (CREATE new sub-mailboxes, parent for new mailbox in RENAME)</div></blockquote>
-<p><strong>x</strong></p>
+<ul class="simple">
+<li><strong>x</strong></li>
+</ul>
 <blockquote>
 <div>Delete mailbox (DELETE mailbox, old mailbox name in RENAME)</div></blockquote>
-<p><strong>t</strong></p>
+<ul class="simple">
+<li><strong>t</strong></li>
+</ul>
 <blockquote>
 <div>Delete messages (set/clear DELETED flag via STORE, also set DELETED flag during APPEND/COPY)</div></blockquote>
-<p><strong>e</strong></p>
+<ul class="simple">
+<li><strong>e</strong></li>
+</ul>
 <blockquote>
 <div>Perform EXPUNGE and expunge as part of CLOSE</div></blockquote>
-<p><strong>a</strong></p>
+<ul class="simple">
+<li><strong>a</strong></li>
+</ul>
 <blockquote>
 <div>Administer (SETACL/DELETEACL/GETACL/LISTRIGHTS)</div></blockquote>
 <p>aliases: <code class="docutils literal"><span class="pre">setacl</span></code>, <code class="docutils literal"><span class="pre">sam</span></code></p>
@@ -1086,25 +1148,37 @@ any combinations of the ACL codes:</p>
 <p><strong>setinfo</strong> <em>attribute</em> <em>value</em></p>
 <p>Set server metadata.  A value of &#8220;none&#8221; will remove the attribute.
 The currently supported attributes are:</p>
-<p><code class="docutils literal"><span class="pre">motd</span></code> <em>message</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">motd</span></code> <em>message</em></li>
+</ul>
 <blockquote>
 <div>Sets a &#8220;message of the day&#8221;.  The message gets displayed as an ALERT upon
 connection.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">comment</span></code> <em>note</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">comment</span></code> <em>note</em></li>
+</ul>
 <blockquote>
 <div>Sets a comment or description associated with the server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">admin</span></code> <em>address</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">admin</span></code> <em>address</em></li>
+</ul>
 <blockquote>
 <div>Sets the administrator email address for the server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">shutdown</span></code> <em>message</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">shutdown</span></code> <em>message</em></li>
+</ul>
 <blockquote>
 <div>Sets a shutdown message.  The message gets displayed as an ALERT and
 all users are disconnected from the server (subsequent logins are disallowed).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">expire</span></code> <em>days</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">expire</span></code> <em>days</em></li>
+</ul>
 <blockquote>
 <div>Sets the number of days after which messages will be expired from the
 server (unless overridden by a mailbox annotation).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">squat</span></code> <em>true|false</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">squat</span></code> <em>true|false</em></li>
+</ul>
 <blockquote>
 <div>Indicates that all mailboxes should have a squat indexes created for
 them (unless overridden by a mailbox annotation).</div></blockquote>

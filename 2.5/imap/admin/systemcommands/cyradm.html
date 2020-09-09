@@ -836,36 +836,46 @@ forms and GNU-style long option forms.</p>
 </div>
 <div class="section" id="commands">
 <h2>COMMANDS<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">authenticate</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</p>
-<p><code class="docutils literal"><span class="pre">auth</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</p>
-<p><code class="docutils literal"><span class="pre">login</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">authenticate</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</li>
+<li><code class="docutils literal"><span class="pre">auth</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</li>
+<li><code class="docutils literal"><span class="pre">login</span></code> [<code class="docutils literal"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal"><span class="pre">--notls</span></code>] [<code class="docutils literal"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</li>
+</ul>
 <blockquote>
 <div>Authenticate to server.  You must already be connected to a server and
 Cyrus imapd will refuse to allow you to re-authenticate once you have
 authenticated once.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">chdir</span></code> <em>directory</em></p>
-<p><code class="docutils literal"><span class="pre">cd</span></code> <em>directory</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">chdir</span></code> <em>directory</em></li>
+<li><code class="docutils literal"><span class="pre">cd</span></code> <em>directory</em></li>
+</ul>
 <blockquote>
 <div>Change directory.  A <code class="docutils literal"><span class="pre">pwd</span></code> builtin is not provided, but the default command
 action will run <code class="docutils literal"><span class="pre">pwd</span></code> from a shell if invoked.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">createmailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">createmailbox</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></p>
-<p><code class="docutils literal"><span class="pre">create</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">create</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></p>
-<p><code class="docutils literal"><span class="pre">cm</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">cm</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">createmailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">createmailbox</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></li>
+<li><code class="docutils literal"><span class="pre">create</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">create</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></li>
+<li><code class="docutils literal"><span class="pre">cm</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">cm</span></code> [<code class="docutils literal"><span class="pre">--specialuse</span></code> <em>specialuse</em>] <em>mailbox</em> <em>partition</em></li>
+</ul>
 <blockquote>
 <div>Create a mailbox on the default or a specified partition.  Both old-style
 and getopt-style usages are accepted (combining them will produce an error).
 Optionally assign a special use to the mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">deleteaclmailbox</span></code> <em>mailbox</em> <em>id</em> [...]</p>
-<p><code class="docutils literal"><span class="pre">deleteacl</span></code> <em>mailbox</em> <em>id</em> [...]</p>
-<p><code class="docutils literal"><span class="pre">dam</span></code> <em>mailbox</em> <em>id</em> [...]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">deleteaclmailbox</span></code> <em>mailbox</em> <em>id</em> [...]</li>
+<li><code class="docutils literal"><span class="pre">deleteacl</span></code> <em>mailbox</em> <em>id</em> [...]</li>
+<li><code class="docutils literal"><span class="pre">dam</span></code> <em>mailbox</em> <em>id</em> [...]</li>
+</ul>
 <blockquote>
 <div>Remove ACLs from the specified mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">deletemailbox</span></code> <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">delete</span></code> <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">dm</span></code> <em>mailbox</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">deletemailbox</span></code> <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">delete</span></code> <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">dm</span></code> <em>mailbox</em></li>
+</ul>
 <blockquote>
 <div><p>Delete the specified mailbox.</p>
 <p>Administrators do not have implicit delete rights on mailboxes.  Use the
@@ -875,30 +885,42 @@ principal if you need to delete a mailbox you do not own.</p>
 is not currently used, and will be rejected with an error if specified; it
 is reserved for IMSP.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">disconnect</span></code></p>
-<p><code class="docutils literal"><span class="pre">disc</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">disconnect</span></code></li>
+<li><code class="docutils literal"><span class="pre">disc</span></code></li>
+</ul>
 <blockquote>
 <div>Disconnect from the current server.  The prompt will revert to <code class="docutils literal"><span class="pre">cyradm&gt;</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">exit</span></code> [<em>number</em>]</p>
-<p><code class="docutils literal"><span class="pre">quit</span></code> [<em>number</em>]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">exit</span></code> [<em>number</em>]</li>
+<li><code class="docutils literal"><span class="pre">quit</span></code> [<em>number</em>]</li>
+</ul>
 <blockquote>
 <div>Exit <strong>cyradm</strong>, optionally with a specific exit status; the exit status of the
 last command will be used if one is not specified.</div></blockquote>
-<p>help [command]</p>
-<p>? [command]</p>
+<ul class="simple">
+<li>help [command]</li>
+<li>? [command]</li>
+</ul>
 <blockquote>
 <div>Show help for <code class="docutils literal"><span class="pre">command</span></code> or all commands.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">info</span></code> [<em>mailbox</em>]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">info</span></code> [<em>mailbox</em>]</li>
+</ul>
 <blockquote>
 <div>Display the mailbox/server metadata.</div></blockquote>
-<p>listaclmailbox <em>mailbox</em></p>
-<p>listacl <em>mailbox</em></p>
-<p>lam <em>mailbox</em></p>
+<ul class="simple">
+<li>listaclmailbox <em>mailbox</em></li>
+<li>listacl <em>mailbox</em></li>
+<li>lam <em>mailbox</em></li>
+</ul>
 <blockquote>
 <div>List ACLs on the specified mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">listmailbox</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</p>
-<p><code class="docutils literal"><span class="pre">list</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</p>
-<p><code class="docutils literal"><span class="pre">lm</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">listmailbox</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</li>
+<li><code class="docutils literal"><span class="pre">list</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</li>
+<li><code class="docutils literal"><span class="pre">lm</span></code> [<code class="docutils literal"><span class="pre">--subscribed</span></code>] [<code class="docutils literal"><span class="pre">--specialuse</span></code>] [<em>pattern</em> [<em>reference</em>]]</li>
+</ul>
 <blockquote>
 <div><p>List all, or all subscribed or special-use, mailboxes matching the specified
 pattern.  The pattern may have embedded wildcards <code class="docutils literal"><span class="pre">'\*'</span></code> or <code class="docutils literal"><span class="pre">'%'</span></code>, which
@@ -911,65 +933,89 @@ match an entry which is not a mailbox but which contains other mailboxes.
 In this case, the entry will be parenthesized to indicate that it is a
 root for other mailboxes, as opposed to a mailbox itself.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">listquota</span></code> <em>root</em></p>
-<p><code class="docutils literal"><span class="pre">lq</span></code> <em>root</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">listquota</span></code> <em>root</em></li>
+<li><code class="docutils literal"><span class="pre">lq</span></code> <em>root</em></li>
+</ul>
 <blockquote>
 <div>List quotas on specified root.  If the specified mailbox path does not have
 a quota assigned, an error will be raised; see listquotaroot for a way to
 find the quota root for a mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">listquotaroot</span></code> <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">lqm</span></code> <em>mailbox</em></p>
-<p><code class="docutils literal"><span class="pre">lqr</span></code> <em>mailbox?</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">listquotaroot</span></code> <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">lqm</span></code> <em>mailbox</em></li>
+<li><code class="docutils literal"><span class="pre">lqr</span></code> <em>mailbox?</em></li>
+</ul>
 <blockquote>
 <div>show quota roots and quotas for mailbox</div></blockquote>
-<p><code class="docutils literal"><span class="pre">mboxconfig</span></code> [<code class="docutils literal"><span class="pre">--private</span></code>] <em>mailbox</em> <em>attribute</em> <em>value</em></p>
-<p><code class="docutils literal"><span class="pre">mboxcfg</span></code> [<code class="docutils literal"><span class="pre">--private</span></code>] <em>mailbox</em> <em>attribute</em> <em>value</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">mboxconfig</span></code> [<code class="docutils literal"><span class="pre">--private</span></code>] <em>mailbox</em> <em>attribute</em> <em>value</em></li>
+<li><code class="docutils literal"><span class="pre">mboxcfg</span></code> [<code class="docutils literal"><span class="pre">--private</span></code>] <em>mailbox</em> <em>attribute</em> <em>value</em></li>
+</ul>
 <blockquote>
 <div><p>Set mailbox metadata, optionally set the private instead of the shared
 version of the metadata. A value of &#8220;none&#8221; will remove the attribute.</p>
 <p>The currently supported attributes are:</p>
-<p><code class="docutils literal"><span class="pre">comment</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">comment</span></code></li>
+</ul>
 <blockquote>
 <div>Sets a comment or description associated with the mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">expire</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">expire</span></code></li>
+</ul>
 <blockquote>
 <div>Sets the number of days after which messages will be expired from the mailbox.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">news2mail</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">news2mail</span></code></li>
+</ul>
 <blockquote>
 <div>Sets an email address to which messages injected into the server via NNTP
 will be sent.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">pop3showafter</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">pop3showafter</span></code></li>
+</ul>
 <blockquote>
 <div>Sets a time (in RFC3501 format, for example &#8220;6-Jan-2011 11:45:32 +1100&#8221;)
 which specifies a cutoff date such that POP3 fetching of the folder does
 not see messages whose internaldate is before or equal to the date.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sharedseen</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sharedseen</span></code></li>
+</ul>
 <blockquote>
 <div>Enables the use of a shared Seen flag on messages rather than a
 per-user Seen flag.  The &#8216;s&#8217; right in the mailbox ACL still controls
 whether a user can set the shared Seen flag.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">sieve</span></code></li>
+</ul>
 <blockquote>
 <div>Indicates the name of the global sieve script that should be run when
 a message is delivered to the shared mailbox (not used for personal
 mailboxes).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">squat</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">squat</span></code></li>
+</ul>
 <blockquote>
 <div>Indicates that the mailbox should have a squat index created for it.</div></blockquote>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">renamemailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></p>
-<p><code class="docutils literal"><span class="pre">rename</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></p>
-<p><code class="docutils literal"><span class="pre">renm</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></p>
-<p><code class="docutils literal"><span class="pre">renamemailbox</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</p>
-<p><code class="docutils literal"><span class="pre">rename</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</p>
-<p><code class="docutils literal"><span class="pre">renm</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">renamemailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></li>
+<li><code class="docutils literal"><span class="pre">rename</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></li>
+<li><code class="docutils literal"><span class="pre">renm</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>oldname</em> <em>newname</em></li>
+<li><code class="docutils literal"><span class="pre">renamemailbox</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</li>
+<li><code class="docutils literal"><span class="pre">rename</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</li>
+<li><code class="docutils literal"><span class="pre">renm</span></code> <em>oldname</em> <em>newname</em> [<em>partition</em>]</li>
+</ul>
 <blockquote>
 <div>Rename the specified mailbox, optionally moving it to a different partition.
 Both old-style and getopt-style usages are accepted; combining them will
 produce an error.</div></blockquote>
-<p>server [&#8211;noauthenticate] [server]</p>
-<p>connect [&#8211;noauthenticate] [server]</p>
-<p>servername [&#8211;noauthenticate] [server]</p>
+<ul class="simple">
+<li>server [&#8211;noauthenticate] [server]</li>
+<li>connect [&#8211;noauthenticate] [server]</li>
+<li>servername [&#8211;noauthenticate] [server]</li>
+</ul>
 <blockquote>
 <div><p>With no arguments, show the current server.  With an argument, connect to that
 server.  It will prompt for automatic login unless the <code class="docutils literal"><span class="pre">--noauthenticate</span></code>option is specified.  (This may change; in particular, either automatic
@@ -978,97 +1024,141 @@ authentication will be removed or all <code class="docutils literal"><span class
 <code class="docutils literal"><span class="pre">servername&gt;</span></code>, where <em>servername</em> is the fully qualified domain name
 of the connected server.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">setaclmailbox</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</p>
-<p><code class="docutils literal"><span class="pre">setacl</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</p>
-<p><code class="docutils literal"><span class="pre">sam</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">setaclmailbox</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</li>
+<li><code class="docutils literal"><span class="pre">setacl</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</li>
+<li><code class="docutils literal"><span class="pre">sam</span></code> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</li>
+</ul>
 <blockquote>
 <div><p>Set ACLs on a mailbox.  The ACL may be one of the special strings <code class="docutils literal"><span class="pre">none</span></code>,
 <code class="docutils literal"><span class="pre">read</span></code> (<code class="docutils literal"><span class="pre">lrs</span></code>), <code class="docutils literal"><span class="pre">post</span></code> (<code class="docutils literal"><span class="pre">lrsp</span></code>), <code class="docutils literal"><span class="pre">append</span></code> (<code class="docutils literal"><span class="pre">lrsip</span></code>), <code class="docutils literal"><span class="pre">write</span></code>(<code class="docutils literal"><span class="pre">lrswipkxte</span></code>), <code class="docutils literal"><span class="pre">delete</span></code> (<code class="docutils literal"><span class="pre">lrxte</span></code>), or <code class="docutils literal"><span class="pre">all</span></code> (<code class="docutils literal"><span class="pre">lrswipkxte</span></code>), or
 any combinations of the ACL codes:</p>
-<p>l</p>
+<ul class="simple">
+<li>l</li>
+</ul>
 <blockquote>
 <div>Lookup (mailbox is visible to LIST/LSUB, SUBSCRIBE mailbox)</div></blockquote>
-<p>r</p>
+<ul class="simple">
+<li>r</li>
+</ul>
 <blockquote>
 <div>Read (SELECT/EXAMINE the mailbox, perform STATUS)</div></blockquote>
-<p>s</p>
+<ul class="simple">
+<li>s</li>
+</ul>
 <blockquote>
 <div><dl class="docutils">
 <dt>Seen (set/clear SEEN flag via STORE, also set SEEN flag during</dt>
 <dd>APPEND/COPY/FETCH BODY[...])</dd>
 </dl>
 </div></blockquote>
-<p>w</p>
+<ul class="simple">
+<li>w</li>
+</ul>
 <blockquote>
 <div>Write flags other than SEEN and DELETED</div></blockquote>
-<p>i</p>
+<ul class="simple">
+<li>i</li>
+</ul>
 <blockquote>
 <div>Insert (APPEND, COPY destination)</div></blockquote>
-<p>p</p>
+<ul class="simple">
+<li>p</li>
+</ul>
 <blockquote>
 <div>Post (send mail to mailbox)</div></blockquote>
-<p>k</p>
+<ul class="simple">
+<li>k</li>
+</ul>
 <blockquote>
 <div>Create mailbox (CREATE new sub-mailboxes, parent for new mailbox in RENAME)</div></blockquote>
-<p>x</p>
+<ul class="simple">
+<li>x</li>
+</ul>
 <blockquote>
 <div>Delete mailbox (DELETE mailbox, old mailbox name in RENAME)</div></blockquote>
-<p>t</p>
+<ul class="simple">
+<li>t</li>
+</ul>
 <blockquote>
 <div><dl class="docutils">
 <dt>Delete messages (set/clear DELETED flag via STORE, also set DELETED</dt>
 <dd>flag during APPEND/COPY)</dd>
 </dl>
 </div></blockquote>
-<p>e</p>
+<ul class="simple">
+<li>e</li>
+</ul>
 <blockquote>
 <div>Perform EXPUNGE and expunge as part of CLOSE</div></blockquote>
-<p>a</p>
+<ul class="simple">
+<li>a</li>
+</ul>
 <blockquote>
 <div>Administer (SETACL/DELETEACL/GETACL/LISTRIGHTS)</div></blockquote>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">setinfo</span></code> <em>attribute</em> <em>value</em></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">setinfo</span></code> <em>attribute</em> <em>value</em></li>
+</ul>
 <blockquote>
 <div><p>Set server metadata.  A value of &#8220;none&#8221; will remove the attribute.
 The currently supported attributes are:</p>
-<p><code class="docutils literal"><span class="pre">motd</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">motd</span></code></li>
+</ul>
 <blockquote>
 <div>Sets a &#8220;message of the day&#8221;.  The message gets displayed as an ALERT upon
 connection.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">comment</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">comment</span></code></li>
+</ul>
 <blockquote>
 <div>Sets a comment or description associated with the server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">admin</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">admin</span></code></li>
+</ul>
 <blockquote>
 <div>Sets the administrator email address for the server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">shutdown</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">shutdown</span></code></li>
+</ul>
 <blockquote>
 <div>Sets a shutdown message.  The message gets displayed as an ALERT and
 all users are disconnected from the server (subsequent logins are disallowed).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">expire</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">expire</span></code></li>
+</ul>
 <blockquote>
 <div>Sets the number of days after which messages will be expired from the
 server (unless overridden by a mailbox annotation).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">squat</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">squat</span></code></li>
+</ul>
 <blockquote>
 <div>Indicates that all mailboxes should have a squat indexes created for
 them (unless overridden by a mailbox annotation).</div></blockquote>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">setquota</span></code> <em>root</em> <em>resource</em> <em>value</em> [<em>resource</em> <em>value</em> ...]</p>
-<p><code class="docutils literal"><span class="pre">sq</span></code> <em>root</em> <em>resource</em> <em>value</em> [<em>resource</em> <em>value</em> ...]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">setquota</span></code> <em>root</em> <em>resource</em> <em>value</em> [<em>resource</em> <em>value</em> ...]</li>
+<li><code class="docutils literal"><span class="pre">sq</span></code> <em>root</em> <em>resource</em> <em>value</em> [<em>resource</em> <em>value</em> ...]</li>
+</ul>
 <blockquote>
 <div>Set a quota on the specified root, which may or may not be an actual mailbox.
 The only <em>resource</em> understood by <strong>Cyrus</strong> is <code class="docutils literal"><span class="pre">STORAGE</span></code>.  The units
 are as defined in RFC 2087, groups of 1024 octets (i.e. Kilobytes).
 The <em>value</em> may be the special string <code class="docutils literal"><span class="pre">none</span></code> which will remove the quota.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">version</span></code></p>
-<p><code class="docutils literal"><span class="pre">ver</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">version</span></code></li>
+<li><code class="docutils literal"><span class="pre">ver</span></code></li>
+</ul>
 <blockquote>
 <div>Display the version info of the current server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">xfermailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>mailbox</em> <em>server</em></p>
-<p><code class="docutils literal"><span class="pre">xfer</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>mailbox</em> <em>server</em></p>
-<p><code class="docutils literal"><span class="pre">xfermailbox</span></code> <em>mailbox</em> <em>server</em> [<em>partition</em>]</p>
-<p><code class="docutils literal"><span class="pre">xfer</span></code> <em>mailbox</em> <em>server</em> [<em>partition</em>]</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">xfermailbox</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>mailbox</em> <em>server</em></li>
+<li><code class="docutils literal"><span class="pre">xfer</span></code> [<code class="docutils literal"><span class="pre">--partition</span></code> <em>partition</em>] <em>mailbox</em> <em>server</em></li>
+<li><code class="docutils literal"><span class="pre">xfermailbox</span></code> <em>mailbox</em> <em>server</em> [<em>partition</em>]</li>
+<li><code class="docutils literal"><span class="pre">xfer</span></code> <em>mailbox</em> <em>server</em> [<em>partition</em>]</li>
+</ul>
 <blockquote>
 <div>Transfer (relocate) the specified mailbox to a different server.
 Both old-style and getopt-style usages are accepted; combining them will

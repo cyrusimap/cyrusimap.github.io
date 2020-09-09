@@ -80,61 +80,61 @@ COMMAND-LINE ARGUMENTS
 
 
 
-\ ``--u``\ , \ ``--user``\  \ *user*\ 
+- \ ``--u``\ , \ ``--user``\  \ *user*\ 
  
  Authenticate with the specified username.
  
 
 
-\ ``--authz``\  \ *user*\ 
+- \ ``--authz``\  \ *user*\ 
  
  Authorize the connection as being the specified username.
  
 
 
-\ ``--norc``\ , \ ``--rc``\ 
+- \ ``--norc``\ , \ ``--rc``\ 
  
  (Do not) load the configuration files.
  
 
 
-\ ``--systemrc``\  \ *file*\ 
+- \ ``--systemrc``\  \ *file*\ 
  
  Use the system configuration file specified.
  
 
 
-\ ``--userrc``\  \ *file*\ 
+- \ ``--userrc``\  \ *file*\ 
  
  Use the user configuration file specified.
  
 
 
-\ ``--port``\  \ *port*\ 
+- \ ``--port``\  \ *port*\ 
  
  Connect to the \*server\* specified on the port specified.
  
 
 
-\ ``--auth``\  \ *mechanism*\ 
+- \ ``--auth``\  \ *mechanism*\ 
  
  Use the mechanism specified to authenticate. One of PLAIN, LOGIN, DIGEST-MD5, etc.
  
 
 
-\ ``--help``\ 
+- \ ``--help``\ 
  
  Show a help message about these command-line options.
  
 
 
-\ ``--version``\ 
+- \ ``--version``\ 
  
  Display the version of Cyrus IMAP the current \`\`cyradm\`\` command is a part of.
  
 
 
-\ ``--server``\  \ *server*\ 
+- \ ``--server``\  \ *server*\ 
  
  The server address to connect to.
  
@@ -195,7 +195,7 @@ INBOX. Mailboxes that are the user's INBOX are assigned all to the
 corresponding user.
 
 
-Example Usage
+- Example Usage
  
  
  .. code-block:: perl
@@ -215,7 +215,7 @@ Example Usage
  
 
 
-Example Usage with \ ``unixhierarchysep: 1``\ 
+- Example Usage with \ ``unixhierarchysep: 1``\ 
  
  
  .. code-block:: perl
@@ -229,7 +229,7 @@ Example Usage with \ ``unixhierarchysep: 1``\
  
 
 
-Note
+- Note
  
  The above examples use the unqualified, shorthand user
  identifier john as the mailbox name.
@@ -420,26 +420,26 @@ version of the metadata. A value of "none" will remove the attribute.
 The currently supported attributes are:
 
 
-\ ``comment``\  \ *description*\ 
+- \ ``comment``\  \ *description*\ 
  
  Sets a comment or description associated with the mailbox.
  
 
 
-\ ``expire``\  \ *days*\ 
+- \ ``expire``\  \ *days*\ 
  
  Sets the number of days after which messages will be expired from the mailbox.
  
 
 
-\ ``news2mail``\  \ *address*\ 
+- \ ``news2mail``\  \ *address*\ 
  
  Sets an email address to which messages injected into the server via NNTP
  will be sent.
  
 
 
-\ ``pop3showafter``\  \ *time*\ 
+- \ ``pop3showafter``\  \ *time*\ 
  
  Sets a time (in RFC3501 format, for example "6-Jan-2011 11:45:32 +1100")
  which specifies a cutoff date such that POP3 fetching of the folder does
@@ -447,7 +447,7 @@ The currently supported attributes are:
  
 
 
-\ ``sharedseen``\  \ *true|false*\ 
+- \ ``sharedseen``\  \ *true|false*\ 
  
  Enables the use of a shared \Seen flag on messages rather than a
  per-user \Seen flag.  The 's' right in the mailbox ACL still controls
@@ -455,7 +455,7 @@ The currently supported attributes are:
  
 
 
-\ ``sieve``\  \ *scriptname*\ 
+- \ ``sieve``\  \ *scriptname*\ 
  
  Indicates the name of the global sieve script that should be run when
  a message is delivered to the shared mailbox (not used for personal
@@ -463,7 +463,7 @@ The currently supported attributes are:
  
 
 
-\ ``squat``\  \ *true|false*\ 
+- \ ``squat``\  \ *true|false*\ 
  
  Indicates that the mailbox should have a squat index created for it.
  
@@ -538,67 +538,67 @@ Set ACLs on a mailbox.  The ACL may be one of the special strings \ ``none``\ ,
 any combinations of the ACL codes:
 
 
-\ **l**\ 
+- \ **l**\ 
  
  Lookup (mailbox is visible to LIST/LSUB, SUBSCRIBE mailbox)
  
 
 
-\ **r**\ 
+- \ **r**\ 
  
  Read (SELECT/EXAMINE the mailbox, perform STATUS)
  
 
 
-\ **s**\ 
+- \ **s**\ 
  
  Seen (set/clear \SEEN flag via STORE, also set \SEEN flag during APPEND/COPY/FETCH BODY[...])
  
 
 
-\ **w**\ 
+- \ **w**\ 
  
  Write flags other than \SEEN and \DELETED
  
 
 
-\ **i**\ 
+- \ **i**\ 
  
  Insert (APPEND, COPY destination)
  
 
 
-\ **p**\ 
+- \ **p**\ 
  
  Post (send mail to mailbox)
  
 
 
-\ **k**\ 
+- \ **k**\ 
  
  Create mailbox (CREATE new sub-mailboxes, parent for new mailbox in RENAME)
  
 
 
-\ **x**\ 
+- \ **x**\ 
  
  Delete mailbox (DELETE mailbox, old mailbox name in RENAME)
  
 
 
-\ **t**\ 
+- \ **t**\ 
  
  Delete messages (set/clear \DELETED flag via STORE, also set \DELETED flag during APPEND/COPY)
  
 
 
-\ **e**\ 
+- \ **e**\ 
  
  Perform EXPUNGE and expunge as part of CLOSE
  
 
 
-\ **a**\ 
+- \ **a**\ 
  
  Administer (SETACL/DELETEACL/GETACL/LISTRIGHTS)
  
@@ -619,40 +619,40 @@ Set server metadata.  A value of "none" will remove the attribute.
 The currently supported attributes are:
 
 
-\ ``motd``\  \ *message*\ 
+- \ ``motd``\  \ *message*\ 
  
  Sets a "message of the day".  The message gets displayed as an ALERT upon
  connection.
  
 
 
-\ ``comment``\  \ *note*\ 
+- \ ``comment``\  \ *note*\ 
  
  Sets a comment or description associated with the server.
  
 
 
-\ ``admin``\  \ *address*\ 
+- \ ``admin``\  \ *address*\ 
  
  Sets the administrator email address for the server.
  
 
 
-\ ``shutdown``\  \ *message*\ 
+- \ ``shutdown``\  \ *message*\ 
  
  Sets a shutdown message.  The message gets displayed as an ALERT and
  all users are disconnected from the server (subsequent logins are disallowed).
  
 
 
-\ ``expire``\  \ *days*\ 
+- \ ``expire``\  \ *days*\ 
  
  Sets the number of days after which messages will be expired from the
  server (unless overridden by a mailbox annotation).
  
 
 
-\ ``squat``\  \ *true|false*\ 
+- \ ``squat``\  \ *true|false*\ 
  
  Indicates that all mailboxes should have a squat indexes created for
  them (unless overridden by a mailbox annotation).
