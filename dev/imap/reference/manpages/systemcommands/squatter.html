@@ -802,7 +802,7 @@ i.e.:
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] [ <strong>-i</strong> ] [ <strong>-N</strong> <em>name</em> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-r</strong> ] [ <strong>-Z</strong> ] <strong>-u</strong> <em>user</em>...
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-R</strong> [ <strong>-n</strong> <em>channel</em> ] [ <strong>-d</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-f</strong> <em>synclogfile</em> [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
-<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-t</strong> <em>srctier(s)</em>... <strong>-z</strong> <em>desttier</em> [ <strong>-F</strong> ] [ <strong>-U</strong> ] [ <strong>-T</strong> <em>dir</em> ] [ <strong>-X</strong> ] [ <strong>-o</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-u</strong> <em>user</em>... ]
+<strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-t</strong> <em>srctier(s)</em>... <strong>-z</strong> <em>desttier</em> [ <strong>-B</strong> ] [ <strong>-F</strong> ] [ <strong>-U</strong> ] [ <strong>-T</strong> <em>reindextiers</em> ] [ <strong>-X</strong> ] [ <strong>-o</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-u</strong> <em>user</em>... ]
 </pre>
 </div>
 <div class="section" id="description">
@@ -852,7 +852,7 @@ is sometimes useful for cleaning up after problems with rolling mode.</p>
 <p>In the sixth synopsis, <strong>squatter</strong> will compact indices from
 <em>srctier(s)</em> to <em>desttier</em>, optionally reindexing (<strong>-X</strong>) or filtering
 expunged records (<strong>-F</strong>) in the process.  The optional <strong>-T</strong> flag may be
-used to specify a directory to use for temporary files.  These files are
+used to specify members of srctiers which must be reindexed.  These files are
 eventually copied with <cite>rsync -a</cite> and then removed by <cite>rm</cite>.
 <cite>rsync</cite> can increase the load average of the system, especially when the
 temporary directory is on <cite>tmpfs</cite>.  To throttle <cite>rsync</cite> it is possible to
@@ -915,6 +915,15 @@ This feature is only available on the master branch.</p>
 <code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>In rolling mode, don&#8217;t background and do emit log messages on
 standard error.  Useful for debugging.
+This feature was introduced in version 3.0.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-squatter-B">
+<code class="descname">-B</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-B" title="Permalink to this definition">¶</a></dt>
+<dd><p>In compact mode, use non-blocking lock to start and skip any
+users who have their xapianactive file locked at the time (i.e
+another reindex task)
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
@@ -1020,13 +1029,10 @@ fractional amounts. This feature was introduced in version 3.0.</p>
 
 <dl class="option">
 <dt id="cmdoption-squatter-T">
-<code class="descname">-T</code><code class="descclassname"> directory</code><a class="headerlink" href="#cmdoption-squatter-T" title="Permalink to this definition">¶</a></dt>
-<dd><p>When indexing, work on a temporary copy of the search engine
-databases in <em>directory</em>.  That directory would typically be on
-some very fast filesystem, like an SSD or tmpfs.  This option may
-not work with all search engines, but it&#8217;s only effect is to speed
-up initial indexing.
-Xapian only.
+<code class="descname">-T</code><code class="descclassname"> reindextiers</code><a class="headerlink" href="#cmdoption-squatter-T" title="Permalink to this definition">¶</a></dt>
+<dd><p>In compact mode, a comma-separated subset of the source tiers
+(see <strong>-t</strong>) to be reindexed.  Similar to <strong>-X</strong> but allows
+limiting the tiers that will be reindexed.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
@@ -1205,7 +1211,7 @@ Xapian documentation in this release before using Xapian.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 22 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 03 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
