@@ -829,8 +829,8 @@ sacrifice the unified system image. For pure email, this is an
 acceptable compromise; however, trying to share mailboxes becomes
 difficult or even impossible. Specific examples can be found in <a class="reference internal" href="#appendix-a-dns-name-load-balancing">Appendix
 A: DNS Name Load Balancing</a> and <a class="reference internal" href="#id2">Appendix B: IMAP Multiplexing</a>).</p>
-<p>We propose a new approach to overcome these problems. We call it the the
-Cyrus IMAP Aggregator. The Cyrus aggregator takes a <a class="reference internal" href="#def-murder"><span class="std std-ref">murder</span></a> of IMAP
+<p>We propose a new approach to overcome these problems. We call it the Cyrus
+IMAP Aggregator. The Cyrus aggregator takes a <a class="reference internal" href="#def-murder"><span class="std std-ref">murder</span></a> of IMAP
 servers and presents a server independent view to the clients. That is,
 <strong>all the mailboxes across all the IMAP servers are aggregated to a single
 image</strong>, thereby appearing to be only one IMAP server to the clients.</p>
@@ -1036,7 +1036,7 @@ before sending them to the backend server.</p>
 <p>COPY is somewhat special as it acts upon messages in the currently
 SELECT&#8217;d mailbox but then interacts with another mailbox.</p>
 <p>In the case where the destination mailbox is on the same backend server
-as the the source folder, the COPY command is issued to the backend
+as the source folder, the COPY command is issued to the backend
 server and the backend server takes care of the command.</p>
 <p>If the destination folder is on a different backend server, the
 frontend intervenes and does the COPY by FETCHing the messages from the
@@ -1360,7 +1360,7 @@ xxx.</dd>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 26 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
