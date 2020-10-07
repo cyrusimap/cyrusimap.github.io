@@ -4957,6 +4957,27 @@ FIELD DESCRIPTIONS
 
     .. endblob sync_batchsize
 
+    .. startblob sync_cache_db
+
+    ``sync_cache_db:`` twoskip
+
+        The cyrusdb backend to use for the replication. 
+
+        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
+
+
+    .. endblob sync_cache_db
+
+    .. startblob sync_cache_db_path
+
+    ``sync_cache_db_path:`` <none>
+
+        The path for the replication cache.  Prefix with a
+        channel name to apply for that channel.  NOTE, it's
+        quite important to have a different one per backend! 
+
+    .. endblob sync_cache_db_path
+
     .. startblob sync_host
 
     ``sync_host:`` <none>

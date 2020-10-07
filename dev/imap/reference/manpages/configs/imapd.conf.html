@@ -3342,6 +3342,16 @@ Prefix with a channel name to only apply for that channel</div></blockquote>
 <div>the number of messages to upload in a single mailbox replication.
 Default is 8192.  If there are more than this many messages appended
 to the mailbox, generate a synthetic partial state and send that.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">sync_cache_db:</span></code> twoskip</p>
+<blockquote>
+<div><p>The cyrusdb backend to use for the replication.</p>
+<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">sync_cache_db_path:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The path for the replication cache.  Prefix with a
+channel name to apply for that channel.  NOTE, it&#8217;s
+quite important to have a different one per backend!</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sync_host:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Name of the host (replica running sync_server(8)) to which
