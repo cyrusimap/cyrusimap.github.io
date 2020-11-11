@@ -788,7 +788,8 @@
 <div class="section" id="synopsis">
 <h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p>sieveshell [<strong>&#8211;user</strong>=<em>user</em>] [<strong>&#8211;authname</strong>=<em>authname</em>]
-[<strong>&#8211;realm</strong>=<em>realm</em>] [<strong>&#8211;exec</strong>=<em>script</em>] <em>server</em>[<strong>:</strong><em>port</em>]</p>
+[<strong>&#8211;realm</strong>=<em>realm</em>] [<strong>&#8211;password</strong>=<em>password</em>]
+[<strong>&#8211;exec</strong>=<em>script</em>] [<strong>&#8211;execfile</strong>=<em>file</em>] <em>server</em>[<strong>:</strong><em>port</em>]</p>
 <p>sieveshell <strong>&#8211;help</strong></p>
 </div>
 <div class="section" id="description">
@@ -823,10 +824,22 @@ current login user.</div></blockquote>
 <blockquote>
 <div>The realm to attempt authentication in.</div></blockquote>
 <ul class="simple">
+<li><strong>-p</strong> <em>password</em>, <strong>&#8211;password</strong>=<em>password</em></li>
+</ul>
+<blockquote>
+<div>The password to use when authenticating to server. Note that this
+parameter can be seen in the process list. <strong>Use with caution!</strong></div></blockquote>
+<ul class="simple">
 <li><strong>-e</strong> <em>script</em>, <strong>&#8211;exec</strong>=<em>script</em></li>
 </ul>
 <blockquote>
 <div>Instead of working interactively, run commands from <em>script</em>, and
+exit when done.</div></blockquote>
+<ul class="simple">
+<li><strong>-f</strong> <em>file</em>, <strong>&#8211;execfile</strong>=<em>file</em></li>
+</ul>
+<blockquote>
+<div>Instead of working interactively, run commands from file <em>file</em> and
 exit when done.</div></blockquote>
 </div>
 <div class="section" id="references">
