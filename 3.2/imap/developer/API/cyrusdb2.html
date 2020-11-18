@@ -815,7 +815,7 @@ disk.)</p>
 <p>Internally, the main module for each database sets up struct of pointers
 to the cyrusdb functions it implements, which is registered in
 <code class="docutils literal"><span class="pre">lib/cyrusdb.c</span></code></p>
-<p><code class="docutils literal"><span class="pre">lib/cyrus.c</span></code> provides backend-agnostic wrapper functions for
+<p><code class="docutils literal"><span class="pre">lib/cyrusdb.c</span></code> provides backend-agnostic wrapper functions for
 interacting with cyrusdb databases.</p>
 </div>
 <div class="section" id="a-full-example">
@@ -1069,7 +1069,7 @@ used anywhere. Don&#8217;t use.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 06 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Nov 18 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
