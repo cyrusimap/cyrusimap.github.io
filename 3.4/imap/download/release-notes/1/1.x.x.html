@@ -956,7 +956,7 @@
 <li>Bug fix: auth_newstate now initializes its structures.</li>
 <li>Bug fix: pop3d.c, a printf was changed to prot_printf.</li>
 <li>Cyrus now sends X-NON-HIERARCHICAL-RENAME to alert clients that it is not handling RENAME in an IMAP4rev1 compliant manner. This will be fixed in a subsequent release.</li>
-<li>Bug fix: imclient_autenticate now does resolution on the hostname before authenticating to it. This caused problems when authenticating to an address that was a CNAME.</li>
+<li>Bug fix: imclient_authenticate now does resolution on the hostname before authenticating to it. This caused problems when authenticating to an address that was a CNAME.</li>
 <li>Bug fix: LIST %.% (and other multiple hierarchy delimiter matches) works properly. Several other glob.c fixes are included as well.</li>
 <li>Bug fix: a fetch of exclusively BODY[HEADER.FIELDS...] should now work properly.</li>
 <li>Bug fix: reconstruct now considers a nonexistant INN news directory to be empty; this makes reconstruct fix the cyrus.* files in the imap news partition.</li>
@@ -1130,7 +1130,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 11 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 16 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
