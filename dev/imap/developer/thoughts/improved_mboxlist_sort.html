@@ -786,9 +786,12 @@
 <h1>Enabling improved_mboxlist_sort<a class="headerlink" href="#enabling-improved-mboxlist-sort" title="Permalink to this headline">¶</a></h1>
 <p>You can't enable and disable <code class="docutils literal"><span class="pre">improved_mboxlist_sort</span></code> on a live
 system. You need to dump and load the necessary database after stopping
-and before starting the master process.</p>
+and before starting the master process.  Note that you should move or
+rename the original mailboxes.db out of the way between dumping the old
+and loading the new.</p>
 <p>Dumping the mailboxes.db file</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ctl_mboxlist</span> <span class="o">-</span><span class="n">d</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">mv</span> <span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span> <span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">orig</span>
 <span class="n">ctl_mboxlist</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
@@ -822,7 +825,7 @@ succeeds.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 06 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 02 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
