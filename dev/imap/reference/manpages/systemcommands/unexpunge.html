@@ -788,7 +788,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
-<strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong> <em>mailbox</em>
+<strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong> <em>mailbox</em> [ <em>uid</em>... ]
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-t</strong> <em>time-interval</em> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <strong>mailbox</strong>
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-a</strong> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <em>mailbox</em>
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-u</strong> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <em>mailbox</em> <em>uid</em>...
@@ -815,7 +815,9 @@ spool.</p>
 <dt id="cmdoption-unexpunge-l">
 <code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the expunged messages in the specified mailbox which are
-available for restoration.</p>
+available for restoration.
+Optionally, only list the messages in the mailbox matching the
+UIDs in the space-separated list at the end of the command invocation.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1015,7 +1017,7 @@ option in <a class="reference internal" href="../configs/imapd.conf.html#std:cyr
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 05 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
