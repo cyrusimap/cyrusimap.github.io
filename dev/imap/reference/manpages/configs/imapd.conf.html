@@ -1486,6 +1486,9 @@ if the lock can not be obtained within this time.</p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">debug:</span></code> 0</p>
+<blockquote>
+<div>If enabled, allow syslog() to pass LOG_DEBUG messages.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">debug_command:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Debug command to be used by processes started with -D option.  The string
@@ -1493,6 +1496,12 @@ is a C format string that gets 3 options: the first is the name of the
 executable (as specified in the cmd parameter in cyrus.conf). The second
 is the pid (integer) and the third is the service ID.
 Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d</div></blockquote>
+<p><code class="docutils literal"><span class="pre">debug_writefail_guid:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>If set, any arriving message with this guid will fail as if the underlying
+disk write had failed, pretending to be a disk full condition.  This is
+mainly useful for regression testing certain edge case handling.
+Currently only implemented for replication uploads.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">defaultacl:</span></code> anyone lrs</p>
 <blockquote>
 <div>The Access Control List (ACL) placed on a newly-created (non-user)
@@ -1685,9 +1694,6 @@ server must be quiesced and then the directories moved with the
 <div>If enabled, the partitions will also be hashed, in addition to the
 hashing done on configuration directories.  This is recommended if
 one partition has a very bushy mailbox tree.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">debug:</span></code> 0</p>
-<blockquote>
-<div>If enabled, allow syslog() to pass LOG_DEBUG messages.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">hostname_mechs:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Force a particular list of SASL mechanisms to be used when authenticating

@@ -1322,6 +1322,15 @@ FIELD DESCRIPTIONS
 
     .. endblob dav_lock_timeout
 
+    .. startblob debug
+
+    ``debug:`` 0
+
+        If enabled, allow syslog() to pass LOG_DEBUG messages. 
+
+
+    .. endblob debug
+
     .. startblob debug_command
 
     ``debug_command:`` <none>
@@ -1333,6 +1342,17 @@ FIELD DESCRIPTIONS
         Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d 
 
     .. endblob debug_command
+
+    .. startblob debug_writefail_guid
+
+    ``debug_writefail_guid:`` <none>
+
+        If set, any arriving message with this guid will fail as if the underlying
+        disk write had failed, pretending to be a disk full condition.  This is
+        mainly useful for regression testing certain edge case handling.
+        Currently only implemented for replication uploads. 
+
+    .. endblob debug_writefail_guid
 
     .. startblob defaultacl
 
@@ -1704,15 +1724,6 @@ FIELD DESCRIPTIONS
         one partition has a very bushy mailbox tree. 
 
     .. endblob hashimapspool
-
-    .. startblob debug
-
-    ``debug:`` 0
-
-        If enabled, allow syslog() to pass LOG_DEBUG messages. 
-
-
-    .. endblob debug
 
     .. startblob hostname_mechs
 
