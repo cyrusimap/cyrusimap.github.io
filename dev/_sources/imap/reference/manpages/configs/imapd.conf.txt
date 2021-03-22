@@ -5103,6 +5103,23 @@ FIELD DESCRIPTIONS
 
     .. endblob sync_realm
 
+    .. startblob sync_reconnect_maxwait
+
+    ``sync_reconnect_maxwait:`` 20m
+
+        When a rolling sync_client cannot connect to the replica, it enters
+        a retry loop with an exponential backoff between attempts.  This
+        option sets the upper limit on that exponential backoff: no matter
+        how long the replica has been down so far, sync_client will never
+        wait longer than sync_reconnect_maxwait between retries.
+
+        If this is zero or negative, the backoff duration will be allowed
+        to increase indefinitely (not recommended).
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob sync_reconnect_maxwait
+
     .. startblob sync_repeat_interval
 
     ``sync_repeat_interval:`` 1s

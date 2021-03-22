@@ -3411,6 +3411,17 @@ will default to &quot;csync&quot; (usually port 2005).</div></blockquote>
 <blockquote>
 <div>The authentication realm to use when authenticating to a sync server.
 Prefix with a channel name to only apply for that channel</div></blockquote>
+<p><code class="docutils literal"><span class="pre">sync_reconnect_maxwait:</span></code> 20m</p>
+<blockquote>
+<div><p>When a rolling sync_client cannot connect to the replica, it enters
+a retry loop with an exponential backoff between attempts.  This
+option sets the upper limit on that exponential backoff: no matter
+how long the replica has been down so far, sync_client will never
+wait longer than sync_reconnect_maxwait between retries.</p>
+<p>If this is zero or negative, the backoff duration will be allowed
+to increase indefinitely (not recommended).</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sync_repeat_interval:</span></code> 1s</p>
 <blockquote>
 <div><p>Minimum interval between replication runs in rolling replication
