@@ -2985,6 +2985,12 @@ headers can still be searched, the searches will just be slower.</div></blockquo
 <blockquote>
 <div>The maximum number of seconds to run a search for before aborting.  Default
 of no value means search &quot;forever&quot; until other timeouts.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_maxsize:</span></code> 4096</p>
+<blockquote>
+<div>The maximum size in kilobytes to index for each message part. Message
+contents that occur after this byte offset will not be indexed or
+search snippets generated from.
+Default is 4Mb. Xapian-only.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_queryscan:</span></code> 5000</p>
 <blockquote>
 <div>The minimum number of records require to do a direct scan of all G keys

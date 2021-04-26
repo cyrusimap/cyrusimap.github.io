@@ -4268,6 +4268,17 @@ FIELD DESCRIPTIONS
 
     .. endblob search_maxtime
 
+    .. startblob search_maxsize
+
+    ``search_maxsize:`` 4096
+
+        The maximum size in kilobytes to index for each message part. Message
+        contents that occur after this byte offset will not be indexed or
+        search snippets generated from.
+        Default is 4Mb. Xapian-only. 
+
+    .. endblob search_maxsize
+
     .. startblob search_queryscan
 
     ``search_queryscan:`` 5000
