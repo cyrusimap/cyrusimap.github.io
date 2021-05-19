@@ -524,7 +524,7 @@
 </div>
 <div class="section" id="configuration">
 <h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
-<p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application&#8217;s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documetation for how to supply SASL options.</p>
+<p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application&#8217;s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documentation for how to supply SASL options.</p>
 <p>Alternatively, Cyrus SASL looks for configuration files in <cite>/usr/lib/sasl/Appname.conf</cite> where Appname is settable by the application (for example, Sendmail 8.10 and later set this to &#8220;Sendmail&#8221;).</p>
 <p>Configuration using the application&#8217;s configuration files (via the getopt callback) will override those supplied by the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at sysadmin.php and options.php</p>
@@ -559,7 +559,7 @@ Kerberos?  PAM?
 5.  Also if you are using saslauthd, what communication (IPC) method do
 you want to use?  On most systems, the correct answer is the default
 (unix sockets), but on Solaris you can use IPC doors, which have proven
-to be more stable than equivilant Solaris systems using unix sockets.</p>
+to be more stable than equivalent Solaris systems using unix sockets.</p>
 <p>Once you have answered these questions, properly configuring a working
 configuration of Cyrus SASL becomes easier.</p>
 <div class="section" id="requirements">
@@ -618,7 +618,7 @@ OpenLDAP already built with SASL support. One way to solve this issue is to
 build Cyrus SASL first without ldap support, then build OpenLDAP, and then come
 back to SASL and build LDAPDB.</p>
 <p>Given the myriad of ways that Berkeley DB can be installed on a system,
-people useing it may want to look at the <code class="docutils literal"><span class="pre">--with-bdb-libdir</span></code> and
+people using it may want to look at the <code class="docutils literal"><span class="pre">--with-bdb-libdir</span></code> and
 <code class="docutils literal"><span class="pre">--with-bdb-incdir</span></code> as alternatives to <code class="docutils literal"><span class="pre">--with-dbbase</span></code> for
 specifying the paths to the Berkeley DB Library and Include directories.</p>
 <p>In fact, if you&#8217;re not planning on using SASLdb at all, it may be worth
@@ -648,7 +648,7 @@ our platforms by looking at the &#8220;SMakefile&#8221;.</p>
 </div>
 <div class="section" id="application-configuration">
 <h3>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h3>
-<p>Plesae read about the <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL Options</span></a> to learn what
+<p>Please read about the <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL Options</span></a> to learn what
 needs to be configured so that applications can successfully use the SASL
 library.</p>
 <p>You will want to ensure that the settings of <code class="docutils literal"><span class="pre">pwcheck_method</span></code>

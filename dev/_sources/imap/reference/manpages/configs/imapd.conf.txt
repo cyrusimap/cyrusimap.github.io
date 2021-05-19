@@ -5636,6 +5636,17 @@ FIELD DESCRIPTIONS
 
     .. endblob unixhierarchysep
 
+    .. startblob vcard_max_size
+
+    ``vcard_max_size:`` 0
+
+        Maximum allowed vCard size.
+        If non-zero, CardDAV and JMAP will reject storage of contacts whose
+        vCard representation is larger than *vcard_max_size* bytes.
+        If set to 0, this will allow vCards of any size (the default). 
+
+    .. endblob vcard_max_size
+
     .. startblob virtdomains
 
     ``virtdomains:`` off
