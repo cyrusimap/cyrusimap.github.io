@@ -1885,6 +1885,17 @@ FIELD DESCRIPTIONS
 
     .. endblob httptimeout
 
+    .. startblob icalendar_max_size
+
+    ``icalendar_max_size:`` 0
+
+        Maximum allowed iCalendar size.
+        If non-zero, CalDAV and JMAP will reject storage of resources whose
+        iCalendar representation is larger than *icalendar_max_size* bytes.
+        If set to 0, this will allow iCalendar resources of any size (the default). 
+
+    .. endblob icalendar_max_size
+
     .. startblob idlesocket
 
     ``idlesocket:`` {configdirectory}/socket/idle
@@ -2166,6 +2177,18 @@ FIELD DESCRIPTIONS
         only IETF standard JMAP functionality is supported. 
 
     .. endblob jmap_nonstandard_extensions
+
+    .. startblob jmap_pushpoll
+
+    ``jmap_pushpoll:`` 60s
+
+        The interval for polling for changes on an EventSource connection or
+        when push has been ennabled on a WebSocket channel.
+        The minimum value is 1 second. A value of 0 will disable push.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob jmap_pushpoll
 
     .. startblob jmap_set_has_attachment
 
@@ -5696,6 +5719,19 @@ FIELD DESCRIPTIONS
         If not specified, the builtin default template will be used. 
 
     .. endblob virusscan_notification_template
+
+    .. startblob websocket_timeout
+
+    ``websocket_timeout:`` 30m
+
+        Set the length of the HTTP server's inactivity autologout timer
+        when a WebSocket channel has been established.
+        The default is 30 minutes.  The minimum value is 0, which will
+        disable WebSockets.
+
+        If no unit is specified, minutes is assumed. 
+
+    .. endblob websocket_timeout
 
     .. startblob xbackup_enabled
 

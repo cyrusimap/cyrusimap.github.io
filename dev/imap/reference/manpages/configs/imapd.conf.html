@@ -1788,6 +1788,12 @@ disable persistent connections.</p>
 <p>For backwards compatibility, if no unit is specified, minutes
 is assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">icalendar_max_size:</span></code> 0</p>
+<blockquote>
+<div>Maximum allowed iCalendar size.
+If non-zero, CalDAV and JMAP will reject storage of resources whose
+iCalendar representation is larger than <em>icalendar_max_size</em> bytes.
+If set to 0, this will allow iCalendar resources of any size (the default).</div></blockquote>
 <p><code class="docutils literal"><span class="pre">idlesocket:</span></code> {configdirectory}/socket/idle</p>
 <blockquote>
 <div>Unix domain socket that idled listens on.</div></blockquote>
@@ -1939,6 +1945,13 @@ JMAP implementation does not enforce this size limit. Default is 10 Mb.</div></b
 <blockquote>
 <div>If enabled, support non-standard JMAP extensions.  If not enabled,
 only IETF standard JMAP functionality is supported.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_pushpoll:</span></code> 60s</p>
+<blockquote>
+<div><p>The interval for polling for changes on an EventSource connection or
+when push has been ennabled on a WebSocket channel.
+The minimum value is 1 second. A value of 0 will disable push.</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_set_has_attachment:</span></code> 1</p>
 <blockquote>
 <div>If enabled, the $hasAttachment flag is determined and set for new messages
@@ -3709,6 +3722,14 @@ of the incoming network interface, or if no record is found, the
 infected messages that have been deleted by <strong>cyr_virusscan(8)</strong>.
 See <strong>cyr_virusscan(8)</strong> for specification of the format of this file.
 If not specified, the builtin default template will be used.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">websocket_timeout:</span></code> 30m</p>
+<blockquote>
+<div><p>Set the length of the HTTP server's inactivity autologout timer
+when a WebSocket channel has been established.
+The default is 30 minutes.  The minimum value is 0, which will
+disable WebSockets.</p>
+<p>If no unit is specified, minutes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
 <div>Enable support for the XBACKUP command in imapd.  If enabled, admin
