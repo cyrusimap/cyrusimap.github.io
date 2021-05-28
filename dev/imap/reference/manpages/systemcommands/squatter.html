@@ -1032,16 +1032,17 @@ mailboxes or mailbox prefixes given as arguments.</p>
 
 <dl class="option">
 <dt id="cmdoption-squatter-s">
-<span id="cmdoption-squatter--squat-skip"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--squat-skip</code><code class="descclassname">[=delta]</code><a class="headerlink" href="#cmdoption-squatter-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-squatter--squat-skip"></span><code class="descname">-s</code><code class="descclassname"> delta</code><code class="descclassname">, </code><code class="descname">--squat-skip</code><code class="descclassname">=delta</code><a class="headerlink" href="#cmdoption-squatter-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip mailboxes that have not been modified since last index. This is
 achieved by comparing the last modification time of a mailbox to
 the last time the squat index of this mailbox got updated. If the
-mailbox modification time (plus delta) is less than the squat
-index modification time, then the mailbox is skipped. The optional
-argument value delta is defined in seconds and must be equal to or
-higher than zero, the default value is 60.
-Squat only.
-This feature is only available on the master branch.</p>
+mailbox modification time plus delta is less than the squat
+index modification time, then the mailbox is skipped. The argument
+value delta is defined in seconds and must be greater than or equal
+to zero. The historical default delta was 60, and this remains a
+good general choice, but for technical reasons it must now be
+specified explicitly.
+Squat only.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1236,7 +1237,7 @@ Xapian documentation in this release before using Xapian.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 10 2021
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 21 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
