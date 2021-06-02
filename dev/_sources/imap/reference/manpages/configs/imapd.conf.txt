@@ -2003,6 +2003,20 @@ FIELD DESCRIPTIONS
 
     .. endblob jmap_emailsearch_db_path
 
+    .. startblob jmap_querycache_max_age
+
+    ``jmap_querycache_max_age:`` 0m
+
+        The duration after which unused cached JMAP query results
+        must be evicted from process memory. If non-zero, then the
+        full result of the last query (before windowing) is stored
+        in-memory. Subsequent queries with the same expression and
+        query state can then page through the cached result.
+        A zero value disables query result caching.
+        This feature currently only is enabled for Email/query. 
+
+    .. endblob jmap_querycache_max_age
+
     .. startblob jmap_preview_annot
 
     ``jmap_preview_annot:`` <none>

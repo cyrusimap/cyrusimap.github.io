@@ -1849,6 +1849,15 @@ See improved_mboxlist_sort.html.</p>
 <div>The absolute path to the JMAP email search cache file.  If not
 specified, JMAP Email/query and Email/queryChanges will not
 cache email search results.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_querycache_max_age:</span></code> 0m</p>
+<blockquote>
+<div>The duration after which unused cached JMAP query results
+must be evicted from process memory. If non-zero, then the
+full result of the last query (before windowing) is stored
+in-memory. Subsequent queries with the same expression and
+query state can then page through the cached result.
+A zero value disables query result caching.
+This feature currently only is enabled for Email/query.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_preview_annot:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The name of the per-message annotation, if any, to store message
