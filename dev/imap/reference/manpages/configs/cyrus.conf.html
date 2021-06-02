@@ -972,6 +972,40 @@ is exiting.</p>
 <blockquote>
 <div>The command (with options) to spawn as a child process.  This
 string argument is required.</div></blockquote>
+<pre class="literal-block">
+<strong>wait=</strong>0
+</pre>
+<blockquote>
+<div><p>Switch: whether or not <a class="reference internal" href="../systemcommands/master.html#std:cyrusman-master(8)">master(8)</a> should wait for this
+daemon to successfully start before continuing to load.</p>
+<p>If <em>wait=n</em> (the default), the daemon will be started asynchronously
+along with the service processes.  The daemon process will not have
+file descriptor 3 open, and does not need to indicate its readiness.</p>
+<p>If <em>wait=y</em>, the daemon MUST write &quot;ok\r\n&quot; to file descriptor 3
+to indicate its readiness; if it does not do this, and master has
+been told to wait, master will continue to wait.... If it writes
+anything else to this descriptor, or closes it before writing
+&quot;ok\r\n&quot;, master will exit with an error.</p>
+<p>Daemons with <em>wait=y</em> will be started sequentially in the order
+they are listed in cyrus.conf, waiting for each to report readiness
+before the next is started.</p>
+<p>Service processes, and <em>wait=n</em> daemons, are not started until after
+the <em>wait=y</em> daemons are all started and ready.</p>
+<p>At shutdown, <em>wait=y</em> daemons will be terminated sequentially in the
+reverse order they were started, commencing after all other services
+and <em>wait=n</em> daemons have finished.</p>
+<p>If a daemon that was started with <em>wait=y</em> exits unexpectedly, such
+that master restarts it, master will restart it asynchronously,
+without waiting for it to report its readiness.  In this case, file
+descriptor 3 will not be open and the daemon should not try to write
+to it.</p>
+<p>If master is told to reread its config with a SIGHUP, this signal
+will be passed on to <em>wait=y</em> daemons like any other service.  If the
+daemon exits in response to the signal, master will restart it
+asynchronously, without waiting for it to report its readiness. In
+this case too, file descriptor 3 will not be open and the daemon
+should not try to write to it.</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="examples">
@@ -1046,7 +1080,7 @@ still have separate access control rules.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Dec 13 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 22 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
