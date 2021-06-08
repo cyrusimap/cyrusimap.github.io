@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Replication: Installation and Administration &mdash; Cyrus IMAP 3.5.0-alpha0 (dev) documentation</title>
+  <title>relocate_by_id &mdash; Cyrus IMAP 3.5.0-alpha0 (dev) documentation</title>
   
 
   
@@ -36,9 +36,9 @@
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
     <link rel="top" title="Cyrus IMAP 3.5.0-alpha0 (dev) documentation" href="../../../../index.html"/>
-        <link rel="up" title="Standard Operating Procedures" href="../sop.html"/>
-        <link rel="next" title="Mailbox Operations" href="mailbox-operations.html"/>
-        <link rel="prev" title="Standard Operating Procedures" href="../sop.html"/> 
+        <link rel="up" title="Man pages" href="../commands.html"/>
+        <link rel="next" title="restore" href="restore.html"/>
+        <link rel="prev" title="rehash" href="rehash.html"/> 
 
   
   
@@ -420,122 +420,122 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../operations.html">Operations</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../manpages/commands.html">Man pages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../manpages/commands.html#configuration-files">(5) Configuration Files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Man pages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../commands.html#configuration-files">(5) Configuration Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../manpages/commands.html#system-commands">(8) System Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_mboxlist.html"><strong>ctl_mboxlist</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_df.html"><strong>cyr_df</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_expire.html"><strong>cyr_expire</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_info.html"><strong>cyr_info</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_ls.html"><strong>cyr_ls</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_sequence.html"><strong>cyr_sequence</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_synclog.html"><strong>cyr_synclog</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_userseen.html"><strong>cyr_userseen</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyr_virusscan.html"><strong>cyr_virusscan</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyradm.html"><strong>cyradm</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/cyrdump.html"><strong>cyrdump</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/deliver.html"><strong>deliver</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/fetchnews.html"><strong>fetchnews</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/fud.html"><strong>fud</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/httpd.html"><strong>httpd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/idled.html"><strong>idled</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/imapd.html"><strong>imapd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ipurge.html"><strong>ipurge</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/lmtpd.html"><strong>lmtpd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/masssievec.html"><strong>masssievec</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/master.html"><strong>master</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mbexamine.html"><strong>mbexamine</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mbpath.html"><strong>mbpath</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mbtool.html"><strong>mbtool</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mkimap.html"><strong>mkimap</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mknewsgroups.html"><strong>mknewsgroups</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/mupdate.html"><strong>mupdate</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/nntpd.html"><strong>nntpd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/notifyd.html"><strong>notifyd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/pop3d.html"><strong>pop3d</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/pop3proxyd.html"><strong>pop3proxyd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/promstatsd.html"><strong>promstatsd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/proxyd.html"><strong>proxyd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ptdump.html"><strong>ptdump</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ptexpire.html"><strong>ptexpire</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/ptloader.html"><strong>ptloader</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/quota.html"><strong>quota</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/rehash.html"><strong>rehash</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/restore.html"><strong>restore</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/sievec.html"><strong>sievec</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/sieved.html"><strong>sieved</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/squatter.html"><strong>squatter</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/sync_client.html"><strong>sync_client</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/sync_reset.html"><strong>sync_reset</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/sync_server.html"><strong>sync_server</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/timsieved.html"><strong>timsieved</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/tls_prune.html"><strong>tls_prune</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/translatesieve.html"><strong>translatesieve</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/systemcommands/unexpunge.html"><strong>unexpunge</strong></a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../commands.html#system-commands">(8) System Commands</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="arbitron.html"><strong>arbitron</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="backupd.html"><strong>backupd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_backups.html"><strong>ctl_backups</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_mboxlist.html"><strong>ctl_mboxlist</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_backup.html"><strong>cyr_backup</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_deny.html"><strong>cyr_deny</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_df.html"><strong>cyr_df</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_expire.html"><strong>cyr_expire</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_info.html"><strong>cyr_info</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_ls.html"><strong>cyr_ls</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_sequence.html"><strong>cyr_sequence</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_synclog.html"><strong>cyr_synclog</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_userseen.html"><strong>cyr_userseen</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_virusscan.html"><strong>cyr_virusscan</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyradm.html"><strong>cyradm</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyrdump.html"><strong>cyrdump</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="deliver.html"><strong>deliver</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="fetchnews.html"><strong>fetchnews</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="fud.html"><strong>fud</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="httpd.html"><strong>httpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="idled.html"><strong>idled</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="imapd.html"><strong>imapd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipurge.html"><strong>ipurge</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lmtpd.html"><strong>lmtpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="masssievec.html"><strong>masssievec</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="master.html"><strong>master</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mbexamine.html"><strong>mbexamine</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mbpath.html"><strong>mbpath</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mbtool.html"><strong>mbtool</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mkimap.html"><strong>mkimap</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mknewsgroups.html"><strong>mknewsgroups</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mupdate.html"><strong>mupdate</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nntpd.html"><strong>nntpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="notifyd.html"><strong>notifyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pop3d.html"><strong>pop3d</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pop3proxyd.html"><strong>pop3proxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="promstatsd.html"><strong>promstatsd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="proxyd.html"><strong>proxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ptdump.html"><strong>ptdump</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ptexpire.html"><strong>ptexpire</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ptloader.html"><strong>ptloader</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="quota.html"><strong>quota</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reconstruct.html"><strong>reconstruct</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="rehash.html"><strong>rehash</strong></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><strong>relocate_by_id</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="restore.html"><strong>restore</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sievec.html"><strong>sievec</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sieved.html"><strong>sieved</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="smmapd.html"><strong>smmapd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="squatter.html"><strong>squatter</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync_client.html"><strong>sync_client</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync_reset.html"><strong>sync_reset</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sync_server.html"><strong>sync_server</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="timsieved.html"><strong>timsieved</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="tls_prune.html"><strong>tls_prune</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="translatesieve.html"><strong>translatesieve</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unexpunge.html"><strong>unexpunge</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../manpages/commands.html#user-commands">(1) User Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/arbitronsort.pl.html"><strong>arbitronsort.pl</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/dav_reconstruct.html"><strong>dav_reconstruct</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/httptest.html"><strong>httptest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/imtest.html"><strong>imtest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/installsieve.html"><strong>installsieve</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/lmtptest.html"><strong>lmtptest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/mupdatetest.html"><strong>mupdatetest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/nntptest.html"><strong>nntptest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/pop3test.html"><strong>pop3test</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/sieveshell.html"><strong>sieveshell</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/sivtest.html"><strong>sivtest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/smtptest.html"><strong>smtptest</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/usercommands/synctest.html"><strong>synctest</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commands.html#user-commands">(1) User Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/arbitronsort.pl.html"><strong>arbitronsort.pl</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/dav_reconstruct.html"><strong>dav_reconstruct</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/httptest.html"><strong>httptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/imtest.html"><strong>imtest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/installsieve.html"><strong>installsieve</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/lmtptest.html"><strong>lmtptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/mupdatetest.html"><strong>mupdatetest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/nntptest.html"><strong>nntptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/pop3test.html"><strong>pop3test</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/sieveshell.html"><strong>sieveshell</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/sivtest.html"><strong>sivtest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/smtptest.html"><strong>smtptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usercommands/synctest.html"><strong>synctest</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../admin.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../admin.html">Administrator Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../admin.html#architecture">Architecture</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../architecture.html">System Architecture</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="reference internal" href="../../admin.html#management">Management</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../locations.html">File &amp; Directory Locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../ports-sockets.html">Ports and Sockets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../access-control.html">Access Control</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quotas.html">Quotas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sieve.html">Cyrus Sieve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../backups.html">Cyrus Backups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../nntp.html">Cyrus NNTP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../protlayer.html">Cyrus Prot Layer</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../sop.html">Standard Operating Procedures</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../eventsource.html">Cyrus Event Source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../monitoring.html">Monitoring</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../config-mailboxdistribution.html">Mailbox Distribution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../murder/murder.html">Cyrus Murder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../nginx-proxy.html">HOWTO: Using an NGINX IMAP Proxy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tweaking.html">Tweaking Cyrus IMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../admin.html#management">Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/locations.html">File &amp; Directory Locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/ports-sockets.html">Ports and Sockets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/access-control.html">Access Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/quotas.html">Quotas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/sieve.html">Cyrus Sieve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/backups.html">Cyrus Backups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/nntp.html">Cyrus NNTP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/protlayer.html">Cyrus Prot Layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/sop.html">Standard Operating Procedures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/eventsource.html">Cyrus Event Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/monitoring.html">Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/config-mailboxdistribution.html">Mailbox Distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/murder/murder.html">Cyrus Murder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/nginx-proxy.html">HOWTO: Using an NGINX IMAP Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../admin/tweaking.html">Tweaking Cyrus IMAP</a></li>
 </ul>
 </li>
 </ul>
@@ -769,15 +769,13 @@
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
-          <li><a href="../../admin.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="../commands.html">Man pages</a> &raquo;</li>
       
-          <li><a href="../sop.html">Standard Operating Procedures</a> &raquo;</li>
-      
-    <li>Replication: Installation and Administration</li>
+    <li><strong>relocate_by_id</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/admin/sop/replication.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/manpages/systemcommands/relocate_by_id.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -786,451 +784,67 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="replication-installation-and-administration">
-<span id="replication"></span><h1>Replication: Installation and Administration<a class="headerlink" href="#replication-installation-and-administration" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../architecture.html#architecture-replication"><span class="std std-ref">Overall structure of replication</span></a>.</p>
+  <span class="target" id="std:cyrusman-relocate_by_id(8)"></span><div class="section" id="relocate-by-id">
+<span id="imap-reference-manpages-systemcommands-relocate-by-id"></span><h1><strong>relocate_by_id</strong><a class="headerlink" href="#relocate-by-id" title="Permalink to this headline">¶</a></h1>
+<p>Relocate mailbox trees by their mailbox ids</p>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<pre class="literal-block">
+<strong>relocate_by_id</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-n</strong> ] [ <strong>-q</strong> ] [ <strong>-u</strong> ] [ <em>mailbox-names</em>... ]
+</pre>
 </div>
-<div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Host</dt>
-<dd>A computer chassis, slot or cabinet.  A machine.</dd>
-<dt>Server or Service</dt>
-<dd>A program or process which &quot;serves&quot; a particular protocol.
-Typically a server will listen on a network port or Unix socket
-for communications from a client (local or remote).</dd>
-<dt>Client</dt>
-<dd>A program or process which talks to a server or servers for a given
-protocol.  The initiator of a client/server session.</dd>
-<dt>Instance</dt>
-<dd>A particular instance or iteration of a program, which may be one,
-or one of many, providing similar services to different consumers.</dd>
-<dt>Master</dt>
-<dd>In this document, Master always means the source of data to be
-replicated.</dd>
-<dt>Replica</dt>
-<dd>The target of data replication is the Replica, which refers both to
-an instance of sync_server and to the resultant dataset.</dd>
-</dl>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Given a mailbox name or a space separated list of mailbox names,
+<strong>relocate_by_id</strong> relocates the mailbox and its submailboxes to
+directory trees hashed by mailbox id rather than hashed by mailbox name.</p>
+<p><strong>relocate_by_id</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses &lt;configdirectory&gt;/mailboxes.db
+to locate the mailboxes on disk.</p>
 </div>
-<div class="section" id="operating-modes">
-<h2>Operating Modes<a class="headerlink" href="#operating-modes" title="Permalink to this headline">¶</a></h2>
-<p>Cyrus replication supports two modes of operation: Rolling and
-Periodic. The difference is that rolling replication is a more or less
-continuous process whereas periodic replication occurs on demand,
-triggered by some manual or automated process such as
-<em class="manpage">cron(8)</em>.</p>
-<div class="section" id="rolling-replication">
-<h3>Rolling Replication<a class="headerlink" href="#rolling-replication" title="Permalink to this headline">¶</a></h3>
-<p>Rolling replication is enabled by setting <code class="docutils literal"><span class="pre">sync_log</span></code> to True in
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.  With <code class="docutils literal"><span class="pre">sync_log:</span> <span class="pre">true</span></code>, any process which
-alters the mail spool will update the <code class="docutils literal"><span class="pre">sync_log</span></code> files with details
-as to which mailbox(es) or users have been affected by their actions.
-In this way the <code class="docutils literal"><span class="pre">sync_log</span></code> acts as a command file for the
-<a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> process(es).</p>
-<p>The log files are stored in <code class="docutils literal"><span class="pre">{configdirectory}/sync/log</span></code> for single
-channel systems (see <a class="reference internal" href="#replication-channels"><span class="std std-ref">Channels</span></a> for more information)
-and are rotated on a regular basis by Cyrus.  Multi-channel deployments
-will have a separate <code class="docutils literal"><span class="pre">sync_log</span></code> file for each, stored as
-<code class="docutils literal"><span class="pre">{configdirectory}/sync/&lt;channel&gt;/log</span></code>.</p>
-<p>Upon completing a log file, <code class="docutils literal"><span class="pre">sync_client</span></code> will go to sleep, or, if
-processing took longer than <code class="docutils literal"><span class="pre">sync_repeat_interval</span></code> seconds, will
-start over again on the next log.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Any unsuccessful run of sync_client will result in the incomplete
-remains of the original log file being left behind as &quot;log-&lt;$PID&gt;&quot;.
-This may be re-run as needed.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Please also see <a class="reference internal" href="#replication-other-uses"><span class="std std-ref">below for other uses of sync_log</span></a>.</p>
-</div>
-</div>
-<div class="section" id="periodic-replication">
-<h3>Periodic Replication<a class="headerlink" href="#periodic-replication" title="Permalink to this headline">¶</a></h3>
-<p>With <code class="docutils literal"><span class="pre">sync_log</span></code> set to the default False, replication must be
-triggered either by manually running <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a>, or by
-doing so via <code class="docutils literal"><span class="pre">cron</span></code> or an entry in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</p>
-<p>In either event, command line switches control the operation of
-<code class="docutils literal"><span class="pre">sync_client</span></code>.</p>
-<p>Once the process completes its work, it will exit.</p>
-</div>
-<div class="section" id="idempotency">
-<h3>Idempotency<a class="headerlink" href="#idempotency" title="Permalink to this headline">¶</a></h3>
-<p>Synchronization itself is idempotent in either mode, so log files may
-be &quot;replayed&quot; without concern of damage to the replica's mail spools.</p>
-</div>
-<div class="section" id="sync-chains">
-<h3>Sync Chains<a class="headerlink" href="#sync-chains" title="Permalink to this headline">¶</a></h3>
-<p>Cyrus supports chained replication, in which one replica replicates to
-another.  I.e. A replicates to B; B replicates to C.  If you wish to
-use this approach, please see the <code class="docutils literal"><span class="pre">sync_log_chain</span></code> setting:</p>
-<blockquote>
-<div><p><code class="docutils literal"><span class="pre">sync_log_chain:</span></code> 0</p>
-<blockquote>
-<div>Enable replication action logging by sync_server as well, allowing
-chaining of replicas.  Use this on 'B' for A =&gt; B =&gt; C replication layout</div></blockquote>
-</div></blockquote>
-<p>Note that sync_log_chain is to be set on the middle server(s) in a
-chain, not on the first or last.</p>
-</div>
-</div>
-<div class="section" id="transport">
-<h2>Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h2>
-<p>Older versions (pre-3.0) of Cyrus used the dedicated <code class="docutils literal"><span class="pre">csync</span></code>
-transport -- typically over TCP port 2005 -- and server process --
-<a class="reference internal" href="../../manpages/systemcommands/sync_server.html#std:cyrusman-sync_server(8)">sync_server(8)</a> -- for replication. This is no longer
-necessary.</p>
-<p>From v3.0 forward, the <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> will default to using
-IMAP protocol for transport, and an IMAP instance on the replica will
-process the synchronization instructions.  If you wish, you may
-override this by setting the <code class="docutils literal"><span class="pre">sync_try_imap</span></code> setting in
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to False.</p>
-<blockquote>
-<div><p><code class="docutils literal"><span class="pre">sync_try_imap:</span></code> 1</p>
-<blockquote>
-<div>Whether sync_client should try to perform an IMAP connection
-before falling back to csync.  If this is set to &quot;no&quot;,
-sync_client will only use csync.  Prefix with a channel name to
-apply only for that channel</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>One must <a class="reference internal" href="../../../developer/compiling.html#compiling"><span class="std std-ref">build Cyrus IMAPd</span></a> with the
-<code class="docutils literal"><span class="pre">--enable-replication</span></code> configure option. This builds the replication
-client/server applications and utilities.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Those using their distribution's packages may need to install a
-separate package for replication support.  For example, on Debian
-and derived distros, install the <code class="docutils literal"><span class="pre">cyrus-replication</span></code> package.</p>
-</div>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>At least one Cyrus IMAP server instance to be the <strong>master</strong>.</li>
-<li>At least one Cyrus IMAP server instance to be the <strong>replica</strong>.</li>
-</ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Sample configurations for both &quot;master&quot; and &quot;replica&quot; instances are
-included in the standard distribution.</p>
-</div>
-</div>
-<div class="section" id="replica-server-configuration">
-<h3>Replica server configuration<a class="headerlink" href="#replica-server-configuration" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>replica</strong> is a standalone server instance which listens for and
-processes synchronization messages from a single <strong>master</strong> server. The
-replica server needs to be configured to accept synchronization
-messages via IMAP or the (deprecated) <a class="reference internal" href="../../manpages/systemcommands/sync_server.html#std:cyrusman-sync_server(8)">sync_server(8)</a>
-process.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Within a Cyrus <a class="reference internal" href="../../architecture.html#architecture-murder"><span class="std std-ref">Murder</span></a> environment,
-replicas must <strong>not</strong> be configured to invoke
-<a class="reference internal" href="../../manpages/systemcommands/ctl_mboxlist.html#std:cyrusman-ctl_mboxlist(8)">ctl_mboxlist(8)</a> on startup (pushing the local mailbox
-list to the <strong>Mupdate Master</strong>).  This may only be done on the
-Master instance.</p>
-</div>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">It is critically important that all partitions existing on a master
-server instance also be present on all replica instances.  Failure
-to ensure this will result in crashes and could lead to lost data
-on the replicas.</p>
-</div>
-<ol class="arabic">
-<li><p class="first"><a class="reference internal" href="../../../installing.html#installing"><span class="std std-ref">Configure a standalone server</span></a>.</p>
-</li>
-<li><p class="first">If using the deprecated sync_server scheme, add the following line
-to the <code class="docutils literal"><span class="pre">/etc/services</span></code> file. Note that the port number is
-arbitrary as long as its not being used by any other services on the
-network.</p>
-<blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">csync</span>     <span class="mi">2005</span><span class="o">/</span><span class="n">tcp</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">If using the deprecated sync_server scheme, add a line similar to
-the following in the SERVICES section of <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>:</p>
-<blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">syncserver</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_server&quot;</span> <span class="n">listen</span><span class="o">=</span><span class="s2">&quot;csync&quot;</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Start/restart <code class="docutils literal"><span class="pre">/usr/cyrus/bin/master</span></code>.</p>
-</li>
-</ol>
-</div>
-<div class="section" id="master-server-configuration">
-<h3>Master server configuration<a class="headerlink" href="#master-server-configuration" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>master</strong> server is a standalone or backend Cyrus IMAP server
-instance which is actively serving mailboxes to clients. This server
-needs to be configured to synchronize its mailstore with a <strong>replica</strong>
-server via an instance of <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a>.</p>
-<p>If using the deprecated sync_server scheme, add the following line to
-the <code class="docutils literal"><span class="pre">/etc/services</span></code> file.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">csync</span>     <span class="mi">2005</span><span class="o">/</span><span class="n">tcp</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The port number <strong>MUST</strong> be the same as that used on the replica
-server.</p>
-</div>
-<p>Specify the hostname of the replica server and how to authenticate to
-it in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> using these options:</p>
-<blockquote>
-<div><ul class="simple">
-<li>sync_host</li>
-<li>sync_port</li>
-<li>sync_authname</li>
-<li>sync_realm</li>
-<li>sync_password</li>
-</ul>
-</div></blockquote>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">sync_authname</span></code> <strong>MUST</strong> be an <code class="docutils literal"><span class="pre">admin</span></code> user on the replica.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">sync_realm</span></code> and <code class="docutils literal"><span class="pre">sync_password</span></code> may not be necessary
-depending on the SASL mechanism used for authentication.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">See <a class="reference internal" href="#replication-channels"><span class="std std-ref">Channels</span></a>, below, for details on how to use
-these settings to control syncing to multiple replicas.</p>
-</div>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">If using sync_log_channels for any other purpose, such as
-specifying the sync_log used by <a class="reference internal" href="../../manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> command,
-you must <em>also</em> either specify a sync_log channel for replication,
-or specify the default &quot;&quot; (the two-character string U+22 U+22).</p>
-</div>
-<p>Add invocation specifications to <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> to spawn
-<a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> as desired (for each channel used) as
-described below in Rolling Replication or Periodic Replication.</p>
-</div>
-<div class="section" id="compression">
-<h3>Compression<a class="headerlink" href="#compression" title="Permalink to this headline">¶</a></h3>
-<p>If one runs replication over a WAN link, the trade-off between
-bandwidth and CPU usage will tilt strongly in favour of enabling
-compression to save bandwidth at a slight increase in CPU cost.  Set
-the <code class="docutils literal"><span class="pre">sync_compress</span></code> value in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_compress</span><span class="p">:</span> <span class="n">On</span>
-</pre></div>
-</div>
-<p>or pass the <code class="docutils literal"><span class="pre">-z</span></code> flag to <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> in the service
-spec in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -z&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="rolling-replication-configuration">
-<h3>Rolling Replication Configuration<a class="headerlink" href="#rolling-replication-configuration" title="Permalink to this headline">¶</a></h3>
-<p><strong>Rolling Replication</strong> means that the master instance continuously
-synchronizes itself with a replica.</p>
-<p>To configure rolling replication, perform the following:</p>
-<ol class="arabic">
-<li><p class="first">Enable the <code class="docutils literal"><span class="pre">sync_log</span></code> option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>. This
-allows the imapd, pop3d, nntpd, and lmtpd services to log
-synchronization actions which will be periodically serviced by
-sync_client:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_log</span><span class="p">:</span> <span class="n">On</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Optionally, adjust the <code class="docutils literal"><span class="pre">sync_repeat_interval</span></code> in
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_repeat_interval</span><span class="p">:</span> <span class="mi">300</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Add a line similar to the following in the STARTUP section of
-<a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r&quot;</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p>Start/restart <code class="docutils literal"><span class="pre">/usr/cyrus/bin/master</span></code>.</p>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
-<p>In a multi-channel mesh, the channel to be used by a given
-sync_client must be specified via the &quot;-n &lt;channel&gt;&quot; argument on
-the command line:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -n channel1&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="terminating-rolling-replication">
-<h3>Terminating Rolling Replication<a class="headerlink" href="#terminating-rolling-replication" title="Permalink to this headline">¶</a></h3>
-<p>To be able to stop rolling replication at any time, configure the
-<code class="docutils literal"><span class="pre">sync_shutdown_file</span></code> option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to point to
-a non-existant file, the appearance of this file will trigger a
-shutdown of a <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> instance:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_shutdown_file</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">syncstop</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="tweaking-rolling-replication">
-<h3>Tweaking Rolling Replication<a class="headerlink" href="#tweaking-rolling-replication" title="Permalink to this headline">¶</a></h3>
-<p>The default frequency of replication runs is 3 seconds.  Lengthening
-this produces higher efficiency at the cost of slightly more stale data
-on the replica.  Alter this via the sync_repeat_interval in
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> or by using the &quot;-d&quot; argument in the
-invocation of <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a>.</p>
-</div>
-<div class="section" id="periodic-replication-configuration">
-<h3>Periodic Replication Configuration<a class="headerlink" href="#periodic-replication-configuration" title="Permalink to this headline">¶</a></h3>
-<p>In Periodic Replication the sync_client instance must be spawned
-from time to time, causing replication to start at that time.  This may
-be handled via a <em class="manpage">cron(8)</em> job, or by adding an entry to the
-EVENTS section of <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> like any of these:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EVENTS</span> <span class="p">{</span>
-    <span class="o">&lt;...&gt;</span>
-    <span class="c1"># Periodically sync ALL user mailboxes every 4 hours</span>
-    <span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -A&quot;</span> <span class="n">period</span><span class="o">=</span><span class="mi">240</span>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-relocate_by_id-C">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-relocate_by_id-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+</dd></dl>
 
-    <span class="c1"># Periodically sync changes at specific times</span>
-    <span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -A&quot;</span> <span class="n">at</span><span class="o">=</span><span class="mi">0800</span>
-    <span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -A&quot;</span> <span class="n">at</span><span class="o">=</span><span class="mi">1200</span>
-    <span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -A&quot;</span> <span class="n">at</span><span class="o">=</span><span class="mi">1800</span>
-    <span class="o">&lt;...&gt;</span>
-<span class="p">}</span>
-</pre></div>
+<dl class="option">
+<dt id="cmdoption-relocate_by_id-n">
+<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do NOT make any changes.  Just list which directories will be relocated.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-relocate_by_id-q">
+<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run quietly.  Suppress any error output.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-relocate_by_id-u">
+<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>The specified <em>mailbox-names</em> are users, not mailboxes.
+User metadata directories will also be relocated.</p>
+</dd></dl>
+
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When using the &quot;-A&quot; flag (sync all users) no non-user
-mailboxes are synced.  As the man page <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
-notes, &quot;... this could be considered a bug and maybe it should do
-those mailboxes independently.&quot;</p>
-</div>
-</div>
-<div class="section" id="tweaking-replication">
-<h3>Tweaking Replication<a class="headerlink" href="#tweaking-replication" title="Permalink to this headline">¶</a></h3>
-<p>You may control the number of messages replicated in each batch, via
-the <code class="docutils literal"><span class="pre">sync_batchsize</span></code> setting:</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<pre class="literal-block">
+<strong>relocate_by_id -u</strong> <em>jsmith</em>
+</pre>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">sync_batchsize:</span></code> 8192</p>
-<blockquote>
-<div>the number of messages to upload in a single mailbox replication.
-Default is 8192.  If there are more than this many messages appended
-to the mailbox, generate a synthetic partial state and send that.</div></blockquote>
-</div></blockquote>
+<div>Relocate all mailbox and metadata directories for user <em>jsmith</em>.</div></blockquote>
 </div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>/etc/imapd.conf,
+&lt;configdirectory&gt;/mailboxes.db</p>
 </div>
-<div class="section" id="channels">
-<span id="replication-channels"></span><h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
-<p>The Cyrus replication scheme is very flexible, and supports meshes in
-which masters running on various hosts may replicate to instances on
-other hosts.  This is achieved by use of the Channels feature of the
-replication system.</p>
-<p>To employ channels, prefix any of the following sync_ configuration
-options in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> with the channel name and an
-underscore &quot;_&quot; character as needed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_authname</span>
-<span class="n">sync_password</span>
-<span class="n">sync_realm</span>
-<span class="n">sync_host</span>
-<span class="n">sync_port</span>
-<span class="n">sync_repeat_interval</span>
-<span class="n">sync_shutdown_file</span>
-</pre></div>
-</div>
-<p>Then add the setting <code class="docutils literal"><span class="pre">sync_log_channels</span></code> with a list of the channels:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_log_channels</span><span class="p">:</span> <span class="n">chan1</span> <span class="n">chan2</span> <span class="n">chan3</span>
-</pre></div>
-</div>
-<p>For example, a site using the same auth credentials for all servers has
-no need to specify unique per-channel settings for <code class="docutils literal"><span class="pre">sync_authname</span></code>,
-<code class="docutils literal"><span class="pre">sync_password</span></code> or <code class="docutils literal"><span class="pre">sync_realm</span></code>, but might do the following for the
-rest of the sync related settings in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sync_authname</span><span class="p">:</span> <span class="n">replman</span>
-<span class="n">sync_password</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">secret</span><span class="o">&gt;</span>
-<span class="n">sync_log_channels</span><span class="p">:</span> <span class="n">repl1</span> <span class="n">repl2</span> <span class="n">offsite</span>
-<span class="c1">##</span>
-<span class="c1"># The main replica</span>
-<span class="n">repl1_sync_host</span><span class="p">:</span> <span class="n">mailrepl1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
-<span class="n">repl1_sync_repeat_interval</span><span class="p">:</span> <span class="mi">180</span>
-<span class="n">repl1_shutdown_file</span><span class="p">:</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">sync</span><span class="o">/</span><span class="n">repl1_shutdown</span>
-<span class="c1">##</span>
-<span class="c1"># A second replica used to feed the tape backup system</span>
-<span class="n">repl2_sync_host</span><span class="p">:</span> <span class="n">mailrepl2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
-<span class="n">repl2_sync_repeat_interval</span><span class="p">:</span> <span class="mi">180</span>
-<span class="n">repl2_shutdown_file</span><span class="p">:</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">sync</span><span class="o">/</span><span class="n">repl2_shutdown</span>
-<span class="c1">##</span>
-<span class="c1"># An offsite replica which needs a different port and uses a slower</span>
-<span class="c1"># cycle rate</span>
-<span class="n">offsite_sync_port</span><span class="p">:</span> <span class="mi">19205</span>
-<span class="n">offsite_sync_host</span><span class="p">:</span> <span class="n">mailoffsite</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
-<span class="n">offsite_sync_repeat_interval</span><span class="p">:</span> <span class="mi">360</span>
-<span class="n">offsite_shutdown_file</span><span class="p">:</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">sync</span><span class="o">/</span><span class="n">offsite_shutdown</span>
-</pre></div>
-</div>
-<p>Then these entries in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> would complete the
-exercise:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">repl1sync</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -n repl1&quot;</span>
-<span class="n">repl2sync</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -n repl2&quot;</span>
-<span class="n">offsitesync</span>     <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -n offsite&quot;</span>
-</pre></div>
-</div>
-<p>Again, this is just an example for illustration.  The system provides so
-much flexibility, and one can combine channels with chaining to achieve
-even more.</p>
-</div>
-<div class="section" id="other-considerations">
-<span id="replication-other-uses"></span><h2>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h2>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This section is currently under development.  If you believe you
-are impacted by these considerations, please check back with each
-release, follow the mailing list and check in on IRC.</p>
-</div>
-<p>The infrastructure provided by <code class="docutils literal"><span class="pre">sync_log</span></code> has now been leveraged by
-the Rolling Indexing capability introduced in v3.0.  See
-<a class="reference internal" href="../../manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> for more details (see the fourth mode synopsis).</p>
-<p>Specifically, the following new settings have been added to
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> in support of this new use of <code class="docutils literal"><span class="pre">sync_log</span></code>:</p>
-<blockquote>
-<div><p><code class="docutils literal"><span class="pre">sync_log_unsuppressable_channels:</span></code> squatter</p>
-<blockquote>
-<div>If specified, the named channels are exempt from the effect of setting
-sync_log_chain:off, i.e. they are always logged to by the sync_server
-process.  This is only really useful to allow rolling search indexing
-on a replica.</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="administration">
-<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="manual-replication">
-<h3>Manual replication<a class="headerlink" href="#manual-replication" title="Permalink to this headline">¶</a></h3>
-<p>To manually synchronize any part of the mailstore, run
-<a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> with the appropriate command line options.
-Note that manual synchronization DOES NOT interfere with rolling
-replication.</p>
-<p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@skynet</span> <span class="o">~</span><span class="p">]</span><span class="c1"># /usr/lib/cyrus-imapd/sync_client -S cyrus-replica.example.org -v -u john.doe@example.org</span>
-<span class="n">USER</span> <span class="n">john</span><span class="o">^</span><span class="n">doe</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span>
-</pre></div>
-</div>
-<p>One can run <a class="reference internal" href="../../manpages/systemcommands/cyr_synclog.html#std:cyrusman-cyr_synclog(8)">cyr_synclog(8)</a> instead, which will insert the
-record into the rolling replication log.</p>
-</div>
-<div class="section" id="failover">
-<h3>Failover<a class="headerlink" href="#failover" title="Permalink to this headline">¶</a></h3>
-</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -1240,10 +854,10 @@ record into the rolling replication log.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mailbox-operations.html" class="btn btn-neutral float-right" title="Mailbox Operations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="restore.html" class="btn btn-neutral float-right" title="restore" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../sop.html" class="btn btn-neutral" title="Standard Operating Procedures" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rehash.html" class="btn btn-neutral" title="rehash" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1252,7 +866,7 @@ record into the rolling replication log.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 14 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 10 2020
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

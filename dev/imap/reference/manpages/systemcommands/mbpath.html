@@ -446,6 +446,7 @@
 <li class="toctree-l4"><a class="reference internal" href="cyr_df.html"><strong>cyr_df</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cyr_expire.html"><strong>cyr_expire</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cyr_info.html"><strong>cyr_info</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="cyr_ls.html"><strong>cyr_ls</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cyr_sequence.html"><strong>cyr_sequence</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cyr_synclog.html"><strong>cyr_synclog</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="cyr_userseen.html"><strong>cyr_userseen</strong></a></li>
@@ -481,6 +482,7 @@
 <li class="toctree-l4"><a class="reference internal" href="quota.html"><strong>quota</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reconstruct.html"><strong>reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="rehash.html"><strong>rehash</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="restore.html"><strong>restore</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sievec.html"><strong>sievec</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="sieved.html"><strong>sieved</strong></a></li>
@@ -788,7 +790,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
-<strong>mbpath</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-l</strong> ] [ <strong>-m</strong> ] [ <strong>-q</strong> ] [ <strong>-s</strong> ] [ <strong>-u</strong> ] [ <strong>-a</strong> | <strong>-A</strong> | <strong>-M</strong> | <strong>-S</strong> | <strong>-U</strong> ] [ <em>mailbox-names</em>... ]
+<strong>mbpath</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-l</strong> ] [ <strong>-m</strong> ] [ <strong>-q</strong> ] [ <strong>-s</strong> ] [ <strong>-u</strong> | <strong>-p</strong> ] [ <strong>-a</strong> | <strong>-A</strong> | <strong>-M</strong> | <strong>-S</strong> | <strong>-U</strong> ] [ <em>mailbox-names</em>... ]
 </pre>
 </div>
 <div class="section" id="description">
@@ -837,6 +839,12 @@ message files).  Legacy, use <strong>-M</strong>.</p>
 <dt id="cmdoption-mbpath-u">
 <code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbpath-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>The specified <em>mailbox-names</em> are users, not mailboxes.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-mbpath-p">
+<code class="descname">-p</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbpath-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>The specified <em>mailbox-names</em> are UNIX mailbox paths, not mailboxes.</p>
 </dd></dl>
 
 </div>
@@ -935,7 +943,7 @@ message files).  Legacy, use <strong>-M</strong>.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 02 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 12 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
