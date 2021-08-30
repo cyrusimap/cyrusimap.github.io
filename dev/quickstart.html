@@ -879,7 +879,7 @@ use to login to the IMAP server later on.</p>
 <p>You can replace <code class="docutils literal"><span class="pre">secret</span></code> with a more suitable password you want and
 <code class="docutils literal"><span class="pre">imapuser</span></code> with the username you want. Once this is done, check that
 the user exists and is set up correctly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testsaslauthd</span> <span class="o">-</span><span class="n">u</span> <span class="n">imapuser</span> <span class="o">-</span><span class="n">p</span> <span class="n">secret</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">testsaslauthd</span> <span class="o">-</span><span class="n">u</span> <span class="n">imapuser</span> <span class="o">-</span><span class="n">p</span> <span class="n">secret</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">saslauthd</span><span class="o">/</span><span class="n">mux</span>
 </pre></div>
 </div>
 <p>You should get an <code class="docutils literal"><span class="pre">0:</span> <span class="pre">OK</span> <span class="pre">&quot;Success.&quot;</span></code> message.</p>
