@@ -522,8 +522,8 @@ allows the use of LDAP, PAM, and a variety of other password verification
 routines.</p>
 <p>The sample directory in the code contains two programs which provide a reference
 for using the library, as well as making it easy to test a mechanism
-on the command line.  See &lt;a
-href=&#8221;programming.html&#8221;&gt;programming.html&lt;/a&gt; for more information.</p>
+on the command line.  See
+the <a class="reference internal" href="developer/programming.html#programming"><span class="std std-ref">Application Programmer&#8217;s Guide</span></a> for more information.</p>
 <p>This library is believed to be thread safe <strong>if</strong>:</p>
 <ul class="simple">
 <li>you supply mutex functions (see sasl_set_mutex())</li>
@@ -550,8 +550,8 @@ itself defaults to <code class="docutils literal"><span class="pre">/usr/local/l
 <p>There are two main ways to configure the SASL library for a given
 application.  The first (and typically easiest) is to make use
 of the application&#8217;s configuration files.  Provided the application supports it
-(via the <code class="docutils literal"><span class="pre">SASL_CB_GETOPT</span></code> callback), please refer to that documetation
-for how to supply &lt;a href=options.html&gt;SASL options&lt;/a&gt;.</p>
+(via the <code class="docutils literal"><span class="pre">SASL_CB_GETOPT</span></code> callback), please refer to the documentation
+for how to supply <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL options</span></a>.</p>
 <p>Alternatively, Cyrus SASL looks for configuration files in
 /usr/lib/sasl/Appname.conf where Appname is settable by the
 application (for example, Sendmail 8.10 and later set this to

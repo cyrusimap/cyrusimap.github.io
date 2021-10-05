@@ -602,6 +602,27 @@ list of plugin names, and the plugins will be queried in order.</p>
 <p>Default: /etc/krb5.keytab (system dependant)</p>
 </dd></dl>
 
+<dl class="option">
+<dt id="cmdoption-arg-ccache_store">
+<code class="descname">ccache_store</code><code class="descclassname"> [&lt;path&gt;]</code><a class="headerlink" href="#cmdoption-arg-ccache_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Location where cached credentials are stored, For example this could
+be <a class="reference external" href="FILE:/path/to/credstore/krb5cc_%U">FILE:/path/to/credstore/krb5cc_%U</a>. Formatting options are:</p>
+<p>%u UID of the logged in user (only valid for existing UNIX users)
+%U username of the logged in user
+%e EUID of the executing process user
+%E username of the executing process user
+%p PID process ID of the executing process</p>
+<p>Note that not all formatting options may not be available for all target
+environments. See the log files for indications in run-time. If this
+option can not be parsed correctly credentials cache will fall-back to
+the contents of the KRB5CCNAME environment variable.</p>
+<p>If this option is omitted, credentials delegation will not be enabled.</p>
+<p>See MIT Kerberos documentation on more information about credentials
+cache storage.</p>
+<p>Default: None, if omitted, no credentials cache/delegation and if left
+empty or invalid KRB5CCNAME will be used.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="ldapdb">
 <h2><a class="toc-backref" href="#id6">LDAPDB</a><a class="headerlink" href="#ldapdb" title="Permalink to this headline">¶</a></h2>
