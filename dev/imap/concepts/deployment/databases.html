@@ -420,14 +420,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operations.html">Operations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../reference/manpages/commands.html">Man pages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/commands.html#configuration-files">(5) Configuration Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/manpages/index.html">Man pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/index.html#configuration-files">(5) Configuration Files</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/commands.html#system-commands">(8) System Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/index.html#system-commands">(8) System Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
@@ -496,7 +496,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/systemcommands/unexpunge.html"><strong>unexpunge</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/commands.html#user-commands">(1) User Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/manpages/index.html#user-commands">(1) User Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/usercommands/arbitronsort.pl.html"><strong>arbitronsort.pl</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/usercommands/dav_reconstruct.html"><strong>dav_reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../reference/manpages/usercommands/httptest.html"><strong>httptest</strong></a></li>
@@ -1053,7 +1053,7 @@ number and the associated access key. The format of each record is follows:</p>
 <p>This embedded SQLite database is per-user and primarily maintains a
 mapping from DAV resource names (URLs) to the corresponding Cyrus
 mailboxes and IMAP message UIDs.  The database is designed to have
-one table per resource type (iCalendar, vCard, etc) with each table
+one table per resource type (iCalendar, vCard, Sieve, etc) with each table
 containing metadata specific to that resource type.</p>
 <div class="section" id="caldav">
 <h4>CalDAV<a class="headerlink" href="#caldav" title="Permalink to this headline">¶</a></h4>
@@ -1111,6 +1111,33 @@ it resides in, the iCalendar table has an additional index as follows:</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="sieve">
+<h4>Sieve<a class="headerlink" href="#sieve" title="Permalink to this headline">¶</a></h4>
+<p>The format of the Sieve table used by JMAP and ManageSieve is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">sieve_scripts</span> <span class="p">(</span>
+    <span class="n">rowid</span> <span class="n">INTEGER</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span>
+    <span class="n">creationdate</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">lastupdated</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">mailbox</span> <span class="n">TEXT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">imap_uid</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">modseq</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">createdmodseq</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="nb">id</span> <span class="n">TEXT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">name</span> <span class="n">TEXT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">content</span> <span class="n">TEXT</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+    <span class="n">isactive</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">alive</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">UNIQUE</span><span class="p">(</span> <span class="n">mailbox</span><span class="p">,</span> <span class="n">imap_uid</span> <span class="p">),</span>
+    <span class="n">UNIQUE</span><span class="p">(</span> <span class="nb">id</span> <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Because ManageSieve requires the server to locate a resource
+by name, the Sieve table has an additional index as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">INDEX</span> <span class="n">idx_sieve_name</span> <span class="n">ON</span> <span class="n">sieve_scripts</span> <span class="p">(</span> <span class="n">name</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="storage-types">
@@ -1165,7 +1192,7 @@ virtually no lock contention.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 17 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 28 2021
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
