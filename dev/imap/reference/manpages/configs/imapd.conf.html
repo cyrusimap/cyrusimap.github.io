@@ -1934,6 +1934,12 @@ angular brackets, as defined in <span class="target" id="index-11"></span><a cla
 <blockquote>
 <div>The maximum byte length of dynamically generated message previews. Previews
 stored in jmap_preview_annot take precedence.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_max_catenate_items:</span></code> 100</p>
+<blockquote>
+<div>The maximum number of items that can be catenated together by
+a JMAP Blob/set action.  Returned as the maxCatenateItems property
+value of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:blob">urn:ietf:params:jmap:blob</a>&quot; capabilities object.
+Default value is 100.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_size_upload:</span></code> 1048576</p>
 <blockquote>
 <div>The maximum size (in kilobytes) that the JMAP API accepts

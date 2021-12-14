@@ -2146,6 +2146,17 @@ FIELD DESCRIPTIONS
 
     .. endblob jmap_preview_length
 
+    .. startblob jmap_max_catenate_items
+
+    ``jmap_max_catenate_items:`` 100
+
+        The maximum number of items that can be catenated together by
+        a JMAP Blob/set action.  Returned as the maxCatenateItems property
+        value of the JMAP \"urn:ietf:params:jmap:blob\" capabilities object.
+        Default value is 100. 
+
+    .. endblob jmap_max_catenate_items
+
     .. startblob jmap_max_size_upload
 
     ``jmap_max_size_upload:`` 1048576
