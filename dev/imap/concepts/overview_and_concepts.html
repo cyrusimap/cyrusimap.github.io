@@ -171,12 +171,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#install-cyrus-package-s">1. Install Cyrus package(s)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#setup-the-cyrus-mail-user-and-group">2. Setup the cyrus:mail user and group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#setting-up-authentication-with-sasl">3. Setting up authentication with SASL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#setup-mail-delivery-from-your-mta">4. Setup mail delivery from your MTA</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../quickstart.html#install-sendmail">Install Sendmail</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../quickstart.html#sendmail-communication">Sendmail communication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../quickstart.html#install-postfix">Install Postfix</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#setup-mail-delivery-from-your-mta">4. Setup mail delivery from your MTA</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#protocol-ports">5. Protocol ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#configuring-cyrus">6. Configuring Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#launch-cyrus">7. Launch Cyrus</a></li>
@@ -1057,7 +1052,7 @@ anonymous user will be granted the rights <code class="docutils literal"><span c
 <div class="section" id="login-authentication">
 <span id="imap-concepts-login-authentication"></span><h2>Login Authentication<a class="headerlink" href="#login-authentication" title="Permalink to this headline">¶</a></h2>
 <p>This section discusses different types of authentication (ways of logging in) that can be used with Cyrus IMAP.</p>
-<p>The Cyrus IMAP server uses the Cyrus SASL library for authentication. This section describes how to configure SASL with use with Cyrus imapd. Please consult the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.27)"><span class="xref std std-ref">Cyrus SASL System Administrator's Guide</span></a> for more detailed, up-to-date information.</p>
+<p>The Cyrus IMAP server uses the Cyrus SASL library for authentication. This section describes how to configure SASL with use with Cyrus imapd. Please consult the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL System Administrator's Guide</span></a> for more detailed, up-to-date information.</p>
 <div class="section" id="anonymous-login">
 <h3>Anonymous Login<a class="headerlink" href="#anonymous-login" title="Permalink to this headline">¶</a></h3>
 <p>Regardless of the SASL mechanism used by an individual connection, the
@@ -1088,7 +1083,7 @@ password.</p>
 </div>
 <div class="section" id="shared-secrets-logins">
 <h3>Shared Secrets Logins<a class="headerlink" href="#shared-secrets-logins" title="Permalink to this headline">¶</a></h3>
-<p>Some mechanisms require the user and the server to share a secret (generally a password) that can be used for comparison without actually passing the password in the clear across the network. For these mechanism (such as CRAM-MD5 and DIGEST-MD5), you will need to supply a source of passwords, such as the sasldb (which is described more fully in the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.27)"><span class="xref std std-ref">Cyrus SASL distribution</span></a>)</p>
+<p>Some mechanisms require the user and the server to share a secret (generally a password) that can be used for comparison without actually passing the password in the clear across the network. For these mechanism (such as CRAM-MD5 and DIGEST-MD5), you will need to supply a source of passwords, such as the sasldb (which is described more fully in the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL distribution</span></a>)</p>
 </div>
 </div>
 <div class="section" id="quotas">
