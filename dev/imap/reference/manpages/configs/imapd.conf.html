@@ -3792,6 +3792,22 @@ The default is 30 minutes.  The minimum value is 0, which will
 disable WebSockets.</p>
 <p>If no unit is specified, minutes is assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">webdav_attachments_baseurl:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The base URL for WebDAV managed attachments, excluding the
+Cyrus-specific URL paths. Typically, this only includes the
+HTTP scheme and host name at which DAV clients may fetch
+managed attachments from, e.g.  &quot;<a class="reference external" href="https://dav.example.com">https://dav.example.com</a>&quot;.
+If not specified, the target host of the DAV HTTP request that uploaded
+the attachment will be used. For JMAP, the Link.blobId property of
+JSCalendar objects will be disabled.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">webdav_attachments_max_binary_attach_size:</span></code> 1024</p>
+<blockquote>
+<div>The maximum byte length (in kilobytes) of an ATTACH property value
+when managed attachment URIs get rewritten to BINARY during iTIP processing.
+Any attachment that exceeds this byte size keeps its managed attachment
+URI as ATTACH value. A zero size limit causes attachments of any size
+be rewritten as BINARY.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
 <div>Enable support for the XBACKUP command in imapd.  If enabled, admin
