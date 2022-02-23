@@ -331,19 +331,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-5-cyrus">2. Install new 3.5 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-5-cyrus-and-verify">7. Start new 3.5 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -1795,8 +1796,8 @@ is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">http_h2_altsvc:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>If set, HTTP/2 (over TLS) will be advertised as being available on the specifed
-[host]:port.</div></blockquote>
+<div>If set, HTTP/2 (over TLS) will be advertised as being available on the
+specified [host]:port.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">http_jwt_key_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The absolute path to a directory containing one or more key files
@@ -1892,13 +1893,15 @@ specified, JMAP Email/query and Email/queryChanges will not
 cache email search results.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_querycache_max_age:</span></code> 0m</p>
 <blockquote>
-<div>The duration after which unused cached JMAP query results
+<div><p>The duration after which unused cached JMAP query results
 must be evicted from process memory. If non-zero, then the
 full result of the last query (before windowing) is stored
 in-memory. Subsequent queries with the same expression and
 query state can then page through the cached result.
-A zero value disables query result caching.
-This feature currently only is enabled for Email/query.</div></blockquote>
+A zero value disables query result caching.</p>
+<p>If no unit is specified, minutes is assumed.</p>
+<p>This feature currently only is enabled for Email/query.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_preview_annot:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>The name of the per-message annotation, if any, to store message
