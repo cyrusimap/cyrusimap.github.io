@@ -1907,8 +1907,8 @@ FIELD DESCRIPTIONS
 
     ``http_h2_altsvc:`` <none>
 
-        If set, HTTP/2 (over TLS) will be advertised as being available on the specifed
-        [host]:port. 
+        If set, HTTP/2 (over TLS) will be advertised as being available on the
+        specified [host]:port. 
 
     .. endblob http_h2_altsvc
 
@@ -2086,6 +2086,9 @@ FIELD DESCRIPTIONS
         in-memory. Subsequent queries with the same expression and
         query state can then page through the cached result.
         A zero value disables query result caching.
+
+        If no unit is specified, minutes is assumed.
+
         This feature currently only is enabled for Email/query. 
 
     .. endblob jmap_querycache_max_age
