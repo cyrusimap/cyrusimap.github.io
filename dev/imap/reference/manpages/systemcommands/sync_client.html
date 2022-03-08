@@ -789,7 +789,7 @@
 <strong>sync_client</strong> [ <strong>-v</strong> ] [ <strong>-l</strong> ] [ <strong>-L</strong> ] [ <strong>-z</strong> ] [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-S</strong> <em>server-name</em> ]
     [ <strong>-f</strong> <em>input-file</em> ] [ <strong>-F</strong> <em>shutdown_file</em> ] [ <strong>-w</strong> <em>wait_interval</em> ]
     [ <strong>-t</strong> <em>timeout</em> ] [ <strong>-d</strong> <em>delay</em> ] [ <strong>-r</strong> ] [ <strong>-n</strong> <em>channel</em> ] [ <strong>-u</strong> ] [ <strong>-m</strong> ]
-    [ <strong>-p</strong> <em>partition</em> ] [ <strong>-A</strong> ] [ <strong>-s</strong> ] [ <strong>-O</strong> ] <em>objects</em>...
+    [ <strong>-p</strong> <em>partition</em> ] [ <strong>-A</strong> ] [ <strong>-N</strong> ] [ <strong>-s</strong> ] [ <strong>-O</strong> ] <em>objects</em>...
 </pre>
 </div>
 <div class="section" id="description">
@@ -873,6 +873,13 @@ Remaining arguments are list of mailboxes which should be replicated.</p>
 channels are specified in <code class="docutils literal"><span class="pre">sync_log_channels</span></code> then use one of them.
 This option is probably best combined with <strong>-S</strong> to connect to a
 different server with each channel.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-sync_client-N">
+<code class="descname">-N</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-N" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use non-blocking sync_lock (combination of IP address and username)
+to skip over any users who are currently syncing.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1015,7 +1022,7 @@ section of <a class="reference internal" href="../configs/cyrus.conf.html#std:cy
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 19 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 09 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
