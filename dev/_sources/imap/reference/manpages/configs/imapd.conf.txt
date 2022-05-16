@@ -1639,7 +1639,7 @@ FIELD DESCRIPTIONS
 
         Space-separated list of groups of related events to turn on notification 
 
-        Allowed values: *message*, *quota*, *flags*, *access*, *mailbox*, *subscription*, *calendar*, *applepushservice*
+        Allowed values: *message*, *quota*, *flags*, *access*, *mailbox*, *subscription*, *calendar*, *applepushservice*, *jmap*
 
 
     .. endblob event_groups
@@ -4927,7 +4927,7 @@ FIELD DESCRIPTIONS
 
     .. startblob specialuse_nochildren
 
-    ``specialuse_nochildren:`` <none>
+    ``specialuse_nochildren:`` \\Scheduled \\Snooze
 
         Whitespace separated list of special-use attributes that may not contain
         child folders.  If set, mailboxes with any of these attributes may not
@@ -4938,7 +4938,7 @@ FIELD DESCRIPTIONS
 
     .. startblob specialuse_protect
 
-    ``specialuse_protect:`` \\Archive \\Drafts \\Important \\Junk \\Sent \\Trash
+    ``specialuse_protect:`` \\Archive \\Drafts \\Important \\Junk \\Sent \\Scheduled \\Snooze \\Trash
 
         Whitespace separated list of special-use attributes
         to protect the mailboxes for.  If set, don't allow
