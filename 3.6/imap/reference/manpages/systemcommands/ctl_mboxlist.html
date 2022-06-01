@@ -787,7 +787,7 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-d</strong> [ <strong>-x</strong> ] [<strong>-y</strong>] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-f</strong> <em>filename</em> ]
-<strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-u</strong> [ <strong>-f</strong> <em>filename</em> ]
+<strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-u</strong> [ <strong>-f</strong> <em>filename</em> ] [ <strong>-L</strong> ]
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-m</strong> [ <strong>-a</strong> ] [ <strong>-w</strong> ] [ <strong>-i</strong> ] [ <strong>-f</strong> <em>filename</em> ]
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-v</strong> [ <strong>-f</strong> <em>filename</em> ]
 </pre>
@@ -810,11 +810,7 @@ The <em>configdirectory</em> option in <a class="reference internal" href="../co
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-d">
 <code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dump the contents of the database to standard output in a portable
-flat-text format.  NOTE: In Cyrus versions 2.2.13 and earlier, the
-dump format did not include the mailbox type flags, breaking remote
-mailboxes (frontends, mupdate master, unified backends) when
-undumped.</p>
+<dd><p>Dump the contents of the database to standard output in JSON format.</p>
 </dd></dl>
 
 <dl class="option">
@@ -846,17 +842,29 @@ be hidden from IMAP.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the contents of the database from standard input.  The input
-MUST be in the format output by the <strong>-d</strong> option.</p>
+<dt id="cmdoption-ctl_mboxlist-L">
+<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-L" title="Permalink to this definition">¶</a></dt>
+<dd><p>When performing an undump, use the legacy dump parser instead of the
+JSON parser.  This might be useful for importing a dump produced
+by an older version of Cyrus.</p>
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Both the old and new formats can be loaded, but the old format will
-break remote mailboxes.</p>
+<dl class="option">
+<dt id="cmdoption-ctl_mboxlist-u">
+<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load (&quot;undump&quot;) the contents of the database from standard input.  The
+input MUST be a valid JSON file, unless the -L option is also supplied.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">USE THIS OPTION WITH CARE.  If you have modified the dump file since it
+was dumped, or if the file was not produced by <strong>-d</strong> in the first
+place, or was produced on a different server, you can easily break your
+mailboxes.db.  Undump will refuse to process a syntactically-invalid
+dump file, but it can't do much to protect you from a valid file
+containing bad data.</p>
 </div>
+</dd></dl>
+
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-m">
 <code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
@@ -870,13 +878,13 @@ mailbox list file with the MUPDATE server.</p>
 <dd><p>When used with <strong>-m</strong>, assume the local mailboxes file is authoritative,
 that is, only change the mupdate server, do not delete any local
 mailboxes.</p>
-</dd></dl>
-
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">USE THIS OPTION WITH CARE, as it allows namespace collisions into
 the murder.</p>
 </div>
+</dd></dl>
+
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-w">
 <code class="descname">-w</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
@@ -908,26 +916,18 @@ will be reported.  Note that this function is very I/O intensive.</p>
 <strong>ctl_mboxlist -d</strong>
 </pre>
 <blockquote>
-<div>Dump the mailboxes list in portable text format.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">johnsmith</span>     <span class="n">lrswipkxtea</span>     <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>   <span class="n">anyone</span>  <span class="n">lrsp</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">rancid</span>     <span class="mi">0</span> <span class="n">default</span> <span class="n">johnsmith</span>     <span class="n">lrswipkxtea</span>     <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>   <span class="n">anyone</span>  <span class="n">lrsp</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">commits</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">johnsmith</span>     <span class="n">lrswipkxtea</span>     <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>   <span class="n">anyone</span>  <span class="n">lrsp</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">abuse</span>      <span class="mi">0</span> <span class="n">default</span> <span class="n">johnsmith</span>     <span class="n">lrswipkxtea</span>     <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>   <span class="n">anyone</span>  <span class="n">lrsp</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">systems</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">systems</span><span class="o">.</span><span class="n">box</span>        <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">systems</span><span class="o">.</span><span class="n">switch</span>     <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">systems</span><span class="o">.</span><span class="n">files</span>      <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">systems</span><span class="o">.</span><span class="n">printer</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">technet</span>    <span class="mi">0</span> <span class="n">default</span> <span class="n">anyone</span>        <span class="n">lrsp</span>    <span class="n">group</span><span class="p">:</span><span class="n">tech</span>      <span class="n">lrswipkxtecda</span>
-</pre></div>
-</div>
+<div>Dump the mailboxes list to standard output in JSON format</div></blockquote>
 <pre class="literal-block">
 <strong>ctl_mboxlist -u</strong> &lt; <em>newmboxlist.dump</em>
 </pre>
 <blockquote>
-<div>Undump (restore) the mailboxes database from <em>newmboxlist.dump</em>,
-a portable text formatted file.</div></blockquote>
+<div><p>Undump (restore) the mailboxes database from <em>newmboxlist.dump</em>,
+where <em>newmboxlist.dump</em> is a JSON file produced by <strong>ctl_mboxlist -d</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Be very careful with this option.</p>
+</div>
+</div></blockquote>
 <pre class="literal-block">
 <strong>ctl_mboxlist -m</strong>
 </pre>
@@ -1000,7 +1000,7 @@ asking for verification before deleting any local mailboxes.</div></blockquote>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 17 2018
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 04 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
