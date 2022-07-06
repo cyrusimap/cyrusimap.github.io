@@ -1890,6 +1890,15 @@ FIELD DESCRIPTIONS
 
     .. endblob httpprettytelemetry
 
+    .. startblob httppts_uri
+
+    ``httppts_uri:`` <none>
+
+        The URL endpoint to use when for querying group membership, in URI Template
+        (level 1) format [:rfc:`6570`].  The URL MUST contain a variable called "groupId" 
+
+    .. endblob httppts_uri
+
     .. startblob httptimeout
 
     ``httptimeout:`` 5m
@@ -3879,7 +3888,7 @@ FIELD DESCRIPTIONS
 
         The PTS module to use. 
 
-        Allowed values: *afskrb*, *ldap*
+        Allowed values: *afskrb*, *ldap*, *http*
 
 
     .. endblob pts_module

@@ -1786,6 +1786,10 @@ markup languages (HTML, XML) will utilize line breaks and
 indentation to promote better human-readability in telemetry logs.
 Note that enabling this option will increase the amount of data
 sent across the wire.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">httppts_uri:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The URL endpoint to use when for querying group membership, in URI Template
+(level 1) format [<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6570.html"><strong>RFC 6570</strong></a>].  The URL MUST contain a variable called &quot;groupId&quot;</div></blockquote>
 <p><code class="docutils literal"><span class="pre">httptimeout:</span></code> 5m</p>
 <blockquote>
 <div><p>Set the length of the HTTP server's inactivity autologout timer.
@@ -1801,7 +1805,7 @@ specified [host]:port.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">http_jwt_key_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The absolute path to a directory containing one or more key files
-to authenticate JSON Web Tokens (<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a>) for HTTP connections.
+to authenticate JSON Web Tokens (<span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a>) for HTTP connections.
 Keys for the following JWS algorithms are supported: &quot;HS256&quot;,
 &quot;HS384&quot;, &quot;HS512&quot;, &quot;RS256&quot;, &quot;RS384&quot;, &quot;RS512&quot;.</p>
 <p>A key file consists of one or more keys encoded in PEM format.
@@ -1866,7 +1870,7 @@ mailboxes.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">imipnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Notifyd(8) method to use for &quot;IMIP&quot; notifications which are based on
-the <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &quot;IMIP&quot; notifications are disabled.</div></blockquote>
+the <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &quot;IMIP&quot; notifications are disabled.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">implicit_owner_rights:</span></code> lkxan</p>
 <blockquote>
 <div>The implicit Access Control List (ACL) for the owner of a mailbox.</div></blockquote>
@@ -1921,14 +1925,14 @@ and height 200, then the value of this annotation would be:</p>
 <p><code class="docutils literal"><span class="pre">jmap_inlinedcids_annot:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The name of the per-message annotation, if any, that stores a
-JSON object, mapping <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
+JSON object, mapping <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
 to the respective HTML body part number.</p>
 <p>For example, if message part 1.2 contains HTML and references an
 inlined image at &quot;<a class="reference external" href="cid:foo">cid:foo</a>&quot;, then the value of this annotation
 would be:</p>
 <p>{ &quot;&lt;foo&gt;&quot; : &quot;1.2&quot; }</p>
 <p>Note that the Content-ID key must be URL-unescaped and enclosed in
-angular brackets, as defined in <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
+angular brackets, as defined in <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_preview_length:</span></code> 64</p>
 <blockquote>
@@ -2239,7 +2243,7 @@ set to 3.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">literalminus:</span></code> 0</p>
 <blockquote>
 <div>if enabled, CAPABILITIES will reply with LITERAL- rather than
-LITERAL+ (<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn't actually size-restrict uploads though</div></blockquote>
+LITERAL+ (<span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn't actually size-restrict uploads though</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_downcase_rcpt:</span></code> 1</p>
 <blockquote>
 <div>If enabled, lmtpd will convert the recipient addresses to lowercase
@@ -2276,7 +2280,7 @@ will cause the user's mailbox to exceed its quota.  By default, the
 failure won't occur until the mailbox is already over quota.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_strict_rfc2821:</span></code> 1</p>
 <blockquote>
-<div>By default, lmtpd will be strict (per <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
+<div>By default, lmtpd will be strict (per <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
 envelope addresses are allowed.  If this option is set to false, 8bit
 characters in the local-part of envelope addresses are changed to 'X'
 instead.  This is useful to avoid generating backscatter with
@@ -2443,7 +2447,7 @@ Allowed values: <em>standard</em>, <em>unified</em>, <em>replicated</em></div></
 headers.  The 8-bit characters are changed to `X'.  If
 <strong>reject8bit</strong> is enabled, setting <strong>munge8bit</strong> has no effect.
 (A proper solution to non-ASCII characters in headers is offered by
-<span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
+<span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mupdate_connections_max:</span></code> 128</p>
 <blockquote>
 <div>The max number of connections that a mupdate process will allow, this
@@ -2798,7 +2802,7 @@ DO NOT SET on frontends or things won't work properly.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">pts_module:</span></code> afskrb</p>
 <blockquote>
 <div><p>The PTS module to use.</p>
-<p>Allowed values: <em>afskrb</em>, <em>ldap</em></p>
+<p>Allowed values: <em>afskrb</em>, <em>ldap</em>, <em>http</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">ptloader_sock:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2893,7 +2897,7 @@ will either add or remove reverse ACL pointers from mailboxes.db</div></blockquo
 <div>Deprecated. No longer used</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc2046_strict:</span></code> 0</p>
 <blockquote>
-<div>If enabled, imapd will be strict (per <span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
+<div>If enabled, imapd will be strict (per <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
 boundary strings.  This means that boundaries containing other
 boundaries as substrings will be treated as identical.  Since
 enabling this option will break some messages created by Eudora 5.1
@@ -2903,13 +2907,13 @@ there is good reason to do otherwise.</div></blockquote>
 <blockquote>
 <div>If enabled, imapd will parse any non-encoded character sequence in
 MIME header values as UTF8. This is useful for installations that
-either advertise the UTF8SMTP (<span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
+either advertise the UTF8SMTP (<span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
 with improperly escaped UTF-8 byte sequences. It is recommended that
 this option is left disabled unless there is good reason to do
 otherwise.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc3028_strict:</span></code> 1</p>
 <blockquote>
-<div>If enabled, Sieve will be strict (per <span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
+<div>If enabled, Sieve will be strict (per <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
 which headers are allowed to be used in address and envelope tests.
 This means that only those headers which are defined to contain addresses
 will be allowed in address tests and only &quot;to&quot; and &quot;from&quot; will be
@@ -3040,7 +3044,7 @@ folders.</div></blockquote>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_fuzzy_always:</span></code> 0</p>
 <blockquote>
-<div>Whether to enable <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
+<div>Whether to enable <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
 on, search attributes will be searched using FUZZY search by default.
 If turned off, clients have to explicitly use the FUZZY search key to
 enable fuzzy search for regular SEARCH commands.</div></blockquote>
@@ -3074,7 +3078,7 @@ Default is 4Mb. Xapian-only.</div></blockquote>
 <blockquote>
 <div>When searching, should diacriticals be stripped from the search
 terms.  The default is &quot;true&quot;, a search for &quot;hav&quot; will match
-&quot;Håvard&quot;.  This is not <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
+&quot;Håvard&quot;.  This is not <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
 compatible, and may be preferred by some sites.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_skiphtml:</span></code> 0</p>
 <blockquote>
@@ -3291,8 +3295,8 @@ option smtp_host.</p>
 the executable defined in the config option sendmail.
 The executable must accept &quot;-bs&quot; as command line
 argument, read from stdin and must implement the minimum
-SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
-<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
+SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
+<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
 supported extension, then the MAIL FROM command includes
 the AUTH parameter, with its value set to the name of any
 authenticated user which triggered the email. The AUTH
@@ -3339,7 +3343,7 @@ Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></div></bl
 <p><code class="docutils literal"><span class="pre">specialuse_extra:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Whitespace separated list of extra special-use attributes
-that can be set on a mailbox. <span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
+that can be set on a mailbox. <span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</div></blockquote>
@@ -3591,7 +3595,7 @@ is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">imapidletimeout:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>Timeout for idling clients (<span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
+<div><p>Timeout for idling clients (<span class="target" id="index-24"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
 the value of &quot;timeout&quot; will be used instead.</p>
 <p>For backward compatibility, if no unit is specified, minutes
 is assumed.</p>
