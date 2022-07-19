@@ -492,7 +492,7 @@
             
   <div class="section" id="how-do-i-configure-openldap-sasl-gssapi">
 <h1>How do I configure OpenLDAP +SASL+GSSAPI?<a class="headerlink" href="#how-do-i-configure-openldap-sasl-gssapi" title="Permalink to this headline">¶</a></h1>
-<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="http://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator&#8217;s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
+<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="https://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator&#8217;s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
 <p>To verify that you have the Cyrus <a class="reference internal" href="../gssapi.html#gssapi"><span class="std std-ref">GSSAPI</span></a> mechanism properly installed, use the pluginviewer command. For instance:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span><span class="o">~</span><span class="c1"># pluginviewer  | grep -i gssapi</span>
  <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span> <span class="n">PLAIN</span> <span class="n">NTLM</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">DIGEST</span><span class="o">-</span><span class="n">MD5</span> <span class="n">ANONYMOUS</span> <span class="n">LOGIN</span> <span class="n">EXTERNAL</span>
@@ -514,7 +514,7 @@
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
 </pre></div>
 </div>
-<p>If you received a No Such Object error, you may have an <a class="reference external" href="http://www.openldap.org/doc/admin24/appendix-common-errors.html#ldap_sasl_interactive_bind_s">ACL misconfiguration on your server</a>.</p>
+<p>If you received a No Such Object error, you may have an <a class="reference external" href="https://www.openldap.org/doc/admin24/appendix-common-errors.html#ldap_sasl_interactive_bind_s">ACL misconfiguration on your server</a>.</p>
 <p>If you do not see GSSAPI listed, verify that the server can read the appropriate keytab. The default is <code class="docutils literal"><span class="pre">/etc/krb5.keytab</span></code> and is typically only readable by the root user. If your Kerberos library supports it, you can create a keytab in an alternate location, such as <code class="docutils literal"><span class="pre">/etc/krb5.keytab-ldap</span></code>, with only your LDAP service principal, and read permissions for your OpenLDAP user.</p>
 <p>If your OpenLDAP server is looking for an unexpected principal within your keytab, use sasl-host and sasl-realm to influence which principal it will use (see the slapd.conf man page).</p>
 <p>For more control over how the SASL library operates within the OpenLDAP? server, you can create a slapd.conf SASL configuration. This is not the same configuration file as the OpenLDAP configuration (slapd.conf). The location of this file is dependent how on Cyrus SASL was compiled (via the <code class="docutils literal"><span class="pre">--with-plugindir</span></code> option during configure). It is the directory where your plugins are installed.</p>

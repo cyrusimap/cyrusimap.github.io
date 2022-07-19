@@ -494,7 +494,7 @@
             
   <div class="section" id="building-cyrus-sasl-on-windows">
 <span id="install-windows"></span><h1>Building Cyrus SASL on Windows<a class="headerlink" href="#building-cyrus-sasl-on-windows" title="Permalink to this headline">¶</a></h1>
-<p>Note, that Cyrus SASL on Windows is still laregely a &#8220;work in progress&#8221;.
+<p>Note, that Cyrus SASL on Windows is still largely a &#8220;work in progress&#8221;.
 So far only the main library, plugins (SASLDB using SleepyCat, no MySQL)
 and several applications (see the list below) can be built. In particular,
 saslauthd doesn&#8217;t compile on Windows.</p>
@@ -528,7 +528,7 @@ and the sources are in <code class="docutils literal"><span class="pre">C:\SASL<
 <h3>Building using NMake<a class="headerlink" href="#building-using-nmake" title="Permalink to this headline">¶</a></h3>
 <p>Open a &#8220;Windows 2000 build environment&#8221; from the SDK&#8217;s Start Menu and
 use <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span></code> to build.</p>
-<p>To build a debug verison, use <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
+<p>To build a debug version, use <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
 <span class="pre">CFG=Debug</span></code>. For a production version, <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
 <span class="pre">CFG=Release</span></code>. If you don&#8217;t specify CFG parameter, production
 version will be built by default.</p>

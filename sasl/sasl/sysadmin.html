@@ -502,9 +502,9 @@ and describes how the components interact, as well as the <a class="reference in
 mechanism for protocols to accomplish authentication.  Since protocols
 (such as SMTP or IMAP) use SASL, it is a natural place for code
 sharing between applications.  Some notable applications that use the
-Cyrus SASL library include <a class="reference external" href="http://www.sendmail.org">Sendmail</a>,
-<a class="reference external" href="http://www.cyrusimap.org">Cyrus imapd</a>,
-and <a class="reference external" href="http://www.openldap.org">OpenLDAP</a>.</p>
+Cyrus SASL library include <a class="reference external" href="https://www.sendmail.org">Sendmail</a>,
+<a class="reference external" href="https://www.cyrusimap.org">Cyrus imapd</a>,
+and <a class="reference external" href="https://www.openldap.org">OpenLDAP</a>.</p>
 <p>Applications use the SASL library to tell them how to accomplish
 the SASL protocol exchange, and what the results were.</p>
 <p>SASL is only a framework: specific SASL mechanisms govern the
@@ -576,7 +576,7 @@ authentication; check your application on how it deals with this.</p>
 however the way each saslauthd module deals with the situation is
 different (for example, the LDAP plugin allows you to use the realm
 to query the server, while the rimap and PAM plugins ignore it entirely).</p>
-<p>Realms are represented in a username string by any text followinhg
+<p>Realms are represented in a username string by any text following
 the &#8216;&#64;&#8217; sign.  So, usernames like <a class="reference external" href="mailto:rjs3&#37;&#52;&#48;ANDREW&#46;CMU&#46;EDU">rjs3<span>&#64;</span>ANDREW<span>&#46;</span>CMU<span>&#46;</span>EDU</a>, is user &#8216;rjs3&#8217;
 in the realm &#8216;ANDREW.CMU.EDU&#8217;.  If no realm is provided, the server&#8217;s
 FQDN is assumed (likewise when specifying a realm for saslpasswd2).</p>
@@ -638,7 +638,7 @@ are <code class="docutils literal"><span class="pre">imap</span></code>, <code c
 <dt>Courier-IMAP authdaemond</dt>
 <dd><p class="first">contacts Courier-IMAP&#8217;s <code class="docutils literal"><span class="pre">authdaemond</span></code> daemon to check passwords.
 This daemon is simliar in functionality to <code class="docutils literal"><span class="pre">saslauthd</span></code>, and is shipped
-separately with the <a class="reference external" href="http://www.courier-mta.org">Courier</a> mail server.</p>
+separately with the <a class="reference external" href="https://www.courier-mta.org">Courier</a> mail server.</p>
 <p>Note: this feature is <strong>not</strong> compiled in the library by default, and is
 provided for sites with custom/special requirements only (because the
 internal authentication protocol its not documented anywhere so it could
@@ -877,7 +877,7 @@ when debugging a problem that isn&#8217;t outputting any useful
 information.</p>
 </dd>
 <dt>Is there a mailing list to discuss the Cyrus SASL library?</dt>
-<dd>Check out our <a class="reference external" href="https://www.cyrusimap.org/contribute.html#contribute" title="(in Cyrus IMAP v3.4.3)"><span class="xref std std-ref">contribution</span></a> page for ways to get in touch
+<dd>Check out our <a class="reference external" href="https://www.cyrusimap.org/contribute.html#contribute" title="(in Cyrus IMAP v3.4.4)"><span class="xref std std-ref">contribution</span></a> page for ways to get in touch
 with us, including mailing lists and IRC.</dd>
 </dl>
 </div>

@@ -568,16 +568,16 @@ configuration of Cyrus SASL becomes easier.</p>
 <li>You&#8217;ll need the source from <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl">https://github.com/cyrusimap/cyrus-sasl</a></li>
 <li>You&#8217;ll need <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/make/">GNU make</a>.</li>
 <li>If you are using SASLdb, you will need to pick your backend.
-libsasl2 can use <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/gdbm/">gdbm</a>, <a class="reference external" href="http://www.sleepycat.com/">Berkeley db</a>, or ndbm to implement its user/password lookup. Most systems come with ndbm.</li>
+libsasl2 can use <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/gdbm/">gdbm</a>, <a class="reference external" href="https://www.oracle.com/database/technologies/related/berkeleydb-downloads.html">Berkeley db</a>, or ndbm to implement its user/password lookup. Most systems come with ndbm.</li>
 <li>If you are using SQL, you&#8217;ll need to properly configure your server/tables,
 and build the necessary client libraries on the system where you will be
-building and using SASL.  Currently we support <a class="reference external" href="http://postgresql.org">PostgreSQL</a> v7.2 (or higher)
-and <a class="reference external" href="http://mysql.org">MySQL</a>.</li>
-<li>If you are using LDAPDB, you&#8217;ll need SASL enabled <a class="reference external" href="http://www.openldap.org">OpenLDAP</a> libraries.
+building and using SASL.  Currently we support <a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> v7.2 (or higher)
+and <a class="reference external" href="https://www.mysql.com">MySQL</a>.</li>
+<li>If you are using LDAPDB, you&#8217;ll need SASL enabled <a class="reference external" href="https://www.openldap.org">OpenLDAP</a> libraries.
 v2.1.27 (or higher) or v2.2.6 (or higher) is supported.</li>
-<li>For Kerberos support, you&#8217;ll need the <a class="reference external" href="http://www.pdc.kth.se/kth-krb/">kerberos</a> libraries.</li>
-<li>For GSSAPI support you will need either <a class="reference external" href="http://web.mit.edu/kerberos/www/">MIT Kerberos 5</a>,
-the <a class="reference external" href="http://www.pdc.kth.se/heimdal">Heimdal</a> or <a class="reference external" href="http://www.cybersafe.com/">CyberSafe</a>.</li>
+<li>For Kerberos support, you&#8217;ll need the <a class="reference external" href="https://www-local.pdc.kth.se/kth-krb/">kerberos</a> libraries.</li>
+<li>For GSSAPI support you will need either <a class="reference external" href="https://web.mit.edu/kerberos/www/">MIT Kerberos 5</a>,
+the <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">Heimdal</a> or <a class="reference external" href="https://cybersafe.com">CyberSafe</a>.</li>
 </ol>
 </div>
 <div class="section" id="build-configuration">
@@ -602,7 +602,7 @@ KERBEROS_V4, GSSAPI, PLAIN, and ANONYMOUS.  These can be disabled with:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>``--disable-cram``, ``--disable-digest``,
 ``--disable-scram``, ``--disable-otp``,
 ``--disable-krb4``, ``--disable-gssapi``,
-``--disable-plain``, and ``--disable-anon`` respecively.
+``--disable-plain``, and ``--disable-anon`` respectively.
 </pre></div>
 </div>
 <p>If you are using an SQL auxprop plugin, you may want to specify one or more
@@ -610,7 +610,7 @@ of <code class="docutils literal"><span class="pre">--enable-sql</span></code>, 
 <code class="docutils literal"><span class="pre">--with-pgsql=PATH</span></code>, note that PATH in the later two should be replaced
 with the path where you installed the necessary client libraries.</p>
 <p>If you are using LDAPDB auxprop plugin, you will need to specify
-<code class="docutils literal"><span class="pre">--enable-ldapdb</span></code> and <code class="docutils literal"><span class="pre">--with-ldap=PATH</span></code>.  &lt;b&gt;Warning:&lt;/b&gt; LDAPDB
+<code class="docutils literal"><span class="pre">--enable-ldapdb</span></code> and <code class="docutils literal"><span class="pre">--with-ldap=PATH</span></code>.  <strong>Warning:</strong> LDAPDB
 auxprop plugin (and LDAP enabled saslauthd) introduces a circular dependency
 between OpenLDAP and SASL.  I.e., you must have OpenLDAP already built when
 building LDAPDB in SASL.  In order for LDAPDB to work at runtime, you must have
