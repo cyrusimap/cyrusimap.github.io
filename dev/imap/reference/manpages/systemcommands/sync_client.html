@@ -977,6 +977,20 @@ compression if both ends support it.  Set this flag when you want
 to abort if compression is not available.</p>
 </dd></dl>
 
+<dl class="option">
+<dt id="cmdoption-sync_client-a">
+<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request the replicate-to-archive feature. If the remote end has the
+<code class="docutils literal"><span class="pre">archive_enabled</span></code> option set, then it will stage incoming replication on
+the archive partition instead of the spool partition. If the remote end
+does not support it, replication will proceed as though <strong>-a</strong> was not
+provided.  This option is useful when standing up a new replica of an
+existing server, as most of the stored mail is likely older than the
+archive threshold and so is destined for the archive partition anyway. By
+staging on that partition, Cyrus can avoid a cross-partition copy for every
+message.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -1022,7 +1036,7 @@ section of <a class="reference internal" href="../configs/cyrus.conf.html#std:cy
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 09 2022
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 04 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

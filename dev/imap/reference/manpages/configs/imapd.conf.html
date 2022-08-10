@@ -1502,6 +1502,10 @@ is a C format string that gets 3 options: the first is the name of the
 executable (as specified in the cmd parameter in cyrus.conf). The second
 is the pid (integer) and the third is the service ID.
 Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d</div></blockquote>
+<p><code class="docutils literal"><span class="pre">debug_log_sync_partition_choice:</span></code> 0</p>
+<blockquote>
+<div>If enabled, replication will log which partition it chose for staging.
+This is mainly useful for regression testing the sync_client -a switch.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">debug_writefail_guid:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>If set, any arriving message with this guid will fail as if the underlying
