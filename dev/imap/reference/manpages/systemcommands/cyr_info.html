@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -859,13 +860,13 @@ configuration options for the named service.</p>
 
 <dl class="option">
 <dt id="cmdoption-cyr_info-n">
-<code class="descname">-n</code><code class="descclassname"> servicename</code><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_info--service"></span><code class="descname">-n</code><code class="descclassname"> name</code><code class="descclassname">, </code><code class="descname">--service</code><code class="descclassname">=name</code><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the configuration as if for the service named <em>name</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-cyr_info-s">
-<code class="descname">-s</code><code class="descclassname"> version</code><a class="headerlink" href="#cmdoption-cyr_info-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_info--since"></span><code class="descname">-s</code><code class="descclassname"> version</code><code class="descclassname">, </code><code class="descname">--since</code><code class="descclassname">=version</code><a class="headerlink" href="#cmdoption-cyr_info-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Highlight configuration options that have been added or whose behaviour
 has been modified since <em>version</em>.  Use this option after a server upgrade,
 specifying your previous version, to find which options you need to review
@@ -933,7 +934,7 @@ and maybe change before starting up the upgraded server.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Dec 11 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

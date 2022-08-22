@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -811,14 +812,14 @@ as used in <a class="reference internal" href="../configs/cyrus.conf.html#std:cy
 
 <dl class="option">
 <dt id="cmdoption-cyr_deny-a">
-<code class="descname">-a</code><code class="descclassname"> user</code><a class="headerlink" href="#cmdoption-cyr_deny-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_deny--allow"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--allow</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_deny-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow access to all services for user <em>user</em> (remove any entry
 from the deny database).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-cyr_deny-s">
-<code class="descname">-s</code><code class="descclassname"> services</code><a class="headerlink" href="#cmdoption-cyr_deny-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_deny--services"></span><code class="descname">-s</code><code class="descclassname"> services</code><code class="descclassname">, </code><code class="descname">--services</code><code class="descclassname">=services</code><a class="headerlink" href="#cmdoption-cyr_deny-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deny access only to the given <em>services</em>, which is a
 comma-separated list of wildcard patterns.  The default is &quot;*&quot;
 which denies access to all services.</p>
@@ -826,14 +827,14 @@ which denies access to all services.</p>
 
 <dl class="option">
 <dt id="cmdoption-cyr_deny-m">
-<code class="descname">-m</code><code class="descclassname"> message</code><a class="headerlink" href="#cmdoption-cyr_deny-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_deny--message"></span><code class="descname">-m</code><code class="descclassname"> message</code><code class="descclassname">, </code><code class="descname">--message</code><code class="descclassname">=message</code><a class="headerlink" href="#cmdoption-cyr_deny-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide a message which is sent to the user to explain why access is
 being denied.  A default message is used if none is specified.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-cyr_deny-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_deny-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr_deny--list"></span><code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--list</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_deny-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the entries in the deny database.</p>
 </dd></dl>
 
@@ -874,7 +875,7 @@ being denied.  A default message is used if none is specified.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 10 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

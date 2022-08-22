@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -831,7 +832,7 @@ restoring into mailboxes that already exists) will not have their ACLs altered.<
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-restore-A">
-<code class="descname">-A</code><code class="descclassname"> [acl]</code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--override-acl"></span><code class="descname">-A</code><code class="descclassname"> [acl]</code><code class="descclassname">, </code><code class="descname">--override-acl</code><code class="descclassname">[=acl]</code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply specified <em>acl</em> to restored mailboxes, rather than their ACLs as
 stored in the backup.</p>
 <p>If <em>acl</em> is the empty string (e.g. <code class="docutils literal"><span class="pre">-A</span> <span class="pre">&quot;&quot;</span></code>) or is unspecified, mailboxes
@@ -848,7 +849,7 @@ different user's mailbox.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-D">
-<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--keep-deletedprefix"></span><code class="descname">-D</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--keep-deletedprefix</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't trim <strong>deletedprefix</strong> from mailbox names prior to restoring.  This
 is mainly useful for rebuilding failed servers, where deleted mailboxes
 should be restored as deleted mailboxes, not as new ones.</p>
@@ -862,7 +863,7 @@ and <strong>delete_mode</strong> configuration options.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-F">
-<code class="descname">-F</code><code class="descclassname"> input-file</code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--input-file"></span><code class="descname">-F</code><code class="descclassname"> input-file</code><code class="descclassname">, </code><code class="descname">--input-file</code><code class="descclassname">=input-file</code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of mailboxes or messages from <em>input-file</em> instead of from
 the command line arguments.</p>
 <p><em>input-file</em> should contain one object specification (either an <em>mboxname</em>,
@@ -872,7 +873,7 @@ a '#' character, are ignored.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-L">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--local-only"></span><code class="descname">-L</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--local-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local operations only.  Actions required to restore the requested mailboxes
 and messages will be performed on the destination server only.
 <a class="reference internal" href="mupdate.html#std:cyrusman-mupdate(8)">mupdate(8)</a> actions will not occur.</p>
@@ -883,7 +884,7 @@ part of a murder.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-M">
-<code class="descname">-M</code><code class="descclassname"> mboxname</code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dest-mailbox"></span><code class="descname">-M</code><code class="descclassname"> mboxname</code><code class="descclassname">, </code><code class="descname">--dest-mailbox</code><code class="descclassname">=mboxname</code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Messages are restored to the mailbox with the specified <em>mboxname</em>.  If no
 mailbox of this name exists, one will be created.</p>
 <p>If multiple mailbox objects are to be restored, whether due to being
@@ -898,13 +899,13 @@ their original mailboxes.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-P">
-<code class="descname">-P</code><code class="descclassname"> partition</code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dest-partition"></span><code class="descname">-P</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--dest-partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore mailboxes to the specified <em>partition</em></p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-U">
-<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--keep-uidvalidity"></span><code class="descname">-U</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--keep-uidvalidity</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to preserve uidvalidity and other related fields, such that the
 restored mailboxes and messages appear like they never left, and IMAP
 clients can avoid expensive state updates.</p>
@@ -918,20 +919,20 @@ was specified.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-X">
-<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--skip-expunged"></span><code class="descname">-X</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--skip-expunged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>See also <strong>-x</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--all-mailboxes"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--all-mailboxes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to restore all mailboxes in the specified <em>backup</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-n">
-<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do nothing.  The work required to perform the restoration will be
 calculated (and reported depending on verbosity level), but no
 restoration will take place, and no connection will be made to
@@ -941,7 +942,7 @@ the destination server.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--recursive"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recursive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recurse into submailboxes.  When restoring mailboxes, also restore
 any mailboxes contained within them.</p>
 <p>The default is to restore only explicitly-specified mailboxes.</p>
@@ -949,20 +950,20 @@ any mailboxes contained within them.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity level.  This option can be specified multiple times
 for additional verbosity.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-w">
-<code class="descname">-w</code><code class="descclassname"> seconds</code><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--delayed-startup"></span><code class="descname">-w</code><code class="descclassname"> seconds</code><code class="descclassname">, </code><code class="descname">--delayed-startup</code><code class="descclassname">=seconds</code><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wait <em>seconds</em> before starting.  This is useful for attaching a debugger.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--only-expunged"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--only-expunged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>This can be convenient for restoring messages that were accidentally
 deleted by the user, without needing to track down individual message
@@ -972,7 +973,7 @@ guids.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-z">
-<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--require-compression"></span><code class="descname">-z</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-compression</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Require compression for server connection.  The restore will abort
 if compression is unavailable.</p>
 </dd></dl>
@@ -982,14 +983,14 @@ if compression is unavailable.</p>
 <span id="restore-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-restore-f">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--file"></span><code class="descname">-f</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--file</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a filename.  The named file does not need to be
 known about in the backups database.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-m">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--mailbox"></span><code class="descname">-m</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--mailbox</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a mailbox name.  There must be a known backup
 for the user whose mailbox this is.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
@@ -998,7 +999,7 @@ and <strong>backup_db_path</strong> configuration options.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--userid"></span><code class="descname">-u</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--userid</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a userid.  There must be a known backup for
 the specified user.</p>
 <p>This is the default if no mode is specified.</p>
@@ -1043,7 +1044,7 @@ the specified user.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 08 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

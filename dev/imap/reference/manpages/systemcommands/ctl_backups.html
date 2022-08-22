@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -891,14 +892,14 @@ the raw backup data and its index.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-F">
-<code class="descname">-F</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-F" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--force"></span><code class="descname">-F</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the operation to occur, even if it is determined to be unnecessary.
 This is mostly useful with the <strong>compact</strong> sub-command.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-S">
-<code class="descname">-S</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-S" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--stop-on-error"></span><code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--stop-on-error</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-S" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop-on-error.  With this option, if a sub-command fails for any
 particular backup, <strong>ctl_backups</strong> will immediately exit with an error,
 without processing further backups.</p>
@@ -907,7 +908,7 @@ without processing further backups.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-V">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-V" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--no-verify"></span><code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-verify</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't verify backup checksums for read-only operations.</p>
 <p>The read-only operations <strong>list</strong> and <strong>stat</strong> will normally perform a
 &quot;quick&quot; verification of the backup file being read, which checks the
@@ -918,19 +919,19 @@ whose most recent backup chunk is very large.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-j">
-<code class="descname">-j</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-j" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--json"></span><code class="descname">-j</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--json</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-j" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produce output in JSON format.  The default is plain text.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity.  Can be specified multiple times.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-w">
-<code class="descname">-w</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-w" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--wait-for-locks"></span><code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--wait-for-locks</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wait for locks.  With this option, if a backup named on the command line is
 locked, execution will block until the lock becomes available.</p>
 <p>The default is to skip backups that are currently locked.</p>
@@ -942,7 +943,7 @@ locked, execution will block until the lock becomes available.</p>
 <p>Options that apply only to the <strong>list</strong> sub-command.</p>
 <dl class="option">
 <dt id="cmdoption-ctl_backups-t">
-<code class="descname">-t</code><code class="descclassname"> [hours]</code><a class="headerlink" href="#cmdoption-ctl_backups-t" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--stale"></span><code class="descname">-t</code><code class="descclassname"> [hours]</code><code class="descclassname">, </code><code class="descname">--stale</code><code class="descclassname">[=hours]</code><a class="headerlink" href="#cmdoption-ctl_backups-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>List stale backups only, that is, backups that have received no updates
 in <em>hours</em>.  If <em>hours</em> is unspecified, it defaults to 24.</p>
 </dd></dl>
@@ -953,7 +954,7 @@ in <em>hours</em>.  If <em>hours</em> is unspecified, it defaults to 24.</p>
 <p>Options that apply only to the <strong>lock</strong> sub-command.</p>
 <dl class="option">
 <dt id="cmdoption-ctl_backups-c">
-<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-c" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--create"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--create</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exclusively create the named backup while obtaining the lock.  Exits
 immediately with an error if the named backup already exists.</p>
 <p>When the lock is successfully obtained, continue as per the other options.</p>
@@ -961,7 +962,7 @@ immediately with an error if the named backup already exists.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-p">
-<code class="descname">-p</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--pause"></span><code class="descname">-p</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--pause</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locks the named backup, and then waits for EOF on the standard input
 stream.  Unlocks the backup and exits once EOF is received.  This is the
 default mode of operation.</p>
@@ -969,7 +970,7 @@ default mode of operation.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--sqlite3"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--sqlite3</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locks the named backup, and with the lock held, opens its index file in
 the <em class="manpage">sqlite3(1)</em> program.  The lock is automatically released when
 sqlite3 exits.</p>
@@ -977,7 +978,7 @@ sqlite3 exits.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-x">
-<code class="descname">-x</code><code class="descclassname"> command</code><a class="headerlink" href="#cmdoption-ctl_backups-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--execute"></span><code class="descname">-x</code><code class="descclassname"> command</code><code class="descclassname">, </code><code class="descname">--execute</code><code class="descclassname">=command</code><a class="headerlink" href="#cmdoption-ctl_backups-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Locks the named backup, and with the lock held, executes <em>command</em> using
 <strong>/bin/sh</strong> (as per <em class="manpage">system(3)</em>).  The lock is automatically
 released when <em>command</em> completes.</p>
@@ -991,7 +992,7 @@ in the environment variables <strong>$ctl_backups_lock_data_fname</strong> and
 <span id="ctl-backups-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-ctl_backups-A">
-<code class="descname">-A</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-A" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--all"></span><code class="descname">-A</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--all</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run sub-command over all known backups.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
 and <strong>backup_db_path</strong> configuration options.</p>
@@ -999,21 +1000,21 @@ and <strong>backup_db_path</strong> configuration options.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-D">
-<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-D" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--domains"></span><code class="descname">-D</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--domains</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Backups specified on the command line are interpreted as domains.  Run
 sub-command over known backups for users in these domains.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-P">
-<code class="descname">-P</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-P" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--prefixes"></span><code class="descname">-P</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--prefixes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Backups specified on the command line are interpreted as userid prefixes.
 Run sub-command over known backups for users matching these prefixes.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-f">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--filenames"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--filenames</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Backups specified on the command line are interpreted as filenames.  Run
 sub-command over the matching backup files.  The backup files do not need
 to be known about in the backups database.</p>
@@ -1021,14 +1022,14 @@ to be known about in the backups database.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-m">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--mailboxes"></span><code class="descname">-m</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--mailboxes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Backups specified on the command line are interpreted as mailbox names.
 Run sub-command over known backups containing these mailboxes.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_backups-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_backups--userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_backups-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Backups specified on the command line are interpreted as userids.  Run
 sub-command over known backups for matching users.</p>
 <p>This is the default if no mode is specified.</p>
@@ -1079,7 +1080,7 @@ EVENTS {
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 30 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 02 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -782,19 +783,27 @@
             
   <div class="section" id="sieved">
 <span id="imap-reference-manpages-systemcommands-sieved"></span><span id="std:cyrusman-sieved(8)"></span><h1><strong>sieved</strong><a class="headerlink" href="#sieved" title="Permalink to this headline">¶</a></h1>
-<p>Script to decompile a sieve script back from bytecode.</p>
+<p>Tool to decompile a sieve script back from bytecode.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">
-<strong>sieved</strong> <em>scriptfile</em>
+<strong>sieved</strong> [OPTIONS] <em>bytcodefile</em>
 </pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>sieved</strong> decompiles the given script at <em>scriptfile</em> from bytecode, writing output to stdout.</p>
+<p><strong>sieved</strong> decompiles the given <em>bytecodefile</em>, writing output to stdout.</p>
+<p>By default, the output is a descriptive version of the bytecode.  With the
+<strong>-s</strong> option, an equivalent sieve script is produced instead.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-sieved-s">
+<span id="cmdoption-sieved--as-sieve"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--as-sieve</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-sieved-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produce a sieve script rather than describing the bytecode.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -820,7 +829,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 13 2016
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 29 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

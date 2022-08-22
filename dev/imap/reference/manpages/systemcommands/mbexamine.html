@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -811,19 +812,19 @@ use of the <strong>-s</strong> and <strong>-u</strong> switches.</p>
 
 <dl class="option">
 <dt id="cmdoption-mbexamine-u">
-<code class="descname">-u</code><code class="descclassname">  uid</code><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine--uid"></span><code class="descname">-u</code><code class="descclassname">  uid</code><code class="descclassname">, </code><code class="descname">--uid</code><code class="descclassname">=uid</code><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given uid only.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-mbexamine-s">
-<code class="descname">-s</code><code class="descclassname">  seqnum</code><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine--seq"></span><code class="descname">-s</code><code class="descclassname">  seqnum</code><code class="descclassname">, </code><code class="descname">--seq</code><code class="descclassname">=seqnum</code><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given sequence number only.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-mbexamine-q">
-<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine--check-quota"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--check-quota</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the quota usage in cyrus.index to the actual message file
 sizes and report any differences.  If there are differences, the
 mailbox SHOULD be reconstructed.</p>
@@ -831,7 +832,7 @@ mailbox SHOULD be reconstructed.</p>
 
 <dl class="option">
 <dt id="cmdoption-mbexamine-c">
-<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-c" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine--check-message-files"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--check-message-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the records in cyrus.index to the actual message files
 report any differences.  This can help detect issues if messages
 files were manipulated manually and/or restored incorrectly.</p>
@@ -981,7 +982,7 @@ index records to the actual message files in the mailbox directory.</div></block
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 29 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

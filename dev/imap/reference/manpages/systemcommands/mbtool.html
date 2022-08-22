@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -812,7 +813,7 @@ more such actions.</p>
 
 <dl class="option">
 <dt id="cmdoption-mbtool-t">
-<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-t" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbtool--normalize-internaldate"></span><code class="descname">-t</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--normalize-internaldate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Normalize <code class="docutils literal"><span class="pre">internaldate</span></code> on all index records of all listed
 <em>mailbox</em>es to match the <em>Date:</em> header if they're off by more
 than a day, which can be used to fix up a mailbox which has been
@@ -821,8 +822,9 @@ restored from backup and lost its internaldate information.</p>
 
 <dl class="option">
 <dt id="cmdoption-mbtool-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-r" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new unique ID for all listed <em>mailbox</em>es.</p>
+<span id="cmdoption-mbtool--new-uniqueid"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--new-uniqueid</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new unique ID for all listed <em>mailbox</em>es.  Only works
+for legacy mailboxes.</p>
 </dd></dl>
 
 </div>
@@ -874,7 +876,7 @@ restored from backup and lost its internaldate information.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 15 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 27 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

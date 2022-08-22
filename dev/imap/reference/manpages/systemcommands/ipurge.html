@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -816,74 +817,74 @@ folders. Use the <strong>-M</strong> option to not recurse into the mailboxes.</
 
 <dl class="option">
 <dt id="cmdoption-ipurge-f">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--include-user-mailboxes"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-user-mailboxes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force ipurge to examine mailboxes below INBOX.* and user.*.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-d">
-<code class="descname">-d</code><code class="descclassname"> days</code><a class="headerlink" href="#cmdoption-ipurge-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--days"></span><code class="descname">-d</code><code class="descclassname"> days</code><code class="descclassname">, </code><code class="descname">--days</code><code class="descclassname">=days</code><a class="headerlink" href="#cmdoption-ipurge-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Age of message in <em>days</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-b">
-<code class="descname">-b</code><code class="descclassname"> bytes</code><a class="headerlink" href="#cmdoption-ipurge-b" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--bytes"></span><code class="descname">-b</code><code class="descclassname"> bytes</code><code class="descclassname">, </code><code class="descname">--bytes</code><code class="descclassname">=bytes</code><a class="headerlink" href="#cmdoption-ipurge-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>bytes</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-k">
-<code class="descname">-k</code><code class="descclassname"> Kbytes</code><a class="headerlink" href="#cmdoption-ipurge-k" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--kbytes"></span><code class="descname">-k</code><code class="descclassname"> Kbytes</code><code class="descclassname">, </code><code class="descname">--kbytes</code><code class="descclassname">=Kbytes</code><a class="headerlink" href="#cmdoption-ipurge-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>Kbytes</em> (2^10 bytes).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-m">
-<code class="descname">-m</code><code class="descclassname"> Mbytes</code><a class="headerlink" href="#cmdoption-ipurge-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--mbytes"></span><code class="descname">-m</code><code class="descclassname"> Mbytes</code><code class="descclassname">, </code><code class="descname">--mbytes</code><code class="descclassname">=Mbytes</code><a class="headerlink" href="#cmdoption-ipurge-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>Mbytes</em> (2^20 bytes).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--exact-match"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--exact-match</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform an exact match on age or size (instead of older or larger).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-X">
-<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-X" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--delivery-time"></span><code class="descname">-X</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--delivery-time</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use delivery time instead of Date: header for date matches.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-i">
-<code class="descname">-i</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-i" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--invert-match"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--invert-match</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invert match logic: -x means not equal, date is for newer, size is
 for smaller.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--skip-flagged"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--skip-flagged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip over messages that have the \Flagged flag set.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-o">
-<code class="descname">-o</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--only-deleted"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--only-deleted</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only purge messages that have the \Deleted flag set.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-n">
-<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only print messages that would be deleted (dry run).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ipurge-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output/logging.</p>
 </dd></dl>
 
@@ -920,7 +921,7 @@ for smaller.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 29 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 16 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
