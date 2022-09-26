@@ -821,17 +821,22 @@ will cause the user's mailbox to exceed its quota.  By default, the
 failure won't occur until the mailbox is already over quota.</div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">quotawarn:</span></code> 90</p>
+<div><p><code class="docutils literal"><span class="pre">quotawarnpercent:</span></code> 90</p>
 <blockquote>
 <div>The percent of quota utilization over which the server generates
 warnings.</div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">quotawarnkb:</span></code> 0</p>
+<div><p><code class="docutils literal"><span class="pre">quotawarnsize:</span></code> 0</p>
 <blockquote>
-<div>The maximum amount of free space (in kB) at which to give a quota
-warning (if this value is 0, or if the quota is smaller than this
-amount, then warnings are always given).</div></blockquote>
+<div><p>The maximum amount of free space at which to give a quota warning
+(if this value is 0, or if the quota is smaller than this
+amount, then warnings are always given).</p>
+<p>Note that quota has kibibyte granularity.  Values specified here will
+be truncated to the nearest whole kibibyte.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
+</div></blockquote>
 </div></blockquote>
 <blockquote>
 <div><p><code class="docutils literal"><span class="pre">quotawarnmsg:</span></code> 0</p>
@@ -849,7 +854,10 @@ message delivery if <em>autocreate_post</em> is enabled, provided their
 INBOX did not yet already exist.</p>
 <p>The user's quota is set to the value if it is greater than zero,
 otherwise the user has unlimited quota.</p>
-<p>Note that quota is specified in kilobytes.</p>
+<p>Note that quota has kibibyte granularity.  Values specified here will
+be truncated to the nearest whole kibibyte.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
 </div></blockquote>
 </div></blockquote>
 <blockquote>
@@ -930,7 +938,7 @@ the first argument (&quot;&lt;old db&gt;&quot;) will be the path to the <em>base
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 20 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 07 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

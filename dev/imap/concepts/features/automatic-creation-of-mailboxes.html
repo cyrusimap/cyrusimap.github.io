@@ -828,7 +828,10 @@ message delivery if <em>autocreate_post</em> is enabled, provided their
 INBOX did not yet already exist.</p>
 <p>The user's quota is set to the value if it is greater than zero,
 otherwise the user has unlimited quota.</p>
-<p>Note that quota is specified in kilobytes.</p>
+<p>Note that quota has kibibyte granularity.  Values specified here will
+be truncated to the nearest whole kibibyte.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
 </div></blockquote>
 </div></blockquote>
 <blockquote>

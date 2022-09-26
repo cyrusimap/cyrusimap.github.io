@@ -64,6 +64,15 @@ DESCRIPTION
     units: 1d=24h, 1h=60m, 1m=60s (daylight savings, timezones, leap adjustments,
     etc are not considered).
 
+    Byte size options take the form of a number followed by a unit, for example
+    **\ 1KiB** (1 kibibyte).  Units are **B** (bytes), **KiB** (kibibytes),
+    **MiB** (mebibytes), and **GiB** (gibibytes), which may also be spelt
+    **KB**, **MB**, and **GB**.  Units are parsed without regard to case.
+    Note that regardless of spelling, these units are always powers of 2, and
+    never metric.  That is, 1GiB = 1024MiB, 1MiB = 1024KiB, 1KiB = 1024B.  If no
+    unit is specified, an option-specific backward-compatible default unit is
+    assumed (documented on an option-by-option basis).
+
 FIELD DESCRIPTIONS
 ==================
 
@@ -453,10 +462,12 @@ FIELD DESCRIPTIONS
 
     .. startblob archive_maxsize
 
-    ``archive_maxsize:`` 1024
+    ``archive_maxsize:`` 1024 K
 
-        The size in kilobytes of the largest message that won't be archived
-        immediately.  Default is 1Mb 
+        The size of the largest message that won't be archived immediately.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed.  
 
     .. endblob archive_maxsize
 
@@ -515,7 +526,7 @@ FIELD DESCRIPTIONS
 
     .. startblob autocreatequota
 
-    ``autocreatequota:`` 0
+    ``autocreatequota:`` <none>
 
         Deprecated in favor of *autocreate_quota*. 
 
@@ -653,7 +664,11 @@ FIELD DESCRIPTIONS
         The user's quota is set to the value if it is greater than zero,
         otherwise the user has unlimited quota.
 
-        Note that quota is specified in kilobytes. 
+        Note that quota has kibibyte granularity.  Values specified here will
+        be truncated to the nearest whole kibibyte.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed. 
 
     .. endblob autocreate_quota
 
@@ -786,10 +801,13 @@ FIELD DESCRIPTIONS
 
     ``backup_compact_minsize:`` 0
 
-        The minimum size in kilobytes of chunks in each backup.  The compact tool
+        The minimum size of chunks in each backup.  The compact tool
         will try to combine adjacent chunks that are smaller than this.
 
-        Setting this value to zero or negative disables combining of chunks. 
+        Setting this value to zero or negative disables combining of chunks.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed. 
 
     .. endblob backup_compact_minsize
 
@@ -797,10 +815,13 @@ FIELD DESCRIPTIONS
 
     ``backup_compact_maxsize:`` 0
 
-        The maximum size in kilobytes of chunks in each backup.  The compact tool
+        The maximum size of chunks in each backup.  The compact tool
         will try to split chunks larger than this into smaller chunks.
 
-        Setting this value to zero or negative disables splitting of chunks. 
+        Setting this value to zero or negative disables splitting of chunks.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed. 
 
     .. endblob backup_compact_maxsize
 
@@ -1609,7 +1630,9 @@ FIELD DESCRIPTIONS
     ``event_content_size:`` 0
 
         Truncate the message content that may be included with MessageAppend and
-        MessageNew. Set 0 to include the entire message itself 
+        MessageNew. Set 0 to include the entire message itself.
+
+        If no unit is specified, bytes is assumed. 
 
     .. endblob event_content_size
 
@@ -1980,10 +2003,12 @@ FIELD DESCRIPTIONS
 
     ``icalendar_max_size:`` 0
 
-        Maximum allowed iCalendar size.
-        If non-zero, CalDAV and JMAP will reject storage of resources whose
-        iCalendar representation is larger than *icalendar_max_size* bytes.
-        If set to 0, this will allow iCalendar resources of any size (the default). 
+        Maximum allowed iCalendar size. CalDAV and JMAP will reject storage of
+        resources whose iCalendar representation is larger than this.
+
+        If set to 0 (the default), a large internally-defined limit will be applied.
+
+        If no unit is specified, bytes is assumed. 
 
     .. endblob icalendar_max_size
 
@@ -2160,10 +2185,12 @@ FIELD DESCRIPTIONS
 
     .. startblob jmap_preview_length
 
-    ``jmap_preview_length:`` 64
+    ``jmap_preview_length:`` 64B
 
-        The maximum byte length of dynamically generated message previews. Previews
-        stored in jmap_preview_annot take precedence. 
+        The maximum length of dynamically generated message previews. Previews
+        stored in jmap_preview_annot take precedence.
+
+        If no unit is specified, bytes is assumed. 
 
     .. endblob jmap_preview_length
 
@@ -2180,23 +2207,27 @@ FIELD DESCRIPTIONS
 
     .. startblob jmap_max_size_upload
 
-    ``jmap_max_size_upload:`` 1048576
+    ``jmap_max_size_upload:`` 1G
 
-        The maximum size (in kilobytes) that the JMAP API accepts
-        for blob uploads. Returned as the maxSizeUpload property
-        value of the JMAP \"urn:ietf:params:jmap:core\" capabilities object.
-        Default is 1Gb. 
+        The maximum size that the JMAP API accepts for blob uploads. Returned as
+        the maxSizeUpload property value of the JMAP \"urn:ietf:params:jmap:core\"
+        capabilities object.
+
+        For backward compatibility, if no unit is specified, kibibytes is assumed.
+
 
     .. endblob jmap_max_size_upload
 
     .. startblob jmap_max_size_blob_set
 
-    ``jmap_max_size_blob_set:`` 4096
+    ``jmap_max_size_blob_set:`` 4M
 
-        The maximum size (in kilobytes) that the JMAP API accepts
-        for Blob/set. Returned as the maxSizeBlobSet property
-        value of the JMAP \"https://cyrusimap.org/ns/jmap/blob\" capabilities object.
-        Default is 4Mb. 
+        The maximum size that the JMAP API accepts for Blob/set. Returned as the
+        maxSizeBlobSet property value of the JMAP
+        \"https://cyrusimap.org/ns/jmap/blob\" capabilities object.
+
+        For backward compatibility, if no unit is specified, kibibytes is assumed.
+
 
     .. endblob jmap_max_size_blob_set
 
@@ -2212,12 +2243,14 @@ FIELD DESCRIPTIONS
 
     .. startblob jmap_max_size_request
 
-    ``jmap_max_size_request:`` 10240
+    ``jmap_max_size_request:`` 10M
 
-        The maximum size (in kilobytes) that the JMAP API accepts
-        for requests at the API endpoint. Returned as the
-        maxSizeRequest property value of the JMAP \"urn:ietf:params:jmap:core\"
-        capabilities object. Default is 10Mb. 
+        The maximum size that the JMAP API accepts for requests at the API endpoint.
+        Returned as the maxSizeRequest property value of the JMAP
+        \"urn:ietf:params:jmap:core\" capabilities object.
+
+        For backward compatibility, if no unit is specified, kibibytes is assumed.
+
 
     .. endblob jmap_max_size_request
 
@@ -2280,11 +2313,14 @@ FIELD DESCRIPTIONS
 
     .. startblob jmap_mail_max_size_attachments_per_email
 
-    ``jmap_mail_max_size_attachments_per_email:`` 10240
+    ``jmap_mail_max_size_attachments_per_email:`` 10M
 
-        The value (in kilobytes) to return for the maxSizeAttachmentsPerEmail
-        property of the JMAP \"urn:ietf:params:jmap:mail\" capabilities object. The Cyrus
-        JMAP implementation does not enforce this size limit. Default is 10 Mb.
+        The value to return for the maxSizeAttachmentsPerEmail property of the JMAP
+        \"urn:ietf:params:jmap:mail\" capabilities object. The Cyrus JMAP
+        implementation does not enforce this size limit.
+
+        For backward compatibility, if no unit is specified, kibibytes is assumed.
+
 
     .. endblob jmap_mail_max_size_attachments_per_email
 
@@ -3146,27 +3182,33 @@ FIELD DESCRIPTIONS
 
     ``maxmessagesize:`` 0
 
-        Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
-        messages larger than *maxmessagesize* bytes.  If set to 0, this
-        will allow messages of any size (the default). 
+        Maximum size of messages that will be accepted by Cyrus.  This affects LMTP
+        deliveries, IMAP appends, DAV uploads, etc.  Messages larger than this will
+        be rejected.
+
+        If set to 0 (the default), a large internally-defined limit will be applied.
+
+        If no unit is specified, bytes is assumed. 
 
     .. endblob maxmessagesize
 
     .. startblob maxquoted
 
-    ``maxquoted:`` 131072
+    ``maxquoted:`` 128K
 
-        Maximum size of a single quoted string for the parser.  Default 128k 
+        Maximum size of a single quoted string for the parser.
 
+        If no unit is specified, bytes is assumed. 
 
     .. endblob maxquoted
 
     .. startblob maxword
 
-    ``maxword:`` 131072
+    ``maxword:`` 128K
 
-        Maximum size of a single word for the parser.  Default 128k 
+        Maximum size of a single word for the parser.
 
+        If no unit is specified, bytes is assumed. 
 
     .. endblob maxword
 
@@ -4009,20 +4051,44 @@ FIELD DESCRIPTIONS
 
     ``quotawarn:`` 90
 
-        The percent of quota utilization over which the server generates
-        warnings. 
+        Deprecated in favour of *quotawarnpercent*. 
+
 
     .. endblob quotawarn
 
+    .. startblob quotawarnpercent
+
+    ``quotawarnpercent:`` 90
+
+        The percent of quota utilization over which the server generates
+        warnings. 
+
+    .. endblob quotawarnpercent
+
     .. startblob quotawarnkb
 
-    ``quotawarnkb:`` 0
+    ``quotawarnkb:`` <none>
 
-        The maximum amount of free space (in kB) at which to give a quota
-        warning (if this value is 0, or if the quota is smaller than this
-        amount, then warnings are always given). 
+        Deprecated in favour of *quotawarnsize*. 
+
 
     .. endblob quotawarnkb
+
+    .. startblob quotawarnsize
+
+    ``quotawarnsize:`` 0
+
+        The maximum amount of free space at which to give a quota warning
+        (if this value is 0, or if the quota is smaller than this
+        amount, then warnings are always given).
+
+        Note that quota has kibibyte granularity.  Values specified here will
+        be truncated to the nearest whole kibibyte.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed.  
+
+    .. endblob quotawarnsize
 
     .. startblob quotawarnmsg
 
@@ -4421,12 +4487,14 @@ FIELD DESCRIPTIONS
 
     .. startblob search_maxsize
 
-    ``search_maxsize:`` 4096
+    ``search_maxsize:`` 4M
 
-        The maximum size in kilobytes to index for each message part. Message
-        contents that occur after this byte offset will not be indexed or
-        search snippets generated from.
-        Default is 4Mb. Xapian-only. 
+        The maximum size to index for each message part. Message contents that
+        occur after this byte offset will not be indexed nor used to generate
+        search snippets. Xapian-only.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed.  
 
     .. endblob search_maxsize
 
@@ -4698,10 +4766,13 @@ FIELD DESCRIPTIONS
 
     .. startblob sieve_maxscriptsize
 
-    ``sieve_maxscriptsize:`` 32
+    ``sieve_maxscriptsize:`` 32K
 
-        Maximum size (in kilobytes) any sieve script can be, enforced at
-        submission by timsieved(8). 
+        Maximum size any sieve script can be, enforced at submission by
+        timsieved(8) and JMAP.
+
+        For backward compatibility, if no unit is specified, kibibytes is
+        assumed.  
 
     .. endblob sieve_maxscriptsize
 
@@ -5802,8 +5873,11 @@ FIELD DESCRIPTIONS
 
         Maximum allowed vCard size.
         If non-zero, CardDAV and JMAP will reject storage of contacts whose
-        vCard representation is larger than *vcard_max_size* bytes.
-        If set to 0, this will allow vCards of any size (the default). 
+        vCard representation is larger than *vcard_max_size*.
+
+        If set to 0 (the default), a large internally-defined limit will be applied.
+
+        If no unit is specified, bytes is assumed. 
 
     .. endblob vcard_max_size
 
@@ -5886,13 +5960,12 @@ FIELD DESCRIPTIONS
 
     .. startblob webdav_attachments_max_binary_attach_size
 
-    ``webdav_attachments_max_binary_attach_size:`` 1024
+    ``webdav_attachments_max_binary_attach_size:`` 1024K
 
-        The maximum byte length (in kilobytes) of an ATTACH property value
-        when managed attachment URIs get rewritten to BINARY during iTIP processing.
-        Any attachment that exceeds this byte size keeps its managed attachment
-        URI as ATTACH value. A zero size limit causes attachments of any size
-        be rewritten as BINARY. 
+        The maximum byte length of an ATTACH property value when managed attachment
+        URIs get rewritten to BINARY during iTIP processing.  Any attachment that
+        exceeds this byte size keeps its managed attachment URI as ATTACH value. A
+        zero size limit causes attachments of any size be rewritten as BINARY. 
 
     .. endblob webdav_attachments_max_binary_attach_size
 

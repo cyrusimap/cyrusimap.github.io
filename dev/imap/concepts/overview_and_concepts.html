@@ -333,6 +333,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../download/upgrade.html">Upgrading to 3.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
@@ -1225,8 +1226,13 @@ document.</p>
 </div>
 <div class="section" id="quota-warnings-upon-select-when-user-has-d-rights">
 <h3>Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights<a class="headerlink" href="#quota-warnings-upon-select-when-user-has-d-rights" title="Permalink to this headline">¶</a></h3>
-<p>When a user selects a mailbox whose quota root has usage that is close to or over the limit and the user has <code class="docutils literal"><span class="pre">d</span></code> rights on the mailbox, the server will issue an alert notifying the user that usage is close to or over the limit. The threshold of usage at which the server will issue quota warnings is set by the <code class="docutils literal"><span class="pre">quotawarn</span></code> configuration option.</p>
-<p>The server only issues warnings when the user has <code class="docutils literal"><span class="pre">d</span></code> rights because only users with <code class="docutils literal"><span class="pre">d</span></code> rights are capable of correcting the problem.</p>
+<p>When a user selects a mailbox whose quota root has usage that is close to or
+over the limit and the user has <code class="docutils literal"><span class="pre">d</span></code> rights on the mailbox, the server will
+issue an alert notifying the user that usage is close to or over the limit.
+The threshold of usage at which the server will issue quota warnings is set
+by the <code class="docutils literal"><span class="pre">quotawarnpercent</span></code> configuration option.</p>
+<p>The server only issues warnings when the user has <code class="docutils literal"><span class="pre">d</span></code> rights because only
+users with <code class="docutils literal"><span class="pre">d</span></code> rights are capable of correcting the problem.</p>
 </div>
 <div class="section" id="quotas-and-partitions">
 <h3>Quotas and Partitions<a class="headerlink" href="#quotas-and-partitions" title="Permalink to this headline">¶</a></h3>
@@ -1505,7 +1511,7 @@ servers to allow for horizontal scalability.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 11 2017
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 07 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
