@@ -237,6 +237,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-set-configuration-options">How to set configuration options</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#the-default-configuration-file">The default configuration file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#application-configuration">Application configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-pathnames">Default pathnames</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
@@ -805,6 +806,32 @@ information.  Check your application&#8217;s documentation for specifics.</p>
 configuration file, <code class="docutils literal"><span class="pre">/etc/imapd.conf</span></code>, by prepending all SASL
 options with <code class="docutils literal"><span class="pre">sasl_</span></code>: the SASL option &#8220;pwcheck_method&#8221; is set
 by changing &#8220;sasl_pwcheck_method&#8221; in <code class="docutils literal"><span class="pre">/etc/imapd.conf</span></code>.</p>
+</div>
+<div class="section" id="default-pathnames">
+<h3>Default pathnames<a class="headerlink" href="#default-pathnames" title="Permalink to this headline">¶</a></h3>
+<p>Some pathnames hardcoded into the SASL libraries can be overridden
+at runtime using environment variables or, on Windows, in the
+system registry. The Windows registry key is</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">HKLM\SOFTWARE\Project</span> <span class="pre">Cyrus\SASL</span> <span class="pre">Library</span></code>.</div></blockquote>
+<p>The attributes used in this key are:</p>
+<dl class="docutils">
+<dt>ConfDir</dt>
+<dd>the pathname of the directory containing the configuration files</dd>
+<dt>PluginDir</dt>
+<dd>the pathname of the directory containing SASL plugins</dd>
+<dt>SaslDBName</dt>
+<dd>the pathname of the <code class="docutils literal"><span class="pre">sasldb</span></code> file</dd>
+</dl>
+<p>On POSIX systems the values can be set using environment variables:</p>
+<dl class="docutils">
+<dt>SASL_CONFDIR</dt>
+<dd>the pathname of the directory containing the configuration files</dd>
+<dt>SASL_PLUGINDIR</dt>
+<dd>the pathname of the directory containing SASL plugins</dd>
+<dt>SASL_DBNAME</dt>
+<dd>the pathname of the <code class="docutils literal"><span class="pre">sasldb</span></code> file</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="troubleshooting">
