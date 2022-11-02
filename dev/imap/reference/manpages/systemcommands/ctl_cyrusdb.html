@@ -808,7 +808,7 @@ The <em>configdirectory</em> option in <a class="reference internal" href="../co
 
 <dl class="option">
 <dt id="cmdoption-ctl_cyrusdb-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_cyrusdb--recover"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recover</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recover the database after an application or system failure. Also
 performs database cleanups like removing mailbox reservations (and
 the associated mailbox files).</p>
@@ -824,14 +824,14 @@ entries will be cleaned up.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_cyrusdb-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_cyrusdb--no-cleanup"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with <code class="docutils literal"><span class="pre">-r</span></code> to only recover the database, and prevent any
 cleanup.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_cyrusdb-c">
-<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-c" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_cyrusdb--checkpoint"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--checkpoint</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checkpoint and archive (a copy of) the database.</p>
 <p>Changes to the database which are part of the committed transactions
 are written to disk.</p>
@@ -901,7 +901,7 @@ the <strong>START</strong> section of <a class="reference internal" href="../con
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Feb 17 2020
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 14 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
