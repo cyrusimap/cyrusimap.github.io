@@ -1369,6 +1369,12 @@ This restriction is only set at calendar creation time and only
 if the CalDAV client hasn't specified a restriction in the creation
 request.
 Allowed values: <em>VEVENT</em>, <em>VTODO</em>, <em>VJOURNAL</em>, <em>VFREEBUSY</em>, <em>VAVAILABILITY</em>, <em>VPOLL</em></div></blockquote>
+<p><code class="docutils literal"><span class="pre">calendar_minimum_alarm_interval:</span></code> 5m</p>
+<blockquote>
+<div>The minimum allowed interval between alarms for a recurring event.
+Primarily used to suppress alarms for MINUTELY and SECONDLY recurrences.
+The default is 5 minutes.  The minimum value is 0, which will
+allow all alarms.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">carddav_allowaddmember:</span></code> 0</p>
 <blockquote>
 <div>Enable support for POST add-member on the CardDAV server.</div></blockquote>

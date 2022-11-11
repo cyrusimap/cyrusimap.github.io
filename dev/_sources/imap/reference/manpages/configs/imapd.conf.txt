@@ -1070,6 +1070,17 @@ FIELD DESCRIPTIONS
 
     .. endblob calendar_component_set
 
+    .. startblob calendar_minimum_alarm_interval
+
+    ``calendar_minimum_alarm_interval:`` 5m
+
+        The minimum allowed interval between alarms for a recurring event.
+        Primarily used to suppress alarms for MINUTELY and SECONDLY recurrences.
+        The default is 5 minutes.  The minimum value is 0, which will
+        allow all alarms. 
+
+    .. endblob calendar_minimum_alarm_interval
+
     .. startblob carddav_allowaddmember
 
     ``carddav_allowaddmember:`` 0
