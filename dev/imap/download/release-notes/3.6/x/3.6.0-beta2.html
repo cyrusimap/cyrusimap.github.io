@@ -842,7 +842,7 @@ to have nothing left to do once it's been obtained.</li>
 <li>Added an inactivity timeout for WebSocket connections, configurable with
 the <cite>websocket_timeout</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option.</li>
 <li>Mailboxes and user metadata directories are now organised on disk by UUID
-rather than by mailbox name.  See <a class="reference internal" href="3.6.0-beta3.html#relnotes-storage-changes"><span class="std std-ref">Storage changes</span></a> below.</li>
+rather than by mailbox name.  See <a class="reference internal" href="#relnotes-3-6-0-beta2-storage-changes"><span class="std std-ref">Storage changes</span></a> below.</li>
 <li>Sieve scripts are now stored in a special mailbox, rather than in
 <cite>sievedir</cite>.  Compiled bytecode is still stored in <cite>sievedir</cite>.  The name of
 the mailbox can be overridden with the <cite>sieve_folder</cite>
@@ -872,7 +872,7 @@ originally uploaded via JMAP.</li>
 </ul>
 </div>
 <div class="section" id="storage-changes">
-<span id="relnotes-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
+<span id="relnotes-3-6-0-beta2-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
 <p>Mailboxes and user metadata directories are now organised on disk by UUID
 rather than by mailbox name.</p>
 <p>At startup (or when you run <cite>ctl_cyrusdb -r</cite> manually),
@@ -942,7 +942,7 @@ XML element instead of text (thanks Дилян Палаузов)</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2022, The Cyrus Team. Last updated on Mar 11 2022
+        &copy; Copyright 1993–2022, The Cyrus Team. Last updated on Nov 28 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
