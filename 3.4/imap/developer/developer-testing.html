@@ -827,7 +827,7 @@ sudo cpan -i Math::Int64
 </pre></div>
 </div>
 </li>
-<li><p class="first">Install Cassandane</p>
+<li><p class="first">Build Cassandane's binary components</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
 make
 </pre></div>
@@ -849,12 +849,6 @@ suppress the binary tests as they are buggy upstream still.</p>
 <div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[imaptest]</span>
 <span class="na">basedir</span><span class="o">=</span><span class="s">/path/to/imaptest/imaptest</span>
 <span class="na">suppress</span><span class="o">=</span><span class="s">append-binary urlauth-binary fetch-binary-mime fetch-binary-mime-qp</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Ensure that the following config items are off:</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="na">altnamespace</span> <span class="o">=</span> <span class="s">no</span>
-<span class="na">unixhierarchysep</span> <span class="o">=</span> <span class="s">no</span>
 </pre></div>
 </div>
 </li>
@@ -946,23 +940,38 @@ sudo cp tools/mkimap /usr/cyrus/bin/mkimap
 </div>
 <div class="section" id="running-the-tests">
 <h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
-<p>As user <code class="docutils literal"><span class="pre">cyrus</span></code>, run the tests.</p>
+<p>Cassandane internals need to run as the <code class="docutils literal"><span class="pre">cyrus</span></code> user, but if you gave
+yourself passwordless sudo access as instructed above, then Cassandane will
+take care of switching to the <code class="docutils literal"><span class="pre">cyrus</span></code> user for you.  In which case, just run
+it as yourself.</p>
+<p>If you didn't give yourself this access, you will first need to become the
+<code class="docutils literal"><span class="pre">cyrus</span></code> user by some other means, and then run it from there.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
-sudo -u cyrus ./testrunner.pl -f pretty -j <span class="m">8</span>
+./testrunner.pl
 </pre></div>
 </div>
+<p>Do not run it as root.</p>
 </div>
 <div class="section" id="debugging-and-stacktraces">
 <h2>Debugging and stacktraces<a class="headerlink" href="#debugging-and-stacktraces" title="Permalink to this headline">¶</a></h2>
 <p>Check out the guide to <a class="reference internal" href="../reference/faqs/o-gdb.html#faqs-o-gdb"><span class="std std-ref">running Cyrus components under gdb</span></a>.</p>
 <p>In the event of a crash, here's how to <a class="reference internal" href="../reference/faqs/o-coredump.html#faqs-o-coredump"><span class="std std-ref">generate a stacktrace</span></a>.</p>
+<p>Core dumps will be owned by the <code class="docutils literal"><span class="pre">cyrus</span></code> user, but your source tree will
+probably be owned by yourself.  Copy the core dump somewhere convenient,
+change the ownership to yourself, and then you can open the core file in
+gdb for examination.</p>
 </div>
 <div class="section" id="tips-and-tricks">
 <h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h2>
-<p>Read the script to see other options. If you're having problems, add more <code class="docutils literal"><span class="pre">-v</span></code> options to the testrunner to get more info out.</p>
-<p><strong>Looking for memory leaks?</strong> Run with --valgrind to use valgrind (if it's installed). It is slower, which is why it doesn't need to be always used.</p>
-<p>Running with -v -v is very noisy, but gives a lot more data.  For example: all IMAP telemetry.</p>
-<p>Also helpful to run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/var/log/syslog</span></code>, and examine  /var/tmp/cass as root to examine log files and disk structures for failed tests.</p>
+<p>Read the script to see other options. If you're having problems, add more
+<code class="docutils literal"><span class="pre">-v</span></code> options to the testrunner to get more info out.</p>
+<p><strong>Looking for memory leaks?</strong> Run with --valgrind to use valgrind (if it's
+installed). It is slower, which is why it doesn't need to be always used.</p>
+<p>Running with -v -v is very noisy, but gives a lot more data.  For example: all
+IMAP telemetry.</p>
+<p>Also helpful to run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/var/log/syslog</span></code>, and examine
+/var/tmp/cass as <code class="docutils literal"><span class="pre">cyrus</span></code> to examine log files and disk structures for
+failed tests.</p>
 </div>
 </div>
 
@@ -984,7 +993,7 @@ sudo -u cyrus ./testrunner.pl -f pretty -j <span class="m">8</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Nov 24 2021
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 12 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
