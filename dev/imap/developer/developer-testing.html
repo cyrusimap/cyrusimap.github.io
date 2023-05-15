@@ -904,6 +904,15 @@ sudo adduser cyrus mail
 </div></blockquote>
 </li>
 </ol>
+<p>This is not quite the same IMAPTest that CI uses.  The CI system uses
+a docker image, which among other things has Dovecot and IMAPTest already
+built in so that they don't need to be rebuilt every time CI runs.</p>
+<p>The docker image is built from <a class="reference external" href="https://github.com/cyrusimap/cyrus-docker/blob/master/Debian/Dockerfile">Dockerfile</a> in the cyrus-docker repo.  If you
+want to locally reproduce the same testing that CI runs, you can search it
+for &quot;dovecot.git&quot; and &quot;imaptest.git&quot; to see how these two components
+are fetched and built, and do the same yourself.  Briefly, Dovecot is built
+from a known commit id on the upstream repository, whereas IMAPTest is built
+from the &quot;cyrus&quot; branch of our own fork.</p>
 </div>
 </div>
 <div class="section" id="rebuild-cyrus-for-testing">
@@ -997,7 +1006,7 @@ failed tests.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 12 2022
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 15 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
