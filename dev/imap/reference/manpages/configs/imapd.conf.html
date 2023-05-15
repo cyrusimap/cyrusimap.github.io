@@ -1048,6 +1048,11 @@ do not implement the <span class="target" id="index-4"></span><a class="rfc refe
 <p><code class="docutils literal"><span class="pre">aps_topic_carddav:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Topic for Apple Push Service registration for CardDAV.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">aps_expiry:</span></code> 1d</p>
+<blockquote>
+<div>Time after which a CalDAV/CardDAV push subscription will expire.
+A client will have to refresh the subscription in order to continue to
+receive push notifications.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">archive_enabled:</span></code> 0</p>
 <blockquote>
 <div>Is archiving enabled for this server.  You also need to have an

@@ -428,6 +428,16 @@ FIELD DESCRIPTIONS
 
     .. endblob aps_topic_carddav
 
+    .. startblob aps_expiry
+
+    ``aps_expiry:`` 1d
+
+        Time after which a CalDAV/CardDAV push subscription will expire.
+        A client will have to refresh the subscription in order to continue to
+        receive push notifications. 
+
+    .. endblob aps_expiry
+
     .. startblob archive_enabled
 
     ``archive_enabled:`` 0
