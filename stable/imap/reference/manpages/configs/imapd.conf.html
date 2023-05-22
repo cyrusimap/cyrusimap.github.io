@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>imapd.conf &mdash; Cyrus IMAP 3.6.1 documentation</title>
+  <title>imapd.conf &mdash; Cyrus IMAP 3.8.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.8.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="krb.equiv" href="krb.equiv.html"/>
         <link rel="prev" title="cyrus.conf" href="cyrus.conf.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-2">Series 3.2</a></li>
@@ -331,21 +332,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -742,7 +745,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
 </div>
       &nbsp;
     </nav>
@@ -762,7 +765,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.1</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.8.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -826,6 +829,14 @@ no unit is specified, an option-specific backward-compatible default unit
 is assumed (documented on an option-by-option basis).  These are simple time
 units: 1d=24h, 1h=60m, 1m=60s (daylight savings, timezones, leap adjustments,
 etc are not considered).</p>
+<p>Byte size options take the form of a number followed by a unit, for example
+<strong>1KiB</strong> (1 kibibyte).  Units are <strong>B</strong> (bytes), <strong>KiB</strong> (kibibytes),
+<strong>MiB</strong> (mebibytes), and <strong>GiB</strong> (gibibytes), which may also be spelt
+<strong>KB</strong>, <strong>MB</strong>, and <strong>GB</strong>.  Units are parsed without regard to case.
+Note that regardless of spelling, these units are always powers of 2, and
+never metric.  That is, 1GiB = 1024MiB, 1MiB = 1024KiB, 1KiB = 1024B.  If no
+unit is specified, an option-specific backward-compatible default unit is
+assumed (documented on an option-by-option basis).</p>
 </div></blockquote>
 </div>
 <div class="section" id="field-descriptions">
@@ -1052,10 +1063,12 @@ if archiving is enabled.</p>
 <p>For backward compatibility, if no unit is specified, days is
 assumed.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">archive_maxsize:</span></code> 1024</p>
+<p><code class="docutils literal"><span class="pre">archive_maxsize:</span></code> 1024 K</p>
 <blockquote>
-<div>The size in kilobytes of the largest message that won't be archived
-immediately.  Default is 1Mb</div></blockquote>
+<div><p>The size of the largest message that won't be archived immediately.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">archive_keepflagged:</span></code> 0</p>
 <blockquote>
 <div>If set, messages with the \Flagged system flag won't be archived,
@@ -1082,7 +1095,7 @@ can be very useful for tracking down what happened if things look strange</div><
 <p><code class="docutils literal"><span class="pre">autocreateinboxfolders:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Deprecated in favor of <em>autocreate_inbox_folders</em>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">autocreatequota:</span></code> 0</p>
+<p><code class="docutils literal"><span class="pre">autocreatequota:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Deprecated in favor of <em>autocreate_quota</em>.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">autocreatequotamsg:</span></code> -1</p>
@@ -1150,7 +1163,10 @@ message delivery if <em>autocreate_post</em> is enabled, provided their
 INBOX did not yet already exist.</p>
 <p>The user's quota is set to the value if it is greater than zero,
 otherwise the user has unlimited quota.</p>
-<p>Note that quota is specified in kilobytes.</p>
+<p>Note that quota has kibibyte granularity.  Values specified here will
+be truncated to the nearest whole kibibyte.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">autocreate_quota_messages:</span></code> -1</p>
 <blockquote>
@@ -1223,15 +1239,19 @@ partition pathname MUST be specified if backups are in use.  Note that
 there is no relationship between spool partitions and backup partitions.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_compact_minsize:</span></code> 0</p>
 <blockquote>
-<div><p>The minimum size in kilobytes of chunks in each backup.  The compact tool
+<div><p>The minimum size of chunks in each backup.  The compact tool
 will try to combine adjacent chunks that are smaller than this.</p>
 <p>Setting this value to zero or negative disables combining of chunks.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_compact_maxsize:</span></code> 0</p>
 <blockquote>
-<div><p>The maximum size in kilobytes of chunks in each backup.  The compact tool
+<div><p>The maximum size of chunks in each backup.  The compact tool
 will try to split chunks larger than this into smaller chunks.</p>
 <p>Setting this value to zero or negative disables splitting of chunks.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">backup_compact_work_threshold:</span></code> 1</p>
 <blockquote>
@@ -1352,6 +1372,12 @@ This restriction is only set at calendar creation time and only
 if the CalDAV client hasn't specified a restriction in the creation
 request.
 Allowed values: <em>VEVENT</em>, <em>VTODO</em>, <em>VJOURNAL</em>, <em>VFREEBUSY</em>, <em>VAVAILABILITY</em>, <em>VPOLL</em></div></blockquote>
+<p><code class="docutils literal"><span class="pre">calendar_minimum_alarm_interval:</span></code> 5m</p>
+<blockquote>
+<div>The minimum allowed interval between alarms for a recurring event.
+Primarily used to suppress alarms for MINUTELY and SECONDLY recurrences.
+The default is 5 minutes.  The minimum value is 0, which will
+allow all alarms.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">carddav_allowaddmember:</span></code> 0</p>
 <blockquote>
 <div>Enable support for POST add-member on the CardDAV server.</div></blockquote>
@@ -1503,6 +1529,10 @@ is a C format string that gets 3 options: the first is the name of the
 executable (as specified in the cmd parameter in cyrus.conf). The second
 is the pid (integer) and the third is the service ID.
 Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d</div></blockquote>
+<p><code class="docutils literal"><span class="pre">debug_log_sync_partition_choice:</span></code> 0</p>
+<blockquote>
+<div>If enabled, replication will log which partition it chose for staging.
+This is mainly useful for regression testing the sync_client -a switch.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">debug_writefail_guid:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>If set, any arriving message with this guid will fail as if the underlying
@@ -1625,8 +1655,10 @@ to a size
 Allowed values: <em>standard</em>, <em>message</em>, <em>header</em>, <em>body</em>, <em>headerbody</em></div></blockquote>
 <p><code class="docutils literal"><span class="pre">event_content_size:</span></code> 0</p>
 <blockquote>
-<div>Truncate the message content that may be included with MessageAppend and
-MessageNew. Set 0 to include the entire message itself</div></blockquote>
+<div><p>Truncate the message content that may be included with MessageAppend and
+MessageNew. Set 0 to include the entire message itself.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">event_exclude_flags:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Don't send event notification for given IMAP flag(s)</div></blockquote>
@@ -1642,7 +1674,7 @@ Set ALL for any folder</div></blockquote>
 <p><code class="docutils literal"><span class="pre">event_groups:</span></code> message mailbox</p>
 <blockquote>
 <div><p>Space-separated list of groups of related events to turn on notification</p>
-<p>Allowed values: <em>message</em>, <em>quota</em>, <em>flags</em>, <em>access</em>, <em>mailbox</em>, <em>subscription</em>, <em>calendar</em>, <em>applepushservice</em></p>
+<p>Allowed values: <em>message</em>, <em>quota</em>, <em>flags</em>, <em>access</em>, <em>mailbox</em>, <em>subscription</em>, <em>calendar</em>, <em>applepushservice</em>, <em>jmap</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">event_notifier:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -1787,6 +1819,10 @@ markup languages (HTML, XML) will utilize line breaks and
 indentation to promote better human-readability in telemetry logs.
 Note that enabling this option will increase the amount of data
 sent across the wire.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">httppts_uri:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The URL endpoint to use when for querying group membership, in URI Template
+(level 1) format [<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6570.html"><strong>RFC 6570</strong></a>].  The URL MUST contain a variable called &quot;groupId&quot;</div></blockquote>
 <p><code class="docutils literal"><span class="pre">httptimeout:</span></code> 5m</p>
 <blockquote>
 <div><p>Set the length of the HTTP server's inactivity autologout timer.
@@ -1802,7 +1838,7 @@ specified [host]:port.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">http_jwt_key_dir:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The absolute path to a directory containing one or more key files
-to authenticate JSON Web Tokens (<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a>) for HTTP connections.
+to authenticate JSON Web Tokens (<span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a>) for HTTP connections.
 Keys for the following JWS algorithms are supported: &quot;HS256&quot;,
 &quot;HS384&quot;, &quot;HS512&quot;, &quot;RS256&quot;, &quot;RS384&quot;, &quot;RS512&quot;.</p>
 <p>A key file consists of one or more keys encoded in PEM format.
@@ -1833,10 +1869,11 @@ for clock skew.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">icalendar_max_size:</span></code> 0</p>
 <blockquote>
-<div>Maximum allowed iCalendar size.
-If non-zero, CalDAV and JMAP will reject storage of resources whose
-iCalendar representation is larger than <em>icalendar_max_size</em> bytes.
-If set to 0, this will allow iCalendar resources of any size (the default).</div></blockquote>
+<div><p>Maximum allowed iCalendar size. CalDAV and JMAP will reject storage of
+resources whose iCalendar representation is larger than this.</p>
+<p>If set to 0 (the default), a large internally-defined limit will be applied.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">idlesocket:</span></code> {configdirectory}/socket/idle</p>
 <blockquote>
 <div>Unix domain socket that idled listens on.</div></blockquote>
@@ -1867,7 +1904,7 @@ mailboxes.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">imipnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Notifyd(8) method to use for &quot;IMIP&quot; notifications which are based on
-the <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &quot;IMIP&quot; notifications are disabled.</div></blockquote>
+the <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, &quot;IMIP&quot; notifications are disabled.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">implicit_owner_rights:</span></code> lkxan</p>
 <blockquote>
 <div>The implicit Access Control List (ACL) for the owner of a mailbox.</div></blockquote>
@@ -1922,48 +1959,53 @@ and height 200, then the value of this annotation would be:</p>
 <p><code class="docutils literal"><span class="pre">jmap_inlinedcids_annot:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The name of the per-message annotation, if any, that stores a
-JSON object, mapping <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
+JSON object, mapping <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a> Content-IDs referenced in HTML bodies
 to the respective HTML body part number.</p>
 <p>For example, if message part 1.2 contains HTML and references an
 inlined image at &quot;<a class="reference external" href="cid:foo">cid:foo</a>&quot;, then the value of this annotation
 would be:</p>
 <p>{ &quot;&lt;foo&gt;&quot; : &quot;1.2&quot; }</p>
 <p>Note that the Content-ID key must be URL-unescaped and enclosed in
-angular brackets, as defined in <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
+angular brackets, as defined in <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2392.html"><strong>RFC 2392</strong></a>.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_preview_length:</span></code> 64</p>
+<p><code class="docutils literal"><span class="pre">jmap_preview_length:</span></code> 64B</p>
 <blockquote>
-<div>The maximum byte length of dynamically generated message previews. Previews
-stored in jmap_preview_annot take precedence.</div></blockquote>
+<div><p>The maximum length of dynamically generated message previews. Previews
+stored in jmap_preview_annot take precedence.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_catenate_items:</span></code> 100</p>
 <blockquote>
 <div>The maximum number of items that can be catenated together by
 a JMAP Blob/set action.  Returned as the maxCatenateItems property
 value of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:blob">urn:ietf:params:jmap:blob</a>&quot; capabilities object.
 Default value is 100.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_max_size_upload:</span></code> 1048576</p>
+<p><code class="docutils literal"><span class="pre">jmap_max_size_upload:</span></code> 1G</p>
 <blockquote>
-<div>The maximum size (in kilobytes) that the JMAP API accepts
-for blob uploads. Returned as the maxSizeUpload property
-value of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot; capabilities object.
-Default is 1Gb.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_max_size_blob_set:</span></code> 4096</p>
+<div><p>The maximum size that the JMAP API accepts for blob uploads. Returned as
+the maxSizeUpload property value of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot;
+capabilities object.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmap_max_size_blob_set:</span></code> 4M</p>
 <blockquote>
-<div>The maximum size (in kilobytes) that the JMAP API accepts
-for Blob/set. Returned as the maxSizeBlobSet property
-value of the JMAP &quot;<a class="reference external" href="https://cyrusimap.org/ns/jmap/blob">https://cyrusimap.org/ns/jmap/blob</a>&quot; capabilities object.
-Default is 4Mb.</div></blockquote>
+<div><p>The maximum size that the JMAP API accepts for Blob/set. Returned as the
+maxSizeBlobSet property value of the JMAP
+&quot;<a class="reference external" href="https://cyrusimap.org/ns/jmap/blob">https://cyrusimap.org/ns/jmap/blob</a>&quot; capabilities object.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_concurrent_upload:</span></code> 5</p>
 <blockquote>
 <div>The value to return for the maxConcurrentUpload property of
 the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot; capabilities object. The Cyrus JMAP
 implementation does not enforce this rate-limit.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_max_size_request:</span></code> 10240</p>
+<p><code class="docutils literal"><span class="pre">jmap_max_size_request:</span></code> 10M</p>
 <blockquote>
-<div>The maximum size (in kilobytes) that the JMAP API accepts
-for requests at the API endpoint. Returned as the
-maxSizeRequest property value of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot;
-capabilities object. Default is 10Mb.</div></blockquote>
+<div><p>The maximum size that the JMAP API accepts for requests at the API endpoint.
+Returned as the maxSizeRequest property value of the JMAP
+&quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot; capabilities object.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_max_concurrent_requests:</span></code> 5</p>
 <blockquote>
 <div>The value to return for the maxConcurrentRequests property of
@@ -1996,11 +2038,13 @@ JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ie
 update or destroy in a single /set type method call.
 Returned as the maxObjectsInSet property value of the
 JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:core">urn:ietf:params:jmap:core</a>&quot; capabilities object.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">jmap_mail_max_size_attachments_per_email:</span></code> 10240</p>
+<p><code class="docutils literal"><span class="pre">jmap_mail_max_size_attachments_per_email:</span></code> 10M</p>
 <blockquote>
-<div>The value (in kilobytes) to return for the maxSizeAttachmentsPerEmail
-property of the JMAP &quot;<a class="reference external" href="urn:ietf:params:jmap:mail">urn:ietf:params:jmap:mail</a>&quot; capabilities object. The Cyrus
-JMAP implementation does not enforce this size limit. Default is 10 Mb.</div></blockquote>
+<div><p>The value to return for the maxSizeAttachmentsPerEmail property of the JMAP
+&quot;<a class="reference external" href="urn:ietf:params:jmap:mail">urn:ietf:params:jmap:mail</a>&quot; capabilities object. The Cyrus JMAP
+implementation does not enforce this size limit.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">jmap_nonstandard_extensions:</span></code> 0</p>
 <blockquote>
 <div>If enabled, support non-standard JMAP extensions.  If not enabled,
@@ -2034,6 +2078,9 @@ annatotors to determine the $hasAttachment flag might want to disable it.</div><
 <p><code class="docutils literal"><span class="pre">jmappushsubscriptionfolder:</span></code> #jmappushsubscription</p>
 <blockquote>
 <div>the name of the folder for JMAP Push Subscriptions (#jmappushsubscription)</div></blockquote>
+<p><code class="docutils literal"><span class="pre">jmapnotificationfolder:</span></code> #jmapnotification</p>
+<blockquote>
+<div>the name of the folder for JMAP notifications (#jmapnotification)</div></blockquote>
 <p><code class="docutils literal"><span class="pre">iolog:</span></code> 0</p>
 <blockquote>
 <div>Should cyrus output I/O log entries</div></blockquote>
@@ -2237,7 +2284,7 @@ set to 3.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">literalminus:</span></code> 0</p>
 <blockquote>
 <div>if enabled, CAPABILITIES will reply with LITERAL- rather than
-LITERAL+ (<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn't actually size-restrict uploads though</div></blockquote>
+LITERAL+ (<span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn't actually size-restrict uploads though</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_downcase_rcpt:</span></code> 1</p>
 <blockquote>
 <div>If enabled, lmtpd will convert the recipient addresses to lowercase
@@ -2274,7 +2321,7 @@ will cause the user's mailbox to exceed its quota.  By default, the
 failure won't occur until the mailbox is already over quota.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">lmtp_strict_rfc2821:</span></code> 1</p>
 <blockquote>
-<div>By default, lmtpd will be strict (per <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
+<div>By default, lmtpd will be strict (per <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
 envelope addresses are allowed.  If this option is set to false, 8bit
 characters in the local-part of envelope addresses are changed to 'X'
 instead.  This is useful to avoid generating backscatter with
@@ -2379,15 +2426,22 @@ zero means no limit</div></blockquote>
 zero means no limit</div></blockquote>
 <p><code class="docutils literal"><span class="pre">maxmessagesize:</span></code> 0</p>
 <blockquote>
-<div>Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
-messages larger than <em>maxmessagesize</em> bytes.  If set to 0, this
-will allow messages of any size (the default).</div></blockquote>
-<p><code class="docutils literal"><span class="pre">maxquoted:</span></code> 131072</p>
+<div><p>Maximum size of messages that will be accepted by Cyrus.  This affects LMTP
+deliveries, IMAP appends, DAV uploads, etc.  Messages larger than this will
+be rejected.</p>
+<p>If set to 0 (the default), a large internally-defined limit will be applied.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">maxquoted:</span></code> 128K</p>
 <blockquote>
-<div>Maximum size of a single quoted string for the parser.  Default 128k</div></blockquote>
-<p><code class="docutils literal"><span class="pre">maxword:</span></code> 131072</p>
+<div><p>Maximum size of a single quoted string for the parser.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">maxword:</span></code> 128K</p>
 <blockquote>
-<div>Maximum size of a single word for the parser.  Default 128k</div></blockquote>
+<div><p>Maximum size of a single word for the parser.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mboxkey_db:</span></code> twoskip</p>
 <blockquote>
 <div><p>The cyrusdb backend to use for mailbox keys.</p>
@@ -2441,7 +2495,7 @@ Allowed values: <em>standard</em>, <em>unified</em>, <em>replicated</em></div></
 headers.  The 8-bit characters are changed to `X'.  If
 <strong>reject8bit</strong> is enabled, setting <strong>munge8bit</strong> has no effect.
 (A proper solution to non-ASCII characters in headers is offered by
-<span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
+<span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</div></blockquote>
 <p><code class="docutils literal"><span class="pre">mupdate_connections_max:</span></code> 128</p>
 <blockquote>
 <div>The max number of connections that a mupdate process will allow, this
@@ -2796,7 +2850,7 @@ DO NOT SET on frontends or things won't work properly.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">pts_module:</span></code> afskrb</p>
 <blockquote>
 <div><p>The PTS module to use.</p>
-<p>Allowed values: <em>afskrb</em>, <em>ldap</em></p>
+<p>Allowed values: <em>afskrb</em>, <em>ldap</em>, <em>http</em></p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">ptloader_sock:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -2850,13 +2904,24 @@ conversations quota counts, which count multiple copies of exactly the
 same message (by GUID) as only one</div></blockquote>
 <p><code class="docutils literal"><span class="pre">quotawarn:</span></code> 90</p>
 <blockquote>
+<div>Deprecated in favour of <em>quotawarnpercent</em>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">quotawarnpercent:</span></code> 90</p>
+<blockquote>
 <div>The percent of quota utilization over which the server generates
 warnings.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">quotawarnkb:</span></code> 0</p>
+<p><code class="docutils literal"><span class="pre">quotawarnkb:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>The maximum amount of free space (in kB) at which to give a quota
-warning (if this value is 0, or if the quota is smaller than this
-amount, then warnings are always given).</div></blockquote>
+<div>Deprecated in favour of <em>quotawarnsize</em>.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">quotawarnsize:</span></code> 0</p>
+<blockquote>
+<div><p>The maximum amount of free space at which to give a quota warning
+(if this value is 0, or if the quota is smaller than this
+amount, then warnings are always given).</p>
+<p>Note that quota has kibibyte granularity.  Values specified here will
+be truncated to the nearest whole kibibyte.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">quotawarnmsg:</span></code> 0</p>
 <blockquote>
 <div>The maximum amount of messages at which to give a quota warning
@@ -2891,7 +2956,7 @@ will either add or remove reverse ACL pointers from mailboxes.db</div></blockquo
 <div>Deprecated. No longer used</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc2046_strict:</span></code> 0</p>
 <blockquote>
-<div>If enabled, imapd will be strict (per <span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
+<div>If enabled, imapd will be strict (per <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
 boundary strings.  This means that boundaries containing other
 boundaries as substrings will be treated as identical.  Since
 enabling this option will break some messages created by Eudora 5.1
@@ -2901,13 +2966,13 @@ there is good reason to do otherwise.</div></blockquote>
 <blockquote>
 <div>If enabled, imapd will parse any non-encoded character sequence in
 MIME header values as UTF8. This is useful for installations that
-either advertise the UTF8SMTP (<span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
+either advertise the UTF8SMTP (<span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
 with improperly escaped UTF-8 byte sequences. It is recommended that
 this option is left disabled unless there is good reason to do
 otherwise.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">rfc3028_strict:</span></code> 1</p>
 <blockquote>
-<div>If enabled, Sieve will be strict (per <span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
+<div>If enabled, Sieve will be strict (per <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
 which headers are allowed to be used in address and envelope tests.
 This means that only those headers which are defined to contain addresses
 will be allowed in address tests and only &quot;to&quot; and &quot;from&quot; will be
@@ -3038,7 +3103,7 @@ folders.</div></blockquote>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_fuzzy_always:</span></code> 0</p>
 <blockquote>
-<div>Whether to enable <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
+<div>Whether to enable <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
 on, search attributes will be searched using FUZZY search by default.
 If turned off, clients have to explicitly use the FUZZY search key to
 enable fuzzy search for regular SEARCH commands.</div></blockquote>
@@ -3058,12 +3123,14 @@ headers can still be searched, the searches will just be slower.</div></blockquo
 <blockquote>
 <div>The maximum number of seconds to run a search for before aborting.  Default
 of no value means search &quot;forever&quot; until other timeouts.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">search_maxsize:</span></code> 4096</p>
+<p><code class="docutils literal"><span class="pre">search_maxsize:</span></code> 4M</p>
 <blockquote>
-<div>The maximum size in kilobytes to index for each message part. Message
-contents that occur after this byte offset will not be indexed or
-search snippets generated from.
-Default is 4Mb. Xapian-only.</div></blockquote>
+<div><p>The maximum size to index for each message part. Message contents that
+occur after this byte offset will not be indexed nor used to generate
+search snippets. Xapian-only.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_queryscan:</span></code> 5000</p>
 <blockquote>
 <div>The minimum number of records require to do a direct scan of all G keys
@@ -3072,7 +3139,7 @@ Default is 4Mb. Xapian-only.</div></blockquote>
 <blockquote>
 <div>When searching, should diacriticals be stripped from the search
 terms.  The default is &quot;true&quot;, a search for &quot;hav&quot; will match
-&quot;Håvard&quot;.  This is not <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
+&quot;Håvard&quot;.  This is not <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
 compatible, and may be preferred by some sites.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_skiphtml:</span></code> 0</p>
 <blockquote>
@@ -3210,10 +3277,13 @@ Allowed values: <em>fileinto</em>, <em>reject</em>, <em>vacation</em>, <em>vacat
 <p><code class="docutils literal"><span class="pre">sieve_folder:</span></code> #sieve</p>
 <blockquote>
 <div>The name of the folder for storing Sieve scripts (#sieve)</div></blockquote>
-<p><code class="docutils literal"><span class="pre">sieve_maxscriptsize:</span></code> 32</p>
+<p><code class="docutils literal"><span class="pre">sieve_maxscriptsize:</span></code> 32K</p>
 <blockquote>
-<div>Maximum size (in kilobytes) any sieve script can be, enforced at
-submission by timsieved(8).</div></blockquote>
+<div><p>Maximum size any sieve script can be, enforced at submission by
+timsieved(8) and JMAP.</p>
+<p>For backward compatibility, if no unit is specified, kibibytes is
+assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">sieve_maxscripts:</span></code> 5</p>
 <blockquote>
 <div>Maximum number of sieve scripts any user may have, enforced at
@@ -3289,8 +3359,8 @@ option smtp_host.</p>
 the executable defined in the config option sendmail.
 The executable must accept &quot;-bs&quot; as command line
 argument, read from stdin and must implement the minimum
-SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
-<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
+SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
+<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
 supported extension, then the MAIL FROM command includes
 the AUTH parameter, with its value set to the name of any
 authenticated user which triggered the email. The AUTH
@@ -3337,17 +3407,17 @@ Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></div></bl
 <p><code class="docutils literal"><span class="pre">specialuse_extra:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div>Whitespace separated list of extra special-use attributes
-that can be set on a mailbox. <span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
+that can be set on a mailbox. <span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">specialuse_nochildren:</span></code> &lt;none&gt;</p>
+<p><code class="docutils literal"><span class="pre">specialuse_nochildren:</span></code> \Scheduled \Snooze</p>
 <blockquote>
 <div>Whitespace separated list of special-use attributes that may not contain
 child folders.  If set, mailboxes with any of these attributes may not
 have child folders created, and these attributes cannot be added to
 mailboxes that already have children..</div></blockquote>
-<p><code class="docutils literal"><span class="pre">specialuse_protect:</span></code> \Archive \Drafts \Important \Junk \Sent \Trash</p>
+<p><code class="docutils literal"><span class="pre">specialuse_protect:</span></code> \Archive \Drafts \Important \Junk \Sent \Scheduled \Snooze \Trash</p>
 <blockquote>
 <div>Whitespace separated list of special-use attributes
 to protect the mailboxes for.  If set, don't allow
@@ -3589,7 +3659,7 @@ is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">imapidletimeout:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>Timeout for idling clients (<span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
+<div><p>Timeout for idling clients (<span class="target" id="index-24"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
 the value of &quot;timeout&quot; will be used instead.</p>
 <p>For backward compatibility, if no unit is specified, minutes
 is assumed.</p>
@@ -3749,10 +3819,12 @@ character '.'. Note that with the newnews separator, no dots may
 occur in mailbox names.  The default switched in 3.0 from off to on.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">vcard_max_size:</span></code> 0</p>
 <blockquote>
-<div>Maximum allowed vCard size.
+<div><p>Maximum allowed vCard size.
 If non-zero, CardDAV and JMAP will reject storage of contacts whose
-vCard representation is larger than <em>vcard_max_size</em> bytes.
-If set to 0, this will allow vCards of any size (the default).</div></blockquote>
+vCard representation is larger than <em>vcard_max_size</em>.</p>
+<p>If set to 0 (the default), a large internally-defined limit will be applied.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">virtdomains:</span></code> off</p>
 <blockquote>
 <div><p>Configure virtual domain support.</p>
@@ -3793,6 +3865,21 @@ The default is 30 minutes.  The minimum value is 0, which will
 disable WebSockets.</p>
 <p>If no unit is specified, minutes is assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">webdav_attachments_baseurl:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div>The base URL for WebDAV managed attachments, excluding the
+Cyrus-specific URL paths. Typically, this only includes the
+HTTP scheme and host name at which DAV clients may fetch
+managed attachments from, e.g.  &quot;<a class="reference external" href="https://dav.example.com">https://dav.example.com</a>&quot;.
+If not specified, the target host of the DAV HTTP request that uploaded
+the attachment will be used. For JMAP, the Link.blobId property of
+JSCalendar objects will be disabled.</div></blockquote>
+<p><code class="docutils literal"><span class="pre">webdav_attachments_max_binary_attach_size:</span></code> 1024K</p>
+<blockquote>
+<div>The maximum byte length of an ATTACH property value when managed attachment
+URIs get rewritten to BINARY during iTIP processing.  Any attachment that
+exceeds this byte size keeps its managed attachment URI as ATTACH value. A
+zero size limit causes attachments of any size be rewritten as BINARY.</div></blockquote>
 <p><code class="docutils literal"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
 <div>Enable support for the XBACKUP command in imapd.  If enabled, admin
@@ -3933,7 +4020,7 @@ on HTTP 1.1 using a RESTful architecture</div></blockquote>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.1',
+            VERSION:'3.8.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

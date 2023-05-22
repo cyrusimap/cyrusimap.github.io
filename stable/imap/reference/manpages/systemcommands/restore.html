@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>restore &mdash; Cyrus IMAP 3.6.1 documentation</title>
+  <title>restore &mdash; Cyrus IMAP 3.8.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.8.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="sievec" href="sievec.html"/>
         <link rel="prev" title="relocate_by_id" href="relocate_by_id.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-2">Series 3.2</a></li>
@@ -331,21 +332,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -742,7 +745,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
 </div>
       &nbsp;
     </nav>
@@ -762,7 +765,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.1</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.8.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -772,7 +775,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/cyrus-imapd-3.6/docsrc/imap/reference/manpages/systemcommands/restore.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/manpages/systemcommands/restore.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -832,7 +835,7 @@ restoring into mailboxes that already exists) will not have their ACLs altered.<
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-restore-A">
-<code class="descname">-A</code><code class="descclassname"> [acl]</code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--override-acl"></span><code class="descname">-A</code><code class="descclassname"> [acl]</code><code class="descclassname">, </code><code class="descname">--override-acl</code><code class="descclassname">[=acl]</code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply specified <em>acl</em> to restored mailboxes, rather than their ACLs as
 stored in the backup.</p>
 <p>If <em>acl</em> is the empty string (e.g. <code class="docutils literal"><span class="pre">-A</span> <span class="pre">&quot;&quot;</span></code>) or is unspecified, mailboxes
@@ -849,7 +852,7 @@ different user's mailbox.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-D">
-<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--keep-deletedprefix"></span><code class="descname">-D</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--keep-deletedprefix</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't trim <strong>deletedprefix</strong> from mailbox names prior to restoring.  This
 is mainly useful for rebuilding failed servers, where deleted mailboxes
 should be restored as deleted mailboxes, not as new ones.</p>
@@ -863,7 +866,7 @@ and <strong>delete_mode</strong> configuration options.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-F">
-<code class="descname">-F</code><code class="descclassname"> input-file</code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--input-file"></span><code class="descname">-F</code><code class="descclassname"> input-file</code><code class="descclassname">, </code><code class="descname">--input-file</code><code class="descclassname">=input-file</code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of mailboxes or messages from <em>input-file</em> instead of from
 the command line arguments.</p>
 <p><em>input-file</em> should contain one object specification (either an <em>mboxname</em>,
@@ -873,7 +876,7 @@ a '#' character, are ignored.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-L">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--local-only"></span><code class="descname">-L</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--local-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local operations only.  Actions required to restore the requested mailboxes
 and messages will be performed on the destination server only.
 <a class="reference internal" href="mupdate.html#std:cyrusman-mupdate(8)">mupdate(8)</a> actions will not occur.</p>
@@ -884,7 +887,7 @@ part of a murder.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-M">
-<code class="descname">-M</code><code class="descclassname"> mboxname</code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dest-mailbox"></span><code class="descname">-M</code><code class="descclassname"> mboxname</code><code class="descclassname">, </code><code class="descname">--dest-mailbox</code><code class="descclassname">=mboxname</code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Messages are restored to the mailbox with the specified <em>mboxname</em>.  If no
 mailbox of this name exists, one will be created.</p>
 <p>If multiple mailbox objects are to be restored, whether due to being
@@ -899,13 +902,13 @@ their original mailboxes.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-P">
-<code class="descname">-P</code><code class="descclassname"> partition</code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dest-partition"></span><code class="descname">-P</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--dest-partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore mailboxes to the specified <em>partition</em></p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-U">
-<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--keep-uidvalidity"></span><code class="descname">-U</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--keep-uidvalidity</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to preserve uidvalidity and other related fields, such that the
 restored mailboxes and messages appear like they never left, and IMAP
 clients can avoid expensive state updates.</p>
@@ -919,20 +922,20 @@ was specified.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-X">
-<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--skip-expunged"></span><code class="descname">-X</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--skip-expunged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>See also <strong>-x</strong>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--all-mailboxes"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--all-mailboxes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to restore all mailboxes in the specified <em>backup</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-n">
-<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do nothing.  The work required to perform the restoration will be
 calculated (and reported depending on verbosity level), but no
 restoration will take place, and no connection will be made to
@@ -942,7 +945,7 @@ the destination server.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--recursive"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recursive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recurse into submailboxes.  When restoring mailboxes, also restore
 any mailboxes contained within them.</p>
 <p>The default is to restore only explicitly-specified mailboxes.</p>
@@ -950,20 +953,20 @@ any mailboxes contained within them.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity level.  This option can be specified multiple times
 for additional verbosity.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-w">
-<code class="descname">-w</code><code class="descclassname"> seconds</code><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--delayed-startup"></span><code class="descname">-w</code><code class="descclassname"> seconds</code><code class="descclassname">, </code><code class="descname">--delayed-startup</code><code class="descclassname">=seconds</code><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wait <em>seconds</em> before starting.  This is useful for attaching a debugger.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--only-expunged"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--only-expunged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>This can be convenient for restoring messages that were accidentally
 deleted by the user, without needing to track down individual message
@@ -973,7 +976,7 @@ guids.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-z">
-<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--require-compression"></span><code class="descname">-z</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-compression</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Require compression for server connection.  The restore will abort
 if compression is unavailable.</p>
 </dd></dl>
@@ -983,14 +986,14 @@ if compression is unavailable.</p>
 <span id="restore-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-restore-f">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--file"></span><code class="descname">-f</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--file</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a filename.  The named file does not need to be
 known about in the backups database.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-restore-m">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--mailbox"></span><code class="descname">-m</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--mailbox</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a mailbox name.  There must be a known backup
 for the user whose mailbox this is.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
@@ -999,7 +1002,7 @@ and <strong>backup_db_path</strong> configuration options.</p>
 
 <dl class="option">
 <dt id="cmdoption-restore-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-restore--userid"></span><code class="descname">-u</code><code class="descclassname"> backup</code><code class="descclassname">, </code><code class="descname">--userid</code><code class="descclassname">=backup</code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a userid.  There must be a known backup for
 the specified user.</p>
 <p>This is the default if no mode is specified.</p>
@@ -1044,7 +1047,7 @@ the specified user.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 08 2017
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 08 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
@@ -1064,7 +1067,7 @@ the specified user.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.1',
+            VERSION:'3.8.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

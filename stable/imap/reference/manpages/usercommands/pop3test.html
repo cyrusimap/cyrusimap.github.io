@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pop3test &mdash; Cyrus IMAP 3.6.1 documentation</title>
+  <title>pop3test &mdash; Cyrus IMAP 3.8.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.8.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="sieveshell" href="sieveshell.html"/>
         <link rel="prev" title="nntptest" href="nntptest.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-2">Series 3.2</a></li>
@@ -331,21 +332,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -742,7 +745,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
 </div>
       &nbsp;
     </nav>
@@ -762,7 +765,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.1</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.8.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -772,7 +775,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/cyrus-imapd-3.6/docsrc/imap/reference/manpages/usercommands/pop3test.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/manpages/usercommands/pop3test.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -798,18 +801,18 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>imtest</strong> is a utility that allows you to authenticate to a IMAP server
+<p><strong>imtest</strong> is a utility that allows you to authenticate to an IMAP server
 and interactively issue commands to it. Once authenticated you may issue
 any IMAP command by simply typing it in. It is capable of multiple SASL
 authentication mechanisms and handles encryption layers transparently.
-This utility is often used for testing the operation of a IMAP server.
+This utility is often used for testing the operation of an IMAP server.
 Also those developing IMAP clients find it useful.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-imtest-t">
-<code class="descname">-t</code><code class="descclassname">  keyfile</code><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--keyfile"></span><code class="descname">-t</code><code class="descclassname"> keyfile</code><code class="descclassname">, </code><code class="descname">--keyfile</code><code class="descclassname">=keyfile</code><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable TLS.  <em>keyfile</em> contains the TLS public and private keys.
 Specify <strong>&quot;&quot;</strong> to negotiate a TLS encryption layer but not use TLS
 authentication.</p>
@@ -817,14 +820,14 @@ authentication.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-p">
-<code class="descname">-p</code><code class="descclassname">  port</code><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--port"></span><code class="descname">-p</code><code class="descclassname"> port</code><code class="descclassname">, </code><code class="descname">--port</code><code class="descclassname">=port</code><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port to connect to. If left off this defaults to <strong>imap</strong> as defined
 in <code class="docutils literal"><span class="pre">/etc/services</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-m">
-<code class="descname">-m</code><code class="descclassname">  mechanism</code><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--mechanism"></span><code class="descname">-m</code><code class="descclassname"> mechanism</code><code class="descclassname">, </code><code class="descname">--mechanism</code><code class="descclassname">=mechanism</code><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force <strong>imtest</strong> to use <em>mechanism</em> for authentication. If not
 specified the strongest authentication mechanism supported by the
 server is chosen.  Specify <em>login</em> to use the LOGIN command instead
@@ -833,7 +836,7 @@ of AUTHENTICATE.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-a">
-<code class="descname">-a</code><code class="descclassname">  userid</code><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--authname"></span><code class="descname">-a</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--authname</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authentication; defaults to the current user.
 This is the userid whose password or credentials will be presented to
 the server for verification.</p>
@@ -841,7 +844,7 @@ the server for verification.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-u">
-<code class="descname">-u</code><code class="descclassname">  userid</code><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--username"></span><code class="descname">-u</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--username</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authorization; defaults to the current user.
 This is the userid whose identity will be assumed after
 authentication.</p>
@@ -854,13 +857,13 @@ authentication.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-k">
-<code class="descname">-k</code><code class="descclassname">  num</code><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--minssf"></span><code class="descname">-k</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--minssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum protection layer required.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-l">
-<code class="descname">-l</code><code class="descclassname">  num</code><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--maxssf"></span><code class="descname">-l</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--maxssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum protection layer to use (<strong>0</strong>=none; <strong>1</strong>=integrity;
 etc).  For example if you are using the KERBEROS_V4 authentication
 mechanism specifying <strong>0</strong> will force imtest to not use any layer
@@ -870,20 +873,20 @@ default the maximum supported protection layer will be used.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-r">
-<code class="descname">-r</code><code class="descclassname">  realm</code><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--realm"></span><code class="descname">-r</code><code class="descclassname"> realm</code><code class="descclassname">, </code><code class="descname">--realm</code><code class="descclassname">=realm</code><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the <em>realm</em> to use. Certain authentication mechanisms
 (e.g. DIGEST-MD5) may require one to specify the realm.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-f">
-<code class="descname">-f</code><code class="descclassname">  file</code><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--input-filename"></span><code class="descname">-f</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--input-filename</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pipe <em>file</em> into connection after authentication.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-n">
-<code class="descname">-n</code><code class="descclassname">  num</code><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--reauth-attempts"></span><code class="descname">-n</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--reauth-attempts</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of authentication attempts; default = 1.  The client will
 attempt to do SSL/TLS session reuse and/or fast reauth
 (e.g. DIGEST-MD5), if possible.</p>
@@ -891,19 +894,19 @@ attempt to do SSL/TLS session reuse and/or fast reauth
 
 <dl class="option">
 <dt id="cmdoption-imtest-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--require-tls"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-tls</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable SSL over chosen protocol.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-q">
-<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--require-compression"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-compression</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable IMAP COMPRESSion (after authentication).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-c">
-<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--do-challenge"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--do-challenge</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable challenge prompt callbacks.  This will cause the OTP mechanism
 to ask for the one-time password instead of the secret pass-phrase
 (library generates the correct response).</p>
@@ -911,51 +914,51 @@ to ask for the one-time password instead of the secret pass-phrase
 
 <dl class="option">
 <dt id="cmdoption-imtest-i">
-<code class="descname">-i</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--no-initial-response"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-initial-response</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't send an initial client response for SASL mechanisms, even if
 the protocol supports it.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-I">
-<code class="descname">-I</code><code class="descclassname">  file</code><a class="headerlink" href="#cmdoption-imtest-I" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--pidfile"></span><code class="descname">-I</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--pidfile</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-I" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echo the PID of the running process into <em>file</em> (This can be useful
 with -X).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose. Print out more information than usual.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-z">
-<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--run-stress-test"></span><code class="descname">-z</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--run-stress-test</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timing test.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-x">
-<code class="descname">-x</code><code class="descclassname">  file</code><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--output-socket"></span><code class="descname">-x</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--output-socket</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the named socket for the interactive portion.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-X">
-<code class="descname">-X</code><code class="descclassname">  file</code><a class="headerlink" href="#cmdoption-imtest-X" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-X</code><code class="descclassname"> file</code><a class="headerlink" href="#cmdoption-imtest-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like -x, only close all file descriptors &amp; daemonize the process.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-w">
-<code class="descname">-w</code><code class="descclassname"> passwd</code><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--password"></span><code class="descname">-w</code><code class="descclassname"> password</code><code class="descclassname">, </code><code class="descname">--password</code><code class="descclassname">=password</code><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Password to use (if not supplied, we will prompt).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-o">
-<code class="descname">-o</code><code class="descclassname">  option=value</code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-imtest--sasl-option"></span><code class="descname">-o</code><code class="descclassname"> option=value</code><code class="descclassname">, </code><code class="descname">--sasl-option</code><code class="descclassname">=option=value</code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the SASL <em>option</em> to <em>value</em>.</p>
 </dd></dl>
 
@@ -1008,7 +1011,7 @@ with -X).</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.1',
+            VERSION:'3.8.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

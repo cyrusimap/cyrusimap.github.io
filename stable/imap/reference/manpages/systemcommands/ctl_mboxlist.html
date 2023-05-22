@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ctl_mboxlist &mdash; Cyrus IMAP 3.6.1 documentation</title>
+  <title>ctl_mboxlist &mdash; Cyrus IMAP 3.8.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.8.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="ctl_zoneinfo" href="ctl_zoneinfo.html"/>
         <link rel="prev" title="ctl_deliver" href="ctl_deliver.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-2">Series 3.2</a></li>
@@ -331,21 +332,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -742,7 +745,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
 </div>
       &nbsp;
     </nav>
@@ -762,7 +765,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.1</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.8.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -772,7 +775,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/cyrus-imapd-3.6/docsrc/imap/reference/manpages/systemcommands/ctl_mboxlist.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/manpages/systemcommands/ctl_mboxlist.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -810,41 +813,41 @@ The <em>configdirectory</em> option in <a class="reference internal" href="../co
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-d">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--dump"></span><code class="descname">-d</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the contents of the database to standard output in JSON format.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--remove-dumped"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--remove-dumped</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, remove the mailboxes dumped from the mailbox
 list (mostly useful when specified with <strong>-p</strong>).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-y">
-<code class="descname">-y</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-y" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--include-intermediaries"></span><code class="descname">-y</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-intermediaries</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-y" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, also list intermediary mailboxes which would
 be hidden from IMAP.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-p">
-<code class="descname">-p</code><code class="descclassname"> partition</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--partition"></span><code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, dump only those mailboxes that live on
 <em>partition</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-f">
-<code class="descname">-f</code><code class="descclassname"> filename</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--filename"></span><code class="descname">-f</code><code class="descclassname"> filename</code><code class="descclassname">, </code><code class="descname">--filename</code><code class="descclassname">=filename</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the database specified by <em>filename</em> instead of the default
 (<em>configdirectory/mailboxes.db*</em>).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-L">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-L" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--legacy"></span><code class="descname">-L</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--legacy</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing an undump, use the legacy dump parser instead of the
 JSON parser.  This might be useful for importing a dump produced
 by an older version of Cyrus.</p>
@@ -852,7 +855,7 @@ by an older version of Cyrus.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--undump"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--undump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load (&quot;undump&quot;) the contents of the database from standard input.  The
 input MUST be a valid JSON file, unless the -L option is also supplied.</p>
 <div class="admonition important">
@@ -868,14 +871,14 @@ containing bad data.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-m">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--sync-mupdate"></span><code class="descname">-m</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--sync-mupdate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>For backend servers in the Cyrus Murder, synchronize the local
 mailbox list file with the MUPDATE server.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--authoritative"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--authoritative</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, assume the local mailboxes file is authoritative,
 that is, only change the mupdate server, do not delete any local
 mailboxes.</p>
@@ -888,21 +891,21 @@ the murder.</p>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-w">
-<code class="descname">-w</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--warn-only"></span><code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--warn-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, print out what would be done but do not perform
 the operations.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-i">
-<code class="descname">-i</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-i" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--interactive"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--interactive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, asks for verification before deleting local
 mailboxes.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ctl_mboxlist-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_mboxlist--verify"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verify</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verify the consistency of the mailbox list database and the spool
 partition(s). Mailboxes present in the database and not located on a
 spool partition, and those located on a spool partition (directory
@@ -1001,7 +1004,7 @@ asking for verification before deleting any local mailboxes.</div></blockquote>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 04 2022
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 29 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
@@ -1021,7 +1024,7 @@ asking for verification before deleting any local mailboxes.</div></blockquote>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.1',
+            VERSION:'3.8.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

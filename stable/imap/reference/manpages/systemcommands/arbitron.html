@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>arbitron &mdash; Cyrus IMAP 3.6.1 documentation</title>
+  <title>arbitron &mdash; Cyrus IMAP 3.8.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.8.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="backupd" href="backupd.html"/>
         <link rel="prev" title="krb.equiv" href="../configs/krb.equiv.html"/> 
@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-2">Series 3.2</a></li>
@@ -331,21 +332,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -742,7 +745,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
 </div>
       &nbsp;
     </nav>
@@ -762,7 +765,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.1</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.8.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -772,7 +775,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/cyrus-imapd-3.6/docsrc/imap/reference/manpages/systemcommands/arbitron.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/reference/manpages/systemcommands/arbitron.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -825,28 +828,8 @@ than the mailboxes owner.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-arbitron-o">
-<code class="descname">-o</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
-<dd><p>Report &quot;the old way&quot; -- not including subscribers.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-arbitron-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable long reporting (comma delimited table consisting of mbox,
-userid, r/s, start time, end time).</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-arbitron-d">
-<code class="descname">-d</code><code class="descclassname"> days</code><a class="headerlink" href="#cmdoption-arbitron-d" title="Permalink to this definition">¶</a></dt>
-<dd><p>Count as a reader an authorization identity which has used the
-mailbox within the past <em>days</em> days.</p>
-</dd></dl>
-
-<dl class="option">
 <dt id="cmdoption-arbitron-D">
-<code class="descname">-D</code><code class="descclassname"> mmddyyyy[:mmddyyyy]</code><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron--date"></span><code class="descname">-D</code><code class="descclassname"> mmddyyyy[:mmddyyyy]</code><code class="descclassname">, </code><code class="descname">--date</code><code class="descclassname">=mmddyyyy[:mmddyyyy]</code><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count as a reader an authorization identity which has used the
 mailbox within the given date range.</p>
 <p>The start date and optionally the end date are specified as 2-digit
@@ -861,10 +844,38 @@ not [<em>ddmmyyyy</em>].</p>
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption-arbitron-d">
+<span id="cmdoption-arbitron--days"></span><code class="descname">-d</code><code class="descclassname"> days</code><code class="descclassname">, </code><code class="descname">--days</code><code class="descclassname">=days</code><a class="headerlink" href="#cmdoption-arbitron-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count as a reader an authorization identity which has used the
+mailbox within the past <em>days</em> days.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arbitron-l">
+<span id="cmdoption-arbitron--detailed"></span><code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--detailed</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable long reporting (comma delimited table consisting of mbox,
+userid, r/s, start time, end time).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arbitron-o">
+<span id="cmdoption-arbitron--no-subscribers"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-subscribers</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report &quot;the old way&quot; -- not including subscribers.</p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-arbitron-p">
-<code class="descname">-p</code><code class="descclassname"> months</code><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron--prune-seen"></span><code class="descname">-p</code><code class="descclassname"> months</code><code class="descclassname">, </code><code class="descname">--prune-seen</code><code class="descclassname">=months</code><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prune <code class="docutils literal"><span class="pre">\Seen</span></code> state for users who have not used the mailbox within
 the past <em>months</em> months. The default is infinity.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arbitron-u">
+<span id="cmdoption-arbitron--include-userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Include userids of mailbox readers in the report.  If the report
+will contain mailbox subscribers (see <strong>--no-subscribers</strong>), also
+include userids of the subscribers.</p>
 </dd></dl>
 
 </div>
@@ -978,7 +989,7 @@ the past <em>months</em> months. The default is infinity.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 02 2022
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
@@ -998,7 +1009,7 @@ the past <em>months</em> months. The default is infinity.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.1',
+            VERSION:'3.8.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
