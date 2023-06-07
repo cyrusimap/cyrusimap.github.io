@@ -1870,8 +1870,10 @@ A payload with any other claim is rejected.</p>
 &quot;iat&quot; claim of the JWS Payload and ends after the duration of this
 option value has passed. Tokens without an &quot;iat&quot; claim,
 or with an issue date in the future, are rejected. There is no leeway
-for clock skew.</p>
+for clock skew. Starting from Cyrus version 3.8, the &quot;iat&quot; claim
+only is validated if no &quot;exp&quot; claim is present.</p>
 <p>The zero value disables validation of the &quot;iat&quot; JWS claim.</p>
+<p>Starting from Cyrus 3.8, the &quot;nbf&quot; and &quot;exp&quot; claims always are validated.</p>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">icalendar_max_size:</span></code> 0</p>
 <blockquote>
