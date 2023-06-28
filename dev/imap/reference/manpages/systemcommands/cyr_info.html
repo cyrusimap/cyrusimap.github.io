@@ -844,7 +844,7 @@ configuration options for the named service.</p>
 <dl class="option">
 <dt id="cmdoption-arg-proc">
 <code class="descname">proc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arg-proc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print all currently connected processes in the proc directory</p>
+<dd><p>Print active processes that <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a> is managing.</p>
 </dd></dl>
 
 </div>
@@ -885,7 +885,7 @@ and maybe change before starting up the upgraded server.</p>
 <strong>cyr_info</strong> <em>proc</em>
 </pre>
 <blockquote>
-<div>List all the proc files and who they're logged in as.</div></blockquote>
+<div>List the active processes that master is managing</div></blockquote>
 <div class="highlight-default"><div class="highlight"><pre><span></span>1763345 imap imap.example.org [10.202.2.80] bettysue user.bettysue
 1796653 imap web1.example.org [10.202.2.211] bettysue user.bettysue.Drafts
 1796640 imap web2.example.org [10.202.2.212] johnsmith@johnsmith.net johnsmith.net!user.johnsmith
@@ -916,7 +916,7 @@ and maybe change before starting up the upgraded server.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>, <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
 </div>
 </div>
 
@@ -938,7 +938,7 @@ and maybe change before starting up the upgraded server.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 26 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
