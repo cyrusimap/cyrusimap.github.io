@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -591,21 +589,19 @@ Currently only &lt;type&gt;=SQLITE is supported and this will build the plugin
 that links against SQLITE (www.sqlite.org).</p>
 <p>SQL=&lt;SQLITE&gt; depends on <code class="docutils literal"><span class="pre">SQLITE_INCLUDES</span></code> and <code class="docutils literal"><span class="pre">SQLITE_LIBPATH</span></code> parameters.
 You can either specify them on the command line or edit the defaults in win32common.mak</p>
-<p>Specify &#8220;NTLM=1&#8221; parameter if you want to enable NTLM plugin.
-I.e. <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">NTLM=1</span></code></p>
 <p>Specify &#8220;SRP=1&#8221; parameter if you want to enable SRP plugin.
 You can also specify &#8220;DO_SRP_SETPASS=1&#8221; if you want to enable SRP setpass functionality.</p>
 <p>Specify &#8220;OTP=1&#8221; parameter if you want to enable OTP plugin.</p>
-<p>NTLM, SRP and OTP plugins depend on OpenSSL. You can either specify
+<p>The SRP and OTP plugins depend on OpenSSL. You can either specify
 <code class="docutils literal"><span class="pre">OPENSSL_INCLUDE</span></code> and <code class="docutils literal"><span class="pre">OPENSSL_LIBPATH</span></code> parameters on the command
 line or edit the defaults in win32common.mak
 Note, that unless you are building one of those plugins, OpenSSL is not required!</p>
 <p>If you want to build multiple additional plugins at once, you can specify
-multiple parameters described above, for example <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">NTLM=1</span> <span class="pre">SRP=1</span> <span class="pre">OPT=1</span></code></p>
+multiple parameters described above, for example <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">SRP=1</span> <span class="pre">OPT=1</span></code></p>
 </div>
 <div class="section" id="limitations">
 <h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
-<p>Currently all plugins except KerberosV4 (kerberos4.c) and PASSDSS (passdss.c) can be built on Windows.
+<p>Currently all plugins except PASSDSS (passdss.c) can be built on Windows.
 However limited testings was done for some plugins as listed below:</p>
 <ul class="simple">
 <li>GSSAPI - tested using CyberSafe,</li>

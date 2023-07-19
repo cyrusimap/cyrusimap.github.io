@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -505,14 +503,14 @@ the server.</p>
 the sample-client on the &#8220;client&#8221; machine, and sample-server on the
 &#8220;server&#8221; machine.</p>
 <p>Both programs take a -m MECH command line argument; this can be used
-to force the mechanism used in the exchange.  KERBEROS_V4 requires
+to force the mechanism used in the exchange.  GSSAPI requires
 that the IP addresses of both client and server be set, along with the
 service name, and the server&#8217;s fully-qualified hostname; these are
 done through more command line arguments.</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>Here&#8217;s the client side of an exchange.  The mechanism selection code
-chooses KERBEROS_V4; negotiation takes place, and the client is
+chooses GSSAPI; negotiation takes place, and the client is
 authenticated.  This is being run on the machine SPOOKY.ANDREW.CMU.EDU
 (128.2.121.162), pretending to be talking to an &#8220;rcmd&#8221; service running
 on port 23 (note the semicolons in the IP address.  There is a strong
@@ -520,8 +518,8 @@ chance these will need to be escaped for proper interpretation by the shell):</p
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">n</span> <span class="n">SPOOKY</span><span class="o">.</span><span class="n">ANDREW</span><span class="o">.</span><span class="n">CMU</span><span class="o">.</span><span class="n">EDU</span>
 <span class="n">Waiting</span> <span class="k">for</span> <span class="n">mechanism</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">server...</span>
 <span class="n">S</span><span class="p">:</span> <span class="n">UExBSU4gQU5PTllNT1VTIEtFUkJFUk9TX1Y0IERJR0VTVC1NRDUgQ1JBTS1NRDUgAAAAAED5EEA</span><span class="o">=</span>
-<span class="n">Choosing</span> <span class="n">best</span> <span class="n">mechanism</span> <span class="n">from</span><span class="p">:</span> <span class="n">PLAIN</span> <span class="n">ANONYMOUS</span> <span class="n">KERBEROS_V4</span> <span class="n">DIGEST</span><span class="o">-</span><span class="n">MD5</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
-<span class="n">Using</span> <span class="n">mechanism</span> <span class="n">KERBEROS_V4</span>
+<span class="n">Choosing</span> <span class="n">best</span> <span class="n">mechanism</span> <span class="n">from</span><span class="p">:</span> <span class="n">PLAIN</span> <span class="n">ANONYMOUS</span> <span class="n">GSSAPI</span> <span class="n">DIGEST</span><span class="o">-</span><span class="n">MD5</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
+<span class="n">Using</span> <span class="n">mechanism</span> <span class="n">GSSAPI</span>
 <span class="n">Preparing</span> <span class="n">initial</span><span class="o">.</span>
 <span class="n">Sending</span> <span class="n">initial</span> <span class="n">response</span><span class="o">...</span>
 <span class="n">C</span><span class="p">:</span> <span class="n">S0VSQkVST1NfVjQA</span>

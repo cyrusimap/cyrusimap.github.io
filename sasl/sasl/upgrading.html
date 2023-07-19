@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -577,19 +575,7 @@ and SASLv2 will not automatically be kept in sync.</p>
 <p>When migrating the <code class="docutils literal"><span class="pre">/etc/sasldb</span></code> database using the <code class="docutils literal"><span class="pre">utils/dbconverter-2</span></code>
 utility, you may encounter the error message &#8220;Error opening password
 file&#8221;. This is usually due to the fact your SASL V1 library was compiled
-using a different version of Berkeley DB than the SASL V2 library.
-You can work around this by using Berkeley DB&#8217;s db_upgrade utility
-(possibly chaining the DB3 and DB4 upgrade utilities) to upgrade a copy
-of sasldb prior to conversion using dbconverter-2.</p>
-<p>Here is the script we use at our installation, where SASL has to
-coexist with SASL2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>!/bin/sh
-cp /etc/sasldb /tmp/sasldb.$$
-/usr/local/BerkeleyDB.4/bin/db_upgrade /etc/sasldb
-echo &quot;&quot;|/usr/local/sasl/sbin/dbconverter-2
-cp /tmp/sasldb.$$ /etc/sasldb
-</pre></div>
-</div>
+using a different type of database than the SASL V2 library.</p>
 </div>
 </div>
 

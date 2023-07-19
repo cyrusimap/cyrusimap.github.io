@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -567,9 +565,9 @@ realms into your databases.</p>
 <p>To add users of different realms to sasldb, you can use the
 <code class="docutils literal"><span class="pre">-u</span></code> option to saslpasswd2.  The SQL plugin has a way of
 integrating the realm name into the query string with the &#8216;%r&#8217; macro.</p>
-<p>The Kerberos mechanisms treat the SASL realm as the Kerberos
-realm.  Thus, the realm for Kerberos mechanisms defaults to the
-default Kerberos realm on the server.  They may support cross-realm
+<p>The Kerberos GSSAPI mechanism treats the SASL realm as the Kerberos
+realm.  Thus, the realm for Kerberos GSSAPI mechanism defaults to the
+default Kerberos realm on the server.  It may support cross-realm
 authentication; check your application on how it deals with this.</p>
 <p>Realms will be passed to saslauthd as part of the saslauthd protocol,
 however the way each saslauthd module deals with the situation is
@@ -724,20 +722,15 @@ no point in enabling this option if &#8220;pwcheck_method&#8221; is &#8220;auxpr
 and the sasldb plugin is installed, since you&#8217;ll be transitioning from
 a plaintext store to a plaintext store)</p>
 </div>
-<div class="section" id="kerberos-mechanisms">
-<h3>Kerberos mechanisms<a class="headerlink" href="#kerberos-mechanisms" title="Permalink to this headline">¶</a></h3>
-<p>The Cyrus SASL library also comes with two mechanisms that make use of
-Kerberos: KERBEROS_V4, which should be able to use any Kerberos v4
-implementation, and GSSAPI (tested against MIT Kerberos 5, Heimdal
-Kerberos 5 and CyberSafe Kerberos 5).  These mechanisms make use of the kerberos infrastructure
-and thus have no password database.</p>
+<div class="section" id="kerberos-mechanism">
+<h3>Kerberos mechanism<a class="headerlink" href="#kerberos-mechanism" title="Permalink to this headline">¶</a></h3>
+<p>The Cyrus SASL library also comes with a mechanism that make use of
+Kerberos: GSSAPI (tested against MIT Kerberos 5, Heimdal
+Kerberos 5 and CyberSafe Kerberos 5).  This mechanism makes use of the
+kerberos infrastructure and thus has no password database.</p>
 <p>Applications that wish to use a kerberos mechanism will need access
-to a service key, stored either in a <a class="reference internal" href="options.html#cmdoption-arg-srvtab"><code class="xref std std-option docutils literal"><span class="pre">srvtab</span></code></a> file (Kerberos 4) or a
-<a class="reference internal" href="options.html#cmdoption-arg-keytab"><code class="xref std std-option docutils literal"><span class="pre">keytab</span></code></a> file (Kerberos 5).</p>
-<p>The Kerberos 4 <a class="reference internal" href="options.html#cmdoption-arg-srvtab"><code class="xref std std-option docutils literal"><span class="pre">srvtab</span></code></a> file location is configurable; by default it is
-<code class="docutils literal"><span class="pre">/etc/srvtab</span></code>, but this is modifiable by the &#8220;srvtab&#8221; option.
-Different SASL applications can use different srvtab files.</p>
-<p>A SASL application must be able to read its srvtab or keytab file.</p>
+to a service key, stored in a <a class="reference internal" href="options.html#cmdoption-arg-keytab"><code class="xref std std-option docutils literal"><span class="pre">keytab</span></code></a> file.</p>
+<p>A SASL application must be able to read its keytab file.</p>
 <p>You may want to consult the <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">GSSAPI Tutorial</span></a>.</p>
 </div>
 <div class="section" id="the-otp-mechanism">
@@ -835,12 +828,6 @@ system registry. The Windows registry key is</p>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt>Why doesn&#8217;t KERBEROS_V4 doesn&#8217;t appear as an available mechanism?</dt>
-<dd>Check that the <code class="docutils literal"><span class="pre">srvtab</span></code> file is readable by the
-user running as the daemon.  For Cyrus imapd, it must be readable by
-the Cyrus user.  By default, the library looks for the srvtab in
-<code class="docutils literal"><span class="pre">/etc/srvtab</span></code>, but it&#8217;s configurable using the <a class="reference internal" href="options.html#cmdoption-arg-srvtab"><code class="xref std std-option docutils literal"><span class="pre">srvtab</span></code></a>
-option.</dd>
 <dt>Why doesn&#8217;t OTP doesn&#8217;t appear as an available mechanism?</dt>
 <dd>If using OPIE, check that the <code class="docutils literal"><span class="pre">opiekeys</span></code> file is
 readable by the user running the daemon.  For Cyrus imapd, it must
@@ -874,24 +861,9 @@ Make sure you changed the /usr/lib/sasl2/*.conf files to reflect
 plaintext mechanism.  It&#8217;s included in the SASL distribution purely
 for sites that need it to interoperate with old clients; we don&#8217;t
 support it.  Don&#8217;t enable it unless you know you need it.</dd>
-<dt>Is NTLM supported?</dt>
-<dd>The NTLM mechanism is a non-standard, undocumented
-mechanism developed by Microsoft.  It&#8217;s included in the SASL
-distribution purely for sites that need it to interoperate with
-Microsoft clients (ie, Outlook) and/or servers (ie, Exchange); we
-don&#8217;t support it.  Don&#8217;t enable it unless you know you need it.</dd>
 <dt>How can I get a non-root application to check plaintext passwords?</dt>
 <dd>Use the &#8220;saslauthd&#8221; daemon and setting &#8220;pwcheck_method&#8221;
 to &#8220;saslauthd&#8221;.</dd>
-<dt>I want to use Berkeley DB, but it&#8217;s installed in <code class="docutils literal"><span class="pre">/usr/local/BerkeleyDB.3.1</span></code> and <code class="docutils literal"><span class="pre">configure</span></code> can&#8217;t find it.</dt>
-<dd><p class="first">Try setting &#8220;CPPFLAGS&#8221; and &#8220;LDFLAGS&#8221; environment
-variables before running <code class="docutils literal"><span class="pre">configure</span></code>, like so:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="n">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/BerkeleyDB.3.1/include&quot;</span> \
-  <span class="n">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/BerkeleyDB.3.1/lib -R/usr/local/BerkeleyDB.3.1/lib&quot;</span> \
-  <span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">dblib</span><span class="o">=</span><span class="n">berkeley</span>
-</pre></div>
-</div>
-</dd>
 <dt>It&#8217;s not working and won&#8217;t tell me why! Help!</dt>
 <dd><p class="first">Check syslog output (usually stored in
 <code class="docutils literal"><span class="pre">/var/log</span></code>) for more information. You might want to change your

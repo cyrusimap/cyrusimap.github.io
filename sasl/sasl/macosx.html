@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -557,20 +555,6 @@ for OS X 10.2.x is too old for this; if you aren&#8217;t using OS X 10.3 or late
 you should upgrade to more recent patchlevels of these tools. The easiest way
 to do this is to install the Fink environment and then <code class="docutils literal"><span class="pre">apt-get</span>
 <span class="pre">install</span> <span class="pre">autoconf2.5</span> <span class="pre">automake1.7</span> <span class="pre">libtool14</span></code>.</p>
-<p>Recent versions of SASL ship with Kerberos v4 disabled by default.
-If you need Kerberos v4 for some reason, and you are using MIT Kerberos
-for Macintosh 4.0 or later, you should <code class="docutils literal"><span class="pre">./configure</span></code> with
-the added options <code class="docutils literal"><span class="pre">&quot;--enable-krb4=/usr</span> <span class="pre">--without-openssl</span>
-<span class="pre">--disable-digest&quot;</span></code> so that it finds the
-correct location for the header files, and does not use OpenSSL or
-build anything that depends on it (such as the digest-md5 plugin),
-since OpenSSL provides its own DES routines which do not work with
-Kerberos v4.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Please read the &#8220;Known Problems&#8221; section at the end of
-this document for more information on this issue.</p>
-</div>
 <p>You must be root to make install, since <code class="docutils literal"><span class="pre">/usr/local</span></code> is only
 modifiable by root. You need not enable the root account using
 NetInfo; the recommended (but underdocumented) method is to use
@@ -650,13 +634,6 @@ which contains code compatible with MIT&#8217;s new <a class="reference external
 API. This folder must be in your CodeWarrior access paths, the
 old <code class="docutils literal"><span class="pre">mac_kclient</span></code> folder must not, and it must precede the
 project&#8217;s main folder.</li>
-<li>The kerberos4 plugin uses this new code. The kerberos4 plugin
-also
-statically links the Carbon <code class="docutils literal"><span class="pre">libdes</span></code>, and no other part of
-Carbon SASL uses <code class="docutils literal"><span class="pre">libdes</span></code> directly. <em>Your application should
-**not*</em> link against* <code class="docutils literal"><span class="pre">libdes.shlb</span></code> <em>under Carbon!</em>
-(It causes problems due to DES symbols also existing in the MIT
-Kerberos library, which loads first.)</li>
 <li>To build the projects, you should have the MIT Kerberos for
 Macintosh 3.5 installation disk images mounted, since the access paths
 include the absolute paths to the library directories from that
@@ -667,20 +644,6 @@ smaller than having to distribute the libraries with SASL.</li>
 <div class="section" id="known-problems">
 <h2>Known Problems<a class="headerlink" href="#known-problems" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The Kerberos v4 headers bundled with Mac OS X (and Kerberos for
-Macintosh) are not compatible with OS X&#8217;s OpenSSL headers. (Kerberos v4
-support is disabled by default.) If you actually need krb4 support, the
-easiest solution is to build without using OpenSSL&#8217;s
-<code class="docutils literal"><span class="pre">libcrypto</span></code>. To do this, specify the <code class="docutils literal"><span class="pre">--without-openssl</span></code>
-option to <code class="docutils literal"><span class="pre">configure</span></code>. As of version 2.1.18, this automatically
-disables using <code class="docutils literal"><span class="pre">libcrypto</span></code> for DES as well. You will probably
-also need to specify <code class="docutils literal"><span class="pre">--disable-digest</span></code> since the digestmd5 plugin
-does not build against Kerberos v4&#8217;s DES headers or library. Note that
-this disables several features (DIGEST-MD5, NTLM, OTP, PASSDSS, SCRAM, SRP)
-which require OpenSSL. If both Kerberos v4 and functionality that requires
-OpenSSL are needed, it is possible to build the Kerberos v4 plugin against
-the correct K4 DES libraries, and everything else against OpenSSL;
-however, we do not support that configuration.</li>
 <li>Versions of Cyrus SASL prior to 2.1.14 with support for Carbon
 CFM applications on Mac OS X have a known bug involving the CFM glue
 code (in <code class="docutils literal"><span class="pre">mac/osx_cfm_glue</span></code>). If <code class="docutils literal"><span class="pre">sasl_done</span></code> is called

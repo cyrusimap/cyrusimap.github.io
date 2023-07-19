@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -772,7 +770,7 @@ see).</p>
 <ul>
 <li><p class="first">For IMAP this might look like:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">tag</span><span class="p">}</span> <span class="s2">&quot;AUTHENTICATE&quot;</span> <span class="p">{</span><span class="n">mechusing</span><span class="p">}</span>\<span class="n">r</span>\<span class="n">n</span>
-<span class="n">A01</span> <span class="n">AUTHENTICATE</span> <span class="n">KERBEROS_V4</span>\<span class="n">r</span>\<span class="n">n</span>
+<span class="n">A01</span> <span class="n">AUTHENTICATE</span> <span class="n">GSSAPI</span>\<span class="n">r</span>\<span class="n">n</span>
 </pre></div>
 </div>
 </li>
@@ -922,7 +920,7 @@ be called when the socket is accepted.</p>
 </div>
 <p>When a client requests the list of mechanisms supported by the
 server, use <a class="reference internal" href="../reference/manpages/library/sasl_listmech.html#std:saslman-sasl_listmech(3)">sasl_listmech(3)</a>. This particular call might
-produce the string: <code class="docutils literal"><span class="pre">{PLAIN,</span> <span class="pre">KERBEROS_V4,</span> <span class="pre">CRAM-MD5,</span> <span class="pre">DIGEST-MD5}</span></code></p>
+produce the string: <code class="docutils literal"><span class="pre">{PLAIN,</span> <span class="pre">GSSAPI,</span> <span class="pre">CRAM-MD5,</span> <span class="pre">DIGEST-MD5}</span></code></p>
 <div class="highlight-C"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_listmech</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>  <span class="cm">/* The context for this connection */</span>
          <span class="nb">NULL</span><span class="p">,</span>  <span class="cm">/* not supported */</span>
          <span class="s">&quot;{&quot;</span><span class="p">,</span>   <span class="cm">/* What to prepend the string with */</span>

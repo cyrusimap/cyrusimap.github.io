@@ -192,7 +192,6 @@
 <li class="toctree-l4"><a class="reference internal" href="sasl/options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sasl/options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/options.html#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/options.html#sasldb">SASLDB</a><ul>
@@ -227,7 +226,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sasl/sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -352,7 +351,6 @@
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sasl/faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sasl/resources.html">Other Documentation &amp; Resources</a></li>
@@ -493,7 +491,6 @@
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -662,14 +659,6 @@
 
         
   <dt><a href="sasl/options.html#cmdoption-arg-mech_list">mech_list [&lt;mechanism list&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ntlm_server">ntlm_server [&lt;list of server names&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ntlm_v2">ntlm_v2 [yes|no]</a>
   </dt>
 
         
@@ -876,36 +865,6 @@
       <dd><dl>
         
   <dt><a href="sasl/options.html#cmdoption-arg-mech_list">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
-</tr></table>
-
-<h2 id="N">N</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
-    ntlm_server [&lt;list of server names&gt;]
-  </dt>
-
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ntlm_server">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
-    ntlm_v2 [yes|no]
-  </dt>
-
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ntlm_v2">command line option</a>
   </dt>
 
       </dl></dd>

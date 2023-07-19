@@ -194,7 +194,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#otp">OTP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sasldb">SASLDB</a><ul>
@@ -229,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -354,7 +353,6 @@
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -502,13 +500,12 @@ way to limit what mechanisms a given application will use.</p>
 <li><a class="reference internal" href="#auxiliary-property-plugin" id="id4">Auxiliary Property Plugin</a></li>
 <li><a class="reference internal" href="#gssapi" id="id5">GSSAPI</a></li>
 <li><a class="reference internal" href="#ldapdb" id="id6">LDAPDB</a></li>
-<li><a class="reference internal" href="#ntlm" id="id7">NTLM</a></li>
-<li><a class="reference internal" href="#otp" id="id8">OTP</a></li>
-<li><a class="reference internal" href="#digest-md5" id="id9">Digest-md5</a></li>
-<li><a class="reference internal" href="#sasldb" id="id10">SASLDB</a></li>
-<li><a class="reference internal" href="#sql-plugin" id="id11">SQL Plugin</a></li>
-<li><a class="reference internal" href="#srp" id="id12">SRP</a></li>
-<li><a class="reference internal" href="#kerberos-v4" id="id13">Kerberos V4</a></li>
+<li><a class="reference internal" href="#otp" id="id7">OTP</a></li>
+<li><a class="reference internal" href="#digest-md5" id="id8">Digest-md5</a></li>
+<li><a class="reference internal" href="#sasldb" id="id9">SASLDB</a></li>
+<li><a class="reference internal" href="#sql-plugin" id="id10">SQL Plugin</a></li>
+<li><a class="reference internal" href="#srp" id="id11">SRP</a></li>
+<li><a class="reference internal" href="#kerberos-v4" id="id12">Kerberos V4</a></li>
 </ul>
 </div>
 <div class="section" id="sasl-library">
@@ -737,26 +734,8 @@ sasl-regexp uid=(.*),cn=external,cn=auth
 </div>
 </div>
 </div>
-<div class="section" id="ntlm">
-<h2><a class="toc-backref" href="#id7">NTLM</a><a class="headerlink" href="#ntlm" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-arg-ntlm_server">
-<code class="descname">ntlm_server</code><code class="descclassname"> [&lt;list of server names&gt;]</code><a class="headerlink" href="#cmdoption-arg-ntlm_server" title="Permalink to this definition">¶</a></dt>
-<dd><p>Comma separated list of servernames (WinNT, Win2K, Samba, etc) to
-which authentication will be proxied.</p>
-<p>Default: empty - perform authentication internally</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="cmdoption-arg-ntlm_v2">
-<code class="descname">ntlm_v2</code><code class="descclassname"> [yes|no]</code><a class="headerlink" href="#cmdoption-arg-ntlm_v2" title="Permalink to this definition">¶</a></dt>
-<dd><p>(Client) Send NTLMv2 responses to the server.</p>
-<p>Default: no (send NTLMv1)</p>
-</dd></dl>
-
-</div>
 <div class="section" id="otp">
-<h2><a class="toc-backref" href="#id8">OTP</a><a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">OTP</a><a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-opiekeys">
 <code class="descname">opiekeys</code><code class="descclassname"> [&lt;path&gt;]</code><a class="headerlink" href="#cmdoption-arg-opiekeys" title="Permalink to this definition">¶</a></dt>
@@ -773,7 +752,7 @@ which authentication will be proxied.</p>
 
 </div>
 <div class="section" id="digest-md5">
-<h2><a class="toc-backref" href="#id9">Digest-md5</a><a class="headerlink" href="#digest-md5" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Digest-md5</a><a class="headerlink" href="#digest-md5" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-reauth_timeout">
 <code class="descname">reauth_timeout</code><code class="descclassname"> [&lt;minutes&gt;]</code><a class="headerlink" href="#cmdoption-arg-reauth_timeout" title="Permalink to this definition">¶</a></dt>
@@ -784,7 +763,7 @@ cached for a fast reauth.  A value of 0 will disable reauth.</p>
 
 </div>
 <div class="section" id="sasldb">
-<h2><a class="toc-backref" href="#id10">SASLDB</a><a class="headerlink" href="#sasldb" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">SASLDB</a><a class="headerlink" href="#sasldb" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-sasldb_path">
 <code class="descname">sasldb_path</code><code class="descclassname"> [&lt;path to sasldb file&gt;]</code><a class="headerlink" href="#cmdoption-arg-sasldb_path" title="Permalink to this definition">¶</a></dt>
@@ -819,7 +798,7 @@ distributions and it is distributed under the terms of the OpenLDAP Public Licen
 </div>
 </div>
 <div class="section" id="sql-plugin">
-<h2><a class="toc-backref" href="#id11">SQL Plugin</a><a class="headerlink" href="#sql-plugin" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">SQL Plugin</a><a class="headerlink" href="#sql-plugin" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-sql_engine">
 <code class="descname">sql_engine</code><code class="descclassname"> [&lt;name&gt;]</code><a class="headerlink" href="#cmdoption-arg-sql_engine" title="Permalink to this definition">¶</a></dt>
@@ -931,7 +910,7 @@ realm &#8220;madoka.surf.org.uk&#8221; with userPassword &#8220;wert&#8221;:</p>
 </div>
 </div>
 <div class="section" id="srp">
-<h2><a class="toc-backref" href="#id12">SRP</a><a class="headerlink" href="#srp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">SRP</a><a class="headerlink" href="#srp" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-srp_mda">
 <code class="descname">srp_mda</code><code class="descclassname"> [md5 | sha1 | rmd160]</code><a class="headerlink" href="#cmdoption-arg-srp_mda" title="Permalink to this definition">¶</a></dt>
@@ -941,7 +920,7 @@ realm &#8220;madoka.surf.org.uk&#8221; with userPassword &#8220;wert&#8221;:</p>
 
 </div>
 <div class="section" id="kerberos-v4">
-<h2><a class="toc-backref" href="#id13">Kerberos V4</a><a class="headerlink" href="#kerberos-v4" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Kerberos V4</a><a class="headerlink" href="#kerberos-v4" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-arg-srvtab">
 <code class="descname">srvtab</code><code class="descclassname"> [&lt;path&gt;]</code><a class="headerlink" href="#cmdoption-arg-srvtab" title="Permalink to this definition">¶</a></dt>
