@@ -194,9 +194,7 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -229,7 +227,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -322,7 +320,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gssapi">GSSAPI</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -508,17 +504,10 @@ A disadvantage of this mechanism is that the server must maintain a database of 
 <p class="last">The CRAM-MD5 SASL mechanism is obsolete. It has been moved to Historic in <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5-to-historic-00">draft-ietf-sasl-crammd5-to-historic</a></p>
 </div>
 </div>
-<div class="section" id="digest-md5">
-<h3>DIGEST-MD5<a class="headerlink" href="#digest-md5" title="Permalink to this headline">¶</a></h3>
-<p>This mechanism improves upon the <a class="reference internal" href="#mech-cram-md5"><span class="std std-ref">CRAM-MD5</span></a> mechanism by avoiding the need for the server to store plaintext passwords.
-With digest authentication the server needs to store the <strong>MD5 digest</strong> of the users password which helps to make the system more secure.
-As in <a class="reference internal" href="#mech-cram-md5"><span class="std std-ref">CRAM-MD5</span></a> the password is hashed with a server nonce and other data before being transmitted across the network.</p>
-<p>Defined in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2831.html"><strong>RFC 2831</strong></a></p>
-</div>
 <div class="section" id="external">
 <h3>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
 <p>EXTERNAL is a SASL Mechanism that allows a client to request the server to use credentials established by means external to the mechanism to authenticate the client.</p>
-<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
+<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
 In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client&#8217;s credentials, nor make an assumption as to the form of credentials.
 For example, the client cannot assume that the server will use the credentials the client has established via TLS.</p>
 <div class="admonition note">
@@ -530,7 +519,7 @@ For example, the client cannot assume that the server will use the credentials t
 <h3>GS2<a class="headerlink" href="#gs2" title="Permalink to this headline">¶</a></h3>
 <p>Generic Security Service Application Program Interface (GSS-API).
 The GS2 mechanism family offers a number of improvements over the previous <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">Configuring GSSAPI and Cyrus SASL</span></a> mechanism.</p>
-<p>Defined in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
+<p>Defined in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
 </div>
 <div class="section" id="gssapi">
 <span id="mech-gssapi"></span><h3>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this headline">¶</a></h3>
@@ -539,7 +528,7 @@ The GS2 mechanism family offers a number of improvements over the previous <a cl
 <div class="section" id="gss-spnego">
 <h3>GSS-SPNEGO<a class="headerlink" href="#gss-spnego" title="Permalink to this headline">¶</a></h3>
 <p>This is a Microsoft specific customization of GSSAPI.</p>
-<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
+<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
 </div>
 <div class="section" id="login">
 <h3>LOGIN<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h3>
@@ -554,7 +543,7 @@ the mechanism affords no integrity nor confidentiality protection itself.</p>
 </div>
 <div class="section" id="otp">
 <h3>OTP<a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h3>
-<p>OTP is the One-Time Password system described in <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2289.html"><strong>RFC 2289</strong></a>.
+<p>OTP is the One-Time Password system described in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2289.html"><strong>RFC 2289</strong></a>.
 This mechanism is secure against replay attacks and also avoids storing password or password equivalents on the server.
 Only a digest of a seed and a passphrase is ever transmitted across the network.</p>
 <blockquote>
@@ -577,7 +566,7 @@ Only a digest of a seed and a passphrase is ever transmitted across the network.
 </div>
 <div class="section" id="plain">
 <span id="mech-plain"></span><h3>PLAIN<a class="headerlink" href="#plain" title="Permalink to this headline">¶</a></h3>
-<p>Defined in <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
+<p>Defined in <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
 <p>This is the simplest mechanism.
 The users authentication details are transmitted in plain text.
 This mechanism should not be provided unless an encrypted link is in use - typically after TLS has been negotiated.</p>
@@ -585,12 +574,12 @@ This mechanism should not be provided unless an encrypted link is in use - typic
 <div class="section" id="scram">
 <h3>SCRAM<a class="headerlink" href="#scram" title="Permalink to this headline">¶</a></h3>
 <p>Salted Challenge Response Authentication Mechanism (SCRAM) is a family of modern, password-based challenge–response authentication mechanisms providing authentication of a user to a server.</p>
-<p>Defined in <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
+<p>Defined in <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
 <blockquote>
 <div><ul class="simple">
 <li>SCRAM-SHA-1(-PLUS)</li>
 <li>SCRAM-SHA-224(-PLUS)</li>
-<li>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a>)</li>
+<li>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a>)</li>
 <li>SCRAM-SHA-384(-PLUS)</li>
 <li>SCRAM-SHA-512(-PLUS)</li>
 </ul>
@@ -690,23 +679,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>DIGEST-MD5</td>
-<td>128</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>reauth</td>
-<td>initial auth</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-</tr>
-<tr class="row-even"><td>EXTERNAL</td>
+<tr class="row-odd"><td>EXTERNAL</td>
 <td>0</td>
 <td>X</td>
 <td>&nbsp;</td>
@@ -722,7 +695,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>GS2</td>
+<tr class="row-even"><td>GS2</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
@@ -738,7 +711,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>X</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>GSSAPI</td>
+<tr class="row-odd"><td>GSSAPI</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
@@ -754,7 +727,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>X</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>GSS-SPNEGO</td>
+<tr class="row-even"><td>GSS-SPNEGO</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
@@ -770,7 +743,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>X</td>
 </tr>
-<tr class="row-even"><td>LOGIN</td>
+<tr class="row-odd"><td>LOGIN</td>
 <td>0</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -786,7 +759,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>OTP</td>
+<tr class="row-even"><td>OTP</td>
 <td>0</td>
 <td>X</td>
 <td>&nbsp;</td>
@@ -802,7 +775,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>PASSDSS</td>
+<tr class="row-odd"><td>PASSDSS</td>
 <td>112</td>
 <td>X</td>
 <td>X</td>
@@ -818,7 +791,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>PLAIN</td>
+<tr class="row-even"><td>PLAIN</td>
 <td>0</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -834,7 +807,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>SCRAM</td>
+<tr class="row-odd"><td>SCRAM</td>
 <td>0</td>
 <td>X</td>
 <td>X</td>
@@ -850,7 +823,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>X</td>
 <td>X</td>
 </tr>
-<tr class="row-odd"><td>SRP</td>
+<tr class="row-even"><td>SRP</td>
 <td>128</td>
 <td>X</td>
 <td>X</td>

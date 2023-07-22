@@ -195,7 +195,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -321,7 +320,6 @@
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -349,7 +347,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
@@ -675,7 +673,7 @@ the same way the PLAIN mechanism does.</p>
 <div class="section" id="shared-secrets-mechanisms">
 <h3>Shared secrets mechanisms<a class="headerlink" href="#shared-secrets-mechanisms" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus SASL library also supports some &#8220;shared secret&#8221;
-authentication methods: CRAM-MD5, DIGEST-MD5 and its successor SCRAM.
+authentication methods: CRAM-MD5 and SCRAM.
 These methods rely on the client and the server sharing a &#8220;secret&#8221;,
 usually a password.  The server generates a challenge and the client a
 response proving that it knows the shared secret.  This is much more
@@ -736,7 +734,7 @@ to a service key, stored in a <a class="reference internal" href="options.html#c
 <div class="section" id="the-otp-mechanism">
 <h3>The OTP mechanism<a class="headerlink" href="#the-otp-mechanism" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus SASL library also supports the One-Time-Password (OTP)
-mechanism.  This mechanism is similar to CRAM-MD5, DIGEST-MD5, SCRAM
+mechanism.  This mechanism is similar to CRAM-MD5, SCRAM
 and SRP in that is uses a shared secret and a challenge/response exchange.
 However, OTP is more secure than the other shared secret mechanisms in
 that the secret is used to generate a sequence of one-time (single
@@ -834,7 +832,7 @@ readable by the user running the daemon.  For Cyrus imapd, it must
 be readable by the Cyrus user.  By default, the library looks for the
 opiekeys in <code class="docutils literal"><span class="pre">/etc/opiekeys</span></code>, but it&#8217;s configurable using the
 <a class="reference internal" href="options.html#cmdoption-arg-opiekeys"><code class="xref std std-option docutils literal"><span class="pre">opiekeys</span></code></a> option.</dd>
-<dt>Why don&#8217;t CRAM-MD5, DIGEST-MD5 and SCRAM work with my old sasldb?</dt>
+<dt>Why don&#8217;t CRAM-MD5 and SCRAM work with my old sasldb?</dt>
 <dd>Because sasldb now stores plaintext passwords only, the old
 sasldb is incompatible.</dd>
 <dt>I&#8217;m having performance problems on each authentication, there is a noticeable slowdown when sasl initializes, what can I do?</dt>
