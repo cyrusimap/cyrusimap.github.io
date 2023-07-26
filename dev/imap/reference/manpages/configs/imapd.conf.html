@@ -3079,6 +3079,20 @@ reasons, the Cyrus indexer attempts to keep-alive the TCP connection
 to the extractor.
 Xapian only.</p>
 </div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_attachment_extractor_request_timeout:</span></code> 5m</p>
+<blockquote>
+<div><p>Defines the duration after which to cancel non-responding
+requests to the search attachment extractor service.</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal"><span class="pre">search_attachment_extractor_idle_timeout:</span></code> 5m</p>
+<blockquote>
+<div><p>Defines the duration after which to close unused connections to
+the search attachment extractor service. If the idle timeout is
+less than search_attachment_extractor_request_timeout, then it
+is ignored and request timeout used instead.</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal"><span class="pre">search_index_language:</span></code> 0</p>
 <blockquote>
 <div>If enabled, then messages bodies are stemmed by detected language

@@ -4389,6 +4389,30 @@ FIELD DESCRIPTIONS
 
     .. endblob search_attachment_extractor_url
 
+    .. startblob search_attachment_extractor_request_timeout
+
+    ``search_attachment_extractor_request_timeout:`` 5m
+
+        Defines the duration after which to cancel non-responding
+        requests to the search attachment extractor service.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob search_attachment_extractor_request_timeout
+
+    .. startblob search_attachment_extractor_idle_timeout
+
+    ``search_attachment_extractor_idle_timeout:`` 5m
+
+        Defines the duration after which to close unused connections to
+        the search attachment extractor service. If the idle timeout is
+        less than search_attachment_extractor_request_timeout, then it
+        is ignored and request timeout used instead.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob search_attachment_extractor_idle_timeout
+
     .. startblob search_index_language
 
     ``search_index_language:`` 0
