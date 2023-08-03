@@ -616,6 +616,24 @@ cache storage.</p>
 empty or invalid KRB5CCNAME will be used.</p>
 </dd></dl>
 
+<dl class="option">
+<dt id="cmdoption-arg-ad_compat">
+<code class="descname">ad_compat</code><code class="descclassname"> [yes | no]</code><a class="headerlink" href="#cmdoption-arg-ad_compat" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to &#8216;yes&#8217;, &#8216;on&#8217;, &#8216;1&#8217; or &#8216;true&#8217;, a client will request both
+confidentiality and integrity when required by Active Directory.</p>
+<p>Default: no</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-arg-service_principal">
+<code class="descname">service_principal</code><code class="descclassname"> [&lt;GSS_C_NT_HOSTBASED_SERVICE&gt; | *]</code><a class="headerlink" href="#cmdoption-arg-service_principal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Service principal to use when accepting a connection as a server. The
+principal name must be in GSS_C_NT_HOSTBASED_SERVICE form, e.g.
+&#8220;<a class="reference external" href="mailto:someservice&#37;&#52;&#48;someinstance">someservice<span>&#64;</span>someinstance</a>&#8221; or &#8220;someservice&#8221;, or the string &#8220;*&#8221;, which
+causes the server to accept any valid principal present in its keytab.</p>
+<p>Default: &lt;SASL Service Name&gt;&#64;&lt;Server FQDN&gt;</p>
+</dd></dl>
+
 </div>
 <div class="section" id="ldapdb">
 <h2><a class="toc-backref" href="#id6">LDAPDB</a><a class="headerlink" href="#ldapdb" title="Permalink to this headline">¶</a></h2>
