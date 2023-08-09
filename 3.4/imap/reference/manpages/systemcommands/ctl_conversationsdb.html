@@ -815,22 +815,22 @@ details.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-c">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-c" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-C">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-d">
-<code class="descname">-d</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-d">
+<code class="descname">-d</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the conversations database which corresponds to the user <em>userid</em>
 to standard output in an ASCII format.  The resulting file can be
 used to recreate a database using the <strong>-u</strong> option.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-u">
-<code class="descname">-u</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-u">
+<code class="descname">-u</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>&quot;Undumps&quot; the conversations database corresponding to the user <em>userid</em>,
 i.e. replaces all the entries with data from ASCII records parsed
 from standard input.  The output from the <strong>-d</strong> option can be used
@@ -838,21 +838,21 @@ as input.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-v">
+<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Be more verbose when running.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-r">
+<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Be recursive; apply the main operation to every user.  Warning: do
 not combine with <strong>-u</strong>, it will not do what you expect.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-z">
-<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-z" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-z">
+<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all conversation information from the conversations database
 for user <em>userid</em>, and from all the user's mailboxes.  The
 information can all be recalculated (eventually) from message
@@ -860,8 +860,8 @@ headers, using the <strong>-b</strong> option.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-b">
-<code class="descname">-b</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-b" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-b">
+<code class="descname">-b</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rebuild all conversation information in the conversations database
 for user <em>userid</em>, and in all the user's mailboxes, from the header
 information in messages.  Does not affect messages which already
@@ -875,8 +875,8 @@ message file.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id1">
-<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-R">
+<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recalculate counts of messages stored in existing conversations in
 the conversations database for user <em>userid</em>.  This is a limited
 subset of <strong>-b</strong>; in particular it does not create conversations or
@@ -884,8 +884,8 @@ assign messages to conversations.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl-conversationsdb-s">
-<code class="descname">-S</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-conversationsdb-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_conversationsdb-S">
+<code class="descname">-S</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-S" title="Permalink to this definition">¶</a></dt>
 <dd><p>If given with <strong>-b</strong>, allows splitting of conversations during the
 rewrite.   Only do this is changing the maximum conversation size
 and you need to split those existing conversations.</p>
@@ -931,7 +931,7 @@ and you need to split those existing conversations.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 15 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

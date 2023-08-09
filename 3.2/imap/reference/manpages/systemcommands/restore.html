@@ -828,8 +828,8 @@ restoring into mailboxes that already exists) will not have their ACLs altered.<
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-restore-a">
-<code class="descname">-A</code><code class="descclassname"> [acl]</code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-A">
+<code class="descname">-A</code><code class="descclassname"> [acl]</code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply specified <em>acl</em> to restored mailboxes, rather than their ACLs as
 stored in the backup.</p>
 <p>If <em>acl</em> is the empty string (e.g. <code class="docutils literal"><span class="pre">-A</span> <span class="pre">&quot;&quot;</span></code>) or is unspecified, mailboxes
@@ -839,14 +839,14 @@ different user's mailbox.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-c">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-restore-c" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-C">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-restore-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-d">
-<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-D">
+<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't trim <strong>deletedprefix</strong> from mailbox names prior to restoring.  This
 is mainly useful for rebuilding failed servers, where deleted mailboxes
 should be restored as deleted mailboxes, not as new ones.</p>
@@ -859,8 +859,8 @@ and <strong>delete_mode</strong> configuration options.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-f">
-<code class="descname">-F</code><code class="descclassname"> input-file</code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-F">
+<code class="descname">-F</code><code class="descclassname"> input-file</code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of mailboxes or messages from <em>input-file</em> instead of from
 the command line arguments.</p>
 <p><em>input-file</em> should contain one object specification (either an <em>mboxname</em>,
@@ -869,8 +869,8 @@ a '#' character, are ignored.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-l">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-L">
+<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local operations only.  Actions required to restore the requested mailboxes
 and messages will be performed on the destination server only.
 <a class="reference internal" href="mupdate.html#std:cyrusman-mupdate(8)">mupdate(8)</a> actions will not occur.</p>
@@ -880,8 +880,8 @@ part of a murder.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-m">
-<code class="descname">-M</code><code class="descclassname"> mboxname</code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-M">
+<code class="descname">-M</code><code class="descclassname"> mboxname</code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Messages are restored to the mailbox with the specified <em>mboxname</em>.  If no
 mailbox of this name exists, one will be created.</p>
 <p>If multiple mailbox objects are to be restored, whether due to being
@@ -895,14 +895,14 @@ their original mailboxes.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-p">
-<code class="descname">-P</code><code class="descclassname"> partition</code><a class="headerlink" href="#cmdoption-restore-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-P">
+<code class="descname">-P</code><code class="descclassname"> partition</code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore mailboxes to the specified <em>partition</em></p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-u">
-<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-U">
+<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to preserve uidvalidity and other related fields, such that the
 restored mailboxes and messages appear like they never left, and IMAP
 clients can avoid expensive state updates.</p>
@@ -915,15 +915,15 @@ was specified.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-restore-x">
-<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-X">
+<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>See also <strong>-x</strong>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id1">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-a">
+<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to restore all mailboxes in the specified <em>backup</em>.</p>
 </dd></dl>
 
@@ -959,8 +959,8 @@ for additional verbosity.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id2">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-x">
+<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>This can be convenient for restoring messages that were accidentally
 deleted by the user, without needing to track down individual message
@@ -979,15 +979,15 @@ if compression is unavailable.</p>
 <div class="section" id="modes">
 <span id="restore-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="id3">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-f">
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-f" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a filename.  The named file does not need to be
 known about in the backups database.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id4">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-m">
+<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-m" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a mailbox name.  There must be a known backup
 for the user whose mailbox this is.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
@@ -995,8 +995,8 @@ and <strong>backup_db_path</strong> configuration options.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="id5">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-u">
+<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-restore-u" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a userid.  There must be a known backup for
 the specified user.</p>
 <p>This is the default if no mode is specified.</p>
@@ -1044,7 +1044,7 @@ the specified user.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
