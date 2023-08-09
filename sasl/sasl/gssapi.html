@@ -194,7 +194,9 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,7 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -320,6 +322,7 @@
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,10 +350,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +381,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +412,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -489,11 +493,11 @@
 <span id="gssapi"></span><h1>Configuring GSSAPI and Cyrus SASL<a class="headerlink" href="#configuring-gssapi-and-cyrus-sasl" title="Permalink to this headline">¶</a></h1>
 <p>This document was contributed by <a class="reference external" href="mailto:kenh&#37;&#52;&#48;cmf&#46;nrl&#46;navy&#46;mil">Ken Hornstein</a> and updated
 by <a class="reference external" href="mailto:Alexey&#46;Melnikov&#37;&#52;&#48;isode&#46;com">Alexey Melnikov</a>.</p>
-<p>A couple of people have asked me privately, “Hey, how did you get the
-GSSAPI mechanism to work?  I tried, but the sample apps kept failing”.
-(The short answer: I’m a tenacious bastard).</p>
-<p>I figured that it couldn’t hurt to give a quick explanation as to
-how you get GSSAPI working with the sample apps, since it wasn’t
+<p>A couple of people have asked me privately, &#8220;Hey, how did you get the
+GSSAPI mechanism to work?  I tried, but the sample apps kept failing&#8221;.
+(The short answer: I&#8217;m a tenacious bastard).</p>
+<p>I figured that it couldn&#8217;t hurt to give a quick explanation as to
+how you get GSSAPI working with the sample apps, since it wasn&#8217;t
 obvious to me, and I consider myself not completely ignorant of GSSAPI
 and Kerberos.</p>
 <div class="section" id="compile-cyrus-sasl-with-gssapi">
@@ -513,7 +517,7 @@ location of the plug-ins.</p>
 <li>On Unix: <code class="docutils literal"><span class="pre">./sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">../plugins/.libs</span></code></li>
 <li>On Windows: <code class="docutils literal"><span class="pre">sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">..\plugins</span></code></li>
 </ul>
-<p>In this example, I am using “host”, which already exists on my
+<p>In this example, I am using &#8220;host&#8221;, which already exists on my
 machine, but only root can read it, so I an running this as root.
 If you want to use an alternate service name, you will need to
 create that service in Kerberos, place it in a keytab readable by
@@ -577,12 +581,12 @@ should get something similar to:</p>
 <span class="n">Waiting</span> <span class="k">for</span> <span class="n">server</span> <span class="n">reply</span><span class="o">...</span>
 </pre></div>
 </div>
-<p>If GSSAPI isn’t selected as the mechanism, there is a few things that
+<p>If GSSAPI isn&#8217;t selected as the mechanism, there is a few things that
 might have gone wrong:</p>
 <ul>
 <li><p class="first">The mechanism might not have been offered by the server.  The decoded
-mechanism list offered by the server appears in the “<code class="docutils literal"><span class="pre">Choosing</span> <span class="pre">best</span>
-<span class="pre">mechanism</span></code>” line.  If GSSAPI didn’t appear in that list, then
+mechanism list offered by the server appears in the &#8220;<code class="docutils literal"><span class="pre">Choosing</span> <span class="pre">best</span>
+<span class="pre">mechanism</span></code>&#8221; line.  If GSSAPI didn&#8217;t appear in that list, then
 something is wrong on the server.  Make sure that you specified the
 correct plugins directory.  If the plugin directory is correct, but
 the library fails to load, you might be running across a bug
@@ -595,7 +599,7 @@ a <code class="docutils literal"><span class="pre">-R/path/to/kerberos/libraries
 You can check with a system call tracer to see exactly what it is
 trying to do.</p>
 </li>
-<li><p class="first">The client doesn’t know about the mechanism.  The reasons for this
+<li><p class="first">The client doesn&#8217;t know about the mechanism.  The reasons for this
 happening are the same as the server: check the -p switch, check
 to make sure the correct libraries are being loaded with the GSSAPI
 plugin.</p>
@@ -613,7 +617,7 @@ you might get an error that looks like this:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>This can mean that you didn’t provide all of the required information
+<p>This can mean that you didn&#8217;t provide all of the required information
 to the sample-client (did you provide a service name with -s, the
 hostname of the service with -n, and a username with -u ?), or that
 GSSAPI has failed (unfortunately, on the client you cannot find out
@@ -640,11 +644,11 @@ the error:</p>
 </div>
 <p>This comes from not having a requested identity (the -u option) that
 matches the identity that you were authenticated to via the GSSAPI.
-This is of course mechanism specific, but if for example you’re using
+This is of course mechanism specific, but if for example you&#8217;re using
 Kerberos, the Cyrus SASL library strips out the &#64;REALM from your
 identity if you are in the same realm as the server.  So if your
 Kerberos identity is user&#64;SOME.REALM and the server is in SOME.REALM,
-you need to specify “user” to the -u flag of the client.  If you’re
+you need to specify &#8220;user&#8221; to the -u flag of the client.  If you&#8217;re
 accessing a server in a foreign realm, you need to pass the full
 principal name via the -u option to make this work correctly.</p>
 <p>If you complete the negotiation successfully, you should see something
@@ -655,7 +659,7 @@ that looks like (on both the client and server):</p>
 <span class="n">SSF</span><span class="p">:</span> <span class="mi">56</span>
 </pre></div>
 </div>
-<p>If you get to that, then you’ve done it, and GSSAPI works successfully!</p>
+<p>If you get to that, then you&#8217;ve done it, and GSSAPI works successfully!</p>
 </div>
 </div>
 
@@ -680,7 +684,7 @@ that looks like (on both the client and server):</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

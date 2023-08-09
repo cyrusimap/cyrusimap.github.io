@@ -833,14 +833,14 @@ upgrade it with <strong>-V</strong> once it's good.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-reconstruct-c">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-reconstruct-c" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-C">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-p">
-<code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--partition"></span><code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for the listed (non-existant) mailboxes on the indicated
 <em>partition</em>. Create the mailboxes in the database in addition to
 reconstructing them. (not compatible with the use of wildcards)</p>
@@ -848,7 +848,7 @@ reconstructing them. (not compatible with the use of wildcards)</p>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-x">
-<code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-disk-metadata</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--ignore-disk-metadata"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-disk-metadata</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When processing a mailbox which is not in the mailbox list (e.g.
 via the <strong>-p</strong> or <strong>-f</strong> options), do not import the metadata from
 the mailbox, instead create it anew (this specifically affects at
@@ -858,14 +858,14 @@ ACL).</p>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-r">
-<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recursive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--recursive"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recursive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively reconstruct all sub-mailboxes of the mailboxes or
 mailbox prefixes given as arguments.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-f">
-<code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--scan-filesystem</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--scan-filesystem"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--scan-filesystem</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Examine the filesystem underneath mailbox, adding all directories
 with a <code class="docutils literal"><span class="pre">cyrus.header</span></code> found there as new mailboxes.  Useful for
 restoring mailboxes from backups.</p>
@@ -873,7 +873,7 @@ restoring mailboxes from backups.</p>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-s">
-<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-stat</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--no-stat"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-stat</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't stat underlying files.  This makes reconstruct run faster, at
 the expense of not noticing some issues (like zero byte files or
 size mismatches).  &quot;<strong>reconstruct -s</strong>&quot; should be quite fast.</p>
@@ -881,27 +881,27 @@ size mismatches).  &quot;<strong>reconstruct -s</strong>&quot; should be quite f
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-q">
-<code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--quiet"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Emit less verbose information to syslog.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-n">
-<code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't make any changes.  Problems are reported, but not fixed.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-g">
-<code class="descname">-G</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force-reparse</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-g" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-G">
+<span id="cmdoption-reconstruct--force-reparse"></span><code class="descname">-G</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force-reparse</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force re-parsing of the underlying message (checks GUID
 correctness). Reconstruct with -G should fix all possible
 individual message issues, including corrupted data files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-i">
-<code class="descname">-I</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--update-uniqueids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-I">
+<span id="cmdoption-reconstruct--update-uniqueids"></span><code class="descname">-I</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--update-uniqueids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-I" title="Permalink to this definition">¶</a></dt>
 <dd><p>If two mailboxes exist with the same UNIQUEID and reconstruct visits
 both of them, -I will cause the second mailbox to have a new UNIQUEID
 created for it.  If you don't specify -I, you will just get a syslog
@@ -909,8 +909,8 @@ entry telling you of the clash.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-guid-mismatch-keep">
-<code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-keep</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-guid-mismatch-keep" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-R">
+<span id="cmdoption-reconstruct--guid-mismatch-keep"></span><code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-keep</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a UID upgrade operation on GUID mismatch files.  Use this
 option if you think your index is corrupted rather than your
 message files, or if all backup attempts have failed and you're
@@ -918,8 +918,8 @@ happy to be served the missing files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-u">
-<code class="descname">-U</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-discard</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-U">
+<span id="cmdoption-reconstruct--guid-mismatch-discard"></span><code class="descname">-U</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-discard</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this option if you have corrupt message files in your spool and
 have been unable to restore them from backup.  This will make the
 mailbox IOERROR free and fix replication.</p>
@@ -930,29 +930,29 @@ exhausted other options first!</p>
 
 <dl class="option">
 <dt id="cmdoption-reconstruct-o">
-<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct--ignore-odd-files"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignore odd files in your mailbox disk directories, instead of
 complaining about them.  Probably useful if you are using some
 tool which adds additional tracking files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-delete-odd-files">
-<code class="descname">-O</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--delete-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-delete-odd-files" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-O">
+<span id="cmdoption-reconstruct--delete-odd-files"></span><code class="descname">-O</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--delete-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete odd files.  This is the opposite of <strong>-o</strong>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-m">
-<code class="descname">-M</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--prefer-mboxlist</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-M">
+<span id="cmdoption-reconstruct--prefer-mboxlist"></span><code class="descname">-M</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--prefer-mboxlist</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prefer mailboxes.db over cyrus.header - will rewrite ACL or
 uniqueid from the mailboxes.db into the header file rather than the
 other way around.  This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-v">
-<code class="descname">-V</code><code class="descclassname"> version</code><code class="descclassname">, </code><code class="descname">--set-version</code><code class="descclassname">=version</code><a class="headerlink" href="#cmdoption-reconstruct-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-V">
+<span id="cmdoption-reconstruct--set-version"></span><code class="descname">-V</code><code class="descclassname"> version</code><code class="descclassname">, </code><code class="descname">--set-version</code><code class="descclassname">=version</code><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the <code class="docutils literal"><span class="pre">cyrus.index</span></code> minor version to a specific <em>version</em>.
 This can be useful for upgrades or downgrades. Use a magical
 version of <em>max</em> to upgrade to the latest available database format
@@ -960,14 +960,14 @@ version.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-userids">
-<code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-userids" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-u">
+<span id="cmdoption-reconstruct--userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give userids on the command line</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-header-paths">
-<code class="descname">-P</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--header-paths</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-header-paths" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-P">
+<span id="cmdoption-reconstruct--header-paths"></span><code class="descname">-P</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--header-paths</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give paths to cyrus.header files on
 the command line.  The paths can be mailbox directories, or
 explicit cyrus.header filenames.
@@ -1071,7 +1071,7 @@ deprecated in Cyrus version 2.4.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 19 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

@@ -819,47 +819,47 @@ arguments is not recommended.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-quota-c">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-quota-c" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-quota-C">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-quota-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-quota-d">
-<code class="descname">-d</code><code class="descclassname"> domain</code><code class="descclassname">, </code><code class="descname">--domain</code><code class="descclassname"> domain</code><a class="headerlink" href="#cmdoption-quota-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-quota--domain"></span><code class="descname">-d</code><code class="descclassname"> domain</code><code class="descclassname">, </code><code class="descname">--domain</code><code class="descclassname"> domain</code><a class="headerlink" href="#cmdoption-quota-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>List and/or fix quota only in <em>domain</em>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-quota-f">
-<code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--fix</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-quota--fix"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--fix</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detect and fix any inconsistencies in the quota subsystem before generating
 a report.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-quota-n">
-<code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--report-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-quota--report-only"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--report-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check for any inconsistencies in the quota subsystem but don't actually
 fix them.  Use with <strong>-f</strong> and <strong>-q</strong> to only see what's incorrect.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-quota-q">
-<code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-quota--quiet"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Operate quietly. If <strong>-f</strong> is specified, then don't print the quota
 values, only print messages when things are changed.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-quota-j">
-<code class="descname">-J</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--json</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-j" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-quota-J">
+<span id="cmdoption-quota--json"></span><code class="descname">-J</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--json</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-J" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output the quota values as JSON for automated tooling support</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-quota-u">
-<code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-quota--userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-quota-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpret <em>mailbox-spec</em> arguments as userids.  The default is to
 interpret them as mailbox prefixes</p>
 </dd></dl>
@@ -926,7 +926,7 @@ interpret them as mailbox prefixes</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 27 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

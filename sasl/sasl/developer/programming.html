@@ -195,6 +195,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -320,6 +321,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,7 +349,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/rfcs.html">RFCs and drafts</a></li>
@@ -363,7 +365,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +379,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +410,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -470,7 +472,7 @@
       
           <li><a href="../../developer.html">Developers</a> &raquo;</li>
       
-    <li>Application Programmer’s Guide</li>
+    <li>Application Programmer&#8217;s Guide</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -484,7 +486,7 @@
           <div role="main" class="document">
             
   <div class="section" id="application-programmer-s-guide">
-<span id="programming"></span><h1>Application Programmer’s Guide<a class="headerlink" href="#application-programmer-s-guide" title="Permalink to this headline">¶</a></h1>
+<span id="programming"></span><h1>Application Programmer&#8217;s Guide<a class="headerlink" href="#application-programmer-s-guide" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">NOTE: This is a work in progress. Any contributions would be
@@ -505,11 +507,11 @@
 <li><a class="reference internal" href="#briefly" id="id8">Briefly</a><ul>
 <li><a class="reference internal" href="#what-is-the-cyrus-sasl-library-good-for" id="id9">What is the Cyrus SASL library good for?</a></li>
 <li><a class="reference internal" href="#what-does-the-cyrus-sasl-library-do" id="id10">What does the Cyrus SASL library do?</a></li>
-<li><a class="reference internal" href="#what-doesn-t-the-cyrus-sasl-library-do" id="id11">What doesn’t the Cyrus SASL library do?</a></li>
+<li><a class="reference internal" href="#what-doesn-t-the-cyrus-sasl-library-do" id="id11">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#client-only-section" id="id12">Client-only Section</a><ul>
-<li><a class="reference internal" href="#a-typical-interaction-from-the-client-s-perspective" id="id13">A typical interaction from the client’s perspective</a></li>
+<li><a class="reference internal" href="#a-typical-interaction-from-the-client-s-perspective" id="id13">A typical interaction from the client&#8217;s perspective</a></li>
 <li><a class="reference internal" href="#how-does-this-look-in-code" id="id14">How does this look in code</a><ul>
 <li><a class="reference internal" href="#initialize-the-library" id="id15">1. Initialize the library</a></li>
 <li><a class="reference internal" href="#make-a-new-sasl-connection" id="id16">2. Make a new SASL connection</a></li>
@@ -523,7 +525,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#server-only-section" id="id22">Server-only Section</a><ul>
-<li><a class="reference internal" href="#a-typical-interaction-from-the-server-s-perspective" id="id23">A typical interaction from the server’s perspective</a></li>
+<li><a class="reference internal" href="#a-typical-interaction-from-the-server-s-perspective" id="id23">A typical interaction from the server&#8217;s perspective</a></li>
 <li><a class="reference internal" href="#id1" id="id24">How does this look in code?</a><ul>
 <li><a class="reference internal" href="#initialization" id="id25">Initialization</a></li>
 </ul>
@@ -573,10 +575,10 @@ it should be unnecessary to consult it.</p>
 <p>Before SASL, when a new protocol was written which required
 authentication (users proving who they are to an entity), the
 protocol had to allow explicitly for each individual authentication
-mechanism. There had to be a distinct way to say “I want to log in
-with Kerberos V4”. There had to be another distinct way to say “I
-want to log in with CRAM-MD5”. There had to be yet a different way
-to say “I want to log in anonymously,” and so on. This was
+mechanism. There had to be a distinct way to say &#8220;I want to log in
+with Kerberos V4&#8221;. There had to be another distinct way to say &#8220;I
+want to log in with CRAM-MD5&#8221;. There had to be yet a different way
+to say &#8220;I want to log in anonymously,&#8221; and so on. This was
 not ideal for both the protocol and application writers.</p>
 <p>Additionally, many programmers were not very familiar with
 security, so the protocol did support many mechanisms, or worse,
@@ -589,9 +591,9 @@ application to support. Also, the mechanisms were difficult to
 implement. Even with a good library, an understanding of how the
 mechanism worked was still necessary. Finally if an application
 used more than one protocol (for example a mail client might use
-IMAP, POP, and SMTP) then “Kerberos V4 for IMAP”, “Kerberos V4 for
-POP”, “Kerberos V4 for SMTP”, “CRAM MD5 for IMAP”, “CRAM-MD5 for
-POP”, etc… would need to be written. This could quickly create a
+IMAP, POP, and SMTP) then &#8220;Kerberos V4 for IMAP&#8221;, &#8220;Kerberos V4 for
+POP&#8221;, &#8220;Kerberos V4 for SMTP&#8221;, &#8220;CRAM MD5 for IMAP&#8221;, &#8220;CRAM-MD5 for
+POP&#8221;, etc... would need to be written. This could quickly create a
 huge number of different mechanism-protocol pairs to implement.</p>
 </div>
 <div class="section" id="sasl-to-the-rescue">
@@ -642,7 +644,7 @@ step of the authentication. From a server perspective, it handles
 authentication requests from clients.</p>
 </div>
 <div class="section" id="what-doesn-t-the-cyrus-sasl-library-do">
-<h3><a class="toc-backref" href="#id11">What doesn’t the Cyrus SASL library do?</a><a class="headerlink" href="#what-doesn-t-the-cyrus-sasl-library-do" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">What doesn&#8217;t the Cyrus SASL library do?</a><a class="headerlink" href="#what-doesn-t-the-cyrus-sasl-library-do" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus SASL library is neither network nor protocol aware. It
 is up to the application to send the data over the wire as well as
 to send the data in the protocol specific manner. With IMAP this
@@ -655,7 +657,7 @@ this.</p>
 <div class="section" id="client-only-section">
 <h2><a class="toc-backref" href="#id12">Client-only Section</a><a class="headerlink" href="#client-only-section" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="a-typical-interaction-from-the-client-s-perspective">
-<h3><a class="toc-backref" href="#id13">A typical interaction from the client’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-client-s-perspective" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">A typical interaction from the client&#8217;s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-client-s-perspective" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>A client makes a few calls to initialize SASL.</li>
 <li>Every time the client application makes a new connection it
@@ -789,7 +791,7 @@ things:</p>
 might look like <code class="docutils literal"><span class="pre">A01</span> <span class="pre">NO</span> <span class="pre">Authentication</span> <span class="pre">failure</span></code> in IMAP or
 <code class="docutils literal"><span class="pre">501</span> <span class="pre">Failed</span></code> in SMTP. Either retry the authentication or
 abort.</li>
-<li>Authentication success. We’re now successfully authenticated.
+<li>Authentication success. We&#8217;re now successfully authenticated.
 This might look like <code class="docutils literal"><span class="pre">A01</span> <span class="pre">OK</span> <span class="pre">Authenticated</span> <span class="pre">successful</span></code> in
 IMAP or <code class="docutils literal"><span class="pre">235</span> <span class="pre">Authentication</span> <span class="pre">successful</span></code> in SMTP.
 Go <a class="reference internal" href="#client-authentication-success"><span class="std std-ref">here</span></a>.</li>
@@ -829,8 +831,8 @@ repeats until authentication either succeeds or fails.</p>
 </div>
 <div class="section" id="authentication-successful">
 <span id="client-authentication-success"></span><h4><a class="toc-backref" href="#id20">6. Authentication Successful</a><a class="headerlink" href="#authentication-successful" title="Permalink to this headline">¶</a></h4>
-<p>Before we’re done we need to call <a class="reference internal" href="../reference/manpages/library/sasl_client_step.html#std:saslman-sasl_client_step(3)">sasl_client_step(3)</a> one more
-time to make sure the server isn’t trying to fool us. Some
+<p>Before we&#8217;re done we need to call <a class="reference internal" href="../reference/manpages/library/sasl_client_step.html#std:saslman-sasl_client_step(3)">sasl_client_step(3)</a> one more
+time to make sure the server isn&#8217;t trying to fool us. Some
 protocols include data along with the last step. If so this data
 should be used here. If not use a length of zero.</p>
 <div class="highlight-C"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_client_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>  <span class="cm">/* our context */</span>
@@ -845,7 +847,7 @@ should be used here. If not use a length of zero.</p>
 </div>
 <p>Congratulations. You have successfully authenticated to the
 server.</p>
-<p>Don’t throw away the SASL connection object (sasl_conn_t *) yet
+<p>Don&#8217;t throw away the SASL connection object (sasl_conn_t *) yet
 though. If a security layer was negotiated you will need it to
 encode and decode the data sent over the network.</p>
 </div>
@@ -874,7 +876,7 @@ use <a class="reference internal" href="../reference/manpages/library/sasl_done.
 <div class="section" id="server-only-section">
 <h2><a class="toc-backref" href="#id22">Server-only Section</a><a class="headerlink" href="#server-only-section" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="a-typical-interaction-from-the-server-s-perspective">
-<h3><a class="toc-backref" href="#id23">A typical interaction from the server’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-server-s-perspective" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">A typical interaction from the server&#8217;s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-server-s-perspective" title="Permalink to this headline">¶</a></h3>
 <p>The server makes a few Cyrus SASL calls for initialization. When it
 gets a new connection it should make a new context for that
 connection immediately. The client may then request a list of
@@ -1001,7 +1003,7 @@ example if you had the userid of the user already for some reason.</p>
 <p>An <em>interaction</em> is usually for things you support but will need to ask the user
 for (e.g. password). <a class="reference internal" href="../reference/manpages/library/sasl_client_start.html#std:saslman-sasl_client_start(3)">sasl_client_start(3)</a> or
 <a class="reference internal" href="../reference/manpages/library/sasl_client_step.html#std:saslman-sasl_client_step(3)">sasl_client_step(3)</a> will return <a class="reference internal" href="../reference/manpages/library/sasl_errors.html#c.SASL_INTERACT" title="SASL_INTERACT"><code class="xref c c-macro docutils literal"><span class="pre">SASL_INTERACT</span></code></a>.  This will
-be a list of sasl_interact_t’s which contain a human readable string you can
+be a list of sasl_interact_t&#8217;s which contain a human readable string you can
 prompt the user with, a possible computer readable string, and a default result.
 The nice thing about interactions is you get them all at once so if you had a
 GUI application you could bring up a dialog box asking for authentication name
@@ -1056,7 +1058,7 @@ postman and a USER of tmartin)</dd>
  <span class="p">};</span>
 
 
- <span class="k">static</span> <span class="kt">int</span> <span class="n">getsecret_func</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+ <span class="k">static</span> <span class="kt">int</span> <span class="nf">getsecret_func</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
    <span class="kt">void</span> <span class="o">*</span><span class="n">context</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
    <span class="kt">int</span> <span class="n">id</span><span class="p">,</span>
    <span class="n">sasl_secret_t</span> <span class="o">**</span><span class="n">psecret</span><span class="p">)</span>
@@ -1068,7 +1070,7 @@ postman and a USER of tmartin)</dd>
    <span class="k">return</span> <span class="n">SASL_OK</span><span class="p">;</span>
  <span class="p">}</span>
 
- <span class="k">static</span> <span class="kt">int</span> <span class="n">getauthname_func</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
+ <span class="k">static</span> <span class="kt">int</span> <span class="nf">getauthname_func</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
                              <span class="kt">int</span> <span class="n">id</span><span class="p">,</span>
                              <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">result</span><span class="p">,</span>
                              <span class="kt">unsigned</span> <span class="o">*</span><span class="n">len</span><span class="p">)</span>
@@ -1088,7 +1090,7 @@ postman and a USER of tmartin)</dd>
 </div>
 <div class="section" id="security-layers">
 <h3><a class="toc-backref" href="#id28">Security layers</a><a class="headerlink" href="#security-layers" title="Permalink to this headline">¶</a></h3>
-<p>All is well and good to securely authenticate, but if you don’t
+<p>All is well and good to securely authenticate, but if you don&#8217;t
 have some sort of integrity or privacy layer, anyone can hijack
 your TCP session after authentication. If your application has
 indicated that it can support a security layer, one might be
@@ -1111,7 +1113,7 @@ number:</p>
 </div>
 <p>The <code class="docutils literal"><span class="pre">secprops</span></code> variable will be copied during the call to
 <code class="docutils literal"><span class="pre">sasl_setprop</span></code>, so you may free its memory immediately. The
-SSF stands for “security strength factor” and is a
+SSF stands for &#8220;security strength factor&#8221; and is a
 rough indication of how secure the connection is. A connection
 supplying only integrity with no privacy would have an SSF of 1. A
 connection secured by 56-bit DES would have an SSF of 56.</p>
@@ -1149,7 +1151,7 @@ follow:</p>
 <li>Before starting authentication, set <code class="docutils literal"><span class="pre">maxbufsize</span></code> in your
 security properties to be the buffer size that you pass to the
 <code class="docutils literal"><span class="pre">read()</span></code> system call&amp;mdash;that is, the amount of data
-you’re prepared to read at any one time.</li>
+you&#8217;re prepared to read at any one time.</li>
 <li>After authentication finishes, use <a class="reference internal" href="../reference/manpages/library/sasl_getprop.html#std:saslman-sasl_getprop(3)">sasl_getprop(3)</a> to
 retrieve the <code class="docutils literal"><span class="pre">SASL_MAXOUTBUF</span></code> value, and call
 <a class="reference internal" href="../reference/manpages/library/sasl_encode.html#std:saslman-sasl_encode(3)">sasl_encode(3)</a> with chunks of data of that size or less.
@@ -1233,7 +1235,7 @@ SASL profile for the protocol should define how to send an empty
 string; make sure to send an empty string when requested, and when
 receiving an empty string make sure that the <code class="docutils literal"><span class="pre">inlength</span></code>
 passed in is 0.</p>
-<p>Note especially that the distinction between the empty string “”
+<p>Note especially that the distinction between the empty string &#8220;&#8221;
 and the lack of a string (NULL) is extremely important in many
 cases (most notably, the client-send first scenario), and the
 application must ensure that it is passing the correct values to
@@ -1268,7 +1270,7 @@ idle calls, none of them currently do anything.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

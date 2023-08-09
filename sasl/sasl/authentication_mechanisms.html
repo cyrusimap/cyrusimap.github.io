@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -496,7 +496,7 @@
 <span id="mech-cram-md5"></span><h3>CRAM-MD5<a class="headerlink" href="#cram-md5" title="Permalink to this headline">¶</a></h3>
 <p>This mechanism avoids sending the users password over the network in plain text by hashing the password with a server provided random value (known as a nonce).
 A disadvantage of this mechanism is that the server must maintain a database of <strong>plaintext passwords</strong> for comparison.</p>
-<p>CRAM-MD5 does not provide adequate security services for use on the Internet, it does not protect the user’s authentication identifier from eavesdroppers and is subject to a number of passive and active attacks.</p>
+<p>CRAM-MD5 does not provide adequate security services for use on the Internet, it does not protect the user&#8217;s authentication identifier from eavesdroppers and is subject to a number of passive and active attacks.</p>
 <p>Defined in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2195.html"><strong>RFC 2195</strong></a></p>
 <p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5">RFC Draft: draft-ietf-sasl-crammd5</a></p>
 <div class="admonition warning">
@@ -508,7 +508,7 @@ A disadvantage of this mechanism is that the server must maintain a database of 
 <h3>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
 <p>EXTERNAL is a SASL Mechanism that allows a client to request the server to use credentials established by means external to the mechanism to authenticate the client.</p>
 <p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
-In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client’s credentials, nor make an assumption as to the form of credentials.
+In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client&#8217;s credentials, nor make an assumption as to the form of credentials.
 For example, the client cannot assume that the server will use the credentials the client has established via TLS.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -627,12 +627,12 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <col width="4%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-odd"><td>&nbsp;</td>
 <td rowspan="2">MAX SSF</td>
 <td colspan="7">SECURITY PROPERTIES</td>
 <td colspan="6">FEATURES</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-even"><td>&nbsp;</td>
 <td>NOPLAIN</td>
 <td>NOACTIVE</td>
 <td>NODICT</td>
@@ -650,130 +650,130 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <tr class="row-odd"><td>ANONYMOUS</td>
 <td>0</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>CRAM-MD5</td>
 <td>0</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>EXTERNAL</td>
 <td>0</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>GS2</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>X</td>
-<td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
+<td>X</td>
+<td>X</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>GSSAPI</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>GSS-SPNEGO</td>
 <td>56</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>LOGIN</td>
 <td>0</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>OTP</td>
 <td>0</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>PASSDSS</td>
 <td>112</td>
@@ -785,39 +785,39 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>X</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>PLAIN</td>
 <td>0</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>SCRAM</td>
 <td>0</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
 <td>X</td>
@@ -830,14 +830,14 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <td>X</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 <td>X</td>
 <td>X</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -848,8 +848,8 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 <li><strong>NOPLAIN</strong> - Mechanism is not susceptible to simple passive (eavesdropping) attack.</li>
 <li><strong>NOACTIVE</strong> - Protection from active (non-dictionary) attacks during authentication exchange. (Implies MUTUAL).</li>
 <li><strong>NODICT</strong> - Not susceptible to passive dictionary attack.</li>
-<li><strong>NOFORWARD</strong> - Breaking one session won’t help break the next.</li>
-<li><strong>NOANON</strong> - Don’t permit anonymous logins.</li>
+<li><strong>NOFORWARD</strong> - Breaking one session won&#8217;t help break the next.</li>
+<li><strong>NOANON</strong> - Don&#8217;t permit anonymous logins.</li>
 <li><strong>CRED</strong> - Mechanism can pass client credentials.</li>
 <li><strong>MUTUAL</strong> - Supports mutual authentication (authenticates the server to the client)</li>
 </ul>
@@ -888,7 +888,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
