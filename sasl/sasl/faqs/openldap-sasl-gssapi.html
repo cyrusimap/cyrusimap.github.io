@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -487,7 +487,7 @@
             
   <div class="section" id="how-do-i-configure-openldap-sasl-gssapi">
 <h1>How do I configure OpenLDAP +SASL+GSSAPI?<a class="headerlink" href="#how-do-i-configure-openldap-sasl-gssapi" title="Permalink to this headline">¶</a></h1>
-<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="https://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator&#8217;s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
+<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="https://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator’s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
 <p>To verify that you have the Cyrus <a class="reference internal" href="../gssapi.html#gssapi"><span class="std std-ref">GSSAPI</span></a> mechanism properly installed, use the pluginviewer command. For instance:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span><span class="o">~</span><span class="c1"># pluginviewer  | grep -i gssapi</span>
  <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span> <span class="n">PLAIN</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">ANONYMOUS</span> <span class="n">LOGIN</span> <span class="n">EXTERNAL</span>
@@ -528,8 +528,8 @@
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
 </pre></div>
 </div>
-<p>If you receive a list of mechanisms, then congratulations, you&#8217;re done.</p>
-<p>If instead you receive an error, then it&#8217;s possible that your client is requesting a service principal that mismatches what your server is using.</p>
+<p>If you receive a list of mechanisms, then congratulations, you’re done.</p>
+<p>If instead you receive an error, then it’s possible that your client is requesting a service principal that mismatches what your server is using.</p>
 <p>Verify that you have received a TGT ticket from your kerberos server, and that you have also received a service principal ticket for the server (e.g. <a class="reference external" href="mailto:ldap/ldap&#46;example&#46;org&#37;&#52;&#48;EXAMPLE&#46;ORG">ldap/ldap<span>&#46;</span>example<span>&#46;</span>org<span>&#64;</span>EXAMPLE<span>&#46;</span>ORG</a>). Use klist to verify:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># klist</span>
 <span class="n">Credentials</span> <span class="n">cache</span><span class="p">:</span> <span class="n">FILE</span><span class="p">:</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">krb5cc_0</span>
@@ -574,7 +574,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

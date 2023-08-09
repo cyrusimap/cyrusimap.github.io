@@ -813,7 +813,7 @@ Also those developing IMAP clients find it useful.</p>
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-imtest-t">
-<span id="cmdoption-imtest--keyfile"></span><code class="descname">-t</code><code class="descclassname"> keyfile</code><code class="descclassname">, </code><code class="descname">--keyfile</code><code class="descclassname">=keyfile</code><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-t</code><code class="descclassname"> keyfile</code><code class="descclassname">, </code><code class="descname">--keyfile</code><code class="descclassname">=keyfile</code><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable TLS.  <em>keyfile</em> contains the TLS public and private keys.
 Specify <strong>&quot;&quot;</strong> to negotiate a TLS encryption layer but not use TLS
 authentication.</p>
@@ -821,14 +821,14 @@ authentication.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-p">
-<span id="cmdoption-imtest--port"></span><code class="descname">-p</code><code class="descclassname"> port</code><code class="descclassname">, </code><code class="descname">--port</code><code class="descclassname">=port</code><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-p</code><code class="descclassname"> port</code><code class="descclassname">, </code><code class="descname">--port</code><code class="descclassname">=port</code><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port to connect to. If left off this defaults to <strong>imap</strong> as defined
 in <code class="docutils literal"><span class="pre">/etc/services</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-m">
-<span id="cmdoption-imtest--mechanism"></span><code class="descname">-m</code><code class="descclassname"> mechanism</code><code class="descclassname">, </code><code class="descname">--mechanism</code><code class="descclassname">=mechanism</code><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-m</code><code class="descclassname"> mechanism</code><code class="descclassname">, </code><code class="descname">--mechanism</code><code class="descclassname">=mechanism</code><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force <strong>imtest</strong> to use <em>mechanism</em> for authentication. If not
 specified the strongest authentication mechanism supported by the
 server is chosen.  Specify <em>login</em> to use the LOGIN command instead
@@ -837,7 +837,7 @@ of AUTHENTICATE.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-a">
-<span id="cmdoption-imtest--authname"></span><code class="descname">-a</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--authname</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-a</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--authname</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authentication; defaults to the current user.
 This is the userid whose password or credentials will be presented to
 the server for verification.</p>
@@ -845,7 +845,7 @@ the server for verification.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-u">
-<span id="cmdoption-imtest--username"></span><code class="descname">-u</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--username</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-u</code><code class="descclassname"> userid</code><code class="descclassname">, </code><code class="descname">--username</code><code class="descclassname">=userid</code><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authorization; defaults to the current user.
 This is the userid whose identity will be assumed after
 authentication.</p>
@@ -858,13 +858,13 @@ authentication.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-k">
-<span id="cmdoption-imtest--minssf"></span><code class="descname">-k</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--minssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-k</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--minssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum protection layer required.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-l">
-<span id="cmdoption-imtest--maxssf"></span><code class="descname">-l</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--maxssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-l</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--maxssf</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum protection layer to use (<strong>0</strong>=none; <strong>1</strong>=integrity;
 etc).  For example if you are using the KERBEROS_V4 authentication
 mechanism specifying <strong>0</strong> will force imtest to not use any layer
@@ -874,20 +874,20 @@ default the maximum supported protection layer will be used.</p>
 
 <dl class="option">
 <dt id="cmdoption-imtest-r">
-<span id="cmdoption-imtest--realm"></span><code class="descname">-r</code><code class="descclassname"> realm</code><code class="descclassname">, </code><code class="descname">--realm</code><code class="descclassname">=realm</code><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"> realm</code><code class="descclassname">, </code><code class="descname">--realm</code><code class="descclassname">=realm</code><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the <em>realm</em> to use. Certain authentication mechanisms
 (e.g. DIGEST-MD5) may require one to specify the realm.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-f">
-<span id="cmdoption-imtest--input-filename"></span><code class="descname">-f</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--input-filename</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-f</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--input-filename</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pipe <em>file</em> into connection after authentication.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-n">
-<span id="cmdoption-imtest--reauth-attempts"></span><code class="descname">-n</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--reauth-attempts</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-n</code><code class="descclassname"> num</code><code class="descclassname">, </code><code class="descname">--reauth-attempts</code><code class="descclassname">=num</code><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of authentication attempts; default = 1.  The client will
 attempt to do SSL/TLS session reuse and/or fast reauth
 (e.g. DIGEST-MD5), if possible.</p>
@@ -895,19 +895,19 @@ attempt to do SSL/TLS session reuse and/or fast reauth
 
 <dl class="option">
 <dt id="cmdoption-imtest-s">
-<span id="cmdoption-imtest--require-tls"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-tls</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-tls</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable SSL over chosen protocol.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-q">
-<span id="cmdoption-imtest--require-compression"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-compression</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--require-compression</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable IMAP COMPRESSion (after authentication).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-c">
-<span id="cmdoption-imtest--do-challenge"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--do-challenge</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--do-challenge</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable challenge prompt callbacks.  This will cause the OTP mechanism
 to ask for the one-time password instead of the secret pass-phrase
 (library generates the correct response).</p>
@@ -915,51 +915,51 @@ to ask for the one-time password instead of the secret pass-phrase
 
 <dl class="option">
 <dt id="cmdoption-imtest-i">
-<span id="cmdoption-imtest--no-initial-response"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-initial-response</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-initial-response</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't send an initial client response for SASL mechanisms, even if
 the protocol supports it.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-imtest-I">
-<span id="cmdoption-imtest--pidfile"></span><code class="descname">-I</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--pidfile</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-I" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-imtest-pidfile">
+<code class="descname">-I</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--pidfile</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-pidfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echo the PID of the running process into <em>file</em> (This can be useful
 with -X).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-v">
-<span id="cmdoption-imtest--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose. Print out more information than usual.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-z">
-<span id="cmdoption-imtest--run-stress-test"></span><code class="descname">-z</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--run-stress-test</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-z</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--run-stress-test</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timing test.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-x">
-<span id="cmdoption-imtest--output-socket"></span><code class="descname">-x</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--output-socket</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-x</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--output-socket</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the named socket for the interactive portion.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-imtest-X">
-<code class="descname">-X</code><code class="descclassname"> file</code><a class="headerlink" href="#cmdoption-imtest-X" title="Permalink to this definition">¶</a></dt>
+<dt id="id1">
+<code class="descname">-X</code><code class="descclassname"> file</code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like -x, only close all file descriptors &amp; daemonize the process.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-w">
-<span id="cmdoption-imtest--password"></span><code class="descname">-w</code><code class="descclassname"> password</code><code class="descclassname">, </code><code class="descname">--password</code><code class="descclassname">=password</code><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-w</code><code class="descclassname"> password</code><code class="descclassname">, </code><code class="descname">--password</code><code class="descclassname">=password</code><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Password to use (if not supplied, we will prompt).</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-imtest-o">
-<span id="cmdoption-imtest--sasl-option"></span><code class="descname">-o</code><code class="descclassname"> option=value</code><code class="descclassname">, </code><code class="descname">--sasl-option</code><code class="descclassname">=option=value</code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-o</code><code class="descclassname"> option=value</code><code class="descclassname">, </code><code class="descname">--sasl-option</code><code class="descclassname">=option=value</code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the SASL <em>option</em> to <em>value</em>.</p>
 </dd></dl>
 
@@ -995,7 +995,7 @@ with -X).</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 15 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

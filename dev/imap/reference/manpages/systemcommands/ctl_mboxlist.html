@@ -807,56 +807,56 @@ The <em>configdirectory</em> option in <a class="reference internal" href="../co
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-c">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ctl-mboxlist-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-d">
-<span id="cmdoption-ctl_mboxlist--dump"></span><code class="descname">-d</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-d">
+<code class="descname">-d</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the contents of the database to standard output in JSON format.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-x">
-<span id="cmdoption-ctl_mboxlist--remove-dumped"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--remove-dumped</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-x" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-x">
+<code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--remove-dumped</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, remove the mailboxes dumped from the mailbox
 list (mostly useful when specified with <strong>-p</strong>).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-y">
-<span id="cmdoption-ctl_mboxlist--include-intermediaries"></span><code class="descname">-y</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-intermediaries</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-y" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-y">
+<code class="descname">-y</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-intermediaries</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-y" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, also list intermediary mailboxes which would
 be hidden from IMAP.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-p">
-<span id="cmdoption-ctl_mboxlist--partition"></span><code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-p">
+<code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-ctl-mboxlist-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, dump only those mailboxes that live on
 <em>partition</em>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-f">
-<span id="cmdoption-ctl_mboxlist--filename"></span><code class="descname">-f</code><code class="descclassname"> filename</code><code class="descclassname">, </code><code class="descname">--filename</code><code class="descclassname">=filename</code><a class="headerlink" href="#cmdoption-ctl_mboxlist-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-f">
+<code class="descname">-f</code><code class="descclassname"> filename</code><code class="descclassname">, </code><code class="descname">--filename</code><code class="descclassname">=filename</code><a class="headerlink" href="#cmdoption-ctl-mboxlist-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the database specified by <em>filename</em> instead of the default
 (<em>configdirectory/mailboxes.db*</em>).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-L">
-<span id="cmdoption-ctl_mboxlist--legacy"></span><code class="descname">-L</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--legacy</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-L" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-l">
+<code class="descname">-L</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--legacy</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing an undump, use the legacy dump parser instead of the
 JSON parser.  This might be useful for importing a dump produced
 by an older version of Cyrus.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-u">
-<span id="cmdoption-ctl_mboxlist--undump"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--undump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-u">
+<code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--undump</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load (&quot;undump&quot;) the contents of the database from standard input.  The
 input MUST be a valid JSON file, unless the -L option is also supplied.</p>
 <div class="admonition important">
@@ -871,15 +871,15 @@ containing bad data.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-m">
-<span id="cmdoption-ctl_mboxlist--sync-mupdate"></span><code class="descname">-m</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--sync-mupdate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-m">
+<code class="descname">-m</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--sync-mupdate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>For backend servers in the Cyrus Murder, synchronize the local
 mailbox list file with the MUPDATE server.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-a">
-<span id="cmdoption-ctl_mboxlist--authoritative"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--authoritative</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-a">
+<code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--authoritative</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, assume the local mailboxes file is authoritative,
 that is, only change the mupdate server, do not delete any local
 mailboxes.</p>
@@ -891,22 +891,22 @@ the murder.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-w">
-<span id="cmdoption-ctl_mboxlist--warn-only"></span><code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--warn-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-w">
+<code class="descname">-w</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--warn-only</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, print out what would be done but do not perform
 the operations.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-i">
-<span id="cmdoption-ctl_mboxlist--interactive"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--interactive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-i">
+<code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--interactive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, asks for verification before deleting local
 mailboxes.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ctl_mboxlist-v">
-<span id="cmdoption-ctl_mboxlist--verify"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verify</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl-mboxlist-v">
+<code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verify</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl-mboxlist-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verify the consistency of the mailbox list database and the spool
 partition(s). Mailboxes present in the database and not located on a
 spool partition, and those located on a spool partition (directory
@@ -1008,7 +1008,7 @@ asking for verification before deleting any local mailboxes.</div></blockquote>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 29 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
