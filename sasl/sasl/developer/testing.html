@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -495,22 +495,22 @@ or users having a lot of difficulty getting libsasl to work.</p>
 <p>The CMU SASL library comes with two small sample programs:
 sample-client and sample-server.  Each of these programs dump base-64
 SASL iterations to STDOUT, and read the next iteration from STDIN.
-Lines preceded by &#8220;C: &#8221; are from the client, and from &#8220;S: &#8221; are from
+Lines preceded by “C: ” are from the client, and from “S: ” are from
 the server.</p>
 <p>This makes it fairly straightforward to test mechanisms; simply run
-the sample-client on the &#8220;client&#8221; machine, and sample-server on the
-&#8220;server&#8221; machine.</p>
+the sample-client on the “client” machine, and sample-server on the
+“server” machine.</p>
 <p>Both programs take a -m MECH command line argument; this can be used
 to force the mechanism used in the exchange.  GSSAPI requires
 that the IP addresses of both client and server be set, along with the
-service name, and the server&#8217;s fully-qualified hostname; these are
+service name, and the server’s fully-qualified hostname; these are
 done through more command line arguments.</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>Here&#8217;s the client side of an exchange.  The mechanism selection code
+<p>Here’s the client side of an exchange.  The mechanism selection code
 chooses GSSAPI; negotiation takes place, and the client is
 authenticated.  This is being run on the machine SPOOKY.ANDREW.CMU.EDU
-(128.2.121.162), pretending to be talking to an &#8220;rcmd&#8221; service running
+(128.2.121.162), pretending to be talking to an “rcmd” service running
 on port 23 (note the semicolons in the IP address.  There is a strong
 chance these will need to be escaped for proper interpretation by the shell):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">n</span> <span class="n">SPOOKY</span><span class="o">.</span><span class="n">ANDREW</span><span class="o">.</span><span class="n">CMU</span><span class="o">.</span><span class="n">EDU</span>
@@ -533,7 +533,7 @@ chance these will need to be escaped for proper interpretation by the shell):</p
 <span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Here&#8217;s the server side of the same dialog:</p>
+<p>Here’s the server side of the same dialog:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span>
 <span class="n">Generating</span> <span class="n">client</span> <span class="n">mechanism</span> <span class="nb">list</span><span class="o">...</span>
 <span class="n">Sending</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">5</span> <span class="n">mechanism</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -563,7 +563,7 @@ chance these will need to be escaped for proper interpretation by the shell):</p
 functionality of libsasl against itself. When you run the application
 it displays some requirements for running, such as being able to read
 and write to the sasldb file. If this program is set up correctly and
-still fails we&#8217;d like to hear about it at <a class="reference external" href="mailto:cyrus-bugs&#37;&#52;&#48;andrew&#46;cmu&#46;edu">cyrus-bugs<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>.</p>
+still fails we’d like to hear about it at <a class="reference external" href="mailto:cyrus-bugs&#37;&#52;&#48;andrew&#46;cmu&#46;edu">cyrus-bugs<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>.</p>
 </div>
 </div>
 
@@ -588,7 +588,7 @@ still fails we&#8217;d like to hear about it at <a class="reference external" hr
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
