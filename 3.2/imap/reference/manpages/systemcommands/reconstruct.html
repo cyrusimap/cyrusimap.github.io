@@ -825,8 +825,8 @@ upgrade it with <strong>-V</strong> once it's good.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-reconstruct-C">
-<code class="descname">-C</code><code class="descclassname">  config-file</code><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-c">
+<code class="descname">-C</code><code class="descclassname">  config-file</code><a class="headerlink" href="#cmdoption-reconstruct-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
@@ -884,16 +884,16 @@ size mismatches).  &quot;<strong>reconstruct -s</strong>&quot; should be quite f
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-G">
-<code class="descname">-G</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-g">
+<code class="descname">-G</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-g" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force re-parsing of the underlying message (checks GUID
 correctness). Reconstruct with -G should fix all possible
 individual message issues, including corrupted data files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-I">
-<code class="descname">-I</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-I" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-i">
+<code class="descname">-I</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>If two mailboxes exist with the same UNIQUEID and reconstruct visits
 both of them, -I will cause the second mailbox to have a new UNIQUEID
 created for it.  If you don't specify -I, you will just get a syslog
@@ -901,8 +901,8 @@ entry telling you of the clash.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-R">
-<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
+<dt id="id1">
+<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a UID upgrade operation on GUID mismatch files.  Use this
 option if you think your index is corrupted rather than your
 message files, or if all backup attempts have failed and you're
@@ -910,8 +910,8 @@ happy to be served the missing files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-U">
-<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-u">
+<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this option if you have corrupt message files in your spool and
 have been unable to restore them from backup.  This will make the
 mailbox IOERROR free and fix replication.</p>
@@ -928,22 +928,22 @@ if you are using some tool which adds additional tracking files.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-O">
-<code class="descname">-O</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-O</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete odd files.  This is the opposite of <strong>-o</strong>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-M">
-<code class="descname">-M</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-m">
+<code class="descname">-M</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prefer mailboxes.db over cyrus.header - will rewrite ACL or
 uniqueid from the mailboxes.db into the header file rather than the
 other way around.  This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-V">
-<code class="descname">-V</code><code class="descclassname"> version</code><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-reconstruct-v">
+<code class="descname">-V</code><code class="descclassname"> version</code><a class="headerlink" href="#cmdoption-reconstruct-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the <code class="docutils literal"><span class="pre">cyrus.index</span></code> minor version to a specific <em>version</em>.
 This can be useful for upgrades or downgrades. Use a magical
 version of <em>max</em> to upgrade to the latest available database format
@@ -951,8 +951,8 @@ version.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-reconstruct-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-u" title="Permalink to this definition">¶</a></dt>
+<dt id="id3">
+<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give usernames on the command line</p>
 </dd></dl>
 
@@ -1052,7 +1052,7 @@ deprecated in Cyrus version 2.4.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Dec 18 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

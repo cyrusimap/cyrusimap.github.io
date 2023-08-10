@@ -843,14 +843,14 @@ supplied.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-cyr_expire-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-cyr_expire-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-c">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-cyr-expire-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-A">
-<code class="descname">-A</code><code class="descclassname"> archive-duration</code><a class="headerlink" href="#cmdoption-cyr_expire-A" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-a">
+<code class="descname">-A</code><code class="descclassname"> archive-duration</code><a class="headerlink" href="#cmdoption-cyr-expire-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Archive non-flagged messages older than <em>archive-duration</em> to the
 archive partition, allowing mailbox messages to be split between fast
 storage and slow large storage.  Only does anything if
@@ -861,8 +861,8 @@ corresponding <code class="docutils literal"><span class="pre">/vendonr/cmu/cyru
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-D">
-<code class="descname">-D</code><code class="descclassname"> delete-duration</code><a class="headerlink" href="#cmdoption-cyr_expire-D" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-d">
+<code class="descname">-D</code><code class="descclassname"> delete-duration</code><a class="headerlink" href="#cmdoption-cyr-expire-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove previously deleted mailboxes older than <em>delete-duration</em>
 (when using the &quot;delayed&quot; delete mode).
 The value can be a floating point number, and may have a suffix to
@@ -874,8 +874,8 @@ corresponding <code class="docutils literal"><span class="pre">/verdor/cmu/cyrus
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-E">
-<code class="descname">-E</code><code class="descclassname"> expire-duration</code><a class="headerlink" href="#cmdoption-cyr_expire-E" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-e">
+<code class="descname">-E</code><code class="descclassname"> expire-duration</code><a class="headerlink" href="#cmdoption-cyr-expire-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prune the duplicate database of entries older than <em>expire-duration</em>.
 This value is only used for entries which do not have a corresponding
 <code class="docutils literal"><span class="pre">/vendor/cmu/cyrus-imapd/expire</span></code> mailbox annotation.
@@ -883,24 +883,24 @@ Format is the same as delete-duration.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-X">
-<code class="descname">-X</code><code class="descclassname"> expunge-duration</code><a class="headerlink" href="#cmdoption-cyr_expire-X" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-x">
+<code class="descname">-X</code><code class="descclassname"> expunge-duration</code><a class="headerlink" href="#cmdoption-cyr-expire-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Expunge previously deleted messages older than <em>expunge-duration</em>
 (when using the &quot;delayed&quot; expunge mode).
 Format is the same as delete-duration.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-c">
-<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_expire-c" title="Permalink to this definition">¶</a></dt>
+<dt id="id1">
+<code class="descname">-c</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not expire conversation database entries, even if the conversations
 feature is enabled.</p>
 <p>This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-x">
-<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_expire-x" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-x</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not expunge messages even if using delayed expunge mode.  This
 reduces IO traffic considerably, allowing <code class="docutils literal"><span class="pre">cyr_expire</span></code> to be run
 frequently to clean up the duplicate database without overloading
@@ -908,35 +908,35 @@ the machine.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-p">
-<code class="descname">-p</code><code class="descclassname"> mailbox-prefix</code><a class="headerlink" href="#cmdoption-cyr_expire-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-p">
+<code class="descname">-p</code><code class="descclassname"> mailbox-prefix</code><a class="headerlink" href="#cmdoption-cyr-expire-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only find mailboxes starting with this prefix,  e.g.
 &quot;user.justgotspammedlots&quot;.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-u">
-<code class="descname">-u</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-cyr_expire-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-u">
+<code class="descname">-u</code><code class="descclassname"> userid</code><a class="headerlink" href="#cmdoption-cyr-expire-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only find mailboxes belonging to this user,  e.g.
 &quot;<a class="reference external" href="mailto:justgotspammedlots&#37;&#52;&#48;example&#46;com">justgotspammedlots<span>&#64;</span>example<span>&#46;</span>com</a>&quot;.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-t">
-<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_expire-t" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-t">
+<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr-expire-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove any user flags which are not used by remaining (not expunged)
 messages.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_expire-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr-expire-v">
+<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr-expire-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-cyr_expire-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_expire-a" title="Permalink to this definition">¶</a></dt>
+<dt id="id3">
+<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip the annotation lookup, so all <code class="docutils literal"><span class="pre">/vendor/cmu/cyrus-imapd/expire</span></code>
 annotations are ignored entirely.  It behaves as if they were not
 set, so only <em>expire-days</em> is considered for all mailboxes.</p>
@@ -996,7 +996,7 @@ version 3.0.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 04 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

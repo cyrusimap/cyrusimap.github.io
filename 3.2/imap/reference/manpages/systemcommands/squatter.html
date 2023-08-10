@@ -874,8 +874,8 @@ SEARCHed, just not as quickly as those with an index.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-squatter-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-squatter-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-c">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-squatter-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
@@ -895,8 +895,8 @@ implicit value of <em>/vendor/cmu/cyrus-imapd/squat</em> is &quot;false&quot;.</
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-A">
-<code class="descname">-A</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-A" title="Permalink to this definition">¶</a></dt>
+<dt id="id1">
+<code class="descname">-A</code><code class="descclassname"></code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Missing documentation, starts audit mode.
 This feature is only available on the master branch.</p>
 </dd></dl>
@@ -910,8 +910,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-F">
-<code class="descname">-F</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-F" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-f">
+<code class="descname">-F</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, filter the resulting database to only include
 messages which are not expunged in mailboxes with existing
 name/uidvalidity.
@@ -919,8 +919,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-f">
-<code class="descname">-f</code><code class="descclassname"> synclogfile</code><a class="headerlink" href="#cmdoption-squatter-f" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-f</code><code class="descclassname"> synclogfile</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the <em>synclogfile</em> and incrementally index all the mailboxes
 listed therein, then exit.
 This feature was introduced in version 3.0.</p>
@@ -939,15 +939,15 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-N">
-<code class="descname">-N</code><code class="descclassname"> name</code><a class="headerlink" href="#cmdoption-squatter-N" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-n">
+<code class="descname">-N</code><code class="descclassname"> name</code><a class="headerlink" href="#cmdoption-squatter-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only index mailboxes beginning with <em>name</em> while iterating through
 the mailbox list derived from other options.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-n">
-<code class="descname">-n</code><code class="descclassname"> channel</code><a class="headerlink" href="#cmdoption-squatter-n" title="Permalink to this definition">¶</a></dt>
+<dt id="id3">
+<code class="descname">-n</code><code class="descclassname"> channel</code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>In rolling mode, specify the name of the sync log <em>channel</em> that
 <strong>squatter</strong> will listen to.  The default is &quot;squatter&quot;.  This
 channel <strong>must</strong> be defined in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> before
@@ -964,15 +964,15 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-P">
-<code class="descname">-P</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-P" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-p">
+<code class="descname">-P</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Missing documentation, reindex parts mode.
 This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-R">
-<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-R" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-r">
+<code class="descname">-R</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run in rolling mode; <strong>squatter</strong> runs as a daemon listening to a
 sync log channel and continuously incrementally indexing mailboxes.
 See also <strong>-d</strong> and <strong>-n</strong>.
@@ -980,23 +980,23 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-r" title="Permalink to this definition">¶</a></dt>
+<dt id="id4">
+<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively create indexes for all sub-mailboxes of the user,
 mailboxes or mailbox prefixes given as arguments.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-S">
-<code class="descname">-S</code><code class="descclassname"> seconds</code><a class="headerlink" href="#cmdoption-squatter-S" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-s">
+<code class="descname">-S</code><code class="descclassname"> seconds</code><a class="headerlink" href="#cmdoption-squatter-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>After processing each mailbox, sleep for &quot;seconds&quot; before
 continuing. Can be used to provide some load balancing.  Accepts
 fractional amounts. This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-T">
-<code class="descname">-T</code><code class="descclassname"> directory</code><a class="headerlink" href="#cmdoption-squatter-T" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-t">
+<code class="descname">-T</code><code class="descclassname"> directory</code><a class="headerlink" href="#cmdoption-squatter-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>When indexing, work on a temporary copy of the search engine
 databases in <em>directory</em>.  That directory would typically be on
 some very fast filesystem, like an SSD or tmpfs.  This option may
@@ -1007,8 +1007,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-t">
-<code class="descname">-t</code><code class="descclassname"> srctier...</code><a class="headerlink" href="#cmdoption-squatter-t" title="Permalink to this definition">¶</a></dt>
+<dt id="id5">
+<code class="descname">-t</code><code class="descclassname"> srctier...</code><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, the comma-separated source tier(s) for the compacted
 indices.  At least one source tier must be specified in compact mode.
 Xapian only.
@@ -1024,8 +1024,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-U">
-<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-U" title="Permalink to this definition">¶</a></dt>
+<dt id="id6">
+<code class="descname">-U</code><code class="descclassname"></code><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, only compact if re-indexing.
 Xapian only.
 This feature is only available on the master branch.</p>
@@ -1041,8 +1041,8 @@ synclog modes, -vv sends even more messages to syslog.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-X">
-<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-X" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-squatter-x">
+<code class="descname">-X</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reindex all the messages before compacting.  This mode reads all
 the lists of messages indexed by the listed tiers, and re-indexes
 them into a temporary database before compacting that into place.
@@ -1060,8 +1060,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-squatter-Z">
-<code class="descname">-Z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-squatter-Z" title="Permalink to this definition">¶</a></dt>
+<dt id="id7">
+<code class="descname">-Z</code><code class="descclassname"></code><a class="headerlink" href="#id7" title="Permalink to this definition">¶</a></dt>
 <dd><p>When indexing messages, use the Xapian internal cyrusid rather than
 referencing the ranges of already indexed messages to know if a
 particular message is indexed.  Useful if the ranges get out of
@@ -1184,7 +1184,7 @@ Xapian documentation in this release before using Xapian.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

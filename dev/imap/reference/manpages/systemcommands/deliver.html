@@ -806,8 +806,8 @@ one or more IMAP mailboxes.</p>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-deliver-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-deliver-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-c">
+<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-deliver-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
 </dd></dl>
 
@@ -819,7 +819,7 @@ one or more IMAP mailboxes.</p>
 
 <dl class="option">
 <dt id="cmdoption-deliver-r">
-<span id="cmdoption-deliver--return-path"></span><code class="descname">-r</code><code class="descclassname"> address</code><code class="descclassname">, </code><code class="descname">--return-path</code><code class="descclassname">=address</code><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"> address</code><code class="descclassname">, </code><code class="descname">--return-path</code><code class="descclassname">=address</code><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a <strong>Return-Path:</strong> header containing <em>address</em>.</p>
 </dd></dl>
 
@@ -831,7 +831,7 @@ one or more IMAP mailboxes.</p>
 
 <dl class="option">
 <dt id="cmdoption-deliver-m">
-<span id="cmdoption-deliver--mailbox"></span><code class="descname">-m</code><code class="descclassname"> mailbox</code><code class="descclassname">, </code><code class="descname">--mailbox</code><code class="descclassname">=mailbox</code><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-m</code><code class="descclassname"> mailbox</code><code class="descclassname">, </code><code class="descname">--mailbox</code><code class="descclassname">=mailbox</code><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver to <strong>mailbox</strong>.  If any <em>userid</em>s are specified, attempts
 to deliver to <code class="docutils literal"><span class="pre">user.</span></code><em>userid</em><code class="docutils literal"><span class="pre">.mailbox</span></code> for each <em>userid</em>.
 If the ACL on any such mailbox does not grant the sender the &quot;p&quot;
@@ -843,19 +843,19 @@ the delivery fails.</p>
 
 <dl class="option">
 <dt id="cmdoption-deliver-a">
-<span id="cmdoption-deliver--auth-id"></span><code class="descname">-a</code><code class="descclassname"> auth-id</code><code class="descclassname">, </code><code class="descname">--auth-id</code><code class="descclassname">=auth-id</code><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-a</code><code class="descclassname"> auth-id</code><code class="descclassname">, </code><code class="descname">--auth-id</code><code class="descclassname">=auth-id</code><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the authorization id of the sender.  Defaults to &quot;anonymous&quot;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-deliver-q">
-<span id="cmdoption-deliver--ignore-quota"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-quota</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-quota</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver message even when receiving mailbox is over quota.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-deliver-l">
-<span id="cmdoption-deliver--lmtp"></span><code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--lmtp</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--lmtp</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept messages using the LMTP protocol.</p>
 </dd></dl>
 
@@ -908,7 +908,7 @@ present in US-ASCII.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>

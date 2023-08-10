@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -507,12 +507,12 @@ exact protocol exchange.  If there are n protocols and m different
 ways of authenticating, SASL attempts to make it so only n plus m
 different specifications need be written instead of n times m
 different specifications.  With the Cyrus SASL library, the mechanisms
-need only be written once, and they&#8217;ll work with all servers that use
+need only be written once, and they’ll work with all servers that use
 it.</p>
 <div class="section" id="authentication-and-authorization-identifiers">
 <span id="authid"></span><h3>Authentication and authorization identifiers<a class="headerlink" href="#authentication-and-authorization-identifiers" title="Permalink to this headline">¶</a></h3>
 <p>An important concept to become familiar with is the difference between
-an &#8220;authorization identifier&#8221; and an &#8220;authentication identifier&#8221;.</p>
+an “authorization identifier” and an “authentication identifier”.</p>
 <dl class="docutils">
 <dt>userid (user id, authorization id)</dt>
 <dd>The userid is the
@@ -522,47 +522,47 @@ allowed to write to <code class="docutils literal"><span class="pre">/home/bovik
 not to <code class="docutils literal"><span class="pre">/etc</span></code>.</dd>
 <dt>authid (authentication id)</dt>
 <dd><p class="first">The authentication identifier is
-the identifier that is being checked.  &#8220;bovik&#8220;&#8216;s password might be
-&#8220;qqqq&#8221;, and the system will authenticate anyone who knows &#8220;qqqq&#8221; as
-&#8220;bovik&#8221;.</p>
-<p class="last">However, it&#8217;s possible to authenticate as one user but
+the identifier that is being checked.  “bovik“‘s password might be
+“qqqq”, and the system will authenticate anyone who knows “qqqq” as
+“bovik”.</p>
+<p class="last">However, it’s possible to authenticate as one user but
 <em>act as</em> another user.  For instance, Harry might be away on
 vacation and assign one of his graduate students, Jane, to read his
 mail.  He might then allow Jane to act as him merely by supplying her
 password and her id as authentication but requesting authorization as
-&#8220;bovik&#8221;. So Jane might log in with an authentication identifier of
-&#8220;jane&#8221; and an authorization id of &#8220;bovik&#8221; and her own (Jane&#8217;s)
+“bovik”. So Jane might log in with an authentication identifier of
+“jane” and an authorization id of “bovik” and her own (Jane’s)
 password.</p>
 </dd>
 </dl>
 <p>Applications can set their own proxy policies; by default, the SASL
 library will only allow the same user to act for another (that is,
-userid must equal authid).  See your application&#8217;s documentation for
+userid must equal authid).  See your application’s documentation for
 details about changing the default proxy/authorization policies.</p>
 </div>
 <div class="section" id="realms">
 <span id="id1"></span><h3>Realms<a class="headerlink" href="#realms" title="Permalink to this headline">¶</a></h3>
-<p>The Cyrus SASL library supports the concept of &#8220;realms&#8221;.  A realm is
+<p>The Cyrus SASL library supports the concept of “realms”.  A realm is
 an abstract set of users and certain mechanisms authenticate users in
 a certain realm.</p>
 <p>In the simplest case, a single server on a single machine, the
 realm might be the fully-qualified domain name of the server.  If the
-applications don&#8217;t specify a realm to SASL, most mechanisms will
+applications don’t specify a realm to SASL, most mechanisms will
 default to this.</p>
 <p>If a site wishes to share passwords between multiple machines, it
-might choose it&#8217;s authentication realm as a domain name, such as
-&#8220;CMU.EDU&#8221;.  On the other hand, in order to prevent the entire site&#8217;s
+might choose it’s authentication realm as a domain name, such as
+“CMU.EDU”.  On the other hand, in order to prevent the entire site’s
 security from being compromised when one machine is compromised, each
-server could have it&#8217;s own realm. Certain mechanisms force the user
-(client side) to manually configure what realm they&#8217;re in, making it
+server could have it’s own realm. Certain mechanisms force the user
+(client side) to manually configure what realm they’re in, making it
 harder for users to authenticate.</p>
 <p>A single site might support multiple different realms.  This can
-confuse applications that weren&#8217;t written in anticipation of this; make
+confuse applications that weren’t written in anticipation of this; make
 sure your application can support it before adding users from different
 realms into your databases.</p>
 <p>To add users of different realms to sasldb, you can use the
 <code class="docutils literal"><span class="pre">-u</span></code> option to saslpasswd2.  The SQL plugin has a way of
-integrating the realm name into the query string with the &#8216;%r&#8217; macro.</p>
+integrating the realm name into the query string with the ‘%r’ macro.</p>
 <p>The Kerberos GSSAPI mechanism treats the SASL realm as the Kerberos
 realm.  Thus, the realm for Kerberos GSSAPI mechanism defaults to the
 default Kerberos realm on the server.  It may support cross-realm
@@ -572,8 +572,8 @@ however the way each saslauthd module deals with the situation is
 different (for example, the LDAP plugin allows you to use the realm
 to query the server, while the rimap and PAM plugins ignore it entirely).</p>
 <p>Realms are represented in a username string by any text following
-the &#8216;&#64;&#8217; sign.  So, usernames like <a class="reference external" href="mailto:rjs3&#37;&#52;&#48;ANDREW&#46;CMU&#46;EDU">rjs3<span>&#64;</span>ANDREW<span>&#46;</span>CMU<span>&#46;</span>EDU</a>, is user &#8216;rjs3&#8217;
-in the realm &#8216;ANDREW.CMU.EDU&#8217;.  If no realm is provided, the server&#8217;s
+the ‘&#64;’ sign.  So, usernames like <a class="reference external" href="mailto:rjs3&#37;&#52;&#48;ANDREW&#46;CMU&#46;EDU">rjs3<span>&#64;</span>ANDREW<span>&#46;</span>CMU<span>&#46;</span>EDU</a>, is user ‘rjs3’
+in the realm ‘ANDREW.CMU.EDU’.  If no realm is provided, the server’s
 FQDN is assumed (likewise when specifying a realm for saslpasswd2).</p>
 </div>
 </div>
@@ -587,7 +587,7 @@ implementation.</p>
 <h3>The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords<a class="headerlink" href="#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords" title="Permalink to this headline">¶</a></h3>
 <p>The PLAIN mechanism is not a secure method of authentication by
 itself.  It is intended for connections that are being encrypted by
-another level.  (For example, the IMAP command &#8220;STARTTLS&#8221; creates an
+another level.  (For example, the IMAP command “STARTTLS” creates an
 encrypted connection over which PLAIN might be used.) The PLAIN
 mechanism works by transmitting a userid, an authentication id, and a
 password to the server, and the server then determines whether that is
@@ -612,9 +612,9 @@ of saslauthd can be can be found in <code class="docutils literal"><span class="
 want something like <code class="docutils literal"><span class="pre">saslauthd</span> <span class="pre">-a</span> <span class="pre">pam</span></code>.  If plaintext authentications
 seem to be taking some time under load, increasing the value of the <code class="docutils literal"><span class="pre">-n</span></code>
 parameter can help.</p>
-<p>Saslauthd keeps its named socket in &#8220;/var/state/saslauthd&#8221; by default.
+<p>Saslauthd keeps its named socket in “/var/state/saslauthd” by default.
 This can be overridden by specifying an alternate value to
-&#8211;with-saslauthd=/foo/bar at compile time, or by passing the -m
+–with-saslauthd=/foo/bar at compile time, or by passing the -m
 parameter to saslauthd (along with setting the saslauthd_path SASL
 option).  Whatever directory this is, it must exist in order for
 saslauthd to function.</p>
@@ -631,7 +631,7 @@ name that is using saslauthd for authentication. Common service names
 are <code class="docutils literal"><span class="pre">imap</span></code>, <code class="docutils literal"><span class="pre">sieve</span></code>, and <code class="docutils literal"><span class="pre">smtp</span></code>.</p>
 </dd>
 <dt>Courier-IMAP authdaemond</dt>
-<dd><p class="first">contacts Courier-IMAP&#8217;s <code class="docutils literal"><span class="pre">authdaemond</span></code> daemon to check passwords.
+<dd><p class="first">contacts Courier-IMAP’s <code class="docutils literal"><span class="pre">authdaemond</span></code> daemon to check passwords.
 This daemon is simliar in functionality to <code class="docutils literal"><span class="pre">saslauthd</span></code>, and is shipped
 separately with the <a class="reference external" href="https://www.courier-mta.org">Courier</a> mail server.</p>
 <p>Note: this feature is <strong>not</strong> compiled in the library by default, and is
@@ -641,8 +641,8 @@ change at any time).  We have tested against the authdaemond included with
 Courier-IMAP 2.2.1.</p>
 <p class="last">To enable <code class="docutils literal"><span class="pre">authdaemond</span></code> support, pass <code class="docutils literal"><span class="pre">--with-authdaemon</span></code> to the
 configuration script, set pwcheck_method to <code class="docutils literal"><span class="pre">authdaemond''</span> <span class="pre">and</span> <span class="pre">point</span>
-<span class="pre">authdaemond_path</span> <span class="pre">to</span> <span class="pre">``authdaemond</span></code>&#8216;s unix socket. Optionally, you can
-specify &#8211;with-authdaemond=PATH to the configure script so that
+<span class="pre">authdaemond_path</span> <span class="pre">to</span> <span class="pre">``authdaemond</span></code>’s unix socket. Optionally, you can
+specify –with-authdaemond=PATH to the configure script so that
 authdaemond_path points to a default, static, location.</p>
 </dd>
 <dt>pwcheck</dt>
@@ -663,23 +663,23 @@ support a new method, and to add that method to
 adding a routine is to create a new saslauthd mechanism.</p>
 </dd>
 </dl>
-<p>The LOGIN mechanism (not to be confused with IMAP4&#8217;s LOGIN command)
-is an undocumented, unsupported mechanism.  It&#8217;s included in the Cyrus
+<p>The LOGIN mechanism (not to be confused with IMAP4’s LOGIN command)
+is an undocumented, unsupported mechanism.  It’s included in the Cyrus
 SASL distribution for the sake of SMTP servers that might want to
 interoperate with old clients.  Do not enable this mechanism unless
-you know you&#8217;re going to need it.  When enabled, it verifies passwords
+you know you’re going to need it.  When enabled, it verifies passwords
 the same way the PLAIN mechanism does.</p>
 </div>
 <div class="section" id="shared-secrets-mechanisms">
 <h3>Shared secrets mechanisms<a class="headerlink" href="#shared-secrets-mechanisms" title="Permalink to this headline">¶</a></h3>
-<p>The Cyrus SASL library also supports some &#8220;shared secret&#8221;
+<p>The Cyrus SASL library also supports some “shared secret”
 authentication methods: CRAM-MD5 and SCRAM.
-These methods rely on the client and the server sharing a &#8220;secret&#8221;,
+These methods rely on the client and the server sharing a “secret”,
 usually a password.  The server generates a challenge and the client a
 response proving that it knows the shared secret.  This is much more
 secure than simply sending the secret over the wire proving that the
 client knows it.</p>
-<p>There&#8217;s a downside: in order to verify such responses, the
+<p>There’s a downside: in order to verify such responses, the
 server must keep passwords or password equivalents in a database;
 if this database is compromised, it is the same as if all the
 passwords for the realm are compromised.</p>
@@ -687,7 +687,7 @@ passwords for the realm are compromised.</p>
 If you do not wish to advertise these methods for that reason (i.e. you
 are only using saslauthd for password verification), then either remove
 the non-plaintext plugins (those other than login and plain) from the
-plugin directory, or use the <a class="reference internal" href="options.html#cmdoption-arg-mech_list"><code class="xref std std-option docutils literal"><span class="pre">mech_list</span></code></a> option to disable them.</p>
+plugin directory, or use the <a class="reference internal" href="options.html#cmdoption-arg-mech-list"><code class="xref std std-option docutils literal"><span class="pre">mech_list</span></code></a> option to disable them.</p>
 <p>For simplicity sake, the Cyrus SASL library stores plaintext
 passwords only in the <code class="docutils literal"><span class="pre">/etc/sasldb2</span></code> database.  These passwords
 are then shared among all mechanisms which choose to use it.
@@ -695,7 +695,7 @@ Depending on the exact database method
 used (gdbm, ndbm, or db) the file may have different suffixes or may
 even have two different files (<code class="docutils literal"><span class="pre">sasldb.dir</span></code> and
 <code class="docutils literal"><span class="pre">sasldb.pag</span></code>).  It is also possible for a server to define
-it&#8217;s own way of storing authentication secrets.  Currently, no
+it’s own way of storing authentication secrets.  Currently, no
 application is known to do this.</p>
 <p>The principle problem for a system administrator is to make sure that
 sasldb is properly protected. Only the servers that need to read it to
@@ -706,18 +706,18 @@ plaintext versions of all of its passwords. If it is compromised so
 are all of the passwords that it stores</strong>.</p>
 <p>Managing password changes is outside the scope of the library.
 However, system administrators should probably make a way of letting
-user&#8217;s change their passwords available to users.  The
+user’s change their passwords available to users.  The
 <code class="docutils literal"><span class="pre">saslpasswd2</span></code> utility is provided to change the secrets in
 sasldb.  It does not affect PAM, <code class="docutils literal"><span class="pre">/etc/passwd</span></code>, or any other
 standard system library; it only affects secrets stored in sasldb.</p>
 <p>Finally, system administrators should think if they want to enable
-&#8220;auto_transition&#8221;.  If set, the library will automatically create
+“auto_transition”.  If set, the library will automatically create
 secrets in sasldb when a user uses PLAIN to successfully authenticate.
 However, this means that the individual servers, such as imapd, need
 read/write access to sasldb, not just read access.  By default,
-&#8220;auto_transition&#8221; is set to false; set it to true to enable.  (There&#8217;s
-no point in enabling this option if &#8220;pwcheck_method&#8221; is &#8220;auxprop&#8221;,
-and the sasldb plugin is installed, since you&#8217;ll be transitioning from
+“auto_transition” is set to false; set it to true to enable.  (There’s
+no point in enabling this option if “pwcheck_method” is “auxprop”,
+and the sasldb plugin is installed, since you’ll be transitioning from
 a plaintext store to a plaintext store)</p>
 </div>
 <div class="section" id="kerberos-mechanism">
@@ -747,8 +747,8 @@ not be stored on the system.  These one-time passwords are stored in the
 can be configured to use OPIE v2.4 instead of using its own database
 and server-side routines.</p>
 <p>OPIE should be configured with the <code class="docutils literal"><span class="pre">--disable-user-locking</span></code>
-option if the SASL server application will not be running as &#8220;root&#8221;.</p>
-<p>OPIE uses its own &#8220;opiekeys&#8221; database for storing the data necessary
+option if the SASL server application will not be running as “root”.</p>
+<p>OPIE uses its own “opiekeys” database for storing the data necessary
 for generating the server challenges.  The location of the <a class="reference internal" href="options.html#cmdoption-arg-opiekeys"><code class="xref std std-option docutils literal"><span class="pre">opiekeys</span></code></a>
 file is configurable in SASL; by default it is <code class="docutils literal"><span class="pre">/etc/opiekeys</span></code>,
 but this is modifiable by the <a class="reference internal" href="options.html#cmdoption-arg-opiekeys"><code class="xref std std-option docutils literal"><span class="pre">opiekeys</span></code></a> option.</p>
@@ -766,17 +766,17 @@ internally take advantage of this to do password lookups in directories
 such as the SASLdb, LDAP or a SQL database.  Applications can look up arbitrary properties through them.</p>
 <p>Note that this means that if your password database is in a SASLdb, and
 you wish to use it for plaintext password lookups through the sasldb, you
-will need to set the sasl <a class="reference internal" href="options.html#cmdoption-arg-pwcheck_method"><code class="xref std std-option docutils literal"><span class="pre">pwcheck_method</span></code></a> to be <code class="docutils literal"><span class="pre">auxprop</span></code>.</p>
+will need to set the sasl <a class="reference internal" href="options.html#cmdoption-arg-pwcheck-method"><code class="xref std std-option docutils literal"><span class="pre">pwcheck_method</span></code></a> to be <code class="docutils literal"><span class="pre">auxprop</span></code>.</p>
 </div>
 <div class="section" id="how-to-set-configuration-options">
 <h2>How to set configuration options<a class="headerlink" href="#how-to-set-configuration-options" title="Permalink to this headline">¶</a></h2>
 <p>The Cyrus SASL library comes with a built-in configuration file
 reader.  However, it is also possible for applications to redefine
-where the library gets it&#8217;s configuration options from.</p>
+where the library gets it’s configuration options from.</p>
 <div class="section" id="the-default-configuration-file">
 <span id="saslconf"></span><h3>The default configuration file<a class="headerlink" href="#the-default-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>By default, the Cyrus SASL library reads its options from
-<code class="docutils literal"><span class="pre">/usr/lib/sasl2/App.conf</span></code> (where &#8220;App&#8221; is the application
+<code class="docutils literal"><span class="pre">/usr/lib/sasl2/App.conf</span></code> (where “App” is the application
 defined name of the application).  For instance, Sendmail reads its
 configuration from <code class="docutils literal"><span class="pre">/usr/lib/sasl2/Sendmail.conf</span></code> and the
 sample server application included with the library looks in
@@ -790,11 +790,11 @@ sample server application included with the library looks in
 <div class="section" id="application-configuration">
 <h3>Application configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Applications can redefine how the SASL library looks for configuration
-information.  Check your application&#8217;s documentation for specifics.</p>
+information.  Check your application’s documentation for specifics.</p>
 <p>For instance, Cyrus imapd reads its sasl options from its own
 configuration file, <code class="docutils literal"><span class="pre">/etc/imapd.conf</span></code>, by prepending all SASL
-options with <code class="docutils literal"><span class="pre">sasl_</span></code>: the SASL option &#8220;pwcheck_method&#8221; is set
-by changing &#8220;sasl_pwcheck_method&#8221; in <code class="docutils literal"><span class="pre">/etc/imapd.conf</span></code>.</p>
+options with <code class="docutils literal"><span class="pre">sasl_</span></code>: the SASL option “pwcheck_method” is set
+by changing “sasl_pwcheck_method” in <code class="docutils literal"><span class="pre">/etc/imapd.conf</span></code>.</p>
 </div>
 <div class="section" id="default-pathnames">
 <h3>Default pathnames<a class="headerlink" href="#default-pathnames" title="Permalink to this headline">¶</a></h3>
@@ -826,49 +826,49 @@ system registry. The Windows registry key is</p>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt>Why doesn&#8217;t OTP doesn&#8217;t appear as an available mechanism?</dt>
+<dt>Why doesn’t OTP doesn’t appear as an available mechanism?</dt>
 <dd>If using OPIE, check that the <code class="docutils literal"><span class="pre">opiekeys</span></code> file is
 readable by the user running the daemon.  For Cyrus imapd, it must
 be readable by the Cyrus user.  By default, the library looks for the
-opiekeys in <code class="docutils literal"><span class="pre">/etc/opiekeys</span></code>, but it&#8217;s configurable using the
+opiekeys in <code class="docutils literal"><span class="pre">/etc/opiekeys</span></code>, but it’s configurable using the
 <a class="reference internal" href="options.html#cmdoption-arg-opiekeys"><code class="xref std std-option docutils literal"><span class="pre">opiekeys</span></code></a> option.</dd>
-<dt>Why don&#8217;t CRAM-MD5 and SCRAM work with my old sasldb?</dt>
+<dt>Why don’t CRAM-MD5 and SCRAM work with my old sasldb?</dt>
 <dd>Because sasldb now stores plaintext passwords only, the old
 sasldb is incompatible.</dd>
-<dt>I&#8217;m having performance problems on each authentication, there is a noticeable slowdown when sasl initializes, what can I do?</dt>
+<dt>I’m having performance problems on each authentication, there is a noticeable slowdown when sasl initializes, what can I do?</dt>
 <dd><p class="first">libsasl reads from <code class="docutils literal"><span class="pre">/dev/random</span></code> as part of its
-initialization. <code class="docutils literal"><span class="pre">/dev/random</span></code> is a &#8220;secure&#8221; source of entropy,
+initialization. <code class="docutils literal"><span class="pre">/dev/random</span></code> is a “secure” source of entropy,
 and will block your application until a sufficient amount of
-randomness has been collected to meet libsasl&#8217;s needs.</p>
+randomness has been collected to meet libsasl’s needs.</p>
 <p class="last">To improve performance, you can change DEV_RANDOM in
 <code class="docutils literal"><span class="pre">config.h</span></code> to be <code class="docutils literal"><span class="pre">/dev/urandom</span></code> and recompile
 libsasl. <code class="docutils literal"><span class="pre">/dev/urandom</span></code> offers less secure random numbers but
 should return immediately. The included mechanisms, besides OTP and
 SRP, use random numbers only to generate nonces, so using
-<code class="docutils literal"><span class="pre">/dev/urandom</span></code> is safe if you aren&#8217;t using OTP or SRP.</p>
+<code class="docutils literal"><span class="pre">/dev/urandom</span></code> is safe if you aren’t using OTP or SRP.</p>
 </dd>
-<dt>I&#8217;ve converted the sasldb database to the new format. Why can&#8217;t anybody authenticate?</dt>
+<dt>I’ve converted the sasldb database to the new format. Why can’t anybody authenticate?</dt>
 <dd><p class="first">sasldb is now a plugin module for the auxprop method.
 Make sure you changed the /usr/lib/sasl2/*.conf files to reflect
 <code class="docutils literal"><span class="pre">pwcheck_method:</span> <span class="pre">auxprop</span></code></p>
-<p class="last">...and if you&#8217;re using cyrus-imapd, /etc/imapd.conf must reflect:
+<p class="last">…and if you’re using cyrus-imapd, /etc/imapd.conf must reflect:
 <code class="docutils literal"><span class="pre">sasl_pwcheck_method:</span> <span class="pre">auxprop</span></code></p>
 </dd>
 <dt>Is LOGIN supported?</dt>
 <dd>The LOGIN mechanism is a non-standard, undocumented
-plaintext mechanism.  It&#8217;s included in the SASL distribution purely
-for sites that need it to interoperate with old clients; we don&#8217;t
-support it.  Don&#8217;t enable it unless you know you need it.</dd>
+plaintext mechanism.  It’s included in the SASL distribution purely
+for sites that need it to interoperate with old clients; we don’t
+support it.  Don’t enable it unless you know you need it.</dd>
 <dt>How can I get a non-root application to check plaintext passwords?</dt>
-<dd>Use the &#8220;saslauthd&#8221; daemon and setting &#8220;pwcheck_method&#8221;
-to &#8220;saslauthd&#8221;.</dd>
-<dt>It&#8217;s not working and won&#8217;t tell me why! Help!</dt>
+<dd>Use the “saslauthd” daemon and setting “pwcheck_method”
+to “saslauthd”.</dd>
+<dt>It’s not working and won’t tell me why! Help!</dt>
 <dd><p class="first">Check syslog output (usually stored in
 <code class="docutils literal"><span class="pre">/var/log</span></code>) for more information. You might want to change your
 syslog configuration (usually <code class="docutils literal"><span class="pre">/etc/syslogd.conf</span></code>) to log
-&#8220;*.debug&#8221; to a file while debugging a problem.</p>
+“*.debug” to a file while debugging a problem.</p>
 <p class="last">The developers make heavy use of <code class="docutils literal"><span class="pre">strace</span></code> or <code class="docutils literal"><span class="pre">truss</span></code>
-when debugging a problem that isn&#8217;t outputting any useful
+when debugging a problem that isn’t outputting any useful
 information.</p>
 </dd>
 <dt>Is there a mailing list to discuss the Cyrus SASL library?</dt>
@@ -899,7 +899,7 @@ with us, including mailing lists and IRC.</dd>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
