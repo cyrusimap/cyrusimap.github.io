@@ -194,7 +194,9 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,7 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -320,6 +322,7 @@
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,10 +350,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +381,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +412,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -490,7 +494,7 @@ that uses almost every part of SASL, so it should give a good idea what caveats
 need to be looked for when one is converting an application which uses SASLv1
 to use SASLv2.</p>
 <p>The major changes in the SASLv2 API have to do with memory management.
-That is, the rule “If you allocate it, you free it” is now enforced.  That
+That is, the rule &#8220;If you allocate it, you free it&#8221; is now enforced.  That
 means that if the application allocates something (for example, an interaction
 or callback response), it must free it.  Likewise, the application does
 NOT free anything handed to it by the SASL library, such as responses
@@ -525,7 +529,7 @@ are in one of the following formats:<ul>
 </ul>
 </li>
 <li>Error handling and reporting is different. All of the functions that used
-to return a “reply” string no longer do.  Now you should (always) check
+to return a &#8220;reply&#8221; string no longer do.  Now you should (always) check
 <code class="docutils literal"><span class="pre">sasl_errdetail</span></code>.  Callbacks MUST likewise use <code class="docutils literal"><span class="pre">sasl_seterror</span></code>
 instead of setting their (now nonexistent) reply parameter.</li>
 <li>Be very careful about your handling of maxoutbuf.  If you claim that
@@ -537,13 +541,13 @@ that much at a time to the SASL library!</li>
 <h2>Tips for clients<a class="headerlink" href="#tips-for-clients" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>In <code class="docutils literal"><span class="pre">sasl_client_new</span></code> you can now pass ip address strings as
-parameters 3 and 4 instead of calling setprop later on sockaddr’s.
+parameters 3 and 4 instead of calling setprop later on sockaddr&#8217;s.
 This is preferred but not required (not passing them by either method disables
 mechs which require IP address information).   You might find the iptostring()
 function in utils/smtptest.c to be useful for this.  If the protocol supports
 the server sending data on success you should pass SASL_SUCCESS_DATA as a
 flag.</li>
-<li><code class="docutils literal"><span class="pre">sasl_client_start</span></code> loses the 3rd “secret” parameter.
+<li><code class="docutils literal"><span class="pre">sasl_client_start</span></code> loses the 3rd &#8220;secret&#8221; parameter.
 Also, NULL clientout and clientoutlen indicates that the protocol does not
 support client-send-first.  A NULL return value indicates that there is no
 first client send. (as opposed to an empty string, which indicates that
@@ -563,7 +567,7 @@ security layer is solely determined by the security properties information,
 namely, the <code class="docutils literal"><span class="pre">maxbufsize</span></code> member of the
 <code class="docutils literal"><span class="pre">sasl_security_properties_t</span></code></li>
 <li><code class="docutils literal"><span class="pre">sasl_server_new</span></code> now can take ip address strings.</li>
-<li><code class="docutils literal"><span class="pre">sasl_checkpass</span></code> no longer has a “reply” parameter.  There
+<li><code class="docutils literal"><span class="pre">sasl_checkpass</span></code> no longer has a &#8220;reply&#8221; parameter.  There
 are also considerably fewer possible values for the pwcheck_method
 option (now only auxprop, saslauthd, authdaemond, and pwcheck).</li>
 <li><code class="docutils literal"><span class="pre">sasl_server_start</span></code> / <code class="docutils literal"><span class="pre">sasl_server_step</span></code> have same
@@ -598,7 +602,7 @@ and do canonicalization in the SASL_CB_CANON_USER callback</li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

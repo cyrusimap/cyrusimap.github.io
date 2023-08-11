@@ -194,7 +194,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,7 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -320,6 +322,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,10 +350,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +381,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +412,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -493,11 +497,11 @@
 <li>build:<ul>
 <li>configure - Restore LIBS after checking gss_inquire_sec_context_by_oid</li>
 <li>makemd5.c - Fix potential out of bound writes</li>
-<li>fix build with –disable-shared –enable-static</li>
+<li>fix build with &#8211;disable-shared &#8211;enable-static</li>
 <li>Dozens of fixes for Windows specific builds</li>
 <li>Fix cross platform builds with SPNEGO</li>
 <li>Do not try to build broken java subtree</li>
-<li>Fix build error with –enable-auth-sasldb</li>
+<li>Fix build error with &#8211;enable-auth-sasldb</li>
 </ul>
 </li>
 <li>common:<ul>
@@ -637,7 +641,7 @@
 </ul>
 </li>
 <li>LOGIN plugin:<ul>
-<li>Don’t prompt client for password until requested by server</li>
+<li>Don&#8217;t prompt client for password until requested by server</li>
 </ul>
 </li>
 <li>NTLM plugin:<ul>
@@ -646,7 +650,7 @@
 </li>
 <li>saslauthd:<ul>
 <li>cache.c:<ul>
-<li>Don’t use cached credentials if timeout has expired</li>
+<li>Don&#8217;t use cached credentials if timeout has expired</li>
 <li>Fixed debug logging output</li>
 </ul>
 </li>
@@ -661,7 +665,7 @@
 <li>auth_rimap.c:<ul>
 <li>Added support LOGOUT command</li>
 <li>Added support for unsolicited CAPABILITY responses in LOGIN reply</li>
-<li>Properly detect end of responses (don’t needlessly wait)</li>
+<li>Properly detect end of responses (don&#8217;t needlessly wait)</li>
 <li>Properly handle backslash in passwords</li>
 </ul>
 </li>
@@ -703,7 +707,7 @@ HTTP capable</li>
 </ul>
 </li>
 <li>DIGEST-MD5 plugin:<ul>
-<li>Correctly send “stale” directive to prevent clients from (re)promtping
+<li>Correctly send &#8220;stale&#8221; directive to prevent clients from (re)promtping
 for password</li>
 <li>Better handling of HTTP reauthentication cases</li>
 <li>fixed some memory leaks</li>
@@ -736,7 +740,7 @@ which might be causing crashes</li>
 <div class="section" id="new-in-2-1-25">
 <h2>New in 2.1.25<a class="headerlink" href="#new-in-2-1-25" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Make sure that a failed authorization doesn’t preclude
+<li>Make sure that a failed authorization doesn&#8217;t preclude
 further server-side SASL authentication attempts from working.</li>
 <li>Fixed a crash caused by aborted SASL authentication
 and initiation of another one using the same SASL context.</li>
@@ -748,13 +752,13 @@ has failed (multiple SASL plugins)</li>
 in the server side code.</li>
 <li>Added support for channel bindings</li>
 <li>Added support for ordering SASL mechanisms by strength (on the client side),
-or using the “client_mech_list” option.</li>
-<li>server_idle needs to obey server’s SASL mechanism list from the server
+or using the &#8220;client_mech_list&#8221; option.</li>
+<li>server_idle needs to obey server&#8217;s SASL mechanism list from the server
 context.</li>
 <li>Better server plugin API mismatch reporting</li>
 <li>Build:
 - Updated config to the latest GNU snapshot
-- Fixed SASL’s libtool MacOS/X 64-bit file magic</li>
+- Fixed SASL&#8217;s libtool MacOS/X 64-bit file magic</li>
 <li>New SASL plugin: SCRAM</li>
 <li>New SASL plugin: GS2</li>
 <li>DIGEST-MD5 plugin:</li>
@@ -784,9 +788,9 @@ advertised realm and providing their own.</li>
 <li>GSSAPI plugin:<ul>
 <li>Fix to build GSSAPI with Heimdal</li>
 <li>Properly set serveroutlen to 0 in one place.
-Don’t send empty challenge once server context establishment is done,
+Don&#8217;t send empty challenge once server context establishment is done,
 as this is in violation of the RFC 2222 and its successor.</li>
-<li>Don’t send maxbuf, if no security layer can be established.
+<li>Don&#8217;t send maxbuf, if no security layer can be established.
 Added additional checks for buffer lengths.</li>
 </ul>
 </li>
@@ -797,15 +801,15 @@ Added additional checks for buffer lengths.</li>
 <div class="section" id="new-in-2-1-24">
 <h2>New in 2.1.24<a class="headerlink" href="#new-in-2-1-24" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Order advertised server-side SASL mechanisms per the specified ‘mech_list’
-option or by relative “strength”</li>
+<li>Order advertised server-side SASL mechanisms per the specified &#8216;mech_list&#8217;
+option or by relative &#8220;strength&#8221;</li>
 <li>Make sure that sasl_set_alloc() has no effect once sasl_client_init()
 or sasl_server_init() is called</li>
 <li>Fixed sasl_set_mutex() to disallow changing mutex management functions
 once sasl_server_init()/sasl_client_init() is called (bug # 3083)</li>
 <li>Removed unused mutexes in lib/client.c and lib/server.c (bug # 3141)</li>
 <li>Added direct support for hashed password to auxprop API</li>
-<li>Don’t treat a constraint violation as an error to store an auxprop property</li>
+<li>Don&#8217;t treat a constraint violation as an error to store an auxprop property</li>
 <li>Extended libsasl (auxprop) to support user deletion</li>
 <li>Extended SASL auxprop_lookup to return error code</li>
 <li>Updated sasl_user_exists() so that it can handle passwordless accounts (e.g. disabled)</li>
@@ -839,19 +843,19 @@ so that crypt is correctly defined</li>
 </ul>
 </li>
 <li>SASLDB plugin:<ul>
-<li>Fixed spurious ‘user not found’ errors caused by an attempt
+<li>Fixed spurious &#8216;user not found&#8217; errors caused by an attempt
 to delete a non-existent property</li>
 <li>Added direct support for hashed password to auxprop API</li>
 <li>Sleepycat driver:  Return SASL_NOUSER instead of SASL_FAIL when the database
-file doesn’t exist</li>
-<li>Ignore properties starting with ‘*’ in the auxprop store function</li>
+file doesn&#8217;t exist</li>
+<li>Ignore properties starting with &#8216;*&#8217; in the auxprop store function</li>
 </ul>
 </li>
 <li>SQL plugin:
 - Added support for SQLITE3
 - Uninitialized variables can cause crash when the searched user is not found
 - Added direct support for hashed password
-- Ignore properties starting with ‘*’ in the auxprop store function</li>
+- Ignore properties starting with &#8216;*&#8217; in the auxprop store function</li>
 <li>LDAPDB plugin:<ul>
 <li>Added code to extend LDAPDB into a canon_user plugin in addition
 to its existing auxprop plugin functionality</li>
@@ -876,10 +880,10 @@ a single qop option from the client.</li>
 <li>EXTERNAL plugin:
 - Make auxprop lookup calls optional</li>
 <li>NTLM plugin:
-- allow a comma separated list of servernames in ‘ntlm_server’ option
+- allow a comma separated list of servernames in &#8216;ntlm_server&#8217; option
 - Fixed crash in calculating NTv2 reponse</li>
 <li>OTP plugin:
-- Don’t use a stack variable for an OTP prompt (bug # 2822)
+- Don&#8217;t use a stack variable for an OTP prompt (bug # 2822)
 - Downgrade the failure to store OTP secret to debug level</li>
 <li>KERBEROS_V4 plugin:
 - Make auxprop lookup calls optional</li>
@@ -909,14 +913,14 @@ the value only once and cache it for later use.</li>
 <li>Fixed load_config to search for the config file in all directories
 (bug # 2796). Changed the default search path to be
 /usr/lib/sasl2:/etc/sasl2</li>
-<li>Don’t ignore log_level configuration option in default UNIX syslog
+<li>Don&#8217;t ignore log_level configuration option in default UNIX syslog
 logging callback</li>
 <li>(Windows) Minor IPv6 related changes in Makefiles for Visual Studio 6</li>
 <li>(Windows) Fixed bug of not setting the CODEGEN (code generation option)
 nmake option if STATIC nmake option is set.</li>
 <li>Several fixed to DIGEST-MD5 plugin:<ul>
 <li>Enable RC4 cipher in Windows build of DIGEST-MD5</li>
-<li>Server side: handle missing realm option as if realm=”” was sent</li>
+<li>Server side: handle missing realm option as if realm=&#8221;&#8221; was sent</li>
 <li>Fix DIGEST-MD5 to properly advertise maxssf when both DES and RC4
 are disabled</li>
 <li>Check that DIGEST-MD5 SASL packet are no shorter than 16 bytes</li>
@@ -926,12 +930,12 @@ are disabled</li>
 <li>Prevent spurious SASL_NOUSER errors</li>
 <li>Added ability to keep BerkleyDB handle open between operations
 (for performance reason). New behavior can be enabled
-with –enable-keep-db-open.</li>
+with &#8211;enable-keep-db-open.</li>
 </ul>
 </li>
 <li>Better error checking in SQL (MySQL) auxprop plugin code</li>
 <li>Added support for HTTP POST password validation in saslauthd</li>
-<li>Added new application (“pluginviewer”) that helps report information
+<li>Added new application (&#8220;pluginviewer&#8221;) that helps report information
 about installed plugins</li>
 <li>Allow for building with OpenSSL 0.9.8</li>
 <li>Allow for building with OpenLDAP 2.3+</li>
@@ -970,10 +974,10 @@ saslauthd, %R token in LDAP module)</li>
 <div class="section" id="new-in-2-1-18">
 <h2>New in 2.1.18<a class="headerlink" href="#new-in-2-1-18" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>saslauthd/LDAP no longer tagged “experimental”</li>
+<li>saslauthd/LDAP no longer tagged &#8220;experimental&#8221;</li>
 <li>Add group membership check to saslauthd/LDAP</li>
-<li>Fix Solaris 9 “NI_WITHSCOPEID” issue</li>
-<li>Fix missing “getaddrinfo.c” and other distribution problems</li>
+<li>Fix Solaris 9 &#8220;NI_WITHSCOPEID&#8221; issue</li>
+<li>Fix missing &#8220;getaddrinfo.c&#8221; and other distribution problems</li>
 <li>Significant Windows enhancements</li>
 <li>A large number of other minor bugfixes and cleanups</li>
 </ul>
@@ -981,7 +985,7 @@ saslauthd, %R token in LDAP module)</li>
 <div class="section" id="new-in-2-1-17">
 <h2>New in 2.1.17<a class="headerlink" href="#new-in-2-1-17" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allow selection of GSSAPI implementation explicitly (–with-gss_impl)</li>
+<li>Allow selection of GSSAPI implementation explicitly (&#8211;with-gss_impl)</li>
 <li>Other GSSAPI detection improvements</li>
 <li>Now correctly do authorizaton callback in sasl_checkpass()</li>
 <li>Disable KERBEROS_V4 by default</li>
@@ -1066,7 +1070,7 @@ Directory.</li>
 <h2>New in 2.1.8<a class="headerlink" href="#new-in-2-1-8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Support for the NTLM mechanism (Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</li>
-<li>Support libtool –enable-shared and –enable-static
+<li>Support libtool &#8211;enable-shared and &#8211;enable-static
 (Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
 <li>OS/390 Support (Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
 <li>Berkeley DB 4.1 Support (Mika Iisakkila &lt;<a class="reference external" href="mailto:mika&#46;iisakkila&#37;&#52;&#48;pingrid&#46;fi">mika<span>&#46;</span>iisakkila<span>&#64;</span>pingrid<span>&#46;</span>fi</a>&gt;)</li>
@@ -1121,8 +1125,8 @@ digest string.</li>
 is now shared between them. (mostly due to Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</li>
 <li>DIGEST-MD5 now supports reauthentication.  Also has a fix for DES
 interoperability.</li>
-<li>saslauthd now supports the Solaris “doors” IPC method
-(–with-ipctype=doors)</li>
+<li>saslauthd now supports the Solaris &#8220;doors&#8221; IPC method
+(&#8211;with-ipctype=doors)</li>
 <li>Significant GSSAPI fixes (mostly due to Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
 <li>Auxprop interface now correctly deals with the * prefix indicating
 authid vs. authzid.  (May break some incompatible auxprop plugins).</li>
@@ -1187,7 +1191,7 @@ compatible with applications that require SASLv1.</li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

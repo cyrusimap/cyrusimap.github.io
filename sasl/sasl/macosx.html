@@ -195,6 +195,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -320,6 +321,7 @@
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,7 +349,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
@@ -363,7 +365,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +379,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +410,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -490,7 +492,7 @@
   <div class="section" id="building-and-using-cyrus-sasl-on-mac-os-x">
 <span id="install-macos"></span><h1>Building and using Cyrus SASL on Mac OS X<a class="headerlink" href="#building-and-using-cyrus-sasl-on-mac-os-x" title="Permalink to this headline">¶</a></h1>
 <p>The Cyrus SASL v2 distribution now supports Mac OS X, including
-applications written to Apple’s Carbon and Cocoa interfaces, as well
+applications written to Apple&#8217;s Carbon and Cocoa interfaces, as well
 as the standard Unix-like API. It includes the following
 components:</p>
 <ul class="simple">
@@ -498,7 +500,7 @@ components:</p>
 (or similar) and with plugins in <code class="docutils literal"><span class="pre">/usr/lib/sasl</span></code> (which should be a symlink to <code class="docutils literal"><span class="pre">/usr/local/lib/sasl</span></code>).</li>
 <li>A framework which lives in
 <code class="docutils literal"><span class="pre">/Library/Frameworks/SASL2.framework</span></code>, and allows the use of the
-<code class="docutils literal"><span class="pre">-framework</span></code> option to Apple’s <code class="docutils literal"><span class="pre">ld</span></code>, or linking with the
+<code class="docutils literal"><span class="pre">-framework</span></code> option to Apple&#8217;s <code class="docutils literal"><span class="pre">ld</span></code>, or linking with the
 framework in Project Builder. This framework is in fact a wrapper for a
 symlink to <code class="docutils literal"><span class="pre">/usr/local/lib/libsasl2.dylib</span></code> with the necessary
 information to recognize it as a framework. This is what we expect many
@@ -509,11 +511,11 @@ can be linked in by Carbon CFM applications, that uses CFBundle to bind
 the framework and thus load the Unix-level library. It automatically loads
 the important functions at <code class="docutils literal"><span class="pre">sasl_client_init</span></code> or
 <code class="docutils literal"><span class="pre">sasl_server_init</span></code> time; it also automatically makes sure memory
-allocation works if you’re using the metrowerks malloc; if you’re not,
+allocation works if you&#8217;re using the metrowerks malloc; if you&#8217;re not,
 <code class="docutils literal"><span class="pre">sasl_set_alloc</span></code> works as usual.</li>
 <li>A Carbon port of the existing CFM library for Mac OS 9. Note that
 this could probably be modified fairly easily to work on OS X, but
-there’s not much point. The CFM glue layer to the Unix library
+there&#8217;s not much point. The CFM glue layer to the Unix library
 supports many more functions, including the entire server API; also,
 the Unix implementation is mostly independent of Kerberos
 implementation, while the Mac OS 9 Carbon port specifically requires
@@ -539,7 +541,7 @@ with SASL; it is provided with the distribution in a tarball. You should
 <code class="docutils literal"><span class="pre">make</span></code> and <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> the <code class="docutils literal"><span class="pre">dlcompat</span></code> library
 (which probably goes into <code class="docutils literal"><span class="pre">/usr/local/lib/libdl.dylib</span></code>) before
 attempting to <code class="docutils literal"><span class="pre">./configure</span></code> the SASL distribution itself. SASL will
-then pretend it’s a real Unix <code class="docutils literal"><span class="pre">libdl</span></code>, and link against it.</p>
+then pretend it&#8217;s a real Unix <code class="docutils literal"><span class="pre">libdl</span></code>, and link against it.</p>
 <p>Since there are, at this point, newer and far more complex versions of
 dlcompat, you may prefer to use those instead if other software requires
 their functionality. The dlcompat homepage is located on the <a class="reference external" href="http://www.opendarwin.org/projects/dlcompat">OpenDarwin</a>
@@ -549,7 +551,7 @@ well as possibly newer autotools and other software.</p>
 autotools (autoconf, automake, and libtool) to build its configuration scripts.
 If you are building from GIT, you will need to have the autotools installed
 on your system. The version included with all releases of the developer tools
-for OS X 10.2.x is too old for this; if you aren’t using OS X 10.3 or later,
+for OS X 10.2.x is too old for this; if you aren&#8217;t using OS X 10.3 or later,
 you should upgrade to more recent patchlevels of these tools. The easiest way
 to do this is to install the Fink environment and then <code class="docutils literal"><span class="pre">apt-get</span>
 <span class="pre">install</span> <span class="pre">autoconf2.5</span> <span class="pre">automake1.7</span> <span class="pre">libtool14</span></code>.</p>
@@ -557,7 +559,7 @@ to do this is to install the Fink environment and then <code class="docutils lit
 modifiable by root. You need not enable the root account using
 NetInfo; the recommended (but underdocumented) method is to use
 <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">-s</span></code> from the Terminal window when you are logged into an
-administrator’s account, and enter the password for that account. When
+administrator&#8217;s account, and enter the password for that account. When
 building on Mac OS X, <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> will automatically add the
 framework to <code class="docutils literal"><span class="pre">/Library/Frameworks</span></code>.</p>
 <p>This does not build the CFM glue library. Building the CFM glue
@@ -573,7 +575,7 @@ or Mac OS X.</p>
 <ul class="simple">
 <li>The random code supports the preferred way to generate random
 numbers in Darwin. (In SASL v2, it does this on all unix-like
-platforms that lack jrand48). <em>Note that Mac OS X “Jaguar”, version
+platforms that lack jrand48). <em>Note that Mac OS X &#8220;Jaguar&#8221;, version
 10.2,
 now has the standard jrand48 function, and that SASL will use this
 instead
@@ -582,10 +584,10 @@ of the previous workaround.</em></li>
 behavior is detected by configure in SASL v2.)</li>
 <li>Plugins are linked with the <code class="docutils literal"><span class="pre">-module</span></code> option to <code class="docutils literal"><span class="pre">libtool</span></code>,
 which causes the <code class="docutils literal"><span class="pre">-bundle</span></code> option to be
-supplied to Apple’s <code class="docutils literal"><span class="pre">ld</span></code>. (This is done on all platforms in
+supplied to Apple&#8217;s <code class="docutils literal"><span class="pre">ld</span></code>. (This is done on all platforms in
 SASL v2.)</li>
 <li>The MD5 symbols are renamed to avoid library conflicts. This
-allows proper compilations against Heimdal and MIT’s unix kerberos
+allows proper compilations against Heimdal and MIT&#8217;s unix kerberos
 distribution, and prevents crashes when linked against MIT Kerberos
 for Macintosh (which also duplicates the symbols, but in a different
 way). Note that the MD5 symbols have local names on all platforms with
@@ -608,7 +610,7 @@ particular, all source and text files must be of type <code class="docutils lite
 which is not the default if you use the Mac OS X GIT client to check
 out the projects. If you run into this problem, you may want to use a
 utility such as FileTyper to recursively change the type on all
-files. CodeWarrior is less picky about the projects’ filetypes, but
+files. CodeWarrior is less picky about the projects&#8217; filetypes, but
 setting them to filetype <code class="docutils literal"><span class="pre">'MMPr'</span></code>, creator code <code class="docutils literal"><span class="pre">'CWIE'</span></code>
 may be helpful in opening the projects from the Finder. Users on Mac OS
 X familiar with the Unix <code class="docutils literal"><span class="pre">find</span></code>
@@ -627,15 +629,15 @@ the <code class="docutils literal"><span class="pre">plugins</span></code> direc
 script from a Unix shell, such as Mac OS X. You must then fix the
 filetypes of the generated source files (see above).</li>
 <li>There is a new folder in <code class="docutils literal"><span class="pre">CommonKClient</span></code> called <code class="docutils literal"><span class="pre">mac_kclient3</span></code>
-which contains code compatible with MIT’s new <a class="reference external" href="https://web.mit.edu/macdev/Development/MITKerberos/MITKerberosLib/KClient/Documentation/index.html">KClient
+which contains code compatible with MIT&#8217;s new <a class="reference external" href="https://web.mit.edu/macdev/Development/MITKerberos/MITKerberosLib/KClient/Documentation/index.html">KClient
 3.0</a>
 API. This folder must be in your CodeWarrior access paths, the
 old <code class="docutils literal"><span class="pre">mac_kclient</span></code> folder must not, and it must precede the
-project’s main folder.</li>
+project&#8217;s main folder.</li>
 <li>To build the projects, you should have the MIT Kerberos for
 Macintosh 3.5 installation disk images mounted, since the access paths
 include the absolute paths to the library directories from that
-image. It’s easier than you having to find the paths yourself, and
+image. It&#8217;s easier than you having to find the paths yourself, and
 smaller than having to distribute the libraries with SASL.</li>
 </ul>
 </div>
@@ -650,7 +652,7 @@ functions (such as <code class="docutils literal"><span class="pre">sasl_client_
 reinitialize it from the same process, the application will crash. A
 fix for one obvious cause of this problem is included in 2.1.14;
 however, as of this writing, it has not been tested. It is possible
-that other bugs in Cyrus SASL, or deficiencies in Apple’s libraries,
+that other bugs in Cyrus SASL, or deficiencies in Apple&#8217;s libraries,
 will make this fix insufficient to resolve this issue.</li>
 </ul>
 </div>
@@ -677,7 +679,7 @@ will make this fix insufficient to resolve this issue.</li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

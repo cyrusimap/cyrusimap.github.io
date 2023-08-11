@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -485,7 +485,7 @@
             
   <div class="section" id="components">
 <span id="id1"></span><h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
-<p>As the SASL library is a ‘glue layer’ between many different parts of the
+<p>As the SASL library is a &#8216;glue layer&#8217; between many different parts of the
 authentication system, there are a lot of different components
 that often cause confusion to users of the library who are trying to
 configure it for use on their system.  This document will try to provide
@@ -576,7 +576,7 @@ negotiation is complete), the plugin provides that functionality as well.</p>
 <p>SASL mechanisms are generally defined by the IETF standards process,
 however, some mechanisms are not.  This is in contrast
 to the other types of plugins, which provide database and username
-canonicalization services to other plugins and thus aren’t standardized in
+canonicalization services to other plugins and thus aren&#8217;t standardized in
 their behavior (they are specific to our implementation).  Password verifiers
 are also an implementation detail (though saslauthd makes use of
 standards such as PAM and LDAP to perform that verification)</p>
@@ -601,12 +601,12 @@ For these mechanisms, the server generally needs a plaintext equivalent of
 the secret to be in local storage (not true for SRP).</dd>
 <dt>Kerberos Mechanisms</dt>
 <dd>Kerberos mechanisms use a trusted
-third party to authenticate the client.  These mechanisms don’t require
+third party to authenticate the client.  These mechanisms don&#8217;t require
 the server to share any secret information with the client, it is all performed
 through the Kerberos protocol.</dd>
 </dl>
 <p>Mechanism plugins are generally contained in a .so file that has a name
-similar to the mechanism’s name.  Though, in a static compilation they
+similar to the mechanism&#8217;s name.  Though, in a static compilation they
 can also be a part of <code class="docutils literal"><span class="pre">libsasl2.a</span></code></p>
 </div>
 <div class="section" id="plugins-auxiliary-property">
@@ -672,7 +672,7 @@ This is how you would want to, for example, use the data contained in
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

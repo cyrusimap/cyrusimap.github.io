@@ -194,7 +194,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#otp">OTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,7 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -320,6 +322,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
@@ -347,10 +350,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +381,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +412,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -510,8 +514,8 @@ current list of auxiliary property plugins in the SASL library.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>plugname</strong> – is the name of the auxiliary property plugin.</li>
-<li><strong>cplugfunc</strong> – is filled in by the sasl_auxprop_plug_init_t structure.</li>
+<li><strong>plugname</strong> &#8211; is the name of the auxiliary property plugin.</li>
+<li><strong>cplugfunc</strong> &#8211; is filled in by the sasl_auxprop_plug_init_t structure.</li>
 </ul>
 </td>
 </tr>
@@ -564,7 +568,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 

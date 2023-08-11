@@ -793,7 +793,7 @@ servers with a <em>backend</em> role -- these host the payload for the cluster
 different mailboxes to which the user has access reside on different
 servers.</p>
 <p>To illustrate, let John's IMAP client connect to <code class="docutils literal"><span class="pre">imap.example.org</span></code>:</p>
-digraph john {
+<img src="../../../_images/graphviz-a580b8819035e9b4da261789b06642271baa7a26.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -802,12 +802,13 @@ digraph john {
         node [shape=record, fontname=Calibri, fontsize=11];
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
-    }<p>John's mailbox may not reside on the node that the client connects to,
+    }" />
+<p>John's mailbox may not reside on the node that the client connects to,
 though, and instead be located on a <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node -- as is
 typical for larger deployments.</p>
 <p>The client connection is therefore to be proxied to the appropriate
 <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node.</p>
-digraph john {
+<img src="../../../_images/graphviz-6c7c78ba8966e4e092789acf9e77baf205a28efa.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -817,11 +818,12 @@ digraph john {
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;];
-    }<p>It is not at all uncommon to (reverse) proxy client connections like
+    }" />
+<p>It is not at all uncommon to (reverse) proxy client connections like
 this (a task that <code class="docutils literal"><span class="pre">imap.example.org</span></code> takes on in this example).</p>
 <p>In the case of webservers for example, reverse proxying is a very
 common practice:</p>
-digraph www {
+<img src="../../../_images/graphviz-22a660b7a5ef861530eb057afbc6d6b7b8d63d3f.png" alt="digraph www {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -833,7 +835,8 @@ digraph www {
 
         &quot;http://www.example.org/&quot; -&gt; &quot;assets1.example.org&quot; [label=&quot;Static Content&quot;];
         &quot;http://www.example.org/&quot; -&gt; &quot;www1.example.org&quot; [label=&quot;Dynamic Content&quot;];
-    }<p>In the case of reverse web proxies, the proxy looks at (for example)
+    }" />
+<p>In the case of reverse web proxies, the proxy looks at (for example)
 the request URI, and based on a set of rules, forwards (proxies) the
 request on to the appropriate (internal) node. This architecture allows
 application servers (www[0-9]+.example.org) to be scaled up and down by
@@ -846,7 +849,7 @@ allows an external script to respond with a target backend address
 based on the authentication of the user <a class="footnote-reference" href="#id4" id="id1">[1]</a>.</p>
 <p>As such, NGINX is a socket proxy, and not a fully-featured
 application proxy:</p>
-digraph joe {
+<img src="../../../_images/graphviz-f12ccd5576f4a7badda9d85dc1a114f5b529a013.png" alt="digraph joe {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -860,7 +863,8 @@ digraph joe {
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;,color=&quot;green&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend2.example.org&quot; [label=&quot;Not Available&quot;,color=&quot;red&quot;];
-    }<p>This means that John could not open a mailbox that does not reside on
+    }" />
+<p>This means that John could not open a mailbox that does not reside on
 the same backend node his client connection is proxied to, and John nor
 Jane can share their mailboxes with one another <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
 <p>For the proxy to be fully-featured, the proxy would need to catch all
@@ -961,7 +965,7 @@ separate systems;</p>
 <p>Each of the systems communicates with one another via the following
 connection model:</p>
 <div class="figure" id="id7">
-digraph {
+<img src="../../../_images/graphviz-50bd36f10190feceeb7910097ed7f398ee462fcf.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -975,7 +979,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=back];
 
         &quot;f+&quot; -&gt; &quot;b+&quot;;
-    }<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+    }" />
+<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p class="first">A frontend (f) connects to the mupdate (m) master server and
@@ -993,7 +998,7 @@ to the mupdate server.</p>
 <div class="section" id="murder-backend-startup-process">
 <h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this headline">¶</a></h4>
 <div class="figure" id="id8">
-digraph {
+<img src="../../../_images/graphviz-8b1ee81495109dc486349f8684f91ced86ce6bb1.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1007,10 +1012,11 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=red,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+    }" />
+<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure" id="id9">
-digraph {
+<img src="../../../_images/graphviz-c8eaf7af6ed0d03027ca9a0c855710e4c71deb13.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1025,7 +1031,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=green,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+    }" />
+<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p class="first">The backend (b) pushes its list of mailboxes to the mupdate master
@@ -1055,7 +1062,7 @@ living locally are removed from the mupdate master server.</p>
 mailboxes to the frontend (f) server.</p>
 </li>
 </ol>
-digraph {
+<img src="../../../_images/graphviz-6786d722ac573eb537659287d8bf600b3a13d356.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1069,7 +1076,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=both];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [dir=both];
-    }</div>
+    }" />
+</div>
 </div>
 <div class="section" id="replicated-murder">
 <span id="imap-features-murder-replicated"></span><h3>Replicated Murder<a class="headerlink" href="#replicated-murder" title="Permalink to this headline">¶</a></h3>
@@ -1139,7 +1147,7 @@ etc.</td></tr>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 16 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
