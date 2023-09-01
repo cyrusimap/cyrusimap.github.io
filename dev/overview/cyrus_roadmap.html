@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -800,49 +802,49 @@ involvement to help make it happen. We're here to support you.
 <div class="section" id="future">
 <h3>Future<a class="headerlink" href="#future" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>JMAP support (Contacts, calendars and emails)</li>
-<li>Improved CalDAV and CardDAV support</li>
-<li>Improved backup support</li>
-<li>Multi-master replication</li>
+<li><p>JMAP support (Contacts, calendars and emails)</p></li>
+<li><p>Improved CalDAV and CardDAV support</p></li>
+<li><p>Improved backup support</p></li>
+<li><p>Multi-master replication</p></li>
 </ul>
 </div>
 <div class="section" id="x">
 <h3>3.0.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Cross-folder conversations</li>
-<li>Support for fuzzy Xapian search.</li>
-<li>CalDAV and CardDAV support</li>
-<li>Better backup support - initial release</li>
-<li>Basic object storage</li>
-<li>Archive partition support</li>
+<li><p>Cross-folder conversations</p></li>
+<li><p>Support for fuzzy Xapian search.</p></li>
+<li><p>CalDAV and CardDAV support</p></li>
+<li><p>Better backup support - initial release</p></li>
+<li><p>Basic object storage</p></li>
+<li><p>Archive partition support</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
 <h3>2.5.x<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Support ANNOTATE (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a>)</li>
-<li>Support some of ESORT/ESEARCH (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5256.html"><strong>RFC 5256</strong></a>)</li>
-<li>Support LIST-EXT STATUS (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5819.html"><strong>RFC 5819</strong></a>)</li>
-<li>Support SORT=DISPLAY (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5957.html"><strong>RFC 5957</strong></a>)</li>
-<li>Support SpecialUse (<span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a>)</li>
-<li>Autocreate/autosieve (needs to be -enabled in config)</li>
-<li>Complete compliance with all tests from <a class="reference external" href="http://www.imapwiki.org/ImapTest">ImapTest</a> (integrated with Cassandane)</li>
-<li>cyr_info utility - configuration 'lint' and dumping tool.</li>
-<li>MESSAGE quota support (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2087.html"><strong>RFC 2087</strong></a>)</li>
-<li>Some CalDAV calendaring support.</li>
-<li>Some CardDAV contact support.</li>
+<li><p>Support ANNOTATE (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a>)</p></li>
+<li><p>Support some of ESORT/ESEARCH (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5256.html"><strong>RFC 5256</strong></a>)</p></li>
+<li><p>Support LIST-EXT STATUS (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5819.html"><strong>RFC 5819</strong></a>)</p></li>
+<li><p>Support SORT=DISPLAY (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5957.html"><strong>RFC 5957</strong></a>)</p></li>
+<li><p>Support SpecialUse (<span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a>)</p></li>
+<li><p>Autocreate/autosieve (needs to be -enabled in config)</p></li>
+<li><p>Complete compliance with all tests from <a class="reference external" href="http://www.imapwiki.org/ImapTest">ImapTest</a> (integrated with Cassandane)</p></li>
+<li><p>cyr_info utility - configuration 'lint' and dumping tool.</p></li>
+<li><p>MESSAGE quota support (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2087.html"><strong>RFC 2087</strong></a>)</p></li>
+<li><p>Some CalDAV calendaring support.</p></li>
+<li><p>Some CardDAV contact support.</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>2.4.x<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>security backports only</li>
+<li><p>security backports only</p></li>
 </ul>
 </div>
 <div class="section" id="and-earlier">
 <h3>2.3 and earlier<a class="headerlink" href="#and-earlier" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>unsupported</li>
+<li><p>unsupported</p></li>
 </ul>
 </div>
 </div>
@@ -869,7 +871,7 @@ involvement to help make it happen. We're here to support you.
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 17 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -895,7 +897,6 @@ involvement to help make it happen. We're here to support you.
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

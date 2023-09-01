@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -37,7 +39,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Cyrus SASL 2.1.28 documentation" href="../../index.html"/>
         <link rel="up" title="Frequently Asked Questions" href="../faq.html"/>
-        <link rel="next" title="Other Documentation &amp; Resources" href="../resources.html"/>
+        <link rel="next" title="Why does SCRAM not work with CyrusSaslauthd?" href="scram.html"/>
         <link rel="prev" title="Why does CyrusSasl store plaintext passwords in its databases?" href="plaintextpasswords.html"/> 
 
   
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -488,30 +488,26 @@
   <div class="section" id="rfcs-and-drafts">
 <span id="faq-rfcs"></span><h1>RFCs and drafts<a class="headerlink" href="#rfcs-and-drafts" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1939.html#page-15"><strong>RFC 1939#page-15</strong></a> - Post Office Protocol - Version 3 (APOP/sasl_checkapop)</li>
-<li><span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2195.html"><strong>RFC 2195</strong></a> - The CRAM-MD5 SASL Mechanism (CRAM-MD5)</li>
-<li><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2222.html#section-7.1"><strong>RFC 2222#section-7.1</strong></a> - Simple Authentication and Security Layer (SASL) (KERBEROS_V4)</li>
-<li><span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2444.html"><strong>RFC 2444</strong></a> - The One-Time-Password SASL Mechanism (OTP)</li>
-<li><span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2808.html"><strong>RFC 2808</strong></a> - The SecurID(r) SASL Mechanism</li>
-<li><span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4120.html"><strong>RFC 4120</strong></a> - The Kerberos Network Authentication Service (V5)</li>
-<li><span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a> - The Simple and Protected GSS-API Negotiation (SPNEGO) mechanism</li>
-<li><span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a> - Simple Authentication and Security Layer (SASL)</li>
-<li><span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4505.html"><strong>RFC 4505</strong></a> - Anonymous Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a> - The PLAIN Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4752.html"><strong>RFC 4752</strong></a> - The Kerberos V5 (&#8220;GSSAPI&#8221;) Simple Authentication and Security Layer (SASL) Mechanism</li>
-<li><span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4846.html#section-4"><strong>RFC 4846#section-4</strong></a> - Base64 Data Encoding</li>
-<li><span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a> - Using Generic Security Service Application Program Interface (GSS-API) Mechanisms in SASL: The GS2 Mechanism Family</li>
-<li><span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a> - Salted Challenge Response Authentication Mechanism (SCRAM) SASL and GSS-API Mechanisms</li>
-<li><span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5803.html"><strong>RFC 5803</strong></a> - Lightweight Directory Access Protocol (LDAP) Schema for Storing Salted: Challenge Response Authentication Mechanism (SCRAM) Secrets</li>
-<li><span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5929.html"><strong>RFC 5929</strong></a> - Channel Bindings for TLS</li>
-<li><span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7613.html"><strong>RFC 7613</strong></a> - Preparation, Enforcement, and Comparison of Internationalized Strings Representing Usernames and Passwords</li>
-<li><span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a> - SCRAM-SHA-256 and SCRAM-SHA-256-PLUS: Simple Authentication and Security Layer (SASL) Mechanisms</li>
-<li><span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7804.html"><strong>RFC 7804</strong></a> - Salted Challenge Response HTTP Authentication Mechanism</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-burdis-cat-srp-sasl-08">draft-burdis-cat-srp-sasl</a> - Secure Remote Password SASL Mechanism (SRP)</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5">draft-ietf-sasl-crammd5</a> - The CRAM-MD5 SASL Mechanism (CRAM-MD5)</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-murchison-sasl-login">draft-murchison-sasl-login</a> - The LOGIN SASL Mechanism</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-c-api">draft-newman-sasl-c-api</a> - The SASL C API</li>
-<li><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-passdss">draft-newman-sasl-passdss</a> - DSS Secured Password Authentication Mechanism (PASSDSS)</li>
+<li><p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1939.html#page-15"><strong>RFC 1939#page-15</strong></a> - Post Office Protocol - Version 3 (APOP/sasl_checkapop)</p></li>
+<li><p><span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2444.html"><strong>RFC 2444</strong></a> - The One-Time-Password SASL Mechanism (OTP)</p></li>
+<li><p><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2808.html"><strong>RFC 2808</strong></a> - The SecurID(r) SASL Mechanism</p></li>
+<li><p><span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4120.html"><strong>RFC 4120</strong></a> - The Kerberos Network Authentication Service (V5)</p></li>
+<li><p><span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a> - The Simple and Protected GSS-API Negotiation (SPNEGO) mechanism</p></li>
+<li><p><span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a> - Simple Authentication and Security Layer (SASL)</p></li>
+<li><p><span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4505.html"><strong>RFC 4505</strong></a> - Anonymous Simple Authentication and Security Layer (SASL) Mechanism</p></li>
+<li><p><span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a> - The PLAIN Simple Authentication and Security Layer (SASL) Mechanism</p></li>
+<li><p><span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4752.html"><strong>RFC 4752</strong></a> - The Kerberos V5 (“GSSAPI”) Simple Authentication and Security Layer (SASL) Mechanism</p></li>
+<li><p><span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4846.html#section-4"><strong>RFC 4846#section-4</strong></a> - Base64 Data Encoding</p></li>
+<li><p><span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a> - Using Generic Security Service Application Program Interface (GSS-API) Mechanisms in SASL: The GS2 Mechanism Family</p></li>
+<li><p><span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a> - Salted Challenge Response Authentication Mechanism (SCRAM) SASL and GSS-API Mechanisms</p></li>
+<li><p><span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5803.html"><strong>RFC 5803</strong></a> - Lightweight Directory Access Protocol (LDAP) Schema for Storing Salted: Challenge Response Authentication Mechanism (SCRAM) Secrets</p></li>
+<li><p><span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5929.html"><strong>RFC 5929</strong></a> - Channel Bindings for TLS</p></li>
+<li><p><span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7613.html"><strong>RFC 7613</strong></a> - Preparation, Enforcement, and Comparison of Internationalized Strings Representing Usernames and Passwords</p></li>
+<li><p><span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a> - SCRAM-SHA-256 and SCRAM-SHA-256-PLUS: Simple Authentication and Security Layer (SASL) Mechanisms</p></li>
+<li><p><span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7804.html"><strong>RFC 7804</strong></a> - Salted Challenge Response HTTP Authentication Mechanism</p></li>
+<li><p><a class="reference external" href="https://tools.ietf.org/html/draft-burdis-cat-srp-sasl-08">draft-burdis-cat-srp-sasl</a> - Secure Remote Password SASL Mechanism (SRP)</p></li>
+<li><p><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-c-api">draft-newman-sasl-c-api</a> - The SASL C API</p></li>
+<li><p><a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-passdss">draft-newman-sasl-passdss</a> - DSS Secured Password Authentication Mechanism (PASSDSS)</p></li>
 </ul>
 </div>
 
@@ -521,7 +517,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../resources.html" class="btn btn-neutral float-right" title="Other Documentation &amp; Resources" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="scram.html" class="btn btn-neutral float-right" title="Why does SCRAM not work with CyrusSaslauthd?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="plaintextpasswords.html" class="btn btn-neutral" title="Why does CyrusSasl store plaintext passwords in its databases?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -536,7 +532,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -563,7 +559,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

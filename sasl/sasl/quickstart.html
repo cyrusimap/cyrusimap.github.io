@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -224,7 +226,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -318,12 +320,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -346,10 +346,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -362,7 +362,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -376,16 +376,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -407,7 +407,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -485,7 +485,7 @@
 <p>This document offers a general overview of the Cyrus SASL library.
 The Cyrus SASL Libray provides applications with an implementation
 of the Simple Authentication and Security Layer (RFC2222), and
-several authentication mechanisms.  Users interested in the &#8220;big picture&#8221;
+several authentication mechanisms.  Users interested in the “big picture”
 of what is provided by the library should read about
 <a class="reference internal" href="components.html#components"><span class="std std-ref">Cyrus SASL Components</span></a>.</p>
 <div class="section" id="features">
@@ -493,21 +493,19 @@ of what is provided by the library should read about
 <p>The following <a class="reference internal" href="authentication_mechanisms.html#authentication-mechanisms"><span class="std std-ref">Authentication Mechanisms</span></a> are included in
 this distribution:</p>
 <ul class="simple">
-<li>ANONYMOUS</li>
-<li>CRAM-MD5</li>
-<li>EXTERNAL</li>
-<li>GSSAPI (MIT Kerberos 5, Heimdal Kerberos 5 or CyberSafe)</li>
-<li>LOGIN</li>
-<li>OTP (requires OpenSSL libcrypto)</li>
-<li>PASSDSS (requires OpenSSL libcrypto)</li>
-<li>PLAIN</li>
-<li>SCRAM (requires OpenSSL libcrypto)</li>
-<li>SRP (requires OpenSSL libcrypto)</li>
+<li><p>ANONYMOUS</p></li>
+<li><p>EXTERNAL</p></li>
+<li><p>GSSAPI (MIT Kerberos 5, Heimdal Kerberos 5 or CyberSafe)</p></li>
+<li><p>OTP (requires OpenSSL libcrypto)</p></li>
+<li><p>PASSDSS (requires OpenSSL libcrypto)</p></li>
+<li><p>PLAIN</p></li>
+<li><p>SCRAM (requires OpenSSL libcrypto)</p></li>
+<li><p>SRP (requires OpenSSL libcrypto)</p></li>
 </ul>
 <p>The library also supports storing user secrets in either a hash
 database (e.g. lmdb, gdbm, ndbm), LDAP, or in a SQL database
 (MySQL, Postgres).</p>
-<p>Additionally, mechanisms such as PLAIN and LOGIN
+<p>Additionally, mechanisms such as PLAIN
 (where the plaintext password is directly supplied by the client)
 can perform direct password verification via the saslauthd daemon.  This
 allows the use of LDAP, PAM, and a variety of other password verification
@@ -515,13 +513,13 @@ routines.</p>
 <p>The sample directory in the code contains two programs which provide a reference
 for using the library, as well as making it easy to test a mechanism
 on the command line.  See
-the <a class="reference internal" href="developer/programming.html#programming"><span class="std std-ref">Application Programmer&#8217;s Guide</span></a> for more information.</p>
+the <a class="reference internal" href="developer/programming.html#programming"><span class="std std-ref">Application Programmer’s Guide</span></a> for more information.</p>
 <p>This library is believed to be thread safe <strong>if</strong>:</p>
 <ul class="simple">
-<li>you supply mutex functions (see sasl_set_mutex())</li>
-<li>you make no libsasl calls until sasl_client/server_init() completes</li>
-<li>no libsasl calls are made after sasl_done() is begun</li>
-<li>when using GSSAPI, you use a thread-safe GSS / Kerberos 5 library.</li>
+<li><p>you supply mutex functions (see sasl_set_mutex())</p></li>
+<li><p>you make no libsasl calls until sasl_client/server_init() completes</p></li>
+<li><p>no libsasl calls are made after sasl_done() is begun</p></li>
+<li><p>when using GSSAPI, you use a thread-safe GSS / Kerberos 5 library.</p></li>
 </ul>
 </div>
 <div class="section" id="typical-installation">
@@ -532,8 +530,8 @@ on how to install this package.</p>
 <p>Note that the library can use the environment variable SASL_PATH to locate the
 directory where the mechanisms are; this should be a colon-separated
 list of directories containing plugins.  Otherwise it will default to the
-value of <code class="docutils literal"><span class="pre">--with-plugindir</span></code> as supplied to <code class="docutils literal"><span class="pre">configure</span></code> (which
-itself defaults to <code class="docutils literal"><span class="pre">/usr/local/lib</span></code>).</p>
+value of <code class="docutils literal notranslate"><span class="pre">--with-plugindir</span></code> as supplied to <code class="docutils literal notranslate"><span class="pre">configure</span></code> (which
+itself defaults to <code class="docutils literal notranslate"><span class="pre">/usr/local/lib</span></code>).</p>
 <p>Looking to <a class="reference internal" href="macosx.html#install-macos"><span class="std std-ref">Install on Mac OSX?</span></a></p>
 <p>Looking to <a class="reference internal" href="windows.html#install-windows"><span class="std std-ref">Install on Windows?</span></a></p>
 </div>
@@ -541,15 +539,15 @@ itself defaults to <code class="docutils literal"><span class="pre">/usr/local/l
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>There are two main ways to configure the SASL library for a given
 application.  The first (and typically easiest) is to make use
-of the application&#8217;s configuration files.  Provided the application supports it
-(via the <code class="docutils literal"><span class="pre">SASL_CB_GETOPT</span></code> callback), please refer to the documentation
+of the application’s configuration files.  Provided the application supports it
+(via the <code class="docutils literal notranslate"><span class="pre">SASL_CB_GETOPT</span></code> callback), please refer to the documentation
 for how to supply <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL options</span></a>.</p>
 <p>Alternatively, Cyrus SASL looks for configuration files in
 /usr/lib/sasl/Appname.conf where Appname is settable by the
 application (for example, Sendmail 8.10 and later set this to
-&#8220;Sendmail&#8221;).</p>
-<p>Configuration using the application&#8217;s configuration files (via
-the <code class="docutils literal"><span class="pre">getopt</span></code> callback) will override those supplied by
+“Sendmail”).</p>
+<p>Configuration using the application’s configuration files (via
+the <code class="docutils literal notranslate"><span class="pre">getopt</span></code> callback) will override those supplied by
 the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at the
 <a class="reference internal" href="sysadmin.html#sysadmin"><span class="std std-ref">Sysadmin guide</span></a> and the information on <a class="reference internal" href="options.html#options"><span class="std std-ref">options</span></a>.</p>
@@ -577,7 +575,7 @@ the SASL configuration files.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -604,7 +602,6 @@ the SASL configuration files.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -792,8 +794,8 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.3/cyrus-imapd-3.2.3.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-2-2">
@@ -801,37 +803,37 @@
 <div class="section" id="build-changes">
 <h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3073">Issue #3073</a>: misleading message when Xapian &quot;words&quot; tokenisation
-unavailable</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3102">Issue #3102</a>: removed checks for unused CLD2 dependency (thanks
-Anatoli)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3102">Issue #3102</a>: removed unused Castagnoli CRC32 implementation
-(thanks Anatoli)</li>
-<li>Upstreamed compatibility patches from OpenBSD (thanks Anatoli)</li>
-<li>Fixed: Cyrus::SIEVE::managesieve was not linked correctly</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3143">Issue #3143</a>: removed unnecessary autoreconf dependency on /bin/bash</li>
-<li>Fixed: support zlib versions that do not provide deflatePending function</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3073">Issue #3073</a>: misleading message when Xapian &quot;words&quot; tokenisation
+unavailable</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3102">Issue #3102</a>: removed checks for unused CLD2 dependency (thanks
+Anatoli)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3102">Issue #3102</a>: removed unused Castagnoli CRC32 implementation
+(thanks Anatoli)</p></li>
+<li><p>Upstreamed compatibility patches from OpenBSD (thanks Anatoli)</p></li>
+<li><p>Fixed: Cyrus::SIEVE::managesieve was not linked correctly</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3143">Issue #3143</a>: removed unnecessary autoreconf dependency on /bin/bash</p></li>
+<li><p>Fixed: support zlib versions that do not provide deflatePending function</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed: handling of bad HOLDFOR/HOLDUNTIL values in JMAP email submissions</li>
-<li>Fixed: protection against underflow of unseen and recent counts</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3116">Issue #3116</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std:cyrusman-cyr_info(8)">cyr_info(8)</a> now correctly validates
-archivepartition- settings</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3115">Issue #3115</a>: imapd/pop3d connection details were lost during TLS
-setup</li>
-<li>Fixed: pop3d LOGOUT event was missing clientAddress field (thanks akschu)</li>
-<li>Fixed: Sieve regexes may have optional matches</li>
-<li>Fixed: XFER now correctly distinguishes between 2.3.x releases</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3123">Issue #3123</a>: XFER now recognises 3.1, 3.2 and 3.3 backends</li>
-<li>Fixed: XFER now syslogs a warning when it doesn't recognise the backend
-Cyrus version</li>
-<li>Fixed: crash in Sieve &quot;date :regex&quot; matches</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3152">Issue #3152</a>: DAV crash when no displayname and path is one segment
-(thanks Felix J. Ogris)</li>
-<li>Fixed: cunit tests no longer depend on nonstandard malloc.h header</li>
+<li><p>Fixed: handling of bad HOLDFOR/HOLDUNTIL values in JMAP email submissions</p></li>
+<li><p>Fixed: protection against underflow of unseen and recent counts</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3116">Issue #3116</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> now correctly validates
+archivepartition- settings</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3115">Issue #3115</a>: imapd/pop3d connection details were lost during TLS
+setup</p></li>
+<li><p>Fixed: pop3d LOGOUT event was missing clientAddress field (thanks akschu)</p></li>
+<li><p>Fixed: Sieve regexes may have optional matches</p></li>
+<li><p>Fixed: XFER now correctly distinguishes between 2.3.x releases</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3123">Issue #3123</a>: XFER now recognises 3.1, 3.2 and 3.3 backends</p></li>
+<li><p>Fixed: XFER now syslogs a warning when it doesn't recognise the backend
+Cyrus version</p></li>
+<li><p>Fixed: crash in Sieve &quot;date :regex&quot; matches</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3152">Issue #3152</a>: DAV crash when no displayname and path is one segment
+(thanks Felix J. Ogris)</p></li>
+<li><p>Fixed: cunit tests no longer depend on nonstandard malloc.h header</p></li>
 </ul>
 </div>
 </div>
@@ -858,7 +860,7 @@ Cyrus version</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 21 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -884,7 +886,6 @@ Cyrus version</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

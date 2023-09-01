@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -788,15 +790,15 @@
 <span id="faqs-o-telemetry"></span><h1>How to enable telemetry<a class="headerlink" href="#how-to-enable-telemetry" title="Permalink to this headline">¶</a></h1>
 <p>To enable telemetry logging for a user, create a directory on disk for that user. Cyrus will automatically write logging information to this directory for all new connections. You don't need to restart Cyrus; closing the mail client and restarting it will do the trick.</p>
 <p>The directory path is:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir <span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/             <span class="c1"># for example /var/imap/log/darth</span>
-chown cyrus <span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/       <span class="c1"># The cyrus user needs write access to this directory.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/<span class="w">             </span><span class="c1"># for example /var/imap/log/darth</span>
+chown<span class="w"> </span>cyrus<span class="w"> </span><span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/<span class="w">       </span><span class="c1"># The cyrus user needs write access to this directory.</span>
 </pre></div>
 </div>
-<p>If you have virtdomains enabled, then the username is the login name. In this case if you login as <code class="docutils literal"><span class="pre">darth&#64;vader.net</span></code>, then the path is <code class="docutils literal"><span class="pre">/var/imap/log/darth&#64;vader.net/</span></code></p>
-<p>The folder will contain files called <code class="docutils literal"><span class="pre">imapd-$pid</span></code>, e.g. imapd-12345.  It might also have pop3 files, httpd files, one for each daemon.  The first part of the name is the service name from <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</p>
+<p>If you have virtdomains enabled, then the username is the login name. In this case if you login as <code class="docutils literal notranslate"><span class="pre">darth&#64;vader.net</span></code>, then the path is <code class="docutils literal notranslate"><span class="pre">/var/imap/log/darth&#64;vader.net/</span></code></p>
+<p>The folder will contain files called <code class="docutils literal notranslate"><span class="pre">imapd-$pid</span></code>, e.g. imapd-12345.  It might also have pop3 files, httpd files, one for each daemon.  The first part of the name is the service name from <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">These log files won't contain passwords, but may contain other confidential user data such as the content of emails. Check them before sharing publicly!</p>
+<p class="admonition-title">Warning</p>
+<p>These log files won't contain passwords, but may contain other confidential user data such as the content of emails. Check them before sharing publicly!</p>
 </div>
 </div>
 
@@ -821,7 +823,7 @@ chown cyrus <span class="nv">$configdirectory</span>/log/<span class="nv">$useri
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -847,7 +849,6 @@ chown cyrus <span class="nv">$configdirectory</span>/log/<span class="nv">$useri
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

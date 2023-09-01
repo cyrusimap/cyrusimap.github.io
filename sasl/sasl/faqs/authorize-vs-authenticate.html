@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -37,7 +39,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Cyrus SASL 2.1.28 documentation" href="../../index.html"/>
         <link rel="up" title="Frequently Asked Questions" href="../faq.html"/>
-        <link rel="next" title="Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?" href="crammd5-digestmd5-scram.html"/>
+        <link rel="next" title="How do I configure OpenLDAP +SASL+GSSAPI?" href="openldap-sasl-gssapi.html"/>
         <link rel="prev" title="Frequently Asked Questions" href="../faq.html"/> 
 
   
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -491,24 +487,24 @@
             
   <div class="section" id="what-is-the-difference-between-an-authorization-id-and-a-authentication-id">
 <h1>What is the difference between an Authorization ID and a Authentication ID?<a class="headerlink" href="#what-is-the-difference-between-an-authorization-id-and-a-authentication-id" title="Permalink to this headline">¶</a></h1>
-<p><strong>Authentication</strong> is the act of proving who you are. &#8220;Hello, I&#8217;m Dave. To
-prove it, here&#8217;s my password: Foo.&#8221;</p>
+<p><strong>Authentication</strong> is the act of proving who you are. “Hello, I’m Dave. To
+prove it, here’s my password: Foo.”</p>
 <p><strong>Authorization</strong> is the act of deciding
 whether to grant access to resources.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;d like to read Kellie&#39;s mail for her.&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;d like to read Kellie&#39;s mail for her.&quot;</span>
 </pre></div>
 </div>
-<p>In the example, I&#8217;m trying to read my wife&#8217;s mail. I supply my own
-username as the &#8220;authentication identifier&#8221;, my own password (Or
-biometric scan, or whatever else is required to prove I&#8217;m really me,
-with whichever mechanism is in use), and my wife&#8217;s username as the
-&#8220;authorization identifier&#8221;.</p>
-<p>At no point need I know my wife&#8217;s password - instead, either Kellie or
-an administrator needs to explicitly state that I am allowed in &#8220;as
-Kellie&#8221;. Once I&#8217;ve logged in, all the access checks are done against
-Kellie, not against Dave, because I&#8217;m acting for her. To all intents and
+<p>In the example, I’m trying to read my wife’s mail. I supply my own
+username as the “authentication identifier”, my own password (Or
+biometric scan, or whatever else is required to prove I’m really me,
+with whichever mechanism is in use), and my wife’s username as the
+“authorization identifier”.</p>
+<p>At no point need I know my wife’s password - instead, either Kellie or
+an administrator needs to explicitly state that I am allowed in “as
+Kellie”. Once I’ve logged in, all the access checks are done against
+Kellie, not against Dave, because I’m acting for her. To all intents and
 purposes, after the authentication exchange itself, the server can
-simply forget about who authenticated - it&#8217;s not important any more -
+simply forget about who authenticated - it’s not important any more -
 and concentrate on who needs to be authorized.</p>
 <p>Another, more common example of the use of differing authentication
 identifiers and authorization identifiers is in the design of many proxy
@@ -516,7 +512,7 @@ systems. You authenticate perfectly normally to the proxy, authorizing
 as yourself. The proxy then authenticates to the master as itself, but
 supplies you as the authorization identifier, thus getting all the right
 access checks done at source, but not having to have access to your
-authentication credentials. Finally, some mechanisms don&#8217;t support
+authentication credentials. Finally, some mechanisms don’t support
 passing a distinct authorization identifier, and for most its optional,
 and defaults to the case that most people are familiar with, where
 authorization and authentication identifiers are the same.</p>
@@ -528,7 +524,7 @@ authorization and authentication identifiers are the same.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="crammd5-digestmd5-scram.html" class="btn btn-neutral float-right" title="Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="openldap-sasl-gssapi.html" class="btn btn-neutral float-right" title="How do I configure OpenLDAP +SASL+GSSAPI?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../faq.html" class="btn btn-neutral" title="Frequently Asked Questions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -543,7 +539,7 @@ authorization and authentication identifiers are the same.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -570,7 +566,6 @@ authorization and authentication identifiers are the same.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

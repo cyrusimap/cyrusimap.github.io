@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,20 +786,18 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-arbitron(8)"></span><div class="section" id="arbitron">
+  <span class="target" id="std-cyrusman-arbitron-8"><span id="std:cyrusman-arbitron(8)"></span></span><div class="section" id="arbitron">
 <span id="imap-reference-manpages-systemcommands-arbitron"></span><h1><strong>arbitron</strong><a class="headerlink" href="#arbitron" title="Permalink to this headline">¶</a></h1>
 <p>Report readership statistics for mailboxes on the server.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>arbitron</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-o</strong> ] [ <strong>-u</strong> ] [ <strong>-l</strong> ] [ <strong>-p</strong> <em>months</em> ]
-         [ <strong>-d</strong> <em>days</em> | <strong>-D</strong> <em>mmddyyyy</em>[<strong>:</strong><em>mmddyyyy</em>] ] <em>mailbox</em>...
-</pre>
+<pre class="literal-block"><strong>arbitron</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-o</strong> ] [ <strong>-u</strong> ] [ <strong>-l</strong> ] [ <strong>-p</strong> <em>months</em> ]
+         [ <strong>-d</strong> <em>days</em> | <strong>-D</strong> <em>mmddyyyy</em>[<strong>:</strong><em>mmddyyyy</em>] ] <em>mailbox</em>...</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>arbitron</strong> collects and reports readership statistics for mailboxes
-on the server. It also optionally prunes the mailboxes of <code class="docutils literal"><span class="pre">\Seen</span></code>
+on the server. It also optionally prunes the mailboxes of <code class="docutils literal notranslate"><span class="pre">\Seen</span></code>
 state for dormant users.</p>
 <p><strong>arbitron</strong> produces one line of output per mailbox, reporting the
 mailbox name followed by a space, followed by the number of readers
@@ -807,8 +807,8 @@ space and the number of subscribers (and if <strong>-u</strong> is specified,
 followed by a colon and a comma-separated list of the subscribers
 userids).</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This format is subject to change in future versions.</p>
+<p class="admonition-title">Important</p>
+<p>This format is subject to change in future versions.</p>
 </div>
 <p>Each &quot;reader&quot; is a distinct authorization identity which has the
 <a class="reference internal" href="../../admin/access-control/rights-reference.html#imap-admin-access-control-right-s"><span class="std std-ref">s</span></a> right to the mailbox and which
@@ -817,19 +817,19 @@ the specified <strong>-D</strong> <em>date</em>[<strong>:</strong><em>range</em>
 <p>Users are not counted as reading their own personal mail‐boxes. Personal
 mailboxes are not reported unless there is at least one reader other
 than the mailboxes owner.</p>
-<p><strong>arbitron</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>arbitron</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-arbitron-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-arbitron-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-arbitron-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-D">
-<span id="cmdoption-arbitron--date"></span><code class="descname">-D</code><code class="descclassname"> mmddyyyy[:mmddyyyy]</code><code class="descclassname">, </code><code class="descname">--date</code><code class="descclassname">=mmddyyyy[:mmddyyyy]</code><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron-d"></span><span id="cmdoption-arbitron-date"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"> <span class="pre">mmddyyyy[:mmddyyyy]</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--date</span></code><code class="sig-prename descclassname"><span class="pre">=mmddyyyy[:mmddyyyy]</span></code><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count as a reader an authorization identity which has used the
 mailbox within the given date range.</p>
 <p>The start date and optionally the end date are specified as 2-digit
@@ -837,42 +837,42 @@ month of the year, 2-digit day of the month, and 4-digit year.</p>
 <p>If the end date is not specified, the current system time will be
 used as the end time.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Please note that the date notation is American [<em>mmddyyyy</em>]
+<p class="admonition-title">Note</p>
+<p>Please note that the date notation is American [<em>mmddyyyy</em>]
 not [<em>ddmmyyyy</em>].</p>
 </div>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-arbitron-d">
-<span id="cmdoption-arbitron--days"></span><code class="descname">-d</code><code class="descclassname"> days</code><code class="descclassname">, </code><code class="descname">--days</code><code class="descclassname">=days</code><a class="headerlink" href="#cmdoption-arbitron-d" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-arbitron-0">
+<span id="cmdoption-arbitron-days"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"> <span class="pre">days</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--days</span></code><code class="sig-prename descclassname"><span class="pre">=days</span></code><a class="headerlink" href="#cmdoption-arbitron-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count as a reader an authorization identity which has used the
 mailbox within the past <em>days</em> days.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-l">
-<span id="cmdoption-arbitron--detailed"></span><code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--detailed</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron-detailed"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--detailed</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable long reporting (comma delimited table consisting of mbox,
 userid, r/s, start time, end time).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-o">
-<span id="cmdoption-arbitron--no-subscribers"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-subscribers</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron-no-subscribers"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--no-subscribers</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Report &quot;the old way&quot; -- not including subscribers.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-p">
-<span id="cmdoption-arbitron--prune-seen"></span><code class="descname">-p</code><code class="descclassname"> months</code><code class="descclassname">, </code><code class="descname">--prune-seen</code><code class="descclassname">=months</code><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prune <code class="docutils literal"><span class="pre">\Seen</span></code> state for users who have not used the mailbox within
+<span id="cmdoption-arbitron-prune-seen"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">months</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--prune-seen</span></code><code class="sig-prename descclassname"><span class="pre">=months</span></code><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prune <code class="docutils literal notranslate"><span class="pre">\Seen</span></code> state for users who have not used the mailbox within
 the past <em>months</em> months. The default is infinity.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-arbitron-u">
-<span id="cmdoption-arbitron--include-userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-arbitron-include-userids"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--include-userids</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Include userids of mailbox readers in the report.  If the report
 will contain mailbox subscribers (see <strong>--no-subscribers</strong>), also
 include userids of the subscribers.</p>
@@ -881,12 +881,11 @@ include userids of the subscribers.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>arbitron -l</strong>
-</pre>
+<pre class="literal-block"><strong>arbitron -l</strong></pre>
 <blockquote>
-<div>Long-format list.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="p">,</span><span class="n">john</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span>
+<div><p>Long-format list.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="p">,</span><span class="n">john</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span><span class="p">,</span><span class="n">mary</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span><span class="p">,</span><span class="n">john</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span><span class="p">,</span><span class="n">sam</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">35</span>
@@ -908,12 +907,11 @@ include userids of the subscribers.</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">Other</span><span class="p">,</span><span class="n">sam</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="mi">04</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="mi">05</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">2015</span> <span class="mi">09</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">20</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>arbitron -o</strong>
-</pre>
+<pre class="literal-block"><strong>arbitron -o</strong></pre>
 <blockquote>
-<div>Old format (no subscribers) short list.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span>
+<div><p>Old format (no subscribers) short list.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span> <span class="mi">0</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">1</span> <span class="mi">0</span>
@@ -921,12 +919,11 @@ include userids of the subscribers.</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">Other</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>arbitron</strong>
-</pre>
+<pre class="literal-block"><strong>arbitron</strong></pre>
 <blockquote>
-<div>Normal short list.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
+<div><p>Normal short list.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span> <span class="mi">0</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">2</span> <span class="mi">0</span> <span class="mi">4</span>
@@ -934,12 +931,11 @@ include userids of the subscribers.</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">Other</span> <span class="mi">2</span> <span class="mi">4</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>arbitron -d</strong> <em>14</em>
-</pre>
+<pre class="literal-block"><strong>arbitron -d</strong> <em>14</em></pre>
 <blockquote>
-<div>Normal short list format for the past <em>14</em> days.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
+<div><p>Normal short list format for the past <em>14</em> days.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span> <span class="mi">0</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">2</span> <span class="mi">0</span> <span class="mi">4</span>
@@ -947,12 +943,11 @@ include userids of the subscribers.</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">Other</span> <span class="mi">2</span> <span class="mi">4</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>arbitron -D</strong> <em>04012015</em>:<em>04152015</em>
-</pre>
+<pre class="literal-block"><strong>arbitron -D</strong> <em>04012015</em>:<em>04152015</em></pre>
 <blockquote>
-<div>Normal short list Within date range of 12 - 15 April, 2015.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
+<div><p>Normal short list Within date range of 12 - 15 April, 2015.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">Commits</span> <span class="mi">0</span> <span class="mi">2</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span> <span class="mi">0</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">4</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">project</span><span class="o">-</span><span class="mi">2</span> <span class="mi">1</span> <span class="mi">4</span>
@@ -967,7 +962,7 @@ include userids of the subscribers.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -992,7 +987,7 @@ include userids of the subscribers.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 02 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1018,7 +1013,6 @@ include userids of the subscribers.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

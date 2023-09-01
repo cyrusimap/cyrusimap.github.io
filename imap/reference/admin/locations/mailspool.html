@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,22 +793,23 @@
 <div class="section" id="default-spool-location">
 <h2>Default Spool location<a class="headerlink" href="#default-spool-location" title="Permalink to this headline">¶</a></h2>
 <p>The main Cyrus IMAP mail data directory structure is the spool, and its
-location is defined by <code class="docutils literal"><span class="pre">partition-name</span></code> entries in
-<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+location is defined by <code class="docutils literal notranslate"><span class="pre">partition-name</span></code> entries in
+<a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p>Additionally, on servers with more than one spool partition, that
 partition in which new user mailboxes are to be created is specified by
-the <code class="docutils literal"><span class="pre">defaultpartition</span></code> directive.</p>
+the <code class="docutils literal notranslate"><span class="pre">defaultpartition</span></code> directive.</p>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">partition-name:</span></code> &lt;none&gt;</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">partition-name:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>The pathname of the partition <em>name</em>.  At least one partition
+<div><p>The pathname of the partition <em>name</em>.  At least one partition
 pathname MUST be specified.  If the <strong>defaultpartition</strong> option is
 used, then its pathname MUST be specified.  For example, if the
 value of the <strong>defaultpartion</strong> option is <strong>part1</strong>, then the
-<strong>partition-part1</strong> field is required.</div></blockquote>
+<strong>partition-part1</strong> field is required.</p>
+</div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">defaultpartition:</span></code> &lt;none&gt;</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">defaultpartition:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>The partition name used by default for new mailboxes.  If not
 specified, the partition with the most free space will be used for
@@ -817,14 +820,14 @@ for the alphanumeric string you set <em>defaultpartition</em> to.</p>
 </div></blockquote>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There is nothing magical about the name &quot;default&quot; and in fact any
+<p class="admonition-title">Note</p>
+<p>There is nothing magical about the name &quot;default&quot; and in fact any
 name may be used for the default-partition.  We'll use the name
 &quot;main&quot; in this documentation.</p>
 </div>
 <ul>
-<li><p class="first">Sample:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
+<li><p>Sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">main</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
 </pre></div>
 </div>
@@ -837,14 +840,14 @@ name may be used for the default-partition.  We'll use the name
 distribute load between different storage pools or technologies.  Please
 consult <a class="reference internal" href="../../../concepts/features/mail-spool-partitions.html#imap-features-mail-spool-partitions"><span class="std std-ref">Mail Spool Partitions</span></a> for more details and
 use cases.</p>
-<p>To define additional mail spools, add more <code class="docutils literal"><span class="pre">partition-name</span></code> entries
-to <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> as needed.  For example, let's imagine we
+<p>To define additional mail spools, add more <code class="docutils literal notranslate"><span class="pre">partition-name</span></code> entries
+to <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> as needed.  For example, let's imagine we
 want to migrate users to new partitions split by first character of the
 user's last name, and add a partition for shared mailboxes (see
 <a class="reference internal" href="../../../concepts/features/namespaces.html#imap-features-namespaces-shared"><span class="std std-ref">Shared Namespaces</span></a>):</p>
 <ul>
-<li><p class="first">Sample:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
+<li><p>Sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">main</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">am</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">-</span><span class="n">am</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">nz</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">-</span><span class="n">nz</span>
@@ -869,29 +872,31 @@ default behaviour is to locate <em>all</em> metadata in the data partition(s).</
 <p>The configuration directives to do so are quite similar to
 those for data partitions:</p>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">metapartition_files:</span></code> &lt;empty string&gt;</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">metapartition_files:</span></code> &lt;empty string&gt;</p>
 <blockquote>
-<div>Space-separated list of metadata files to be stored on a
+<div><p>Space-separated list of metadata files to be stored on a
 <em>metapartition</em> rather than in the mailbox directory on a spool
 partition.
-Allowed values: <em>header</em>, <em>index</em>, <em>cache</em>, <em>expunge</em>, <em>squat</em>, <em>annotations</em>, <em>lock</em>, <em>dav</em>, <em>archivecache</em></div></blockquote>
+Allowed values: <em>header</em>, <em>index</em>, <em>cache</em>, <em>expunge</em>, <em>squat</em>, <em>annotations</em>, <em>lock</em>, <em>dav</em>, <em>archivecache</em></p>
+</div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">metapartition-name:</span></code> &lt;none&gt;</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">metapartition-name:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div>The pathname of the metadata partition <em>name</em>, corresponding to
+<div><p>The pathname of the metadata partition <em>name</em>, corresponding to
 spool partition <strong>partition-name</strong>.  For any mailbox residing in
 a directory on <strong>partition-name</strong>, the metadata files listed in
 <em>metapartition_files</em> will be stored in a corresponding directory on
 <strong>metapartition-name</strong>.   Note that not every
 <strong>partition-name</strong> option is required to have a corresponding
 <strong>metapartition-name</strong> option, so that you can selectively choose
-which spool partitions will have separate metadata partitions.</div></blockquote>
+which spool partitions will have separate metadata partitions.</p>
+</div></blockquote>
 </div></blockquote>
 <p>Again, building on our examples above:</p>
 <ul>
-<li><p class="first">Sample:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
+<li><p>Sample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defaultpartition</span><span class="p">:</span> <span class="n">main</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">main</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">am</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">-</span><span class="n">am</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">nz</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">-</span><span class="n">nz</span>
@@ -928,7 +933,7 @@ which spool partitions will have separate metadata partitions.</div></blockquote
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 11 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -954,7 +959,6 @@ which spool partitions will have separate metadata partitions.</div></blockquote
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

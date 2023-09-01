@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -796,29 +798,29 @@ interfaces: IMAP, POP, NNTP, LMTP, etc.</p>
 <p>A cyrus mailbox is a directory in the filesystem. It contains the
 following files:</p>
 <ul class="simple">
-<li>zero or more message files</li>
-<li>the <code class="docutils literal"><span class="pre">cyrus.header</span></code> metadata file</li>
-<li>the <code class="docutils literal"><span class="pre">cyrus.index</span></code> metadata file</li>
-<li>the <code class="docutils literal"><span class="pre">cyrus.cache</span></code> metadata file</li>
-<li>zero or one <code class="docutils literal"><span class="pre">cyrus.squat</span></code> search indexes</li>
-<li>zero or more subdirectories</li>
+<li><p>zero or more message files</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> metadata file</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> metadata file</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> metadata file</p></li>
+<li><p>zero or one <code class="docutils literal notranslate"><span class="pre">cyrus.squat</span></code> search indexes</p></li>
+<li><p>zero or more subdirectories</p></li>
 </ul>
 <p>With &quot;split metadata&quot; configuration, the mailbox may actually be split
 between multiple disks, with the files being in the same relative
-directory on the meta disk. See the <code class="docutils literal"><span class="pre">imapd.conf</span></code> option
-<code class="docutils literal"><span class="pre">metapartition_files</span></code> for more information</p>
+directory on the meta disk. See the <code class="docutils literal notranslate"><span class="pre">imapd.conf</span></code> option
+<code class="docutils literal notranslate"><span class="pre">metapartition_files</span></code> for more information</p>
 </div>
 <div class="section" id="message-files">
 <h2>Message Files<a class="headerlink" href="#message-files" title="Permalink to this headline">¶</a></h2>
 <p>The message files are named by their UID, followed by a &quot;.&quot;, so UID 423
-would be named &quot;<code class="docutils literal"><span class="pre">423.</span></code>&quot;. They are stored in wire-format: lines are
+would be named &quot;<code class="docutils literal notranslate"><span class="pre">423.</span></code>&quot;. They are stored in wire-format: lines are
 terminated by CRLF and binary data is not allowed.</p>
 </div>
 <div class="section" id="cyrus-header">
-<h2><code class="docutils literal"><span class="pre">cyrus.header</span></code><a class="headerlink" href="#cyrus-header" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code><a class="headerlink" href="#cyrus-header" title="Permalink to this headline">¶</a></h2>
 <p>This file contains mailbox-wide information that does not change often.
 Its format:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Magic</span> <span class="n">String</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Magic</span> <span class="n">String</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">Quota</span> <span class="n">Root</span><span class="o">&gt;</span>\<span class="n">t</span><span class="o">&lt;</span><span class="n">Mailbox</span> <span class="n">Unique</span> <span class="n">ID</span> <span class="n">String</span><span class="o">&gt;</span>\<span class="n">n</span>
 <span class="o">&lt;</span><span class="n">Space</span><span class="o">-</span><span class="n">separated</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">user</span> <span class="n">flags</span><span class="o">&gt;</span>\<span class="n">n</span>
 <span class="o">&lt;</span><span class="n">Mailbox</span> <span class="n">ACL</span><span class="o">&gt;</span>\<span class="n">n</span>
@@ -831,23 +833,23 @@ replication subsystem to detect mailbox renames.</p>
 actually used.</p>
 <div class="section" id="locking-considerations">
 <h3>Locking Considerations<a class="headerlink" href="#locking-considerations" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
-changes to the <code class="docutils literal"><span class="pre">cyrus.header</span></code> file to ensure consistency. All changes
+<p>The <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
+changes to the <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file to ensure consistency. All changes
 are made by rewriting the entire file and renaming the new version into
 place.</p>
 </div>
 </div>
 <div class="section" id="cyrus-cache">
-<h2><code class="docutils literal"><span class="pre">cyrus.cache</span></code><a class="headerlink" href="#cyrus-cache" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">cyrus.cache</span></code> file is a pure cache of information that's also
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code><a class="headerlink" href="#cyrus-cache" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file is a pure cache of information that's also
 present in the message files. It exists to make ENVELOPE and specific
 header fetches more efficient, as well as to assist with searches and
 sorts.</p>
-<p>If a <code class="docutils literal"><span class="pre">cyrus.cache</span></code> file is missing or corrupted, it can be
-re-generated by running a <code class="docutils literal"><span class="pre">reconstruct</span></code> on the mailbox.</p>
+<p>If a <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file is missing or corrupted, it can be
+re-generated by running a <code class="docutils literal notranslate"><span class="pre">reconstruct</span></code> on the mailbox.</p>
 <p>The format is 10 individual records each prefixed with a 32 bit length
 value in network byte order. The offset of each message's cache record
-is stored in the <code class="docutils literal"><span class="pre">cyrus.index</span></code> file (documented below). The records in
+is stored in the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file (documented below). The records in
 a cyrus.cache file are of variable length, depending on the contents of
 the associated message.</p>
 <p>The first 4 bytes of the cyrus.cache file are a &quot;generation number&quot;
@@ -856,7 +858,7 @@ In the past this was used to track consistency between the files, but
 the name locking scheme and per-record CRC check in cyrus 2.4 and above
 means this is just a backup consistency check rather than an essential
 format feature.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+------------------------------------------------------------------------+</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------------------------------------------------------------------+</span>
 <span class="o">|</span><span class="n">Gen</span> <span class="c1"># (32bits)|Size 1 (32bits)|Data 1                                   |</span>
 <span class="o">+------------------------------------------------------------------------+</span>
 <span class="o">|</span>           <span class="o">|</span><span class="n">Size</span> <span class="mi">2</span> <span class="p">(</span><span class="mi">32</span><span class="n">bits</span><span class="p">)</span><span class="o">|</span><span class="n">Data</span> <span class="mi">2</span>            <span class="o">|</span><span class="n">Size</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">32</span><span class="n">bits</span><span class="p">)</span><span class="o">|</span> <span class="n">Data</span> <span class="mi">3</span>  <span class="o">|</span>
@@ -871,19 +873,18 @@ is NOT stored in the cyrus.cache file. Instead, there is a
 versions of cache data may exist in the same cache file.</p>
 <p>The order of fields per record in the cache file is as follows: (keep in
 mind that they are all preceded by a 4 byte network byte order size).</p>
-<dl class="docutils">
-<dt>Envelope Response</dt>
-<dd>Raw IMAP response for a request for the envelope.</dd>
-<dt>Bodystructure Response</dt>
-<dd>Raw IMAP response for a request for the bodystructure.</dd>
-<dt>Body Response</dt>
-<dd>Raw IMAP response for an (old style) request for the body.</dd>
-<dt>Binary Bodystructure</dt>
-<dd><p class="first">Offsets into the message file to pull out various body parts.
+<dl>
+<dt>Envelope Response</dt><dd><p>Raw IMAP response for a request for the envelope.</p>
+</dd>
+<dt>Bodystructure Response</dt><dd><p>Raw IMAP response for a request for the bodystructure.</p>
+</dd>
+<dt>Body Response</dt><dd><p>Raw IMAP response for an (old style) request for the body.</p>
+</dd>
+<dt>Binary Bodystructure</dt><dd><p>Offsets into the message file to pull out various body parts.
 Because of the nature of MIME parts, this is somewhat recursive.</p>
 <p>This looks like the following (starting the octet following the
 cache field size). All of the fields are bit32s.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
  <span class="p">[</span><span class="n">Number</span> <span class="n">of</span> <span class="n">message</span> <span class="n">parts</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">the</span> <span class="n">rfc822</span> <span class="n">header</span> <span class="k">if</span> <span class="n">present</span><span class="p">]</span>
  <span class="p">[</span>
   <span class="p">[</span><span class="n">Offset</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">message</span> <span class="n">file</span> <span class="n">of</span> <span class="n">the</span> <span class="n">header</span> <span class="n">of</span> <span class="n">this</span> <span class="n">part</span><span class="p">]</span>
@@ -913,22 +914,22 @@ part from their body text (&quot;0&quot; or &quot;HEADER&quot;).</p>
 refers to the size of the entire mime part.</p>
 <p>A very simple message (with a single text/plain part) would
 therefore look like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">2</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">body</span> <span class="n">part</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">2</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">body</span> <span class="n">part</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>A simple multipart/alternative message might look like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">message</span> <span class="n">part</span> <span class="n">info</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">message</span> <span class="n">part</span> <span class="n">info</span><span class="p">]</span>
     <span class="p">[</span><span class="n">second</span> <span class="n">message</span> <span class="n">part</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>A message with an attachment that has two subparts:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span> <span class="n">info</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">first</span> <span class="n">body</span> <span class="n">part</span> <span class="n">info</span><span class="p">][</span><span class="n">attachment</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span> <span class="n">info</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">first</span> <span class="n">body</span> <span class="n">part</span> <span class="n">info</span><span class="p">][</span><span class="n">attachment</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
       <span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">NIL</span> <span class="n">header</span> <span class="n">info</span><span class="p">][</span><span class="n">sub</span> <span class="n">part</span> <span class="mi">1</span> <span class="n">info</span><span class="p">][</span><span class="n">sub</span> <span class="n">part</span> <span class="mi">2</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]]</span>
 </pre></div>
 </div>
 <p>A message with an attached message/rfc822 message with the following
 total structure:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">message</span><span class="o">/</span><span class="n">rfc822</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">message</span><span class="o">/</span><span class="n">rfc822</span>
   <span class="mi">0</span> <span class="n">headers</span><span class="p">;</span> <span class="n">content</span><span class="o">-</span><span class="nb">type</span><span class="p">:</span> <span class="n">multipart</span><span class="o">/</span><span class="n">mixed</span>
   <span class="mi">1</span> <span class="n">text</span><span class="o">/</span><span class="n">plain</span>
   <span class="mi">2</span> <span class="n">message</span><span class="o">/</span><span class="n">rfc822</span>
@@ -937,44 +938,43 @@ total structure:</p>
     <span class="mi">2</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span>
 </pre></div>
 </div>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span> <span class="n">part</span> <span class="mi">0</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">part</span> <span class="mi">1</span><span class="p">][</span><span class="n">overall</span> <span class="n">attachment</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span> <span class="n">part</span> <span class="mi">0</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">part</span> <span class="mi">1</span><span class="p">][</span><span class="n">overall</span> <span class="n">attachment</span> <span class="n">info</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span>
      <span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">rfc822</span> <span class="n">header</span> <span class="n">part</span> <span class="mf">2.0</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">part</span> <span class="mf">2.1</span><span class="p">][</span><span class="n">text</span><span class="o">/</span><span class="n">html</span> <span class="n">part</span> <span class="mf">2.2</span><span class="p">]</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]]</span>
 </pre></div>
 </div>
 </dd>
-<dt>Cache Header</dt>
-<dd><p class="first">Any cached header fields. The exact set of fields here depends on
-the cache record version - there is a function in <code class="docutils literal"><span class="pre">imap/mailbox.c</span></code>
+<dt>Cache Header</dt><dd><p>Any cached header fields. The exact set of fields here depends on
+the cache record version - there is a function in <code class="docutils literal notranslate"><span class="pre">imap/mailbox.c</span></code>
 to determine if a named header would be cached based on the version.
 These are in the same format they would appear in the message file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">HeaderName</span><span class="p">:</span> <span class="n">headerdata</span>\<span class="n">r</span>\<span class="n">n</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HeaderName</span><span class="p">:</span> <span class="n">headerdata</span>\<span class="n">r</span>\<span class="n">n</span>
 </pre></div>
 </div>
-<p class="last">Examples include: References, In-Reply-To, etc.</p>
+<p>Examples include: References, In-Reply-To, etc.</p>
 </dd>
-<dt>From</dt>
-<dd>The from header.</dd>
-<dt>To</dt>
-<dd>The to header.</dd>
-<dt>Cc</dt>
-<dd>The CC header.</dd>
-<dt>Bcc</dt>
-<dd>The BCC header.</dd>
-<dt>Subject</dt>
-<dd>The Subject header.</dd>
+<dt>From</dt><dd><p>The from header.</p>
+</dd>
+<dt>To</dt><dd><p>The to header.</p>
+</dd>
+<dt>Cc</dt><dd><p>The CC header.</p>
+</dd>
+<dt>Bcc</dt><dd><p>The BCC header.</p>
+</dd>
+<dt>Subject</dt><dd><p>The Subject header.</p>
+</dd>
 </dl>
 <div class="section" id="id1">
 <h3>Locking Considerations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
-changes to the <code class="docutils literal"><span class="pre">cyrus.cache</span></code> file to ensure consistency. All new cache
+<p>The <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
+changes to the <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file to ensure consistency. All new cache
 records are created by reading the current end-of-file offset, appending
 the new cache record, and storing that start offset into the associated
 cyrus.index record.</p>
 </div>
 </div>
 <div class="section" id="cyrus-index">
-<h2><code class="docutils literal"><span class="pre">cyrus.index</span></code><a class="headerlink" href="#cyrus-index" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code><a class="headerlink" href="#cyrus-index" title="Permalink to this headline">¶</a></h2>
 <p>The cyrus.index file is NOT just a cache - it stores information not
 present in the message file!</p>
 <p>The cyrus.index file consists of a fixed width header, followed by fixed
@@ -988,7 +988,7 @@ fields. All fields are stored in network byte order and aligned on 4
 byte boundaries. Due to some 64 bit values being stored, the header and
 individual records are aligned on 8 byte boundaries.</p>
 <p>The overall format looks sort of like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cyrus</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cyrus</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
 <span class="o">+----------------+</span>
 <span class="o">|</span> <span class="n">Mailbox</span> <span class="n">Header</span> <span class="o">|</span>
 <span class="o">+----------------+</span>
@@ -1006,13 +1006,13 @@ records are at well-known offsets, making any part of the file
 accessable at roughly equal speed.</p>
 <div class="section" id="id2">
 <h3>Locking Considerations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cyrus.index</span></code> files can not be repacked (i.e. records can not change
+<p><code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> files can not be repacked (i.e. records can not change
 UID for a particular offset, and the file can't be rewritten or deleted)
 unless there's an exclusive namelock held for the mailbox name. This is
 to avoid race conditions and simplify the use of mailboxes. Whenever a
 mailbox is opened, the caller holds a shared namelock on the mailbox
 name for the duration of the &quot;mailbox object&quot;'s existence.</p>
-<p>All reads of a <code class="docutils literal"><span class="pre">cyrus.index</span></code> file must be done with a lock held, and
+<p>All reads of a <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file must be done with a lock held, and
 all writes must be done with an exclusive lock held. This ensures CRC32
 checksums of individual headers and records are always consistent. There
 are no direct &quot;offset&quot; reads done any more, instead the mailbox API
@@ -1021,198 +1021,194 @@ record into a struct, performing consistency checks. Writes are also
 done with a complete record struct.</p>
 </div>
 <div class="section" id="detail-of-cyrus-index-header">
-<h3>Detail of <code class="docutils literal"><span class="pre">cyrus.index</span></code> header<a class="headerlink" href="#detail-of-cyrus-index-header" title="Permalink to this headline">¶</a></h3>
+<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header<a class="headerlink" href="#detail-of-cyrus-index-header" title="Permalink to this headline">¶</a></h3>
 <p>The index header contains the following information, in order:</p>
-<dl class="docutils">
-<dt>Generation Number (4 bytes)</dt>
-<dd>A number that is basically the &quot;revision number&quot; of the mailbox. It
+<dl>
+<dt>Generation Number (4 bytes)</dt><dd><p>A number that is basically the &quot;revision number&quot; of the mailbox. It
 must match between the cache and index files. This is to ensure that
 if we fail to sync both the cache and index files and a crash
 happens (so that only one is synced), we do not provide bad data to
 the user. This is also backed by having individual cache checksums
-on each record.</dd>
-<dt>Format (4 bytes)</dt>
-<dd>Basically obsolete (indicates netnews or regular).</dd>
-<dt>Minor Version (4 bytes)</dt>
-<dd>Indicates the version number of the index file. This can be used for
-on-the-fly upgrades of the index and cache files.</dd>
-<dt>Start Offset (4 bytes)</dt>
-<dd>Size of index header.</dd>
-<dt>Record Size (4 bytes)</dt>
-<dd>Size of an index record.</dd>
-<dt>Num Records (4 bytes)</dt>
-<dd>How many records are in this index (including records for expunged
+on each record.</p>
+</dd>
+<dt>Format (4 bytes)</dt><dd><p>Basically obsolete (indicates netnews or regular).</p>
+</dd>
+<dt>Minor Version (4 bytes)</dt><dd><p>Indicates the version number of the index file. This can be used for
+on-the-fly upgrades of the index and cache files.</p>
+</dd>
+<dt>Start Offset (4 bytes)</dt><dd><p>Size of index header.</p>
+</dd>
+<dt>Record Size (4 bytes)</dt><dd><p>Size of an index record.</p>
+</dd>
+<dt>Num Records (4 bytes)</dt><dd><p>How many records are in this index (including records for expunged
 records. See below for &quot;Exists&quot; which has moved from pre-version 12
-files.</dd>
-<dt>Last Appenddate (4 bytes)</dt>
-<dd>(time_t) of the last time a message was appended</dd>
-<dt>Last UID (4 bytes)</dt>
-<dd>Highest UID of all messages in the mailbox (UIDNEXT - 1).</dd>
-<dt>Quota Mailbox Used (8 bytes)</dt>
-<dd>Total amount of storage used by all of the messages in the mailbox.
+files.</p>
+</dd>
+<dt>Last Appenddate (4 bytes)</dt><dd><p>(time_t) of the last time a message was appended</p>
+</dd>
+<dt>Last UID (4 bytes)</dt><dd><p>Highest UID of all messages in the mailbox (UIDNEXT - 1).</p>
+</dd>
+<dt>Quota Mailbox Used (8 bytes)</dt><dd><p>Total amount of storage used by all of the messages in the mailbox.
 Platforms that don't support 64-bit integers only use the last 4
-bytes.</dd>
-<dt>POP3 Last Login (4 bytes)</dt>
-<dd>(time_t) of the last pop3 login to this INBOX, used to enforce the
-&quot;poptimeout&quot; <code class="docutils literal"><span class="pre">imapd.conf</span></code> option.</dd>
-<dt>UIDvalidity (4 bytes)</dt>
-<dd>The UID validitiy of this mailbox. Cyrus currently uses the
-<code class="docutils literal"><span class="pre">time()</span></code> when this mailbox was created.</dd>
-<dt>Deleted, Answered, and Flagged (4 bytes each)</dt>
-<dd>Counts of how many messages have each flag.</dd>
-<dt>Mailbox Options (4 bytes)</dt>
-<dd><p class="first">Bitmask of mailbox options, consisting of any combination of the
+bytes.</p>
+</dd>
+<dt>POP3 Last Login (4 bytes)</dt><dd><p>(time_t) of the last pop3 login to this INBOX, used to enforce the
+&quot;poptimeout&quot; <code class="docutils literal notranslate"><span class="pre">imapd.conf</span></code> option.</p>
+</dd>
+<dt>UIDvalidity (4 bytes)</dt><dd><p>The UID validitiy of this mailbox. Cyrus currently uses the
+<code class="docutils literal notranslate"><span class="pre">time()</span></code> when this mailbox was created.</p>
+</dd>
+<dt>Deleted, Answered, and Flagged (4 bytes each)</dt><dd><p>Counts of how many messages have each flag.</p>
+</dd>
+<dt>Mailbox Options (4 bytes)</dt><dd><p>Bitmask of mailbox options, consisting of any combination of the
 following:</p>
-<dl class="last docutils">
-<dt>POP3_NEW_UIDL</dt>
-<dd>Flag signalling that we're using &quot;<em>uidvalidity</em>.<em>uid</em>&quot; instead
-of just &quot;<em>uid</em>&quot; for the output of the POP3 UIDL command.</dd>
-<dt>IMAP_SHAREDSEEN</dt>
-<dd>Flag signalling that we're supporting a shared \Seen flag on
-the mailbox.</dd>
-<dt>IMAP_DUPDELIVER</dt>
-<dd>Flag signalling that we're allowing duplicate delivery of
+<dl class="simple">
+<dt>POP3_NEW_UIDL</dt><dd><p>Flag signalling that we're using &quot;<em>uidvalidity</em>.<em>uid</em>&quot; instead
+of just &quot;<em>uid</em>&quot; for the output of the POP3 UIDL command.</p>
+</dd>
+<dt>IMAP_SHAREDSEEN</dt><dd><p>Flag signalling that we're supporting a shared \Seen flag on
+the mailbox.</p>
+</dd>
+<dt>IMAP_DUPDELIVER</dt><dd><p>Flag signalling that we're allowing duplicate delivery of
 messages to the mailbox, overriding system-wide duplicate
-suppression.</dd>
-<dt>MAILBOX_NEEDS_REPACK</dt>
-<dd>Flag signalling that the mailbox is due to be repacked. During
+suppression.</p>
+</dd>
+<dt>MAILBOX_NEEDS_REPACK</dt><dd><p>Flag signalling that the mailbox is due to be repacked. During
 mailbox_close() every process will attempt to take an exclusive
-namelock on the mailbox and repack.</dd>
-<dt>MAILBOX_DELETED</dt>
-<dd>Flag signalling that the mailbox is deleted. This can be set
+namelock on the mailbox and repack.</p>
+</dd>
+<dt>MAILBOX_DELETED</dt><dd><p>Flag signalling that the mailbox is deleted. This can be set
 with a shared namelock, and indicates to all other users of the
 mailbox that they need to close it and attempt cleanup. The last
 process to close the mailbox will perform the final cleanup
 under an exclusive namelock, giving the other processes a chance
 to finish their current operation first without files
-disappearing from under them!</dd>
+disappearing from under them!</p>
+</dd>
 </dl>
 </dd>
-<dt>Leaked Cache (4 bytes)</dt>
-<dd>Number of leaked records in the cache file.</dd>
-<dt>Highest ModSeq (8 bytes)</dt>
-<dd>Highest Modification Sequence of all the messages in the mailbox
-(CONDSTORE).</dd>
-<dt>Deleted ModSeq (8 bytes)</dt>
-<dd>Lowest Modification Sequence before which expunged message data may
+<dt>Leaked Cache (4 bytes)</dt><dd><p>Number of leaked records in the cache file.</p>
+</dd>
+<dt>Highest ModSeq (8 bytes)</dt><dd><p>Highest Modification Sequence of all the messages in the mailbox
+(CONDSTORE).</p>
+</dd>
+<dt>Deleted ModSeq (8 bytes)</dt><dd><p>Lowest Modification Sequence before which expunged message data may
 have been purged from the mailbox and forgotten (CONDSTORE/QRESYNC
-support).</dd>
-<dt>Exists (4 bytes)</dt>
-<dd>See NumRecords above. This is the count of non-expunged records in
-the mailbox and corresponds to the IMAP status item &quot;EXISTS&quot;.</dd>
-<dt>First Expunged (4 bytes)</dt>
-<dd>lowest modified time of an expunged message in this mailbox (or zero
+support).</p>
+</dd>
+<dt>Exists (4 bytes)</dt><dd><p>See NumRecords above. This is the count of non-expunged records in
+the mailbox and corresponds to the IMAP status item &quot;EXISTS&quot;.</p>
+</dd>
+<dt>First Expunged (4 bytes)</dt><dd><p>lowest modified time of an expunged message in this mailbox (or zero
 if there are no expunged messages) - used to determine if the
-mailbox needs repacking.</dd>
-<dt>Last Repack Time (4 bytes)</dt>
-<dd>a timestamp for the last repack, to ensure repacks aren't done too
-close together if expunges were closely spaced</dd>
-<dt>Header File CRC (4 bytes)</dt>
-<dd>CRC32 value of the bytes in the <code class="docutils literal"><span class="pre">cyrus.header</span></code> file for this
+mailbox needs repacking.</p>
+</dd>
+<dt>Last Repack Time (4 bytes)</dt><dd><p>a timestamp for the last repack, to ensure repacks aren't done too
+close together if expunges were closely spaced</p>
+</dd>
+<dt>Header File CRC (4 bytes)</dt><dd><p>CRC32 value of the bytes in the <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file for this
 mailbox. Must be rewritten whenever the cyrus.header file is changed
 (see locking considerations above - this is why the cyrus.index must
-be exclusively locked!)</dd>
-<dt>Sync CRC (4 bytes)</dt>
-<dd>An XOR of the CRC32 of a specially generated value for each of the
+be exclusively locked!)</p>
+</dd>
+<dt>Sync CRC (4 bytes)</dt><dd><p>An XOR of the CRC32 of a specially generated value for each of the
 non-expunged records in this mailbox. This is a cached value which
 allows the replication subsystem to quickly determine that all
 non-expunged records in a mailbox are in sync and detect possible
-&quot;split brain&quot; scenarios with low bandwidth use.</dd>
-<dt>Recent UID (4 bytes)</dt>
-<dd>The highest UID last time an IMAP client logged in as the mailbox
+&quot;split brain&quot; scenarios with low bandwidth use.</p>
+</dd>
+<dt>Recent UID (4 bytes)</dt><dd><p>The highest UID last time an IMAP client logged in as the mailbox
 owner (or anybody if SHAREDSEEN is enabled) selected this mailbox.
-Used to generate the \Recent flags in IMAP</dd>
-<dt>Recent Time (4 bytes)</dt>
-<dd>Used for consistency with the seen_db code, but probably not
-actually necessary. Oh well</dd>
-<dt>Header CRC (4 bytes)</dt>
-<dd>Must always be the LAST record of the header. This is the CRC32 of
+Used to generate the \Recent flags in IMAP</p>
+</dd>
+<dt>Recent Time (4 bytes)</dt><dd><p>Used for consistency with the seen_db code, but probably not
+actually necessary. Oh well</p>
+</dd>
+<dt>Header CRC (4 bytes)</dt><dd><p>Must always be the LAST record of the header. This is the CRC32 of
 the actual bytes on disk (network order format) for the rest of the
 cyrus.index. By keeping it last, it can be easily calculated with
 the following snippet of code:
-<code class="docutils literal"><span class="pre">crc</span> <span class="pre">=</span> <span class="pre">crc32_map(buf,</span> <span class="pre">OFFSET_HEADER_CRC);</span></code> - i.e. crc32 from the
-start of the buffer to just before this field.</dd>
+<code class="docutils literal notranslate"><span class="pre">crc</span> <span class="pre">=</span> <span class="pre">crc32_map(buf,</span> <span class="pre">OFFSET_HEADER_CRC);</span></code> - i.e. crc32 from the
+start of the buffer to just before this field.</p>
+</dd>
 </dl>
 <p>There are also spare fields in the index header, to allow for future
 expansion without forcing an upgrade of the file, and to round up to be
 divisible by 8 bytes.</p>
 </div>
 <div class="section" id="detail-of-cyrus-index-records">
-<h3>Detail of <code class="docutils literal"><span class="pre">cyrus.index</span></code> records<a class="headerlink" href="#detail-of-cyrus-index-records" title="Permalink to this headline">¶</a></h3>
-<p>These records start immediately following the <code class="docutils literal"><span class="pre">cyrus.index</span></code> header,
+<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> records<a class="headerlink" href="#detail-of-cyrus-index-records" title="Permalink to this headline">¶</a></h3>
+<p>These records start immediately following the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header,
 and are all fixed size. They are in-order by uid of the message.</p>
-<dl class="docutils">
-<dt>UID (4 bytes)</dt>
-<dd>UID of the message</dd>
-<dt>INTERNALDATE (4 bytes)</dt>
-<dd>INTERNALDATE of the message (where possible, this matches the
+<dl class="simple">
+<dt>UID (4 bytes)</dt><dd><p>UID of the message</p>
+</dd>
+<dt>INTERNALDATE (4 bytes)</dt><dd><p>INTERNALDATE of the message (where possible, this matches the
 creation and modification times of the file on disk to help
-reconstruct in the event of data loss)</dd>
-<dt>SENTDATE (4 bytes)</dt>
-<dd>Contents of the Date: header chomped to day resolution with timezone
-stripped.</dd>
-<dt>SIZE (4 bytes)</dt>
-<dd>Size of the whole message (in octets)</dd>
-<dt>HEADER SIZE (4 bytes)</dt>
-<dd>Size of the message header (in octets)</dd>
-<dt>GMTIME (4 bytes)</dt>
-<dd>Contents of the Date: header at 1 second resolution and converted to
-GMT (for sort)</dd>
-<dt>CACHE_OFFSET (4 bytes)</dt>
-<dd>Offset into the <code class="docutils literal"><span class="pre">cyrus.cache</span></code> file for the beginning of this
-message's cache entry.</dd>
-<dt>LAST UPDATED (4 bytes)</dt>
-<dd>(time_t) of the last time this record was changed</dd>
-<dt>SYSTEM FLAGS (4 bytes)</dt>
-<dd>Bitmask showing which system flags are set/unset</dd>
-<dt>USER FLAGS (MAX_USER_FLAGS / 32 bytes)</dt>
-<dd>Bitmask showing which user flags are set/unset (bits correspond to
+reconstruct in the event of data loss)</p>
+</dd>
+<dt>SENTDATE (4 bytes)</dt><dd><p>Contents of the Date: header chomped to day resolution with timezone
+stripped.</p>
+</dd>
+<dt>SIZE (4 bytes)</dt><dd><p>Size of the whole message (in octets)</p>
+</dd>
+<dt>HEADER SIZE (4 bytes)</dt><dd><p>Size of the message header (in octets)</p>
+</dd>
+<dt>GMTIME (4 bytes)</dt><dd><p>Contents of the Date: header at 1 second resolution and converted to
+GMT (for sort)</p>
+</dd>
+<dt>CACHE_OFFSET (4 bytes)</dt><dd><p>Offset into the <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file for the beginning of this
+message's cache entry.</p>
+</dd>
+<dt>LAST UPDATED (4 bytes)</dt><dd><p>(time_t) of the last time this record was changed</p>
+</dd>
+<dt>SYSTEM FLAGS (4 bytes)</dt><dd><p>Bitmask showing which system flags are set/unset</p>
+</dd>
+<dt>USER FLAGS (MAX_USER_FLAGS / 32 bytes)</dt><dd><p>Bitmask showing which user flags are set/unset (bits correspond to
 positions in the cyrus.header flag list, i.e. (1&lt;&lt;0) == the flag
-name</dd>
-<dt>CONTENT_LINES (4 bytes)</dt>
-<dd>Number of text lines contained in the message content (body).</dd>
-<dt>CACHE_VERSION (4 bytes)</dt>
-<dd>Indicates the version number of the cache record for the message
-(determines which headers are cached, see list in mailbox.c).</dd>
-<dt>GUID (MESSAGE_GUID_SIZE bytes)</dt>
-<dd>Globally Unique IDentifier of the message (used by replication
-engine). This is the sha1 value of the bytes as stored on disk.</dd>
-<dt>MODSEQ (8 bytes)</dt>
-<dd>Modification Sequence of the message (CONDSTORE).</dd>
-<dt>CACHE_CRC (4 bytes)</dt>
-<dd>This is the CRC32 of all the bytes of the cache record (all 10
+name</p>
+</dd>
+<dt>CONTENT_LINES (4 bytes)</dt><dd><p>Number of text lines contained in the message content (body).</p>
+</dd>
+<dt>CACHE_VERSION (4 bytes)</dt><dd><p>Indicates the version number of the cache record for the message
+(determines which headers are cached, see list in mailbox.c).</p>
+</dd>
+<dt>GUID (MESSAGE_GUID_SIZE bytes)</dt><dd><p>Globally Unique IDentifier of the message (used by replication
+engine). This is the sha1 value of the bytes as stored on disk.</p>
+</dd>
+<dt>MODSEQ (8 bytes)</dt><dd><p>Modification Sequence of the message (CONDSTORE).</p>
+</dd>
+<dt>CACHE_CRC (4 bytes)</dt><dd><p>This is the CRC32 of all the bytes of the cache record (all 10
 fields) as stored on disk. Again, calculated over the exact bytes
-stored in the <code class="docutils literal"><span class="pre">cyrus.cache</span></code> file.</dd>
-<dt>RECORD_CRC (4 bytes)</dt>
-<dd>Like the header CRC - this is the CRC32 of all the bytes in on-disk
+stored in the <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file.</p>
+</dd>
+<dt>RECORD_CRC (4 bytes)</dt><dd><p>Like the header CRC - this is the CRC32 of all the bytes in on-disk
 order that exist in this record. Records are always rewritten as the
 entire record, including the updated CRC, so it's always consistent
-if you have a lock on the <code class="docutils literal"><span class="pre">cyrus.index</span></code> file, because writers will
-wait until they get an exclusive lock to make modifications.</dd>
+if you have a lock on the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file, because writers will
+wait until they get an exclusive lock to make modifications.</p>
+</dd>
 </dl>
 </div>
 </div>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Expunge is super quick now - it's just a flag update!</p>
-</li>
-<li><p class="first">Append is relatively fast (it only adds to the end of both the cache
-and index files and modifies the index header)</p>
-</li>
-<li><p class="first">Message unlinks always happen during the &quot;close&quot; phase - which may be
+<li><p>Expunge is super quick now - it's just a flag update!</p></li>
+<li><p>Append is relatively fast (it only adds to the end of both the cache
+and index files and modifies the index header)</p></li>
+<li><p>Message unlinks always happen during the &quot;close&quot; phase - which may be
 noticed when you select another mailbox, but otherwise are delayed
 from the actual action. With delayed expunge, the unlinks are pushed
 off to cyr_expire which is a background task, and will never be
-noticed by the user.</p>
-</li>
-<li><p class="first">Message delivery is something like this:</p>
+noticed by the user.</p></li>
+<li><p>Message delivery is something like this:</p>
 <ol class="arabic simple">
-<li>write/sync message file</li>
-<li>write/sync new <code class="docutils literal"><span class="pre">cyrus.cache</span></code> record</li>
-<li>write/sync new <code class="docutils literal"><span class="pre">cyrus.index</span></code> record</li>
-<li>calculate, write, sync new <code class="docutils literal"><span class="pre">cyrus.index</span></code> header</li>
-<li>acknowledge message delivery</li>
+<li><p>write/sync message file</p></li>
+<li><p>write/sync new <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> record</p></li>
+<li><p>write/sync new <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> record</p></li>
+<li><p>calculate, write, sync new <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header</p></li>
+<li><p>acknowledge message delivery</p></li>
 </ol>
 <p>The message isn't delivered until the new index header is written. In
 case of a crash before the new index header is written, any previous
@@ -1229,18 +1225,18 @@ will describe somewhere else when we get around to it).</p>
 <div class="section" id="future-considerations">
 <h2>Future considerations<a class="headerlink" href="#future-considerations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Cache all header fields? (or all up to Xk?) This could greatly
+<li><p>Cache all header fields? (or all up to Xk?) This could greatly
 improve speeds of clients that just ask for everything, but also
 increases the expense of rewriting the cache file (as well as the
-size it takes on disk).</li>
-<li>Reformat cache file to use a
+size it takes on disk).</p></li>
+<li><p>Reformat cache file to use a
 (size)(size)(size)(size)(data)(data)(data) format. This makes
 accesses anywhere in the cache file equally fast, as opposed to
 having to iterate through all the entires for a given message to get
 to the last one. Note that either way is still O(1) so maybe it
-doesn't matter much.</li>
-<li>It would be useful to store a uniqueid -&gt; mailbox name index, so that
-we could fix arbitron again.</li>
+doesn't matter much.</p></li>
+<li><p>It would be useful to store a uniqueid -&gt; mailbox name index, so that
+we could fix arbitron again.</p></li>
 </ul>
 </div>
 </div>
@@ -1266,7 +1262,7 @@ we could fix arbitron again.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 09 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1292,7 +1288,6 @@ we could fix arbitron again.</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -786,46 +788,42 @@
           <div role="main" class="document">
             
   <div class="section" id="cvt-xlist-specialuse">
-<span id="imap-reference-manpages-systemcommands-cvt-xlist-specialuse"></span><span id="std:cyrusman-cvt_xlist_specialuse(8)"></span><h1><strong>cvt_xlist_specialuse</strong><a class="headerlink" href="#cvt-xlist-specialuse" title="Permalink to this headline">¶</a></h1>
+<span id="imap-reference-manpages-systemcommands-cvt-xlist-specialuse"></span><span id="std-cyrusman-cvt_xlist_specialuse-8"></span><span id="std:cyrusman-cvt_xlist_specialuse(8)"></span><h1><strong>cvt_xlist_specialuse</strong><a class="headerlink" href="#cvt-xlist-specialuse" title="Permalink to this headline">¶</a></h1>
 <p>Convert legacy xlist-<em>flag</em> settings to user special-use annotations.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cvt_xlist_specialuse</strong> [OPTIONS] mailbox...
-</pre>
+<pre class="literal-block"><strong>cvt_xlist_specialuse</strong> [OPTIONS] mailbox...</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cvt_xlist_specialuse</strong> is a tool for converting xlist-<em>flag</em> settings from
-<a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to user special-use annotations.</p>
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to user special-use annotations.</p>
 </div>
 <div class="section" id="options">
 <span id="cvt-xlist-specialuse-options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cvt_xlist_specialuse-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-cvt_xlist_specialuse-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-cvt-xlist-specialuse-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cvt_xlist_specialuse-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cvt_xlist_specialuse-v">
-<span id="cmdoption-cvt_xlist_specialuse--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cvt_xlist_specialuse-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cvt-xlist-specialuse-v"></span><span id="cmdoption-cvt_xlist_specialuse-verbose"></span><span id="cmdoption-cvt-xlist-specialuse-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cvt_xlist_specialuse-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produce verbose output</p>
 </dd></dl>
 
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cvt_xlist_specialuse</strong> user.*
-</pre>
+<pre class="literal-block"><strong>cvt_xlist_specialuse</strong> user.*</pre>
 <blockquote>
-<div>Set special-use annotations for all users (unixhierarchysep: off)</div></blockquote>
-<pre class="literal-block">
-<strong>cvt_xlist_specialuse</strong> user/*
-</pre>
+<div><p>Set special-use annotations for all users (unixhierarchysep: off)</p>
+</div></blockquote>
+<pre class="literal-block"><strong>cvt_xlist_specialuse</strong> user/*</pre>
 <blockquote>
-<div>Set special-use annotations for all users (unixhierarchysep: on)</div></blockquote>
+<div><p>Set special-use annotations for all users (unixhierarchysep: on)</p>
+</div></blockquote>
 </div>
 <div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
@@ -841,7 +839,7 @@ settings had been in use.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -866,7 +864,7 @@ settings had been in use.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -892,7 +890,6 @@ settings had been in use.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

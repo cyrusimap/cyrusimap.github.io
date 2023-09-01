@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -803,64 +805,68 @@ the authenticated user has permission to see, according to the normal mailbox
 <div class="section" id="list-of-mailboxes-rss-feeds">
 <h3>List of mailboxes: rss_feeds<a class="headerlink" href="#list-of-mailboxes-rss-feeds" title="Permalink to this headline">¶</a></h3>
 <div class="sidebar">
-<p class="first sidebar-title">rss_feeds</p>
+<p class="sidebar-title">rss_feeds</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">rss_feeds:</span></code> *</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
 <blockquote>
-<div>A wildmat pattern specifying which mailbox hierarchies should be
+<div><p><code class="docutils literal notranslate"><span class="pre">rss_feeds:</span></code> *</p>
+<blockquote>
+<div><p>A wildmat pattern specifying which mailbox hierarchies should be
 treated as RSS feeds.  Only mailboxes matching the wildmat will
 have their messages available via RSS.  If not set, a default
-wildmat of &quot;*&quot; (ALL mailboxes) will be used.</div></blockquote>
+wildmat of &quot;*&quot; (ALL mailboxes) will be used.</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <p>The list of available RSS feeds can be obtained by clients by accessing the
-<code class="docutils literal"><span class="pre">/rss/</span></code> URL on the Cyrus server.</p>
+<code class="docutils literal notranslate"><span class="pre">/rss/</span></code> URL on the Cyrus server.</p>
 <p>The rss_feeds option uses the &quot;wildmat&quot; (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3977.html#section-4"><strong>RFC 3977#section-4</strong></a>) format to specify
 which mailboxes/folders will be made available via RSS. This list is further
 limited to only those mailboxes and folders that the authenticated user has
 permissions to see.</p>
 <p>The rss_feeds option uses the
 <a class="reference internal" href="../../../concepts/features/namespaces.html#mailbox-namespaces"><span class="std std-ref">internal namespace</span></a>, which uses &quot;.&quot; as a hierarchy
-separator, regardless of what <code class="docutils literal"><span class="pre">unixhierarchysep</span></code> is set to.</p>
+separator, regardless of what <code class="docutils literal notranslate"><span class="pre">unixhierarchysep</span></code> is set to.</p>
 <p>Examples:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">user.bob</span></code> - will serve only user &quot;Bob&quot;'s inbox.</li>
-<li><code class="docutils literal"><span class="pre">rss.*</span></code> - will serve all folders under the shared mailbox called &quot;rss&quot;.</li>
-<li><code class="docutils literal"><span class="pre">rss*</span></code> - will serve all content under mailboxes that start with &quot;rss&quot;:
-rss-cool and rss-important will be included, for example.</li>
-<li><code class="docutils literal"><span class="pre">*,!user</span></code> - will serve all shared mailboxes, but no personal mailboxes.</li>
-<li><code class="docutils literal"><span class="pre">*</span></code> - will serve all shared and personal mailboxes.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">user.bob</span></code> - will serve only user &quot;Bob&quot;'s inbox.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rss.*</span></code> - will serve all folders under the shared mailbox called &quot;rss&quot;.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rss*</span></code> - will serve all content under mailboxes that start with &quot;rss&quot;:
+rss-cool and rss-important will be included, for example.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*,!user</span></code> - will serve all shared mailboxes, but no personal mailboxes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> - will serve all shared and personal mailboxes.</p></li>
 </ul>
 </div>
 <div class="section" id="display-of-mailbox-list-rss-feedlist-template">
 <h3>Display of mailbox list: rss_feedlist_template<a class="headerlink" href="#display-of-mailbox-list-rss-feedlist-template" title="Permalink to this headline">¶</a></h3>
 <div class="sidebar">
-<p class="first sidebar-title">rss_feedlist_template</p>
+<p class="sidebar-title">rss_feedlist_template</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">rss_feedlist_template:</span></code> &lt;none&gt;</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
 <blockquote>
-<div>File containing HTML that will be used as a template for displaying
+<div><p><code class="docutils literal notranslate"><span class="pre">rss_feedlist_template:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div><p>File containing HTML that will be used as a template for displaying
 the list of available RSS feeds.  A single instance of the variable
 %RSS_FEEDLIST% should appear in the file, which will be replaced by
 a nested unordered list of feeds.  The toplevel unordered list will
 be tagged with an id of &quot;feed&quot; (&lt;ul id='feed'&gt;) which can be used
 by stylesheet(s) in your template.  The dynamically created list of
 feeds based on the HTML template will be accessible at the &quot;/rss&quot;
-URL on the server.</div></blockquote>
+URL on the server.</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <p>By default, the server will present the list as a
 simple unordered list in an HTML document. To customize the look and feel of the
-feed list, the <code class="docutils literal"><span class="pre">rss_feedlist_template</span></code> option can be used to point to a HTML
+feed list, the <code class="docutils literal notranslate"><span class="pre">rss_feedlist_template</span></code> option can be used to point to a HTML
 template file. This file can use Cascading Style Sheets, JavaScript, etc.
 All content that the template uses <strong>must</strong> reside under the
-<code class="docutils literal"><span class="pre">httpdocroot</span></code>. Consult <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> for specifics on the
+<code class="docutils literal notranslate"><span class="pre">httpdocroot</span></code>. Consult <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> for specifics on the
 required contents of this custom file.</p>
-<p>Note that for sites running Cyrus Murder, <code class="docutils literal"><span class="pre">rss_feedlist_template</span></code> only needs
+<p>Note that for sites running Cyrus Murder, <code class="docutils literal notranslate"><span class="pre">rss_feedlist_template</span></code> only needs
 to be set on frontend servers, since only those servers have the complete
 mailbox list.</p>
 </div>
@@ -888,7 +894,7 @@ mailbox list.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 17 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -914,7 +920,6 @@ mailbox list.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

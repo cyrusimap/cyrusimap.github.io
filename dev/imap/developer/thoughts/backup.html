@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,7 +791,7 @@
 <h1>Notes for backup implementation<a class="headerlink" href="#notes-for-backup-implementation" title="Permalink to this headline">¶</a></h1>
 <p>Backup index database (one per user):</p>
 <p>chunk:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
 <span class="n">timestamp</span> <span class="n">ts</span>
 <span class="nb">int</span> <span class="n">offset</span>
 <span class="nb">int</span> <span class="n">length</span>
@@ -798,7 +800,7 @@
 </pre></div>
 </div>
 <p>mailbox:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
 <span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">knows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span>
 <span class="n">char</span> <span class="n">uniqueid</span>               <span class="o">-&gt;</span> <span class="n">unique</span>
 <span class="n">char</span> <span class="n">mboxname</span>               <span class="o">-&gt;</span> <span class="n">altered</span> <span class="n">by</span> <span class="n">a</span> <span class="n">rename</span>
@@ -823,7 +825,7 @@
 </pre></div>
 </div>
 <p>message:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="nb">id</span>
 <span class="n">char</span> <span class="n">guid</span>
 <span class="n">char</span> <span class="n">partition</span>              <span class="o">-&gt;</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">spool</span> <span class="n">directory</span> <span class="k">for</span> <span class="n">the</span> <span class="n">temp</span> <span class="n">file</span> <span class="o">-</span> <span class="n">we</span> <span class="n">might</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">it</span>
 <span class="nb">int</span> <span class="n">chunk_id</span>
@@ -832,7 +834,7 @@
 </pre></div>
 </div>
 <p>mailbox_message:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_id</span>
 <span class="nb">int</span> <span class="n">message_id</span>
 <span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">has</span> <span class="n">a</span> <span class="n">RECORD</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">MAILBOX</span> <span class="k">for</span> <span class="n">this</span>
 <span class="nb">int</span> <span class="n">uid</span>
@@ -846,13 +848,13 @@
 </pre></div>
 </div>
 <p>subscription:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">knows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">knows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span>
 <span class="n">char</span> <span class="n">mboxname</span>               <span class="o">-&gt;</span> <span class="n">no</span> <span class="n">linkage</span> <span class="n">to</span> <span class="n">mailbox</span> <span class="n">table</span><span class="p">,</span> <span class="n">users</span> <span class="n">can</span> <span class="n">be</span> <span class="n">sub</span><span class="s1">&#39;d to nonexistent</span>
 <span class="n">timestamp</span> <span class="n">unsubscribed</span>      <span class="o">-&gt;</span> <span class="n">time</span> <span class="n">that</span> <span class="n">it</span> <span class="n">was</span> <span class="n">unsubscribed</span><span class="p">,</span> <span class="ow">or</span> <span class="n">NULL</span> <span class="k">if</span> <span class="n">still</span> <span class="n">alive</span>
 </pre></div>
 </div>
 <p>seen:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">knows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">last_chunk_id</span>           <span class="o">-&gt;</span> <span class="n">chunk</span> <span class="n">that</span> <span class="n">knows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">state</span>
 <span class="n">char</span> <span class="n">uniqueid</span>               <span class="o">-&gt;</span> <span class="n">mailbox</span> <span class="p">(</span><span class="ow">not</span> <span class="n">necessarily</span> <span class="n">ours</span><span class="p">)</span> <span class="n">this</span> <span class="n">applies</span> <span class="n">to</span>
 <span class="n">timestamp</span> <span class="n">lastread</span>
 <span class="nb">int</span> <span class="n">lastuid</span>
@@ -861,7 +863,7 @@
 </pre></div>
 </div>
 <p>sieve:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">chunk_id</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">chunk_id</span>
 <span class="n">timestamp</span> <span class="n">last_update</span>
 <span class="n">char</span> <span class="n">filename</span>
 <span class="n">char</span> <span class="n">guid</span>
@@ -958,13 +960,13 @@ hierarchy rather than just being a flat structure.  though this adds complexity
 wrt hiersep handling.  something like:</p>
 <p>mailbox:</p>
 <blockquote>
-<div><dl class="docutils">
-<dt>mboxname</dt>
-<dd># just the name of this mbox</dd>
-<dt>parent_id</dt>
-<dd># fk to parent mailbox</dd>
-<dt>full_mboxname</dt>
-<dd># cached value, parent.full_mboxname + mboxname</dd>
+<div><dl class="simple">
+<dt>mboxname</dt><dd><p># just the name of this mbox</p>
+</dd>
+<dt>parent_id</dt><dd><p># fk to parent mailbox</p>
+</dd>
+<dt>full_mboxname</dt><dd><p># cached value, parent.full_mboxname + mboxname</p>
+</dd>
 </dl>
 </div></blockquote>
 </div>
@@ -973,14 +975,14 @@ wrt hiersep handling.  something like:</p>
 <p>just use a normal flock/fcntl lock on the data file and only open the index
 if that lock succeeded</p>
 <ul class="simple">
-<li>backup:   needs to append foo and update foo.index</li>
-<li><dl class="first docutils">
-<dt>reindex:  only needs to read foo, but needs a write lock to prevent</dt>
-<dd>writes while it does so. needs to write to (replace) foo.index</dd>
+<li><p>backup:   needs to append foo and update foo.index</p></li>
+<li><dl class="simple">
+<dt>reindex:  only needs to read foo, but needs a write lock to prevent</dt><dd><p>writes while it does so. needs to write to (replace) foo.index</p>
+</dd>
 </dl>
 </li>
-<li>compact:  needs to re-write foo and foo.index</li>
-<li>restore:  needs to read</li>
+<li><p>compact:  needs to re-write foo and foo.index</p></li>
+<li><p>restore:  needs to read</p></li>
 </ul>
 </div>
 <div class="section" id="verifying-index">
@@ -992,12 +994,12 @@ the corresponding data contents in the index.</p>
 <p>when opening a backup, verify this checksum against the data, and refuse to
 load the index if it doesn't match.</p>
 <ul class="simple">
-<li>sha1sum of (compressed) contents of file prior to each chunk</li>
+<li><p>sha1sum of (compressed) contents of file prior to each chunk</p></li>
 </ul>
 <p>how to tell whether the chunk data is any good?  store a checksum of the chunk
 contents along with the rest of the chunk index</p>
 <ul class="simple">
-<li>sha1sum of (uncompressed) contents of each chunk</li>
+<li><p>sha1sum of (uncompressed) contents of each chunk</p></li>
 </ul>
 </div>
 <div class="section" id="mailboxes-database">
@@ -1015,15 +1017,15 @@ userid -&gt; backup_filename</p>
 <div class="section" id="reindex">
 <h2>reindex<a class="headerlink" href="#reindex" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>convert user mailbox name to backup name</li>
-<li>complain if there's no backup data file?</li>
-<li>lock, rename .index to .index.old, init new .index</li>
-<li>foreach file chunk:</li>
-<li>timestamp is from first line in chunk</li>
-<li>complain if timestamp has gone backwards?</li>
-<li>index records from chunk</li>
-<li>unlock</li>
-<li>clean up .index.old</li>
+<li><p>convert user mailbox name to backup name</p></li>
+<li><p>complain if there's no backup data file?</p></li>
+<li><p>lock, rename .index to .index.old, init new .index</p></li>
+<li><p>foreach file chunk:</p></li>
+<li><p>timestamp is from first line in chunk</p></li>
+<li><p>complain if timestamp has gone backwards?</p></li>
+<li><p>index records from chunk</p></li>
+<li><p>unlock</p></li>
+<li><p>clean up .index.old</p></li>
 </ul>
 <p>on error:
 * discard partial new index
@@ -1057,7 +1059,7 @@ file it will recompress the data more efficiently.</p>
 <div class="section" id="questions">
 <h2>questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>what does it look like when uidvalidity changes?</li>
+<li><p>what does it look like when uidvalidity changes?</p></li>
 </ul>
 </div>
 <div class="section" id="restore">
@@ -1093,7 +1095,7 @@ such that connecting clients can preserve their state.  so the imapd/sync_server
 receiving the restore request accepts these fields as optional, but only preserves
 them if it's safe to do so.</p>
 <ul class="simple">
-<li>restore: sbin program for selecting and restoring messages</li>
+<li><p>restore: sbin program for selecting and restoring messages</p></li>
 </ul>
 <p>restore command needs options:
 + whether or not to trim deletedprefix off mailbox names to be restored
@@ -1104,86 +1106,76 @@ them if it's safe to do so.</p>
 + user/mailbox/backup file(s) to restore from
 + mailbox to restore to (override location in backup)
 + override acl?</p>
-<dl class="docutils">
-<dt>can we heuristically determine whether an argument is an mboxname, uniqueid or guid?</dt>
-<dd>=&gt; libuuid uniqueid is 36 bytes of hyphen (at fixed positions) and hex digits
+<dl>
+<dt>can we heuristically determine whether an argument is an mboxname, uniqueid or guid?</dt><dd><p>=&gt; libuuid uniqueid is 36 bytes of hyphen (at fixed positions) and hex digits
 =&gt; non-libuuid uniqueid is 24 bytes of hex digits
 =&gt; mboxname usually contains at least one . somewhere
-=&gt; guid is 40 bytes of hex digits</dd>
-<dt>usage:</dt>
-<dd>restore [options] server [mode] backup [mboxname | uniqueid | guid]...</dd>
-<dt>options:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-A <var>acl</var></span></kbd></td>
-<td># apply specified acl to restored mailboxes</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-C <var>alt_config</var></span></kbd></td>
-<td># alternate config file</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-D</span></kbd></td>
-<td># don't trim deletedprefix before restoring</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-F <var>input-file</var></span></kbd></td>
-<td># read mailboxes/messages from file rather than argv</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-L</span></kbd></td>
-<td># local mailbox operations only (no mupdate)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-M <var>mboxname</var></span></kbd></td>
-<td># restore messages to specified mailbox</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-P <var>partition</var></span></kbd></td>
-<td># restore mailboxes to specified partition</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-U</span></kbd></td>
-<td># try to preserve uniqueid, uid, modseq, etc</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-X</span></kbd></td>
-<td># don't restore expunged messages</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-a</span></kbd></td>
-<td># try to restore all mailboxes in backup</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-n</span></kbd></td>
-<td># calculate work required but don't perform restoration</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-r</span></kbd></td>
-<td># recurse into submailboxes</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-v</span></kbd></td>
-<td># verbose</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-w <var>seconds</var></span></kbd></td>
-<td># wait before starting (useful for attaching a debugger)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-x</span></kbd></td>
-<td># only restore expunged messages (not sure if useful?)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-z</span></kbd></td>
-<td># require compression (abort if compression unavailable)</td></tr>
-</tbody>
-</table>
+=&gt; guid is 40 bytes of hex digits</p>
 </dd>
-<dt>mode:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-f</span></kbd></td>
-<td># specified backup interpreted as filename</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-m</span></kbd></td>
-<td># specified backup interpreted as mboxname</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-u</span></kbd></td>
-<td># specified backup interpreted as userid (default)</td></tr>
-</tbody>
-</table>
+<dt>usage:</dt><dd><p>restore [options] server [mode] backup [mboxname | uniqueid | guid]...</p>
+</dd>
+<dt>options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-A <var>acl</var></span></kbd></dt>
+<dd><p># apply specified acl to restored mailboxes</p>
+</dd>
+<dt><kbd><span class="option">-C <var>alt_config</var></span></kbd></dt>
+<dd><p># alternate config file</p>
+</dd>
+<dt><kbd><span class="option">-D</span></kbd></dt>
+<dd><p># don't trim deletedprefix before restoring</p>
+</dd>
+<dt><kbd><span class="option">-F <var>input-file</var></span></kbd></dt>
+<dd><p># read mailboxes/messages from file rather than argv</p>
+</dd>
+<dt><kbd><span class="option">-L</span></kbd></dt>
+<dd><p># local mailbox operations only (no mupdate)</p>
+</dd>
+<dt><kbd><span class="option">-M <var>mboxname</var></span></kbd></dt>
+<dd><p># restore messages to specified mailbox</p>
+</dd>
+<dt><kbd><span class="option">-P <var>partition</var></span></kbd></dt>
+<dd><p># restore mailboxes to specified partition</p>
+</dd>
+<dt><kbd><span class="option">-U</span></kbd></dt>
+<dd><p># try to preserve uniqueid, uid, modseq, etc</p>
+</dd>
+<dt><kbd><span class="option">-X</span></kbd></dt>
+<dd><p># don't restore expunged messages</p>
+</dd>
+<dt><kbd><span class="option">-a</span></kbd></dt>
+<dd><p># try to restore all mailboxes in backup</p>
+</dd>
+<dt><kbd><span class="option">-n</span></kbd></dt>
+<dd><p># calculate work required but don't perform restoration</p>
+</dd>
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p># recurse into submailboxes</p>
+</dd>
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p># verbose</p>
+</dd>
+<dt><kbd><span class="option">-w <var>seconds</var></span></kbd></dt>
+<dd><p># wait before starting (useful for attaching a debugger)</p>
+</dd>
+<dt><kbd><span class="option">-x</span></kbd></dt>
+<dd><p># only restore expunged messages (not sure if useful?)</p>
+</dd>
+<dt><kbd><span class="option">-z</span></kbd></dt>
+<dd><p># require compression (abort if compression unavailable)</p>
+</dd>
+</dl>
+</dd>
+<dt>mode:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p># specified backup interpreted as filename</p>
+</dd>
+<dt><kbd><span class="option">-m</span></kbd></dt>
+<dd><p># specified backup interpreted as mboxname</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p># specified backup interpreted as userid (default)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </div>
@@ -1208,21 +1200,20 @@ id|timestamp|offset|length|file_sha1|data_sha1
 <p>remember: a single APPLY MESSAGE line can contain many messages!</p>
 <p>thoughts:</p>
 <ul>
-<li><p class="first">need a heuristic for quickly determining whether a backup needs to be compacted</p>
+<li><p>need a heuristic for quickly determining whether a backup needs to be compacted</p>
 <blockquote>
 <div><ul class="simple">
-<li>sum(chunks to discard, chunks to combine, chunks to split) &gt; threshold</li>
-<li>can we detect chunks that are going to significantly reduce in size as result of discarding individual lines?</li>
+<li><p>sum(chunks to discard, chunks to combine, chunks to split) &gt; threshold</p></li>
+<li><p>can we detect chunks that are going to significantly reduce in size as result of discarding individual lines?</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">&quot;quick&quot; vs &quot;full&quot; compaction</p>
-</li>
+<li><p>&quot;quick&quot; vs &quot;full&quot; compaction</p></li>
 </ul>
 <p>settings:</p>
 <ul class="simple">
-<li>backup retention period</li>
-<li>chunk combination size (byte length or elapsed time)</li>
+<li><p>backup retention period</p></li>
+<li><p>chunk combination size (byte length or elapsed time)</p></li>
 </ul>
 <p>combining chunks:
 * size threshold below which adjacent chunks can be joined
@@ -1236,48 +1227,48 @@ backup_max_chunk_duration: 0 for no maximum
 priority: size or duration??</p>
 <p>data we absolutely need to keep:</p>
 <ul class="simple">
-<li>the most recent APPLY MAILBOX for each mailbox we're keeping (mailbox state)</li>
-<li>the APPLY MAILBOX containing the most recent RECORD for each message we're keeping (record state)</li>
-<li>the APPLY MESSAGE for each message we're keeping (message data)</li>
+<li><p>the most recent APPLY MAILBOX for each mailbox we're keeping (mailbox state)</p></li>
+<li><p>the APPLY MAILBOX containing the most recent RECORD for each message we're keeping (record state)</p></li>
+<li><p>the APPLY MESSAGE for each message we're keeping (message data)</p></li>
 </ul>
 <p>data that we should practically keep:</p>
 <ul class="simple">
-<li>all APPLY MAILBOXes for a given mailbox from the chunk identified as its last</li>
-<li>all APPLY MAILBOXes containing a RECORD for a given message from the chunk identified as its last</li>
-<li>the APPLY MESSAGE for each message we're keeping</li>
+<li><p>all APPLY MAILBOXes for a given mailbox from the chunk identified as its last</p></li>
+<li><p>all APPLY MAILBOXes containing a RECORD for a given message from the chunk identified as its last</p></li>
+<li><p>the APPLY MESSAGE for each message we're keeping</p></li>
 </ul>
 <p>four kinds of compaction (probably at least two simultaneously):</p>
 <ul class="simple">
-<li>removing unused chunks</li>
-<li>combining adjacent chunks into a single chunk (for better gz compression)</li>
-<li>removing unused message lines from within a chunk (important after combining)</li>
-<li>removing unused messages from within a message line</li>
+<li><p>removing unused chunks</p></li>
+<li><p>combining adjacent chunks into a single chunk (for better gz compression)</p></li>
+<li><p>removing unused message lines from within a chunk (important after combining)</p></li>
+<li><p>removing unused messages from within a message line</p></li>
 </ul>
-<dl class="docutils">
-<dt>&quot;unused messages&quot;</dt>
-<dd>messages for which all records have been expunged for longer
-than the retention period</dd>
-<dt>&quot;unused chunks&quot;</dt>
-<dd>chunks which contain only unused messages</dd>
+<dl class="simple">
+<dt>&quot;unused messages&quot;</dt><dd><p>messages for which all records have been expunged for longer
+than the retention period</p>
+</dd>
+<dt>&quot;unused chunks&quot;</dt><dd><p>chunks which contain only unused messages</p>
+</dd>
 </dl>
 <p>algorithm:</p>
 <ul class="simple">
-<li>open (and lock) backup and backup.new (or bail out)</li>
-<li>use backup index to identify chunks we still need</li>
-<li>create a chunk in backup.new</li>
-<li>foreach chunk we still need:</li>
-<li>foreach line in the chunk:</li>
-<li>next line if we don't need to keep it</li>
-<li>create new line</li>
-<li>foreach message in line:</li>
-<li>if we still need the message, or if we're not doing message granularity</li>
-<li>add the message to the new line</li>
-<li>write and index tmp line to backup.new</li>
-<li>if the new chunk is big enough, or if we're not combining</li>
-<li>end chunk and start a new one</li>
-<li>end the new chunk</li>
-<li>rename backup-&gt;backup.old, backup.new-&gt;backup</li>
-<li>close (and unlock) backup.old and backup</li>
+<li><p>open (and lock) backup and backup.new (or bail out)</p></li>
+<li><p>use backup index to identify chunks we still need</p></li>
+<li><p>create a chunk in backup.new</p></li>
+<li><p>foreach chunk we still need:</p></li>
+<li><p>foreach line in the chunk:</p></li>
+<li><p>next line if we don't need to keep it</p></li>
+<li><p>create new line</p></li>
+<li><p>foreach message in line:</p></li>
+<li><p>if we still need the message, or if we're not doing message granularity</p></li>
+<li><p>add the message to the new line</p></li>
+<li><p>write and index tmp line to backup.new</p></li>
+<li><p>if the new chunk is big enough, or if we're not combining</p></li>
+<li><p>end chunk and start a new one</p></li>
+<li><p>end the new chunk</p></li>
+<li><p>rename backup-&gt;backup.old, backup.new-&gt;backup</p></li>
+<li><p>close (and unlock) backup.old and backup</p></li>
 </ul>
 </div>
 <div class="section" id="command-line-locking-utility">
@@ -1309,15 +1300,14 @@ default run mode as above
 <div class="section" id="reconstruct">
 <h2>reconstruct<a class="headerlink" href="#reconstruct" title="Permalink to this headline">¶</a></h2>
 <p>rebuilding backups.db from on disk files</p>
-<dl class="docutils">
-<dt>scan each backup partition for backup files:</dt>
-<dd><ul class="first last simple">
-<li>skip timestamped files (i.e. backups from compact/reindex)</li>
-<li>skip .old files (old backups from reindex)</li>
-<li>.index files =&gt; skip???</li>
-<li>skip unreadable files</li>
-<li>skip empty files</li>
-<li>skip directories etc</li>
+<dl class="simple">
+<dt>scan each backup partition for backup files:</dt><dd><ul class="simple">
+<li><p>skip timestamped files (i.e. backups from compact/reindex)</p></li>
+<li><p>skip .old files (old backups from reindex)</p></li>
+<li><p>.index files =&gt; skip???</p></li>
+<li><p>skip unreadable files</p></li>
+<li><p>skip empty files</p></li>
+<li><p>skip directories etc</p></li>
 </ul>
 </dd>
 </dl>
@@ -1343,178 +1333,145 @@ cyrus is restarted.</p>
 <div class="section" id="ctl-backups">
 <h2>ctl_backups<a class="headerlink" href="#ctl-backups" title="Permalink to this headline">¶</a></h2>
 <p>sbin tool for mass backup/index/database operations</p>
-<dl class="docutils">
-<dt>needs:</dt>
-<dd><ul class="first last simple">
-<li>rebuild backups.db from disk contents</li>
-<li>list backups/info</li>
-<li>rename a backup</li>
-<li>delete a backup</li>
-<li>verify a backup (check all sha1's, not just most recent)</li>
+<dl>
+<dt>needs:</dt><dd><ul class="simple">
+<li><p>rebuild backups.db from disk contents</p></li>
+<li><p>list backups/info</p></li>
+<li><p>rename a backup</p></li>
+<li><p>delete a backup</p></li>
+<li><p>verify a backup (check all sha1's, not just most recent)</p></li>
 </ul>
 </dd>
-<dt>not sure if these should be included, or separate tools:</dt>
-<dd><ul class="first last simple">
-<li>reindex a backup (or more)</li>
-<li>compact a backup (or more)</li>
-<li>lock a backup</li>
-<li>some sort of rolling compaction?</li>
+<dt>not sure if these should be included, or separate tools:</dt><dd><ul class="simple">
+<li><p>reindex a backup (or more)</p></li>
+<li><p>compact a backup (or more)</p></li>
+<li><p>lock a backup</p></li>
+<li><p>some sort of rolling compaction?</p></li>
 </ul>
 </dd>
-<dt>usage:</dt>
-<dd>ctl_backups [options] reconstruct                       # reconstruct backups.db from disk files
+<dt>usage:</dt><dd><p>ctl_backups [options] reconstruct                       # reconstruct backups.db from disk files
 ctl_backups [options] list [list_opts] [[mode] backup...] # list backup info for given/all users
 ctl_backups [options] move new_fname [mode] backup      # rename a backup (think about this more)
 ctl_backups [options] delete [mode] backup              # delete a backup
 ctl_backups [options] verify [mode] backup...           # verify specified backups
 ctl_backups [options] reindex [mode] backup...          # reindex specified backups
 ctl_backups [options] compact [mode] backup...          # compact specified backups
-ctl_backups [options] lock [lock_opts] [mode] backup    # lock specified backup</dd>
-<dt>options:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-C <var>alt_config</var></span></kbd></td>
-<td># alternate config file</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-F</span></kbd></td>
-<td># force (run command even if not needed)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-S</span></kbd></td>
-<td># stop on error</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-v</span></kbd></td>
-<td># verbose</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-w</span></kbd></td>
-<td># wait for locks (i.e. don't skip locked backups)</td></tr>
-</tbody>
-</table>
+ctl_backups [options] lock [lock_opts] [mode] backup    # lock specified backup</p>
 </dd>
-<dt>mode:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-A</span></kbd></td>
-<td># all known backups (not valid for single backup commands)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-D</span></kbd></td>
-<td># specified backups interpreted as domains (nvfsbc)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-P</span></kbd></td>
-<td># specified backups interpreted as userid prefixes (nvfsbc)</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-f</span></kbd></td>
-<td># specified backups interpreted as filenames</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-m</span></kbd></td>
-<td># specified backups interpreted as mboxnames</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-u</span></kbd></td>
-<td># specified backups interpreted as userids (default)</td></tr>
-</tbody>
-</table>
+<dt>options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-C <var>alt_config</var></span></kbd></dt>
+<dd><p># alternate config file</p>
 </dd>
-<dt>lock_opts:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-c</span></kbd></td>
-<td># exclusively create backup</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-s</span></kbd></td>
-<td># lock backup and open index in sqlite</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-x <var>cmd</var></span></kbd></td>
-<td># lock backup and execute cmd</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-p</span></kbd></td>
-<td># lock backup and wait for eof on stdin (default)</td></tr>
-</tbody>
-</table>
+<dt><kbd><span class="option">-F</span></kbd></dt>
+<dd><p># force (run command even if not needed)</p>
 </dd>
-<dt>list_opts:</dt>
-<dd>-t [hours]          # &quot;stale&quot; (no update in hours) backups only (default: 24)</dd>
+<dt><kbd><span class="option">-S</span></kbd></dt>
+<dd><p># stop on error</p>
+</dd>
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p># verbose</p>
+</dd>
+<dt><kbd><span class="option">-w</span></kbd></dt>
+<dd><p># wait for locks (i.e. don't skip locked backups)</p>
+</dd>
+</dl>
+</dd>
+<dt>mode:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-A</span></kbd></dt>
+<dd><p># all known backups (not valid for single backup commands)</p>
+</dd>
+<dt><kbd><span class="option">-D</span></kbd></dt>
+<dd><p># specified backups interpreted as domains (nvfsbc)</p>
+</dd>
+<dt><kbd><span class="option">-P</span></kbd></dt>
+<dd><p># specified backups interpreted as userid prefixes (nvfsbc)</p>
+</dd>
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p># specified backups interpreted as filenames</p>
+</dd>
+<dt><kbd><span class="option">-m</span></kbd></dt>
+<dd><p># specified backups interpreted as mboxnames</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p># specified backups interpreted as userids (default)</p>
+</dd>
+</dl>
+</dd>
+<dt>lock_opts:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><p># exclusively create backup</p>
+</dd>
+<dt><kbd><span class="option">-s</span></kbd></dt>
+<dd><p># lock backup and open index in sqlite</p>
+</dd>
+<dt><kbd><span class="option">-x <var>cmd</var></span></kbd></dt>
+<dd><p># lock backup and execute cmd</p>
+</dd>
+<dt><kbd><span class="option">-p</span></kbd></dt>
+<dd><p># lock backup and wait for eof on stdin (default)</p>
+</dd>
+</dl>
+</dd>
+<dt>list_opts:</dt><dd><p>-t [hours]          # &quot;stale&quot; (no update in hours) backups only (default: 24)</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="cyr-backup">
 <h2>cyr_backup<a class="headerlink" href="#cyr-backup" title="Permalink to this headline">¶</a></h2>
 <p>sbin tool for inspecting backups</p>
-<dl class="docutils">
-<dt>needs:</dt>
-<dd><ul class="first last simple">
-<li>better name?</li>
-<li>list stuff</li>
-<li>show stuff</li>
-<li>dump stuff</li>
-<li>restore?</li>
+<dl class="simple">
+<dt>needs:</dt><dd><ul class="simple">
+<li><p>better name?</p></li>
+<li><p>list stuff</p></li>
+<li><p>show stuff</p></li>
+<li><p>dump stuff</p></li>
+<li><p>restore?</p></li>
 </ul>
 </dd>
 </dl>
 <ul class="simple">
-<li>should lock/move/delete (single backup commands) from ctl_backups be moved here?</li>
+<li><p>should lock/move/delete (single backup commands) from ctl_backups be moved here?</p></li>
 </ul>
-<dl class="docutils">
-<dt>usage:</dt>
-<dd>cyr_backup [options] [mode] backup list [all | chunks | mailboxes | messages]...
+<dl>
+<dt>usage:</dt><dd><p>cyr_backup [options] [mode] backup list [all | chunks | mailboxes | messages]...
 cyr_backup [options] [mode] backup show chunks [id...]
 cyr_backup [options] [mode] backup show messages [guid...]
 cyr_backup [options] [mode] backup show mailboxes [mboxname | uniqueid]...
 cyr_backup [options] [mode] backup dump [dump_opts] chunk id
 cyr_backup [options] [mode] backup dump [dump_opts] message guid
-cyr_backup [options] [mode] backup json [chunks | mailboxes | messages]...</dd>
-<dt>options:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-C <var>alt_config</var></span></kbd></td>
-<td># alternate config file</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-v</span></kbd></td>
-<td># verbose</td></tr>
-</tbody>
-</table>
+cyr_backup [options] [mode] backup json [chunks | mailboxes | messages]...</p>
 </dd>
-<dt>mode:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-f</span></kbd></td>
-<td># backup interpreted as filename</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-m</span></kbd></td>
-<td># backup interpreted as mboxname</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-u</span></kbd></td>
-<td># backup interpreted as userid (default)</td></tr>
-</tbody>
-</table>
+<dt>options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-C <var>alt_config</var></span></kbd></dt>
+<dd><p># alternate config file</p>
 </dd>
-<dt>commands:</dt>
-<dd>list: table of contents, one per line
+<dt><kbd><span class="option">-v</span></kbd></dt>
+<dd><p># verbose</p>
+</dd>
+</dl>
+</dd>
+<dt>mode:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p># backup interpreted as filename</p>
+</dd>
+<dt><kbd><span class="option">-m</span></kbd></dt>
+<dd><p># backup interpreted as mboxname</p>
+</dd>
+<dt><kbd><span class="option">-u</span></kbd></dt>
+<dd><p># backup interpreted as userid (default)</p>
+</dd>
+</dl>
+</dd>
+<dt>commands:</dt><dd><p>list: table of contents, one per line
 show: indexed details of listed items, one per paragraph, detail per line
 dump: relevant contents from backup stream
-json: indexed details of listed items in json format</dd>
-<dt>dump options:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-o <var>filename</var></span></kbd></td>
-<td># dump to named file instead of stdout</td></tr>
-</tbody>
-</table>
+json: indexed details of listed items in json format</p>
+</dd>
+<dt>dump options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-o <var>filename</var></span></kbd></dt>
+<dd><p># dump to named file instead of stdout</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </div>
@@ -1541,14 +1498,14 @@ reason we're beholden to it for the mailboxes db too</p>
 to necessarily correspond with mailbox partitions.  they're just for spreading
 disk usage around.</p>
 <ul class="simple">
-<li>when creating a backup for a previously-unseen user we'd pick a random
-partition to put them on</li>
-<li>ctl_backups would need a command to move an existing backup to a
-given partition</li>
-<li>ctl_backups would need a command to pre-create a user backup on a
-given partition for initial distribution</li>
-<li>instead of &quot;backup_data_path&quot; setting, have one-or-more
-&quot;backuppartition-&lt;name&gt;&quot; settings, ala partition- and friends</li>
+<li><p>when creating a backup for a previously-unseen user we'd pick a random
+partition to put them on</p></li>
+<li><p>ctl_backups would need a command to move an existing backup to a
+given partition</p></li>
+<li><p>ctl_backups would need a command to pre-create a user backup on a
+given partition for initial distribution</p></li>
+<li><p>instead of &quot;backup_data_path&quot; setting, have one-or-more
+&quot;backuppartition-&lt;name&gt;&quot; settings, ala partition- and friends</p></li>
 </ul>
 <p>see imap/partlist.[ch] for partition list management stuff.  it's complicated
 and doesn't have a test suite, so maybe save this implementation until needed.</p>
@@ -1560,29 +1517,26 @@ similar for backup partitions</p>
 </div>
 <div class="section" id="data-corruption">
 <h2>data corruption<a class="headerlink" href="#data-corruption" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>backups.db:</dt>
-<dd><ul class="first last simple">
-<li>can be reconstructed from on disk files at any time</li>
-<li>how to detect corruption? does cyrus_db detect/repair on its own?</li>
+<dl class="simple">
+<dt>backups.db:</dt><dd><ul class="simple">
+<li><p>can be reconstructed from on disk files at any time</p></li>
+<li><p>how to detect corruption? does cyrus_db detect/repair on its own?</p></li>
 </ul>
 </dd>
-<dt>backup indexes:</dt>
-<dd><ul class="first last simple">
-<li>can be reindexed at any time from backup data</li>
-<li>how to detect corruption? assume sqlite will notice, complain?</li>
+<dt>backup indexes:</dt><dd><ul class="simple">
+<li><p>can be reindexed at any time from backup data</p></li>
+<li><p>how to detect corruption? assume sqlite will notice, complain?</p></li>
 </ul>
 </dd>
-<dt>backup data:</dt>
-<dd><ul class="first last simple">
-<li>what's zlib's failure mode? do we lose the entire chunk or just the corrupt bit?</li>
-<li>verify will notice sha1sum mismatches</li>
-<li>dlist format will reject some kinds of corruption (but not all)</li>
-<li>reindex: should skip unparseable dlist lines</li>
-<li>message data has its own checksums (guid)</li>
-<li>reindex: should skip messages that don't match their own checksums</li>
-<li>compact: &quot;full&quot; compact will only keep useful data according to index</li>
-<li>backupd: will sync anything that's in user mailbox but not in backup index</li>
+<dt>backup data:</dt><dd><ul class="simple">
+<li><p>what's zlib's failure mode? do we lose the entire chunk or just the corrupt bit?</p></li>
+<li><p>verify will notice sha1sum mismatches</p></li>
+<li><p>dlist format will reject some kinds of corruption (but not all)</p></li>
+<li><p>reindex: should skip unparseable dlist lines</p></li>
+<li><p>message data has its own checksums (guid)</p></li>
+<li><p>reindex: should skip messages that don't match their own checksums</p></li>
+<li><p>compact: &quot;full&quot; compact will only keep useful data according to index</p></li>
+<li><p>backupd: will sync anything that's in user mailbox but not in backup index</p></li>
 </ul>
 </dd>
 </dl>
@@ -1606,79 +1560,76 @@ period anyway (by compact), but if it needs restoring in the meantime, sorry</p>
 <h2>installation instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">¶</a></h2>
 <p>(obviously, most of this won't work at this point, because the code doesn't
 exist.  but this is, approximately, where things are heading.)</p>
-<dl class="docutils">
-<dt>on your backup server:</dt>
-<dd><ul class="first last simple">
-<li>compile with --enable-backup configure option and install</li>
-<li><dl class="first docutils">
-<dt>imapd.conf:</dt>
-<dd>backuppartition-default: /var/spool/backup  # FIXME better example
+<dl class="simple">
+<dt>on your backup server:</dt><dd><ul class="simple">
+<li><p>compile with --enable-backup configure option and install</p></li>
+<li><dl class="simple">
+<dt>imapd.conf:</dt><dd><p>backuppartition-default: /var/spool/backup  # FIXME better example
 backup_db: twoskip
 backup_db_path: /var/imap/backups.db
 backup_staging_path: /var/spool/backup
-backup_retention_days: 7</dd>
+backup_retention_days: 7</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>cyrus.conf SERVICES:</dt>
-<dd>backupd cmd=&quot;backupd&quot; listen=&quot;csync&quot; prefork=0
+<li><dl class="simple">
+<dt>cyrus.conf SERVICES:</dt><dd><p>backupd cmd=&quot;backupd&quot; listen=&quot;csync&quot; prefork=0
 (remove other services, most likely)
-(should i create a master/conf/backup.conf example file?)</dd>
+(should i create a master/conf/backup.conf example file?)</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>cyrus.conf EVENTS:</dt>
-<dd>compact cmd=&quot;ctl_backups compact -A&quot; at=0400</dd>
+<li><dl class="simple">
+<dt>cyrus.conf EVENTS:</dt><dd><p>compact cmd=&quot;ctl_backups compact -A&quot; at=0400</p>
+</dd>
 </dl>
 </li>
-<li>start server as usual</li>
-<li>do i want a special port for backupd?</li>
+<li><p>start server as usual</p></li>
+<li><p>do i want a special port for backupd?</p></li>
 </ul>
 </dd>
-<dt>on your imap server:</dt>
-<dd><ul class="first last simple">
-<li><dl class="first docutils">
-<dt>imapd.conf:</dt>
-<dd>sync_log_channels: backup
+<dt>on your imap server:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>imapd.conf:</dt><dd><p>sync_log_channels: backup
 sync_log: 1
 backup_sync_host: backup-server.example.com
 backup_sync_port: csync
 backup_sync_authname: ...
 backup_sync_password: ...
 backup_sync_repeat_interval: ... # seconds, smaller value = livelier backups but more i/o
-backup_sync_shutdown_file: ....</dd>
+backup_sync_shutdown_file: ....</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>cyrus.conf STARTUP:</dt>
-<dd>backup_sync cmd=&quot;sync_client -r -n backup&quot;</dd>
+<li><dl class="simple">
+<dt>cyrus.conf STARTUP:</dt><dd><p>backup_sync cmd=&quot;sync_client -r -n backup&quot;</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>cyrus.conf SERVICES:</dt>
-<dd>restored cmd=&quot;restored&quot; [...]</dd>
+<li><dl class="simple">
+<dt>cyrus.conf SERVICES:</dt><dd><p>restored cmd=&quot;restored&quot; [...]</p>
+</dd>
 </dl>
 </li>
-<li>start/restart master</li>
+<li><p>start/restart master</p></li>
 </ul>
 </dd>
-<dt>files and such:</dt>
-<dd>{configdirectory}/backups.db                        - database mapping userids to backup locations
+<dt>files and such:</dt><dd><p>{configdirectory}/backups.db                        - database mapping userids to backup locations
 {backuppartition-name}/&lt;hash&gt;/&lt;userid&gt;_XXXXXX       - backup data stream for userid
-{backuppartition-name}/&lt;hash&gt;/&lt;userid&gt;_XXXXXX.index - index into userid's backup data stream</dd>
-<dt>do i want rhost in the path?</dt>
-<dd><ul class="first last simple">
-<li>protects from issue if multiple servers are trying to back up their own version of same user
-(though this is its own problem that the backup system shouldn't have to compensate for)</li>
-<li>but makes location of undifferentiated user unpredictable</li>
-<li>so probably not, actually</li>
+{backuppartition-name}/&lt;hash&gt;/&lt;userid&gt;_XXXXXX.index - index into userid's backup data stream</p>
+</dd>
+<dt>do i want rhost in the path?</dt><dd><ul class="simple">
+<li><p>protects from issue if multiple servers are trying to back up their own version of same user
+(though this is its own problem that the backup system shouldn't have to compensate for)</p></li>
+<li><p>but makes location of undifferentiated user unpredictable</p></li>
+<li><p>so probably not, actually</p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="chatting-about-implementation-20-10">
 <h2>chatting about implementation 20/10<a class="headerlink" href="#chatting-about-implementation-20-10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span>09:54 @elliefm
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>09:54 @elliefm
 here&#39;s a fun sync question
 APPLY MESSAGE provides a list of messages
 can a single APPLY MESSAGE contain messages for multiple mailboxes and/or users?
@@ -1764,24 +1715,24 @@ i think for now, first stage implementation will be to stream the reserve/messag
 <div class="section" id="todo-list">
 <h2>todo list<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>clean up error handling</li>
-<li>perl tool to anonymise sync proto talk</li>
-<li>verification step to check entire data stream for errors (even chunks that aren't indexed)</li>
-<li>prot_fill_cb: extra argument to pass back an error string to prot_fill</li>
-<li>ctl_backups verify: set level</li>
-<li>backupd: don't block on locked backups, return mailbox locked -- but sync_client doesn't handle this</li>
-<li>test multiple backup partitions</li>
-<li>configure: error if backups requested and we don't have zlib</li>
-<li>valgrind</li>
-<li>finish reconstruct</li>
-<li>compact: split before append?</li>
+<li><p>clean up error handling</p></li>
+<li><p>perl tool to anonymise sync proto talk</p></li>
+<li><p>verification step to check entire data stream for errors (even chunks that aren't indexed)</p></li>
+<li><p>prot_fill_cb: extra argument to pass back an error string to prot_fill</p></li>
+<li><p>ctl_backups verify: set level</p></li>
+<li><p>backupd: don't block on locked backups, return mailbox locked -- but sync_client doesn't handle this</p></li>
+<li><p>test multiple backup partitions</p></li>
+<li><p>configure: error if backups requested and we don't have zlib</p></li>
+<li><p>valgrind</p></li>
+<li><p>finish reconstruct</p></li>
+<li><p>compact: split before append?</p></li>
 </ul>
-<dl class="docutils">
-<dt>compact implementation steps:</dt>
-<dd>1 remove unused chunks, keep everything else as is
+<dl class="simple">
+<dt>compact implementation steps:</dt><dd><p>1 remove unused chunks, keep everything else as is
 2 join adjacent chunks if small enough, split large chunks
 3 parse/rebuild message lines
-4 discard unused mailbox lines</dd>
+4 discard unused mailbox lines</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -1807,7 +1758,7 @@ i think for now, first stage implementation will be to stream the reserve/messag
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1833,7 +1784,6 @@ i think for now, first stage implementation will be to stream the reserve/messag
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,15 +791,15 @@
 <h1>Mailbox API<a class="headerlink" href="#mailbox-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="intro">
 <h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
-<p>The Mailbox API is implemented in <code class="docutils literal"><span class="pre">imap/mailbox.h</span></code> and
-<code class="docutils literal"><span class="pre">imap/mailbox.c</span></code>. It wraps the data structures of the
-<code class="docutils literal"><span class="pre">cyrus.header</span></code>, <code class="docutils literal"><span class="pre">cyrus.index</span></code> and <code class="docutils literal"><span class="pre">cyrus.cache</span></code> files in a
+<p>The Mailbox API is implemented in <code class="docutils literal notranslate"><span class="pre">imap/mailbox.h</span></code> and
+<code class="docutils literal notranslate"><span class="pre">imap/mailbox.c</span></code>. It wraps the data structures of the
+<code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code>, <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> and <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> files in a
 psuedo-object-oriented way, allowing easy changes to the mailbox while
 keeping the internal cached data structures consistent.</p>
 </div>
 <div class="section" id="opening-and-closing">
 <h2>Opening and closing<a class="headerlink" href="#opening-and-closing" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">r</span><span class="p">;</span>
 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">mboxname</span> <span class="o">=</span> <span class="s2">&quot;user.brong&quot;</span><span class="p">;</span>
 
@@ -816,37 +818,37 @@ keeping the internal cached data structures consistent.</p>
 <p>It is always necessary to obtain an index lock when opening a mailbox,
 because the index header read must be consistent. The locks are as
 follows:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="51%" />
-<col width="24%" />
-<col width="25%" />
+<col style="width: 51%" />
+<col style="width: 24%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function</th>
-<th class="head">Namelock</th>
-<th class="head">Index Lock</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Namelock</p></th>
+<th class="head"><p>Index Lock</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>mailbox_open_iwl</td>
-<td>Shared</td>
-<td>Exclusive</td>
+<tbody>
+<tr class="row-even"><td><p>mailbox_open_iwl</p></td>
+<td><p>Shared</p></td>
+<td><p>Exclusive</p></td>
 </tr>
-<tr class="row-odd"><td>mailbox_open_irl</td>
-<td>Shared</td>
-<td>Shared</td>
+<tr class="row-odd"><td><p>mailbox_open_irl</p></td>
+<td><p>Shared</p></td>
+<td><p>Shared</p></td>
 </tr>
-<tr class="row-even"><td>mailbox_open_exclusive</td>
-<td>Exclusive</td>
-<td>Exclusive</td>
+<tr class="row-even"><td><p>mailbox_open_exclusive</p></td>
+<td><p>Exclusive</p></td>
+<td><p>Exclusive</p></td>
 </tr>
 </tbody>
 </table>
-<p>It should never be necessary to call <code class="docutils literal"><span class="pre">mailbox_open_exclusive</span></code>, but
-it's included for completeness. Use <code class="docutils literal"><span class="pre">mailbox_open_iwl</span></code> if you expect
+<p>It should never be necessary to call <code class="docutils literal notranslate"><span class="pre">mailbox_open_exclusive</span></code>, but
+it's included for completeness. Use <code class="docutils literal notranslate"><span class="pre">mailbox_open_iwl</span></code> if you expect
 to need to write to the index (or even if you're not sure) and
-<code class="docutils literal"><span class="pre">mailbox_open_irl</span></code> when you know you're only reading from the file and
+<code class="docutils literal notranslate"><span class="pre">mailbox_open_irl</span></code> when you know you're only reading from the file and
 wish to allow other readers to work concurrently.</p>
 <p>Many actions are delayed until the mailbox is closed, or even until the
 <em>last</em> mailbox is closed for things that require an exclusive namelock
@@ -865,10 +867,10 @@ refcount, and only the final close will do the cleanup actions.</p>
 the index lock to allow other processes to make changes to the mailbox.
 By holding the namelock, you know that record numbers won't change, and
 the underlying message files won't be deleted.</p>
-<p><code class="docutils literal"><span class="pre">mailbox_close</span></code> will call <code class="docutils literal"><span class="pre">mailbox_unlock_index</span></code> if the index is
+<p><code class="docutils literal notranslate"><span class="pre">mailbox_close</span></code> will call <code class="docutils literal notranslate"><span class="pre">mailbox_unlock_index</span></code> if the index is
 still locked, so it is not necessary to explicitly unlock the index
 before closing.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">mailbox_unlock_index</span><span class="p">(</span><span class="n">mailbox</span><span class="p">,</span> <span class="n">NULL</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">mailbox_unlock_index</span><span class="p">(</span><span class="n">mailbox</span><span class="p">,</span> <span class="n">NULL</span><span class="p">);</span>
 
 <span class="o">//</span> <span class="n">sleep</span> <span class="n">on</span> <span class="n">user</span> <span class="nb">input</span><span class="o">...</span>
 
@@ -877,7 +879,7 @@ before closing.</p>
 <span class="n">r</span> <span class="o">=</span> <span class="n">mailbox_lock_index</span><span class="p">(</span><span class="n">mailbox</span><span class="p">,</span> <span class="n">LOCK_EXCLUSIVE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>For example, <code class="docutils literal"><span class="pre">mailbox_unlock_index</span></code> and <code class="docutils literal"><span class="pre">mailbox_lock_index</span></code> are
+<p>For example, <code class="docutils literal notranslate"><span class="pre">mailbox_unlock_index</span></code> and <code class="docutils literal notranslate"><span class="pre">mailbox_lock_index</span></code> are
 used extensively by the index module, allowing an imap client to
 maintain a long lived connection selected to a mailbox and know that
 messages won't magically disappear from under it - yet at the same time
@@ -888,7 +890,7 @@ you can pass this as the second parameter to mailbox_index_unlock. If
 there have been any changes, mailbox_index_unlock will invalidated the
 statuscache. If you give it the new value, then it will store that value
 instead. For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>struct statusdata sdata;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>struct statusdata sdata;
 index_status(state, &amp;sdata);
 /* RECENT is zero for everyone else because we wrote a new
  * recentuid! */
@@ -903,23 +905,23 @@ unlock.</p>
 <h2>Creating, renaming and deleting<a class="headerlink" href="#creating-renaming-and-deleting" title="Permalink to this headline">¶</a></h2>
 <p><strong>WARNING:</strong> These functions only change the mailbox files on disk. They
 don't update the mailboxes.db records or contact murder servers. In most
-cases you are probably looking for the <code class="docutils literal"><span class="pre">mboxlist_</span></code> functions instead.</p>
+cases you are probably looking for the <code class="docutils literal notranslate"><span class="pre">mboxlist_</span></code> functions instead.</p>
 <p>Creating a mailbox is somewhat longwinded - as there are many optional
 parameters.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_create</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">part</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">acl</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_create</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">part</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">acl</span><span class="p">,</span>
                    <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">uniqueid</span><span class="p">,</span> <span class="nb">int</span> <span class="n">options</span><span class="p">,</span> <span class="n">unsigned</span> <span class="n">uidvalidity</span><span class="p">,</span>
                    <span class="n">struct</span> <span class="n">mailbox</span> <span class="o">**</span><span class="n">mailboxptr</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Most interesting to note is that on success, <code class="docutils literal"><span class="pre">mailboxptr</span></code> will contain
-the same mailbox that <code class="docutils literal"><span class="pre">mailbox_open_exclusive</span></code> above would have
+<p>Most interesting to note is that on success, <code class="docutils literal notranslate"><span class="pre">mailboxptr</span></code> will contain
+the same mailbox that <code class="docutils literal notranslate"><span class="pre">mailbox_open_exclusive</span></code> above would have
 returned, with an exclusive namelock and an exclusive index lock. This
 allows you to perform other consistency operations after creating the
 mailbox with a full guarantee that no other process will even be able to
 know of the mailbox's existence! You can still roll-back by deleting the
 mailbox and the next process will get the namelock and see no mailbox
 with that name.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_rename_copy</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">oldmailbox</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_rename_copy</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">oldmailbox</span><span class="p">,</span>
                         <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">newname</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">newpart</span><span class="p">,</span>
                         <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">userid</span><span class="p">,</span> <span class="nb">int</span> <span class="n">ignorequota</span><span class="p">,</span>
                         <span class="nb">int</span> <span class="n">silent</span><span class="p">,</span>
@@ -929,15 +931,15 @@ with that name.</p>
 <p>Very similar to mailbox_create - the new mailbox is created with an
 exclusive name lock and returned. The old mailbox must be passed in with
 an <strong>exclusive index lock</strong> but is fine with a shared namelock, as it
-will be passed to <code class="docutils literal"><span class="pre">mailbox_delete</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_delete</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">**</span><span class="n">mailboxptr</span><span class="p">);</span>
+will be passed to <code class="docutils literal notranslate"><span class="pre">mailbox_delete</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_delete</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">**</span><span class="n">mailboxptr</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Just like <code class="docutils literal"><span class="pre">mailbox_close</span></code> above, this closes the mailbox. Before it
+<p>Just like <code class="docutils literal notranslate"><span class="pre">mailbox_close</span></code> above, this closes the mailbox. Before it
 does so, it sets the OPT_MAILBOX_DELETED option flag in the index
-header. The interesting work is actually done in <code class="docutils literal"><span class="pre">mailbox_close</span></code>. See
+header. The interesting work is actually done in <code class="docutils literal notranslate"><span class="pre">mailbox_close</span></code>. See
 below under &quot;delayed actions&quot;.</p>
-<p><code class="docutils literal"><span class="pre">mailbox_delete</span></code> requires an exclusive index lock, but can complete
+<p><code class="docutils literal notranslate"><span class="pre">mailbox_delete</span></code> requires an exclusive index lock, but can complete
 quite happily with only a shared namelock.</p>
 </div>
 <div class="section" id="reading-and-writing-records">
@@ -946,10 +948,10 @@ quite happily with only a shared namelock.</p>
 to start reading and writing some records!</p>
 <p>At the mailbox level there is no concept of &quot;message numbers&quot; from imap,
 only &quot;record numbers&quot;. The canonical variable name to refer to record
-numbers is <code class="docutils literal"><span class="pre">recno</span></code>. All records are read and written using
-<code class="docutils literal"><span class="pre">struct</span> <span class="pre">index_record</span></code> values.</p>
+numbers is <code class="docutils literal notranslate"><span class="pre">recno</span></code>. All records are read and written using
+<code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">index_record</span></code> values.</p>
 <p>Here at the API definitions used for reading and writing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_read_index_record</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_read_index_record</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span><span class="p">,</span>
                               <span class="n">uint32_t</span> <span class="n">recno</span><span class="p">,</span>
                               <span class="n">struct</span> <span class="n">index_record</span> <span class="o">*</span><span class="n">record</span><span class="p">);</span>
 <span class="nb">int</span> <span class="n">mailbox_rewrite_index_record</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span><span class="p">,</span>
@@ -960,7 +962,7 @@ numbers is <code class="docutils literal"><span class="pre">recno</span></code>.
 </pre></div>
 </div>
 <p>An example of iterating through a mailbox</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">uint32_t</span> <span class="n">recno</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uint32_t</span> <span class="n">recno</span><span class="p">;</span>
 <span class="n">struct</span> <span class="n">index_record</span> <span class="n">record</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">make_changes</span><span class="p">;</span>
 
@@ -989,7 +991,7 @@ numbers is <code class="docutils literal"><span class="pre">recno</span></code>.
 <span class="n">mailbox_iter_done</span><span class="p">(</span><span class="o">&amp;</span><span class="nb">iter</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>NOTE: <code class="docutils literal"><span class="pre">mailbox_rewrite_index_record</span></code> doesn't need a recno, as that's
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">mailbox_rewrite_index_record</span></code> doesn't need a recno, as that's
 cached inside the index_record struct.</p>
 <p>NOTE: You need an exclusively locked index to use rewrite or append, but
 only a shared index lock to use read.</p>
@@ -998,9 +1000,9 @@ doesn't violate IMAP semantics (an expunged message can never be
 unexpunged, UIDs can't change, etc) and the internal tracking counts and
 quota data are updated as well. They will be committed at unlock time,
 see &quot;delayed actions&quot;</p>
-<p>If you don't set the <code class="docutils literal"><span class="pre">record.silent</span></code> field to a true value before
-rewriting or appending, the <code class="docutils literal"><span class="pre">record.modseq</span></code> and
-<code class="docutils literal"><span class="pre">record.last_updated</span></code> values will be changed. This allows condstore to
+<p>If you don't set the <code class="docutils literal notranslate"><span class="pre">record.silent</span></code> field to a true value before
+rewriting or appending, the <code class="docutils literal notranslate"><span class="pre">record.modseq</span></code> and
+<code class="docutils literal notranslate"><span class="pre">record.last_updated</span></code> values will be changed. This allows condstore to
 work correctly.</p>
 <div class="section" id="appending">
 <h3>Appending<a class="headerlink" href="#appending" title="Permalink to this headline">¶</a></h3>
@@ -1016,28 +1018,28 @@ consistency checks done.</p>
 <h3>Committing<a class="headerlink" href="#committing" title="Permalink to this headline">¶</a></h3>
 <p>When you have finished making any changes, you need to &quot;commit&quot;. This
 will write the updated values for any index header fields, rewite the
-<code class="docutils literal"><span class="pre">cyrus.header</span></code> file if needed and fsync all changes to disk.</p>
+<code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file if needed and fsync all changes to disk.</p>
 <p>It is a fatal error to unlock (or close) a mailbox that has had changes
 without committing, as it can leave the mailbox in a corrupted state.</p>
 </div>
 <div class="section" id="cache-records">
 <h3>Cache records<a class="headerlink" href="#cache-records" title="Permalink to this headline">¶</a></h3>
-<p>Cache records are accessed through <code class="docutils literal"><span class="pre">record.crec</span></code> which is not filled
+<p>Cache records are accessed through <code class="docutils literal notranslate"><span class="pre">record.crec</span></code> which is not filled
 by read_index_record. The cache file is only read and mapped into
 memory as needed, so you if you want to access cache records, the basic
 API is as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_cacherecord</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">mailbox_cacherecord</span><span class="p">(</span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span><span class="p">,</span>
                         <span class="n">struct</span> <span class="n">index_record</span> <span class="o">*</span><span class="n">record</span><span class="p">);</span>
 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">cacheitem_base</span><span class="p">(</span><span class="n">struct</span> <span class="n">index_record</span> <span class="o">*</span><span class="n">record</span><span class="p">,</span> <span class="nb">int</span> <span class="n">field</span><span class="p">);</span>
 <span class="n">unsigned</span> <span class="n">cacheitem_size</span><span class="p">(</span><span class="n">struct</span> <span class="n">index_record</span> <span class="o">*</span><span class="n">record</span><span class="p">,</span> <span class="nb">int</span> <span class="n">field</span><span class="p">);</span>
 <span class="n">struct</span> <span class="n">buf</span> <span class="o">*</span><span class="n">cacheitem_buf</span><span class="p">(</span><span class="n">struct</span> <span class="n">index_record</span> <span class="o">*</span><span class="n">record</span><span class="p">,</span> <span class="nb">int</span> <span class="n">field</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>You must always call <code class="docutils literal"><span class="pre">mailbox_cacherecord</span></code> on a record before trying
-to access any of the cache items. &quot;<code class="docutils literal"><span class="pre">field</span></code>&quot; above is the individual
+<p>You must always call <code class="docutils literal notranslate"><span class="pre">mailbox_cacherecord</span></code> on a record before trying
+to access any of the cache items. &quot;<code class="docutils literal notranslate"><span class="pre">field</span></code>&quot; above is the individual
 field (there are 10) in the cache record. There's more information on
 those fields in the mailbox internal format documentation.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">recno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">recno</span> <span class="o">&lt;=</span> <span class="n">mailbox</span><span class="o">-&gt;</span><span class="n">i</span><span class="o">.</span><span class="n">num_records</span><span class="p">;</span> <span class="n">recno</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">recno</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">recno</span> <span class="o">&lt;=</span> <span class="n">mailbox</span><span class="o">-&gt;</span><span class="n">i</span><span class="o">.</span><span class="n">num_records</span><span class="p">;</span> <span class="n">recno</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">mailbox_read_index_record</span><span class="p">(</span><span class="n">mailbox</span><span class="p">,</span> <span class="n">recno</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">record</span><span class="p">))</span>
         <span class="n">fatal</span><span class="p">(</span><span class="s2">&quot;invalid record&quot;</span><span class="p">,</span> <span class="n">EX_SOFTWARE</span><span class="p">);</span> <span class="o">//</span> <span class="ow">or</span> <span class="k">return</span> <span class="n">an</span> <span class="n">error</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">internal_flags</span> <span class="o">&amp;</span> <span class="n">FLAG_INTERNAL_EXPUNGED</span><span class="p">)</span>
@@ -1049,7 +1051,7 @@ those fields in the mailbox internal format documentation.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>See <code class="docutils literal"><span class="pre">imap/mailbox.h</span></code> for the full list of constants.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">imap/mailbox.h</span></code> for the full list of constants.</p>
 </div>
 </div>
 <div class="section" id="delayed-actions">
@@ -1061,10 +1063,10 @@ close</p>
 <p>Anything that makes any changes sets the mailbox-&gt;has_changed flag. If
 this is set, then before the index gets unlocked:</p>
 <ul class="simple">
-<li>the updatenotifier (idle) is called</li>
-<li><code class="docutils literal"><span class="pre">sync_log_mailbox</span></code> (replication) gets called</li>
-<li>the statuscache value gets erased (or replaced if you passed in an
-updated value).</li>
+<li><p>the updatenotifier (idle) is called</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sync_log_mailbox</span></code> (replication) gets called</p></li>
+<li><p>the statuscache value gets erased (or replaced if you passed in an
+updated value).</p></li>
 </ul>
 </div>
 <div class="section" id="then-close">
@@ -1079,8 +1081,8 @@ index lock while the unlinks run. Unlink is expensive in IO and time.</p>
 flags. If either is sets, then we make a non-blocking attempt to get an
 exclusive namelock. If the non-blocking attempt fails, then another
 process has the mailbox open, so save the cleanup for them! If it
-succeeds, then go ahead with either <code class="docutils literal"><span class="pre">mailbox_delete_cleanup</span></code> or
-<code class="docutils literal"><span class="pre">mailbox_index_repack</span></code> as appropriate.</p>
+succeeds, then go ahead with either <code class="docutils literal notranslate"><span class="pre">mailbox_delete_cleanup</span></code> or
+<code class="docutils literal notranslate"><span class="pre">mailbox_index_repack</span></code> as appropriate.</p>
 <p>After this it's just a matter of releasing malloc'd memory and finally
 releasing the name lock.</p>
 </div>
@@ -1108,7 +1110,7 @@ releasing the name lock.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 17 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1134,7 +1136,6 @@ releasing the name lock.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

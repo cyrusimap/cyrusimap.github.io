@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -792,8 +794,8 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-2-4">
@@ -801,36 +803,36 @@
 <div class="section" id="build-changes">
 <h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3172">Issue #3172</a>: add fallback implementation of <cite>memrchr()</cite> (thanks
-Andy Fiddaman)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3128">Issue #3128</a>: many &quot;format specifies type ... but&quot; warnings
-on non-Linux/x86_64 platforms (thanks Anatoli)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3265">Issue #3265</a>: <cite>__attribute__((optimise))</cite> support detection</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3275">Issue #3275</a>: <cite>--enable-srs</cite> configure option was always ignored
-(thanks Carlos Velasco)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3172">Issue #3172</a>: add fallback implementation of <cite>memrchr()</cite> (thanks
+Andy Fiddaman)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3128">Issue #3128</a>: many &quot;format specifies type ... but&quot; warnings
+on non-Linux/x86_64 platforms (thanks Anatoli)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3265">Issue #3265</a>: <cite>__attribute__((optimise))</cite> support detection</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3275">Issue #3275</a>: <cite>--enable-srs</cite> configure option was always ignored
+(thanks Carlos Velasco)</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3180">Issue #3180</a>: httpd process hang when using HTTP/2</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3239">Issue #3239</a>: don't redefine MAXDOMNAME/MAXLOGNAME if already defined
-(thanks Anatoli)</li>
-<li>Fixed: lmtpd no longer allows delivery/keep/fileinto to non-IMAP mailboxes</li>
-<li>Fixed: ensure JMAP sinceState is a number</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3260">Issue #3260</a>: addseen failure when moving messages between mailboxes
-with different seen settings</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3214">Issue #3214</a>: don't choke on 8-bit MIME parameters</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3287">Issue #3287</a>: tools/translatesive also iterated parent directory
-(thanks Daniel O'Connor)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3272">Issue #3272</a>: add handler stub for JMAP eventSourceUrl</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3180">Issue #3180</a>: httpd process hang when using HTTP/2</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3239">Issue #3239</a>: don't redefine MAXDOMNAME/MAXLOGNAME if already defined
+(thanks Anatoli)</p></li>
+<li><p>Fixed: lmtpd no longer allows delivery/keep/fileinto to non-IMAP mailboxes</p></li>
+<li><p>Fixed: ensure JMAP sinceState is a number</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3260">Issue #3260</a>: addseen failure when moving messages between mailboxes
+with different seen settings</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3214">Issue #3214</a>: don't choke on 8-bit MIME parameters</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3287">Issue #3287</a>: tools/translatesive also iterated parent directory
+(thanks Daniel O'Connor)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3272">Issue #3272</a>: add handler stub for JMAP eventSourceUrl</p></li>
 </ul>
 </div>
 <div class="section" id="other">
 <h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Added <cite>--password</cite> and <cite>--execfile</cite> options to <a class="reference internal" href="../../../../reference/manpages/usercommands/sieveshell.html#std:cyrusman-sieveshell(1)">sieveshell(1)</a>,
-based on patch from Debian in <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3281">Issue #3281</a> (thanks Xavier Guimard)</li>
+<li><p>Added <cite>--password</cite> and <cite>--execfile</cite> options to <a class="reference internal" href="../../../../reference/manpages/usercommands/sieveshell.html#std-cyrusman-sieveshell-1">sieveshell(1)</a>,
+based on patch from Debian in <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3281">Issue #3281</a> (thanks Xavier Guimard)</p></li>
 </ul>
 </div>
 </div>
@@ -857,7 +859,7 @@ based on patch from Debian in <a class="reference external" href="https://github
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 16 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -883,7 +885,6 @@ based on patch from Debian in <a class="reference external" href="https://github
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

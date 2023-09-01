@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,15 +791,15 @@
 <span id="imap-features-dav-collection-mgmt"></span><h1>DAV Collection Management<a class="headerlink" href="#dav-collection-management" title="Permalink to this headline">¶</a></h1>
 <p>Calendars and addressbooks are maintained as &quot;Collections&quot; within the
 Cyrus mail store.  They appear as mailboxes within the hierarchy, as
-set by the <code class="docutils literal"><span class="pre">calendarprefix:</span></code> option in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
-(default is <code class="docutils literal"><span class="pre">#calendars</span></code>), but should rarely be directly accessed or
-created using either <a class="reference internal" href="../../reference/manpages/systemcommands/cyradm.html#std:cyrusman-cyradm(8)">cyradm(8)</a> or other mailbox-centric tools.</p>
+set by the <code class="docutils literal notranslate"><span class="pre">calendarprefix:</span></code> option in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
+(default is <code class="docutils literal notranslate"><span class="pre">#calendars</span></code>), but should rarely be directly accessed or
+created using either <a class="reference internal" href="../../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a> or other mailbox-centric tools.</p>
 <p>Collections have special attributes, so should be created and
 maintained either through protocol -- i.e. with purpose-built calendar
 or address book clients -- or with the provided web GUI.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="../../download/installation/http/caldav.html#caldav"><span class="std std-ref">CalDAV</span></a> for more information on creating and managing Calendars
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../download/installation/http/caldav.html#caldav"><span class="std std-ref">CalDAV</span></a> for more information on creating and managing Calendars
 <a class="reference internal" href="../../download/installation/http/carddav.html#carddav"><span class="std std-ref">CardDAV</span></a> for more information on creating and managing Addressbooks</p>
 </div>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">Features</span></a></p>
@@ -824,7 +826,7 @@ or address book clients -- or with the provided web GUI.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -850,7 +852,6 @@ or address book clients -- or with the provided web GUI.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

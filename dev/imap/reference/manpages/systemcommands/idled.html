@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,37 +787,35 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-idled(8)"></span><div class="section" id="imap-reference-manpages-systemcommands-idled">
+  <span class="target" id="std-cyrusman-idled-8"><span id="std:cyrusman-idled(8)"></span></span><div class="section" id="imap-reference-manpages-systemcommands-idled">
 <span id="idled"></span><h1><strong>idled</strong><a class="headerlink" href="#imap-reference-manpages-systemcommands-idled" title="Permalink to this headline">¶</a></h1>
 <p>Provide near real-time updates for IMAP IDLE</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>idled</strong> [ <strong>-C</strong> <em>config-file</em> ]
-</pre>
+<pre class="literal-block"><strong>idled</strong> [ <strong>-C</strong> <em>config-file</em> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>idled</strong> is a long lived datagram daemon which receives notifications of
 mailbox changes and signals the appropriate <strong>imapd</strong> to report the
 changes to the client.</p>
-<p><strong>Idled</strong> is usually started from <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a>.</p>
-<p><strong>idled</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>Idled</strong> is usually started from <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a>.</p>
+<p><strong>idled</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-idled-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-idled-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-idled-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-idled-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>idled</strong> is commonly included in the DAEMON section of
-<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> like so:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DAEMON</span> <span class="p">{</span>
+<a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DAEMON</span> <span class="p">{</span>
     <span class="n">idled</span>                   <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/lib/cyrus/bin/idled&quot;</span>
 <span class="p">}</span>
 </pre></div>
@@ -827,9 +827,9 @@ changes to the client.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>,
-<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>,
-<a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>,
+<a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>,
+<a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
 </div>
 </div>
 
@@ -854,7 +854,7 @@ changes to the client.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 15 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -880,7 +880,6 @@ changes to the client.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

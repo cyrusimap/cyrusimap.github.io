@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,13 +787,12 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-reconstruct(8)"></span><div class="section" id="reconstruct">
+  <span class="target" id="std-cyrusman-reconstruct-8"><span id="std:cyrusman-reconstruct(8)"></span></span><div class="section" id="reconstruct">
 <span id="imap-reference-manpages-systemcommands-reconstruct"></span><h1><strong>reconstruct</strong><a class="headerlink" href="#reconstruct" title="Permalink to this headline">¶</a></h1>
 <p>Reconstruct mailboxes</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-x</strong> ] [ <strong>-r</strong> ]
+<pre class="literal-block"><strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-x</strong> ] [ <strong>-r</strong> ]
     [ <strong>-f</strong> ] [ <strong>-U</strong> ] [ <strong>-s</strong> ] [ <strong>-q</strong> ] [ <strong>-G</strong> ] [ <strong>-R</strong> ] [ <strong>-o</strong> ]
     [ <strong>-O</strong> ] [ <strong>-M</strong> ] <em>mailbox</em>...
 
@@ -805,8 +806,7 @@
 <strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-r</strong> ]
     [ <strong>-q</strong> ] <strong>-V</strong> <em>version</em> <strong>-u</strong> <em>user</em>...
 
-<strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-P</strong> <em>cyrus-header-paths</em>...
-</pre>
+<strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-P</strong> <em>cyrus-header-paths</em>...</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -817,8 +817,8 @@ attempts to preserve any data in them that is not derivable from the
 message files themselves. The state <strong>reconstruct</strong> attempts to
 preserve includes the flag names, flag state, and internaldate.</p>
 <p><strong>reconstruct</strong> derives all other information from the message files.</p>
-<p><strong>reconstruct</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.  Any mailbox directory underneath
-the path specified in the <code class="docutils literal"><span class="pre">partition-news</span></code> configuration option is
+<p><strong>reconstruct</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.  Any mailbox directory underneath
+the path specified in the <code class="docutils literal notranslate"><span class="pre">partition-news</span></code> configuration option is
 assumed to be in news format.</p>
 <p><strong>reconstruct</strong> does not adjust the quota usage recorded in any quota
 root files.  After running <strong>reconstruct</strong>, it is advisable to run
@@ -833,23 +833,23 @@ upgrade it with <strong>-V</strong> once it's good.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-reconstruct-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-p">
-<span id="cmdoption-reconstruct--partition"></span><code class="descname">-p</code><code class="descclassname"> partition</code><code class="descclassname">, </code><code class="descname">--partition</code><code class="descclassname">=partition</code><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-partition"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">partition</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--partition</span></code><code class="sig-prename descclassname"><span class="pre">=partition</span></code><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for the listed (non-existant) mailboxes on the indicated
 <em>partition</em>. Create the mailboxes in the database in addition to
 reconstructing them. (not compatible with the use of wildcards)</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-x">
-<span id="cmdoption-reconstruct--ignore-disk-metadata"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-disk-metadata</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-ignore-disk-metadata"></span><code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--ignore-disk-metadata</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When processing a mailbox which is not in the mailbox list (e.g.
 via the <strong>-p</strong> or <strong>-f</strong> options), do not import the metadata from
 the mailbox, instead create it anew (this specifically affects at
@@ -857,70 +857,70 @@ least the mailbox's seen state unique identifier, user flags, and
 ACL).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-r">
-<span id="cmdoption-reconstruct--recursive"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recursive</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-recursive"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--recursive</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively reconstruct all sub-mailboxes of the mailboxes or
 mailbox prefixes given as arguments.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-f">
-<span id="cmdoption-reconstruct--scan-filesystem"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--scan-filesystem</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-scan-filesystem"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--scan-filesystem</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Examine the filesystem underneath mailbox, adding all directories
-with a <code class="docutils literal"><span class="pre">cyrus.header</span></code> found there as new mailboxes.  Useful for
+with a <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> found there as new mailboxes.  Useful for
 restoring mailboxes from backups.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-s">
-<span id="cmdoption-reconstruct--no-stat"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-stat</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-no-stat"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--no-stat</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't stat underlying files.  This makes reconstruct run faster, at
 the expense of not noticing some issues (like zero byte files or
 size mismatches).  &quot;<strong>reconstruct -s</strong>&quot; should be quite fast.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-q">
-<span id="cmdoption-reconstruct--quiet"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-quiet"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--quiet</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Emit less verbose information to syslog.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-n">
-<span id="cmdoption-reconstruct--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-dry-run"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--dry-run</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't make any changes.  Problems are reported, but not fixed.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-G">
-<span id="cmdoption-reconstruct--force-reparse"></span><code class="descname">-G</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--force-reparse</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-g"></span><span id="cmdoption-reconstruct-force-reparse"></span><code class="sig-name descname"><span class="pre">-G</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--force-reparse</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force re-parsing of the underlying message (checks GUID
 correctness). Reconstruct with -G should fix all possible
 individual message issues, including corrupted data files.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-I">
-<span id="cmdoption-reconstruct--update-uniqueids"></span><code class="descname">-I</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--update-uniqueids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-I" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-i"></span><span id="cmdoption-reconstruct-update-uniqueids"></span><code class="sig-name descname"><span class="pre">-I</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--update-uniqueids</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-I" title="Permalink to this definition">¶</a></dt>
 <dd><p>If two mailboxes exist with the same UNIQUEID and reconstruct visits
 both of them, -I will cause the second mailbox to have a new UNIQUEID
 created for it.  If you don't specify -I, you will just get a syslog
 entry telling you of the clash.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-R">
-<span id="cmdoption-reconstruct--guid-mismatch-keep"></span><code class="descname">-R</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-keep</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-guid-mismatch-keep"></span><code class="sig-name descname"><span class="pre">-R</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--guid-mismatch-keep</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a UID upgrade operation on GUID mismatch files.  Use this
 option if you think your index is corrupted rather than your
 message files, or if all backup attempts have failed and you're
 happy to be served the missing files.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-U">
-<span id="cmdoption-reconstruct--guid-mismatch-discard"></span><code class="descname">-U</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--guid-mismatch-discard</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-u"></span><span id="cmdoption-reconstruct-guid-mismatch-discard"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--guid-mismatch-discard</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this option if you have corrupt message files in your spool and
 have been unable to restore them from backup.  This will make the
 mailbox IOERROR free and fix replication.</p>
@@ -929,46 +929,46 @@ this deletes corrupt message files for ever - so make sure you've
 exhausted other options first!</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-o">
-<span id="cmdoption-reconstruct--ignore-odd-files"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-ignore-odd-files"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--ignore-odd-files</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignore odd files in your mailbox disk directories, instead of
 complaining about them.  Probably useful if you are using some
 tool which adds additional tracking files.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-O">
-<span id="cmdoption-reconstruct--delete-odd-files"></span><code class="descname">-O</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--delete-odd-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-delete-odd-files"></span><code class="sig-name descname"><span class="pre">-O</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--delete-odd-files</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete odd files.  This is the opposite of <strong>-o</strong>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-M">
-<span id="cmdoption-reconstruct--prefer-mboxlist"></span><code class="descname">-M</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--prefer-mboxlist</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-m"></span><span id="cmdoption-reconstruct-prefer-mboxlist"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--prefer-mboxlist</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prefer mailboxes.db over cyrus.header - will rewrite ACL or
 uniqueid from the mailboxes.db into the header file rather than the
 other way around.  This feature was introduced in version 3.0.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-V">
-<span id="cmdoption-reconstruct--set-version"></span><code class="descname">-V</code><code class="descclassname"> version</code><code class="descclassname">, </code><code class="descname">--set-version</code><code class="descclassname">=version</code><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the <code class="docutils literal"><span class="pre">cyrus.index</span></code> minor version to a specific <em>version</em>.
+<span id="cmdoption-reconstruct-v"></span><span id="cmdoption-reconstruct-set-version"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname"> <span class="pre">version</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--set-version</span></code><code class="sig-prename descclassname"><span class="pre">=version</span></code><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> minor version to a specific <em>version</em>.
 This can be useful for upgrades or downgrades. Use a magical
 version of <em>max</em> to upgrade to the latest available database format
 version.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-reconstruct-u">
-<span id="cmdoption-reconstruct--userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-u" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-reconstruct-0">
+<span id="cmdoption-reconstruct-userids"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--userids</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give userids on the command line</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-reconstruct-P">
-<span id="cmdoption-reconstruct--header-paths"></span><code class="descname">-P</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--header-paths</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-P" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-reconstruct-header-paths"></span><code class="sig-name descname"><span class="pre">-P</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--header-paths</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give paths to cyrus.header files on
 the command line.  The paths can be mailbox directories, or
 explicit cyrus.header filenames.
@@ -979,14 +979,13 @@ cyrus.header and cyrus.index.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>reconstruct -r -f</strong> <em>tech.support</em>
-</pre>
+<pre class="literal-block"><strong>reconstruct -r -f</strong> <em>tech.support</em></pre>
 <blockquote>
-<div>Recursively reconstruct all mailboxes within the <em>tech.support</em>
-hierarchy, restoring any directories containing <code class="docutils literal"><span class="pre">cyrus.header</span></code>
-files.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">support</span> <span class="n">uid</span> <span class="mi">9634</span> <span class="n">rediscovered</span> <span class="o">-</span> <span class="n">appending</span>
+<div><p>Recursively reconstruct all mailboxes within the <em>tech.support</em>
+hierarchy, restoring any directories containing <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code>
+files.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">support</span> <span class="n">uid</span> <span class="mi">9634</span> <span class="n">rediscovered</span> <span class="o">-</span> <span class="n">appending</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">support</span> <span class="n">uid</span> <span class="mi">9635</span> <span class="n">rediscovered</span> <span class="o">-</span> <span class="n">appending</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">support</span> <span class="n">uid</span> <span class="mi">9642</span> <span class="n">rediscovered</span> <span class="o">-</span> <span class="n">appending</span>
 <span class="n">tech</span><span class="o">.</span><span class="n">support</span>
@@ -994,36 +993,34 @@ files.</div></blockquote>
 <span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Spam</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>reconstruct -r -f</strong> <em>tech.support.Archive.2%</em>
-</pre>
+<pre class="literal-block"><strong>reconstruct -r -f</strong> <em>tech.support.Archive.2%</em></pre>
 <blockquote>
-<div>Recursively reconstruct all mailboxes within the
+<div><p>Recursively reconstruct all mailboxes within the
 <em>tech.support.Archive</em> hierarchy with names beginning with '2',
-restoring any directories containing <code class="docutils literal"><span class="pre">cyrus.header</span></code>
-files.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2001</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2002</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2003</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2004</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2005</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2006</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2007</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2008</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2009</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2010</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2011</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2012</span>
-<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="o">.</span><span class="mi">2013</span>
+restoring any directories containing <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code>
+files.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2001</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2002</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2003</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2004</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2005</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2006</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2007</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2008</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2009</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2010</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2011</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2012</span>
+<span class="n">tech</span><span class="o">.</span><span class="n">support</span><span class="o">.</span><span class="n">Archive</span><span class="mf">.2013</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>reconstruct -r -f -u</strong> <em>jsmith</em>
-</pre>
+<pre class="literal-block"><strong>reconstruct -r -f -u</strong> <em>jsmith</em></pre>
 <blockquote>
-<div>Recursively reconstruct all mailboxes belonging to <em>jsmith</em>,
-restoring any directories containing <code class="docutils literal"><span class="pre">cyrus.header</span></code> files.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">.</span><span class="n">jsmith</span>
+<div><p>Recursively reconstruct all mailboxes belonging to <em>jsmith</em>,
+restoring any directories containing <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> files.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">.</span><span class="n">jsmith</span>
 <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Archive</span>
 <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Drafts</span>
 <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Lists</span>
@@ -1047,7 +1044,7 @@ deprecated in Cyrus version 2.4.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -1072,7 +1069,7 @@ deprecated in Cyrus version 2.4.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 19 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1098,7 +1095,6 @@ deprecated in Cyrus version 2.4.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

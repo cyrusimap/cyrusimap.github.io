@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -786,47 +788,45 @@
           <div role="main" class="document">
             
   <div class="section" id="mbtool">
-<span id="imap-reference-manpages-systemcommands-mbtool"></span><span id="std:cyrusman-mbtool(8)"></span><h1><strong>mbtool</strong><a class="headerlink" href="#mbtool" title="Permalink to this headline">¶</a></h1>
+<span id="imap-reference-manpages-systemcommands-mbtool"></span><span id="std-cyrusman-mbtool-8"></span><span id="std:cyrusman-mbtool(8)"></span><h1><strong>mbtool</strong><a class="headerlink" href="#mbtool" title="Permalink to this headline">¶</a></h1>
 <p>intro</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mbtool</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-r</strong> <em>mailbox</em>...
-<strong>mbtool</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-t</strong> <em>mailbox</em>...
-</pre>
+<pre class="literal-block"><strong>mbtool</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-r</strong> <em>mailbox</em>...
+<strong>mbtool</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-t</strong> <em>mailbox</em>...</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>mbtool</strong> is a tool for performing various actions on the indexes of a
 list of mailboxes. The only actions currently supported are <strong>-t</strong>,
-which will normalize the <code class="docutils literal"><span class="pre">internaldate</span></code> time stamp of each record in
+which will normalize the <code class="docutils literal notranslate"><span class="pre">internaldate</span></code> time stamp of each record in
 the index to GMT, and <strong>-r</strong> which will create a new unique ID for each
 mailbox.</p>
 <p>Only one action may be given and at least mailbox must be listed.</p>
 <p>It is intended that <strong>mbtool</strong> will be extended over time to perform
 more such actions.</p>
-<p><strong>mbtool</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>mbtool</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbtool-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-mbtool-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-mbtool-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-mbtool-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbtool-t">
-<span id="cmdoption-mbtool--normalize-internaldate"></span><code class="descname">-t</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--normalize-internaldate</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-t" title="Permalink to this definition">¶</a></dt>
-<dd><p>Normalize <code class="docutils literal"><span class="pre">internaldate</span></code> on all index records of all listed
+<span id="cmdoption-mbtool-normalize-internaldate"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--normalize-internaldate</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize <code class="docutils literal notranslate"><span class="pre">internaldate</span></code> on all index records of all listed
 <em>mailbox</em>es to match the <em>Date:</em> header if they're off by more
 than a day, which can be used to fix up a mailbox which has been
 restored from backup and lost its internaldate information.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbtool-r">
-<span id="cmdoption-mbtool--new-uniqueid"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--new-uniqueid</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbtool-new-uniqueid"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--new-uniqueid</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbtool-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new unique ID for all listed <em>mailbox</em>es.  Only works
 for legacy mailboxes.</p>
 </dd></dl>
@@ -834,18 +834,16 @@ for legacy mailboxes.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mbtool -r</strong> user.jsmith
-</pre>
+<pre class="literal-block"><strong>mbtool -r</strong> user.jsmith</pre>
 <blockquote>
-<div>Create new UUID for mailbox <em>user.jsmith</em>.</div></blockquote>
-<pre class="literal-block">
-<strong>mbtool -t</strong> user.jsmith
-</pre>
+<div><p>Create new UUID for mailbox <em>user.jsmith</em>.</p>
+</div></blockquote>
+<pre class="literal-block"><strong>mbtool -t</strong> user.jsmith</pre>
 <blockquote>
-<div>Normalize <code class="docutils literal"><span class="pre">internaldate</span></code> on all index records in
-<em>user.jsmith</em>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Working</span> <span class="n">on</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
+<div><p>Normalize <code class="docutils literal notranslate"><span class="pre">internaldate</span></code> on all index records in
+<em>user.jsmith</em>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Working</span> <span class="n">on</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
 <span class="mi">00000001</span><span class="p">:</span> <span class="n">Tue</span><span class="p">,</span> <span class="mi">08</span> <span class="n">Jul</span> <span class="mi">2014</span> <span class="mi">16</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">18</span> <span class="o">-</span><span class="mi">0500</span> <span class="o">=&gt;</span> <span class="n">Mon</span><span class="p">,</span> <span class="mi">07</span> <span class="n">Jul</span> <span class="mi">2014</span> <span class="mi">20</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">18</span> <span class="o">+</span><span class="mi">0000</span>
 <span class="mi">00000002</span><span class="p">:</span> <span class="n">Tue</span> <span class="n">Jul</span> <span class="mi">08</span> <span class="mi">16</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">13</span> <span class="n">CDT</span> <span class="mi">2013</span> <span class="o">=&gt;</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">30</span> <span class="n">Aug</span> <span class="mi">2013</span> <span class="mi">19</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">03</span> <span class="o">+</span><span class="mi">0000</span>
 <span class="o">&lt;...&gt;</span>
@@ -858,7 +856,7 @@ for legacy mailboxes.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -883,7 +881,7 @@ for legacy mailboxes.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 27 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -909,7 +907,6 @@ for legacy mailboxes.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,8 +792,8 @@
   <div class="section" id="splitting-metadata-from-partitions">
 <h1>Splitting Metadata from Partitions<a class="headerlink" href="#splitting-metadata-from-partitions" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This only applies to Cyrus IMAP version 2.3 and later</p>
+<p class="admonition-title">Important</p>
+<p>This only applies to Cyrus IMAP version 2.3 and later</p>
 </div>
 <p>The traditional layout for a Cyrus IMAP mailbox spool directory is to include the mailbox message data and mailbox metadata in the same directory tree. The mailbox message data and mailbox metadata differ in size and frequency of updating, which in larger deployments may justify using different storage layers for each.</p>
 <p>The mailbox message data, which consists of many (small) message files, is not updated as frequently and does not require as much storage performance as the mailbox metadata, which consists of databases that are updated frequently and have a high volume of accesses and updates. The mailbox message data usually requires significant storage volumes, while the mailbox metadata does not.</p>
@@ -799,7 +801,7 @@
 <p><strong>Procedure 13.1. Transition from Traditional Mail Spool to Split Data Mail Spool</strong></p>
 <blockquote>
 <div><p>Create a new partition in <strong>/etc/imapd.conf</strong>, aptly named <strong>splitmeta</strong> in the following example configuration snippet:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">metapartition_files</span><span class="p">:</span> <span class="n">header</span> <span class="n">index</span> <span class="n">cache</span> <span class="n">expunge</span> <span class="n">squat</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metapartition_files</span><span class="p">:</span> <span class="n">header</span> <span class="n">index</span> <span class="n">cache</span> <span class="n">expunge</span> <span class="n">squat</span>
 <span class="n">metapartition</span><span class="o">-</span><span class="n">default</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
 <span class="n">metapartition</span><span class="o">-</span><span class="n">splitmeta</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">splitmeta</span><span class="o">/</span><span class="n">metadata</span>
 <span class="n">partition</span><span class="o">-</span><span class="n">default</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
@@ -807,12 +809,12 @@
 </pre></div>
 </div>
 <p>Create the directory tree being referred to in the new configuration:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># su -s /bin/bash - cyrus -c &#39;/usr/lib/cyrus-imapd/mkimap /etc/imapd.conf&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># su -s /bin/bash - cyrus -c &#39;/usr/lib/cyrus-imapd/mkimap /etc/imapd.conf&#39;</span>
 </pre></div>
 </div>
 <p>Reload the Cyrus IMAP service. Please refer to <a class="reference internal" href="reloading.html#sop-reloading"><span class="std std-ref">Reloading Cyrus IMAP Services</span></a> for more details on doing so.</p>
 <p>Rename all mailboxes, using the new partition as the location for the renamed mailbox. One example rename command is included below:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cyradm</span><span class="o">&gt;</span> <span class="n">renamemailbox</span> <span class="n">user</span><span class="o">/</span><span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span> <span class="n">user</span><span class="o">/</span><span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span> <span class="n">splitmeta</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cyradm</span><span class="o">&gt;</span> <span class="n">renamemailbox</span> <span class="n">user</span><span class="o">/</span><span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span> <span class="n">user</span><span class="o">/</span><span class="n">john</span><span class="o">.</span><span class="n">doe</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span> <span class="n">splitmeta</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -839,7 +841,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 11 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -865,7 +867,6 @@
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

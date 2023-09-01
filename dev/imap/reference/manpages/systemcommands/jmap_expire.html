@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,27 +787,25 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-jmap_expire(8)"></span><div class="section" id="jmap-expire">
+  <span class="target" id="std-cyrusman-jmap_expire-8"><span id="std:cyrusman-jmap_expire(8)"></span></span><div class="section" id="jmap-expire">
 <span id="imap-reference-manpages-systemcommands-jmap-expire"></span><h1><strong>jmap_expire</strong><a class="headerlink" href="#jmap-expire" title="Permalink to this headline">¶</a></h1>
 <p>Expire stale JMAP data such as calendar event notifications.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>jmap_expire</strong> [ <strong>-C</strong> <em>config-file</em> ]
+<pre class="literal-block"><strong>jmap_expire</strong> [ <strong>-C</strong> <em>config-file</em> ]
 [ <strong>-E</strong> <em>notif-expire-duration</em> ]
 [ <strong>-X</strong> <em>notif-unlink-duration</em> ]
 [ <strong>-h</strong> or <strong>--help</strong>]
 [ <strong>-l</strong> or <strong>--lock</strong> <em>lock-duration</em>]
 [ <strong>-u</strong> <em>username</em> ]
-[ <strong>-v</strong> ]
-</pre>
+[ <strong>-v</strong> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>jmap_expire</strong> is used to run a number of regular maintenance tasks for
 JMAP mailboxes and databases, specifically:</p>
 <ul class="simple">
-<li>expires and unlinks JMAP CalendarEventNotification objects</li>
+<li><p>expires and unlinks JMAP CalendarEventNotification objects</p></li>
 </ul>
 <p><strong>jmap_expire</strong> requires at least one of the <strong>-E -X</strong> optionss.</p>
 <p>Option arguments that denote durations may be specified using any
@@ -816,15 +816,15 @@ minutes and 2 seconds. The default unit is seconds.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-jmap_expire-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-jmap-expire-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-jmap_expire-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-E">
-<span id="cmdoption-jmap_expire--notif-expire"></span><code class="descname">-E</code><code class="descclassname"> duration</code><code class="descclassname">, </code><code class="descname">--notif-expire</code><code class="descclassname">=duration</code><a class="headerlink" href="#cmdoption-jmap_expire-E" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-e"></span><span id="cmdoption-jmap_expire-notif-expire"></span><span id="cmdoption-jmap-expire-notif-expire"></span><code class="sig-name descname"><span class="pre">-E</span></code><code class="sig-prename descclassname"> <span class="pre">duration</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--notif-expire</span></code><code class="sig-prename descclassname"><span class="pre">=duration</span></code><a class="headerlink" href="#cmdoption-jmap_expire-E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flags JMAP notifications in the <em>jmapnotificationfolder</em> mailbox as
 expired if their creation time is older than <em>duration</em>.</p>
 <p>The duration must be zero or positive. Setting this flag causes the
@@ -833,9 +833,9 @@ them on the file system. This is required to allow Cyrus replica to
 synchronize their state. Also see the <strong>--notif-unlink</strong> option.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-X">
-<span id="cmdoption-jmap_expire--notif-unlink"></span><code class="descname">-X</code><code class="descclassname"> duration</code><code class="descclassname">, </code><code class="descname">--notif-unlink</code><code class="descclassname">=duration</code><a class="headerlink" href="#cmdoption-jmap_expire-X" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-x"></span><span id="cmdoption-jmap_expire-notif-unlink"></span><span id="cmdoption-jmap-expire-notif-unlink"></span><code class="sig-name descname"><span class="pre">-X</span></code><code class="sig-prename descclassname"> <span class="pre">duration</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--notif-unlink</span></code><code class="sig-prename descclassname"><span class="pre">=duration</span></code><a class="headerlink" href="#cmdoption-jmap_expire-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes already previously expired JMAP notifications in the
 <em>jmapnotificationfolder</em> mailbox if their last modification time
 is older than <em>duration</em>.  This unlinks the notification from the file
@@ -844,15 +844,15 @@ system and is not reversible.</p>
 synchronization interval of any Cyrus replica.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-h">
-<span id="cmdoption-jmap_expire--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-jmap_expire-h" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-h"></span><span id="cmdoption-jmap_expire-help"></span><span id="cmdoption-jmap-expire-help"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--help</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-jmap_expire-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show help information how to use this program.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-l">
-<code class="descname">-l</code><code class="descclassname"> --lock=duration</code><a class="headerlink" href="#cmdoption-jmap_expire-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-l"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"> <span class="pre">--lock=duration</span></code><a class="headerlink" href="#cmdoption-jmap_expire-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to lock a mailbox at most <em>duration</em> seconds for each
 operation (e.g expire, unlink). Without this option, each
 mailbox is exclusively locked as long as it takes to complete
@@ -866,17 +866,17 @@ of entries.</p>
 the next execution of jmap_expire.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-u">
-<span id="cmdoption-jmap_expire--user"></span><code class="descname">-u</code><code class="descclassname"> username</code><code class="descclassname">, </code><code class="descname">--user</code><code class="descclassname">=username</code><a class="headerlink" href="#cmdoption-jmap_expire-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-u"></span><span id="cmdoption-jmap_expire-user"></span><span id="cmdoption-jmap-expire-user"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"> <span class="pre">username</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--user</span></code><code class="sig-prename descclassname"><span class="pre">=username</span></code><a class="headerlink" href="#cmdoption-jmap_expire-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only process JMAP data belonging to this user, e.g.  &quot;<a class="reference external" href="mailto:someone&#37;&#52;&#48;example&#46;com">someone<span>&#64;</span>example<span>&#46;</span>com</a>&quot;.
 Multiple occurrences of this option cause <strong>jmap_expire</strong> to operate on
 all given user names.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-jmap_expire-v">
-<span id="cmdoption-jmap_expire--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-jmap_expire-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-jmap-expire-v"></span><span id="cmdoption-jmap_expire-verbose"></span><span id="cmdoption-jmap-expire-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-jmap_expire-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output. Multiple occurrences of this option increase
 the verbosity level, up to 3 times.</p>
 </dd></dl>
@@ -884,20 +884,18 @@ the verbosity level, up to 3 times.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>jmap_expire</strong> <strong>-E</strong> <em>7d</em> <strong>-X</strong> <em>1d</em>
-</pre>
+<pre class="literal-block"><strong>jmap_expire</strong> <strong>-E</strong> <em>7d</em> <strong>-X</strong> <em>1d</em></pre>
 <blockquote>
-<div>Expire JMAP notifications for all users where the notification
+<div><p>Expire JMAP notifications for all users where the notification
 was created one week ago or earlier. Expunge all notifications
-that were expired until yesterday.</div></blockquote>
-<pre class="literal-block">
-<strong>jmap_expire</strong> <strong>--notif-expire**=*1d* **--lock=2s</strong> <strong>-u</strong> <em>me&#64;example.com</em>
-</pre>
+that were expired until yesterday.</p>
+</div></blockquote>
+<pre class="literal-block"><strong>jmap_expire</strong> <strong>--notif-expire**=*1d* **--lock=2s</strong> <strong>-u</strong> <em>me&#64;example.com</em></pre>
 <blockquote>
-<div>Expire JMAP notifications in the <em>jmapnotificationfolder</em> mailbox
+<div><p>Expire JMAP notifications in the <em>jmapnotificationfolder</em> mailbox
 of user <em>me&#64;example.com</em>. Release the mailbox lock after at most
-2 seconds and leave any remaining work for future runs of <strong>jmap_expire</strong>.</div></blockquote>
+2 seconds and leave any remaining work for future runs of <strong>jmap_expire</strong>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
@@ -909,7 +907,7 @@ of user <em>me&#64;example.com</em>. Release the mailbox lock after at most
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
 </div>
 </div>
 
@@ -934,7 +932,7 @@ of user <em>me&#64;example.com</em>. Release the mailbox lock after at most
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 13 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -960,7 +958,6 @@ of user <em>me&#64;example.com</em>. Release the mailbox lock after at most
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

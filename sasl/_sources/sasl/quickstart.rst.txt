@@ -17,10 +17,8 @@ The following :ref:`authentication_mechanisms` are included in
 this distribution:
 
 *  ANONYMOUS
-*  CRAM-MD5
 *  EXTERNAL
 *  GSSAPI (MIT Kerberos 5, Heimdal Kerberos 5 or CyberSafe)
-*  LOGIN
 *  OTP (requires OpenSSL libcrypto)
 *  PASSDSS (requires OpenSSL libcrypto)
 *  PLAIN
@@ -33,7 +31,7 @@ database (e.g. lmdb, gdbm, ndbm), LDAP, or in a SQL database
 (MySQL, Postgres).
 
 
-Additionally, mechanisms such as PLAIN and LOGIN
+Additionally, mechanisms such as PLAIN
 (where the plaintext password is directly supplied by the client)
 can perform direct password verification via the saslauthd daemon.  This
 allows the use of LDAP, PAM, and a variety of other password verification

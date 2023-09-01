@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,54 +786,51 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-mkimap(8)"></span><div class="section" id="mkimap">
+  <span class="target" id="std-cyrusman-mkimap-8"><span id="std:cyrusman-mkimap(8)"></span></span><div class="section" id="mkimap">
 <span id="imap-reference-manpages-systemcommands-mkimap"></span><h1><strong>mkimap</strong><a class="headerlink" href="#mkimap" title="Permalink to this headline">¶</a></h1>
 <p>A (small) Perl script to aid in creating spool and configuration
 directories for Cyrus IMAP installations.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mkimap</strong> <em>config-file</em>
-</pre>
+<pre class="literal-block"><strong>mkimap</strong> <em>config-file</em></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>mkimap</strong> script reads in the configuration file specified on the
-command-line or uses <code class="file docutils literal"><span class="pre">/etc/imapd.conf</span></code> to determine a list of
+command-line or uses <code class="file docutils literal notranslate"><span class="pre">/etc/imapd.conf</span></code> to determine a list of
 directories that Cyrus IMAP would need to operate.</p>
 <p>Among these directories are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>the <code class="docutils literal"><span class="pre">configdirectory</span></code> (from <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>)</li>
-<li>the <code class="docutils literal"><span class="pre">partition-$name</span></code> directories (from <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>)</li>
-<li>the <code class="docutils literal"><span class="pre">meta-partition-$name</span></code> directories (from
-<a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>)</li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">configdirectory</span></code> (from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>)</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">partition-$name</span></code> directories (from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>)</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">meta-partition-$name</span></code> directories (from
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>)</p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This utility needs to be executed as the user <code class="docutils literal"><span class="pre">cyrus</span></code> (or the user
+<p class="admonition-title">Note</p>
+<p>This utility needs to be executed as the user <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> (or the user
 you run the Cyrus IMAP service as).</p>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mkimap-arg-config-file">
-<code class="descname">config-file</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mkimap-arg-config-file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<code class="sig-name descname"><span class="pre">config-file</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mkimap-arg-config-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mkimap</strong> <em>/etc/imapd.conf</em>
-</pre>
+<pre class="literal-block"><strong>mkimap</strong> <em>/etc/imapd.conf</em></pre>
 <blockquote>
-<div>Create necessary directories based on settings in
-<em>/etc/imapd.conf</em>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">reading</span> <span class="n">configure</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">imapd</span><span class="o">.</span><span class="n">conf</span><span class="o">...</span>
+<div><p>Create necessary directories based on settings in
+<em>/etc/imapd.conf</em>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reading</span> <span class="n">configure</span> <span class="n">file</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">imapd</span><span class="o">.</span><span class="n">conf</span><span class="o">...</span>
 <span class="n">i</span> <span class="n">will</span> <span class="n">configure</span> <span class="n">directory</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span><span class="o">.</span>
 <span class="n">i</span> <span class="n">saw</span> <span class="n">partition</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">mail</span><span class="o">.</span>
 <span class="n">i</span> <span class="n">saw</span> <span class="n">partition</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">news</span><span class="o">.</span>
@@ -869,7 +868,7 @@ you run the Cyrus IMAP service as).</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -895,7 +894,6 @@ you run the Cyrus IMAP service as).</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

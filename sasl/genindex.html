@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -28,6 +27,8 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   
     <link rel="stylesheet" href="_static/cyrus.css" type="text/css" />
   
@@ -223,7 +224,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -317,12 +318,10 @@
 <li class="toctree-l2"><a class="reference internal" href="sasl/authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sasl/authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -345,10 +344,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sasl/faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sasl/faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sasl/faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sasl/resources.html">Other Documentation &amp; Resources</a></li>
@@ -361,7 +360,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sasl/appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="sasl/developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sasl/developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sasl/developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -375,16 +374,16 @@
 <li class="toctree-l3"><a class="reference internal" href="sasl/developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sasl/developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -406,7 +405,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="sasl/developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sasl/developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sasl/developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sasl/developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -497,1169 +496,691 @@
 </div>
 <h2 id="Symbols">Symbols</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     -C config-file
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/reference/manpages/template.html#cmdoption-CMD-C">CMD command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/reference/manpages/template.html#cmdoption-CMD-C">CMD command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     ad_compat [yes | no]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ad_compat">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ad_compat">command line option</a>
+</li>
+      </ul></li>
+      <li>
     authdaemon_path [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-authdaemon_path">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-authdaemon_path">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     auto_transition [yes|noplain|no]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-auto_transition">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-auto_transition">command line option</a>
+</li>
+      </ul></li>
+      <li>
     auxprop_plugin [&lt;list of plugin names&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-auxprop_plugin">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-auxprop_plugin">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     canon_user_plugin [&lt;name&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-canon_user_plugin">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-canon_user_plugin">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ccache_store [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ccache_store">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ccache_store">command line option</a>
+</li>
+      </ul></li>
+      <li>
     CMD command line option
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/reference/manpages/template.html#cmdoption-CMD-C">-C config-file</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt><a href="sasl/reference/manpages/template.html#std:saslman-CMDNAME(3)">CMDNAME(3)</a>
-  </dt>
-
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/reference/manpages/template.html#cmdoption-CMD-C">-C config-file</a>
+</li>
+      </ul></li>
+      <li><a href="sasl/reference/manpages/template.html#std-saslman-CMDNAME-3">CMDNAME(3)</a>
+</li>
+      <li>
     command line option
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ad_compat">ad_compat [yes | no]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-authdaemon_path">authdaemon_path [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-auto_transition">auto_transition [yes|noplain|no]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-auxprop_plugin">auxprop_plugin [&lt;list of plugin names&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-canon_user_plugin">canon_user_plugin [&lt;name&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ccache_store">ccache_store [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-keytab">keytab [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_canon_attr">ldapdb_canon_attr [&lt;user&#39;s canonical name&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_id">ldapdb_id [&lt;auth id&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_mech">ldapdb_mech [&lt;mechanism&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_pw">ldapdb_pw [&lt;password&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_rc">ldapdb_rc [&lt;filename&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_starttls">ldapdb_starttls [try|demand]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_uri">ldapdb_uri [&lt;list of URIs&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-log_level">log_level [&lt;numeric log level&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-mech_list">mech_list [&lt;mechanism list&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-opiekeys">opiekeys [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-otp_mda">otp_mda [md4 | md5 | sha1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-plugin_list">plugin_list [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-pwcheck_method">pwcheck_method [&lt;list of mechanisms&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-saslauthd_path">saslauthd_path [&lt;path&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_mapsize">sasldb_mapsize [&lt;size in bytes&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_maxreaders">sasldb_maxreaders [&lt;max threads&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_path">sasldb_path [&lt;path to sasldb file&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-service_principal">service_principal [&lt;GSS_C_NT_HOSTBASED_SERVICE&gt; | *]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_database">sql_database &lt;database name&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_engine">sql_engine [&lt;name&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_hostnames">sql_hostnames [&lt;list of SQL servers&gt;]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_insert">sql_insert &lt;statement&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_passwd">sql_passwd &lt;password&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_select">sql_select &lt;statement&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_update">sql_update &lt;statement&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_user">sql_user &lt;username&gt;</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-srp_mda">srp_mda [md5 | sha1 | rmd160]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-srvtab">srvtab [&lt;path&gt;]</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ad_compat">ad_compat [yes | no]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-authdaemon_path">authdaemon_path [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-auto_transition">auto_transition [yes|noplain|no]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-auxprop_plugin">auxprop_plugin [&lt;list of plugin names&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-canon_user_plugin">canon_user_plugin [&lt;name&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ccache_store">ccache_store [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-keytab">keytab [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_canon_attr">ldapdb_canon_attr [&lt;user&#39;s canonical name&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_id">ldapdb_id [&lt;auth id&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_mech">ldapdb_mech [&lt;mechanism&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_pw">ldapdb_pw [&lt;password&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_rc">ldapdb_rc [&lt;filename&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_starttls">ldapdb_starttls [try|demand]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_uri">ldapdb_uri [&lt;list of URIs&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-log_level">log_level [&lt;numeric log level&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-mech_list">mech_list [&lt;mechanism list&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-opiekeys">opiekeys [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-otp_mda">otp_mda [md4 | md5 | sha1]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-plugin_list">plugin_list [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-pwcheck_method">pwcheck_method [&lt;list of mechanisms&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-saslauthd_path">saslauthd_path [&lt;path&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_mapsize">sasldb_mapsize [&lt;size in bytes&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_maxreaders">sasldb_maxreaders [&lt;max threads&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_path">sasldb_path [&lt;path to sasldb file&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-service_principal">service_principal [&lt;GSS_C_NT_HOSTBASED_SERVICE&gt; | *]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_database">sql_database &lt;database name&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_engine">sql_engine [&lt;name&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_hostnames">sql_hostnames [&lt;list of SQL servers&gt;]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_insert">sql_insert &lt;statement&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_passwd">sql_passwd &lt;password&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_select">sql_select &lt;statement&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_update">sql_update &lt;statement&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_user">sql_user &lt;username&gt;</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-srp_mda">srp_mda [md5 | sha1 | rmd160]</a>
+</li>
+        <li><a href="sasl/options.html#cmdoption-arg-srvtab">srvtab [&lt;path&gt;]</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     keytab [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-keytab">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-keytab">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     ldapdb_canon_attr [&lt;user&#39;s canonical name&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_canon_attr">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_canon_attr">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ldapdb_id [&lt;auth id&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_id">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_id">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ldapdb_mech [&lt;mechanism&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_mech">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_mech">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ldapdb_pw [&lt;password&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_pw">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_pw">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     ldapdb_rc [&lt;filename&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_rc">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_rc">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ldapdb_starttls [try|demand]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_starttls">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_starttls">command line option</a>
+</li>
+      </ul></li>
+      <li>
     ldapdb_uri [&lt;list of URIs&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-ldapdb_uri">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-ldapdb_uri">command line option</a>
+</li>
+      </ul></li>
+      <li>
     log_level [&lt;numeric log level&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-log_level">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-log_level">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     mech_list [&lt;mechanism list&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-mech_list">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-mech_list">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     opiekeys [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-opiekeys">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-opiekeys">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     otp_mda [md4 | md5 | sha1]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-otp_mda">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-otp_mda">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     plugin_list [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-plugin_list">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_clear">prop_clear (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_dispose">prop_dispose (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_dup">prop_dup (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_erase">prop_erase (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_format">prop_format (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_get">prop_get (C function)</a>
-  </dt>
-
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_getnames">prop_getnames (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_new">prop_new (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_request">prop_request (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_set">prop_set (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_setvals">prop_setvals (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.propctx">propctx (C type)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.propval">propval (C type)</a>
-  </dt>
-
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-plugin_list">command line option</a>
+</li>
+      </ul></li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_clear">prop_clear (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_dispose">prop_dispose (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_dup">prop_dup (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_erase">prop_erase (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_format">prop_format (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_get">prop_get (C function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_getnames">prop_getnames (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_new">prop_new (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_request">prop_request (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_set">prop_set (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.prop_setvals">prop_setvals (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.propctx">propctx (C type)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#c.propval">propval (C type)</a>
+</li>
+      <li>
     pwcheck_method [&lt;list of mechanisms&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-pwcheck_method">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-pwcheck_method">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     RFC
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/reference/manpages/library/sasl_errstring.html#index-0">RFC 1766</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-0">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/reference/manpages/library/sasl_checkapop.html#index-0">RFC 1939</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-2">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-0">RFC 1939#page-15</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-1">RFC 2195</a>, <a href="sasl/faqs/rfcs.html#index-1">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/developer/programming.html#index-0">RFC 2222</a>, <a href="sasl/developer/programming.html#index-1">[1]</a>, <a href="sasl/reference/manpages/library/sasl.html#index-0">[2]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-2">RFC 2222#section-7.1</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-0">RFC 2245</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-6">RFC 2289</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-3">RFC 2444</a>
-  </dt>
-
-        
-  <dt><a href="sasl/reference/manpages/library/sasl_seterror.html#index-0">RFC 2482</a>, <a href="sasl/reference/manpages/library/sasl_seterror.html#index-1">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-4">RFC 2808</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-5">RFC 4120</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-5">RFC 4178</a>, <a href="sasl/faqs/rfcs.html#index-6">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-2">RFC 4301</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-7">RFC 4422</a>, <a href="sasl/reference/manpages/library/sasl_auxprop.html#index-0">[1]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#index-0">[2]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#index-0">[3]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_request.html#index-0">[4]</a>, <a href="sasl/reference/manpages/library/sasl_callbacks.html#index-0">[5]</a>, <a href="sasl/reference/manpages/library/sasl_canon_user_t.html#index-0">[6]</a>, <a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#index-0">[7]</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-1">[8]</a>, <a href="sasl/reference/manpages/library/sasl_checkpass.html#index-0">[9]</a>, <a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#index-0">[10]</a>, <a href="sasl/reference/manpages/library/sasl_client_done.html#index-0">[11]</a>, <a href="sasl/reference/manpages/library/sasl_client_init.html#index-0">[12]</a>, <a href="sasl/reference/manpages/library/sasl_client_new.html#index-0">[13]</a>, <a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#index-0">[14]</a>, <a href="sasl/reference/manpages/library/sasl_client_start.html#index-0">[15]</a>, <a href="sasl/reference/manpages/library/sasl_client_step.html#index-0">[16]</a>, <a href="sasl/reference/manpages/library/sasl_decode.html#index-0">[17]</a>, <a href="sasl/reference/manpages/library/sasl_decode64.html#index-0">[18]</a>, <a href="sasl/reference/manpages/library/sasl_dispose.html#index-0">[19]</a>, <a href="sasl/reference/manpages/library/sasl_done.html#index-0">[20]</a>, <a href="sasl/reference/manpages/library/sasl_encode.html#index-0">[21]</a>, <a href="sasl/reference/manpages/library/sasl_encode64.html#index-0">[22]</a>, <a href="sasl/reference/manpages/library/sasl_encodev.html#index-0">[23]</a>, <a href="sasl/reference/manpages/library/sasl_errdetail.html#index-0">[24]</a>, <a href="sasl/reference/manpages/library/sasl_errors.html#index-0">[25]</a>, <a href="sasl/reference/manpages/library/sasl_errstring.html#index-1">[26]</a>, <a href="sasl/reference/manpages/library/sasl_getcallback_t.html#index-0">[27]</a>, <a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#index-0">[28]</a>, <a href="sasl/reference/manpages/library/sasl_getopt_t.html#index-0">[29]</a>, <a href="sasl/reference/manpages/library/sasl_getpath_t.html#index-0">[30]</a>, <a href="sasl/reference/manpages/library/sasl_getprop.html#index-0">[31]</a>, <a href="sasl/reference/manpages/library/sasl_getrealm_t.html#index-0">[32]</a>, <a href="sasl/reference/manpages/library/sasl_getsecret_t.html#index-0">[33]</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-1">[34]</a>, <a href="sasl/reference/manpages/library/sasl_global_listmech.html#index-0">[35]</a>, <a href="sasl/reference/manpages/library/sasl_idle.html#index-0">[36]</a>, <a href="sasl/reference/manpages/library/sasl_listmech.html#index-0">[37]</a>, <a href="sasl/reference/manpages/library/sasl_log_t.html#index-0">[38]</a>, <a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#index-0">[39]</a>, <a href="sasl/reference/manpages/library/sasl_server_done.html#index-0">[40]</a>, <a href="sasl/reference/manpages/library/sasl_server_init.html#index-0">[41]</a>, <a href="sasl/reference/manpages/library/sasl_server_new.html#index-0">[42]</a>, <a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#index-0">[43]</a>, <a href="sasl/reference/manpages/library/sasl_server_start.html#index-0">[44]</a>, <a href="sasl/reference/manpages/library/sasl_server_step.html#index-0">[45]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#index-0">[46]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#index-0">[47]</a>, <a href="sasl/reference/manpages/library/sasl_setpass.html#index-0">[48]</a>, <a href="sasl/reference/manpages/library/sasl_setprop.html#index-0">[49]</a>, <a href="sasl/reference/manpages/library/sasl_user_exists.html#index-0">[50]</a>, <a href="sasl/reference/manpages/library/sasl_usererr.html#index-0">[51]</a>, <a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#index-0">[52]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-8">RFC 4505</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-8">RFC 4616</a>, <a href="sasl/faqs/rfcs.html#index-9">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-10">RFC 4752</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-11">RFC 4846#section-4</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-3">RFC 5801</a>, <a href="sasl/faqs/rfcs.html#index-12">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-9">RFC 5802</a>, <a href="sasl/faqs/rfcs.html#index-13">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-14">RFC 5803</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-15">RFC 5929</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-16">RFC 7613</a>
-  </dt>
-
-        
-  <dt><a href="sasl/authentication_mechanisms.html#index-10">RFC 7677</a>, <a href="sasl/faqs/rfcs.html#index-17">[1]</a>
-  </dt>
-
-        
-  <dt><a href="sasl/faqs/rfcs.html#index-18">RFC 7804</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/reference/manpages/library/sasl_errstring.html#index-0">RFC 1766</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-0">[1]</a>
+</li>
+        <li><a href="sasl/reference/manpages/library/sasl_checkapop.html#index-0">RFC 1939</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-2">[1]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-0">RFC 1939#page-15</a>
+</li>
+        <li><a href="sasl/developer/programming.html#index-0">RFC 2222</a>, <a href="sasl/developer/programming.html#index-1">[1]</a>, <a href="sasl/reference/manpages/library/sasl.html#index-0">[2]</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-0">RFC 2245</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-4">RFC 2289</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-1">RFC 2444</a>
+</li>
+        <li><a href="sasl/reference/manpages/library/sasl_seterror.html#index-0">RFC 2482</a>, <a href="sasl/reference/manpages/library/sasl_seterror.html#index-1">[1]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-2">RFC 2808</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-3">RFC 4120</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-3">RFC 4178</a>, <a href="sasl/faqs/rfcs.html#index-4">[1]</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-1">RFC 4301</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-5">RFC 4422</a>, <a href="sasl/reference/manpages/library/sasl_auxprop.html#index-0">[1]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#index-0">[2]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#index-0">[3]</a>, <a href="sasl/reference/manpages/library/sasl_auxprop_request.html#index-0">[4]</a>, <a href="sasl/reference/manpages/library/sasl_callbacks.html#index-0">[5]</a>, <a href="sasl/reference/manpages/library/sasl_canon_user_t.html#index-0">[6]</a>, <a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#index-0">[7]</a>, <a href="sasl/reference/manpages/library/sasl_checkapop.html#index-1">[8]</a>, <a href="sasl/reference/manpages/library/sasl_checkpass.html#index-0">[9]</a>, <a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#index-0">[10]</a>, <a href="sasl/reference/manpages/library/sasl_client_done.html#index-0">[11]</a>, <a href="sasl/reference/manpages/library/sasl_client_init.html#index-0">[12]</a>, <a href="sasl/reference/manpages/library/sasl_client_new.html#index-0">[13]</a>, <a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#index-0">[14]</a>, <a href="sasl/reference/manpages/library/sasl_client_start.html#index-0">[15]</a>, <a href="sasl/reference/manpages/library/sasl_client_step.html#index-0">[16]</a>, <a href="sasl/reference/manpages/library/sasl_decode.html#index-0">[17]</a>, <a href="sasl/reference/manpages/library/sasl_decode64.html#index-0">[18]</a>, <a href="sasl/reference/manpages/library/sasl_dispose.html#index-0">[19]</a>, <a href="sasl/reference/manpages/library/sasl_done.html#index-0">[20]</a>, <a href="sasl/reference/manpages/library/sasl_encode.html#index-0">[21]</a>, <a href="sasl/reference/manpages/library/sasl_encode64.html#index-0">[22]</a>, <a href="sasl/reference/manpages/library/sasl_encodev.html#index-0">[23]</a>, <a href="sasl/reference/manpages/library/sasl_errdetail.html#index-0">[24]</a>, <a href="sasl/reference/manpages/library/sasl_errors.html#index-0">[25]</a>, <a href="sasl/reference/manpages/library/sasl_errstring.html#index-1">[26]</a>, <a href="sasl/reference/manpages/library/sasl_getcallback_t.html#index-0">[27]</a>, <a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#index-0">[28]</a>, <a href="sasl/reference/manpages/library/sasl_getopt_t.html#index-0">[29]</a>, <a href="sasl/reference/manpages/library/sasl_getpath_t.html#index-0">[30]</a>, <a href="sasl/reference/manpages/library/sasl_getprop.html#index-0">[31]</a>, <a href="sasl/reference/manpages/library/sasl_getrealm_t.html#index-0">[32]</a>, <a href="sasl/reference/manpages/library/sasl_getsecret_t.html#index-0">[33]</a>, <a href="sasl/reference/manpages/library/sasl_getsimple_t.html#index-1">[34]</a>, <a href="sasl/reference/manpages/library/sasl_global_listmech.html#index-0">[35]</a>, <a href="sasl/reference/manpages/library/sasl_idle.html#index-0">[36]</a>, <a href="sasl/reference/manpages/library/sasl_listmech.html#index-0">[37]</a>, <a href="sasl/reference/manpages/library/sasl_log_t.html#index-0">[38]</a>, <a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#index-0">[39]</a>, <a href="sasl/reference/manpages/library/sasl_server_done.html#index-0">[40]</a>, <a href="sasl/reference/manpages/library/sasl_server_init.html#index-0">[41]</a>, <a href="sasl/reference/manpages/library/sasl_server_new.html#index-0">[42]</a>, <a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#index-0">[43]</a>, <a href="sasl/reference/manpages/library/sasl_server_start.html#index-0">[44]</a>, <a href="sasl/reference/manpages/library/sasl_server_step.html#index-0">[45]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#index-0">[46]</a>, <a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#index-0">[47]</a>, <a href="sasl/reference/manpages/library/sasl_setpass.html#index-0">[48]</a>, <a href="sasl/reference/manpages/library/sasl_setprop.html#index-0">[49]</a>, <a href="sasl/reference/manpages/library/sasl_user_exists.html#index-0">[50]</a>, <a href="sasl/reference/manpages/library/sasl_usererr.html#index-0">[51]</a>, <a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#index-0">[52]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-6">RFC 4505</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-5">RFC 4616</a>, <a href="sasl/faqs/rfcs.html#index-7">[1]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-8">RFC 4752</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-9">RFC 4846#section-4</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-2">RFC 5801</a>, <a href="sasl/faqs/rfcs.html#index-10">[1]</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-6">RFC 5802</a>, <a href="sasl/faqs/rfcs.html#index-11">[1]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-12">RFC 5803</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-13">RFC 5929</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-14">RFC 7613</a>
+</li>
+        <li><a href="sasl/authentication_mechanisms.html#index-7">RFC 7677</a>, <a href="sasl/faqs/rfcs.html#index-15">[1]</a>
+</li>
+        <li><a href="sasl/faqs/rfcs.html#index-16">RFC 7804</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="sasl/reference/manpages/library/sasl.html#std:saslman-sasl(3)">sasl(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_authorize_t.html#std:saslman-sasl_authorize_t(3)">sasl_authorize_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop.html#std:saslman-sasl_auxprop(3)">sasl_auxprop(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#std:saslman-sasl_auxprop_add_plugin(3)">sasl_auxprop_add_plugin(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#c.sasl_auxprop_getctx">sasl_auxprop_getctx (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#std:saslman-sasl_auxprop_getctx(3)">sasl_auxprop_getctx(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_request.html#c.sasl_auxprop_request">sasl_auxprop_request (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_request.html#std:saslman-sasl_auxprop_request(3)">sasl_auxprop_request(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADAUTH">SASL_BADAUTH (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADMAC">SASL_BADMAC (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADPARAM">SASL_BADPARAM (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADPROT">SASL_BADPROT (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADSERV">SASL_BADSERV (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADVERS">SASL_BADVERS (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BUFOVER">SASL_BUFOVER (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_callbacks.html#std:saslman-sasl_callbacks(3)">sasl_callbacks(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_canon_user_t.html#std:saslman-sasl_canon_user_t(3)">sasl_canon_user_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#std:saslman-sasl_canonuser_add_plugin(3)">sasl_canonuser_add_plugin(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_chalprompt_t.html#std:saslman-sasl_chalprompt_t(3)">sasl_chalprompt_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_checkapop.html#std:saslman-sasl_checkapop(3)">sasl_checkapop(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_checkpass.html#std:saslman-sasl_checkpass(3)">sasl_checkpass(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#std:saslman-sasl_client_add_plugin(3)">sasl_client_add_plugin(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_done.html#std:saslman-sasl_client_done(3)">sasl_client_done(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_init.html#std:saslman-sasl_client_init(3)">sasl_client_init(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_new.html#std:saslman-sasl_client_new(3)">sasl_client_new(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#std:saslman-sasl_client_plug_init_t(3)">sasl_client_plug_init_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_start.html#std:saslman-sasl_client_start(3)">sasl_client_start(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_client_step.html#std:saslman-sasl_client_step(3)">sasl_client_step(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#c.sasl_conn_t">sasl_conn_t (C type)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_CONTINUE">SASL_CONTINUE (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_decode.html#std:saslman-sasl_decode(3)">sasl_decode(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_decode64.html#std:saslman-sasl_decode64(3)">sasl_decode64(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_DISABLED">SASL_DISABLED (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_dispose.html#std:saslman-sasl_dispose(3)">sasl_dispose(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_done.html#std:saslman-sasl_done(3)">sasl_done(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_encode.html#std:saslman-sasl_encode(3)">sasl_encode(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_encode64.html#std:saslman-sasl_encode64(3)">sasl_encode64(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_encodev.html#std:saslman-sasl_encodev(3)">sasl_encodev(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_ENCRYPT">SASL_ENCRYPT (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_erasebuffer.html#std:saslman-sasl_erasebuffer(3)">sasl_erasebuffer(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errdetail.html#std:saslman-sasl_errdetail(3)">sasl_errdetail(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errstring.html#std:saslman-sasl_errstring(3)">sasl_errstring(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_EXPIRED">SASL_EXPIRED (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_FAIL">SASL_FAIL (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getcallback_t.html#std:saslman-sasl_getcallback_t(3)">sasl_getcallback_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#std:saslman-sasl_getconfpath_t(3)">sasl_getconfpath_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getopt_t.html#std:saslman-sasl_getopt_t(3)">sasl_getopt_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getpath_t.html#std:saslman-sasl_getpath_t(3)">sasl_getpath_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getprop.html#std:saslman-sasl_getprop(3)">sasl_getprop(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getrealm_t.html#std:saslman-sasl_getrealm_t(3)">sasl_getrealm_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getsecret_t.html#std:saslman-sasl_getsecret_t(3)">sasl_getsecret_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_getsimple_t.html#std:saslman-sasl_getsimple_t(3)">sasl_getsimple_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_global_listmech.html#std:saslman-sasl_global_listmech(3)">sasl_global_listmech(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_idle.html#c.sasl_idle">sasl_idle (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_idle.html#std:saslman-sasl_idle(3)">sasl_idle(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_INTERACT">SASL_INTERACT (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_listmech.html#std:saslman-sasl_listmech(3)">sasl_listmech(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_log_t.html#std:saslman-sasl_log_t(3)">sasl_log_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOAUTHZ">SASL_NOAUTHZ (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOCHANGE">SASL_NOCHANGE (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOMECH">SASL_NOMECH (C macro)</a>
-  </dt>
-
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOMEM">SASL_NOMEM (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOTDONE">SASL_NOTDONE (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOTINIT">SASL_NOTINIT (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOUSER">SASL_NOUSER (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOUSERPASS">SASL_NOUSERPASS (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOVERIFY">SASL_NOVERIFY (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_OK">SASL_OK (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_PWLOCK">SASL_PWLOCK (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#std:saslman-sasl_server_add_plugin(3)">sasl_server_add_plugin(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_done.html#std:saslman-sasl_server_done(3)">sasl_server_done(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_init.html#std:saslman-sasl_server_init(3)">sasl_server_init(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_new.html#std:saslman-sasl_server_new(3)">sasl_server_new(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#std:saslman-sasl_server_plug_init_t(3)">sasl_server_plug_init_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_start.html#std:saslman-sasl_server_start(3)">sasl_server_start(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_step.html#std:saslman-sasl_server_step(3)">sasl_server_step(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#std:saslman-sasl_server_userdb_checkpass_t(3)">sasl_server_userdb_checkpass_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#std:saslman-sasl_server_userdb_setpass_t(3)">sasl_server_userdb_setpass_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_set_alloc.html#std:saslman-sasl_set_alloc(3)">sasl_set_alloc(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_set_mutex.html#std:saslman-sasl_set_mutex(3)">sasl_set_mutex(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_seterror.html#std:saslman-sasl_seterror(3)">sasl_seterror(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_setpass.html#std:saslman-sasl_setpass(3)">sasl_setpass(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_setprop.html#std:saslman-sasl_setprop(3)">sasl_setprop(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TOOWEAK">SASL_TOOWEAK (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TRANS">SASL_TRANS (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TRYAGAIN">SASL_TRYAGAIN (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_user_exists.html#std:saslman-sasl_user_exists(3)">sasl_user_exists(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_usererr.html#c.sasl_usererr">sasl_usererr (C function)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_usererr.html#std:saslman-sasl_usererr(3)">sasl_usererr(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_utf8verify.html#std:saslman-sasl_utf8verify(3)">sasl_utf8verify(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#std:saslman-sasl_verifyfile_t(3)">sasl_verifyfile_t(3)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_WEAKPASS">SASL_WEAKPASS (C macro)</a>
-  </dt>
-
-      
-  <dt><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_WRONGMECH">SASL_WRONGMECH (C macro)</a>
-  </dt>
-
-      
-  <dt>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sasl/reference/manpages/library/sasl.html#std-saslman-sasl-3">sasl(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_authorize_t.html#std-saslman-sasl_authorize_t-3">sasl_authorize_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop.html#std-saslman-sasl_auxprop-3">sasl_auxprop(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_add_plugin.html#std-saslman-sasl_auxprop_add_plugin-3">sasl_auxprop_add_plugin(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#c.sasl_auxprop_getctx">sasl_auxprop_getctx (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#std-saslman-sasl_auxprop_getctx-3">sasl_auxprop_getctx(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_request.html#c.sasl_auxprop_request">sasl_auxprop_request (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_request.html#std-saslman-sasl_auxprop_request-3">sasl_auxprop_request(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADAUTH">SASL_BADAUTH (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADMAC">SASL_BADMAC (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADPARAM">SASL_BADPARAM (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADPROT">SASL_BADPROT (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADSERV">SASL_BADSERV (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BADVERS">SASL_BADVERS (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_BUFOVER">SASL_BUFOVER (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_canon_user_t.html#std-saslman-sasl_canon_user_t-3">sasl_canon_user_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_canonuser_add_plugin.html#std-saslman-sasl_canonuser_add_plugin-3">sasl_canonuser_add_plugin(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_chalprompt_t.html#std-saslman-sasl_chalprompt_t-3">sasl_chalprompt_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_checkapop.html#std-saslman-sasl_checkapop-3">sasl_checkapop(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_checkpass.html#std-saslman-sasl_checkpass-3">sasl_checkpass(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_add_plugin.html#std-saslman-sasl_client_add_plugin-3">sasl_client_add_plugin(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_done.html#c.sasl_client_done">sasl_client_done (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_done.html#std-saslman-sasl_client_done-3">sasl_client_done(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_init.html#std-saslman-sasl_client_init-3">sasl_client_init(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_new.html#std-saslman-sasl_client_new-3">sasl_client_new(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_plug_init_t.html#std-saslman-sasl_client_plug_init_t-3">sasl_client_plug_init_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_start.html#std-saslman-sasl_client_start-3">sasl_client_start(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_client_step.html#std-saslman-sasl_client_step-3">sasl_client_step(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_auxprop_getctx.html#c.sasl_conn_t">sasl_conn_t (C type)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_CONTINUE">SASL_CONTINUE (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_decode.html#std-saslman-sasl_decode-3">sasl_decode(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_decode64.html#std-saslman-sasl_decode64-3">sasl_decode64(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_DISABLED">SASL_DISABLED (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_dispose.html#std-saslman-sasl_dispose-3">sasl_dispose(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_done.html#c.sasl_done">sasl_done (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_done.html#std-saslman-sasl_done-3">sasl_done(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_encode.html#std-saslman-sasl_encode-3">sasl_encode(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_encode64.html#std-saslman-sasl_encode64-3">sasl_encode64(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_encodev.html#std-saslman-sasl_encodev-3">sasl_encodev(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_ENCRYPT">SASL_ENCRYPT (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_erasebuffer.html#c.sasl_erasebuffer">sasl_erasebuffer (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_erasebuffer.html#std-saslman-sasl_erasebuffer-3">sasl_erasebuffer(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errdetail.html#c.sasl_errdetail">sasl_errdetail (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errdetail.html#std-saslman-sasl_errdetail-3">sasl_errdetail(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errstring.html#std-saslman-sasl_errstring-3">sasl_errstring(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_EXPIRED">SASL_EXPIRED (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_FAIL">SASL_FAIL (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getcallback_t.html#std-saslman-sasl_getcallback_t-3">sasl_getcallback_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#c.sasl_getconfpath_t">sasl_getconfpath_t (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getconfpath_t.html#std-saslman-sasl_getconfpath_t-3">sasl_getconfpath_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getopt_t.html#std-saslman-sasl_getopt_t-3">sasl_getopt_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getpath_t.html#c.sasl_getpath_t">sasl_getpath_t (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getpath_t.html#std-saslman-sasl_getpath_t-3">sasl_getpath_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getprop.html#std-saslman-sasl_getprop-3">sasl_getprop(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getrealm_t.html#std-saslman-sasl_getrealm_t-3">sasl_getrealm_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getsecret_t.html#std-saslman-sasl_getsecret_t-3">sasl_getsecret_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_getsimple_t.html#std-saslman-sasl_getsimple_t-3">sasl_getsimple_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_global_listmech.html#c.sasl_global_listmech">sasl_global_listmech (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_global_listmech.html#std-saslman-sasl_global_listmech-3">sasl_global_listmech(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_idle.html#c.sasl_idle">sasl_idle (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_idle.html#std-saslman-sasl_idle-3">sasl_idle(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_INTERACT">SASL_INTERACT (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_listmech.html#std-saslman-sasl_listmech-3">sasl_listmech(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_log_t.html#std-saslman-sasl_log_t-3">sasl_log_t(3)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOAUTHZ">SASL_NOAUTHZ (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOCHANGE">SASL_NOCHANGE (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOMECH">SASL_NOMECH (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOMEM">SASL_NOMEM (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOTDONE">SASL_NOTDONE (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOTINIT">SASL_NOTINIT (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOUSER">SASL_NOUSER (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOUSERPASS">SASL_NOUSERPASS (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_NOVERIFY">SASL_NOVERIFY (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_OK">SASL_OK (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_PWLOCK">SASL_PWLOCK (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_add_plugin.html#std-saslman-sasl_server_add_plugin-3">sasl_server_add_plugin(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_done.html#c.sasl_server_done">sasl_server_done (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_done.html#std-saslman-sasl_server_done-3">sasl_server_done(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_new.html#std-saslman-sasl_server_new-3">sasl_server_new(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_plug_init_t.html#std-saslman-sasl_server_plug_init_t-3">sasl_server_plug_init_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_start.html#std-saslman-sasl_server_start-3">sasl_server_start(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_step.html#std-saslman-sasl_server_step-3">sasl_server_step(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_userdb_checkpass_t.html#std-saslman-sasl_server_userdb_checkpass_t-3">sasl_server_userdb_checkpass_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_server_userdb_setpass_t.html#std-saslman-sasl_server_userdb_setpass_t-3">sasl_server_userdb_setpass_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_set_alloc.html#std-saslman-sasl_set_alloc-3">sasl_set_alloc(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_set_mutex.html#std-saslman-sasl_set_mutex-3">sasl_set_mutex(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_seterror.html#std-saslman-sasl_seterror-3">sasl_seterror(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_setpass.html#std-saslman-sasl_setpass-3">sasl_setpass(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_setprop.html#std-saslman-sasl_setprop-3">sasl_setprop(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TOOWEAK">SASL_TOOWEAK (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TRANS">SASL_TRANS (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_TRYAGAIN">SASL_TRYAGAIN (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_user_exists.html#std-saslman-sasl_user_exists-3">sasl_user_exists(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_usererr.html#c.sasl_usererr">sasl_usererr (C function)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_usererr.html#std-saslman-sasl_usererr-3">sasl_usererr(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_utf8verify.html#std-saslman-sasl_utf8verify-3">sasl_utf8verify(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_verifyfile_t.html#std-saslman-sasl_verifyfile_t-3">sasl_verifyfile_t(3)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_WEAKPASS">SASL_WEAKPASS (C macro)</a>
+</li>
+      <li><a href="sasl/reference/manpages/library/sasl_errors.html#c.SASL_WRONGMECH">SASL_WRONGMECH (C macro)</a>
+</li>
+      <li>
     saslauthd_path [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-saslauthd_path">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-saslauthd_path">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sasldb_mapsize [&lt;size in bytes&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_mapsize">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_mapsize">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sasldb_maxreaders [&lt;max threads&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_maxreaders">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_maxreaders">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sasldb_path [&lt;path to sasldb file&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sasldb_path">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sasldb_path">command line option</a>
+</li>
+      </ul></li>
+      <li>
     service_principal [&lt;GSS_C_NT_HOSTBASED_SERVICE&gt; | *]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-service_principal">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-service_principal">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_database &lt;database name&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_database">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_database">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_engine [&lt;name&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_engine">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_engine">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_hostnames [&lt;list of SQL servers&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_hostnames">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_hostnames">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_insert &lt;statement&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_insert">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_insert">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_passwd &lt;password&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_passwd">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_passwd">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_select &lt;statement&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_select">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_select">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_update &lt;statement&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_update">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_update">command line option</a>
+</li>
+      </ul></li>
+      <li>
     sql_user &lt;username&gt;
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-sql_user">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-sql_user">command line option</a>
+</li>
+      </ul></li>
+      <li>
     srp_mda [md5 | sha1 | rmd160]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-srp_mda">command line option</a>
-  </dt>
-
-      </dl></dd>
-      
-  <dt>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-srp_mda">command line option</a>
+</li>
+      </ul></li>
+      <li>
     srvtab [&lt;path&gt;]
-  </dt>
 
-      <dd><dl>
-        
-  <dt><a href="sasl/options.html#cmdoption-arg-srvtab">command line option</a>
-  </dt>
-
-      </dl></dd>
-  </dl></td>
+      <ul>
+        <li><a href="sasl/options.html#cmdoption-arg-srvtab">command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
 </tr></table>
 
 
@@ -1675,7 +1196,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1702,7 +1223,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

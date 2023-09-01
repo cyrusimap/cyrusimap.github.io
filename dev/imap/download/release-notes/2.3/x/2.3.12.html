@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,18 +793,18 @@
 <h1>Cyrus IMAP 2.3.12 Release Notes<a class="headerlink" href="#cyrus-imap-2-3-12-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Changes to the Cyrus IMAP Server since 2.3.11</p>
 <ul class="simple">
-<li>Added statuscache.db to cache IMAP STATUS data which significantly reduces the amount of I/O necessary when neither the mailbox nor Seen state has changed -- courtesy of Fastmail.fm.</li>
-<li>Added option to unexpunge to restore messages by time interval -- courtesy of David Carter.</li>
-<li>Implemented undocumented IMAP SCAN extension, which allows Pine/Alpine to do cross-mailbox searches -- based on work of David Carter.</li>
-<li>Implemented incremental squat updates (see squatter.8) -- courtesy of David Carter.</li>
-<li>Fixed major bugs in reconstruct -k implementation -- courtesy of David Carter.</li>
-<li>Added code to promote transaction safety and to track the lock status of skiplist databases -- courtesy of Fastmail.fm.</li>
-<li>Added option to mbexamine to compare quota usage in cyrus.index to the actual message file sizes.</li>
-<li>Allow long lines in imapd.conf to be split across multiple lines by using backslash as a continuation character.</li>
-<li>The Sieve compiler now translates UTF-8 mailbox names used in fileinto to modified UTF-7 so that messages will be successfully inserted into the mailbox.</li>
-<li>Use a more appropriate argument with LHLO command.</li>
-<li>Added serverinfo option to control the information displayed in banner greetings and capability responses.</li>
-<li>Fixed miscellaneous bugs and build issues.</li>
+<li><p>Added statuscache.db to cache IMAP STATUS data which significantly reduces the amount of I/O necessary when neither the mailbox nor Seen state has changed -- courtesy of Fastmail.fm.</p></li>
+<li><p>Added option to unexpunge to restore messages by time interval -- courtesy of David Carter.</p></li>
+<li><p>Implemented undocumented IMAP SCAN extension, which allows Pine/Alpine to do cross-mailbox searches -- based on work of David Carter.</p></li>
+<li><p>Implemented incremental squat updates (see squatter.8) -- courtesy of David Carter.</p></li>
+<li><p>Fixed major bugs in reconstruct -k implementation -- courtesy of David Carter.</p></li>
+<li><p>Added code to promote transaction safety and to track the lock status of skiplist databases -- courtesy of Fastmail.fm.</p></li>
+<li><p>Added option to mbexamine to compare quota usage in cyrus.index to the actual message file sizes.</p></li>
+<li><p>Allow long lines in imapd.conf to be split across multiple lines by using backslash as a continuation character.</p></li>
+<li><p>The Sieve compiler now translates UTF-8 mailbox names used in fileinto to modified UTF-7 so that messages will be successfully inserted into the mailbox.</p></li>
+<li><p>Use a more appropriate argument with LHLO command.</p></li>
+<li><p>Added serverinfo option to control the information displayed in banner greetings and capability responses.</p></li>
+<li><p>Fixed miscellaneous bugs and build issues.</p></li>
 </ul>
 <p><a class="reference internal" href="../index.html#imap-release-notes-2-3"><span class="std std-ref">Cyrus IMAP 2.3 Releases</span></a></p>
 </div>
@@ -828,7 +830,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -854,7 +856,6 @@
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

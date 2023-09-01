@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -492,34 +492,22 @@
 <p>This mechanism does not require the client to authenticate or provide any information.</p>
 <p>Defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2245.html"><strong>RFC 2245</strong></a></p>
 </div>
-<div class="section" id="cram-md5">
-<span id="mech-cram-md5"></span><h3>CRAM-MD5<a class="headerlink" href="#cram-md5" title="Permalink to this headline">¶</a></h3>
-<p>This mechanism avoids sending the users password over the network in plain text by hashing the password with a server provided random value (known as a nonce).
-A disadvantage of this mechanism is that the server must maintain a database of <strong>plaintext passwords</strong> for comparison.</p>
-<p>CRAM-MD5 does not provide adequate security services for use on the Internet, it does not protect the user&#8217;s authentication identifier from eavesdroppers and is subject to a number of passive and active attacks.</p>
-<p>Defined in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2195.html"><strong>RFC 2195</strong></a></p>
-<p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5">RFC Draft: draft-ietf-sasl-crammd5</a></p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The CRAM-MD5 SASL mechanism is obsolete. It has been moved to Historic in <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sasl-crammd5-to-historic-00">draft-ietf-sasl-crammd5-to-historic</a></p>
-</div>
-</div>
 <div class="section" id="external">
 <h3>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
 <p>EXTERNAL is a SASL Mechanism that allows a client to request the server to use credentials established by means external to the mechanism to authenticate the client.</p>
-<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
-In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client&#8217;s credentials, nor make an assumption as to the form of credentials.
+<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
+In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client’s credentials, nor make an assumption as to the form of credentials.
 For example, the client cannot assume that the server will use the credentials the client has established via TLS.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The server will not offer EXTERNAL unless other credentials are already available in the session, such as a client certificate used in establishing a TLS connection.</p>
+<p class="admonition-title">Note</p>
+<p>The server will not offer EXTERNAL unless other credentials are already available in the session, such as a client certificate used in establishing a TLS connection.</p>
 </div>
 </div>
 <div class="section" id="gs2">
 <h3>GS2<a class="headerlink" href="#gs2" title="Permalink to this headline">¶</a></h3>
 <p>Generic Security Service Application Program Interface (GSS-API).
 The GS2 mechanism family offers a number of improvements over the previous <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">Configuring GSSAPI and Cyrus SASL</span></a> mechanism.</p>
-<p>Defined in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
+<p>Defined in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
 </div>
 <div class="section" id="gssapi">
 <span id="mech-gssapi"></span><h3>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this headline">¶</a></h3>
@@ -528,29 +516,18 @@ The GS2 mechanism family offers a number of improvements over the previous <a cl
 <div class="section" id="gss-spnego">
 <h3>GSS-SPNEGO<a class="headerlink" href="#gss-spnego" title="Permalink to this headline">¶</a></h3>
 <p>This is a Microsoft specific customization of GSSAPI.</p>
-<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
-</div>
-<div class="section" id="login">
-<h3>LOGIN<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h3>
-<p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-murchison-sasl-login">RFC Draft: draft-murchison-sasl-login</a></p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The LOGIN SASL mechanism is obsoleted in favor of the <a class="reference internal" href="#mech-plain"><span class="std std-ref">PLAIN</span></a> SASL mechanism.</p>
-</div>
-<p>The LOGIN SASL mechanism does not provide a security layer.
-This mechanism must not be used without adequate security protection as
-the mechanism affords no integrity nor confidentiality protection itself.</p>
+<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
 </div>
 <div class="section" id="otp">
 <h3>OTP<a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h3>
-<p>OTP is the One-Time Password system described in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2289.html"><strong>RFC 2289</strong></a>.
+<p>OTP is the One-Time Password system described in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2289.html"><strong>RFC 2289</strong></a>.
 This mechanism is secure against replay attacks and also avoids storing password or password equivalents on the server.
 Only a digest of a seed and a passphrase is ever transmitted across the network.</p>
 <blockquote>
 <div><ul class="simple">
-<li>OTP-MD4</li>
-<li>OTP-MD5</li>
-<li>OTP-SHA1</li>
+<li><p>OTP-MD4</p></li>
+<li><p>OTP-MD5</p></li>
+<li><p>OTP-SHA1</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -560,13 +537,13 @@ Only a digest of a seed and a passphrase is ever transmitted across the network.
 <p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-passdss">RFC Draft: draft-newman-sasl-passdss</a></p>
 <blockquote>
 <div><ul class="simple">
-<li>PASSDSS-3DES-1</li>
+<li><p>PASSDSS-3DES-1</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="plain">
 <span id="mech-plain"></span><h3>PLAIN<a class="headerlink" href="#plain" title="Permalink to this headline">¶</a></h3>
-<p>Defined in <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
+<p>Defined in <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
 <p>This is the simplest mechanism.
 The users authentication details are transmitted in plain text.
 This mechanism should not be provided unless an encrypted link is in use - typically after TLS has been negotiated.</p>
@@ -574,14 +551,14 @@ This mechanism should not be provided unless an encrypted link is in use - typic
 <div class="section" id="scram">
 <h3>SCRAM<a class="headerlink" href="#scram" title="Permalink to this headline">¶</a></h3>
 <p>Salted Challenge Response Authentication Mechanism (SCRAM) is a family of modern, password-based challenge–response authentication mechanisms providing authentication of a user to a server.</p>
-<p>Defined in <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
+<p>Defined in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
 <blockquote>
 <div><ul class="simple">
-<li>SCRAM-SHA-1(-PLUS)</li>
-<li>SCRAM-SHA-224(-PLUS)</li>
-<li>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a>)</li>
-<li>SCRAM-SHA-384(-PLUS)</li>
-<li>SCRAM-SHA-512(-PLUS)</li>
+<li><p>SCRAM-SHA-1(-PLUS)</p></li>
+<li><p>SCRAM-SHA-224(-PLUS)</p></li>
+<li><p>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a>)</p></li>
+<li><p>SCRAM-SHA-384(-PLUS)</p></li>
+<li><p>SCRAM-SHA-512(-PLUS)</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -594,8 +571,8 @@ It provides authentication (optionally mutual authentication) and the negotiatio
 <p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-burdis-cat-srp-sasl-08">RFC Draft: draft-burdis-cat-srp-sasl</a></p>
 <blockquote>
 <div><ul class="simple">
-<li>mda=sha1,rmd160,md5</li>
-<li>confidentiality=des-ofb,des-ede-ofb,aes-128-ofb,bf-ofb,cast5-ofb,idea-ofb</li>
+<li><p>mda=sha1,rmd160,md5</p></li>
+<li><p>confidentiality=des-ofb,des-ede-ofb,aes-128-ofb,bf-ofb,cast5-ofb,idea-ofb</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -608,259 +585,227 @@ It provides authentication (optionally mutual authentication) and the negotiatio
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>This table shows what security flags and features are supported by each
 of the mechanisms provided by the Cyrus SASL Library.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="6%" />
-<col width="7%" />
-<col width="6%" />
-<col width="4%" />
-<col width="6%" />
-<col width="8%" />
-<col width="10%" />
-<col width="7%" />
-<col width="5%" />
-<col width="4%" />
-<col width="4%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 4%" />
+<col style="width: 6%" />
+<col style="width: 8%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>&nbsp;</td>
-<td rowspan="2">MAX SSF</td>
-<td colspan="7">SECURITY PROPERTIES</td>
-<td colspan="6">FEATURES</td>
+<tbody>
+<tr class="row-odd"><td></td>
+<td rowspan="2"><p>MAX SSF</p></td>
+<td colspan="7"><p>SECURITY PROPERTIES</p></td>
+<td colspan="6"><p>FEATURES</p></td>
 </tr>
-<tr class="row-even"><td>&nbsp;</td>
-<td>NOPLAIN</td>
-<td>NOACTIVE</td>
-<td>NODICT</td>
-<td>FORWARD</td>
-<td>NOANON</td>
-<td>CRED</td>
-<td>MUTUAL</td>
-<td>CLT FIRST</td>
-<td>SRV FIRST</td>
-<td>SRV LAST</td>
-<td>PROXY</td>
-<td>BIND</td>
-<td>HTTP</td>
+<tr class="row-even"><td></td>
+<td><p>NOPLAIN</p></td>
+<td><p>NOACTIVE</p></td>
+<td><p>NODICT</p></td>
+<td><p>FORWARD</p></td>
+<td><p>NOANON</p></td>
+<td><p>CRED</p></td>
+<td><p>MUTUAL</p></td>
+<td><p>CLT FIRST</p></td>
+<td><p>SRV FIRST</p></td>
+<td><p>SRV LAST</p></td>
+<td><p>PROXY</p></td>
+<td><p>BIND</p></td>
+<td><p>HTTP</p></td>
 </tr>
-<tr class="row-odd"><td>ANONYMOUS</td>
-<td>0</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>ANONYMOUS</p></td>
+<td><p>0</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>CRAM-MD5</td>
-<td>0</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>EXTERNAL</p></td>
+<td><p>0</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>EXTERNAL</td>
-<td>0</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>GS2</p></td>
+<td><p>56</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>GS2</td>
-<td>56</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>GSSAPI</p></td>
+<td><p>56</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>GSSAPI</td>
-<td>56</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>GSS-SPNEGO</p></td>
+<td><p>56</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
 </tr>
-<tr class="row-even"><td>GSS-SPNEGO</td>
-<td>56</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
+<tr class="row-even"><td><p>OTP</p></td>
+<td><p>0</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>LOGIN</td>
-<td>0</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>PASSDSS</p></td>
+<td><p>112</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>OTP</td>
-<td>0</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>PLAIN</p></td>
+<td><p>0</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>PASSDSS</td>
-<td>112</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td><p>SCRAM</p></td>
+<td><p>0</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
 </tr>
-<tr class="row-even"><td>PLAIN</td>
-<td>0</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>SCRAM</td>
-<td>0</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-</tr>
-<tr class="row-even"><td>SRP</td>
-<td>128</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>X</td>
-<td>X</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td><p>SRP</p></td>
+<td><p>128</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p>Understanding this table:</p>
 <p>Security Properties:</p>
 <ul class="simple">
-<li><strong>MAX SSF</strong> - The maximum Security Strength Factor supported by the mechanism (roughly the number of bits of encryption provided, but may have other meanings, for example an SSF of 1 indicates integrity protection only, no encryption).</li>
-<li><strong>NOPLAIN</strong> - Mechanism is not susceptible to simple passive (eavesdropping) attack.</li>
-<li><strong>NOACTIVE</strong> - Protection from active (non-dictionary) attacks during authentication exchange. (Implies MUTUAL).</li>
-<li><strong>NODICT</strong> - Not susceptible to passive dictionary attack.</li>
-<li><strong>NOFORWARD</strong> - Breaking one session won&#8217;t help break the next.</li>
-<li><strong>NOANON</strong> - Don&#8217;t permit anonymous logins.</li>
-<li><strong>CRED</strong> - Mechanism can pass client credentials.</li>
-<li><strong>MUTUAL</strong> - Supports mutual authentication (authenticates the server to the client)</li>
+<li><p><strong>MAX SSF</strong> - The maximum Security Strength Factor supported by the mechanism (roughly the number of bits of encryption provided, but may have other meanings, for example an SSF of 1 indicates integrity protection only, no encryption).</p></li>
+<li><p><strong>NOPLAIN</strong> - Mechanism is not susceptible to simple passive (eavesdropping) attack.</p></li>
+<li><p><strong>NOACTIVE</strong> - Protection from active (non-dictionary) attacks during authentication exchange. (Implies MUTUAL).</p></li>
+<li><p><strong>NODICT</strong> - Not susceptible to passive dictionary attack.</p></li>
+<li><p><strong>NOFORWARD</strong> - Breaking one session won’t help break the next.</p></li>
+<li><p><strong>NOANON</strong> - Don’t permit anonymous logins.</p></li>
+<li><p><strong>CRED</strong> - Mechanism can pass client credentials.</p></li>
+<li><p><strong>MUTUAL</strong> - Supports mutual authentication (authenticates the server to the client)</p></li>
 </ul>
 <p>Features:</p>
 <ul class="simple">
-<li><strong>CLTFIRST</strong> - The client should send first in this mechanism.</li>
-<li><strong>SRVFIRST</strong> - The server must send first in this mechanism.</li>
-<li><strong>SRVLAST</strong> - This mechanism supports server-send-last configurations.</li>
-<li><strong>PROXY</strong> - This mechanism supports proxy authentication.</li>
-<li><strong>BIND</strong> - This mechanism supports channel binding.</li>
-<li><strong>HTTP</strong> - This mechanism has a profile for HTTP.</li>
+<li><p><strong>CLTFIRST</strong> - The client should send first in this mechanism.</p></li>
+<li><p><strong>SRVFIRST</strong> - The server must send first in this mechanism.</p></li>
+<li><p><strong>SRVLAST</strong> - This mechanism supports server-send-last configurations.</p></li>
+<li><p><strong>PROXY</strong> - This mechanism supports proxy authentication.</p></li>
+<li><p><strong>BIND</strong> - This mechanism supports channel binding.</p></li>
+<li><p><strong>HTTP</strong> - This mechanism has a profile for HTTP.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -888,7 +833,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -915,7 +860,6 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/cyrus.css" type="text/css" />
   
 
@@ -149,7 +151,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -233,7 +235,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#access-control-defaults">Access Control Defaults</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#access-control-identifier-aci">Access Control Identifier (ACI)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#negative-rights">Negative Rights</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#calculating-a-users-rights">Calculating a Users' Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#calculating-a-users-rights">Calculating a Users’ Rights</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#login-authentication">Login Authentication</a><ul>
@@ -250,14 +252,14 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#new-mail-notification">New Mail Notification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#partitions">Partitions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#specifying-partitions-with-create">Specifying Partitions with &quot;create&quot;</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#changing-partitions-with-rename">Changing Partitions with &quot;rename&quot;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#specifying-partitions-with-create">Specifying Partitions with “create”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#changing-partitions-with-rename">Changing Partitions with “rename”</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#news">News</a></li>
@@ -372,7 +374,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -540,7 +542,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/reference/faq.html#installation-problems">Installation Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/install-compilationerrors.html">Compilation errors about kssl.h and krb5.h on Red Hat Linux/Fedora</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going...</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going…</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/install-linkerwarnings.html">OpenSSL Version Mismatches</a></li>
 </ul>
 </li>
@@ -557,7 +559,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-configdir-tempfs.html">Is it safe to put &lt;configdirectory&gt;/proc and &lt;configdirectory&gt;/lock on a tmpfs filesystem?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-coredump.html">How to enable core dumps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-delete-mailbox.html">Why can I not delete a mailbox as an admin user?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-deleted-expired-expunged-purged.html">When is What ... Deleted, Expired, Expunged or Purged?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-deleted-expired-expunged-purged.html">When is What … Deleted, Expired, Expunged or Purged?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-deliverdb-size.html">Why is deliver.db so large?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-freezes.html">I have multiple imapd-SERVICES configured and experience occasional freezes when I try to log in!</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-gdb.html">How to run gdb on Cyrus components</a></li>
@@ -569,13 +571,13 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-sharedfilesystem-gpfs.html">Shared File Systems GPFS for high availability</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-telemetry.html">How to enable telemetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-toomanyprocesses.html">The process count keeps growing!</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-unable-join-environment.html">&quot;unable to join environment&quot; error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-vacation-mailfrom.html">Why does Cyrus set the MAIL FROM address of the sender of vacation responses to '&lt;&gt;'?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-unable-join-environment.html">“unable to join environment” error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/o-vacation-mailfrom.html">Why does Cyrus set the MAIL FROM address of the sender of vacation responses to ‘&lt;&gt;’?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/reference/faq.html#common-interoperability-problems">Common Interoperability Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/interop-8bit.html">Why does Cyrus reject 8-bit characters in the headers of my messages?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/interop-barenewlines.html">Why does Cyrus reject messages with &quot;bare newlines&quot;?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/interop-barenewlines.html">Why does Cyrus reject messages with “bare newlines”?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/interop-sieve-exim.html">How do I get Cyrus Sieve to play nice with Exim?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/faqs/interop-slow-delivery.html">Why does mail delivery go slow or hang sometimes?</a></li>
 </ul>
@@ -780,43 +782,47 @@
 <h3>Mono-spaced with non-white background<a class="headerlink" href="#mono-spaced-with-non-white-background" title="Permalink to this headline">¶</a></h3>
 <p>Used to highlight system input, including shell commands, file names and paths. Also used to highlight keycaps and key combinations. For example:</p>
 <blockquote>
-<div>To see the contents of the file <code class="docutils literal"><span class="pre">my_next_bestselling_novel</span></code> in your current working directory, enter the <code class="docutils literal"><span class="pre">cat</span> <span class="pre">my_next_bestselling_novel</span></code> command at the shell prompt and press <code class="docutils literal"><span class="pre">Enter</span></code> to execute the command.</div></blockquote>
+<div><p>To see the contents of the file <code class="docutils literal notranslate"><span class="pre">my_next_bestselling_novel</span></code> in your current working directory, enter the <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">my_next_bestselling_novel</span></code> command at the shell prompt and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to execute the command.</p>
+</div></blockquote>
 <p>The above includes a filename, a shell command and a keycap, all present in mono-spaced type and all distinguishable thanks to context.</p>
 <p>Key combinations can be distinguished from keycaps by the hyphen connecting each part of a key combinations. For example:</p>
 <blockquote>
-<div><p>Press <code class="docutils literal"><span class="pre">Enter</span></code> to execute the command.</p>
-<p>Press <code class="docutils literal"><span class="pre">Ctrl-Alt-F2</span></code> to switch to the first virtual terminal. Press <code class="docutils literal"><span class="pre">Ctrl-Alt-F1</span></code> to return to your X-Windows session.</p>
+<div><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to execute the command.</p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Alt-F2</span></code> to switch to the first virtual terminal. Press <code class="docutils literal notranslate"><span class="pre">Ctrl-Alt-F1</span></code> to return to your X-Windows session.</p>
 </div></blockquote>
 <p>The first paragraph highlights the particular keycap to press. The second highlights two key combinations (each a set of three keycaps with each set pressed simultaneously).</p>
-<p>If source code is discussed, class names, methods, functions, variable names and returned values mentioned within a paragraph will be presented as above, in <code class="docutils literal"><span class="pre">mono-spaced</span> <span class="pre">type</span></code>. For example:</p>
+<p>If source code is discussed, class names, methods, functions, variable names and returned values mentioned within a paragraph will be presented as above, in <code class="docutils literal notranslate"><span class="pre">mono-spaced</span> <span class="pre">type</span></code>. For example:</p>
 <blockquote>
-<div>File-related classes include <code class="docutils literal"><span class="pre">filesystem</span></code> for file systems, <code class="docutils literal"><span class="pre">file</span></code> for files, and <code class="docutils literal"><span class="pre">dir</span></code> for directories. Each class has its own associated set of permissions.</div></blockquote>
+<div><p>File-related classes include <code class="docutils literal notranslate"><span class="pre">filesystem</span></code> for file systems, <code class="docutils literal notranslate"><span class="pre">file</span></code> for files, and <code class="docutils literal notranslate"><span class="pre">dir</span></code> for directories. Each class has its own associated set of permissions.</p>
+</div></blockquote>
 </div>
 <div class="section" id="proportional-bold">
 <h3>Proportional Bold<a class="headerlink" href="#proportional-bold" title="Permalink to this headline">¶</a></h3>
 <p>This denotes words or phrases encountered on a system, including application names; dialog box text; labelled buttons; check-box and radio button labels; menu titles and sub-menu titles. For example:</p>
 <blockquote>
-<div>Choose <strong>System</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Mouse</strong> from the main menu bar to launch <strong>Mouse Preferences</strong>. In the <strong>Buttons</strong> tab, click the <strong>Left-handed mouse</strong> check box and click <strong>Close</strong> to switch the primary mouse button from the left to the right (making the mouse suitable for use in the left hand).</div></blockquote>
+<div><p>Choose <strong>System</strong> -&gt; <strong>Preferences</strong> -&gt; <strong>Mouse</strong> from the main menu bar to launch <strong>Mouse Preferences</strong>. In the <strong>Buttons</strong> tab, click the <strong>Left-handed mouse</strong> check box and click <strong>Close</strong> to switch the primary mouse button from the left to the right (making the mouse suitable for use in the left hand).</p>
+</div></blockquote>
 </div>
 <div class="section" id="italic">
 <h3>Italic<a class="headerlink" href="#italic" title="Permalink to this headline">¶</a></h3>
 <p>The addition of italics indicates replaceable or variable text. Italics denotes text you do not input literally or displayed text that changes depending on circumstance. For example:</p>
 <blockquote>
-<div><p>To connect to a remote machine using ssh, type <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">*username&#64;domain.name*</span></code> at a shell prompt. If the remote machine is <strong>example.com</strong> and your username on that machine is <strong>john</strong>, type <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">john&#64;example.com</span></code></p>
-<p>The <code class="docutils literal"><span class="pre">mount</span> <span class="pre">-o</span> <span class="pre">remount</span> <span class="pre">*file-system*</span></code> command remounts the named file system. For example, to remount the <code class="docutils literal"><span class="pre">/home</span></code> file system, the command is <code class="docutils literal"><span class="pre">mount</span> <span class="pre">-o</span> <span class="pre">remount</span> <span class="pre">/home</span></code>.</p>
-<p>To see the version of a currently installed package, use the <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-q</span> <span class="pre">*package*</span></code> command. It will return a result as follows: <em>package-version-release</em>.</p>
+<div><p>To connect to a remote machine using ssh, type <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">*username&#64;domain.name*</span></code> at a shell prompt. If the remote machine is <strong>example.com</strong> and your username on that machine is <strong>john</strong>, type <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">john&#64;example.com</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mount</span> <span class="pre">-o</span> <span class="pre">remount</span> <span class="pre">*file-system*</span></code> command remounts the named file system. For example, to remount the <code class="docutils literal notranslate"><span class="pre">/home</span></code> file system, the command is <code class="docutils literal notranslate"><span class="pre">mount</span> <span class="pre">-o</span> <span class="pre">remount</span> <span class="pre">/home</span></code>.</p>
+<p>To see the version of a currently installed package, use the <code class="docutils literal notranslate"><span class="pre">rpm</span> <span class="pre">-q</span> <span class="pre">*package*</span></code> command. It will return a result as follows: <em>package-version-release</em>.</p>
 </div></blockquote>
 <p>Note the words in bold italics above — username, domain.name, file-system, package, version and release. Each word is a placeholder, either for text you enter when issuing a command or for text displayed by the system.</p>
 <p>Aside from standard usage for presenting the title of a work, italics denotes the first use of a new and important term. For example:</p>
 <blockquote>
-<div>Publican is a <em>DocBook</em> publishing system.</div></blockquote>
+<div><p>Publican is a <em>DocBook</em> publishing system.</p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="pull-quote-conventions">
 <h2>Pull-quote Conventions<a class="headerlink" href="#pull-quote-conventions" title="Permalink to this headline">¶</a></h2>
 <p>Terminal output and source code listings are set off visually from the surrounding text.</p>
 <p>Output sent to a terminal is presented thus:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">books</span>        <span class="n">Desktop</span>   <span class="n">documentation</span>  <span class="n">drafts</span>  <span class="n">mss</span>    <span class="n">photos</span>   <span class="n">stuff</span>  <span class="n">svn</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">books</span>        <span class="n">Desktop</span>   <span class="n">documentation</span>  <span class="n">drafts</span>  <span class="n">mss</span>    <span class="n">photos</span>   <span class="n">stuff</span>  <span class="n">svn</span>
 <span class="n">books_tests</span>  <span class="n">Desktop1</span>  <span class="n">downloads</span>      <span class="n">images</span>  <span class="n">notes</span>  <span class="n">scripts</span>  <span class="n">svgs</span>
 </pre></div>
 </div>
@@ -826,16 +832,16 @@
 <h2>Notes and Warnings<a class="headerlink" href="#notes-and-warnings" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we use three visual styles to draw attention to information that might otherwise be overlooked.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Notes are tips, shortcuts, or alternative approaches to the task at hand. Ignoring a note should have no negative consequences, but you might miss out on a trick that makes your life easier.</p>
+<p class="admonition-title">Note</p>
+<p>Notes are tips, shortcuts, or alternative approaches to the task at hand. Ignoring a note should have no negative consequences, but you might miss out on a trick that makes your life easier.</p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Important boxes detail things that are easily missed: configuration changes that only apply to the current session, or services that need restarting before an update will apply. Ignoring a box labelled 'Important' will not cause data loss but may cause irritation and frustration.</p>
+<p class="admonition-title">Important</p>
+<p>Important boxes detail things that are easily missed: configuration changes that only apply to the current session, or services that need restarting before an update will apply. Ignoring a box labelled ‘Important’ will not cause data loss but may cause irritation and frustration.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Warnings should not be ignored. Ignoring warnings will most likely cause data loss.</p>
+<p class="admonition-title">Warning</p>
+<p>Warnings should not be ignored. Ignoring warnings will most likely cause data loss.</p>
 </div>
 </div>
 </div>
@@ -852,7 +858,7 @@
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -878,7 +884,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

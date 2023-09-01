@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,16 +791,16 @@
   <div class="section" id="cyrus-imap-2-5-6-release-notes">
 <h1>Cyrus IMAP 2.5.6 Release Notes<a class="headerlink" href="#cyrus-imap-2-5-6-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 2.5 series.</p>
-<p class="last">Refer to the Cyrus IMAP 2.5.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 2.5.0 Release Notes for important information
 about the 2.5 series, including upgrading instructions.</p>
 </div>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.6/cyrus-imapd-2.5.6.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-2-5-5">
@@ -806,27 +808,27 @@ about the 2.5 series, including upgrading instructions.</p>
 <div class="section" id="new-imapd-conf-options">
 <h3>New imapd.conf options<a class="headerlink" href="#new-imapd-conf-options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>tls_required (default: 0).  Set this to 1 to require a TLS session for ALL
-authentications, not just plain ones (thanks Carlos Velasco)</li>
+<li><p>tls_required (default: 0).  Set this to 1 to require a TLS session for ALL
+authentications, not just plain ones (thanks Carlos Velasco)</p></li>
 </ul>
 </div>
 <div class="section" id="new-cyradm-options">
 <h3>New cyradm options<a class="headerlink" href="#new-cyradm-options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">--tlskey</span> <span class="pre">keyfile</span></code>: use certificate with keyfile to authenticate with server</li>
-<li><code class="docutils literal"><span class="pre">--notls</span></code>: disable StartTLS negotiation</li>
-<li><code class="docutils literal"><span class="pre">--cafile</span> <span class="pre">cacertfile</span></code>: Use CA certificate file to validate server certificate</li>
-<li><code class="docutils literal"><span class="pre">--cadir</span> <span class="pre">cacertdirectory</span></code>: Use CA certificate directory to validate server certificate</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--tlskey</span> <span class="pre">keyfile</span></code>: use certificate with keyfile to authenticate with server</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--notls</span></code>: disable StartTLS negotiation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cafile</span> <span class="pre">cacertfile</span></code>: Use CA certificate file to validate server certificate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cadir</span> <span class="pre">cacertdirectory</span></code>: Use CA certificate directory to validate server certificate</p></li>
 </ul>
 <p>Thanks Leena Heino and Carlos Velasco</p>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed: cyr_synclog checks its arguments more strictly to avoid producing junk sync loc entries</li>
-<li>Fixed: reconstruct no longer segfaults on failure on Solaris 10 (thanks Marty Lee)</li>
-<li>Fixed: cyradm metadata implementation cleaned up and output made consistent (thanks Leena Heino)</li>
-<li>Fixed: timsieved no longer discloses name/version if ServerInfo is Off or Min (thanks Carlos Velasco)</li>
+<li><p>Fixed: cyr_synclog checks its arguments more strictly to avoid producing junk sync loc entries</p></li>
+<li><p>Fixed: reconstruct no longer segfaults on failure on Solaris 10 (thanks Marty Lee)</p></li>
+<li><p>Fixed: cyradm metadata implementation cleaned up and output made consistent (thanks Leena Heino)</p></li>
+<li><p>Fixed: timsieved no longer discloses name/version if ServerInfo is Off or Min (thanks Carlos Velasco)</p></li>
 </ul>
 </div>
 </div>
@@ -853,7 +855,7 @@ authentications, not just plain ones (thanks Carlos Velasco)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -879,7 +881,6 @@ authentications, not just plain ones (thanks Carlos Velasco)</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

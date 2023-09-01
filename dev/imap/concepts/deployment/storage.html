@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -798,24 +800,30 @@ providing you with the storage solution that you want or require.</p>
 <p>Generally, the most important considerations for storage include;</p>
 <p><a class="reference internal" href="#imap-deployment-storage-redundancy"><span class="std std-ref">Redundancy</span></a>,</p>
 <blockquote>
-<div>because nothing is as humiliating as losing all your data.</div></blockquote>
+<div><p>because nothing is as humiliating as losing all your data.</p>
+</div></blockquote>
 <p><a class="reference internal" href="#imap-deployment-storage-availability"><span class="std std-ref">Availability</span></a>,</p>
 <blockquote>
-<div>because nothing is more stressful than none of your data being
-available.</div></blockquote>
+<div><p>because nothing is more stressful than none of your data being
+available.</p>
+</div></blockquote>
 <p><a class="reference internal" href="#imap-deployment-storage-performance"><span class="std std-ref">Performance</span></a>,</p>
 <blockquote>
-<div>because nothing is as annoying as waiting, followed by some more
-waiting.</div></blockquote>
+<div><p>because nothing is as annoying as waiting, followed by some more
+waiting.</p>
+</div></blockquote>
 <p><a class="reference internal" href="#imap-deployment-storage-scalability"><span class="std std-ref">Scalability</span></a>,</p>
 <blockquote>
-<div>because <code class="docutils literal"><span class="pre">-ENOSPC</span></code> is good only when it applies to your stomach.</div></blockquote>
+<div><p>because <code class="docutils literal notranslate"><span class="pre">-ENOSPC</span></code> is good only when it applies to your stomach.</p>
+</div></blockquote>
 <p><a class="reference internal" href="#imap-deployment-storage-capacity"><span class="std std-ref">Capacity</span></a>,</p>
 <blockquote>
-<div>because your data must be available, backed up and archived.</div></blockquote>
+<div><p>because your data must be available, backed up and archived.</p>
+</div></blockquote>
 <p><a class="reference internal" href="#imap-deployment-storage-cost"><span class="std std-ref">Cost</span></a>,</p>
 <blockquote>
-<div>because you can't buy a beer or feed a family with an empty wallet.</div></blockquote>
+<div><p>because you can't buy a beer or feed a family with an empty wallet.</p>
+</div></blockquote>
 <p>Storage is not a part of Cyrus IMAP, in that Cyrus IMAP does not ship
 a particular storage solution as part of the product, and it has no
 particular requirements for storage either.</p>
@@ -823,19 +831,19 @@ particular requirements for storage either.</p>
 share or even the flash drive of a Raspberry Pi could be used, although
 the following considerations are important:</p>
 <ul class="simple">
-<li>The Cyrus IMAP spool is I/O intensive (large volumes of data are read
-and get written).</li>
-<li>The Cyrus IMAP spool consists of many small files.</li>
+<li><p>The Cyrus IMAP spool is I/O intensive (large volumes of data are read
+and get written).</p></li>
+<li><p>The Cyrus IMAP spool consists of many small files.</p></li>
 </ul>
 <p>As such, we recommend you take into account;</p>
 <ul class="simple">
-<li>The available bandwidth between the IMAP server and the storage
-provider, if at all on the network,</li>
-<li>The (network) protocol overhead, if any, should file-level read
-and/or write locking be required or implied.</li>
-<li>Atomic file operations.</li>
-<li>Parallel access (such as shared mailboxes or multi-client
-attendance).</li>
+<li><p>The available bandwidth between the IMAP server and the storage
+provider, if at all on the network,</p></li>
+<li><p>The (network) protocol overhead, if any, should file-level read
+and/or write locking be required or implied.</p></li>
+<li><p>Atomic file operations.</p></li>
+<li><p>Parallel access (such as shared mailboxes or multi-client
+attendance).</p></li>
 </ul>
 <div class="section" id="general-notes-on-storage">
 <h2>General Notes on Storage<a class="headerlink" href="#general-notes-on-storage" title="Permalink to this headline">¶</a></h2>
@@ -879,7 +887,7 @@ recoverable through different means. More commonly however is to not
 settle for anything less than real-time replication of data.</p>
 <p>While storage ultimately amounts to disks, it is important to understand
 that a number of (virtual) devices, channels, links and interfaces exist
-between an application operating data on disk <a class="footnote-reference" href="#id7" id="id1">[1]</a>, and the physical
+between an application operating data on disk <a class="footnote-reference brackets" href="#id7" id="id1">1</a>, and the physical
 sectors and blocks or cells of storage on that disk. In a way, this
 number of layers can be compared with the <a class="reference external" href="http://en.wikipedia.org/wiki/OSI_model">OSI model for networking</a> --
 but it is not the same at all.</p>
@@ -891,7 +899,7 @@ replication can be applied.</p>
 indicate the replication of <a class="reference internal" href="../../../glossary.html#term-disk-volumes"><span class="xref std std-term">disk volumes</span></a> as a whole. A
 simplistic replication scenario of a data disk between two nodes could
 look as follows:</p>
-<img src="../../../_images/graphviz-a71a85915417bac5a113996d1b8091faf89fd1ea.png" alt="digraph drbd {
+digraph drbd {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -924,8 +932,7 @@ look as follows:</p>
             }
 
         &quot;Data Disk 0&quot; -&gt; &quot;Data Disk 1&quot; [label=&quot;One-Way Replication&quot;];
-    }" />
-<p>For a fully detailed picture of the internal structures, please see the
+    }<p>For a fully detailed picture of the internal structures, please see the
 <a class="reference external" href="http://www.drbd.org/">DRBD</a> website, the canonical experts on this level of replication.</p>
 <p>Normally storage-level replication occurs in such
 fashion that it can be compared with a distributed version of a RAID-1
@@ -944,8 +951,8 @@ for <em>all higher-level software</em> to interact with the storage.</p>
 individual disk volumes that make up the RAID-1 array are not hidden
 from the rest of the operating system, but more importantly, direct
 access to the underlying device is not prohibited. With an example pair
-<code class="docutils literal"><span class="pre">sda2</span></code> and <code class="docutils literal"><span class="pre">sdb2</span></code>, nothing prevents you from executing <code class="docutils literal"><span class="pre">mkfs.ext4</span></code>
-on <code class="docutils literal"><span class="pre">/dev/sdb2</span></code> thereby corrupting the array -- other than perhaps not
+<code class="docutils literal notranslate"><span class="pre">sda2</span></code> and <code class="docutils literal notranslate"><span class="pre">sdb2</span></code>, nothing prevents you from executing <code class="docutils literal notranslate"><span class="pre">mkfs.ext4</span></code>
+on <code class="docutils literal notranslate"><span class="pre">/dev/sdb2</span></code> thereby corrupting the array -- other than perhaps not
 having the necessary administrative privileges.</p>
 <p>To further illustrate, position one disk in the RAID-1 array on the
 other side of a network (such as is a <a class="reference external" href="http://www.drbd.org/">DRBD</a> topology, as illustrated).
@@ -955,30 +962,30 @@ disk device(s).</p>
 <p>Participating nodes are <strong>required</strong> to successfully coordinate their
 I/O with one another, which on the level of entire storage volumes is a
 very impractical effort with high latency and enormous overhead, should
-more than one node be allowed to access the replicated device <a class="footnote-reference" href="#id8" id="id2">[2]</a>.</p>
+more than one node be allowed to access the replicated device <a class="footnote-reference brackets" href="#id8" id="id2">2</a>.</p>
 <p>It is therefore understood that, using storage level replication;</p>
 <ul class="simple">
-<li>Only one side of the mirrored volume can be active (master), and the
-other side must remain passive (slave),</li>
-<li>The active and passive nodes therefore have a cluster solution
+<li><p>Only one side of the mirrored volume can be active (master), and the
+other side must remain passive (slave),</p></li>
+<li><p>The active and passive nodes therefore have a cluster solution
 implemented to manage application's failover and management of the
 change in replication topology (a slave becomes the I/O master, the
 former master becomes the replication slave, and other slaves, if
-any, learn about the new master to replicate from),</li>
-<li>Failover implementations include fencing, the STONITH principle,
+any, learn about the new master to replicate from),</p></li>
+<li><p>Failover implementations include fencing, the STONITH principle,
 ensuring no two nodes in parallel perform I/O on the same volume at
-any given time.</li>
+any given time.</p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Storage volume level replication does not protect against filesystem
+<p class="admonition-title">Warning</p>
+<p>Storage volume level replication does not protect against filesystem
 or payload corruption -- the replication happily mirrors the
 &quot;faulty&quot; bits as it is completely agnostic to the bits' meaning and
 relevance.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">For the reasons outlined in this section, storage volume level
+<p class="admonition-title">Warning</p>
+<p>For the reasons outlined in this section, storage volume level
 replication has only a limited number of Cyrus IMAP deployment
 scenarios for which it would be recommended -- such as <em>Disaster
 Recovery Failover</em>.</p>
@@ -998,7 +1005,7 @@ parts (called &quot;bricks&quot;) that make up the larger volume.</p>
 <p>Additional features may include the use of a geographically oriented set
 of parameters for the calculation and assignment of replicated chunks of
 data (ie. &quot;brick replication topology&quot;).</p>
-<img src="../../../_images/graphviz-1e5092951b8d8570deb56c2558baebf233fbcc91.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1027,8 +1034,7 @@ data (ie. &quot;brick replication topology&quot;).</p>
                 &quot;Storage Access Point&quot; -&gt; &quot;Brick #3&quot; [color=green];
                 &quot;Storage Access Point&quot; -&gt; &quot;Brick #4&quot; [color=green];
             }
-    }" />
-<p>Current implementations of this type of technology include <a class="reference external" href="http://www.glusterfs.org">GlusterFS</a>
+    }<p>Current implementations of this type of technology include <a class="reference external" href="http://www.glusterfs.org">GlusterFS</a>
 and <a class="reference external" href="http://ceph.com">Ceph</a>. Put way too simplistically, both technologies apply very
 smart ways of storing individual objects, sometimes with additional
 facilities for certain object types. How they work exactly is far beyond
@@ -1043,7 +1049,7 @@ I/O pattern typically associated with a large volume of messages in IMAP
 spools. More frequent and very short-lived I/O against individual
 objects in a filesystem mounted directly causes a significant amount of
 overhead in negotiating the access to the objects across the storage
-cluster <a class="footnote-reference" href="#id8" id="id3">[2]</a>.</p>
+cluster <a class="footnote-reference brackets" href="#id8" id="id3">2</a>.</p>
 <p>Both technologies are perfectly suitable for large clusters with
 relatively small filesystems (see <a class="reference external" href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Global_File_System_2/ch-considerations.html#s2-fssize-gfs2">Filesystems: Smaller is Better</a>)
 if they are mounted directly from the storage clients. They are
@@ -1062,7 +1068,7 @@ many very small objects each individually addressed frequently, and in
 short-lived I/O operations, and consider the use of these distributed
 filesystems for a different level of object storage, such as disk images
 for a virtualization environment:</p>
-<img src="../../../_images/graphviz-52fd92920cf28f26f89ce02a92d05956282d8066.png" alt="digraph {
+   digraph {
            rankdir = TB;
            splines = true;
            overlab = prism;
@@ -1113,8 +1119,7 @@ Manager w/ Integrated Distributed (File-) Locking&quot;;
            &quot;Hypervisor #1&quot; -&gt; &quot;Brick #4&quot; [dir=both,label=&quot;Guest #1&quot;];
            &quot;Hypervisor #1&quot; -&gt; &quot;Brick #3&quot; [dir=both,label=&quot;Guest #2&quot;];
            &quot;Hypervisor #2&quot; -&gt; &quot;Brick #3&quot; [dir=both,label=&quot;Guest #3&quot;];
-       }" />
-<p>In this illustration, <em>Hypervisor #1</em> and <em>Hypervisor #2</em> are storage
+       }<p>In this illustration, <em>Hypervisor #1</em> and <em>Hypervisor #2</em> are storage
 clients, and replicated bricks hold the disk images of each guest.</p>
 <p>Each hypervisor can, in parallel, perform I/O against each individual
 disk image, allowing (for example) both <em>Hypervisor #1</em> and
@@ -1140,7 +1145,7 @@ exception to the rule being Fiber-Channel not strictly cohering to the
 <a class="reference external" href="http://en.wikipedia.org/wiki/OSI_model">OSI model for networking</a>, although its own 5-layer model equates.</p>
 <p>iSCSI and Fiber-Channel LUNs however are <em>mapped</em> to storage devices by
 your favorite operating system's drivers for each technology, or
-possibly by a hardware device (an <a class="reference internal" href="#term-hba"><span class="xref std std-term">HBA</span></a>, or in iSCSI, an
+possibly by a hardware device (an <a class="reference internal" href="#term-HBA"><span class="xref std std-term">HBA</span></a>, or in iSCSI, an
 <em>initiator</em>).</p>
 <p>As such, use of these network protocols for which the purpose just so
 happens to be storage does <strong>not</strong> provide redundancy.</p>
@@ -1177,12 +1182,12 @@ such as guest disk images.</p>
 <h3>Shared Storage (iSCSI or FC LUNs)<a class="headerlink" href="#shared-storage-iscsi-or-fc-luns" title="Permalink to this headline">¶</a></h3>
 <p>Both iSCSI LUNs and Fiber-Channel LUNs facilitate attaching a networked
 block storage device as if it were a local disk (creating devices
-similar to <code class="docutils literal"><span class="pre">/dev/sd{a,b,c,d}</span></code> etc.).</p>
+similar to <code class="docutils literal notranslate"><span class="pre">/dev/sd{a,b,c,d}</span></code> etc.).</p>
 <p>Since such a LUN is available over a &quot;network&quot; infrastructure, it may be
 shared between multiple nodes but when it is, nodes need to coordinate
 their I/O on some other level.</p>
-<p>With an example case of hypervisors, either <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Logical_Volume_Manager_Administration/LVM_Cluster_Overview.html">Cluster LVM</a> <a class="footnote-reference" href="#id9" id="id4">[3]</a> or
-<a class="reference external" href="http://en.wikipedia.org/wiki/GFS2">GFS</a> <a class="footnote-reference" href="#id10" id="id5">[4]</a> could be used to protect against corruption of the LUN.</p>
+<p>With an example case of hypervisors, either <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Logical_Volume_Manager_Administration/LVM_Cluster_Overview.html">Cluster LVM</a> <a class="footnote-reference brackets" href="#id9" id="id4">3</a> or
+<a class="reference external" href="http://en.wikipedia.org/wiki/GFS2">GFS</a> <a class="footnote-reference brackets" href="#id10" id="id5">4</a> could be used to protect against corruption of the LUN.</p>
 </div>
 </div>
 <div class="section" id="availability">
@@ -1209,7 +1214,7 @@ without interruption.</p>
 <p>Multipath is an enhancement technique in which multiple paths that are
 available to the storage can be balanced, shaped and failed over
 automatically. Imagine the following networking diagram:</p>
-<img src="../../../_images/graphviz-e90a9877863339b48302c7516b8318216793e131.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1239,8 +1244,7 @@ automatically. Imagine the following networking diagram:</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" />
-<p>The <em>null</em> situation is depicted in the previous wiring diagram. When
+    }<p>The <em>null</em> situation is depicted in the previous wiring diagram. When
 multipath kicks in, primary vs. secondary paths will be chosen for each
 individual target (that is unique). However, the system maintains a list
 of potential paths, and continuously monitors all paths for their
@@ -1250,7 +1254,7 @@ to 4 paths to <em>iSCSI Target #1</em> -- <em>4</em> paths, not <em>8</em>, beca
 networking of <em>Switch #1</em> and <em>Switch #2</em> is not considered a path with
 iSCSI -- <em>two nodes</em> and <em>two send targets each</em>.</p>
 <p>Multipath chooses one path to the available storage:</p>
-<img src="../../../_images/graphviz-19762385ec79073fedffa36dbe07aecace4b4b44.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1283,12 +1287,11 @@ iSCSI -- <em>two nodes</em> and <em>two send targets each</em>.</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none,color=green];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" />
-<p>Should one port, bridge, controller, switch or cable fail, then the I/O
+    }<p>Should one port, bridge, controller, switch or cable fail, then the I/O
 can fall back on to any of the remaining available paths.</p>
 <p>As per the example, this might mean the following (with <em>Canister #2</em>
 failing):</p>
-<img src="../../../_images/graphviz-7dae6dd6e8e8cb405462bc197bb8dd603b208565.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1321,8 +1324,7 @@ failing):</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none,color=red];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" />
-</div>
+    }</div>
 </div>
 <div class="section" id="performance">
 <span id="imap-deployment-storage-performance"></span><h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>
@@ -1342,10 +1344,10 @@ your storage.</p>
 <p>As a general rule of thumb, you could divide
 <a class="reference internal" href="../../../glossary.html#term-operating-system-disks"><span class="xref std std-term">operating system disks</span></a> and <a class="reference internal" href="../../../glossary.html#term-payload-disks"><span class="xref std std-term">payload disks</span></a>; the operating
 system disk could hold your base installation of a node, including
-everything in the root (<code class="docutils literal"><span class="pre">/</span></code>) filesystem, while your payload disk(s)
+everything in the root (<code class="docutils literal notranslate"><span class="pre">/</span></code>) filesystem, while your payload disk(s)
 hold the files and directories that contain the system's service(s)
-payload (such as <code class="docutils literal"><span class="pre">/var/lib/mysql/</span></code>, <code class="docutils literal"><span class="pre">/var/spool/cyrus/</span></code>,
-<code class="docutils literal"><span class="pre">/var/lib/imap/</span></code>, <code class="docutils literal"><span class="pre">/var/lib/dirsrv/</span></code>, etc.).</p>
+payload (such as <code class="docutils literal notranslate"><span class="pre">/var/lib/mysql/</span></code>, <code class="docutils literal notranslate"><span class="pre">/var/spool/cyrus/</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/var/lib/imap/</span></code>, <code class="docutils literal notranslate"><span class="pre">/var/lib/dirsrv/</span></code>, etc.).</p>
 <p>Distributing what is and what is not frequently used may be a cumbersome
 task for administrators. Some storage vendor's appliances offer
 automated storage tiering, where some disks in the appliance are SSDs,
@@ -1362,7 +1364,7 @@ pattern of an application, it is not uncommon at all for an application
 to read the same part of a disk volume several times during a relatively
 short period of time.</p>
 <p>In Cyrus IMAP, for example, while a user is logged in, a mail
-folder's <code class="file docutils literal"><span class="pre">cyrus.index</span></code> is read more frequently than it is
+folder's <code class="file docutils literal notranslate"><span class="pre">cyrus.index</span></code> is read more frequently than it is
 written to -- such as when refreshing the folder view, when opening a
 message in the folder, when replying to a message, etc.</p>
 <p>It is important to appreciate the impact of <a class="reference external" href="http://www.tldp.org/LDP/sag/html/buffer-cache.html">memory-based buffer cache</a>
@@ -1481,13 +1483,13 @@ finished successfully.</p>
 <p><strong>Solely therefore</strong> would you require a second copy of the groupware
 payload, now establishing a minimal data footprint to <strong>two</strong> petabyte.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Also note that the two replicas of one petabyte would, if the
+<p class="admonition-title">Note</p>
+<p>Also note that the two replicas of one petabyte would, if the
 replication occurs at the storage volume level, run the risk of
 corrupting both replicas' filesystems.</p>
 </div>
 <p>Your requirements for data redundancy aside, filesystem checks needing
-to be performed at least regularly <a class="footnote-reference" href="#id11" id="id6">[5]</a>, if not for the level of
+to be performed at least regularly <a class="footnote-reference brackets" href="#id11" id="id6">5</a>, if not for the level of
 likelihood they need to happen because actual recovery is required,
 should be restricted to a volume of data that enables the check to
 complete in a timely fashion, and possibly (when no data redundancy is
@@ -1522,55 +1524,41 @@ some commodity hardware likely raises run-time costs -- energy.</p>
 price point, and therefore expands capacity with relatively large
 chunks, which may not be what you require at that moment.</p>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Applications may also operate on data not stored on disk at all,
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Applications may also operate on data not stored on disk at all,
 which is another common avenue potentially resulting in loss of data
--- or <em>corruption</em>, which is merely a type of data-loss.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>With read operations, the other node(s) must be blocked from
+-- or <em>corruption</em>, which is merely a type of data-loss.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>With read operations, the other node(s) must be blocked from
 writing, and with write operations, the other node(s) must be
-blocked from reading and writing.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>When using ClusterLVM, you would use logical volumes as disks for
-your guests.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>When using GFS, you would mount the GFS filesystem partition on each
-hypervisor and use disk image files.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td><p class="first">Execute filesystem checks regularly to increase your level of
+blocked from reading and writing.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>When using ClusterLVM, you would use logical volumes as disks for
+your guests.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
+<dd><p>When using GFS, you would mount the GFS filesystem partition on each
+hypervisor and use disk image files.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id6">5</a></span></dt>
+<dd><p>Execute filesystem checks regularly to increase your level of
 confidence, that should emergency repairs need to be performed, you
 are able to recover swiftly.</p>
-<p class="last">The <a class="reference internal" href="#term-mtbf"><span class="xref std std-term">MTBF</span></a> of a stable filesystem has most often been subject
+<p>The <a class="reference internal" href="#term-MTBF"><span class="xref std std-term">MTBF</span></a> of a stable filesystem has most often been subject
 to the failure of the underlying disk, with the filesystem unable to
 recover (in time) from the underlying disk failing (partly).</p>
-</td></tr>
-</tbody>
-</table>
-<dl class="glossary docutils">
-<dt id="term-mtbf">MTBF</dt>
-<dd>Mean Time Between Failures</dd>
+</dd>
 </dl>
-<dl class="glossary docutils">
-<dt id="term-hba">HBA</dt>
-<dd>Host Bus Adapter - connects a host system (computer) to other network and storage devices</dd>
+<dl class="glossary simple">
+<dt id="term-MTBF">MTBF<a class="headerlink" href="#term-MTBF" title="Permalink to this term">¶</a></dt><dd><p>Mean Time Between Failures</p>
+</dd>
+</dl>
+<dl class="glossary simple">
+<dt id="term-HBA">HBA<a class="headerlink" href="#term-HBA" title="Permalink to this term">¶</a></dt><dd><p>Host Bus Adapter - connects a host system (computer) to other network and storage devices</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -1596,7 +1584,7 @@ recover (in time) from the underlying disk failing (partly).</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 08 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1622,7 +1610,6 @@ recover (in time) from the underlying disk failing (partly).</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

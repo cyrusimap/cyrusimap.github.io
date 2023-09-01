@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -494,230 +490,230 @@
 <div class="section" id="new-in-1-5-26">
 <h2>New in 1.5.26<a class="headerlink" href="#new-in-1-5-26" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Interoperability bug in DIGEST-MD5&#8217;s layers was fixed.</li>
-<li>DIGEST-MD5&#8217;s DES layer has been disabled until the interoperability
-can be worked out.</li>
+<li><p>Interoperability bug in DIGEST-MD5’s layers was fixed.</p></li>
+<li><p>DIGEST-MD5’s DES layer has been disabled until the interoperability
+can be worked out.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-25">
 <h2>New in 1.5.25<a class="headerlink" href="#new-in-1-5-25" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The DIGEST-MD5 plugin now includes an implementation of RC4, since
-it&#8217;s a lot easier to get working than interfacing with OpenSSL.</li>
-<li>A delayed-open plugin mode has been implemented, but not yet documented.</li>
+<li><p>The DIGEST-MD5 plugin now includes an implementation of RC4, since
+it’s a lot easier to get working than interfacing with OpenSSL.</p></li>
+<li><p>A delayed-open plugin mode has been implemented, but not yet documented.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-24">
 <h2>New in 1.5.24<a class="headerlink" href="#new-in-1-5-24" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>be a little paranoid about what we give PAM</li>
-<li>small bugfixes</li>
+<li><p>be a little paranoid about what we give PAM</p></li>
+<li><p>small bugfixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-22">
 <h2>New in 1.5.22<a class="headerlink" href="#new-in-1-5-22" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>fixed some DIGEST-MD5 buglets</li>
-<li>fixed serious bug that a client could avoid the authorization callback</li>
-<li>added pwcheck method &#8220;sia&#8221; for Digital Unix</li>
-<li>now should try libdb-3 before libdb.</li>
+<li><p>fixed some DIGEST-MD5 buglets</p></li>
+<li><p>fixed serious bug that a client could avoid the authorization callback</p></li>
+<li><p>added pwcheck method “sia” for Digital Unix</p></li>
+<li><p>now should try libdb-3 before libdb.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-21">
 <h2>New in 1.5.21<a class="headerlink" href="#new-in-1-5-21" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>build process fixes</li>
+<li><p>build process fixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-20">
 <h2>New in 1.5.20<a class="headerlink" href="#new-in-1-5-20" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>bug fixes</li>
-<li>LOGIN mechanism has a compatibility tweak</li>
+<li><p>bug fixes</p></li>
+<li><p>LOGIN mechanism has a compatibility tweak</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-19">
 <h2>New in 1.5.19<a class="headerlink" href="#new-in-1-5-19" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Initial srp work</li>
-<li>Programmers Guide more complete</li>
-<li>bug fixes (of course)</li>
+<li><p>Initial srp work</p></li>
+<li><p>Programmers Guide more complete</p></li>
+<li><p>bug fixes (of course)</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-18">
 <h2>New in 1.5.18<a class="headerlink" href="#new-in-1-5-18" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>javasasl library in conformance with internet draft</li>
-<li>man pages for all functions written</li>
-<li>bug fixes (of course)</li>
+<li><p>javasasl library in conformance with internet draft</p></li>
+<li><p>man pages for all functions written</p></li>
+<li><p>bug fixes (of course)</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-17">
 <h2>New in 1.5.17<a class="headerlink" href="#new-in-1-5-17" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>give application authentication name and realm more uniformly</li>
-<li>sasldblistusers utility to list users in sasldb</li>
-<li>memory leaks eliminated; boundary cases tested</li>
+<li><p>give application authentication name and realm more uniformly</p></li>
+<li><p>sasldblistusers utility to list users in sasldb</p></li>
+<li><p>memory leaks eliminated; boundary cases tested</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-16">
 <h2>New in 1.5.16<a class="headerlink" href="#new-in-1-5-16" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>pwcheck_method now defaults to sasldb.
-READ UPGRADE INSTRUCTIONS IN README</li>
-<li>sanity checking inputs throughout the code.</li>
-<li>Unsupported LOGIN plugin added to the Windows build.</li>
-<li>calling sasl_checkpass() with pwcheck_method: kerberos_v4 restores the
-old ticket file before returning.</li>
+<li><p>pwcheck_method now defaults to sasldb.
+READ UPGRADE INSTRUCTIONS IN README</p></li>
+<li><p>sanity checking inputs throughout the code.</p></li>
+<li><p>Unsupported LOGIN plugin added to the Windows build.</p></li>
+<li><p>calling sasl_checkpass() with pwcheck_method: kerberos_v4 restores the
+old ticket file before returning.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-15">
 <h2>New in 1.5.15<a class="headerlink" href="#new-in-1-5-15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>configure now correctly detects Berkeley DB 3.x (Claus Assmann).</li>
+<li><p>configure now correctly detects Berkeley DB 3.x (Claus Assmann).</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-14">
 <h2>New in 1.5.14<a class="headerlink" href="#new-in-1-5-14" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Upgraded to libtool 1.3.4.</li>
-<li>External SSF handled more uniformly, and handle min/max SSF requests
-correctly.</li>
-<li>Unsupported LOGIN plugin added, by Rainer Schoepf &lt;<a class="reference external" href="mailto:schoepf&#37;&#52;&#48;uni-mainz&#46;de">schoepf<span>&#64;</span>uni-mainz<span>&#46;</span>de</a>&gt;.
-Please don&#8217;t enable it unless you know you need it.</li>
-<li>HP/UX support, contributed by Claus Assmann.</li>
+<li><p>Upgraded to libtool 1.3.4.</p></li>
+<li><p>External SSF handled more uniformly, and handle min/max SSF requests
+correctly.</p></li>
+<li><p>Unsupported LOGIN plugin added, by Rainer Schoepf &lt;<a class="reference external" href="mailto:schoepf&#37;&#52;&#48;uni-mainz&#46;de">schoepf<span>&#64;</span>uni-mainz<span>&#46;</span>de</a>&gt;.
+Please don’t enable it unless you know you need it.</p></li>
+<li><p>HP/UX support, contributed by Claus Assmann.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-13">
 <h2>New in 1.5.13<a class="headerlink" href="#new-in-1-5-13" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sanity check to make sure there&#8217;s at least something in sasldb
-READ UPGRADE INSTRUCTIONS IN README</li>
-<li>Fixes to how external layers are handled (some fixes by Alexey Melnikov)</li>
-<li>Berkeley DB 3.x support contributed by Greg Shapiro</li>
-<li>Additional pwcheck fixes (Joe Hohertz)</li>
-<li>Fixed Heimdal krb5 configure checks</li>
-<li>other random fixes</li>
+<li><p>Sanity check to make sure there’s at least something in sasldb
+READ UPGRADE INSTRUCTIONS IN README</p></li>
+<li><p>Fixes to how external layers are handled (some fixes by Alexey Melnikov)</p></li>
+<li><p>Berkeley DB 3.x support contributed by Greg Shapiro</p></li>
+<li><p>Additional pwcheck fixes (Joe Hohertz)</p></li>
+<li><p>Fixed Heimdal krb5 configure checks</p></li>
+<li><p>other random fixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-12">
 <h2>New in 1.5.12<a class="headerlink" href="#new-in-1-5-12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>lots of bugfixes</li>
-<li>DIGEST-MD5 more in conformance with spec</li>
-<li>support for Berkeley DB</li>
-<li>support for OpenSSL&#8217;s version of RC4</li>
+<li><p>lots of bugfixes</p></li>
+<li><p>DIGEST-MD5 more in conformance with spec</p></li>
+<li><p>support for Berkeley DB</p></li>
+<li><p>support for OpenSSL’s version of RC4</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-11">
 <h2>New in 1.5.11<a class="headerlink" href="#new-in-1-5-11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>bugfix in realm support for DIGEST-MD5</li>
+<li><p>bugfix in realm support for DIGEST-MD5</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-10">
 <h2>New in 1.5.10<a class="headerlink" href="#new-in-1-5-10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>DIGEST-MD5 layer support</li>
-<li>dbconversion utility added</li>
+<li><p>DIGEST-MD5 layer support</p></li>
+<li><p>dbconversion utility added</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-9">
 <h2>New in 1.5.9<a class="headerlink" href="#new-in-1-5-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Bug fixes</li>
-<li>More win32 support</li>
-<li>Realm support in the database (database format changed again, sorry)
-Other realm support in plugins; need to document it</li>
-<li>Preliminary code for pwcheck added; not yet tested (and probably not
-working)</li>
-<li>config stuff should be less case/whitespace sensitive</li>
-<li>more error conditions logged</li>
+<li><p>Bug fixes</p></li>
+<li><p>More win32 support</p></li>
+<li><p>Realm support in the database (database format changed again, sorry)
+Other realm support in plugins; need to document it</p></li>
+<li><p>Preliminary code for pwcheck added; not yet tested (and probably not
+working)</p></li>
+<li><p>config stuff should be less case/whitespace sensitive</p></li>
+<li><p>more error conditions logged</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-5">
 <h2>New in 1.5.5<a class="headerlink" href="#new-in-1-5-5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Bug fixes</li>
-<li>sasldb plaintext support (database format changed!!!)</li>
-<li>Handles multiple realms in DIGEST</li>
-<li>New Windows compatibility (tested!)</li>
+<li><p>Bug fixes</p></li>
+<li><p>sasldb plaintext support (database format changed!!!)</p></li>
+<li><p>Handles multiple realms in DIGEST</p></li>
+<li><p>New Windows compatibility (tested!)</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-3">
 <h2>New in 1.5.3<a class="headerlink" href="#new-in-1-5-3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Bug fixes</li>
-<li>Tested GSSAPI &amp; added layers</li>
-<li>Some changes for Windows compatibility (next release)</li>
+<li><p>Bug fixes</p></li>
+<li><p>Tested GSSAPI &amp; added layers</p></li>
+<li><p>Some changes for Windows compatibility (next release)</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-2">
 <h2>New in 1.5.2<a class="headerlink" href="#new-in-1-5-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>A few bug fixes</li>
-<li>Better portability</li>
-<li>Upgraded libtool</li>
+<li><p>A few bug fixes</p></li>
+<li><p>Better portability</p></li>
+<li><p>Upgraded libtool</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-5-0">
 <h2>New in 1.5.0<a class="headerlink" href="#new-in-1-5-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Lots of bug fixes</li>
-<li>A few API changes (watch especially sasl_get_prop() and sasl_set_prop()!)</li>
-<li>Digest authentication works</li>
-<li>Configuration file</li>
-<li>Some more documentation (doc/programming)</li>
-<li>Code cleanup</li>
+<li><p>Lots of bug fixes</p></li>
+<li><p>A few API changes (watch especially sasl_get_prop() and sasl_set_prop()!)</p></li>
+<li><p>Digest authentication works</p></li>
+<li><p>Configuration file</p></li>
+<li><p>Some more documentation (doc/programming)</p></li>
+<li><p>Code cleanup</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-4-1">
 <h2>New in 1.4.1<a class="headerlink" href="#new-in-1-4-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Tested kerberos4, cram, plain, and anonymous fairly extensively</li>
-<li>Many bugs fixed</li>
-<li>Created sample programs</li>
-<li>Added digest</li>
-<li>Prototype credential API</li>
+<li><p>Tested kerberos4, cram, plain, and anonymous fairly extensively</p></li>
+<li><p>Many bugs fixed</p></li>
+<li><p>Created sample programs</p></li>
+<li><p>Added digest</p></li>
+<li><p>Prototype credential API</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-3b1">
 <h2>New in 1.3b1<a class="headerlink" href="#new-in-1-3b1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added saslpasswd for setting sasl passwords</li>
-<li>Added sfsasl for people using sfio</li>
-<li>Lots of bug fixes</li>
+<li><p>Added saslpasswd for setting sasl passwords</p></li>
+<li><p>Added sfsasl for people using sfio</p></li>
+<li><p>Lots of bug fixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-2b3">
 <h2>New in 1.2b3<a class="headerlink" href="#new-in-1-2b3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Slightly better documentation, easier compilation</li>
-<li>Plain now understands authorization and callbacks</li>
+<li><p>Slightly better documentation, easier compilation</p></li>
+<li><p>Plain now understands authorization and callbacks</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-2b2">
 <h2>New in 1.2b2<a class="headerlink" href="#new-in-1-2b2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Win32 support</li>
-<li>Fixes to anonymous, kerberos mechs</li>
-<li>Some signed lengths in the API changed to unsigned</li>
+<li><p>Win32 support</p></li>
+<li><p>Fixes to anonymous, kerberos mechs</p></li>
+<li><p>Some signed lengths in the API changed to unsigned</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-1-2b1">
 <h2>New in 1.2b1<a class="headerlink" href="#new-in-1-2b1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Lots of bug fixes</li>
-<li>GSSAPI</li>
-<li>Cleaner getopt interface</li>
-<li>Cleaner plugin callback lookup interface</li>
-<li>Global inits now take callback list, not just a sasl_getopt_t</li>
-<li>Preliminary Java support</li>
-<li>Authentication database hook</li>
-<li>Default AuthDB routines moved from mechanisms to library</li>
-<li>Logging hook</li>
-<li>Default syslog-based logging hook in library</li>
-<li>Preliminary plaintext transition for CRAM/SCRAM</li>
+<li><p>Lots of bug fixes</p></li>
+<li><p>GSSAPI</p></li>
+<li><p>Cleaner getopt interface</p></li>
+<li><p>Cleaner plugin callback lookup interface</p></li>
+<li><p>Global inits now take callback list, not just a sasl_getopt_t</p></li>
+<li><p>Preliminary Java support</p></li>
+<li><p>Authentication database hook</p></li>
+<li><p>Default AuthDB routines moved from mechanisms to library</p></li>
+<li><p>Logging hook</p></li>
+<li><p>Default syslog-based logging hook in library</p></li>
+<li><p>Preliminary plaintext transition for CRAM/SCRAM</p></li>
 </ul>
 </div>
 </div>
@@ -743,7 +739,7 @@ working)</li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -770,7 +766,6 @@ working)</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

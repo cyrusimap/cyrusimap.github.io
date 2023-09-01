@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -793,41 +795,41 @@
 <div class="section" id="what-happens-when-the-murder-mupdate-master-is-unavailable">
 <h2>What happens when the Murder mupdate master is unavailable?<a class="headerlink" href="#what-happens-when-the-murder-mupdate-master-is-unavailable" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Incoming IMAP connections to frontends are still allowed, as are most mailbox operations (see below for exceptions).</li>
-<li>Mail delivery via the frontends is deferred (lmtpproxyd cannot locate mailbox).</li>
-<li>Deleting a mailbox (or folder) works, presumably because this operation cannot create future conflicts in the mailbox list. However, the frontends will still think the mailbox (or folder) exists because they only get updates from the mupdate master.</li>
-<li>Creating a mailbox (or folder) fails with an error message like &quot;can not connect to mupdate server for reservation on 'user.foo.test'&quot;.</li>
+<li><p>Incoming IMAP connections to frontends are still allowed, as are most mailbox operations (see below for exceptions).</p></li>
+<li><p>Mail delivery via the frontends is deferred (lmtpproxyd cannot locate mailbox).</p></li>
+<li><p>Deleting a mailbox (or folder) works, presumably because this operation cannot create future conflicts in the mailbox list. However, the frontends will still think the mailbox (or folder) exists because they only get updates from the mupdate master.</p></li>
+<li><p>Creating a mailbox (or folder) fails with an error message like &quot;can not connect to mupdate server for reservation on 'user.foo.test'&quot;.</p></li>
 </ol>
 </div>
 <div class="section" id="what-happens-when-the-murder-mupdate-master-is-available-again">
 <h2>What happens when the Murder mupdate master is available again?<a class="headerlink" href="#what-happens-when-the-murder-mupdate-master-is-available-again" title="Permalink to this headline">¶</a></h2>
-<p>Frontends will automatically reconnect to the mupdate master after 20 seconds (see <strong>mupdate_retry_delay</strong> in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>) and synchronize.</p>
-<p>Backends will NOT automatically sync any changes to the mupdate master. If any mailbox changes occurred on a backend (a distinct possibility if IMAP clients were still connected), you will need to manually synchronize the mailbox list from the backend to the mupdate master. As the cyrus user, run <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-mw</span></code> on each backend to see the list of changes that would be made. If the list looks correct, then run <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code> to actually push those changes to the mupdate master.</p>
+<p>Frontends will automatically reconnect to the mupdate master after 20 seconds (see <strong>mupdate_retry_delay</strong> in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>) and synchronize.</p>
+<p>Backends will NOT automatically sync any changes to the mupdate master. If any mailbox changes occurred on a backend (a distinct possibility if IMAP clients were still connected), you will need to manually synchronize the mailbox list from the backend to the mupdate master. As the cyrus user, run <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-mw</span></code> on each backend to see the list of changes that would be made. If the list looks correct, then run <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code> to actually push those changes to the mupdate master.</p>
 </div>
 <div class="section" id="what-if-my-mupdate-master-blows-up-and-i-have-to-recover-it">
 <h2>What if my mupdate master blows up and I have to recover it?<a class="headerlink" href="#what-if-my-mupdate-master-blows-up-and-i-have-to-recover-it" title="Permalink to this headline">¶</a></h2>
 <p>It is either easy, or hard depending on your setup.</p>
 <div class="section" id="easy-recovery">
 <h3>Easy recovery<a class="headerlink" href="#easy-recovery" title="Permalink to this headline">¶</a></h3>
-<p>You can restore the murder master mailbox list from your text backup (created with <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-d</span></code>)</p>
+<p>You can restore the murder master mailbox list from your text backup (created with <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-d</span></code>)</p>
 <p>Don't have a backup? Well it is still easy if you have a frontend. The mailboxes.db on your frontend and your murdermaster are in the same format.</p>
 <ol class="arabic simple">
-<li>Stop Cyrus on a frontend</li>
-<li>Stop Cyrus on your murder master</li>
-<li>Copy mailboxes.db from frontend to murder master</li>
-<li>Start everything backup</li>
-<li>Use ctl_mboxlist -m on each backend to update the murder master with any missing changes.</li>
+<li><p>Stop Cyrus on a frontend</p></li>
+<li><p>Stop Cyrus on your murder master</p></li>
+<li><p>Copy mailboxes.db from frontend to murder master</p></li>
+<li><p>Start everything backup</p></li>
+<li><p>Use ctl_mboxlist -m on each backend to update the murder master with any missing changes.</p></li>
 </ol>
 <p>If you are using skiplist for your mailboxes.db then you can just copy the file.</p>
 </div>
 <div class="section" id="hard-recovery">
 <h3>Hard recovery<a class="headerlink" href="#hard-recovery" title="Permalink to this headline">¶</a></h3>
-<p>It's not currently possible to recover the master's mailboxes.db with a dump from <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-d</span></code>. The mailboxes.db recovered on the master with <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-u</span></code> won't have the &quot;remote&quot; flag set.</p>
+<p>It's not currently possible to recover the master's mailboxes.db with a dump from <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-d</span></code>. The mailboxes.db recovered on the master with <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-u</span></code> won't have the &quot;remote&quot; flag set.</p>
 <ol class="arabic simple">
-<li>Stop Cyrus on your frontends.</li>
-<li>Delete the mailboxes.db on the frontends and the mupdate master.</li>
-<li>Use <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code> on each backend to populate the mailboxes.db on the mupdate master.</li>
-<li>Start Cyrus on the frontends.</li>
+<li><p>Stop Cyrus on your frontends.</p></li>
+<li><p>Delete the mailboxes.db on the frontends and the mupdate master.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code> on each backend to populate the mailboxes.db on the mupdate master.</p></li>
+<li><p>Start Cyrus on the frontends.</p></li>
 </ol>
 </div>
 </div>
@@ -854,7 +856,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 30 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -880,7 +882,6 @@
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

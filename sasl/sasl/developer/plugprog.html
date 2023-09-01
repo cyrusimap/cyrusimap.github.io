@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-sasl">What is SASL?</a></li>
@@ -470,7 +470,7 @@
       
           <li><a href="../../developer.html">Developers</a> &raquo;</li>
       
-    <li>Plugin Programmer&#8217;s Guide</li>
+    <li>Plugin Programmer’s Guide</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -484,31 +484,33 @@
           <div role="main" class="document">
             
   <div class="section" id="plugin-programmer-s-guide">
-<span id="plugprog"></span><h1>Plugin Programmer&#8217;s Guide<a class="headerlink" href="#plugin-programmer-s-guide" title="Permalink to this headline">¶</a></h1>
+<span id="plugprog"></span><h1>Plugin Programmer’s Guide<a class="headerlink" href="#plugin-programmer-s-guide" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">NOTE: This is a work in progress. Any contributions would be
+<p class="admonition-title">Note</p>
+<p>NOTE: This is a work in progress. Any contributions would be
 <em>very</em> appreciated.</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#introduction" id="id1">Introduction</a><ul>
-<li><a class="reference internal" href="#about-this-guide" id="id2">About this Guide</a></li>
-<li><a class="reference internal" href="#what-is-sasl" id="id3">What is SASL?</a></li>
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#about-this-guide" id="id2">About this Guide</a></p></li>
+<li><p><a class="reference internal" href="#what-is-sasl" id="id3">What is SASL?</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#common-section" id="id4">Common Section</a><ul>
-<li><a class="reference internal" href="#overview-of-plugin-programming" id="id5">Overview of Plugin Programming</a></li>
-<li><a class="reference internal" href="#use-of-sasl-utils-t" id="id6">Use of sasl_utils_t</a></li>
-<li><a class="reference internal" href="#error-reporting" id="id7">Error Reporting</a></li>
-<li><a class="reference internal" href="#memory-allocation" id="id8">Memory Allocation</a></li>
-<li><a class="reference internal" href="#client-send-first-server-send-last" id="id9">Client Send First / Server Send Last</a></li>
+<li><p><a class="reference internal" href="#common-section" id="id4">Common Section</a></p>
+<ul>
+<li><p><a class="reference internal" href="#overview-of-plugin-programming" id="id5">Overview of Plugin Programming</a></p></li>
+<li><p><a class="reference internal" href="#use-of-sasl-utils-t" id="id6">Use of sasl_utils_t</a></p></li>
+<li><p><a class="reference internal" href="#error-reporting" id="id7">Error Reporting</a></p></li>
+<li><p><a class="reference internal" href="#memory-allocation" id="id8">Memory Allocation</a></p></li>
+<li><p><a class="reference internal" href="#client-send-first-server-send-last" id="id9">Client Send First / Server Send Last</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#client-plugins" id="id10">Client Plugins</a></li>
-<li><a class="reference internal" href="#server-plugins" id="id11">Server Plugins</a></li>
-<li><a class="reference internal" href="#user-canonicalization-canon-user-plugins" id="id12">User Canonicalization (canon_user) Plugins</a></li>
-<li><a class="reference internal" href="#auxiliary-property-auxprop-plugins" id="id13">Auxiliary Property (auxprop) Plugins</a></li>
+<li><p><a class="reference internal" href="#client-plugins" id="id10">Client Plugins</a></p></li>
+<li><p><a class="reference internal" href="#server-plugins" id="id11">Server Plugins</a></p></li>
+<li><p><a class="reference internal" href="#user-canonicalization-canon-user-plugins" id="id12">User Canonicalization (canon_user) Plugins</a></p></li>
+<li><p><a class="reference internal" href="#auxiliary-property-auxprop-plugins" id="id13">Auxiliary Property (auxprop) Plugins</a></p></li>
 </ul>
 </div>
 <div class="section" id="introduction">
@@ -528,7 +530,7 @@ should be reading the <a class="reference internal" href="programming.html#progr
 <div class="section" id="what-is-sasl">
 <h3><a class="toc-backref" href="#id3">What is SASL?</a><a class="headerlink" href="#what-is-sasl" title="Permalink to this headline">¶</a></h3>
 <p>A description of SASL is covered in detail in the
-<a class="reference internal" href="programming.html#programming"><span class="std std-ref">programmer&#8217;s guide</span></a>, which mechanism
+<a class="reference internal" href="programming.html#programming"><span class="std std-ref">programmer’s guide</span></a>, which mechanism
 developers should probably read first anyway to become familiar
 with development using the SASL library.</p>
 </div>
@@ -554,19 +556,19 @@ that the load was successful and the plugin is available for use.</p>
 <p>There are several types of plugins (note that a given plugin library
 may contain any or all of the following in combination, though
 such a plugin would be a beast!):</p>
-<dl class="docutils">
-<dt>Mechanism Plugins</dt>
-<dd>These plugins implement mechanisms
+<dl class="simple">
+<dt>Mechanism Plugins</dt><dd><p>These plugins implement mechanisms
 for authentication, and are the majority of the plugins included
 with Cyrus SASL.  Generally implementing both a client and a server
-side they take care of the authentication process.</dd>
-<dt>User Canonicalization Plugins</dt>
-<dd>These plugins enable differing
-ways of canonicalizing authentication and authorization IDs.</dd>
-<dt>Auxiliary Property Plugins</dt>
-<dd>These plugins allow auxiliary
+side they take care of the authentication process.</p>
+</dd>
+<dt>User Canonicalization Plugins</dt><dd><p>These plugins enable differing
+ways of canonicalizing authentication and authorization IDs.</p>
+</dd>
+<dt>Auxiliary Property Plugins</dt><dd><p>These plugins allow auxiliary
 properties about user accounts to be looked up, such as passwords.
-Cyrus SASL includes a plugin to read sasldb files, for example.</dd>
+Cyrus SASL includes a plugin to read sasldb files, for example.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="use-of-sasl-utils-t">
@@ -574,16 +576,16 @@ Cyrus SASL includes a plugin to read sasldb files, for example.</dd>
 <p>Because of the way that shared library plugins are loaded for both
 speed and namespace reasons, the symbol tables are not shared across
 plugins.  Thus, the only interface that the plugin should assume it
-has to the outside world is through the <code class="docutils literal"><span class="pre">sasl_utils_t</span></code> structure (or
+has to the outside world is through the <code class="docutils literal notranslate"><span class="pre">sasl_utils_t</span></code> structure (or
 through links that it specifically requires).  Likewise, the glue code
 has no (and will use no) interface into the plugin other than the
 contents of the structures that are passed back to it by the
 initialization function.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Do not assume you have access to any
+<p class="admonition-title">Note</p>
+<p>Do not assume you have access to any
 functions except through links that your library explicitly makes
-or through what is provided via the <code class="docutils literal"><span class="pre">sasl_utils_t</span></code> structure.</p>
+or through what is provided via the <code class="docutils literal notranslate"><span class="pre">sasl_utils_t</span></code> structure.</p>
 </div>
 </div>
 <div class="section" id="error-reporting">
@@ -592,7 +594,7 @@ or through what is provided via the <code class="docutils literal"><span class="
 and helping to debug installations or authentication problems.  For
 that reason, in addition to the standard SASL return codes, the
 glue code provides an interface to its seterror function (via
-<code class="docutils literal"><span class="pre">sasl_utils_t</span></code>).  This function sets detailed error information for
+<code class="docutils literal notranslate"><span class="pre">sasl_utils_t</span></code>).  This function sets detailed error information for
 a given connection.</p>
 <p>In order to ensure consistency of this information, it is the
 responsibility of the deepest function with access to the sasl_conn_t
@@ -617,13 +619,13 @@ will not have to worry about these issues and can be implemented
 knowing they will be called only when the application actually has
 data for them and/or will allow them to send data.  These flags are as
 follows:</p>
-<dl class="docutils">
-<dt>SASL_FEAT_WANT_CLIENT_FIRST</dt>
-<dd>The mechanism has the client
-side send first always.  (e.g. PLAIN)</dd>
-<dt>SASL_FEAT_SERVER_FIRST</dt>
-<dd>The mechanism has the server side
-send first always.  (e.g. CRAM-MD5)</dd>
+<dl class="simple">
+<dt>SASL_FEAT_WANT_CLIENT_FIRST</dt><dd><p>The mechanism has the client
+side send first always.  (e.g. PLAIN)</p>
+</dd>
+<dt>SASL_FEAT_SERVER_FIRST</dt><dd><p>The mechanism has the server side
+send first always.  (e.g. CRAM-MD5)</p>
+</dd>
 </dl>
 <p>If neither flag is set, the mechanism will handle the client-send
 first situation internally, because the client may or may not send
@@ -634,13 +636,13 @@ protocol permits an initial response.</p>
 <p>The server send last situation is handled by the plugin intelligently
 setting *serverout when the step function returns SASL_OK.</p>
 <ul class="simple">
-<li>For mechanisms
-which never send last (e.g. PLAIN), *serverout must be set to NULL.</li>
-<li>For
+<li><p>For mechanisms
+which never send last (e.g. PLAIN), *serverout must be set to NULL.</p></li>
+<li><p>For
 mechanisms which always send last, *serverout must
-point to the success data.</li>
-<li>For mechanisms in which the server may or
-may not send last (e.g. SRP), *serverout must be set accordingly.</li>
+point to the success data.</p></li>
+<li><p>For mechanisms in which the server may or
+may not send last (e.g. SRP), *serverout must be set accordingly.</p></li>
 </ul>
 </div>
 </div>
@@ -650,23 +652,21 @@ may not send last (e.g. SRP), *serverout must be set accordingly.</li>
 plugin with their <a class="reference internal" href="#plugprog-server"><span class="std std-ref">server</span></a> counterpart, though
 this is not a requirement.  They take care of the client-side of the
 SASL negotiation.  For a simple example, see the ANONYMOUS plugin.
-Client plugins must export <code class="docutils literal"><span class="pre">sasl_client_plug_init</span></code> which returns
-a <code class="docutils literal"><span class="pre">sasl_client_plug_t</span></code> in order to load.  The structure has
+Client plugins must export <code class="docutils literal notranslate"><span class="pre">sasl_client_plug_init</span></code> which returns
+a <code class="docutils literal notranslate"><span class="pre">sasl_client_plug_t</span></code> in order to load.  The structure has
 several functional members and a global context (which applies to
 all connections using the plugin).  The important ones are described
 briefly here.</p>
-<dl class="docutils">
-<dt>mech_new</dt>
-<dd><p class="first">Called at the beginning of each connection,
+<dl>
+<dt>mech_new</dt><dd><p>Called at the beginning of each connection,
 (on a call to sasl_client_start),</p>
-<p class="last">mech_new does mechanism-specific initialization, and if necessary
+<p>mech_new does mechanism-specific initialization, and if necessary
 allocates a connection context (which the glue code keeps track
 of for it).  mech_new does not actually send any data to the client,
 it simply allocates the context.</p>
 </dd>
-<dt>mech_step</dt>
-<dd><p class="first">Called from <code class="docutils literal"><span class="pre">sasl_client_start</span></code> and
-<code class="docutils literal"><span class="pre">sasl_client_step</span></code>, this function does the actual work of
+<dt>mech_step</dt><dd><p>Called from <code class="docutils literal notranslate"><span class="pre">sasl_client_start</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sasl_client_step</span></code>, this function does the actual work of
 the client
 side of the authentication.  If authentication is successful, it
 should return SASL_OK, otherwise it should return a valid SASL
@@ -674,21 +674,21 @@ error code (and call seterror).</p>
 <p>This should also set up the
 oparams structure before returning SASL_OK, including any
 security layer information (in the way of callbacks).</p>
-<p class="last">Note
+<p>Note
 that as soon as the client has both the authentication and
 authorization IDs, it MUST call the canon_user function provided
 in its params structure (for both the authentication and
 authorization IDs, with SASL_CU_AUTHID and SASL_CU_AUTHZID
 respectively).</p>
 </dd>
-<dt>mech_dispose</dt>
-<dd>Called to dispose of a connection context.
+<dt>mech_dispose</dt><dd><p>Called to dispose of a connection context.
 This is only called when the connection will no longer be used
-(e.g. when <code class="docutils literal"><span class="pre">sasl_dispose</span></code> is called)</dd>
-<dt>mech_free</dt>
-<dd>Called when the sasl library is shutting down
-(by <code class="docutils literal"><span class="pre">sasl_client_done/sasl_server_done/sasl_done</span></code>).
-Intended to free any global state of the plugin.</dd>
+(e.g. when <code class="docutils literal notranslate"><span class="pre">sasl_dispose</span></code> is called)</p>
+</dd>
+<dt>mech_free</dt><dd><p>Called when the sasl library is shutting down
+(by <code class="docutils literal notranslate"><span class="pre">sasl_client_done/sasl_server_done/sasl_done</span></code>).
+Intended to free any global state of the plugin.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="server-plugins">
@@ -699,23 +699,21 @@ this is not a requirement.  They take care of the server-side of the
 SASL negotiation, and are generally more complicated than their
 client-side counterparts.  For a simple example, see the ANONYMOUS
 plugin.</p>
-<p>Server plugins must export <code class="docutils literal"><span class="pre">sasl_server_plug_init</span></code> which returns
-a <code class="docutils literal"><span class="pre">sasl_server_plug_t</span></code> in order to load.  The structure has
+<p>Server plugins must export <code class="docutils literal notranslate"><span class="pre">sasl_server_plug_init</span></code> which returns
+a <code class="docutils literal notranslate"><span class="pre">sasl_server_plug_t</span></code> in order to load.  The structure has
 several functional members and a global context (which applies to
 all connections using the plugin).  The important ones are described
 briefly here.</p>
-<dl class="docutils">
-<dt>mech_new</dt>
-<dd><p class="first">Called at the beginning of each connection,
+<dl>
+<dt>mech_new</dt><dd><p>Called at the beginning of each connection,
 (on a call to sasl_client_start),</p>
-<p class="last">mech_new does mechanism-specific initialization, and if necessary
+<p>mech_new does mechanism-specific initialization, and if necessary
 allocates a connection context (which the glue code keeps track
 of for it).  mech_new does not actually send any data to the client,
 it simply allocates the context.</p>
 </dd>
-<dt>mech_step</dt>
-<dd><p class="first">Called from <code class="docutils literal"><span class="pre">sasl_server_start</span></code> and
-<code class="docutils literal"><span class="pre">sasl_server_step</span></code>, this function does the actual work of
+<dt>mech_step</dt><dd><p>Called from <code class="docutils literal notranslate"><span class="pre">sasl_server_start</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sasl_server_step</span></code>, this function does the actual work of
 the server
 side of the authentication.</p>
 <p>If authentication is successful, it
@@ -735,36 +733,36 @@ propctx, so any auxiliary property <em>requests</em>
 the password) should be done before the request to canonicalize
 the authentication id.  Authorization ID lookups do not occur until
 after the plugin returns success to the SASL library.</p>
-<p class="last">Before returning SASL_OK, <code class="docutils literal"><span class="pre">mech_step</span></code> must fill in the
-oparams fields for which it is responsible, that is, <code class="docutils literal"><span class="pre">doneflag</span></code>
-(set to 1 to indicate a complete exchange), <code class="docutils literal"><span class="pre">maxoutbuf</span></code>, or
+<p>Before returning SASL_OK, <code class="docutils literal notranslate"><span class="pre">mech_step</span></code> must fill in the
+oparams fields for which it is responsible, that is, <code class="docutils literal notranslate"><span class="pre">doneflag</span></code>
+(set to 1 to indicate a complete exchange), <code class="docutils literal notranslate"><span class="pre">maxoutbuf</span></code>, or
 the maximum output size it can do at once for a security layer,
-<code class="docutils literal"><span class="pre">mech_ssf</span></code> or the supplied SSF of the security layer,
-and <code class="docutils literal"><span class="pre">encode</span></code>, <code class="docutils literal"><span class="pre">decode</span></code>, <code class="docutils literal"><span class="pre">encode_context</span></code>,
-and <code class="docutils literal"><span class="pre">decode_context</span></code>,
-which are what the glue code will call on calls to <code class="docutils literal"><span class="pre">sasl_encode</span></code>,
-<code class="docutils literal"><span class="pre">sasl_encodev</span></code>, and <code class="docutils literal"><span class="pre">sasl_decode</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">mech_ssf</span></code> or the supplied SSF of the security layer,
+and <code class="docutils literal notranslate"><span class="pre">encode</span></code>, <code class="docutils literal notranslate"><span class="pre">decode</span></code>, <code class="docutils literal notranslate"><span class="pre">encode_context</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">decode_context</span></code>,
+which are what the glue code will call on calls to <code class="docutils literal notranslate"><span class="pre">sasl_encode</span></code>,
+<code class="docutils literal notranslate"><span class="pre">sasl_encodev</span></code>, and <code class="docutils literal notranslate"><span class="pre">sasl_decode</span></code>.</p>
 </dd>
-<dt>mech_dispose</dt>
-<dd>Called to dispose of a connection context.
+<dt>mech_dispose</dt><dd><p>Called to dispose of a connection context.
 This is only called when the connection will no longer be used
-(e.g. when <code class="docutils literal"><span class="pre">sasl_dispose</span></code> is called)</dd>
-<dt>mech_free</dt>
-<dd>Called when the sasl library is shutting down
-(by <code class="docutils literal"><span class="pre">sasl_client_done/sasl_server_done/sasl_done</span></code>).
-Intended to free any global state of the plugin.</dd>
-<dt>setpass</dt>
-<dd>Called to set a user&#8217;s password.  This allows
+(e.g. when <code class="docutils literal notranslate"><span class="pre">sasl_dispose</span></code> is called)</p>
+</dd>
+<dt>mech_free</dt><dd><p>Called when the sasl library is shutting down
+(by <code class="docutils literal notranslate"><span class="pre">sasl_client_done/sasl_server_done/sasl_done</span></code>).
+Intended to free any global state of the plugin.</p>
+</dd>
+<dt>setpass</dt><dd><p>Called to set a user’s password.  This allows
 mechanisms to support their own internal password or secret
-database.</dd>
-<dt>mech_avail</dt>
-<dd>Called by the first call to
-<code class="docutils literal"><span class="pre">sasl_listmech</span></code>,
+database.</p>
+</dd>
+<dt>mech_avail</dt><dd><p>Called by the first call to
+<code class="docutils literal notranslate"><span class="pre">sasl_listmech</span></code>,
 it checks to see if the mechanism is available for the given
 user, and MAY allocate a connection context (thus avoiding
-a call to <code class="docutils literal"><span class="pre">mech_new</span></code>).  However it should not do this
+a call to <code class="docutils literal notranslate"><span class="pre">mech_new</span></code>).  However it should not do this
 without significant performance benefit as it forces the glue
-code to keep track of extra contexts that may not be used.</dd>
+code to keep track of extra contexts that may not be used.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="user-canonicalization-canon-user-plugins">
@@ -773,18 +771,18 @@ code to keep track of extra contexts that may not be used.</dd>
 canonicalizing the username.  They are subject to the following
 requirements:</p>
 <ul class="simple">
-<li>They must copy their output into the provided output buffers.</li>
-<li>The output buffers may be the same as the input buffers.</li>
-<li>They must function for the case which is only an authentication
+<li><p>They must copy their output into the provided output buffers.</p></li>
+<li><p>The output buffers may be the same as the input buffers.</p></li>
+<li><p>They must function for the case which is only an authentication
 ID (flags == SASL_CU_AUTHID) or only an authorization ID
 (flags == SASL_CU_AUTHZID) or both
-(flags == SASL_CU_AUTHID | SASL_CU_AUTHZID)</li>
+(flags == SASL_CU_AUTHID | SASL_CU_AUTHZID)</p></li>
 </ul>
-<p>User canonicalization plugins must export a <code class="docutils literal"><span class="pre">sasl_canonuser_init</span></code>
-function which returns a <code class="docutils literal"><span class="pre">sasl_canonuser_plug_t</span></code> in order
+<p>User canonicalization plugins must export a <code class="docutils literal notranslate"><span class="pre">sasl_canonuser_init</span></code>
+function which returns a <code class="docutils literal notranslate"><span class="pre">sasl_canonuser_plug_t</span></code> in order
 to load successfully.  They must implement at least one of
-the <code class="docutils literal"><span class="pre">canon_user_client</span></code> or <code class="docutils literal"><span class="pre">canon_user_server</span></code> members
-of the <code class="docutils literal"><span class="pre">sasl_canonuser_plug_t</span></code>.  The INTERNAL canon_user plugin
+the <code class="docutils literal notranslate"><span class="pre">canon_user_client</span></code> or <code class="docutils literal notranslate"><span class="pre">canon_user_server</span></code> members
+of the <code class="docutils literal notranslate"><span class="pre">sasl_canonuser_plug_t</span></code>.  The INTERNAL canon_user plugin
 that is inside of the glue code implements both in the same way.</p>
 </div>
 <div class="section" id="auxiliary-property-auxprop-plugins">
@@ -794,18 +792,18 @@ allow for an easy way to perform password and secret lookups (as well
 as other information needed for authentication and authorization)
 from directory services, and in the same request allow the application
 to receive properties that it needs to provide the service.</p>
-<p>Auxprop plugins need to export the <code class="docutils literal"><span class="pre">sasl_auxprop_init</span></code> function
-and pass back a <code class="docutils literal"><span class="pre">sasl_auxprop_plug_t</span></code> in order to load
+<p>Auxprop plugins need to export the <code class="docutils literal notranslate"><span class="pre">sasl_auxprop_init</span></code> function
+and pass back a <code class="docutils literal notranslate"><span class="pre">sasl_auxprop_plug_t</span></code> in order to load
 successfully.  The sasldb plugin included with the Cyrus SASL
 distribution would be a good place to start.</p>
 <p>Interfacing with property contexts is extremely well documented in
-<code class="docutils literal"><span class="pre">prop.h</span></code> and so that is omitted here.  The only important
+<code class="docutils literal notranslate"><span class="pre">prop.h</span></code> and so that is omitted here.  The only important
 note is to be sure that you are using the interfaces provided
-through the <code class="docutils literal"><span class="pre">sasl_utils_t</span></code> structure and not calling
+through the <code class="docutils literal notranslate"><span class="pre">sasl_utils_t</span></code> structure and not calling
 the functions directly.</p>
 <p>To successfully implement an auxprop plugin there is only one
-required function to implement, that is the <code class="docutils literal"><span class="pre">auxprop_lookup</span></code>
-member of the <code class="docutils literal"><span class="pre">sasl_auxprop_plug_t</span></code>.  This is called
+required function to implement, that is the <code class="docutils literal notranslate"><span class="pre">auxprop_lookup</span></code>
+member of the <code class="docutils literal notranslate"><span class="pre">sasl_auxprop_plug_t</span></code>.  This is called
 just after canonicalization of the username, with the canonicalized
 username.  It can then do whatever lookups are necessary for any
 of the requested auxiliary properties.</p>
@@ -833,7 +831,7 @@ of the requested auxiliary properties.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -860,7 +858,6 @@ of the requested auxiliary properties.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

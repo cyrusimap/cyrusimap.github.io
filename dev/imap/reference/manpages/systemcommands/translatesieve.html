@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,75 +787,73 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-translatesieve(8)"></span><div class="section" id="translatesieve">
+  <span class="target" id="std-cyrusman-translatesieve-8"><span id="std:cyrusman-translatesieve(8)"></span></span><div class="section" id="translatesieve">
 <span id="imap-reference-manpages-systemcommands-translatesieve"></span><h1><strong>translatesieve</strong><a class="headerlink" href="#translatesieve" title="Permalink to this headline">¶</a></h1>
 <p>Translate sieve scripts to use unixhierarchysep and/or altnamespace.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>translatesieve</strong> [<strong>-f</strong>] [<strong>-a</strong>] [<strong>-u</strong>] [<strong>-n</strong>] [<strong>-v</strong>] [<strong>-C</strong> <em>imapd.conf</em>]
-</pre>
+<pre class="literal-block"><strong>translatesieve</strong> [<strong>-f</strong>] [<strong>-a</strong>] [<strong>-u</strong>] [<strong>-n</strong>] [<strong>-v</strong>] [<strong>-C</strong> <em>imapd.conf</em>]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>translatesieve</strong> can both translate the mailbox separator characters
 in sieve scripts from traditional netnews style -- '.' -- to new Unix
 style -- '/' -- and vice versa.  It can also convert sieve scripts to
-use <code class="docutils literal"><span class="pre">altnamespace</span></code> mailbox naming conventions.  Please also see
+use <code class="docutils literal notranslate"><span class="pre">altnamespace</span></code> mailbox naming conventions.  Please also see
 <a class="reference internal" href="../../../concepts/features/namespaces.html#mailbox-namespaces"><span class="std std-ref">Mailbox namespaces</span></a> for details.</p>
 <p>In its default mode, <strong>translatesieve</strong> assumes that the old configuration
-used <em>both</em> <code class="docutils literal"><span class="pre">unixhierarchysep:</span> <span class="pre">no</span></code> and <code class="docutils literal"><span class="pre">altnamespace:</span> <span class="pre">no</span></code>.  If your
+used <em>both</em> <code class="docutils literal notranslate"><span class="pre">unixhierarchysep:</span> <span class="pre">no</span></code> and <code class="docutils literal notranslate"><span class="pre">altnamespace:</span> <span class="pre">no</span></code>.  If your
 configuration was already using one of these, then use the appropriate
-flag, <strong>-u</strong> for <code class="docutils literal"><span class="pre">unixhierarchysep:</span> <span class="pre">yes</span></code> or <strong>-a</strong> for
-<code class="docutils literal"><span class="pre">altnamespace:</span> <span class="pre">yes</span></code>.  Failure to do so may ruin your sieve scripts.</p>
+flag, <strong>-u</strong> for <code class="docutils literal notranslate"><span class="pre">unixhierarchysep:</span> <span class="pre">yes</span></code> or <strong>-a</strong> for
+<code class="docutils literal notranslate"><span class="pre">altnamespace:</span> <span class="pre">yes</span></code>.  Failure to do so may ruin your sieve scripts.</p>
 <p>A &quot;Dry run&quot; mode is available via <strong>-n</strong> and you are strongly encouraged
 to use this.</p>
-<p><strong>translatesieve</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>translatesieve</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p>Must be run as the cyrus user.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-f">
-<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-f" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Keep going on errors.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-a" title="Permalink to this definition">¶</a></dt>
-<dd><p>Translate from a configuration which already used <code class="docutils literal"><span class="pre">altnamespace:</span> <span class="pre">yes</span></code>.</p>
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate from a configuration which already used <code class="docutils literal notranslate"><span class="pre">altnamespace:</span> <span class="pre">yes</span></code>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-u">
-<code class="descname">-u</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Translate from a configuration which already used <code class="docutils literal"><span class="pre">unixhierarchysep:</span> <span class="pre">yes</span></code>.</p>
+<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate from a configuration which already used <code class="docutils literal notranslate"><span class="pre">unixhierarchysep:</span> <span class="pre">yes</span></code>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-n">
-<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-n" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dry-run mode.  No changes will be written, but you'll be shown what would
 be changed.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-v" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-translatesieve-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose mode.  Note: -n implies -v.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-translatesieve-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-translatesieve-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-translatesieve-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-translatesieve-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -878,7 +878,7 @@ be changed.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -904,7 +904,6 @@ be changed.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

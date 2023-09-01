@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,14 +786,12 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-cvt_cyrusdb(8)"></span><div class="section" id="cvt-cyrusdb">
+  <span class="target" id="std-cyrusman-cvt_cyrusdb-8"><span id="std:cyrusman-cvt_cyrusdb(8)"></span></span><div class="section" id="cvt-cyrusdb">
 <span id="imap-reference-manpages-systemcommands-cvt-cyrusdb"></span><h1><strong>cvt_cyrusdb</strong><a class="headerlink" href="#cvt-cyrusdb" title="Permalink to this headline">¶</a></h1>
 <p>Convert a database file between cyrus database formats</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cvt_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <em>old-file</em> <em>old-fileformat</em> <em>new-file</em> <em>new-file-format</em>
-</pre>
+<pre class="literal-block"><strong>cvt_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <em>old-file</em> <em>old-fileformat</em> <em>new-file</em> <em>new-file-format</em></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -799,40 +799,38 @@
 database backends.  Note that you should not attempt to use the same
 file for input and output.</p>
 <p>Running without any options will list the available database backends.</p>
-<p><strong>cvt_cyrusdb</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>cvt_cyrusdb</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Note that the file locations are NOT read out of the configuration
+<p class="admonition-title">Note</p>
+<p>Note that the file locations are NOT read out of the configuration
 file, and must be supplied on the command line.</p>
 </div>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cvt_cyrusdb-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-cvt_cyrusdb-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-cvt-cyrusdb-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cvt_cyrusdb-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cvt_cyrusdb</strong>
-</pre>
+<pre class="literal-block"><strong>cvt_cyrusdb</strong></pre>
 <blockquote>
-<div>Display list of available backends.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">cvt_cyrusdb</span> <span class="p">[</span><span class="o">-</span><span class="n">C</span> <span class="n">altconfig</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">old</span> <span class="n">db</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">old</span> <span class="n">db</span> <span class="n">backend</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">db</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">db</span> <span class="n">backend</span><span class="o">&gt;</span>
+<div><p>Display list of available backends.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">cvt_cyrusdb</span> <span class="p">[</span><span class="o">-</span><span class="n">C</span> <span class="n">altconfig</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">old</span> <span class="n">db</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">old</span> <span class="n">db</span> <span class="n">backend</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">db</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">db</span> <span class="n">backend</span><span class="o">&gt;</span>
 <span class="n">Usable</span> <span class="n">Backends</span><span class="p">:</span>  <span class="n">flat</span><span class="p">,</span> <span class="n">skiplist</span><span class="p">,</span> <span class="n">quotalegacy</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>cvt_cyrusdb</strong> /var/lib/imap/mailboxes.db skiplist /tmp/mailboxes.db berkeley-nosync
-</pre>
+<pre class="literal-block"><strong>cvt_cyrusdb</strong> /var/lib/imap/mailboxes.db skiplist /tmp/mailboxes.db berkeley-nosync</pre>
 <blockquote>
-<div>Convert <em>/var/lib/imap/mailboxes.db</em> from <strong>skiplist</strong> format to
-<em>/tmp/mailboxes.db</em> in <strong>berkeley-nosync</strong> format.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Converting</span> <span class="kn">from</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span> <span class="p">(</span><span class="n">skiplist</span><span class="p">)</span> <span class="n">to</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span> <span class="p">(</span><span class="n">berkeley</span><span class="o">-</span><span class="n">nosync</span><span class="p">)</span>
+<div><p>Convert <em>/var/lib/imap/mailboxes.db</em> from <strong>skiplist</strong> format to
+<em>/tmp/mailboxes.db</em> in <strong>berkeley-nosync</strong> format.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Converting</span> <span class="kn">from</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span> <span class="p">(</span><span class="n">skiplist</span><span class="p">)</span> <span class="n">to</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mailboxes</span><span class="o">.</span><span class="n">db</span> <span class="p">(</span><span class="n">berkeley</span><span class="o">-</span><span class="n">nosync</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -842,7 +840,7 @@ file, and must be supplied on the command line.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -867,7 +865,7 @@ file, and must be supplied on the command line.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 30 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -893,7 +891,6 @@ file, and must be supplied on the command line.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

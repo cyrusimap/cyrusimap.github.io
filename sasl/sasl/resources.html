@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -38,7 +40,7 @@
     <link rel="top" title="Cyrus SASL 2.1.28 documentation" href="../index.html"/>
         <link rel="up" title="Operations" href="../operations.html"/>
         <link rel="next" title="Developers" href="../developer.html"/>
-        <link rel="prev" title="RFCs and drafts" href="faqs/rfcs.html"/> 
+        <link rel="prev" title="Why does SCRAM not work with CyrusSaslauthd?" href="faqs/scram.html"/> 
 
   
   
@@ -195,7 +197,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -226,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -320,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -349,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Other Documentation &amp; Resources</a></li>
@@ -365,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -379,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -410,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -488,13 +486,13 @@
   <div class="section" id="other-documentation-resources">
 <span id="resources"></span><h1>Other Documentation &amp; Resources<a class="headerlink" href="#other-documentation-resources" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference external" href="http://www.oreillynet.com/pub/a/network/2002/04/09/sasl.html">Using SASL: Pluggable Security</a></li>
-<li><a class="reference external" href="http://www.oreillynet.com/pub/a/network/2002/04/30/sasl2.html">Using SASL: CMU&#8217;s Cyrus SASL Library</a></li>
-<li><a class="reference external" href="http://www.melnikov.ca/mel/devel/SASL_info.html">Information on SASL mechanisms, profiles, servers and clients implementing SASL</a></li>
-<li><a class="reference external" href="https://www.sendmail.org/~ca/email/auth.html">FAQ from Sendmail</a></li>
-<li><a class="reference external" href="http://www-cs-students.stanford.edu/~tjw/srp/ndss.html">The Secure Remote Password Protocol</a> paper by Thomas Wu</li>
-<li><a class="reference external" href="http://beepcore-tcl.sourceforge.net/tclsasl.html">TCL extensions for SASL</a></li>
-<li><a class="reference external" href="https://www.cs.miami.edu/home/burt/learning/Csc521.071/docs/CIFS-TR-1p00_FINAL.pdf">Common Internet File System (CIFS) Technical Reference</a> (SMB/NTLM)</li>
+<li><p><a class="reference external" href="http://www.oreillynet.com/pub/a/network/2002/04/09/sasl.html">Using SASL: Pluggable Security</a></p></li>
+<li><p><a class="reference external" href="http://www.oreillynet.com/pub/a/network/2002/04/30/sasl2.html">Using SASL: CMU’s Cyrus SASL Library</a></p></li>
+<li><p><a class="reference external" href="http://www.melnikov.ca/mel/devel/SASL_info.html">Information on SASL mechanisms, profiles, servers and clients implementing SASL</a></p></li>
+<li><p><a class="reference external" href="https://www.sendmail.org/~ca/email/auth.html">FAQ from Sendmail</a></p></li>
+<li><p><a class="reference external" href="http://www-cs-students.stanford.edu/~tjw/srp/ndss.html">The Secure Remote Password Protocol</a> paper by Thomas Wu</p></li>
+<li><p><a class="reference external" href="http://beepcore-tcl.sourceforge.net/tclsasl.html">TCL extensions for SASL</a></p></li>
+<li><p><a class="reference external" href="https://www.cs.miami.edu/home/burt/learning/Csc521.071/docs/CIFS-TR-1p00_FINAL.pdf">Common Internet File System (CIFS) Technical Reference</a> (SMB/NTLM)</p></li>
 </ul>
 </div>
 
@@ -507,7 +505,7 @@
         <a href="../developer.html" class="btn btn-neutral float-right" title="Developers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="faqs/rfcs.html" class="btn btn-neutral" title="RFCs and drafts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="faqs/scram.html" class="btn btn-neutral" title="Why does SCRAM not work with CyrusSaslauthd?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -519,7 +517,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -546,7 +544,6 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

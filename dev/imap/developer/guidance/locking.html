@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,10 +793,10 @@
 <h2>Mailboxes<a class="headerlink" href="#mailboxes" title="Permalink to this headline">¶</a></h2>
 <p>For mailboxes, we lock in this order:</p>
 <ul class="simple">
-<li>Mailbox Namelock (shared) &lt;== possibly reversible with
-conversationsdb</li>
-<li>user conversations db</li>
-<li>cyrus.index</li>
+<li><p>Mailbox Namelock (shared) &lt;== possibly reversible with
+conversationsdb</p></li>
+<li><p>user conversations db</p></li>
+<li><p>cyrus.index</p></li>
 </ul>
 <p>If you want to do any mailboxes.db transactions, they need to open
 and close without changing any mailbox locking during the transaction.</p>
@@ -805,42 +807,42 @@ locking during their transaction.</p>
 <div class="section" id="xapian">
 <h2>Xapian<a class="headerlink" href="#xapian" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Xapian per-user NAMELOCK (shared or exclusive)</li>
-<li>xapianactive file lock (shared or exclusive)</li>
+<li><p>Xapian per-user NAMELOCK (shared or exclusive)</p></li>
+<li><p>xapianactive file lock (shared or exclusive)</p></li>
 </ul>
 <p>Shared namelock holds the following invariants:</p>
 <ul class="simple">
-<li>xapianactive file contents are not changed</li>
-<li>directories mentioned in xapianactive are not cleaned up</li>
+<li><p>xapianactive file contents are not changed</p></li>
+<li><p>directories mentioned in xapianactive are not cleaned up</p></li>
 </ul>
 <p>Xapianactive exclusive lock holds the following invariants:</p>
 <ul class="simple">
-<li>owner may write to first database mentioned in xapianactive</li>
+<li><p>owner may write to first database mentioned in xapianactive</p></li>
 </ul>
 <p>Xapianactive shared lock holds:</p>
 <ul class="simple">
-<li>all databases in xapianactive are readable and a consistent
+<li><p>all databases in xapianactive are readable and a consistent
 read can be made across all of them, even with multiple requests
-while the lock is held.</li>
+while the lock is held.</p></li>
 </ul>
 <div class="section" id="locking-orders">
 <h3>Locking orders<a class="headerlink" href="#locking-orders" title="Permalink to this headline">¶</a></h3>
 <p>SHARED case:</p>
 <ul class="simple">
-<li>user conversations db &lt;=== possibly reversible with SHARED xapian
-namelock</li>
-<li>SHARED xapian namelock</li>
-<li>xapianactive lock (shared to search, exclusive to write)</li>
-<li>cyrus.index may be locked either side of the xapianactive lock,
-because the conversationsdb lock protects it from races.</li>
+<li><p>user conversations db &lt;=== possibly reversible with SHARED xapian
+namelock</p></li>
+<li><p>SHARED xapian namelock</p></li>
+<li><p>xapianactive lock (shared to search, exclusive to write)</p></li>
+<li><p>cyrus.index may be locked either side of the xapianactive lock,
+because the conversationsdb lock protects it from races.</p></li>
 </ul>
 <p>EXCLUSIVE case:</p>
 <ul class="simple">
-<li>EXCLUSIVE xapian namelock
+<li><p>EXCLUSIVE xapian namelock
 That's it.  While you've got this, you can add or delete items from
 the xapianactive file, and delete paths on disk for directories
 that you have removed (either during or after locking).  No other
-locks are permitted.</li>
+locks are permitted.</p></li>
 </ul>
 <p>If you hold a SHARED xapian namelock, you may write to a .NEW folder
 for a xapianactive entry that you created without taking any additional
@@ -851,20 +853,20 @@ read it.  This is how the repack case works.</p>
 <div class="section" id="lock-lifetime">
 <h2>Lock lifetime<a class="headerlink" href="#lock-lifetime" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Shared mailbox namelock:
-*   possibly hours</li>
-<li>conversations db and below
-*   short as possible</li>
+<li><p>Shared mailbox namelock:
+*   possibly hours</p></li>
+<li><p>conversations db and below
+*   short as possible</p></li>
 </ul>
 <p>Mailbox namelock holds the following invariants:</p>
 <ul class="simple">
-<li>cyrus.index may not be repacked, however flags and modseqs may be
-updated</li>
-<li>cyrus.annotations records may change (kind of buggy and bad,
+<li><p>cyrus.index may not be repacked, however flags and modseqs may be
+updated</p></li>
+<li><p>cyrus.annotations records may change (kind of buggy and bad,
 ideally we'd always write new ones if we changed them and keep the
-old ones)</li>
-<li>cyrus.cache may be appended, but never changed</li>
-<li>spool files may not be deleted (already can't be changed)</li>
+old ones)</p></li>
+<li><p>cyrus.cache may be appended, but never changed</p></li>
+<li><p>spool files may not be deleted (already can't be changed)</p></li>
 </ul>
 </div>
 </div>
@@ -890,7 +892,7 @@ old ones)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -916,7 +918,6 @@ old ones)</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

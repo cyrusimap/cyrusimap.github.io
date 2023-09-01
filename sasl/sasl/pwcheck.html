@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -498,105 +494,124 @@
 <div class="section" id="saslauthd">
 <h2>Saslauthd<a class="headerlink" href="#saslauthd" title="Permalink to this headline">¶</a></h2>
 <p><strong>What is saslauthd?</strong> saslauthd is a daemon which validates</p>
-<p><code class="docutils literal"><span class="pre">ldap_servers</span></code> - <code class="docutils literal"><span class="pre">ldap://localhost</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_servers</span></code> - <code class="docutils literal notranslate"><span class="pre">ldap://localhost</span></code></p>
 <blockquote>
-<div>Specify a space separated list of LDAP server URIs of the form <strong>ldap[si]://[name[:port]]</strong>. See the <code class="docutils literal"><span class="pre">ldap.conf</span></code> <em>URI</em> option for formatting details.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_bind_dn</span></code> - none</p>
-<blockquote>
-<div>When simple authentication is desired, specify a distinguished name to use for a simple authenticated bind or a simple unauthenticated bind. Do not specify if an anonymous bind is desired. This option is ignored when the evaluated <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is <code class="docutils literal"><span class="pre">fastbind</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_bind_pw</span></code> - none</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">ldap_bind_pw</span></code> is an alias for <code class="docutils literal"><span class="pre">ldap_password</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_password</span></code> - none</p>
-<blockquote>
-<div>When simple authentication is desired, specify a password to perform an authenticated bind, or do not specify for an unauthenticated or anonymous bind. When SASL authentication is desired, specify a password to use where required by the underlying SASL mechanism. This option is ignored when the evaluated <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is <code class="docutils literal"><span class="pre">fastbind</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_version</span></code> - 3</p>
-<blockquote>
-<div>Defaults to version <em>3</em>. If <code class="docutils literal"><span class="pre">ldap_use_sasl</span></code> or <code class="docutils literal"><span class="pre">ldap_start_tls</span></code> are enabled, this option will be ignored, and will conform to the default value. Version <em>3</em> <strong>is</strong> compatible with anonymous binds, simple authenticated binds and simple unauthenticated binds. Version <em>2</em> should only be necessary where required by the server.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_search_base</span></code> - none</p>
-<blockquote>
-<div>When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>bind</em>, <code class="docutils literal"><span class="pre">ldap_search_base</span></code> will be used to search for the user&#8217;s distinguished name. When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is <em>custom</em>, <code class="docutils literal"><span class="pre">ldap_search_base</span></code> will be used to find the user&#8217;s <code class="docutils literal"><span class="pre">ldap_password_attr</span></code> attribute. When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>fastbind</em>, <code class="docutils literal"><span class="pre">ldap_search_base</span></code> is ignored. If <code class="docutils literal"><span class="pre">ldap_search_base</span></code> contains substitution tokens, they will be replaced as specified in the <code class="docutils literal"><span class="pre">ldap_filter</span></code> token expansion rules.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_filter</span></code> - uid=%u</p>
-<blockquote>
-<div><p>When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>bind</em>, <code class="docutils literal"><span class="pre">ldap_filter</span></code> will be used to search for the user&#8217;s distinguished name. When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is <em>custom</em>, <code class="docutils literal"><span class="pre">ldap_filter</span></code> will become, after token expansion, the user&#8217;s distinguished name. When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>fastbind</em>, <code class="docutils literal"><span class="pre">ldap_filter</span></code> is ignored.</p>
-<p>The following tokens, when contained within the <code class="docutils literal"><span class="pre">ldap_filter</span></code> option, will be substituted with the specified values:</p>
-<p><code class="docutils literal"><span class="pre">%%</span></code></p>
-<blockquote>
-<div>is replaced with a literal %.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">%u</span></code></p>
-<blockquote>
-<div>is replaced with the userid to be authenticated.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">%U</span></code></p>
-<blockquote>
-<div>is replaced by the portion of the userid before the first &#64; character. If an &#64; character does not exist in the userid, then <code class="docutils literal"><span class="pre">%U</span></code> would function identically to <code class="docutils literal"><span class="pre">%u</span></code>. For example, if the userid to be authenticated is <em>jsmith&#64;example.org</em>, <code class="docutils literal"><span class="pre">%u</span></code> would be replaced by <em>jsmith&#64;example.org</em> and <code class="docutils literal"><span class="pre">%U</span></code> would be replaced by <em>jsmith</em>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">%d</span></code></p>
-<blockquote>
-<div>is replaced by the portion of the userid after the first &#64; character. If an &#64; character does not exist in the userid, <code class="docutils literal"><span class="pre">%d</span></code> will be replaced by the <code class="docutils literal"><span class="pre">realm</span></code> value passed to <code class="docutils literal"><span class="pre">saslauthd</span></code>. If no <code class="docutils literal"><span class="pre">realm</span></code> value was passed to saslauthd, <code class="docutils literal"><span class="pre">%d</span></code> will be replaced by the configured <code class="docutils literal"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal"><span class="pre">ldap_default_realm</span></code> is not configured.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">%1-9</span></code></p>
-<blockquote>
-<div><p>Within a userid which contains an &#64; character, followed by a domain name, <code class="docutils literal"><span class="pre">%1</span></code> will be replaced by the top level domain, <code class="docutils literal"><span class="pre">%2</span></code> will be replaced by the secondary domain, <code class="docutils literal"><span class="pre">%3</span></code> will be replaced by the tertiary domain, up to and including <code class="docutils literal"><span class="pre">%9</span></code> which would be replaced by the ninth level domain. If no &#64; character exists in the userid, or if there is no domain name after the &#64; character, or if the specified hierarchical domain level does not exist, the option is replaced by the <code class="docutils literal"><span class="pre">realm</span></code> value passed to <code class="docutils literal"><span class="pre">saslauthd</span></code>. Should no <code class="docutils literal"><span class="pre">realm</span></code> value exist in those scenarios, the option is replaced by the configured <code class="docutils literal"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal"><span class="pre">ldap_default_realm</span></code> has not been configured.</p>
-<p>For example, if the userid to be authenticated is <em>jsmith&#64;example.org</em>, <code class="docutils literal"><span class="pre">%1</span></code> would be replaced by <em>org</em> and <code class="docutils literal"><span class="pre">%2</span></code> would be replaced by <em>example</em>.</p>
+<div><p>Specify a space separated list of LDAP server URIs of the form <strong>ldap[si]://[name[:port]]</strong>. See the <code class="docutils literal notranslate"><span class="pre">ldap.conf</span></code> <em>URI</em> option for formatting details.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">%s</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_bind_dn</span></code> - none</p>
 <blockquote>
-<div>is replaced by the <code class="docutils literal"><span class="pre">service</span></code> option passed to <code class="docutils literal"><span class="pre">saslauthd</span></code>, or by an empty string if no <code class="docutils literal"><span class="pre">service</span></code> option was passed.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">%r</span></code></p>
-<blockquote>
-<div>is replaced by the <code class="docutils literal"><span class="pre">realm</span></code> option passed to <code class="docutils literal"><span class="pre">saslauthd</span></code>. If no <code class="docutils literal"><span class="pre">realm</span></code> value was passed to saslauthd, <code class="docutils literal"><span class="pre">%r</span></code> will be replaced by the configured <code class="docutils literal"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal"><span class="pre">ldap_default_realm</span></code> is not configured.</div></blockquote>
+<div><p>When simple authentication is desired, specify a distinguished name to use for a simple authenticated bind or a simple unauthenticated bind. Do not specify if an anonymous bind is desired. This option is ignored when the evaluated <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is <code class="docutils literal notranslate"><span class="pre">fastbind</span></code>.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_password_attr</span></code> - userPassword</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_bind_pw</span></code> - none</p>
 <blockquote>
-<div>When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>custom</em>, <code class="docutils literal"><span class="pre">ldap_password_attr</span></code> specifies an attribute that will be requested and retrived. If successfully retrived, the authentication request will succeed if the <code class="docutils literal"><span class="pre">ldap_password_attr</span></code> attribute contains a supported password hash, and if the user submitted password matches the hash. When <code class="docutils literal"><span class="pre">ldap_auth_method</span></code> is <em>bind</em> or <em>fastbind</em>, <code class="docutils literal"><span class="pre">ldap_password_attr</span></code> is ignored.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_group_dn</span></code> - none</p>
-<blockquote>
-<div><p>If <code class="docutils literal"><span class="pre">ldap_group_dn</span></code> is specified, group authorization must also succeed (in addition to the prior authentication step), for the user&#8217;s authentication attempt to be successful. If <code class="docutils literal"><span class="pre">ldap_group_dn</span></code> contains substitution tokens, they will be replaced as specified in the <code class="docutils literal"><span class="pre">ldap_filter</span></code> token expansion rules. One additional token substitution is applicable to <code class="docutils literal"><span class="pre">ldap_group_dn</span></code>:</p>
-<p><code class="docutils literal"><span class="pre">%D</span></code></p>
-<blockquote>
-<div>is replaced by the distinguished name that was specified, or evaluated, in the authentication step. If <code class="docutils literal"><span class="pre">ldap_use_sasl</span></code> is enabled, the distinguished name will be resolved by performing an ldapwhoami extended operation after a successful authentication. If <code class="docutils literal"><span class="pre">ldap_group_dn</span></code> is specified and <code class="docutils literal"><span class="pre">ldap_use_sasl</span></code> is enabled, but the ldap server does not support the ldapwhoami extended operation, or if the ldapwhoami extended operation fails, then the user&#8217;s authentication attempt is unsuccessful.</div></blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ldap_bind_pw</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">ldap_password</span></code>.</p>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_group_attr</span></code> - uniqueMember</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_password</span></code> - none</p>
 <blockquote>
-<div><code class="docutils literal"><span class="pre">ldap_group_attr</span></code> is ignored unless <code class="docutils literal"><span class="pre">ldap_group_dn</span></code> is also specified and <code class="docutils literal"><span class="pre">ldap_group_match_method</span></code> is <em>attr</em>. <code class="docutils literal"><span class="pre">ldap_group_attr</span></code> specifies an attribute which contains the authenticating identity&#8217;s dinstinguished name. See the <code class="docutils literal"><span class="pre">ldap_group_match_method</span></code> entry for additional details.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_group_filter</span></code> - none</p>
-<p><code class="docutils literal"><span class="pre">ldap_group_search_base</span></code> - defaults to the evaluated <code class="docutils literal"><span class="pre">ldap_search_base</span></code></p>
-<p><code class="docutils literal"><span class="pre">ldap_group_scope</span></code> - <em>sub</em></p>
-<p><code class="docutils literal"><span class="pre">ldap_group_match_method</span></code> - attr</p>
-<p><code class="docutils literal"><span class="pre">ldap_default_realm</span></code> - none</p>
-<p><code class="docutils literal"><span class="pre">ldap_default_domain</span></code> - none</p>
+<div><p>When simple authentication is desired, specify a password to perform an authenticated bind, or do not specify for an unauthenticated or anonymous bind. When SASL authentication is desired, specify a password to use where required by the underlying SASL mechanism. This option is ignored when the evaluated <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is <code class="docutils literal notranslate"><span class="pre">fastbind</span></code>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_version</span></code> - 3</p>
 <blockquote>
-<div><code class="docutils literal"><span class="pre">ldap_default_domain</span></code> is an alias for <code class="docutils literal"><span class="pre">ldap_default_realm</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_auth_method</span></code> - bind</p>
-<p><code class="docutils literal"><span class="pre">ldap_timeout</span></code> - 5</p>
-<p><code class="docutils literal"><span class="pre">ldap_size_limit</span></code> - 1</p>
-<p><code class="docutils literal"><span class="pre">ldap_time_limit</span></code> - 5</p>
-<p><code class="docutils literal"><span class="pre">ldap_deref</span></code> - never</p>
-<p><code class="docutils literal"><span class="pre">ldap_referrals</span></code> - no</p>
-<p><code class="docutils literal"><span class="pre">ldap_restart</span></code> - yes</p>
-<p><code class="docutils literal"><span class="pre">ldap_scope</span></code> - sub</p>
-<p><code class="docutils literal"><span class="pre">ldap_use_sasl</span></code> - no</p>
-<p><code class="docutils literal"><span class="pre">ldap_id</span></code> - none</p>
-<p><code class="docutils literal"><span class="pre">ldap_sasl_authc_id</span></code> - none</p>
-<p><code class="docutils literal"><span class="pre">ldap_authz_id</span></code> - none</p>
+<div><p>Defaults to version <em>3</em>. If <code class="docutils literal notranslate"><span class="pre">ldap_use_sasl</span></code> or <code class="docutils literal notranslate"><span class="pre">ldap_start_tls</span></code> are enabled, this option will be ignored, and will conform to the default value. Version <em>3</em> <strong>is</strong> compatible with anonymous binds, simple authenticated binds and simple unauthenticated binds. Version <em>2</em> should only be necessary where required by the server.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code> - none</p>
 <blockquote>
-<div>Does not make any sense to supply an authz identity when performing sasl/fastbind.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_sasl_authz_id</span></code> - none</p>
+<div><p>When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>bind</em>, <code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code> will be used to search for the user’s distinguished name. When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is <em>custom</em>, <code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code> will be used to find the user’s <code class="docutils literal notranslate"><span class="pre">ldap_password_attr</span></code> attribute. When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>fastbind</em>, <code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code> is ignored. If <code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code> contains substitution tokens, they will be replaced as specified in the <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> token expansion rules.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> - uid=%u</p>
 <blockquote>
-<div><code class="docutils literal"><span class="pre">ldap_sasl_authz_id</span></code> is an alias for <code class="docutils literal"><span class="pre">ldap_authz_id</span></code>.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_realm</span></code> - none</p>
-<p><code class="docutils literal"><span class="pre">ldap_sasl_realm</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_mech</span></code> -</p>
+<div><p>When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>bind</em>, <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> will be used to search for the user’s distinguished name. When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is <em>custom</em>, <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> will become, after token expansion, the user’s distinguished name. When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>fastbind</em>, <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> is ignored.</p>
+<p>The following tokens, when contained within the <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> option, will be substituted with the specified values:</p>
+<p><code class="docutils literal notranslate"><span class="pre">%%</span></code></p>
 <blockquote>
-<div>It doesn&#8217;t make any sense to use a mech that does not require an authname and password, when using fastbind.</div></blockquote>
-<p><code class="docutils literal"><span class="pre">ldap_sasl_mech</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_sasl_secprops</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_start_tls</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_check_peer</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_cacert_file</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_cacert_dir</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_ciphers</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_cert</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_tls_key</span></code> -</p>
-<p><code class="docutils literal"><span class="pre">ldap_debug</span></code> -</p>
+<div><p>is replaced with a literal %.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%u</span></code></p>
+<blockquote>
+<div><p>is replaced with the userid to be authenticated.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%U</span></code></p>
+<blockquote>
+<div><p>is replaced by the portion of the userid before the first &#64; character. If an &#64; character does not exist in the userid, then <code class="docutils literal notranslate"><span class="pre">%U</span></code> would function identically to <code class="docutils literal notranslate"><span class="pre">%u</span></code>. For example, if the userid to be authenticated is <em>jsmith&#64;example.org</em>, <code class="docutils literal notranslate"><span class="pre">%u</span></code> would be replaced by <em>jsmith&#64;example.org</em> and <code class="docutils literal notranslate"><span class="pre">%U</span></code> would be replaced by <em>jsmith</em>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%d</span></code></p>
+<blockquote>
+<div><p>is replaced by the portion of the userid after the first &#64; character. If an &#64; character does not exist in the userid, <code class="docutils literal notranslate"><span class="pre">%d</span></code> will be replaced by the <code class="docutils literal notranslate"><span class="pre">realm</span></code> value passed to <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code>. If no <code class="docutils literal notranslate"><span class="pre">realm</span></code> value was passed to saslauthd, <code class="docutils literal notranslate"><span class="pre">%d</span></code> will be replaced by the configured <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code> is not configured.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%1-9</span></code></p>
+<blockquote>
+<div><p>Within a userid which contains an &#64; character, followed by a domain name, <code class="docutils literal notranslate"><span class="pre">%1</span></code> will be replaced by the top level domain, <code class="docutils literal notranslate"><span class="pre">%2</span></code> will be replaced by the secondary domain, <code class="docutils literal notranslate"><span class="pre">%3</span></code> will be replaced by the tertiary domain, up to and including <code class="docutils literal notranslate"><span class="pre">%9</span></code> which would be replaced by the ninth level domain. If no &#64; character exists in the userid, or if there is no domain name after the &#64; character, or if the specified hierarchical domain level does not exist, the option is replaced by the <code class="docutils literal notranslate"><span class="pre">realm</span></code> value passed to <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code>. Should no <code class="docutils literal notranslate"><span class="pre">realm</span></code> value exist in those scenarios, the option is replaced by the configured <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code> has not been configured.</p>
+<p>For example, if the userid to be authenticated is <em>jsmith&#64;example.org</em>, <code class="docutils literal notranslate"><span class="pre">%1</span></code> would be replaced by <em>org</em> and <code class="docutils literal notranslate"><span class="pre">%2</span></code> would be replaced by <em>example</em>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%s</span></code></p>
+<blockquote>
+<div><p>is replaced by the <code class="docutils literal notranslate"><span class="pre">service</span></code> option passed to <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code>, or by an empty string if no <code class="docutils literal notranslate"><span class="pre">service</span></code> option was passed.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">%r</span></code></p>
+<blockquote>
+<div><p>is replaced by the <code class="docutils literal notranslate"><span class="pre">realm</span></code> option passed to <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code>. If no <code class="docutils literal notranslate"><span class="pre">realm</span></code> value was passed to saslauthd, <code class="docutils literal notranslate"><span class="pre">%r</span></code> will be replaced by the configured <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code>, or by an empty string if <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code> is not configured.</p>
+</div></blockquote>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_password_attr</span></code> - userPassword</p>
+<blockquote>
+<div><p>When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is evaluated as <em>custom</em>, <code class="docutils literal notranslate"><span class="pre">ldap_password_attr</span></code> specifies an attribute that will be requested and retrived. If successfully retrived, the authentication request will succeed if the <code class="docutils literal notranslate"><span class="pre">ldap_password_attr</span></code> attribute contains a supported password hash, and if the user submitted password matches the hash. When <code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> is <em>bind</em> or <em>fastbind</em>, <code class="docutils literal notranslate"><span class="pre">ldap_password_attr</span></code> is ignored.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code> - none</p>
+<blockquote>
+<div><p>If <code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code> is specified, group authorization must also succeed (in addition to the prior authentication step), for the user’s authentication attempt to be successful. If <code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code> contains substitution tokens, they will be replaced as specified in the <code class="docutils literal notranslate"><span class="pre">ldap_filter</span></code> token expansion rules. One additional token substitution is applicable to <code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">%D</span></code></p>
+<blockquote>
+<div><p>is replaced by the distinguished name that was specified, or evaluated, in the authentication step. If <code class="docutils literal notranslate"><span class="pre">ldap_use_sasl</span></code> is enabled, the distinguished name will be resolved by performing an ldapwhoami extended operation after a successful authentication. If <code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code> is specified and <code class="docutils literal notranslate"><span class="pre">ldap_use_sasl</span></code> is enabled, but the ldap server does not support the ldapwhoami extended operation, or if the ldapwhoami extended operation fails, then the user’s authentication attempt is unsuccessful.</p>
+</div></blockquote>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_attr</span></code> - uniqueMember</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ldap_group_attr</span></code> is ignored unless <code class="docutils literal notranslate"><span class="pre">ldap_group_dn</span></code> is also specified and <code class="docutils literal notranslate"><span class="pre">ldap_group_match_method</span></code> is <em>attr</em>. <code class="docutils literal notranslate"><span class="pre">ldap_group_attr</span></code> specifies an attribute which contains the authenticating identity’s dinstinguished name. See the <code class="docutils literal notranslate"><span class="pre">ldap_group_match_method</span></code> entry for additional details.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_filter</span></code> - none</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_search_base</span></code> - defaults to the evaluated <code class="docutils literal notranslate"><span class="pre">ldap_search_base</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_scope</span></code> - <em>sub</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_group_match_method</span></code> - attr</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code> - none</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_default_domain</span></code> - none</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ldap_default_domain</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">ldap_default_realm</span></code>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_auth_method</span></code> - bind</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_timeout</span></code> - 5</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_size_limit</span></code> - 1</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_time_limit</span></code> - 5</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_deref</span></code> - never</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_referrals</span></code> - no</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_restart</span></code> - yes</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_scope</span></code> - sub</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_use_sasl</span></code> - no</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_id</span></code> - none</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_authc_id</span></code> - none</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_authz_id</span></code> - none</p>
+<blockquote>
+<div><p>Does not make any sense to supply an authz identity when performing sasl/fastbind.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_authz_id</span></code> - none</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_authz_id</span></code> is an alias for <code class="docutils literal notranslate"><span class="pre">ldap_authz_id</span></code>.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_realm</span></code> - none</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_realm</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_mech</span></code> -</p>
+<blockquote>
+<div><p>It doesn’t make any sense to use a mech that does not require an authname and password, when using fastbind.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_mech</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_sasl_secprops</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_start_tls</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_check_peer</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_cacert_file</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_cacert_dir</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_ciphers</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_cert</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_tls_key</span></code> -</p>
+<p><code class="docutils literal notranslate"><span class="pre">ldap_debug</span></code> -</p>
 </div>
 <div class="section" id="authdaemon">
 <h2>Authdaemon<a class="headerlink" href="#authdaemon" title="Permalink to this headline">¶</a></h2>
@@ -630,7 +645,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -657,7 +672,6 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

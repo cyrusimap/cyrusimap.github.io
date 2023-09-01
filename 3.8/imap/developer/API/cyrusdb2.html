@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -788,7 +790,7 @@
 <h1>cyrusdb API<a class="headerlink" href="#cyrusdb-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="intro">
 <h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">cyrusdb</span></code> API is a common interface to a key-value store, used
+<p>The <code class="docutils literal notranslate"><span class="pre">cyrusdb</span></code> API is a common interface to a key-value store, used
 throughout the Cyrus code. It allows a choice of different backends for
 different access patterns, while ensuring a consistent interface.</p>
 <p>This document will describe the interface, and how to use the cyrusdb
@@ -800,32 +802,32 @@ breaking things. Exceptions are noted below.</p>
 </div>
 <div class="section" id="code-layout">
 <h2>Code Layout<a class="headerlink" href="#code-layout" title="Permalink to this headline">¶</a></h2>
-<p>The implementation of each interface is in <code class="docutils literal"><span class="pre">lib/cyrusdb_NAME.c</span></code>, for
-example lib/cyrusdb_flat.c. General functions are in <code class="docutils literal"><span class="pre">lib/cyrusdb.c</span></code>
-and the interface in <code class="docutils literal"><span class="pre">lib/cyrusdb.h</span></code>.</p>
+<p>The implementation of each interface is in <code class="docutils literal notranslate"><span class="pre">lib/cyrusdb_NAME.c</span></code>, for
+example lib/cyrusdb_flat.c. General functions are in <code class="docutils literal notranslate"><span class="pre">lib/cyrusdb.c</span></code>
+and the interface in <code class="docutils literal notranslate"><span class="pre">lib/cyrusdb.h</span></code>.</p>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>The name of the backend for each of the main internal databases can be
-configured in imapd.conf, for example: <code class="docutils literal"><span class="pre">annotation_db:</span> <span class="pre">skiplist</span></code>. This
+configured in imapd.conf, for example: <code class="docutils literal notranslate"><span class="pre">annotation_db:</span> <span class="pre">skiplist</span></code>. This
 is then read in imap/global.h and imap/global.c during startup, so that
-the global variable <code class="docutils literal"><span class="pre">config_annotation_db</span></code> gets set to the configured
+the global variable <code class="docutils literal notranslate"><span class="pre">config_annotation_db</span></code> gets set to the configured
 backend name:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">config_annotation_db</span> <span class="o">=</span> <span class="n">config_getstring</span><span class="p">(</span><span class="n">IMAPOPT_ANNOTATION_DB</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config_annotation_db</span> <span class="o">=</span> <span class="n">config_getstring</span><span class="p">(</span><span class="n">IMAPOPT_ANNOTATION_DB</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>(Beware the misleading naming here: <code class="docutils literal"><span class="pre">config_annotation_db</span></code> is a string
+<p>(Beware the misleading naming here: <code class="docutils literal notranslate"><span class="pre">config_annotation_db</span></code> is a string
 describing the <em>backend</em> used by the database, not, say, its location on
 disk.)</p>
 <p>Internally, the main module for each database sets up struct of pointers
 to the cyrusdb functions it implements, which is registered in
-<code class="docutils literal"><span class="pre">lib/cyrusdb.c</span></code></p>
-<p><code class="docutils literal"><span class="pre">lib/cyrusdb.c</span></code> provides backend-agnostic wrapper functions for
+<code class="docutils literal notranslate"><span class="pre">lib/cyrusdb.c</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">lib/cyrusdb.c</span></code> provides backend-agnostic wrapper functions for
 interacting with cyrusdb databases.</p>
 </div>
 <div class="section" id="a-full-example">
 <h2>A full example<a class="headerlink" href="#a-full-example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">db</span> <span class="o">*</span><span class="n">db</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">db</span> <span class="o">*</span><span class="n">db</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="n">struct</span> <span class="n">txn</span> <span class="o">*</span><span class="n">tid</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">filename</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">CYRUSDB_CREATE</span><span class="p">;</span>
@@ -847,7 +849,7 @@ interacting with cyrusdb databases.</p>
 </div>
 <p>Note that you always open a database first, and close it at the end. You
 must always call cyrus_init() and cyrus_done() to properly initialize
-and clean up the <code class="docutils literal"><span class="pre">cyrusdb</span></code> environments.</p>
+and clean up the <code class="docutils literal notranslate"><span class="pre">cyrusdb</span></code> environments.</p>
 <p>This example also uses a transaction, meaning that the database is
 locked in exclusive mode between the 'fetch' (the first use of the
 transaction) and the commit.</p>
@@ -858,14 +860,14 @@ transaction) and the commit.</p>
 non-transactional. The value of the 'tid' parameter decides which mode
 is used. There are three possible values:</p>
 <ul class="simple">
-<li>NULL - non-transactional. Will create a temporary lock for the
+<li><p>NULL - non-transactional. Will create a temporary lock for the
 duration of the current action - either a write lock for &quot;store&quot; or a
 read lock for &quot;fetch&quot;. If you call &quot;foreach&quot;, the lock will be
-dropped between each record fetched</li>
-<li>Pointer to NULL - transactional, transaction not yet started. Will
+dropped between each record fetched</p></li>
+<li><p>Pointer to NULL - transactional, transaction not yet started. Will
 always take a write lock on the database, and update the pointer to
-point to the new transaction.</li>
-<li>Pointer to a valid transaction. Will keep using this transaction</li>
+point to the new transaction.</p></li>
+<li><p>Pointer to a valid transaction. Will keep using this transaction</p></li>
 </ul>
 <p>If you are currently in a transaction, you MUST pass the same
 transaction to every database call. It is not possible to mix or nest
@@ -881,18 +883,18 @@ an error code on failure</p>
 <div class="section" id="cyrusdb-init-void">
 <h3>cyrusdb_init(void)<a class="headerlink" href="#cyrusdb-init-void" title="Permalink to this headline">¶</a></h3>
 <p>Is called once per process. Don't call this yourself, use
-<code class="docutils literal"><span class="pre">cyrus_init()</span></code>. No other calls will be made until this is called.</p>
+<code class="docutils literal notranslate"><span class="pre">cyrus_init()</span></code>. No other calls will be made until this is called.</p>
 </div>
 <div class="section" id="cyrusdb-done-void">
 <h3>cyrusdb_done(void)<a class="headerlink" href="#cyrusdb-done-void" title="Permalink to this headline">¶</a></h3>
-<p>The opposite of <code class="docutils literal"><span class="pre">cyrusdb_init()</span></code> - called once per process to do any
+<p>The opposite of <code class="docutils literal notranslate"><span class="pre">cyrusdb_init()</span></code> - called once per process to do any
 cleaning up after all database usage is finished. Don't call this
-yourself, use <code class="docutils literal"><span class="pre">cyrus_done()</span></code>.</p>
+yourself, use <code class="docutils literal notranslate"><span class="pre">cyrus_done()</span></code>.</p>
 </div>
 <div class="section" id="cyrusdb-sync-const-char-backend">
 <h3>cyrusdb_sync(const char *backend)<a class="headerlink" href="#cyrusdb-sync-const-char-backend" title="Permalink to this headline">¶</a></h3>
 <p>Perform a checkpoint of the database environment. Used by berkeley
-backend. Is called by <code class="docutils literal"><span class="pre">ctl_cyrusdb</span> <span class="pre">-c</span></code> on a regular basis</p>
+backend. Is called by <code class="docutils literal notranslate"><span class="pre">ctl_cyrusdb</span> <span class="pre">-c</span></code> on a regular basis</p>
 </div>
 <div class="section" id="cyrusdb-open-const-char-backend-const-char-fname-int-flags-struct-db-retdb">
 <h3>cyrusdb_open(const char *backend, const char *fname, int flags, struct db **retdb)<a class="headerlink" href="#cyrusdb-open-const-char-backend-const-char-fname-int-flags-struct-db-retdb" title="Permalink to this headline">¶</a></h3>
@@ -901,13 +903,13 @@ for example the sql backend is not a filename), and if successful
 returns an opaque database structure</p>
 <p>Flags:</p>
 <ul class="simple">
-<li>CYRUSDB_CREATE - create the database if it doesn't exist</li>
-<li>CYRUSDB_MBOXSORT - sort '.' first, so folder listing is correct</li>
+<li><p>CYRUSDB_CREATE - create the database if it doesn't exist</p></li>
+<li><p>CYRUSDB_MBOXSORT - sort '.' first, so folder listing is correct</p></li>
 </ul>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - if there is any error reading the file, or any
-corruption detected while loading the file</li>
+<li><p>CYRUSDB_IOERROR - if there is any error reading the file, or any
+corruption detected while loading the file</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-close-struct-db-db">
@@ -917,7 +919,7 @@ but it's bad practice to close without committing or aborting, so the
 backend should log an error</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - if there are any errors during close</li>
+<li><p>CYRUSDB_IOERROR - if there are any errors during close</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-fetch-struct-db-db-const-char-key-size-t-keylen-const-char-data-size-t-datalen-struct-txn-tidptr">
@@ -939,9 +941,9 @@ however it is acceptable to call with a NULL data and a non-NULL datalen
 if you are only interested in the length</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - if any error occurs reading from the database</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
-<li>CYRUSDB_NOTFOUND - if there is no record that matches the key</li>
+<li><p>CYRUSDB_IOERROR - if any error occurs reading from the database</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
+<li><p>CYRUSDB_NOTFOUND - if there is no record that matches the key</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-foreach-struct-db-db-const-char-prefix-size-t-prefixlen-foreach-p-goodp-foreach-p-procp-void-rock-struct-txn-tidptr">
@@ -949,24 +951,24 @@ if you are only interested in the length</p>
 </div>
 <div class="section" id="cyrusdb-forone-struct-db-db-const-char-key-size-t-keylen-foreach-p-goodp-foreach-p-procp-void-rock-struct-txn-tidptr">
 <h3>cyrusdb_forone(struct db *db, const char *key, size_t keylen, foreach_p *goodp, foreach_p *procp, void *rock, struct txn **tidptr)<a class="headerlink" href="#cyrusdb-forone-struct-db-db-const-char-key-size-t-keylen-foreach-p-goodp-foreach-p-procp-void-rock-struct-txn-tidptr" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cyrusdb_foreach()</span></code> iterates over all records matching the given
+<p><code class="docutils literal notranslate"><span class="pre">cyrusdb_foreach()</span></code> iterates over all records matching the given
 prefix, in database order (which may be MBOXLIST sort, depending on the
 parameters given to open</p>
 <p>It is legal to give a NULL pointer as prefix if prefixlen is zero, in
 which case it will return all records in the database. It is an error to
 give a non-zero prefixlen with a NULL prefix.</p>
-<p><code class="docutils literal"><span class="pre">cyrusdb_forone()</span></code> &quot;iterates&quot; over the single record matched by the
+<p><code class="docutils literal notranslate"><span class="pre">cyrusdb_forone()</span></code> &quot;iterates&quot; over the single record matched by the
 given key. If you've already built callbacks for processing each record
 from a foreach, this lets you use the same interface to process a single
 record.</p>
-<p><code class="docutils literal"><span class="pre">goodp</span></code> - this function is only used for deciding if the record needs
+<p><code class="docutils literal notranslate"><span class="pre">goodp</span></code> - this function is only used for deciding if the record needs
 to be further processed. It can be used for basic filtering, and returns
 true (non-zero) to process, or zero to skip and move straight to the
 next record. Because goodp can't make any database changes, it doesn't
 break the lock, so it's faster to use goodp to filter records if you
 don't need to process all of them. NULL is a legal value for goodp, and
 means that all records will be processed.</p>
-<p><code class="docutils literal"><span class="pre">procp</span></code> - procp is the main callback function. If you use foreach in
+<p><code class="docutils literal notranslate"><span class="pre">procp</span></code> - procp is the main callback function. If you use foreach in
 non-transactional mode, the database is unlocked before calling procp,
 and locked again afterwards. You are allowed to add, delete or modify
 values in the same database from within procp. If procp returns
@@ -977,9 +979,9 @@ regardless of whether the current record has changed or been removed.
 procp MUST NOT be NULL.</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>procp_result - whatever your callback returns</li>
-<li>CYRUSDB_IOERROR - if any error occurs while reading</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
+<li><p>procp_result - whatever your callback returns</p></li>
+<li><p>CYRUSDB_IOERROR - if any error occurs while reading</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-create-struct-db-db-const-char-key-size-t-keylen-const-char-data-size-t-datalen-struct-txn-tidptr">
@@ -988,8 +990,8 @@ procp MUST NOT be NULL.</p>
 <div class="section" id="cyrusdb-store-struct-db-db-const-char-key-size-t-keylen-const-char-data-size-t-datalen-struct-txn-tidptr">
 <h3>cyrusdb_store(struct db *db, const char *key, size_t keylen, const char *data, size_t datalen, struct txn **tidptr)<a class="headerlink" href="#cyrusdb-store-struct-db-db-const-char-key-size-t-keylen-const-char-data-size-t-datalen-struct-txn-tidptr" title="Permalink to this headline">¶</a></h3>
 <p>Create a new record or replace an existing one. The only difference
-between these two is that <code class="docutils literal"><span class="pre">cyrusdb_create</span></code> will return an error if the
-record already exists, while <code class="docutils literal"><span class="pre">cyrusdb_store</span></code> will replace it</p>
+between these two is that <code class="docutils literal notranslate"><span class="pre">cyrusdb_create</span></code> will return an error if the
+record already exists, while <code class="docutils literal notranslate"><span class="pre">cyrusdb_store</span></code> will replace it</p>
 <p>If tidptr is NULL, create/store will take a write lock for the duration
 of the action.</p>
 <p>Any failure during create/store will abort the current transaction as
@@ -998,11 +1000,11 @@ well as returning an error</p>
 is not legal to pass NULL for key or zero for keylen</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - any error to write to the database</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
-<li>CYRUSDB_EXISTS - if <code class="docutils literal"><span class="pre">cyrusdb_create</span></code> is called on an existing key</li>
-<li>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
-has been aborted, but a retry may succeed</li>
+<li><p>CYRUSDB_IOERROR - any error to write to the database</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
+<li><p>CYRUSDB_EXISTS - if <code class="docutils literal notranslate"><span class="pre">cyrusdb_create</span></code> is called on an existing key</p></li>
+<li><p>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
+has been aborted, but a retry may succeed</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-delete-struct-db-db-const-char-key-size-t-keylen-struct-txn-tidptr-int-force">
@@ -1012,11 +1014,11 @@ succeed even if the record doesn't currently exist.</p>
 <p>It is not legal to pass NULL for key or zero for keylen</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - any error to write to the database</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
-<li>CYRUSDB_NOTFOUND - if force is not set and the key doesn't exist</li>
-<li>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
-has been aborted, but a retry may succeed</li>
+<li><p>CYRUSDB_IOERROR - any error to write to the database</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
+<li><p>CYRUSDB_NOTFOUND - if force is not set and the key doesn't exist</p></li>
+<li><p>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
+has been aborted, but a retry may succeed</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-commit-struct-db-db-struct-txn-tid">
@@ -1026,10 +1028,10 @@ regardless of success</p>
 <p>If the commit fails, it will attempt to abort the transaction</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - any error to write to the database</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
-<li>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
-has been aborted, but a retry may succeed</li>
+<li><p>CYRUSDB_IOERROR - any error to write to the database</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
+<li><p>CYRUSDB_AGAIN - if a deadlock is created. The current transaction
+has been aborted, but a retry may succeed</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-abort-struct-db-db-struct-txn-tid">
@@ -1039,8 +1041,8 @@ regardless of success</p>
 <p>Attempt to roll back all changes made in the current transaction.</p>
 <p>Errors:</p>
 <ul class="simple">
-<li>CYRUSDB_IOERROR - any error to write to the database</li>
-<li>CYRUSDB_LOCKED - if tidptr is incorrect</li>
+<li><p>CYRUSDB_IOERROR - any error to write to the database</p></li>
+<li><p>CYRUSDB_LOCKED - if tidptr is incorrect</p></li>
 </ul>
 </div>
 <div class="section" id="cyrusdb-dump-struct-db-db-int-detail">
@@ -1077,7 +1079,7 @@ used anywhere. Don't use.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 18 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1103,7 +1105,6 @@ used anywhere. Don't use.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

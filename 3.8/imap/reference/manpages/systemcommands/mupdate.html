@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,47 +786,45 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-mupdate(8)"></span><div class="section" id="mupdate">
+  <span class="target" id="std-cyrusman-mupdate-8"><span id="std:cyrusman-mupdate(8)"></span></span><div class="section" id="mupdate">
 <span id="imap-reference-manpages-systemcommands-mupdate"></span><h1><strong>mupdate</strong><a class="headerlink" href="#mupdate" title="Permalink to this headline">¶</a></h1>
 <p>MUPDATE server process</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mupdate</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-m</strong> ] [ <strong>-a</strong> ]
-</pre>
+<pre class="literal-block"><strong>mupdate</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-m</strong> ] [ <strong>-a</strong> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>mupdate</strong> is the mailboxdb aggregation server.  It accepts commands
 on its standard input and responds on its standard output.  It MUST be
-invoked by <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a> with those descriptors attached to a
+invoked by <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a> with those descriptors attached to a
 remote client connection.</p>
-<p><strong>mupdate</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-<p>If the directory <code class="docutils literal"><span class="pre">log</span></code>/<em>user</em> exists under the directory specified in
-the <code class="docutils literal"><span class="pre">configdirectory</span></code> configuration option, then <strong>mupdate</strong> will create
+<p><strong>mupdate</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p>If the directory <code class="docutils literal notranslate"><span class="pre">log</span></code>/<em>user</em> exists under the directory specified in
+the <code class="docutils literal notranslate"><span class="pre">configdirectory</span></code> configuration option, then <strong>mupdate</strong> will create
 protocol telemetry logs for sessions authenticating as <em>user</em>.</p>
-<p>The telemetry logs will be stored in the <code class="docutils literal"><span class="pre">log</span></code>/<em>user</em> directory with
+<p>The telemetry logs will be stored in the <code class="docutils literal notranslate"><span class="pre">log</span></code>/<em>user</em> directory with
 a filename of the <strong>mupdate</strong> process-id.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mupdate-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-mupdate-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-mupdate-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-mupdate-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mupdate-m">
-<code class="descname">-m</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mupdate-m" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mupdate-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run as the MUPDATE master.  Default is to act as slave.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mupdate-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mupdate-a" title="Permalink to this definition">¶</a></dt>
-<dd><p>[autoselect] Check <code class="docutils literal"><span class="pre">mupdate_server</span></code> setting in
-<a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to see if this is the designated master
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mupdate-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>[autoselect] Check <code class="docutils literal notranslate"><span class="pre">mupdate_server</span></code> setting in
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to see if this is the designated master
 server, and act as master if this is the case.  Otherwise act as
 slave.</p>
 </dd></dl>
@@ -833,9 +833,8 @@ slave.</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>mupdate</strong> is commonly included in the SERVICES section of
-<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a> like so:</p>
-<pre class="literal-block">
-SERVICES {
+<a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> like so:</p>
+<pre class="literal-block">SERVICES {
     imap        cmd=&quot;imapd -U 30&quot; listen=&quot;imap&quot; prefork=0
     imaps       cmd=&quot;imapd -s -U 30&quot; listen=&quot;imaps&quot; prefork=0 maxchild=100
     lmtpunix    cmd=&quot;lmtpd&quot; listen=&quot;/var/run/cyrus/socket/lmtp&quot; prefork=0 maxchild=20
@@ -847,8 +846,7 @@ SERVICES {
     #
     # (mupdate slave, run on each frontend host in the cluster)
     # mupdate     cmd=&quot;mupdate&quot; listen=&quot;mupdate&quot; prefork=1
-}
-</pre>
+}</pre>
 </div>
 <div class="section" id="files">
 <h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
@@ -856,8 +854,8 @@ SERVICES {
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>,
-<a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>,
+<a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
 </div>
 </div>
 
@@ -882,7 +880,7 @@ SERVICES {
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -908,7 +906,6 @@ SERVICES {
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

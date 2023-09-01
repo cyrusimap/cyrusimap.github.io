@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -776,7 +778,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../../_sources/imap/reference/manpages/usercommands/sieveshell.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/imap/reference/manpages/usercommands/sieveshell.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -788,7 +790,7 @@
   <div class="section" id="sieveshell">
 <h1><strong>sieveshell</strong><a class="headerlink" href="#sieveshell" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name">
-<span id="imap-reference-manpages-usercommands-sieveshell"></span><span id="std:cyrusman-sieveshell(1)"></span><h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<span id="imap-reference-manpages-usercommands-sieveshell"></span><span id="std-cyrusman-sieveshell-1"></span><span id="std:cyrusman-sieveshell(1)"></span><h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
 <p>sieveshell - remotely manipulate sieve scripts</p>
 </div>
 <div class="section" id="synopsis">
@@ -813,40 +815,46 @@ server.  It works via MANAGESIEVE, a work in progress.</p>
 <div class="section" id="options">
 <h2>OPTIONS<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>-u</strong> <em>user</em>, <strong>--user</strong>=<em>user</em></li>
+<li><p><strong>-u</strong> <em>user</em>, <strong>--user</strong>=<em>user</em></p></li>
 </ul>
 <blockquote>
-<div>The user whose mailboxes you want to work on. If not specified, it uses the same
-as -a.</div></blockquote>
+<div><p>The user whose mailboxes you want to work on. If not specified, it uses the same
+as -a.</p>
+</div></blockquote>
 <ul class="simple">
-<li><strong>-a</strong> <em>authname</em>, <strong>--authname</strong>=<em>authname</em></li>
+<li><p><strong>-a</strong> <em>authname</em>, <strong>--authname</strong>=<em>authname</em></p></li>
 </ul>
 <blockquote>
-<div>The user to use for authentication. If not specified, it defaults to the
-current login user.</div></blockquote>
+<div><p>The user to use for authentication. If not specified, it defaults to the
+current login user.</p>
+</div></blockquote>
 <ul class="simple">
-<li><strong>-r</strong> <em>realm</em>, <strong>--realm</strong>=<em>realm</em></li>
+<li><p><strong>-r</strong> <em>realm</em>, <strong>--realm</strong>=<em>realm</em></p></li>
 </ul>
 <blockquote>
-<div>The realm to attempt authentication in.</div></blockquote>
+<div><p>The realm to attempt authentication in.</p>
+</div></blockquote>
 <ul class="simple">
-<li><strong>-p</strong> <em>password</em>, <strong>--password</strong>=<em>password</em></li>
+<li><p><strong>-p</strong> <em>password</em>, <strong>--password</strong>=<em>password</em></p></li>
 </ul>
 <blockquote>
-<div>The password to use when authenticating to server. Note that this
-parameter can be seen in the process list. <strong>Use with caution!</strong></div></blockquote>
+<div><p>The password to use when authenticating to server. Note that this
+parameter can be seen in the process list. <strong>Use with caution!</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li><strong>-e</strong> <em>script</em>, <strong>--exec</strong>=<em>script</em></li>
+<li><p><strong>-e</strong> <em>script</em>, <strong>--exec</strong>=<em>script</em></p></li>
 </ul>
 <blockquote>
-<div>Instead of working interactively, run commands from <em>script</em>, and
-exit when done.</div></blockquote>
+<div><p>Instead of working interactively, run commands from <em>script</em>, and
+exit when done.</p>
+</div></blockquote>
 <ul class="simple">
-<li><strong>-f</strong> <em>file</em>, <strong>--execfile</strong>=<em>file</em></li>
+<li><p><strong>-f</strong> <em>file</em>, <strong>--execfile</strong>=<em>file</em></p></li>
 </ul>
 <blockquote>
-<div>Instead of working interactively, run commands from file <em>file</em> and
-exit when done.</div></blockquote>
+<div><p>Instead of working interactively, run commands from file <em>file</em> and
+exit when done.</p>
+</div></blockquote>
 </div>
 <div class="section" id="references">
 <h2>REFERENCES<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -881,7 +889,7 @@ team.</p>
         &copy; Copyright 1993–2023, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -907,7 +915,6 @@ team.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

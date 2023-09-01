@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,8 +793,8 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.2/cyrus-imapd-3.6.2.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-6-1">
@@ -800,34 +802,34 @@
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3771">Issue #3771</a>: XFER to 3.4 destination no longer loses specialuse
-annotations</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3892">Issue #3892</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> no longer crashes on invalid
-mailbox names (thanks Martin Osvald)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4383">Issue #4383</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> in rolling mode now
-periodically compacts databases, rather than only at shutdown</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4401">Issue #4401</a>: JMAP no longer permits moving a mailbox under a
-deleted one</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4415">Issue #4415</a>: sieve path lookup errors no longer lead to writes
-to root directory</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4426">Issue #4426</a>: deleting mailboxes no longer leaves behind orphan
-<code class="docutils literal"><span class="pre">I</span></code> records in mailboxes.db</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4437">Issue #4437</a>: murder frontends now proxy DAV PUT correctly</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4439">Issue #4439</a>: murder frontends now proxy GETMETADATA correctly
-(thanks Stéphane GAUBERT)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4442">Issue #4442</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/httpd.html#std:cyrusman-httpd(8)">httpd(8)</a> no longer crashes on precondition
-failure during deletion of calendar collection</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4440">Issue #4440</a>: uninitialized value warning from <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyradm.html#std:cyrusman-cyradm(8)">cyradm(8)</a>
-<code class="docutils literal"><span class="pre">listmailbox</span></code> command (thanks Stéphane GAUBERT)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4465">Issue #4465</a>: missing calls to <code class="docutils literal"><span class="pre">mailbox_iter_done()</span></code> (thanks
-Дилян Палаузов)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3771">Issue #3771</a>: XFER to 3.4 destination no longer loses specialuse
+annotations</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3892">Issue #3892</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> no longer crashes on invalid
+mailbox names (thanks Martin Osvald)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4383">Issue #4383</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> in rolling mode now
+periodically compacts databases, rather than only at shutdown</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4401">Issue #4401</a>: JMAP no longer permits moving a mailbox under a
+deleted one</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4415">Issue #4415</a>: sieve path lookup errors no longer lead to writes
+to root directory</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4426">Issue #4426</a>: deleting mailboxes no longer leaves behind orphan
+<code class="docutils literal notranslate"><span class="pre">I</span></code> records in mailboxes.db</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4437">Issue #4437</a>: murder frontends now proxy DAV PUT correctly</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4439">Issue #4439</a>: murder frontends now proxy GETMETADATA correctly
+(thanks Stéphane GAUBERT)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4442">Issue #4442</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/httpd.html#std-cyrusman-httpd-8">httpd(8)</a> no longer crashes on precondition
+failure during deletion of calendar collection</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4440">Issue #4440</a>: uninitialized value warning from <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a>
+<code class="docutils literal notranslate"><span class="pre">listmailbox</span></code> command (thanks Stéphane GAUBERT)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4465">Issue #4465</a>: missing calls to <code class="docutils literal notranslate"><span class="pre">mailbox_iter_done()</span></code> (thanks
+Дилян Палаузов)</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4187">Issue #4187</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std:cyrusman-ctl_mboxlist(8)">ctl_mboxlist(8)</a> <code class="docutils literal"><span class="pre">-v</span></code> option now detects
-and reports broken UUID mailboxes (thanks Matthias Hunstock)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4187">Issue #4187</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> <code class="docutils literal notranslate"><span class="pre">-v</span></code> option now detects
+and reports broken UUID mailboxes (thanks Matthias Hunstock)</p></li>
 </ul>
 </div>
 </div>
@@ -854,7 +856,7 @@ and reports broken UUID mailboxes (thanks Matthias Hunstock)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 02 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -880,7 +882,6 @@ and reports broken UUID mailboxes (thanks Matthias Hunstock)</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

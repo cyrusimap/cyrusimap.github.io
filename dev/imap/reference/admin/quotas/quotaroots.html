@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -792,7 +794,7 @@
 <p>Quotas are applied to quota roots, which can be at any level of the mailbox hierarchy. Quota roots need not also be mailboxes.</p>
 <p>Quotas on a quota root apply to the sum of the usage of any mailbox at that level and any sub-mailboxes of that level that are not underneath a quota root on a sub-hierarchy. This means that each mailbox is limited by at most one quota root.</p>
 <p>For example, if the mailboxes</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">/</span><span class="n">bovik</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">/</span><span class="n">bovik</span>
 <span class="n">user</span><span class="o">/</span><span class="n">bovik</span><span class="o">/</span><span class="nb">list</span><span class="o">/</span><span class="n">imap</span>
 <span class="n">user</span><span class="o">/</span><span class="n">bovik</span><span class="o">/</span><span class="nb">list</span><span class="o">/</span><span class="n">info</span><span class="o">-</span><span class="n">cyrus</span>
 <span class="n">user</span><span class="o">/</span><span class="n">bovik</span><span class="o">/</span><span class="n">saved</span>
@@ -800,12 +802,12 @@
 </pre></div>
 </div>
 <p>exist and the quota roots</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">/</span><span class="n">bovik</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">/</span><span class="n">bovik</span>
 <span class="n">user</span><span class="o">/</span><span class="n">bovik</span><span class="o">/</span><span class="nb">list</span>
 <span class="n">user</span><span class="o">/</span><span class="n">bovik</span><span class="o">/</span><span class="n">saved</span>
 </pre></div>
 </div>
-<p>exist, then the quota root <code class="docutils literal"><span class="pre">user/bovik</span></code> applies to the mailboxes <code class="docutils literal"><span class="pre">user/bovik</span></code> and <code class="docutils literal"><span class="pre">user/bovik/todo</span></code>; the quota root <code class="docutils literal"><span class="pre">user/bovik/list</span></code> applies to the mailboxes <code class="docutils literal"><span class="pre">user/bovik/list/imap</span></code> and <code class="docutils literal"><span class="pre">user/bovik/list/info-cyrus</span></code>; and the quota root <code class="docutils literal"><span class="pre">user/bovik/saved</span></code> applies to the mailbox <code class="docutils literal"><span class="pre">user/bovik/saved</span></code>.</p>
+<p>exist, then the quota root <code class="docutils literal notranslate"><span class="pre">user/bovik</span></code> applies to the mailboxes <code class="docutils literal notranslate"><span class="pre">user/bovik</span></code> and <code class="docutils literal notranslate"><span class="pre">user/bovik/todo</span></code>; the quota root <code class="docutils literal notranslate"><span class="pre">user/bovik/list</span></code> applies to the mailboxes <code class="docutils literal notranslate"><span class="pre">user/bovik/list/imap</span></code> and <code class="docutils literal notranslate"><span class="pre">user/bovik/list/info-cyrus</span></code>; and the quota root <code class="docutils literal notranslate"><span class="pre">user/bovik/saved</span></code> applies to the mailbox <code class="docutils literal notranslate"><span class="pre">user/bovik/saved</span></code>.</p>
 <p>Quota roots are created automatically when they are mentioned in the
 <a class="reference internal" href="../../manpages/systemcommands/cyradm.html#imap-reference-manpages-systemcommands-cyradm-setquota"><span class="std std-ref">setquota</span></a> command. Quota
 roots may not be deleted through the protocol, see Removing Quota Roots
@@ -833,7 +835,7 @@ for instructions on how to delete them.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jan 20 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -859,7 +861,6 @@ for instructions on how to delete them.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

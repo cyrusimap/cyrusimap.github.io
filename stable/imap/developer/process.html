@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,14 +792,14 @@
 <div class="section" id="coding-style">
 <h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Unix style: LF line endings.</li>
-<li>No trailing spaces.</li>
-<li>No tabs: use 4 spaces instead.</li>
-<li>Bracketing style: use the style that's already there.</li>
-<li>You are not a compiler: code for readability, not compactness.</li>
-<li>We are open source: coding security-by-obscurity is not necessary. Use semantically sensible function and variable names.</li>
-<li>Comments. More comments. Still more comments. Nobody will know what your brilliant idea was when you wrote that gnarly piece of code unless you tell them.</li>
-<li>Commit messages. Commit discrete changes, don't munge six different fixes into a single commit. And provide a clear message (preferably tied into a GitHub issue) of what problem these changes address.</li>
+<li><p>Unix style: LF line endings.</p></li>
+<li><p>No trailing spaces.</p></li>
+<li><p>No tabs: use 4 spaces instead.</p></li>
+<li><p>Bracketing style: use the style that's already there.</p></li>
+<li><p>You are not a compiler: code for readability, not compactness.</p></li>
+<li><p>We are open source: coding security-by-obscurity is not necessary. Use semantically sensible function and variable names.</p></li>
+<li><p>Comments. More comments. Still more comments. Nobody will know what your brilliant idea was when you wrote that gnarly piece of code unless you tell them.</p></li>
+<li><p>Commit messages. Commit discrete changes, don't munge six different fixes into a single commit. And provide a clear message (preferably tied into a GitHub issue) of what problem these changes address.</p></li>
 </ul>
 </div>
 <div class="section" id="making-changes">
@@ -811,19 +813,19 @@
 <h3>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">¶</a></h3>
 <p>First, check out our <a class="reference internal" href="github-guide.html#github-guide"><span class="std std-ref">Guide to GitHub</span></a>, which covers:</p>
 <ol class="arabic simple">
-<li>Create a GitHub account.</li>
-<li>Fork the repository.</li>
-<li>Clone the fork.</li>
-<li>Branch the clone.</li>
+<li><p>Create a GitHub account.</p></li>
+<li><p>Fork the repository.</p></li>
+<li><p>Clone the fork.</p></li>
+<li><p>Branch the clone.</p></li>
 </ol>
 <p>From there, you:</p>
 <ol class="arabic simple">
-<li>Take ownership of a GitHub issue (or create a new one to cover what you're planning to do).</li>
-<li>Code code <a class="reference internal" href="developer-testing.html#developer-testing"><span class="std std-ref">test test test</span></a> code code test test test.</li>
-<li>Use git to commit your changes.</li>
-<li>Issue a <a class="reference internal" href="github-guide.html#github-guide-pull"><span class="std std-ref">pull request</span></a> on GitHub.</li>
-<li>Wait for review (a quick note to the mailing list can speed this along).</li>
-<li>Once approved, it'll be merged into the master.</li>
+<li><p>Take ownership of a GitHub issue (or create a new one to cover what you're planning to do).</p></li>
+<li><p>Code code <a class="reference internal" href="developer-testing.html#developer-testing"><span class="std std-ref">test test test</span></a> code code test test test.</p></li>
+<li><p>Use git to commit your changes.</p></li>
+<li><p>Issue a <a class="reference internal" href="github-guide.html#github-guide-pull"><span class="std std-ref">pull request</span></a> on GitHub.</p></li>
+<li><p>Wait for review (a quick note to the mailing list can speed this along).</p></li>
+<li><p>Once approved, it'll be merged into the master.</p></li>
 </ol>
 </div>
 <div class="section" id="patches-through-the-mailing-list">
@@ -864,7 +866,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 07 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -890,7 +892,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

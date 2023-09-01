@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,25 +792,25 @@
 <h1>Cyrus IMAP 2.4.14 Release Notes<a class="headerlink" href="#cyrus-imap-2-4-14-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Changes to the Cyrus IMAP Server since 2.4.13</p>
 <ul class="simple">
-<li>Bug #2685 - folder delete and annotations</li>
-<li>Bug #3381 - tools/rehash script is not 64bit safe</li>
-<li>Bug #3405 - Cyrus IMAP tls support for ctl_mboxlist</li>
-<li>Bug #3485 - cyr_expire tries to delete parent directories that are not empty</li>
-<li>Bug #3582 - Extra LF+SP characters been inserted in the middle of the XML attachments</li>
-<li>Bug #3598 - lmtp auditlog for murder proxy mode</li>
-<li>Bug #3623 - OpenBSD (and other platforms without working mmap) multiple bugs</li>
-<li>Bug #3626 - Renaming a mailbox doesn't remove old folder</li>
-<li>Bug #3628 - folders with spaces and subfolders with same prefix as parent folder don't show up</li>
-<li>Bug #3634 - RENAME INBOX no longer works</li>
-<li>Bug #3635 - cmd_rename() fails to check error codes</li>
-<li>Bug #3636 - unexpunge locks mailbox until all output is emitted</li>
-<li>Bug #3637 - imapd and ipop3d in 2.4 no longer log expunge events to syslog</li>
-<li>Bug #3638 - sessionid logging improvements for murder environments</li>
-<li>Bug #3640 - LMTP accepts NULL bytes in headers, resulting in incorrect header/mail size in meta-data</li>
-<li>Bug #3642 - iPhone 5 expects SPECIAL-USE in LIST output</li>
-<li>Bug #3649 - unable to remove mailbox</li>
-<li>Bug #3650 - ENVELOPE contains unexpected CRLF</li>
-<li>Bug #3645 - Ability to delete folder &quot;shared&quot;</li>
+<li><p>Bug #2685 - folder delete and annotations</p></li>
+<li><p>Bug #3381 - tools/rehash script is not 64bit safe</p></li>
+<li><p>Bug #3405 - Cyrus IMAP tls support for ctl_mboxlist</p></li>
+<li><p>Bug #3485 - cyr_expire tries to delete parent directories that are not empty</p></li>
+<li><p>Bug #3582 - Extra LF+SP characters been inserted in the middle of the XML attachments</p></li>
+<li><p>Bug #3598 - lmtp auditlog for murder proxy mode</p></li>
+<li><p>Bug #3623 - OpenBSD (and other platforms without working mmap) multiple bugs</p></li>
+<li><p>Bug #3626 - Renaming a mailbox doesn't remove old folder</p></li>
+<li><p>Bug #3628 - folders with spaces and subfolders with same prefix as parent folder don't show up</p></li>
+<li><p>Bug #3634 - RENAME INBOX no longer works</p></li>
+<li><p>Bug #3635 - cmd_rename() fails to check error codes</p></li>
+<li><p>Bug #3636 - unexpunge locks mailbox until all output is emitted</p></li>
+<li><p>Bug #3637 - imapd and ipop3d in 2.4 no longer log expunge events to syslog</p></li>
+<li><p>Bug #3638 - sessionid logging improvements for murder environments</p></li>
+<li><p>Bug #3640 - LMTP accepts NULL bytes in headers, resulting in incorrect header/mail size in meta-data</p></li>
+<li><p>Bug #3642 - iPhone 5 expects SPECIAL-USE in LIST output</p></li>
+<li><p>Bug #3649 - unable to remove mailbox</p></li>
+<li><p>Bug #3650 - ENVELOPE contains unexpected CRLF</p></li>
+<li><p>Bug #3645 - Ability to delete folder &quot;shared&quot;</p></li>
 </ul>
 <p><a class="reference internal" href="../index.html#imap-release-notes-2-4"><span class="std std-ref">Cyrus IMAP 2.4 Releases</span></a></p>
 </div>
@@ -834,7 +836,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -860,7 +862,6 @@
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,153 +793,153 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6.0-beta3/cyrus-imapd-3.6.0-beta3.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="major-changes-since-the-3-4-series">
 <span id="relnotes-3-6-0-beta3-changes"></span><h2>Major changes since the 3.4 series<a class="headerlink" href="#major-changes-since-the-3-4-series" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>All members of a newly created mailbox hierarchy will now be selectable
+<li><p>All members of a newly created mailbox hierarchy will now be selectable
 mailboxes.  In other words, when creating mailbox user.foo.A.B.C, both
-user.foo.A and user.foo.A.B will also be created as real mailboxes.</li>
-<li>XFER will no longer move individual mailboxes that would leave unselectable
-mailboxes behind in the user heirarchy.</li>
-<li>Update IMAP PREVIEW extension from
-<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-extra-imap-fetch-preview-07">draft-ietf-extra-imap-fetch-preview-07</a> to <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8970.html"><strong>RFC 8970</strong></a></li>
-<li>JMAP Blob handling updated to <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-jmap-blob-04">draft-ietf-jmap-blob-04</a></li>
-<li>Always return 'blobId' and 'size' in Contact/setcreate, Contact/setupdate,
-and Contact/get responses.</li>
-<li>Added Bearer authentication for <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a> JSON Web Tokens.  See
-<cite>http_jwt_key</cite> and <cite>http_jwt_max_age</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</li>
-<li>Added <cite>icalendar_max_size</cite> and <cite>vcard_max_size</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
+user.foo.A and user.foo.A.B will also be created as real mailboxes.</p></li>
+<li><p>XFER will no longer move individual mailboxes that would leave unselectable
+mailboxes behind in the user heirarchy.</p></li>
+<li><p>Update IMAP PREVIEW extension from
+<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-extra-imap-fetch-preview-07">draft-ietf-extra-imap-fetch-preview-07</a> to <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8970.html"><strong>RFC 8970</strong></a></p></li>
+<li><p>JMAP Blob handling updated to <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-jmap-blob-04">draft-ietf-jmap-blob-04</a></p></li>
+<li><p>Always return 'blobId' and 'size' in Contact/setcreate, Contact/setupdate,
+and Contact/get responses.</p></li>
+<li><p>Added Bearer authentication for <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7519.html"><strong>RFC 7519</strong></a> JSON Web Tokens.  See
+<cite>http_jwt_key</cite> and <cite>http_jwt_max_age</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p></li>
+<li><p>Added <cite>icalendar_max_size</cite> and <cite>vcard_max_size</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 options to limit the size of iCalendar and vCard resources that can be
-stored.</li>
-<li>Added <cite>caldav_accept_invalid_rrules</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option to
+stored.</p></li>
+<li><p>Added <cite>caldav_accept_invalid_rrules</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option to
 configure whether invalid RRULES should be accepted or rejected.  They
-were previously always rejected.</li>
-<li>The <cite>event_extra_params</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option now supports
+were previously always rejected.</p></li>
+<li><p>The <cite>event_extra_params</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option now supports
 a <cite>vnd.fastmail.jmapEmail</cite> selector, which adds a JMAP Email object to
 event messages.  If you enable this selector, you might consider removing
 <cite>vnd.cmu.envelope</cite>, <cite>vnd.cmu.emailid</cite>, and <cite>vnd.cmu.threadid</cite>, as they
-would be redundant.</li>
-<li>Added <cite>search_maxsize</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option to limit how much
+would be redundant.</p></li>
+<li><p>Added <cite>search_maxsize</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option to limit how much
 of long message body parts are indexed by Xapian, which can improve indexing
 and snippet-generation latency.  The default is 4MB.  An earlier
 implementation applied a hardcoded 4MB limit to entire messages; systems
 that had this implementation may notice an increase in index size due to
-more text now being indexed.</li>
-<li>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> <cite>-s delta</cite> option now requires the delta
-argument.</li>
-<li>Added an upper limit to <a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a>'s exponential reconnect
+more text now being indexed.</p></li>
+<li><p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> <cite>-s delta</cite> option now requires the delta
+argument.</p></li>
+<li><p>Added an upper limit to <a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a>'s exponential reconnect
 backoff, configurable with the <cite>sync_reconnect_maxwait</cite>
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option.</li>
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> now recognises when the remote
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_server.html#std:cyrusman-sync_server(8)">sync_server(8)</a> has been shut down cleanly, and doesn't log a
-bunch of disconnection errors about it</li>
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> <cite>-A</cite> mode now keeps processing subsequent
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> now recognises when the remote
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_server.html#std-cyrusman-sync_server-8">sync_server(8)</a> has been shut down cleanly, and doesn't log a
+bunch of disconnection errors about it</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> <cite>-A</cite> mode now keeps processing subsequent
 mailboxes after errors (reconnecting to the replica if necessary), instead
 of bailing out at the first error.  This means everything that can be
-replicated is replicated.</li>
-<li>New <a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std:cyrusman-sync_client(8)">sync_client(8)</a> <cite>-N</cite> option to skip users that are currently
+replicated is replicated.</p></li>
+<li><p>New <a class="reference internal" href="../../../../reference/manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> <cite>-N</cite> option to skip users that are currently
 being replicated by another process, rather than blocking on the lock only
-to have nothing left to do once it's been obtained.</li>
-<li>Added an inactivity timeout for WebSocket connections, configurable with
-the <cite>websocket_timeout</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option.</li>
-<li>Mailboxes and user metadata directories are now organised on disk by UUID
-rather than by mailbox name.  See <a class="reference internal" href="#relnotes-3-6-0-beta3-storage-changes"><span class="std std-ref">Storage changes</span></a> below.</li>
-<li>Sieve scripts are now stored in a special mailbox, rather than in
+to have nothing left to do once it's been obtained.</p></li>
+<li><p>Added an inactivity timeout for WebSocket connections, configurable with
+the <cite>websocket_timeout</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.</p></li>
+<li><p>Mailboxes and user metadata directories are now organised on disk by UUID
+rather than by mailbox name.  See <a class="reference internal" href="#relnotes-3-6-0-beta3-storage-changes"><span class="std std-ref">Storage changes</span></a> below.</p></li>
+<li><p>Sieve scripts are now stored in a special mailbox, rather than in
 <cite>sievedir</cite>.  Compiled bytecode is still stored in <cite>sievedir</cite>.  The name of
 the mailbox can be overridden with the <cite>sieve_folder</cite>
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option (default: '#sieve').</li>
-<li>Experimental <cite>processimip</cite> Sieve action, for updating calendar entries
-based on iMIP (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>) messages.</li>
-<li>Support for JMAP Push (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>) over EventSource, with polling interval
-controlled by the <cite>jmap_pushpoll</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option
-(default: 60s).</li>
-<li>Experimental support for JMAP Push over WebSockets, if Cyrus has been
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option (default: '#sieve').</p></li>
+<li><p>Experimental <cite>processimip</cite> Sieve action, for updating calendar entries
+based on iMIP (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>) messages.</p></li>
+<li><p>Support for JMAP Push (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>) over EventSource, with polling interval
+controlled by the <cite>jmap_pushpoll</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option
+(default: 60s).</p></li>
+<li><p>Experimental support for JMAP Push over WebSockets, if Cyrus has been
 compiled with WebSockets enabled.  Controlled by the same <cite>jmap_pushpoll</cite>
-option.</li>
-<li>When a MIME part Content-Type header incorrectly specifies multiple charsets,
+option.</p></li>
+<li><p>When a MIME part Content-Type header incorrectly specifies multiple charsets,
 Cyrus now checks each charset for validity and uses the last valid one.
 Previously, it would just use the first one, which is often junk when
-multiple are present.</li>
-<li>JMAP Email/query and XCONV IMAP extension commands no longer ignore the SEEN
+multiple are present.</p></li>
+<li><p>JMAP Email/query and XCONV IMAP extension commands no longer ignore the SEEN
 state of messages in the &quot;Trash&quot; mailbox when evaluating conversation flags.
 Queries must explicitly exclude the &quot;Trash&quot; mailbox to ignore SEEN state of
-messages in &quot;Trash&quot;.</li>
-<li>JMAP Contact.importance property is now a per-user property rather than
-shared.</li>
-<li>JMAP Contacts now uses Apple-style labels on vCard ADR/TEL/EMAIL properties
-(via property grouping)</li>
-<li>JMAP Contacts avatars can now reference any valid blob, not only blobs
-originally uploaded via JMAP.</li>
-<li>Preliminary support for building with OpenSSL 3.</li>
+messages in &quot;Trash&quot;.</p></li>
+<li><p>JMAP Contact.importance property is now a per-user property rather than
+shared.</p></li>
+<li><p>JMAP Contacts now uses Apple-style labels on vCard ADR/TEL/EMAIL properties
+(via property grouping)</p></li>
+<li><p>JMAP Contacts avatars can now reference any valid blob, not only blobs
+originally uploaded via JMAP.</p></li>
+<li><p>Preliminary support for building with OpenSSL 3.</p></li>
 </ul>
 </div>
 <div class="section" id="storage-changes">
 <span id="relnotes-3-6-0-beta3-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Please consult <a class="reference internal" href="../../../upgrade.html#upgrade"><span class="std std-ref">Upgrading to 3.8</span></a> prior to upgrading.</p>
+<p class="admonition-title">Note</p>
+<p>Please consult <a class="reference internal" href="../../../upgrade.html#upgrade"><span class="std std-ref">Upgrading to 3.8</span></a> prior to upgrading.</p>
 </div>
 <p>Mailboxes and user metadata directories are now organised on disk by UUID
 rather than by mailbox name.</p>
 <p>At startup (or when you run <cite>ctl_cyrusdb -r</cite> manually),
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html#std:cyrusman-ctl_cyrusdb(8)">ctl_cyrusdb(8)</a> will upgrade mailboxes.db to accommodate both
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html#std-cyrusman-ctl_cyrusdb-8">ctl_cyrusdb(8)</a> will upgrade mailboxes.db to accommodate both
 old-style and new-style storage.</p>
 <p>By default, new top-level mailboxes will be created in the new style.
 Mailboxes that already exist will remain in the old style until you convert
-them with <a class="reference internal" href="../../../../reference/manpages/systemcommands/relocate_by_id.html#std:cyrusman-relocate_by_id(8)">relocate_by_id(8)</a>.  New mailboxes below the top level
+them with <a class="reference internal" href="../../../../reference/manpages/systemcommands/relocate_by_id.html#std-cyrusman-relocate_by_id-8">relocate_by_id(8)</a>.  New mailboxes below the top level
 will be created in the same style as their parent mailbox.</p>
-<p>The new <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_ls.html#std:cyrusman-cyr_ls(8)">cyr_ls(8)</a> tool can be used to examine the on-disk
-contents of a given mailbox name.  <a class="reference internal" href="../../../../reference/manpages/systemcommands/mbpath.html#std:cyrusman-mbpath(8)">mbpath(8)</a> can be used to find
+<p>The new <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_ls.html#std-cyrusman-cyr_ls-8">cyr_ls(8)</a> tool can be used to examine the on-disk
+contents of a given mailbox name.  <a class="reference internal" href="../../../../reference/manpages/systemcommands/mbpath.html#std-cyrusman-mbpath-8">mbpath(8)</a> can be used to find
 where on disk a given mailbox and its metadata are.</p>
 <p>If you want new top level mailboxes to be created in the old style, you
-can enable the <cite>mailbox_legacy_dirs</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option, which
+can enable the <cite>mailbox_legacy_dirs</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option, which
 defaults to <strong>off</strong>.  With this turned on, you may still use <cite>relocate_by_id</cite>
 to convert them to the new style.</p>
 </div>
 <div class="section" id="updates-to-default-configuration">
 <h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std:cyrusman-cyr_info(8)">cyr_info(8)</a> <cite>conf</cite>, <cite>conf-all</cite> and <cite>conf-default</cite> subcommands
-accept an <cite>-s &lt;version&gt;</cite> argument to highlight <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
+<p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> <cite>conf</cite>, <cite>conf-all</cite> and <cite>conf-default</cite> subcommands
+accept an <cite>-s &lt;version&gt;</cite> argument to highlight <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 options that are new or whose behaviour has changed since the specified
 version.  We recommend using this when evaluating a new Cyrus version to
 check which configuration options you will need to examine and maybe set or
 change during the process.</p>
 <ul class="simple">
-<li>The <cite>reverseuniqueids</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option is now deprecated
+<li><p>The <cite>reverseuniqueids</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option is now deprecated
 and unused.  Reverse UNIQUEID records are now standard and cannot be turned
-off.</li>
+off.</p></li>
 </ul>
 </div>
 <div class="section" id="security-fixes">
 <h2>Security fixes<a class="headerlink" href="#security-fixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>None so far</li>
+<li><p>None so far</p></li>
 </ul>
 </div>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3325">Issue #3325</a>: email addresses with quoted-string names were stored in
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3325">Issue #3325</a>: email addresses with quoted-string names were stored in
 the cache and search indexes without quotes, which could cause
 inconsistencies in handling.  Affected mailboxes can be fixed by first
-running <a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std:cyrusman-reconstruct(8)">reconstruct(8)</a> to repair the cache, and then
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> to reindex the mailbox.</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3421">Issue #3421</a>: PROPFIND &lt;C:schedule-calendar-transp&gt; now returns an
-XML element instead of text (thanks Дилян Палаузов)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3896">Issue #3896</a>: the <cite>-d</cite> (dump) and <cite>-u</cite> (undump) options to
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std:cyrusman-ctl_mboxlist(8)">ctl_mboxlist(8)</a> now correctly dump and undump all fields in
+running <a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std-cyrusman-reconstruct-8">reconstruct(8)</a> to repair the cache, and then
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> to reindex the mailbox.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3421">Issue #3421</a>: PROPFIND &lt;C:schedule-calendar-transp&gt; now returns an
+XML element instead of text (thanks Дилян Палаузов)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3896">Issue #3896</a>: the <cite>-d</cite> (dump) and <cite>-u</cite> (undump) options to
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> now correctly dump and undump all fields in
 mailboxes.db entries.  The intermediary file format is now JSON.  This change
 makes it possible to follow the procedure
 for switching <cite>improved_mboxlist_sort</cite> described in
-<a class="reference internal" href="../../../../developer/thoughts/improved_mboxlist_sort.html#enabling-improved-mboxlist-sort"><span class="std std-ref">Enabling improved_mboxlist_sort</span></a></li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4035">Issue #4035</a>: <cite>ctl_cyrusdb -r</cite> now recovers from mailboxes.db
+<a class="reference internal" href="../../../../developer/thoughts/improved_mboxlist_sort.html#enabling-improved-mboxlist-sort"><span class="std std-ref">Enabling improved_mboxlist_sort</span></a></p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4035">Issue #4035</a>: <cite>ctl_cyrusdb -r</cite> now recovers from mailboxes.db
 records with missing uniqueids, instead of crashing.  A new <cite>-P</cite> option to
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std:cyrusman-reconstruct(8)">reconstruct(8)</a> enables repairing mailboxes whose header files
-are missing uniqueids.</li>
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std-cyrusman-reconstruct-8">reconstruct(8)</a> enables repairing mailboxes whose header files
+are missing uniqueids.</p></li>
 </ul>
 </div>
 </div>
@@ -963,7 +965,7 @@ are missing uniqueids.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 28 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -989,7 +991,6 @@ are missing uniqueids.</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

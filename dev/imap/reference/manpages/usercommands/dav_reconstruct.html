@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -786,13 +788,11 @@
           <div role="main" class="document">
             
   <div class="section" id="dav-reconstruct">
-<span id="imap-reference-manpages-usercommands-dav-reconstruct"></span><span id="std:cyrusman-dav_reconstruct(1)"></span><h1><strong>dav_reconstruct</strong><a class="headerlink" href="#dav-reconstruct" title="Permalink to this headline">¶</a></h1>
+<span id="imap-reference-manpages-usercommands-dav-reconstruct"></span><span id="std-cyrusman-dav_reconstruct-1"></span><span id="std:cyrusman-dav_reconstruct(1)"></span><h1><strong>dav_reconstruct</strong><a class="headerlink" href="#dav-reconstruct" title="Permalink to this headline">¶</a></h1>
 <p>Rebuild the caldav and carddav database for a user/set of users.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>dav_reconstruct</strong> [ <strong>-C</strong> <em>alt_config</em>] [ <strong>-A</strong> <em>&lt;audit tool&gt;</em> ] [ <strong>-a</strong> ] <em>&lt;userid_list&gt;</em>
-</pre>
+<pre class="literal-block"><strong>dav_reconstruct</strong> [ <strong>-C</strong> <em>alt_config</em>] [ <strong>-A</strong> <em>&lt;audit tool&gt;</em> ] [ <strong>-a</strong> ] <em>&lt;userid_list&gt;</em></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -801,28 +801,28 @@
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-dav_reconstruct-C">
-<code class="descname">-C</code><code class="descclassname">  alt_config</code><a class="headerlink" href="#cmdoption-dav_reconstruct-C" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-dav-reconstruct-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname">&#160; <span class="pre">alt_config</span></code><a class="headerlink" href="#cmdoption-dav_reconstruct-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alternative config file with cyrus settings.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-dav_reconstruct-a">
-<span id="cmdoption-dav_reconstruct--all"></span><code class="descname">-a</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--all</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-dav_reconstruct-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-dav-reconstruct-a"></span><span id="cmdoption-dav_reconstruct-all"></span><span id="cmdoption-dav-reconstruct-all"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--all</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dav_reconstruct-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process all users on this store.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-dav_reconstruct-A">
-<span id="cmdoption-dav_reconstruct--audit-tool"></span><code class="descname">-A</code><code class="descclassname"> audit-tool</code><code class="descclassname">, </code><code class="descname">--audit-tool</code><code class="descclassname">=audit-tool</code><a class="headerlink" href="#cmdoption-dav_reconstruct-A" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-dav_reconstruct-audit-tool"></span><span id="cmdoption-dav-reconstruct-audit-tool"></span><code class="sig-name descname"><span class="pre">-A</span></code><code class="sig-prename descclassname"> <span class="pre">audit-tool</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--audit-tool</span></code><code class="sig-prename descclassname"><span class="pre">=audit-tool</span></code><a class="headerlink" href="#cmdoption-dav_reconstruct-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of a program to take two sqlite databases and compare them. This option
 currently does not work.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-dav_reconstruct-arg-userid_list">
-<code class="descname">userid_list</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-dav_reconstruct-arg-userid_list" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-dav-reconstruct-arg-userid-list"></span><code class="sig-name descname"><span class="pre">userid_list</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-dav_reconstruct-arg-userid_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of users whose cal/card dav information you need to fix.</p>
 </dd></dl>
 
@@ -850,7 +850,7 @@ currently does not work.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -876,7 +876,6 @@ currently does not work.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

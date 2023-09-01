@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -494,122 +490,148 @@
 <div class="section" id="new-in-2-1-28">
 <h2>New in 2.1.28<a class="headerlink" href="#new-in-2-1-28" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>build:<ul>
-<li>configure - Restore LIBS after checking gss_inquire_sec_context_by_oid</li>
-<li>makemd5.c - Fix potential out of bound writes</li>
-<li>fix build with &#8211;disable-shared &#8211;enable-static</li>
-<li>Dozens of fixes for Windows specific builds</li>
-<li>Fix cross platform builds with SPNEGO</li>
-<li>Do not try to build broken java subtree</li>
-<li>Fix build error with &#8211;enable-auth-sasldb</li>
+<li><p>build:</p>
+<ul>
+<li><p>configure - Restore LIBS after checking gss_inquire_sec_context_by_oid</p></li>
+<li><p>makemd5.c - Fix potential out of bound writes</p></li>
+<li><p>fix build with –disable-shared –enable-static</p></li>
+<li><p>Dozens of fixes for Windows specific builds</p></li>
+<li><p>Fix cross platform builds with SPNEGO</p></li>
+<li><p>Do not try to build broken java subtree</p></li>
+<li><p>Fix build error with –enable-auth-sasldb</p></li>
 </ul>
 </li>
-<li>common:<ul>
-<li>plugin_common.c:<ul>
-<li>Ensure size is always checked if called repeatedly (#617)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>documentation:<ul>
-<li>Fixed generation of saslauthd(8) man page</li>
-<li>Fixed installation of saslauthd(8) and testsaslauthd(8) man pages (#373)</li>
-<li>Updates for additional SCRAM mechanisms</li>
-<li>Fix sasl_decode64 and sasl_encode64 man pages</li>
-<li>Tons of fixes for Sphinx</li>
-</ul>
-</li>
-<li>include:<ul>
-<li>sasl.h:<ul>
-<li>Allow up to 16 bits for security flags</li>
+<li><p>common:</p>
+<ul>
+<li><p>plugin_common.c:</p>
+<ul>
+<li><p>Ensure size is always checked if called repeatedly (#617)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>lib:<ul>
-<li>checkpw.c:<ul>
-<li>Skip one call to strcat</li>
-<li>Disable auxprop-hashed (#374)</li>
+<li><p>documentation:</p>
+<ul>
+<li><p>Fixed generation of saslauthd(8) man page</p></li>
+<li><p>Fixed installation of saslauthd(8) and testsaslauthd(8) man pages (#373)</p></li>
+<li><p>Updates for additional SCRAM mechanisms</p></li>
+<li><p>Fix sasl_decode64 and sasl_encode64 man pages</p></li>
+<li><p>Tons of fixes for Sphinx</p></li>
 </ul>
 </li>
-<li>client.c:<ul>
-<li>Use proper length for fully qualified domain names</li>
-</ul>
-</li>
-<li>common.c:<ul>
-<li>CVE-2019-19906 Fix off by one error (#587)</li>
-</ul>
-</li>
-<li>external.c:<ul>
-<li>fix EXTERNAL with non-terminated input (#689)</li>
-</ul>
-</li>
-<li>saslutil.c:<ul>
-<li>fix index_64 to be a signed char (#619)</li>
+<li><p>include:</p>
+<ul>
+<li><p>sasl.h:</p>
+<ul>
+<li><p>Allow up to 16 bits for security flags</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>plugins:<ul>
-<li>gssapi.c:<ul>
-<li>Emit debug log only in case of errors</li>
+<li><p>lib:</p>
+<ul>
+<li><p>checkpw.c:</p>
+<ul>
+<li><p>Skip one call to strcat</p></li>
+<li><p>Disable auxprop-hashed (#374)</p></li>
 </ul>
 </li>
-<li>ntlm.c:<ul>
-<li>Fail compile if MD4 is not available (#632)</li>
+<li><p>client.c:</p>
+<ul>
+<li><p>Use proper length for fully qualified domain names</p></li>
 </ul>
 </li>
-<li>sql.c:<ul>
-<li>Finish reading residual return data (#639)</li>
-<li>CVE-2022-24407 Escape password for SQL insert/update commands.</li>
+<li><p>common.c:</p>
+<ul>
+<li><p>CVE-2019-19906 Fix off by one error (#587)</p></li>
+</ul>
+</li>
+<li><p>external.c:</p>
+<ul>
+<li><p>fix EXTERNAL with non-terminated input (#689)</p></li>
+</ul>
+</li>
+<li><p>saslutil.c:</p>
+<ul>
+<li><p>fix index_64 to be a signed char (#619)</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>sasldb:<ul>
-<li>db_gdbm.c:<ul>
-<li>fix gdbm_errno overlay from gdbm_close</li>
+<li><p>plugins:</p>
+<ul>
+<li><p>gssapi.c:</p>
+<ul>
+<li><p>Emit debug log only in case of errors</p></li>
+</ul>
+</li>
+<li><p>ntlm.c:</p>
+<ul>
+<li><p>Fail compile if MD4 is not available (#632)</p></li>
+</ul>
+</li>
+<li><p>sql.c:</p>
+<ul>
+<li><p>Finish reading residual return data (#639)</p></li>
+<li><p>CVE-2022-24407 Escape password for SQL insert/update commands.</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>DIGEST-MD5 plugin:<ul>
-<li>Prevent double free of RC4 context</li>
-<li>Use OpenSSL RC4 implementation if available</li>
+<li><p>sasldb:</p>
+<ul>
+<li><p>db_gdbm.c:</p>
+<ul>
+<li><p>fix gdbm_errno overlay from gdbm_close</p></li>
 </ul>
 </li>
-<li>SCRAM plugin:<ul>
-<li>Return BADAUTH on incorrect password (#545)</li>
-<li>Add -224, -384, -512 (#552)</li>
-<li>Remove SCRAM_HASH_SIZE</li>
-<li>Add function to return SCRAM auth method name</li>
-<li>Allocate enough memory in scam_setpass()</li>
-<li>Add function to sort SCRAM methods by hash strength</li>
-<li>Update windows build for newer SCRAM options</li>
 </ul>
 </li>
-<li>saslauthd:<ul>
-<li>auth_httpform.c:<ul>
-<li>Avoid signed overflow with non-ascii characters (#576)</li>
+<li><p>DIGEST-MD5 plugin:</p>
+<ul>
+<li><p>Prevent double free of RC4 context</p></li>
+<li><p>Use OpenSSL RC4 implementation if available</p></li>
 </ul>
 </li>
-<li>auth_krb5.c:<ul>
-<li>support setting an explicit auth_krb5 server name</li>
-<li>support setting an explicit servername with Heimdal</li>
-<li>unify the MIT and Heimdal auth_krb5 implementations</li>
-<li>Remove call to krbtf</li>
+<li><p>SCRAM plugin:</p>
+<ul>
+<li><p>Return BADAUTH on incorrect password (#545)</p></li>
+<li><p>Add -224, -384, -512 (#552)</p></li>
+<li><p>Remove SCRAM_HASH_SIZE</p></li>
+<li><p>Add function to return SCRAM auth method name</p></li>
+<li><p>Allocate enough memory in scam_setpass()</p></li>
+<li><p>Add function to sort SCRAM methods by hash strength</p></li>
+<li><p>Update windows build for newer SCRAM options</p></li>
 </ul>
 </li>
-<li>auth_rimap.c:<ul>
-<li>provide native memmem implementation if missing</li>
+<li><p>saslauthd:</p>
+<ul>
+<li><p>auth_httpform.c:</p>
+<ul>
+<li><p>Avoid signed overflow with non-ascii characters (#576)</p></li>
 </ul>
 </li>
-<li>lak.c:<ul>
-<li>Allow LDAP_OPT_X_TLS_REQUIRE_CERT to be 0 (no certificate verification)</li>
+<li><p>auth_krb5.c:</p>
+<ul>
+<li><p>support setting an explicit auth_krb5 server name</p></li>
+<li><p>support setting an explicit servername with Heimdal</p></li>
+<li><p>unify the MIT and Heimdal auth_krb5 implementations</p></li>
+<li><p>Remove call to krbtf</p></li>
 </ul>
 </li>
-<li>lak.h:<ul>
-<li>Increase supported DN length to 4096 (#626)</li>
+<li><p>auth_rimap.c:</p>
+<ul>
+<li><p>provide native memmem implementation if missing</p></li>
+</ul>
+</li>
+<li><p>lak.c:</p>
+<ul>
+<li><p>Allow LDAP_OPT_X_TLS_REQUIRE_CERT to be 0 (no certificate verification)</p></li>
+</ul>
+</li>
+<li><p>lak.h:</p>
+<ul>
+<li><p>Increase supported DN length to 4096 (#626)</p></li>
 </ul>
 </li>
 </ul>
@@ -619,64 +641,76 @@
 <div class="section" id="new-in-2-1-27">
 <h2>New in 2.1.27<a class="headerlink" href="#new-in-2-1-27" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added support for OpenSSL 1.1</li>
-<li>Added support for lmdb (from Howard Chu)</li>
-<li>Lots of build fixes (from Ignacio Casal Quinteiro and others)</li>
-<li>Treat SCRAM and DIGEST-MD5 as more secure than PLAIN when selecting client mech</li>
-<li>DIGEST-MD5 plugin:<ul>
-<li>Fixed memory leaks</li>
-<li>Fixed a segfault when looking for non-existent reauth cache</li>
-<li>Prevent client from going from step 3 back to step 2</li>
-<li>Allow cmusaslsecretDIGEST-MD5 property to be disabled</li>
+<li><p>Added support for OpenSSL 1.1</p></li>
+<li><p>Added support for lmdb (from Howard Chu)</p></li>
+<li><p>Lots of build fixes (from Ignacio Casal Quinteiro and others)</p></li>
+<li><p>Treat SCRAM and DIGEST-MD5 as more secure than PLAIN when selecting client mech</p></li>
+<li><p>DIGEST-MD5 plugin:</p>
+<ul>
+<li><p>Fixed memory leaks</p></li>
+<li><p>Fixed a segfault when looking for non-existent reauth cache</p></li>
+<li><p>Prevent client from going from step 3 back to step 2</p></li>
+<li><p>Allow cmusaslsecretDIGEST-MD5 property to be disabled</p></li>
 </ul>
 </li>
-<li>GSSAPI plugin:<ul>
-<li>Added support for retrieving negotiated SSF</li>
-<li>Fixed GSS-SPNEGO to use flags negotiated by GSSAPI for SSF</li>
-<li>Properly compute maxbufsize AFTER security layers have been set</li>
+<li><p>GSSAPI plugin:</p>
+<ul>
+<li><p>Added support for retrieving negotiated SSF</p></li>
+<li><p>Fixed GSS-SPNEGO to use flags negotiated by GSSAPI for SSF</p></li>
+<li><p>Properly compute maxbufsize AFTER security layers have been set</p></li>
 </ul>
 </li>
-<li>SCRAM plugin:<ul>
-<li>Added support for SCRAM-SHA-256</li>
+<li><p>SCRAM plugin:</p>
+<ul>
+<li><p>Added support for SCRAM-SHA-256</p></li>
 </ul>
 </li>
-<li>LOGIN plugin:<ul>
-<li>Don&#8217;t prompt client for password until requested by server</li>
+<li><p>LOGIN plugin:</p>
+<ul>
+<li><p>Don’t prompt client for password until requested by server</p></li>
 </ul>
 </li>
-<li>NTLM plugin:<ul>
-<li>Fixed crash due to uninitialized HMAC context</li>
+<li><p>NTLM plugin:</p>
+<ul>
+<li><p>Fixed crash due to uninitialized HMAC context</p></li>
 </ul>
 </li>
-<li>saslauthd:<ul>
-<li>cache.c:<ul>
-<li>Don&#8217;t use cached credentials if timeout has expired</li>
-<li>Fixed debug logging output</li>
+<li><p>saslauthd:</p>
+<ul>
+<li><p>cache.c:</p>
+<ul>
+<li><p>Don’t use cached credentials if timeout has expired</p></li>
+<li><p>Fixed debug logging output</p></li>
 </ul>
 </li>
-<li>ipc_doors.c:<ul>
-<li>Fixed potential DoS attack (from Oracle)</li>
+<li><p>ipc_doors.c:</p>
+<ul>
+<li><p>Fixed potential DoS attack (from Oracle)</p></li>
 </ul>
 </li>
-<li>ipc_unix.c:<ul>
-<li>Prevent premature closing of socket</li>
+<li><p>ipc_unix.c:</p>
+<ul>
+<li><p>Prevent premature closing of socket</p></li>
 </ul>
 </li>
-<li>auth_rimap.c:<ul>
-<li>Added support LOGOUT command</li>
-<li>Added support for unsolicited CAPABILITY responses in LOGIN reply</li>
-<li>Properly detect end of responses (don&#8217;t needlessly wait)</li>
-<li>Properly handle backslash in passwords</li>
+<li><p>auth_rimap.c:</p>
+<ul>
+<li><p>Added support LOGOUT command</p></li>
+<li><p>Added support for unsolicited CAPABILITY responses in LOGIN reply</p></li>
+<li><p>Properly detect end of responses (don’t needlessly wait)</p></li>
+<li><p>Properly handle backslash in passwords</p></li>
 </ul>
 </li>
-<li>auth_httpform:<ul>
-<li>Fix off-by-one error in string termination</li>
-<li>Added support for 204 success response</li>
+<li><p>auth_httpform:</p>
+<ul>
+<li><p>Fix off-by-one error in string termination</p></li>
+<li><p>Added support for 204 success response</p></li>
 </ul>
 </li>
-<li>auth_krb5.c:<ul>
-<li>Added krb5_conv_krb4_instance option</li>
-<li>Added more verbose error logging</li>
+<li><p>auth_krb5.c:</p>
+<ul>
+<li><p>Added krb5_conv_krb4_instance option</p></li>
+<li><p>Added more verbose error logging</p></li>
 </ul>
 </li>
 </ul>
@@ -686,53 +720,60 @@
 <div class="section" id="new-in-2-1-26">
 <h2>New in 2.1.26<a class="headerlink" href="#new-in-2-1-26" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Modernize SASL malloc/realloc callback prototypes</li>
-<li>Added sasl_config_done() to plug a memory leak when using an application
-specific config file</li>
-<li>Fixed PLAIN/LOGIN authentication failure when using saslauthd
-with no auxprop plugins (bug # 3590).</li>
-<li>unlock the mutex in sasl_dispose if the context was freed by another thread</li>
-<li>MINGW32 compatibility patches</li>
-<li>Fixed broken logic in get_fqhostname() when abort_if_no_fqdn is 0</li>
-<li>Fixed some memory leaks in libsasl</li>
-<li>GSSAPI plugin:<ul>
-<li>Fixed a segfault in gssapi.c introduced in 2.1.25.</li>
-<li>Code refactoring</li>
-<li>Added support for GSS-SPNEGO SASL mechanism (Unix only), which is also
-HTTP capable</li>
+<li><p>Modernize SASL malloc/realloc callback prototypes</p></li>
+<li><p>Added sasl_config_done() to plug a memory leak when using an application
+specific config file</p></li>
+<li><p>Fixed PLAIN/LOGIN authentication failure when using saslauthd
+with no auxprop plugins (bug # 3590).</p></li>
+<li><p>unlock the mutex in sasl_dispose if the context was freed by another thread</p></li>
+<li><p>MINGW32 compatibility patches</p></li>
+<li><p>Fixed broken logic in get_fqhostname() when abort_if_no_fqdn is 0</p></li>
+<li><p>Fixed some memory leaks in libsasl</p></li>
+<li><p>GSSAPI plugin:</p>
+<ul>
+<li><p>Fixed a segfault in gssapi.c introduced in 2.1.25.</p></li>
+<li><p>Code refactoring</p></li>
+<li><p>Added support for GSS-SPNEGO SASL mechanism (Unix only), which is also
+HTTP capable</p></li>
 </ul>
 </li>
-<li>GS2 plugin:<ul>
-<li>Updated GS2 plugin not to lose minor GSS-API status codes on errors</li>
+<li><p>GS2 plugin:</p>
+<ul>
+<li><p>Updated GS2 plugin not to lose minor GSS-API status codes on errors</p></li>
 </ul>
 </li>
-<li>DIGEST-MD5 plugin:<ul>
-<li>Correctly send &#8220;stale&#8221; directive to prevent clients from (re)promtping
-for password</li>
-<li>Better handling of HTTP reauthentication cases</li>
-<li>fixed some memory leaks</li>
+<li><p>DIGEST-MD5 plugin:</p>
+<ul>
+<li><p>Correctly send “stale” directive to prevent clients from (re)promtping
+for password</p></li>
+<li><p>Better handling of HTTP reauthentication cases</p></li>
+<li><p>fixed some memory leaks</p></li>
 </ul>
 </li>
-<li>SASLDB plugin:<ul>
-<li>Added support for BerkleyDB 5.X or later</li>
+<li><p>SASLDB plugin:</p>
+<ul>
+<li><p>Added support for BerkleyDB 5.X or later</p></li>
 </ul>
 </li>
-<li>OTP plugin:<ul>
-<li>Removed calling of EVP_cleanup() on plugin shutdown in order to prevent
-TLS from failing in calling applications</li>
+<li><p>OTP plugin:</p>
+<ul>
+<li><p>Removed calling of EVP_cleanup() on plugin shutdown in order to prevent
+TLS from failing in calling applications</p></li>
 </ul>
 </li>
-<li>SRP plugin:<ul>
-<li>Removed calling of EVP_cleanup() on plugin shutdown in order to prevent
-TLS from failing in calling applications</li>
+<li><p>SRP plugin:</p>
+<ul>
+<li><p>Removed calling of EVP_cleanup() on plugin shutdown in order to prevent
+TLS from failing in calling applications</p></li>
 </ul>
 </li>
-<li>saslauthd:<ul>
-<li>auth_rimap.c: qstring incorrectly appending the closing double quote,
-which might be causing crashes</li>
-<li>auth_rimap.c: read the whole IMAP greeting</li>
-<li>better error reporting from some drivers</li>
-<li>fixed some memory leaks</li>
+<li><p>saslauthd:</p>
+<ul>
+<li><p>auth_rimap.c: qstring incorrectly appending the closing double quote,
+which might be causing crashes</p></li>
+<li><p>auth_rimap.c: read the whole IMAP greeting</p></li>
+<li><p>better error reporting from some drivers</p></li>
+<li><p>fixed some memory leaks</p></li>
 </ul>
 </li>
 </ul>
@@ -740,432 +781,439 @@ which might be causing crashes</li>
 <div class="section" id="new-in-2-1-25">
 <h2>New in 2.1.25<a class="headerlink" href="#new-in-2-1-25" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Make sure that a failed authorization doesn&#8217;t preclude
-further server-side SASL authentication attempts from working.</li>
-<li>Fixed a crash caused by aborted SASL authentication
-and initiation of another one using the same SASL context.</li>
-<li>(Windows) Fixed the random number generator to actually produce random
-output on each run.</li>
-<li>Be protective against calling sasl_server_step once authentication
-has failed (multiple SASL plugins)</li>
-<li>Fixed several bugs in the mech_avail callback handling
-in the server side code.</li>
-<li>Added support for channel bindings</li>
-<li>Added support for ordering SASL mechanisms by strength (on the client side),
-or using the &#8220;client_mech_list&#8221; option.</li>
-<li>server_idle needs to obey server&#8217;s SASL mechanism list from the server
-context.</li>
-<li>Better server plugin API mismatch reporting</li>
-<li>Build:
+<li><p>Make sure that a failed authorization doesn’t preclude
+further server-side SASL authentication attempts from working.</p></li>
+<li><p>Fixed a crash caused by aborted SASL authentication
+and initiation of another one using the same SASL context.</p></li>
+<li><p>(Windows) Fixed the random number generator to actually produce random
+output on each run.</p></li>
+<li><p>Be protective against calling sasl_server_step once authentication
+has failed (multiple SASL plugins)</p></li>
+<li><p>Fixed several bugs in the mech_avail callback handling
+in the server side code.</p></li>
+<li><p>Added support for channel bindings</p></li>
+<li><p>Added support for ordering SASL mechanisms by strength (on the client side),
+or using the “client_mech_list” option.</p></li>
+<li><p>server_idle needs to obey server’s SASL mechanism list from the server
+context.</p></li>
+<li><p>Better server plugin API mismatch reporting</p></li>
+<li><p>Build:
 - Updated config to the latest GNU snapshot
-- Fixed SASL&#8217;s libtool MacOS/X 64-bit file magic</li>
-<li>New SASL plugin: SCRAM</li>
-<li>New SASL plugin: GS2</li>
-<li>DIGEST-MD5 plugin:</li>
+- Fixed SASL’s libtool MacOS/X 64-bit file magic</p></li>
+<li><p>New SASL plugin: SCRAM</p></li>
+<li><p>New SASL plugin: GS2</p></li>
+<li><p>DIGEST-MD5 plugin:</p></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>Allow DIGEST-MD5 plugin to be used for client-side and
+<li><p>Allow DIGEST-MD5 plugin to be used for client-side and
 server-side HTTP Digest, including running over non-persistent
-connections (RFC 2617)</li>
-<li>Use the same username for reauthentication cache lookup and update</li>
-<li>Minimize the number of auxprop lookups in the server side DIGEST-MD5
+connections (RFC 2617)</p></li>
+<li><p>Use the same username for reauthentication cache lookup and update</p></li>
+<li><p>Minimize the number of auxprop lookups in the server side DIGEST-MD5
 plugin for the most common case when authentication and authorization
-identities are the same.</li>
-<li>Updated digestmd5_server_mech_step2() to be more defensive against
-empty client input.</li>
-<li>Fixed some memory leaks on failed plugin initialization.
+identities are the same.</p></li>
+<li><p>Updated digestmd5_server_mech_step2() to be more defensive against
+empty client input.</p></li>
+<li><p>Fixed some memory leaks on failed plugin initialization.
 Prevent potential race condition when freeding plugin state.
 Set the freed reauthentication cache mutex to NULL, to make errors
-due to mutex access after free more obvious.</li>
-<li>Test against broken UTF-8 based hashes if calculation using special
-ISO-8859-1 code fails.</li>
-<li>Fixed an interop problem with some LDAP clients ignoring server
-advertised realm and providing their own.</li>
+due to mutex access after free more obvious.</p></li>
+<li><p>Test against broken UTF-8 based hashes if calculation using special
+ISO-8859-1 code fails.</p></li>
+<li><p>Fixed an interop problem with some LDAP clients ignoring server
+advertised realm and providing their own.</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>GSSAPI plugin:<ul>
-<li>Fix to build GSSAPI with Heimdal</li>
-<li>Properly set serveroutlen to 0 in one place.
-Don&#8217;t send empty challenge once server context establishment is done,
-as this is in violation of the RFC 2222 and its successor.</li>
-<li>Don&#8217;t send maxbuf, if no security layer can be established.
-Added additional checks for buffer lengths.</li>
+<li><p>GSSAPI plugin:</p>
+<ul>
+<li><p>Fix to build GSSAPI with Heimdal</p></li>
+<li><p>Properly set serveroutlen to 0 in one place.
+Don’t send empty challenge once server context establishment is done,
+as this is in violation of the RFC 2222 and its successor.</p></li>
+<li><p>Don’t send maxbuf, if no security layer can be established.
+Added additional checks for buffer lengths.</p></li>
 </ul>
 </li>
-<li>LDAPDB plugin:
-- build fixes</li>
+<li><p>LDAPDB plugin:
+- build fixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-24">
 <h2>New in 2.1.24<a class="headerlink" href="#new-in-2-1-24" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Order advertised server-side SASL mechanisms per the specified &#8216;mech_list&#8217;
-option or by relative &#8220;strength&#8221;</li>
-<li>Make sure that sasl_set_alloc() has no effect once sasl_client_init()
-or sasl_server_init() is called</li>
-<li>Fixed sasl_set_mutex() to disallow changing mutex management functions
-once sasl_server_init()/sasl_client_init() is called (bug # 3083)</li>
-<li>Removed unused mutexes in lib/client.c and lib/server.c (bug # 3141)</li>
-<li>Added direct support for hashed password to auxprop API</li>
-<li>Don&#8217;t treat a constraint violation as an error to store an auxprop property</li>
-<li>Extended libsasl (auxprop) to support user deletion</li>
-<li>Extended SASL auxprop_lookup to return error code</li>
-<li>Updated sasl_user_exists() so that it can handle passwordless accounts (e.g. disabled)</li>
-<li>(Windows) Free handles of shared libraries on Windows that were loaded
-but are not SASL plugins (bug # 2089)</li>
-<li>Prevent freeing of common state on a subsequent call to _sasl_common_init.
-Make sure that the last global callback always wins.</li>
-<li>Implemented sasl_client_done()/sasl_server_done()</li>
-<li>Added automatic hostname canonicalization inside libsasl</li>
-<li>Made sasl_config_init() public</li>
-<li>Strip trailing spaces from server config file option values (bug # 3139, bug # 3041)</li>
-<li>Fixed potential buffer overflow in saslautd_verify_password().</li>
-<li>Fixed segfault in dlclose() on HPUX</li>
-<li>Various bugfixes for 64bit platforms</li>
-<li>Fixed bug # 2895 (passing LF to sasl_decode64) in sample/sample-client.c,
-sample/sample-server.c, utils/smtptest.c</li>
-<li>pluginviewer: Code cleanup, improved human readable messages</li>
-<li>Build:
+<li><p>Order advertised server-side SASL mechanisms per the specified ‘mech_list’
+option or by relative “strength”</p></li>
+<li><p>Make sure that sasl_set_alloc() has no effect once sasl_client_init()
+or sasl_server_init() is called</p></li>
+<li><p>Fixed sasl_set_mutex() to disallow changing mutex management functions
+once sasl_server_init()/sasl_client_init() is called (bug # 3083)</p></li>
+<li><p>Removed unused mutexes in lib/client.c and lib/server.c (bug # 3141)</p></li>
+<li><p>Added direct support for hashed password to auxprop API</p></li>
+<li><p>Don’t treat a constraint violation as an error to store an auxprop property</p></li>
+<li><p>Extended libsasl (auxprop) to support user deletion</p></li>
+<li><p>Extended SASL auxprop_lookup to return error code</p></li>
+<li><p>Updated sasl_user_exists() so that it can handle passwordless accounts (e.g. disabled)</p></li>
+<li><p>(Windows) Free handles of shared libraries on Windows that were loaded
+but are not SASL plugins (bug # 2089)</p></li>
+<li><p>Prevent freeing of common state on a subsequent call to _sasl_common_init.
+Make sure that the last global callback always wins.</p></li>
+<li><p>Implemented sasl_client_done()/sasl_server_done()</p></li>
+<li><p>Added automatic hostname canonicalization inside libsasl</p></li>
+<li><p>Made sasl_config_init() public</p></li>
+<li><p>Strip trailing spaces from server config file option values (bug # 3139, bug # 3041)</p></li>
+<li><p>Fixed potential buffer overflow in saslautd_verify_password().</p></li>
+<li><p>Fixed segfault in dlclose() on HPUX</p></li>
+<li><p>Various bugfixes for 64bit platforms</p></li>
+<li><p>Fixed bug # 2895 (passing LF to sasl_decode64) in sample/sample-client.c,
+sample/sample-server.c, utils/smtptest.c</p></li>
+<li><p>pluginviewer: Code cleanup, improved human readable messages</p></li>
+<li><p>Build:
 - (Windows) Updated makefiles to build with VC 8.0 (VC++ 2005)
 - (Windows) Added Windows64 build
 - Updated to use .plugin extension on MacOS
-- Changed 64bit HP-UX build to use .so for shared libraries</li>
-<li>saslauthd:<ul>
-<li>Fixed bug counting double-quotes in username/password in
-auth_rimap.c. Also fixed bug zeroing password.</li>
-<li>auth_krb.c: improved diagnostic in the k5support_verify_tgt() function.</li>
-<li>auth_sasldb.c: pid_file_lock is created with a mask of 644 instead of 0644</li>
-<li>auth_shadow.c: Define _XOPEN_SOURCE before including unistd.h,
-so that crypt is correctly defined</li>
-<li>auth_getpwent.c: Fixed Solaris build</li>
+- Changed 64bit HP-UX build to use .so for shared libraries</p></li>
+<li><p>saslauthd:</p>
+<ul>
+<li><p>Fixed bug counting double-quotes in username/password in
+auth_rimap.c. Also fixed bug zeroing password.</p></li>
+<li><p>auth_krb.c: improved diagnostic in the k5support_verify_tgt() function.</p></li>
+<li><p>auth_sasldb.c: pid_file_lock is created with a mask of 644 instead of 0644</p></li>
+<li><p>auth_shadow.c: Define _XOPEN_SOURCE before including unistd.h,
+so that crypt is correctly defined</p></li>
+<li><p>auth_getpwent.c: Fixed Solaris build</p></li>
 </ul>
 </li>
-<li>SASLDB plugin:<ul>
-<li>Fixed spurious &#8216;user not found&#8217; errors caused by an attempt
-to delete a non-existent property</li>
-<li>Added direct support for hashed password to auxprop API</li>
-<li>Sleepycat driver:  Return SASL_NOUSER instead of SASL_FAIL when the database
-file doesn&#8217;t exist</li>
-<li>Ignore properties starting with &#8216;*&#8217; in the auxprop store function</li>
+<li><p>SASLDB plugin:</p>
+<ul>
+<li><p>Fixed spurious ‘user not found’ errors caused by an attempt
+to delete a non-existent property</p></li>
+<li><p>Added direct support for hashed password to auxprop API</p></li>
+<li><p>Sleepycat driver:  Return SASL_NOUSER instead of SASL_FAIL when the database
+file doesn’t exist</p></li>
+<li><p>Ignore properties starting with ‘*’ in the auxprop store function</p></li>
 </ul>
 </li>
-<li>SQL plugin:
+<li><p>SQL plugin:
 - Added support for SQLITE3
 - Uninitialized variables can cause crash when the searched user is not found
 - Added direct support for hashed password
-- Ignore properties starting with &#8216;*&#8217; in the auxprop store function</li>
-<li>LDAPDB plugin:<ul>
-<li>Added code to extend LDAPDB into a canon_user plugin in addition
-to its existing auxprop plugin functionality</li>
+- Ignore properties starting with ‘*’ in the auxprop store function</p></li>
+<li><p>LDAPDB plugin:</p>
+<ul>
+<li><p>Added code to extend LDAPDB into a canon_user plugin in addition
+to its existing auxprop plugin functionality</p></li>
 </ul>
 </li>
-<li>PLAIN plugin:
-- Advertise SASL_SEC_PASS_CREDENTIALS feature</li>
-<li>LOGIN plugin:
-- Advertise SASL_SEC_PASS_CREDENTIALS feature</li>
-<li>DIGEST-MD5 plugin:<ul>
-<li>Fixed a memory leak in the DIGEST-MD5 security layer</li>
-<li>Fixed memory leaks in client-side reauth and other places</li>
-<li>More detailed error reporting.</li>
-<li>Fixed parsing of challenges/responses with extra commas.</li>
-<li>Allow for multiple qop options from the server and require
-a single qop option from the client.</li>
+<li><p>PLAIN plugin:
+- Advertise SASL_SEC_PASS_CREDENTIALS feature</p></li>
+<li><p>LOGIN plugin:
+- Advertise SASL_SEC_PASS_CREDENTIALS feature</p></li>
+<li><p>DIGEST-MD5 plugin:</p>
+<ul>
+<li><p>Fixed a memory leak in the DIGEST-MD5 security layer</p></li>
+<li><p>Fixed memory leaks in client-side reauth and other places</p></li>
+<li><p>More detailed error reporting.</p></li>
+<li><p>Fixed parsing of challenges/responses with extra commas.</p></li>
+<li><p>Allow for multiple qop options from the server and require
+a single qop option from the client.</p></li>
 </ul>
 </li>
-<li>GSSAPI plugin:
+<li><p>GSSAPI plugin:
 - Check that params-&gt;serverFQDN is not NULL before using strlen on it
-- Make auxprop lookup calls optional</li>
-<li>EXTERNAL plugin:
-- Make auxprop lookup calls optional</li>
-<li>NTLM plugin:
-- allow a comma separated list of servernames in &#8216;ntlm_server&#8217; option
-- Fixed crash in calculating NTv2 reponse</li>
-<li>OTP plugin:
-- Don&#8217;t use a stack variable for an OTP prompt (bug # 2822)
-- Downgrade the failure to store OTP secret to debug level</li>
-<li>KERBEROS_V4 plugin:
-- Make auxprop lookup calls optional</li>
+- Make auxprop lookup calls optional</p></li>
+<li><p>EXTERNAL plugin:
+- Make auxprop lookup calls optional</p></li>
+<li><p>NTLM plugin:
+- allow a comma separated list of servernames in ‘ntlm_server’ option
+- Fixed crash in calculating NTv2 reponse</p></li>
+<li><p>OTP plugin:
+- Don’t use a stack variable for an OTP prompt (bug # 2822)
+- Downgrade the failure to store OTP secret to debug level</p></li>
+<li><p>KERBEROS_V4 plugin:
+- Make auxprop lookup calls optional</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-23">
 <h2>New in 2.1.23<a class="headerlink" href="#new-in-2-1-23" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed CERT VU#238019 (make sure sasl_encode64() always NUL
-terminates output or returns SASL_BUFOVER)</li>
+<li><p>Fixed CERT VU#238019 (make sure sasl_encode64() always NUL
+terminates output or returns SASL_BUFOVER)</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-22">
 <h2>New in 2.1.22<a class="headerlink" href="#new-in-2-1-22" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added support for spliting big data blocks (bigger than maxbuf)
-into multiple SASL packets in sasl_encodev</li>
-<li>Various sasl_decode64() fixes</li>
-<li>Increase canonicalization buffer size to 1024 bytes</li>
-<li>Call do_authorization() after successful APOP authentication</li>
-<li>Allow for configuration file location to be configurable independently
-of plugin location (bug # 2795)</li>
-<li>Added sasl_set_path function, which provides a more convenient way
+<li><p>Added support for spliting big data blocks (bigger than maxbuf)
+into multiple SASL packets in sasl_encodev</p></li>
+<li><p>Various sasl_decode64() fixes</p></li>
+<li><p>Increase canonicalization buffer size to 1024 bytes</p></li>
+<li><p>Call do_authorization() after successful APOP authentication</p></li>
+<li><p>Allow for configuration file location to be configurable independently
+of plugin location (bug # 2795)</p></li>
+<li><p>Added sasl_set_path function, which provides a more convenient way
 of setting plugin and config paths. Changed the default
 sasl_getpath_t/sasl_getconfpath_t callbacks to calculate
-the value only once and cache it for later use.</li>
-<li>Fixed load_config to search for the config file in all directories
+the value only once and cache it for later use.</p></li>
+<li><p>Fixed load_config to search for the config file in all directories
 (bug # 2796). Changed the default search path to be
-/usr/lib/sasl2:/etc/sasl2</li>
-<li>Don&#8217;t ignore log_level configuration option in default UNIX syslog
-logging callback</li>
-<li>(Windows) Minor IPv6 related changes in Makefiles for Visual Studio 6</li>
-<li>(Windows) Fixed bug of not setting the CODEGEN (code generation option)
-nmake option if STATIC nmake option is set.</li>
-<li>Several fixed to DIGEST-MD5 plugin:<ul>
-<li>Enable RC4 cipher in Windows build of DIGEST-MD5</li>
-<li>Server side: handle missing realm option as if realm=&#8221;&#8221; was sent</li>
-<li>Fix DIGEST-MD5 to properly advertise maxssf when both DES and RC4
-are disabled</li>
-<li>Check that DIGEST-MD5 SASL packet are no shorter than 16 bytes</li>
+/usr/lib/sasl2:/etc/sasl2</p></li>
+<li><p>Don’t ignore log_level configuration option in default UNIX syslog
+logging callback</p></li>
+<li><p>(Windows) Minor IPv6 related changes in Makefiles for Visual Studio 6</p></li>
+<li><p>(Windows) Fixed bug of not setting the CODEGEN (code generation option)
+nmake option if STATIC nmake option is set.</p></li>
+<li><p>Several fixed to DIGEST-MD5 plugin:</p>
+<ul>
+<li><p>Enable RC4 cipher in Windows build of DIGEST-MD5</p></li>
+<li><p>Server side: handle missing realm option as if realm=”” was sent</p></li>
+<li><p>Fix DIGEST-MD5 to properly advertise maxssf when both DES and RC4
+are disabled</p></li>
+<li><p>Check that DIGEST-MD5 SASL packet are no shorter than 16 bytes</p></li>
 </ul>
 </li>
-<li>Several changes/fixed to SASLDB plugin:<ul>
-<li>Prevent spurious SASL_NOUSER errors</li>
-<li>Added ability to keep BerkleyDB handle open between operations
+<li><p>Several changes/fixed to SASLDB plugin:</p>
+<ul>
+<li><p>Prevent spurious SASL_NOUSER errors</p></li>
+<li><p>Added ability to keep BerkleyDB handle open between operations
 (for performance reason). New behavior can be enabled
-with &#8211;enable-keep-db-open.</li>
+with –enable-keep-db-open.</p></li>
 </ul>
 </li>
-<li>Better error checking in SQL (MySQL) auxprop plugin code</li>
-<li>Added support for HTTP POST password validation in saslauthd</li>
-<li>Added new application (&#8220;pluginviewer&#8221;) that helps report information
-about installed plugins</li>
-<li>Allow for building with OpenSSL 0.9.8</li>
-<li>Allow for building with OpenLDAP 2.3+</li>
-<li>Several quoting fixes to configure script</li>
-<li>A large number of other minor bugfixes and cleanups</li>
+<li><p>Better error checking in SQL (MySQL) auxprop plugin code</p></li>
+<li><p>Added support for HTTP POST password validation in saslauthd</p></li>
+<li><p>Added new application (“pluginviewer”) that helps report information
+about installed plugins</p></li>
+<li><p>Allow for building with OpenSSL 0.9.8</p></li>
+<li><p>Allow for building with OpenLDAP 2.3+</p></li>
+<li><p>Several quoting fixes to configure script</p></li>
+<li><p>A large number of other minor bugfixes and cleanups</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-21">
 <h2>New in 2.1.21<a class="headerlink" href="#new-in-2-1-21" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixes DIGEST-MD5 server side segfault caused by the client not sending
-any realms</li>
-<li>Minor Other bugfixes</li>
+<li><p>Fixes DIGEST-MD5 server side segfault caused by the client not sending
+any realms</p></li>
+<li><p>Minor Other bugfixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-20">
 <h2>New in 2.1.20<a class="headerlink" href="#new-in-2-1-20" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixes to cram plugin to avoid attempting to canonify uninitialized data.</li>
-<li>NTLM portability fixes.</li>
-<li>Avoid potential attack using SASL_PATH when sasl is used in a setuid
-environment.</li>
-<li>A trivial number of small bugfixes.</li>
+<li><p>Fixes to cram plugin to avoid attempting to canonify uninitialized data.</p></li>
+<li><p>NTLM portability fixes.</p></li>
+<li><p>Avoid potential attack using SASL_PATH when sasl is used in a setuid
+environment.</p></li>
+<li><p>A trivial number of small bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-19">
 <h2>New in 2.1.19<a class="headerlink" href="#new-in-2-1-19" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixes to saslauthd to allow better integration with realms (-r flag to
-saslauthd, %R token in LDAP module)</li>
-<li>Support for forwarding of GSSAPI credentials</li>
-<li>SQLite support for the SQL plugin</li>
-<li>A nontrivial number of small bugfixes.</li>
+<li><p>Fixes to saslauthd to allow better integration with realms (-r flag to
+saslauthd, %R token in LDAP module)</p></li>
+<li><p>Support for forwarding of GSSAPI credentials</p></li>
+<li><p>SQLite support for the SQL plugin</p></li>
+<li><p>A nontrivial number of small bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-18">
 <h2>New in 2.1.18<a class="headerlink" href="#new-in-2-1-18" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>saslauthd/LDAP no longer tagged &#8220;experimental&#8221;</li>
-<li>Add group membership check to saslauthd/LDAP</li>
-<li>Fix Solaris 9 &#8220;NI_WITHSCOPEID&#8221; issue</li>
-<li>Fix missing &#8220;getaddrinfo.c&#8221; and other distribution problems</li>
-<li>Significant Windows enhancements</li>
-<li>A large number of other minor bugfixes and cleanups</li>
+<li><p>saslauthd/LDAP no longer tagged “experimental”</p></li>
+<li><p>Add group membership check to saslauthd/LDAP</p></li>
+<li><p>Fix Solaris 9 “NI_WITHSCOPEID” issue</p></li>
+<li><p>Fix missing “getaddrinfo.c” and other distribution problems</p></li>
+<li><p>Significant Windows enhancements</p></li>
+<li><p>A large number of other minor bugfixes and cleanups</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-17">
 <h2>New in 2.1.17<a class="headerlink" href="#new-in-2-1-17" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Allow selection of GSSAPI implementation explicitly (&#8211;with-gss_impl)</li>
-<li>Other GSSAPI detection improvements</li>
-<li>Now correctly do authorizaton callback in sasl_checkpass()</li>
-<li>Disable KERBEROS_V4 by default</li>
-<li>Continued Win32/Win64 Improvements</li>
-<li>Minor Other bugfixes</li>
+<li><p>Allow selection of GSSAPI implementation explicitly (–with-gss_impl)</p></li>
+<li><p>Other GSSAPI detection improvements</p></li>
+<li><p>Now correctly do authorizaton callback in sasl_checkpass()</p></li>
+<li><p>Disable KERBEROS_V4 by default</p></li>
+<li><p>Continued Win32/Win64 Improvements</p></li>
+<li><p>Minor Other bugfixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-16-beta">
 <h2>New in 2.1.16-BETA<a class="headerlink" href="#new-in-2-1-16-beta" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Significantly improved Win32 support</li>
-<li>Writable auxprop support</li>
-<li>Expanded SQL support (including postgres)</li>
-<li>Significantly improved documentation</li>
-<li>Improved realm/username handling with saslauthd</li>
-<li>Support for modern automake and autoconf</li>
+<li><p>Significantly improved Win32 support</p></li>
+<li><p>Writable auxprop support</p></li>
+<li><p>Expanded SQL support (including postgres)</p></li>
+<li><p>Significantly improved documentation</p></li>
+<li><p>Improved realm/username handling with saslauthd</p></li>
+<li><p>Support for modern automake and autoconf</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-15">
 <h2>New in 2.1.15<a class="headerlink" href="#new-in-2-1-15" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fix a number of build issues</li>
-<li>Add a doc/components.html that hopefully describes how things
-interact better.</li>
+<li><p>Fix a number of build issues</p></li>
+<li><p>Add a doc/components.html that hopefully describes how things
+interact better.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-14">
 <h2>New in 2.1.14<a class="headerlink" href="#new-in-2-1-14" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>OS X 10.2 support</li>
-<li>Support for the Sun SEAM GSSAPI implementation</li>
-<li>Support for MySQL 4</li>
-<li>A number of build fixes</li>
-<li>Other minor bugfixes</li>
+<li><p>OS X 10.2 support</p></li>
+<li><p>Support for the Sun SEAM GSSAPI implementation</p></li>
+<li><p>Support for MySQL 4</p></li>
+<li><p>A number of build fixes</p></li>
+<li><p>Other minor bugfixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-13">
 <h2>New in 2.1.13<a class="headerlink" href="#new-in-2-1-13" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Add a configure option to allow specification of what /dev/random to use.</li>
-<li>Addition of a saslauthd credential cache feature (-c option).</li>
-<li>Unification of the saslauthd ipc method code.</li>
-<li>Fix a number of autoconf issues.</li>
-<li>A significant number of fixes throughout the library from Sun Microsystems.</li>
-<li>Other minor bugfixes.</li>
+<li><p>Add a configure option to allow specification of what /dev/random to use.</p></li>
+<li><p>Addition of a saslauthd credential cache feature (-c option).</p></li>
+<li><p>Unification of the saslauthd ipc method code.</p></li>
+<li><p>Fix a number of autoconf issues.</p></li>
+<li><p>A significant number of fixes throughout the library from Sun Microsystems.</p></li>
+<li><p>Other minor bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-12">
 <h2>New in 2.1.12<a class="headerlink" href="#new-in-2-1-12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Distribute in Solaris tar (not GNU tar format)</li>
-<li>Fix a number of build/configure related issues.</li>
+<li><p>Distribute in Solaris tar (not GNU tar format)</p></li>
+<li><p>Fix a number of build/configure related issues.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-11">
 <h2>New in 2.1.11<a class="headerlink" href="#new-in-2-1-11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Add the fastbind auth method to the saslauthd LDAP module.</li>
-<li>Fix a potential memory leak in the doors version of saslauthd.</li>
-<li>NTLM now only requires one of LM or NT, not both.</li>
-<li>Fix a variety of Berkeley DB, LDAP, OpenSSL, and other build issues.</li>
-<li>Win32 support compiles, but no documentation as of yet.</li>
+<li><p>Add the fastbind auth method to the saslauthd LDAP module.</p></li>
+<li><p>Fix a potential memory leak in the doors version of saslauthd.</p></li>
+<li><p>NTLM now only requires one of LM or NT, not both.</p></li>
+<li><p>Fix a variety of Berkeley DB, LDAP, OpenSSL, and other build issues.</p></li>
+<li><p>Win32 support compiles, but no documentation as of yet.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-10">
 <h2>New in 2.1.10<a class="headerlink" href="#new-in-2-1-10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Further DIGEST-MD5 DES interoperability fixes.  Now works against Active
-Directory.</li>
-<li>Fix some potential buffer overflows.</li>
-<li>Misc. cleanups in the saslauthd LDAP module</li>
-<li>Fix security properties of NTLM and EXTERNAL</li>
+<li><p>Further DIGEST-MD5 DES interoperability fixes.  Now works against Active
+Directory.</p></li>
+<li><p>Fix some potential buffer overflows.</p></li>
+<li><p>Misc. cleanups in the saslauthd LDAP module</p></li>
+<li><p>Fix security properties of NTLM and EXTERNAL</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-9">
 <h2>New in 2.1.9<a class="headerlink" href="#new-in-2-1-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Include missing lib/staticopen.h file.</li>
+<li><p>Include missing lib/staticopen.h file.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-8">
 <h2>New in 2.1.8<a class="headerlink" href="#new-in-2-1-8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Support for the NTLM mechanism (Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</li>
-<li>Support libtool &#8211;enable-shared and &#8211;enable-static
-(Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
-<li>OS/390 Support (Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
-<li>Berkeley DB 4.1 Support (Mika Iisakkila &lt;<a class="reference external" href="mailto:mika&#46;iisakkila&#37;&#52;&#48;pingrid&#46;fi">mika<span>&#46;</span>iisakkila<span>&#64;</span>pingrid<span>&#46;</span>fi</a>&gt;)</li>
-<li>Documentation fixes</li>
-<li>The usual round of assorted other minor bugfixes.</li>
+<li><p>Support for the NTLM mechanism (Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</p></li>
+<li><p>Support libtool –enable-shared and –enable-static
+(Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</p></li>
+<li><p>OS/390 Support (Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</p></li>
+<li><p>Berkeley DB 4.1 Support (Mika Iisakkila &lt;<a class="reference external" href="mailto:mika&#46;iisakkila&#37;&#52;&#48;pingrid&#46;fi">mika<span>&#46;</span>iisakkila<span>&#64;</span>pingrid<span>&#46;</span>fi</a>&gt;)</p></li>
+<li><p>Documentation fixes</p></li>
+<li><p>The usual round of assorted other minor bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-7">
 <h2>New in 2.1.7<a class="headerlink" href="#new-in-2-1-7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Add SASL_AUTHUSER as a parameter to sasl_getprop</li>
-<li>Allow applications to require proxy-capable mechanisms (SASL_NEED_PROXY)</li>
-<li>Performance improvements in our treatment of /dev/random</li>
-<li>Removal of buggy DIGEST-MD5 reauth support.</li>
-<li>Documentation fixes</li>
-<li>Assorted other minor bugfixes.</li>
+<li><p>Add SASL_AUTHUSER as a parameter to sasl_getprop</p></li>
+<li><p>Allow applications to require proxy-capable mechanisms (SASL_NEED_PROXY)</p></li>
+<li><p>Performance improvements in our treatment of /dev/random</p></li>
+<li><p>Removal of buggy DIGEST-MD5 reauth support.</p></li>
+<li><p>Documentation fixes</p></li>
+<li><p>Assorted other minor bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-6">
 <h2>New in 2.1.6<a class="headerlink" href="#new-in-2-1-6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Security fix for the CRAM-MD5 plugin to check the full length of the
-digest string.</li>
-<li>Return of the Experimental LDAP saslauthd module.</li>
-<li>Addition of Experimental MySQL auxprop plugin.</li>
-<li>Can now select multiple auxprop plugins (and a priority ordering)</li>
-<li>Mechanism selection now includes number of security flags</li>
-<li>Mac OS X 10.1 Fixes</li>
-<li>Misc other minor bugfixes.</li>
+<li><p>Security fix for the CRAM-MD5 plugin to check the full length of the
+digest string.</p></li>
+<li><p>Return of the Experimental LDAP saslauthd module.</p></li>
+<li><p>Addition of Experimental MySQL auxprop plugin.</p></li>
+<li><p>Can now select multiple auxprop plugins (and a priority ordering)</p></li>
+<li><p>Mechanism selection now includes number of security flags</p></li>
+<li><p>Mac OS X 10.1 Fixes</p></li>
+<li><p>Misc other minor bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-5">
 <h2>New in 2.1.5<a class="headerlink" href="#new-in-2-1-5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Remove LDAP support due to copyright concerns.</li>
-<li>Minor bugfixes.</li>
+<li><p>Remove LDAP support due to copyright concerns.</p></li>
+<li><p>Minor bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-4">
 <h2>New in 2.1.4<a class="headerlink" href="#new-in-2-1-4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Enhancements and cleanup to the experimental LDAP saslauthd module
-(Igor Brezac &lt;<a class="reference external" href="mailto:igor&#37;&#52;&#48;ipass&#46;net">igor<span>&#64;</span>ipass<span>&#46;</span>net</a>&gt;)</li>
-<li>Addition of a new sasl_version() API</li>
-<li>Misc. Bugfixes</li>
+<li><p>Enhancements and cleanup to the experimental LDAP saslauthd module
+(Igor Brezac &lt;<a class="reference external" href="mailto:igor&#37;&#52;&#48;ipass&#46;net">igor<span>&#64;</span>ipass<span>&#46;</span>net</a>&gt;)</p></li>
+<li><p>Addition of a new sasl_version() API</p></li>
+<li><p>Misc. Bugfixes</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-3-beta">
 <h2>New in 2.1.3-BETA<a class="headerlink" href="#new-in-2-1-3-beta" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Significant amount of plugin cleanup / standardization.  A good deal of code
-is now shared between them. (mostly due to Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</li>
-<li>DIGEST-MD5 now supports reauthentication.  Also has a fix for DES
-interoperability.</li>
-<li>saslauthd now supports the Solaris &#8220;doors&#8221; IPC method
-(&#8211;with-ipctype=doors)</li>
-<li>Significant GSSAPI fixes (mostly due to Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</li>
-<li>Auxprop interface now correctly deals with the * prefix indicating
-authid vs. authzid.  (May break some incompatible auxprop plugins).</li>
-<li>We now allow multiple pwcheck_method(s).  Also you can restrict auxprop
-plugins to the use of a single plugin.</li>
-<li>Added an experimental saslauthd LDAP module (Igor Brezac &lt;<a class="reference external" href="mailto:igor&#37;&#52;&#48;ipass&#46;net">igor<span>&#64;</span>ipass<span>&#46;</span>net</a>&gt;)</li>
-<li>Removed check for db3/db.h</li>
-<li>Misc. documentation updates.  (Marshall Rose, and others)</li>
-<li>Other misc. bugfixes.</li>
+<li><p>Significant amount of plugin cleanup / standardization.  A good deal of code
+is now shared between them. (mostly due to Ken Murchison &lt;<a class="reference external" href="mailto:ken&#37;&#52;&#48;oceana&#46;com">ken<span>&#64;</span>oceana<span>&#46;</span>com</a>&gt;)</p></li>
+<li><p>DIGEST-MD5 now supports reauthentication.  Also has a fix for DES
+interoperability.</p></li>
+<li><p>saslauthd now supports the Solaris “doors” IPC method
+(–with-ipctype=doors)</p></li>
+<li><p>Significant GSSAPI fixes (mostly due to Howard Chu &lt;<a class="reference external" href="mailto:hyc&#37;&#52;&#48;highlandsun&#46;com">hyc<span>&#64;</span>highlandsun<span>&#46;</span>com</a>&gt;)</p></li>
+<li><p>Auxprop interface now correctly deals with the * prefix indicating
+authid vs. authzid.  (May break some incompatible auxprop plugins).</p></li>
+<li><p>We now allow multiple pwcheck_method(s).  Also you can restrict auxprop
+plugins to the use of a single plugin.</p></li>
+<li><p>Added an experimental saslauthd LDAP module (Igor Brezac &lt;<a class="reference external" href="mailto:igor&#37;&#52;&#48;ipass&#46;net">igor<span>&#64;</span>ipass<span>&#46;</span>net</a>&gt;)</p></li>
+<li><p>Removed check for db3/db.h</p></li>
+<li><p>Misc. documentation updates.  (Marshall Rose, and others)</p></li>
+<li><p>Other misc. bugfixes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-2">
 <h2>New in 2.1.2<a class="headerlink" href="#new-in-2-1-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Mostly a minor-bugfix release</li>
-<li>Improved documentation / cleanup of old references to obsolete
-pwcheck_methods</li>
-<li>Better error reporting for auxprop password verifiers</li>
+<li><p>Mostly a minor-bugfix release</p></li>
+<li><p>Improved documentation / cleanup of old references to obsolete
+pwcheck_methods</p></li>
+<li><p>Better error reporting for auxprop password verifiers</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-1">
 <h2>New in 2.1.1<a class="headerlink" href="#new-in-2-1-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Many minor bugfixes throughout.</li>
-<li>Improvements to OTP and SRP mechanisms (now compliant with
-draft-burdis-cat-srp-sasl-06.txt)</li>
-<li>API additions including sasl_global_listmech, and a cleaner handling of
-client-first and server-last semantics (no application level changes)</li>
-<li>Minor documentation improvements</li>
+<li><p>Many minor bugfixes throughout.</p></li>
+<li><p>Improvements to OTP and SRP mechanisms (now compliant with
+draft-burdis-cat-srp-sasl-06.txt)</p></li>
+<li><p>API additions including sasl_global_listmech, and a cleaner handling of
+client-first and server-last semantics (no application level changes)</p></li>
+<li><p>Minor documentation improvements</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-1-0">
 <h2>New in 2.1.0<a class="headerlink" href="#new-in-2-1-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The Cyrus SASL library is now considered stable.  It is still not backwards
-compatible with applications that require SASLv1.</li>
-<li>Minor API changes occured, namely the canon_user callback interface.</li>
-<li>saslauthd now preforks a number of processes to handle connections</li>
-<li>Many bugfixes through the entire library.</li>
+<li><p>The Cyrus SASL library is now considered stable.  It is still not backwards
+compatible with applications that require SASLv1.</p></li>
+<li><p>Minor API changes occured, namely the canon_user callback interface.</p></li>
+<li><p>saslauthd now preforks a number of processes to handle connections</p></li>
+<li><p>Many bugfixes through the entire library.</p></li>
 </ul>
 </div>
 </div>
@@ -1191,7 +1239,7 @@ compatible with applications that require SASLv1.</li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1218,7 +1266,6 @@ compatible with applications that require SASLv1.</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

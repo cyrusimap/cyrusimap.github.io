@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,8 +793,8 @@
 <p>Unavailable for download as this is a development branch only.</p>
 <p>Access is via git.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This should be considered for
+<p class="admonition-title">Warning</p>
+<p>This should be considered for
 <strong>testing purposes</strong> and <strong>bleeding-edge features</strong> only. We will try to tag these
 snapshots at coherent development points, but there will generally be <strong>large
 breaking changes</strong> occurring between releases in this series.</p>
@@ -800,76 +802,76 @@ breaking changes</strong> occurring between releases in this series.</p>
 <div class="section" id="major-changes-since-the-3-0-x-series">
 <span id="relnotes-3-1-9-changes"></span><h2>Major changes since the 3.0.x series<a class="headerlink" href="#major-changes-since-the-3-0-x-series" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sieve bug fixes and features.</li>
-<li>Caldav and Carddav improvements.</li>
-<li>Support for JMAP core protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>).</li>
-<li>Support for JMAP Mail (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8621.html"><strong>RFC 8621</strong></a>).</li>
-<li>Experimental support for JMAP Contacts (requires
-<cite>jmap_nonstandard_extensions: yes</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>).</li>
-<li>Experimental support for JMAP Calendars (requires
-<cite>jmap_nonstandard_extensions: yes</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>).</li>
-<li>Xapian bug fixes.</li>
-<li>Improvements to Annotations handling.</li>
-<li>DRAC support has been deprecated.</li>
-<li>Support for Prometheus stats.</li>
-<li>Removed support for the Sphinx backend to squatter searches.</li>
-<li>New cyrus.index format v16 included since 3.1.5 - adds unseen count and
-createdmodseq to index header, savedate and createdmodseq to index records</li>
-<li>Support for WebSockets</li>
-<li>Support for HTTP/2.0</li>
-<li>Support for Zeroskip database format</li>
-<li>Intermediate mailboxes are now recorded in mailboxes database</li>
-<li>Conversations database format update - adds flags and internaldate fields,
+<li><p>Sieve bug fixes and features.</p></li>
+<li><p>Caldav and Carddav improvements.</p></li>
+<li><p>Support for JMAP core protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>).</p></li>
+<li><p>Support for JMAP Mail (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8621.html"><strong>RFC 8621</strong></a>).</p></li>
+<li><p>Experimental support for JMAP Contacts (requires
+<cite>jmap_nonstandard_extensions: yes</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>).</p></li>
+<li><p>Experimental support for JMAP Calendars (requires
+<cite>jmap_nonstandard_extensions: yes</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>).</p></li>
+<li><p>Xapian bug fixes.</p></li>
+<li><p>Improvements to Annotations handling.</p></li>
+<li><p>DRAC support has been deprecated.</p></li>
+<li><p>Support for Prometheus stats.</p></li>
+<li><p>Removed support for the Sphinx backend to squatter searches.</p></li>
+<li><p>New cyrus.index format v16 included since 3.1.5 - adds unseen count and
+createdmodseq to index header, savedate and createdmodseq to index records</p></li>
+<li><p>Support for WebSockets</p></li>
+<li><p>Support for HTTP/2.0</p></li>
+<li><p>Support for Zeroskip database format</p></li>
+<li><p>Intermediate mailboxes are now recorded in mailboxes database</p></li>
+<li><p>Conversations database format update - adds flags and internaldate fields,
 and is now versioned for future-compatibility.  You will need to rebuild
-your conversations databases with <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_conversationsdb.html#std:cyrusman-ctl_conversationsdb(8)">ctl_conversationsdb(8)</a> and
-the <cite>-b</cite> switch to benefit from this.</li>
-<li>IMAP FETCH accepts two new data items, MAILBOXIDS and MAILBOXES, which
+your conversations databases with <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_conversationsdb.html#std-cyrusman-ctl_conversationsdb-8">ctl_conversationsdb(8)</a> and
+the <cite>-b</cite> switch to benefit from this.</p></li>
+<li><p>IMAP FETCH accepts two new data items, MAILBOXIDS and MAILBOXES, which
 respectively return the unique ids or names of the containing mailboxes of
 each message in the sequence (for best performance, rebuild your
-conversations databases as above)</li>
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/mbpath.html#std:cyrusman-mbpath(8)">mbpath(8)</a> is now much more useful</li>
-<li>Twoskip database format now supports shared locks</li>
-<li>All Cyrus binaries now use real sysexits exit codes instead of mapping
-nearly everything to EX_TEMPFAIL</li>
-<li>CyrusDB errors now syslog the actual error instead of just &quot;cyrusdb error&quot;</li>
-<li>New <cite>allowdeleted</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> option (default off), which
-allows admin users to see deleted mailboxes and expunged messages over IMAP</li>
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_virusscan.html#std:cyrusman-cyr_virusscan(8)">cyr_virusscan(8)</a> now supports custom templates for notifications
-sent about infected messages that have been deleted</li>
-<li><a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> options that represent a time duration now accept
-'d', 'h', 'm', 's' suffixes rather than arbitrary units.</li>
-<li>The <cite>tls_server_cert</cite> and <cite>tls_server_key</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> options
+conversations databases as above)</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/mbpath.html#std-cyrusman-mbpath-8">mbpath(8)</a> is now much more useful</p></li>
+<li><p>Twoskip database format now supports shared locks</p></li>
+<li><p>All Cyrus binaries now use real sysexits exit codes instead of mapping
+nearly everything to EX_TEMPFAIL</p></li>
+<li><p>CyrusDB errors now syslog the actual error instead of just &quot;cyrusdb error&quot;</p></li>
+<li><p>New <cite>allowdeleted</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option (default off), which
+allows admin users to see deleted mailboxes and expunged messages over IMAP</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_virusscan.html#std-cyrusman-cyr_virusscan-8">cyr_virusscan(8)</a> now supports custom templates for notifications
+sent about infected messages that have been deleted</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> options that represent a time duration now accept
+'d', 'h', 'm', 's' suffixes rather than arbitrary units.</p></li>
+<li><p>The <cite>tls_server_cert</cite> and <cite>tls_server_key</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> options
 now allow two certificate/key pairs (e.g. RSA and EC) to be used.  Thanks
-Дилян Палаузов</li>
-<li>Mailbox create/delete/rename are now performed under a lock on the user's
-namespace, to prevent races (especially during big renames).</li>
+Дилян Палаузов</p></li>
+<li><p>Mailbox create/delete/rename are now performed under a lock on the user's
+namespace, to prevent races (especially during big renames).</p></li>
 </ul>
 </div>
 <div class="section" id="updates-to-default-configuration">
 <h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <cite>specialusealways</cite> option is now enabled by default. It must
+<li><p>The <cite>specialusealways</cite> option is now enabled by default. It must
 explicitly be disabled for interoperability with legacy clients that
-can't handle RFC 6154 attributes in extended LIST commands.</li>
-<li>The values accepted by <cite>expunge_mode</cite> have changed, please see the
-documentation for more information about the changes.</li>
-<li>The legacy GETANNOTATIONS/SETANNOTATIONS IMAP commands will no longer
-work unless <cite>annotation_enable_legacy_commands</cite> is enabled.</li>
-<li>The <cite>outbox_sendlater</cite> option and its functionality have been removed.</li>
+can't handle RFC 6154 attributes in extended LIST commands.</p></li>
+<li><p>The values accepted by <cite>expunge_mode</cite> have changed, please see the
+documentation for more information about the changes.</p></li>
+<li><p>The legacy GETANNOTATIONS/SETANNOTATIONS IMAP commands will no longer
+work unless <cite>annotation_enable_legacy_commands</cite> is enabled.</p></li>
+<li><p>The <cite>outbox_sendlater</cite> option and its functionality have been removed.</p></li>
 </ul>
 </div>
 <div class="section" id="security-fixes">
 <h2>Security fixes<a class="headerlink" href="#security-fixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14230">CVE-2017-14230</a></li>
-<li>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18928">CVE-2019-18928</a></li>
-<li>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19783">CVE-2019-19783</a></li>
+<li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14230">CVE-2017-14230</a></p></li>
+<li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18928">CVE-2019-18928</a></p></li>
+<li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19783">CVE-2019-19783</a></p></li>
 </ul>
 </div>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Contains fix for <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2839">Issue #2839</a></li>
+<li><p>Contains fix for <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2839">Issue #2839</a></p></li>
 </ul>
 </div>
 </div>
@@ -895,7 +897,7 @@ work unless <cite>annotation_enable_legacy_commands</cite> is enabled.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Dec 18 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -921,7 +923,6 @@ work unless <cite>annotation_enable_legacy_commands</cite> is enabled.</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

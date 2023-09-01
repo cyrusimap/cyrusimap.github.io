@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -798,35 +800,38 @@ pleasure):</p>
 <blockquote>
 <div><p>Lawrence Greenfield wrote:</p>
 <blockquote>
-<div>Can you give me some details on how the event API in the prot
+<div><p>Can you give me some details on how the event API in the prot
 layer works?  I'm a little unclear about the memory management,
-what should be returned from the event callback,</div></blockquote>
+what should be returned from the event callback,</p>
+</div></blockquote>
 <p>Either the event pointer (if the event is still active), or NULL
 (if the event has been removed by the callback).</p>
 <blockquote>
-<div>and how to reschedule an event.</div></blockquote>
+<div><p>and how to reschedule an event.</p>
+</div></blockquote>
 <p>Simply set the 'mark' time in the event to the wall time you want
 it to run again.</p>
 <blockquote>
-<div>(I'd like to make an event called every X seconds of idle time;
+<div><p>(I'd like to make an event called every X seconds of idle time;
 I know the API can't do exactly that but I suspect I can fake
-it well enough.)</div></blockquote>
+it well enough.)</p>
+</div></blockquote>
 <p>Look at backend_timeout() in proxyd.c and/or drac_ping() in
 contrib/drac_auth.patch, they do exactly this.</p>
 <p>The API is pretty simple:</p>
 <ul class="simple">
-<li>use prot_addwaitevent() to add an event (linked list) callback
+<li><p>use prot_addwaitevent() to add an event (linked list) callback
 onto a stream.  takes the stream, the 'mark' time at which to
 run the event (NOT an interval, but the future clock value),
 the function pointer, and a rock to pass to the callback as
 args, and returns a pointer to the event (to use for future
-removal).</li>
-<li>use prot_removewaitevent() to remove an event.  takes the
-stream and a pointer to the event as args.</li>
-<li>the event callback gets the stream, a pointer to the event
+removal).</p></li>
+<li><p>use prot_removewaitevent() to remove an event.  takes the
+stream and a pointer to the event as args.</p></li>
+<li><p>the event callback gets the stream, a pointer to the event
 and the rock as args.  To reschedule an event, simply set the
 'mark' time and return the event pointer.  If the callback
-removes the event, then return NULL.</li>
+removes the event, then return NULL.</p></li>
 </ul>
 <p>If you see and flaws in this API, feel free to go ahead and change it.</p>
 <p>Ken</p>
@@ -854,7 +859,7 @@ removes the event, then return NULL.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -880,7 +885,6 @@ removes the event, then return NULL.</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -786,7 +788,7 @@
             
   <span class="target" id="imap-developer-guidance-prot-layer"></span><div class="section" id="cyrus-imap-server-prot-layer">
 <h1>Cyrus IMAP Server: prot layer<a class="headerlink" href="#cyrus-imap-server-prot-layer" title="Permalink to this headline">¶</a></h1>
-<p>The prot layer, defined in <code class="docutils literal"><span class="pre">prot.h</span></code>, is a stdio replacement for
+<p>The prot layer, defined in <code class="docutils literal notranslate"><span class="pre">prot.h</span></code>, is a stdio replacement for
 network i/o. It does the standard buffering of input and output and
 allows certain operations especially suited for request/response
 protocols like IMAP.</p>
@@ -796,7 +798,7 @@ protocols like IMAP.</p>
 These events are trigger at the given time or after when the protstream
 is attempted to be read from.</p>
 <p>An event is currently represented by the following datastructure:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">prot_waitevent</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">prot_waitevent</span><span class="p">;</span>
 
 <span class="n">typedef</span> <span class="n">struct</span> <span class="n">prot_waitevent</span> <span class="o">*</span><span class="n">prot_waiteventcallback_t</span><span class="p">(</span><span class="n">struct</span> <span class="n">protstream</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
                             <span class="n">struct</span> <span class="n">prot_waitevent</span> <span class="o">*</span><span class="n">ev</span><span class="p">,</span>
@@ -815,8 +817,8 @@ is attempted to be read from.</p>
 the stream which this event is associated.</p>
 <p>The API is as follows:</p>
 <ul>
-<li><p class="first">Use <code class="docutils literal"><span class="pre">prot_addwaitevent()</span></code> to add an event callback onto the stream:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">extern</span> <span class="n">struct</span> <span class="n">prot_waitevent</span> <span class="o">*</span><span class="n">prot_addwaitevent</span><span class="p">(</span><span class="n">struct</span> <span class="n">protstream</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">prot_addwaitevent()</span></code> to add an event callback onto the stream:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extern</span> <span class="n">struct</span> <span class="n">prot_waitevent</span> <span class="o">*</span><span class="n">prot_addwaitevent</span><span class="p">(</span><span class="n">struct</span> <span class="n">protstream</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
                         <span class="n">time_t</span> <span class="n">mark</span><span class="p">,</span>
                         <span class="n">prot_waiteventcallback_t</span> <span class="o">*</span><span class="n">proc</span><span class="p">,</span>
                         <span class="n">void</span> <span class="o">*</span><span class="n">rock</span><span class="p">);</span>
@@ -828,24 +830,24 @@ opaque data item handed to the callback. It returns a pointer to the
 event structure; this is the pointer that must be used to remove the
 event or modify it in some way.</p>
 </li>
-<li><p class="first">Use <code class="docutils literal"><span class="pre">prot_removewaitevent()</span></code> to remove an event:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">extern</span> <span class="n">void</span> <span class="n">prot_removewaitevent</span><span class="p">(</span><span class="n">struct</span> <span class="n">protstream</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">prot_removewaitevent()</span></code> to remove an event:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extern</span> <span class="n">void</span> <span class="n">prot_removewaitevent</span><span class="p">(</span><span class="n">struct</span> <span class="n">protstream</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span>
                  <span class="n">struct</span> <span class="n">prot_waitevent</span> <span class="o">*</span><span class="n">event</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>It requires <em>event</em> to have been returned from
-<code class="docutils literal"><span class="pre">prot_addwaitevent()</span></code> previously. No further references are allowed
+<code class="docutils literal notranslate"><span class="pre">prot_addwaitevent()</span></code> previously. No further references are allowed
 to <em>event</em> or its fields. <em>event-&gt;rock</em> is not free'd nor examined in
 any way. This function may be called while inside the callback
 <em>event-&gt;proc()</em>. If an event is removed inside of its callback, that
-callback must return <code class="docutils literal"><span class="pre">NULL</span></code>.</p>
+callback must return <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 </li>
 </ul>
 <p>Some common things to do with events:</p>
 <ul class="simple">
-<li>To reschedule an event <em>ev</em>, simply set <em>ev-&gt;mark</em> to the next time
+<li><p>To reschedule an event <em>ev</em>, simply set <em>ev-&gt;mark</em> to the next time
 it should trigger. If currently in <em>ev-&gt;proc()</em>, it should return
-<em>ev</em>.</li>
+<em>ev</em>.</p></li>
 </ul>
 <hr class="docutils" />
 <p>last modified: $Date: 2003/08/06 21:28:05 $</p>
@@ -873,7 +875,7 @@ it should trigger. If currently in <em>ev-&gt;proc()</em>, it should return
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -899,7 +901,6 @@ it should trigger. If currently in <em>ev-&gt;proc()</em>, it should return
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

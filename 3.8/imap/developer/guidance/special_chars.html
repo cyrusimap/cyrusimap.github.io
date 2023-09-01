@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -795,34 +797,34 @@ used in Cyrus naming of users, folders, directory paths, etc.</p>
 <div class="line">Character: +</div>
 </div>
 <ul class="simple">
-<li>(LMTP) Separation of postuser and target mailbox for delivery</li>
-<li>(LMTP) Separation of username and submailbox for delivery</li>
-<li>(IMAP) Flag at end of login name that indicates that LIST should
-return LSUB results (when imapmagicplus is set)</li>
-<li>(POP3) POP a subfolder directly (e.g. rjs3+foo POPs user.rjs3.foo)</li>
+<li><p>(LMTP) Separation of postuser and target mailbox for delivery</p></li>
+<li><p>(LMTP) Separation of username and submailbox for delivery</p></li>
+<li><p>(IMAP) Flag at end of login name that indicates that LIST should
+return LSUB results (when imapmagicplus is set)</p></li>
+<li><p>(POP3) POP a subfolder directly (e.g. rjs3+foo POPs user.rjs3.foo)</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">Character: . /</div>
 </div>
 <ul class="simple">
-<li>[mailbox names] Hierarchy separators</li>
+<li><p>[mailbox names] Hierarchy separators</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">Character: ^</div>
 </div>
 <ul class="simple">
-<li>[mailbox names] In unixhierarchysep, ^ is the part of the internal
-name that represents a '.'</li>
+<li><p>[mailbox names] In unixhierarchysep, ^ is the part of the internal
+name that represents a '.'</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line">Characters: &#64; %</div>
 </div>
 <ul class="simple">
-<li>[usernames] These are realm separators for the purposes of
-authentication</li>
+<li><p>[usernames] These are realm separators for the purposes of
+authentication</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -834,11 +836,11 @@ authentication</li>
 <div class="line">Character: +</div>
 </div>
 <ul class="simple">
-<li>IMAP LIST filters (e.g. rjs3+foo will only list folders that match
-foo*)</li>
-<li>possibly other interpretations here:
+<li><p>IMAP LIST filters (e.g. rjs3+foo will only list folders that match
+foo*)</p></li>
+<li><p>possibly other interpretations here:
 - rjs3+foo will do an effective chroot(foo.)
-- rjs3+foo will only list folders in user.rjs3.foo*</li>
+- rjs3+foo will only list folders in user.rjs3.foo*</p></li>
 </ul>
 </div>
 </div>
@@ -864,7 +866,7 @@ foo*)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -890,7 +892,6 @@ foo*)</li>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

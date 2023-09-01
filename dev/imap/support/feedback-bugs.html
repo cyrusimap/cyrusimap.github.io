@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -788,30 +790,30 @@
 <p>Bug reports can be sent to us through our <a class="reference internal" href="feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing list</span></a> or logged in our <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/">GitHub issue tracker</a>. (Registration is required)
 When reporting a bug, please provide the following information;</p>
 <ul class="simple">
-<li>Your platform, and if applicable, your distribution and the distribution version.</li>
-<li>The exact version of Cyrus IMAP or SASL you are using.</li>
-<li>If a packaged version is used, the source of the packaged version.</li>
-<li>If a custom version is used, any options that may have specified during the build process.</li>
-<li>If relevant, are you using altnamespace, unixhierarchysep, or virtdomains?</li>
-<li>If relevant, are you in a murder configuration? (In which case please provide information for all hosts)</li>
-<li>What did you do?</li>
-<li>What did you expect to happen, and what actually happened?</li>
-<li>If Cyrus crashed, please provide a backtrace of the <a class="reference internal" href="../reference/faqs/o-coredump.html#faqs-o-coredump"><span class="std std-ref">core dump</span></a>.</li>
+<li><p>Your platform, and if applicable, your distribution and the distribution version.</p></li>
+<li><p>The exact version of Cyrus IMAP or SASL you are using.</p></li>
+<li><p>If a packaged version is used, the source of the packaged version.</p></li>
+<li><p>If a custom version is used, any options that may have specified during the build process.</p></li>
+<li><p>If relevant, are you using altnamespace, unixhierarchysep, or virtdomains?</p></li>
+<li><p>If relevant, are you in a murder configuration? (In which case please provide information for all hosts)</p></li>
+<li><p>What did you do?</p></li>
+<li><p>What did you expect to happen, and what actually happened?</p></li>
+<li><p>If Cyrus crashed, please provide a backtrace of the <a class="reference internal" href="../reference/faqs/o-coredump.html#faqs-o-coredump"><span class="std std-ref">core dump</span></a>.</p></li>
 </ul>
 <p>If you know how to fix the bug, we also are delighted to receive pull
 requests or patch snippets sent via email on the mailing lists.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><strong>Cyrus IMAP Version</strong></p>
 <p>The Cyrus IMAP team would appreciate if you try your best to supply us with the exact version of Cyrus IMAP that you run. The Cyrus IMAP version from upstream, usually in the format x.y.z does not include important information on the <em>build</em> or <em>release</em>, nor the source for the package you may have used.</p>
-<p class="last">Most Linux distributions allow you do get the full version with <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qv</span> <span class="pre">cyrus-imapd</span></code> or <code class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">cyrus-imapd</span></code>.
+<p>Most Linux distributions allow you do get the full version with <code class="docutils literal notranslate"><span class="pre">rpm</span> <span class="pre">-qv</span> <span class="pre">cyrus-imapd</span></code> or <code class="docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">cyrus-imapd</span></code>.
 If package management, for whatever reason, cannot tell you what version of Cyrus IMAP you have, connecting to your Cyrus IMAP server (typically via telnet to port 110 or 143) could.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p><strong>Cyrus SASL Version</strong></p>
 <p>The Cyrus team would appreciate if you try your best to supply us with the exact version of Cyrus SASL that you run. The Cyrus SASL version from upstream, usually in the format x.y.z does not include important information on the <em>build</em> or <em>release</em>, nor the source for the package you may have used.</p>
-<p class="last">Most Linux distributions allow you do get the full version with <code class="docutils literal"><span class="pre">rpm</span> <span class="pre">-qv</span> <span class="pre">cyrus-sasl</span></code> or <code class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">cyrus-sasl</span></code>.
+<p>Most Linux distributions allow you do get the full version with <code class="docutils literal notranslate"><span class="pre">rpm</span> <span class="pre">-qv</span> <span class="pre">cyrus-sasl</span></code> or <code class="docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">cyrus-sasl</span></code>.
 If package management, for whatever reason, cannot tell you what version of Cyrus SASL you have, <strong>what could?</strong></p>
 </div>
 <p>If you run a development version of Cyrus IMAP or SASL (i.e. your own compile from GIT's master or any of the stable branches), please remember to note that in the report.</p>
@@ -838,7 +840,7 @@ If package management, for whatever reason, cannot tell you what version of Cyru
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 26 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -864,7 +866,6 @@ If package management, for whatever reason, cannot tell you what version of Cyru
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

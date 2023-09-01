@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -38,7 +40,7 @@
     <link rel="top" title="Cyrus SASL 2.1.28 documentation" href="../../index.html"/>
         <link rel="up" title="Frequently Asked Questions" href="../faq.html"/>
         <link rel="next" title="Why does CyrusSasl store plaintext passwords in its databases?" href="plaintextpasswords.html"/>
-        <link rel="prev" title="Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?" href="crammd5-digestmd5-scram.html"/> 
+        <link rel="prev" title="What is the difference between an Authorization ID and a Authentication ID?" href="authorize-vs-authenticate.html"/> 
 
   
   
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -487,51 +487,49 @@
             
   <div class="section" id="how-do-i-configure-openldap-sasl-gssapi">
 <h1>How do I configure OpenLDAP +SASL+GSSAPI?<a class="headerlink" href="#how-do-i-configure-openldap-sasl-gssapi" title="Permalink to this headline">¶</a></h1>
-<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="https://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator&#8217;s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
+<p>This article assumes that you have read and followed the SASL chapter of the <a class="reference external" href="https://www.openldap.org/doc/admin24/sasl.html">OpenLDAP Administrator’s Guide</a>. You should have a Kerberos server installed (such as Heimdal or MIT), and created all the appropriate principals (client and service) necessary.</p>
 <p>To verify that you have the Cyrus <a class="reference internal" href="../gssapi.html#gssapi"><span class="std std-ref">GSSAPI</span></a> mechanism properly installed, use the pluginviewer command. For instance:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span><span class="o">~</span><span class="c1"># pluginviewer  | grep -i gssapi</span>
- <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span> <span class="n">PLAIN</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">ANONYMOUS</span> <span class="n">LOGIN</span> <span class="n">EXTERNAL</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">server</span><span class="p">:</span><span class="o">~</span><span class="c1"># pluginviewer  | grep -i gssapi</span>
+ <span class="n">PLAIN</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">ANONYMOUS</span> <span class="n">EXTERNAL</span>
 <span class="n">Plugin</span> <span class="s2">&quot;gssapiv2&quot;</span> <span class="p">[</span><span class="n">loaded</span><span class="p">],</span>     <span class="n">API</span> <span class="n">version</span><span class="p">:</span> <span class="mi">4</span>
        <span class="n">SASL</span> <span class="n">mechanism</span><span class="p">:</span> <span class="n">GSSAPI</span><span class="p">,</span> <span class="n">best</span> <span class="n">SSF</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span> <span class="n">supports</span> <span class="n">setpass</span><span class="p">:</span> <span class="n">no</span>
-<span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span> <span class="n">PLAIN</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">ANONYMOUS</span> <span class="n">LOGIN</span> <span class="n">EXTERNAL</span>
+<span class="n">PLAIN</span> <span class="n">GSSAPI</span> <span class="n">OTP</span> <span class="n">ANONYMOUS</span> <span class="n">EXTERNAL</span>
 <span class="n">Plugin</span> <span class="s2">&quot;gssapiv2&quot;</span> <span class="p">[</span><span class="n">loaded</span><span class="p">],</span>     <span class="n">API</span> <span class="n">version</span><span class="p">:</span> <span class="mi">4</span>
        <span class="n">SASL</span> <span class="n">mechanism</span><span class="p">:</span> <span class="n">GSSAPI</span><span class="p">,</span> <span class="n">best</span> <span class="n">SSF</span><span class="p">:</span> <span class="mi">56</span>
 </pre></div>
 </div>
 <p>Both your server and client systems will need to have this mechanism installed. If not, you may find the mechanism located in a binary package that you do not yet have installed, or you may need to recompile your Cyrus SASL installation.</p>
 <p>On your client system, search the Root DSE of the server to view advertised mechanisms:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -x -H ldap://ldap.example.org -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -x -H ldap://ldap.example.org -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
 <span class="n">dn</span><span class="p">:</span>
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">GSSAPI</span>
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">OTP</span>
-<span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
 </pre></div>
 </div>
 <p>If you received a No Such Object error, you may have an <a class="reference external" href="https://www.openldap.org/doc/admin24/appendix-common-errors.html#ldap_sasl_interactive_bind_s">ACL misconfiguration on your server</a>.</p>
-<p>If you do not see GSSAPI listed, verify that the server can read the appropriate keytab. The default is <code class="docutils literal"><span class="pre">/etc/krb5.keytab</span></code> and is typically only readable by the root user. If your Kerberos library supports it, you can create a keytab in an alternate location, such as <code class="docutils literal"><span class="pre">/etc/krb5.keytab-ldap</span></code>, with only your LDAP service principal, and read permissions for your OpenLDAP user.</p>
+<p>If you do not see GSSAPI listed, verify that the server can read the appropriate keytab. The default is <code class="docutils literal notranslate"><span class="pre">/etc/krb5.keytab</span></code> and is typically only readable by the root user. If your Kerberos library supports it, you can create a keytab in an alternate location, such as <code class="docutils literal notranslate"><span class="pre">/etc/krb5.keytab-ldap</span></code>, with only your LDAP service principal, and read permissions for your OpenLDAP user.</p>
 <p>If your OpenLDAP server is looking for an unexpected principal within your keytab, use sasl-host and sasl-realm to influence which principal it will use (see the slapd.conf man page).</p>
-<p>For more control over how the SASL library operates within the OpenLDAP? server, you can create a slapd.conf SASL configuration. This is not the same configuration file as the OpenLDAP configuration (slapd.conf). The location of this file is dependent how on Cyrus SASL was compiled (via the <code class="docutils literal"><span class="pre">--with-plugindir</span></code> option during configure). It is the directory where your plugins are installed.</p>
+<p>For more control over how the SASL library operates within the OpenLDAP? server, you can create a slapd.conf SASL configuration. This is not the same configuration file as the OpenLDAP configuration (slapd.conf). The location of this file is dependent how on Cyrus SASL was compiled (via the <code class="docutils literal notranslate"><span class="pre">--with-plugindir</span></code> option during configure). It is the directory where your plugins are installed.</p>
 <p>For instance, if you create /usr/lib/sasl2/slapd.conf (assuming that is the correct location on your system) with the following contents:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">keytab</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">krb5</span><span class="o">.</span><span class="n">keytab</span><span class="o">-</span><span class="n">ldap</span>
-<span class="n">mech_list</span><span class="p">:</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span> <span class="n">GSSAPI</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keytab</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">krb5</span><span class="o">.</span><span class="n">keytab</span><span class="o">-</span><span class="n">ldap</span>
+<span class="n">mech_list</span><span class="p">:</span> <span class="n">GSSAPI</span>
 </pre></div>
 </div>
 <p>then the server will search within /etc/krb5.keytab-ldap when initializing the GSSAPI plugin. The server will only offer the mechanisms listed in mech_list. If mech_list is not specified, the server will offer all the mechanisms available, and that it can initialize.</p>
 <p>Once you have verified that the server is advertising GSSAPI support, then try:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -Y GSSAPI -H ldap://ldap.example.org -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -Y GSSAPI -H ldap://ldap.example.org -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
 <span class="n">SASL</span><span class="o">/</span><span class="n">GSSAPI</span> <span class="n">authentication</span> <span class="n">started</span>
 <span class="n">SASL</span> <span class="n">username</span><span class="p">:</span> <span class="n">host</span><span class="o">/</span><span class="n">client</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="nd">@EXAMPLE</span><span class="o">.</span><span class="n">ORG</span>
 <span class="n">SASL</span> <span class="n">SSF</span><span class="p">:</span> <span class="mi">56</span> <span class="n">SASL</span> <span class="n">data</span> <span class="n">security</span> <span class="n">layer</span> <span class="n">installed</span><span class="o">.</span>
 <span class="n">dn</span><span class="p">:</span>
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">GSSAPI</span>
 <span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">OTP</span>
-<span class="n">supportedSASLMechanisms</span><span class="p">:</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
 </pre></div>
 </div>
-<p>If you receive a list of mechanisms, then congratulations, you&#8217;re done.</p>
-<p>If instead you receive an error, then it&#8217;s possible that your client is requesting a service principal that mismatches what your server is using.</p>
+<p>If you receive a list of mechanisms, then congratulations, you’re done.</p>
+<p>If instead you receive an error, then it’s possible that your client is requesting a service principal that mismatches what your server is using.</p>
 <p>Verify that you have received a TGT ticket from your kerberos server, and that you have also received a service principal ticket for the server (e.g. <a class="reference external" href="mailto:ldap/ldap&#46;example&#46;org&#37;&#52;&#48;EXAMPLE&#46;ORG">ldap/ldap<span>&#46;</span>example<span>&#46;</span>org<span>&#64;</span>EXAMPLE<span>&#46;</span>ORG</a>). Use klist to verify:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># klist</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># klist</span>
 <span class="n">Credentials</span> <span class="n">cache</span><span class="p">:</span> <span class="n">FILE</span><span class="p">:</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">krb5cc_0</span>
        <span class="n">Principal</span><span class="p">:</span> <span class="n">host</span><span class="o">/</span><span class="n">client</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="nd">@EXAMPLE</span><span class="o">.</span><span class="n">ORG</span>
  <span class="n">Issued</span>           <span class="n">Expires</span>          <span class="n">Principal</span>
@@ -540,17 +538,18 @@
 </pre></div>
 </div>
 <p>If not, then a network capture utility, such as wireshark, offers a good way to show you which service principal your client is requesting, and what errors are being returned by the server.</p>
-<p>If you wish to also view the interaction with the LDAP server with a capture utility, you will need to negotiate a SASL layer without encryption. You can specify <code class="docutils literal"><span class="pre">-O</span> <span class="pre">maxssf=1</span></code> in your client side command (ldapwhoami, ldapsearch etc.), e.g.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -Y GSSAPI -H ldap://ldap.example.org -O maxssf=1 -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
+<p>If you wish to also view the interaction with the LDAP server with a capture utility, you will need to negotiate a SASL layer without encryption. You can specify <code class="docutils literal notranslate"><span class="pre">-O</span> <span class="pre">maxssf=1</span></code> in your client side command (ldapwhoami, ldapsearch etc.), e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="p">:</span><span class="o">~</span><span class="c1"># ldapsearch -LLL -Y GSSAPI -H ldap://ldap.example.org -O maxssf=1 -s &quot;base&quot; -b &quot;&quot; supportedSASLMechanisms</span>
 </pre></div>
 </div>
 <p>You might find it easier to specify defaults on your client system, to keep your commands shorter. See the man page for ldap.conf for details. You can specify the default server in your ldap.conf file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">URI</span>    <span class="n">ldap</span><span class="p">:</span><span class="o">//</span><span class="n">ldap</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">URI</span>    <span class="n">ldap</span><span class="p">:</span><span class="o">//</span><span class="n">ldap</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
 </pre></div>
 </div>
 <p>And you can specify the default mechanism in ~/.ldaprc (in your home directory):</p>
 <blockquote>
-<div>ASL_MECH GSSAPI</div></blockquote>
+<div><p>ASL_MECH GSSAPI</p>
+</div></blockquote>
 </div>
 
 
@@ -562,7 +561,7 @@
         <a href="plaintextpasswords.html" class="btn btn-neutral float-right" title="Why does CyrusSasl store plaintext passwords in its databases?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="crammd5-digestmd5-scram.html" class="btn btn-neutral" title="Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="authorize-vs-authenticate.html" class="btn btn-neutral" title="What is the difference between an Authorization ID and a Authentication ID?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -574,7 +573,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -601,7 +600,6 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

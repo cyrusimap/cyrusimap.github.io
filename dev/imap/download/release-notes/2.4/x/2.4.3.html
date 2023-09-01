@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,18 +793,18 @@
 <h1>Cyrus IMAP 2.4.3 Release Notes<a class="headerlink" href="#cyrus-imap-2-4-3-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Changes to the Cyrus IMAP Server since 2.4.2</p>
 <ul class="simple">
-<li>Many fixes to replication edge case handling</li>
-<li>Added missing flags to reconstruct</li>
-<li>Replicate DELETED.user folders in sync_client -u (matches XFER behaviour now)</li>
-<li>Make sync_client only connect after forking in rolling mode. Fixes two things - ssl crashes due to shared resource conflicts, and also means master will start up even if the replica is not contactable</li>
-<li>Fixed crash on cyr_expire and ipurge annotation based expiry</li>
-<li>Many XFER fixes for compatibility across versions:</li>
-<li>allowing XFER in from delayed_expunge mailboxes</li>
-<li>allowing XFER back all the way to Cyrus 2.2.12. This was accomplished by adding logic that can generate backwards-compatible older version indexes, and version detection from the imapd banner.</li>
-<li>correctly fixing seen information for sub-mailboxes on XFER in</li>
-<li>Multi-target replication. Strictly this is a new feature - there was a broken implementation in 2.4.0, which is how this snuck in to the bugfix release. It's not super-well documented yet, but it works by creating a separate log file for each destination &quot;channel&quot;, and then running one sync_client process per channel, so replication can fall behind on one without affecting replication to the other.</li>
-<li>Fixed some crashes and errors which occured when upgrading and opening corrupted mailboxes</li>
-<li>Modified AFS ptloader configure options to allow building on more modern systems</li>
+<li><p>Many fixes to replication edge case handling</p></li>
+<li><p>Added missing flags to reconstruct</p></li>
+<li><p>Replicate DELETED.user folders in sync_client -u (matches XFER behaviour now)</p></li>
+<li><p>Make sync_client only connect after forking in rolling mode. Fixes two things - ssl crashes due to shared resource conflicts, and also means master will start up even if the replica is not contactable</p></li>
+<li><p>Fixed crash on cyr_expire and ipurge annotation based expiry</p></li>
+<li><p>Many XFER fixes for compatibility across versions:</p></li>
+<li><p>allowing XFER in from delayed_expunge mailboxes</p></li>
+<li><p>allowing XFER back all the way to Cyrus 2.2.12. This was accomplished by adding logic that can generate backwards-compatible older version indexes, and version detection from the imapd banner.</p></li>
+<li><p>correctly fixing seen information for sub-mailboxes on XFER in</p></li>
+<li><p>Multi-target replication. Strictly this is a new feature - there was a broken implementation in 2.4.0, which is how this snuck in to the bugfix release. It's not super-well documented yet, but it works by creating a separate log file for each destination &quot;channel&quot;, and then running one sync_client process per channel, so replication can fall behind on one without affecting replication to the other.</p></li>
+<li><p>Fixed some crashes and errors which occured when upgrading and opening corrupted mailboxes</p></li>
+<li><p>Modified AFS ptloader configure options to allow building on more modern systems</p></li>
 </ul>
 <p><a class="reference internal" href="../index.html#imap-release-notes-2-4"><span class="std std-ref">Cyrus IMAP 2.4 Releases</span></a></p>
 </div>
@@ -828,7 +830,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -854,7 +856,6 @@
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

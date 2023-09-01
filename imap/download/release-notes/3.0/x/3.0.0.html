@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,136 +793,104 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0/cyrus-imapd-3.0.0.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="major-changes-since-the-2-5-x-series">
 <span id="relnotes-3-0-0-changes"></span><h2>Major changes since the 2.5.x series<a class="headerlink" href="#major-changes-since-the-2-5-x-series" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">The source repository has moved to <a class="reference internal" href="../../../../developer/github-guide.html#github-guide"><span class="std std-ref">GitHub</span></a>, Bugzilla and Phabricator
-have been deprecated.  Their issue lists are being imported into GitHub.</p>
+<li><p>The source repository has moved to <a class="reference internal" href="../../../../developer/github-guide.html#github-guide"><span class="std std-ref">GitHub</span></a>, Bugzilla and Phabricator
+have been deprecated.  Their issue lists are being imported into GitHub.</p></li>
+<li><p>Support added for FastMail-style conversations (threaded messages).
+(See the <code class="docutils literal notranslate"><span class="pre">conversations</span></code> options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Optional <a class="reference external" href="https://xapian.org">Xapian</a> integration for faster and shinier search. Note that this requires custom
+patches to Xapian, in this release. (See the <code class="docutils literal notranslate"><span class="pre">search_engine</span></code> option in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>, and <code class="docutils literal notranslate"><span class="pre">doc/README.xapian</span></code> in the
+source distribution.) Compiling Xapian support requires gcc 4.9 or later.</p></li>
+<li><p>Archive support has arrived! Requires addition of an archive partition. (See <code class="docutils literal notranslate"><span class="pre">archive_*</span></code>
+options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Basic <a class="reference external" href="http://jmap.io">JMAP</a> support. (See <code class="docutils literal notranslate"><span class="pre">httpmodules</span></code> in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p><a class="reference external" href="https://www.clamav.net">ClamAV</a> integration for AntiVirus support is now working again.</p></li>
+<li><p>Dropped support for Berkeley DB.</p></li>
+<li><p>The handling of configure options has changed, dropping support for
+<code class="docutils literal notranslate"><span class="pre">--with-cyrus-prefix</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-service-path</span></code> in favour of the more conventional
+<code class="docutils literal notranslate"><span class="pre">--prefix</span></code>, <code class="docutils literal notranslate"><span class="pre">--bindir</span></code>, <code class="docutils literal notranslate"><span class="pre">--sbindir</span></code>, and <code class="docutils literal notranslate"><span class="pre">--libexecdir</span></code>.</p></li>
+<li><p>Binaries executed by the <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#imap-reference-manpages-systemcommands-master"><span class="std std-ref">master(8)</span></a>
+service process are now installed to <code class="docutils literal notranslate"><span class="pre">--libexecdir</span></code>.  Other binaries are installed to
+<code class="docutils literal notranslate"><span class="pre">--bindir</span></code> and/or <code class="docutils literal notranslate"><span class="pre">--sbindir</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">installbinsymlinks</span></code> target can be used to set up symlinks to everything in
+<code class="docutils literal notranslate"><span class="pre">--bindir</span></code>, if you need that in your environment.</p>
 </li>
-<li><p class="first">Support added for FastMail-style conversations (threaded messages).
-(See the <code class="docutils literal"><span class="pre">conversations</span></code> options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Optional <a class="reference external" href="https://xapian.org">Xapian</a> integration for faster and shinier search. Note that this requires custom
-patches to Xapian, in this release. (See the <code class="docutils literal"><span class="pre">search_engine</span></code> option in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>, and <code class="docutils literal"><span class="pre">doc/README.xapian</span></code> in the
-source distribution.) Compiling Xapian support requires gcc 4.9 or later.</p>
-</li>
-<li><p class="first">Archive support has arrived! Requires addition of an archive partition. (See <code class="docutils literal"><span class="pre">archive_*</span></code>
-options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Basic <a class="reference external" href="http://jmap.io">JMAP</a> support. (See <code class="docutils literal"><span class="pre">httpmodules</span></code> in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first"><a class="reference external" href="https://www.clamav.net">ClamAV</a> integration for AntiVirus support is now working again.</p>
-</li>
-<li><p class="first">Dropped support for Berkeley DB.</p>
-</li>
-<li><p class="first">The handling of configure options has changed, dropping support for
-<code class="docutils literal"><span class="pre">--with-cyrus-prefix</span></code> and <code class="docutils literal"><span class="pre">--with-service-path</span></code> in favour of the more conventional
-<code class="docutils literal"><span class="pre">--prefix</span></code>, <code class="docutils literal"><span class="pre">--bindir</span></code>, <code class="docutils literal"><span class="pre">--sbindir</span></code>, and <code class="docutils literal"><span class="pre">--libexecdir</span></code>.</p>
-</li>
-<li><p class="first">Binaries executed by the <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#imap-reference-manpages-systemcommands-master"><span class="std std-ref">master(8)</span></a>
-service process are now installed to <code class="docutils literal"><span class="pre">--libexecdir</span></code>.  Other binaries are installed to
-<code class="docutils literal"><span class="pre">--bindir</span></code> and/or <code class="docutils literal"><span class="pre">--sbindir</span></code>.</p>
-<p>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">installbinsymlinks</span></code> target can be used to set up symlinks to everything in
-<code class="docutils literal"><span class="pre">--bindir</span></code>, if you need that in your environment.</p>
-</li>
-<li><p class="first">Added support for replicating mailboxes/users to a particular partition.  <code class="docutils literal"><span class="pre">sync_client</span></code>
-now accepts a <code class="docutils literal"><span class="pre">-p</span></code> option.</p>
-</li>
-<li><p class="first">The <code class="docutils literal"><span class="pre">defaultdomain</span></code> setting in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>
-now defaults to &quot;internal&quot; (was: NULL)</p>
-</li>
-<li><p class="first">Added experimental backup service.  See <a class="reference internal" href="../../../../reference/admin/backups.html#cyrus-backups"><span class="std std-ref">Cyrus Backups</span></a></p>
-</li>
-<li><p class="first">Support for Apple's Push service (XAPPLEPUSH).  See <a class="reference internal" href="../../../../reference/admin/eventsource.html#cyrus-eventsource"><span class="std std-ref">Cyrus Eventsource</span></a></p>
-</li>
-<li><p class="first">Sieve now supports special use folders.  See <a class="reference internal" href="../../../../reference/admin/sieve.html#cyrus-sieve-specialuse"><span class="std std-ref">Cyrus Sieve</span></a></p>
-</li>
-<li><p class="first">Sieve now supports the following <a class="reference internal" href="../../../../reference/admin/sieve.html#cyrus-sieve-extensions"><span class="std std-ref">extensions</span></a>:</p>
+<li><p>Added support for replicating mailboxes/users to a particular partition.  <code class="docutils literal notranslate"><span class="pre">sync_client</span></code>
+now accepts a <code class="docutils literal notranslate"><span class="pre">-p</span></code> option.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">defaultdomain</span></code> setting in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>
+now defaults to &quot;internal&quot; (was: NULL)</p></li>
+<li><p>Added experimental backup service.  See <a class="reference internal" href="../../../../reference/admin/backups.html#cyrus-backups"><span class="std std-ref">Cyrus Backups</span></a></p></li>
+<li><p>Support for Apple's Push service (XAPPLEPUSH).  See <a class="reference internal" href="../../../../reference/admin/eventsource.html#cyrus-eventsource"><span class="std std-ref">Cyrus Eventsource</span></a></p></li>
+<li><p>Sieve now supports special use folders.  See <a class="reference internal" href="../../../../reference/admin/sieve.html#cyrus-sieve-specialuse"><span class="std std-ref">Cyrus Sieve</span></a></p></li>
+<li><p>Sieve now supports the following <a class="reference internal" href="../../../../reference/admin/sieve.html#cyrus-sieve-extensions"><span class="std std-ref">extensions</span></a>:</p>
 <ul class="simple">
-<li><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5490.html"><strong>RFC 5490</strong></a> Checking Mailbox Status and Accessing Mailbox Metadata</li>
-<li><span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5229.html"><strong>RFC 5229</strong></a> Variables</li>
+<li><p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5490.html"><strong>RFC 5490</strong></a> Checking Mailbox Status and Accessing Mailbox Metadata</p></li>
+<li><p><span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5229.html"><strong>RFC 5229</strong></a> Variables</p></li>
 </ul>
 </li>
-<li><p class="first">Sieve bytecode is now automatically recompiled when it is detected to be missing or out of date</p>
-</li>
-<li><p class="first">New numeric header available for sorting: X-Spam-Score</p>
-</li>
-<li><p class="first">Added IMIP notification support to <a class="reference internal" href="../../../../reference/manpages/systemcommands/notifyd.html#imap-reference-manpages-systemcommands-notifyd"><span class="std std-ref">notifyd(8)</span></a>.
-See <code class="docutils literal"><span class="pre">imipnotifier</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p>
-</li>
-<li><p class="first">Optimised CRC32 implementation</p>
-</li>
-<li><p class="first">Added support for reverse ACLs, enabling faster LIST response.  See <code class="docutils literal"><span class="pre">reverseacls</span></code> in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p>
-</li>
-<li><p class="first">Added cross-domain sharing support.  See <code class="docutils literal"><span class="pre">crossdomains</span></code> and <code class="docutils literal"><span class="pre">crossdomains_onlyother</span></code>
-in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p>
-</li>
-<li><p class="first">Added experimental object storage for mail data, with preliminary support for OpenIO and
-Caringo backends.  See configure.ac <code class="docutils literal"><span class="pre">--enable-objectstore</span></code>, and the <code class="docutils literal"><span class="pre">object_storage_*</span></code>,
-<code class="docutils literal"><span class="pre">openio_*</span></code> and <code class="docutils literal"><span class="pre">caringo_*</span></code> options in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>.</p>
-</li>
-<li><p class="first">Configurable POP3 UIDL format for compatibility with other mail servers.  Supports
-Courier Mail Server and Dovecot formats, in addition to Cyrus formats.  See <code class="docutils literal"><span class="pre">uidl_format</span></code>
-in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p>
-</li>
-<li><p class="first">Under <code class="docutils literal"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code>, only the 20 most recently deleted mailboxes are kept
-for any given name.</p>
-</li>
-<li><p class="first">Documentation cleanup: we are moving toward having a single restructured text source for man
+<li><p>Sieve bytecode is now automatically recompiled when it is detected to be missing or out of date</p></li>
+<li><p>New numeric header available for sorting: X-Spam-Score</p></li>
+<li><p>Added IMIP notification support to <a class="reference internal" href="../../../../reference/manpages/systemcommands/notifyd.html#imap-reference-manpages-systemcommands-notifyd"><span class="std std-ref">notifyd(8)</span></a>.
+See <code class="docutils literal notranslate"><span class="pre">imipnotifier</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p></li>
+<li><p>Optimised CRC32 implementation</p></li>
+<li><p>Added support for reverse ACLs, enabling faster LIST response.  See <code class="docutils literal notranslate"><span class="pre">reverseacls</span></code> in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p></li>
+<li><p>Added cross-domain sharing support.  See <code class="docutils literal notranslate"><span class="pre">crossdomains</span></code> and <code class="docutils literal notranslate"><span class="pre">crossdomains_onlyother</span></code>
+in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p></li>
+<li><p>Added experimental object storage for mail data, with preliminary support for OpenIO and
+Caringo backends.  See configure.ac <code class="docutils literal notranslate"><span class="pre">--enable-objectstore</span></code>, and the <code class="docutils literal notranslate"><span class="pre">object_storage_*</span></code>,
+<code class="docutils literal notranslate"><span class="pre">openio_*</span></code> and <code class="docutils literal notranslate"><span class="pre">caringo_*</span></code> options in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>.</p></li>
+<li><p>Configurable POP3 UIDL format for compatibility with other mail servers.  Supports
+Courier Mail Server and Dovecot formats, in addition to Cyrus formats.  See <code class="docutils literal notranslate"><span class="pre">uidl_format</span></code>
+in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code>, only the 20 most recently deleted mailboxes are kept
+for any given name.</p></li>
+<li><p>Documentation cleanup: we are moving toward having a single restructured text source for man
 pages and html/text documentation, which are pre-generated for inclusion in release tarballs.
 If you wish to rebuild these, or are building from a git clone in which they are not
-pregenerated, you will need to install <code class="docutils literal"><span class="pre">sphinx-build</span></code>, and the perl module
-<code class="docutils literal"><span class="pre">Pod::POM::View::Restructured</span></code>.  The top level Makefile now has <code class="docutils literal"><span class="pre">man</span></code> and <code class="docutils literal"><span class="pre">doc</span></code> targets
-for building these.</p>
-</li>
-<li><p class="first">Added support for OpenSSL 1.1.0.</p>
-</li>
-<li><p class="first">Replication now supports incremental partial updates, so massive updates (such as
-mail imports) won't stall replication for other users.  See <code class="docutils literal"><span class="pre">sync_batchsize</span></code> in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p>
-</li>
-<li><p class="first">The mailbox cache minor version has been incremented to store a GUID for each body part.</p>
-</li>
+pregenerated, you will need to install <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code>, and the perl module
+<code class="docutils literal notranslate"><span class="pre">Pod::POM::View::Restructured</span></code>.  The top level Makefile now has <code class="docutils literal notranslate"><span class="pre">man</span></code> and <code class="docutils literal notranslate"><span class="pre">doc</span></code> targets
+for building these.</p></li>
+<li><p>Added support for OpenSSL 1.1.0.</p></li>
+<li><p>Replication now supports incremental partial updates, so massive updates (such as
+mail imports) won't stall replication for other users.  See <code class="docutils literal notranslate"><span class="pre">sync_batchsize</span></code> in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a></p></li>
+<li><p>The mailbox cache minor version has been incremented to store a GUID for each body part.</p></li>
 </ul>
 </div>
 <div class="section" id="updates-to-default-configuration">
 <h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">unixhierarchysep</span></code> (<code class="docutils literal"><span class="pre">/</span></code>) is now <code class="docutils literal"><span class="pre">on</span></code> by default (instead of netnews style <code class="docutils literal"><span class="pre">.</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">altnamespace</span></code> is now <code class="docutils literal"><span class="pre">on</span></code> by default (was <code class="docutils literal"><span class="pre">off</span></code>)</li>
-<li><code class="docutils literal"><span class="pre">virtdomains</span></code> is actually <strong>still</strong> <code class="docutils literal"><span class="pre">off</span></code> by default. (Previously we stated it was
-now defaulting to <code class="docutils literal"><span class="pre">userid</span></code>: this was an error. )</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unixhierarchysep</span></code> (<code class="docutils literal notranslate"><span class="pre">/</span></code>) is now <code class="docutils literal notranslate"><span class="pre">on</span></code> by default (instead of netnews style <code class="docutils literal notranslate"><span class="pre">.</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">altnamespace</span></code> is now <code class="docutils literal notranslate"><span class="pre">on</span></code> by default (was <code class="docutils literal notranslate"><span class="pre">off</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">virtdomains</span></code> is actually <strong>still</strong> <code class="docutils literal notranslate"><span class="pre">off</span></code> by default. (Previously we stated it was
+now defaulting to <code class="docutils literal notranslate"><span class="pre">userid</span></code>: this was an error. )</p></li>
 </ul>
 </div>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Lots of fixes to caldav and carddav.</p>
+<li><p>Lots of fixes to caldav and carddav.</p>
 <p>Includes the addition of a new daemon (calalarmd) which periodically processes a global
 database containing the &quot;next&quot; alarm for each item, and sends the relevant mboxevents.
-(See configure.ac <code class="docutils literal"><span class="pre">--with-calalarmd</span></code>)</p>
+(See configure.ac <code class="docutils literal notranslate"><span class="pre">--with-calalarmd</span></code>)</p>
 </li>
-<li><p class="first">Replication reliability fixes.</p>
-</li>
-<li><p class="first">Improved <code class="docutils literal"><span class="pre">LIST-EXTENDED</span></code>: more imap tests now succeed.</p>
-</li>
-<li><p class="first">Extensive cleanup of mailbox name handling</p>
-</li>
-<li><p class="first"><code class="docutils literal"><span class="pre">master</span></code> now requests a sane maximum number of open file descriptors, and only
-complains if this isn't allowed.</p>
-</li>
-<li><p class="first">Fixes to compiling on Solaris (thanks Jens Erat, Marty Lee)</p>
-</li>
-<li><p class="first">Improved handling of mailbox renames during replication</p>
-</li>
+<li><p>Replication reliability fixes.</p></li>
+<li><p>Improved <code class="docutils literal notranslate"><span class="pre">LIST-EXTENDED</span></code>: more imap tests now succeed.</p></li>
+<li><p>Extensive cleanup of mailbox name handling</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code> now requests a sane maximum number of open file descriptors, and only
+complains if this isn't allowed.</p></li>
+<li><p>Fixes to compiling on Solaris (thanks Jens Erat, Marty Lee)</p></li>
+<li><p>Improved handling of mailbox renames during replication</p></li>
 </ul>
 </div>
 </div>
@@ -946,7 +916,7 @@ complains if this isn't allowed.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -972,7 +942,6 @@ complains if this isn't allowed.</p>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

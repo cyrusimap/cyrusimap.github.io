@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,57 +786,55 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-ctl_cyrusdb(8)"></span><div class="section" id="ctl-cyrusdb">
+  <span class="target" id="std-cyrusman-ctl_cyrusdb-8"><span id="std:cyrusman-ctl_cyrusdb(8)"></span></span><div class="section" id="ctl-cyrusdb">
 <span id="imap-reference-manpages-systemcommands-ctl-cyrusdb"></span><h1><strong>ctl_cyrusdb</strong><a class="headerlink" href="#ctl-cyrusdb" title="Permalink to this headline">¶</a></h1>
 <p>Perform administrative operations directly on Cyrus IMAP databases.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>ctl_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-c</strong>
-<strong>ctl_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-r</strong> [ <strong>-x</strong> ]
-</pre>
+<pre class="literal-block"><strong>ctl_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-c</strong>
+<strong>ctl_cyrusdb</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-r</strong> [ <strong>-x</strong> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>ctl_cyrusdb</strong> is used to perform various administrative operations on
 the Cyrus IMAP databases.</p>
-<p><strong>ctl_cyrusdb</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.
-The <em>configdirectory</em> option in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> is used to determine the default location of the Cyrus databases.</p>
+<p><strong>ctl_cyrusdb</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.
+The <em>configdirectory</em> option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> is used to determine the default location of the Cyrus databases.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ctl_cyrusdb-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-ctl-cyrusdb-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ctl_cyrusdb-r">
-<span id="cmdoption-ctl_cyrusdb--recover"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--recover</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl-cyrusdb-r"></span><span id="cmdoption-ctl_cyrusdb-recover"></span><span id="cmdoption-ctl-cyrusdb-recover"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--recover</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recover the database after an application or system failure. Also
 performs database cleanups like removing mailbox reservations (and
 the associated mailbox files).</p>
 <p>All mailbox files are also checked to make sure the file format
 matches the configured database type in imapd.conf.  If not, the
 file is automatically converted using the same logic as cvt_cyrusdb.</p>
-<p>If the <code class="docutils literal"><span class="pre">reverseacls</span></code> option in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> is enabled,
+<p>If the <code class="docutils literal notranslate"><span class="pre">reverseacls</span></code> option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> is enabled,
 and the RACL entries in the database are an old version or do not
 exist, they will be generated.  Conversely, if RACL entries do exist
-in the database, but the <code class="docutils literal"><span class="pre">reverseacls</span></code> option is disabled, then the
+in the database, but the <code class="docutils literal notranslate"><span class="pre">reverseacls</span></code> option is disabled, then the
 entries will be cleaned up.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ctl_cyrusdb-x">
-<span id="cmdoption-ctl_cyrusdb--no-cleanup"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--no-cleanup</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-x" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used with <code class="docutils literal"><span class="pre">-r</span></code> to only recover the database, and prevent any
+<span id="cmdoption-ctl-cyrusdb-x"></span><span id="cmdoption-ctl_cyrusdb-no-cleanup"></span><span id="cmdoption-ctl-cyrusdb-no-cleanup"></span><code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--no-cleanup</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used with <code class="docutils literal notranslate"><span class="pre">-r</span></code> to only recover the database, and prevent any
 cleanup.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ctl_cyrusdb-c">
-<span id="cmdoption-ctl_cyrusdb--checkpoint"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--checkpoint</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-c" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ctl_cyrusdb-checkpoint"></span><span id="cmdoption-ctl-cyrusdb-checkpoint"></span><code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--checkpoint</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_cyrusdb-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checkpoint and archive (a copy of) the database.</p>
 <p>Changes to the database which are part of the committed transactions
 are written to disk.</p>
@@ -845,30 +845,27 @@ are removed.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>ctl_cyrusdb -r</strong>
-</pre>
+<pre class="literal-block"><strong>ctl_cyrusdb -r</strong></pre>
 <blockquote>
-<div>Recover databases, performing cleanup.  This is commonly used in
-the <strong>START</strong> section of <a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="p">{</span>
+<div><p>Recover databases, performing cleanup.  This is commonly used in
+the <strong>START</strong> section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="p">{</span>
     <span class="c1"># do not delete this entry!</span>
     <span class="n">recover</span>     <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/local/bin/ctl_cyrusdb -r&quot;</span>
   <span class="o">&lt;...&gt;</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>ctl_cyrusdb -x -r</strong>
-</pre>
+<pre class="literal-block"><strong>ctl_cyrusdb -x -r</strong></pre>
 <blockquote>
-<div>Recover database only.</div></blockquote>
-<pre class="literal-block">
-<strong>ctl_cyrusdb -c</strong>
-</pre>
+<div><p>Recover database only.</p>
+</div></blockquote>
+<pre class="literal-block"><strong>ctl_cyrusdb -c</strong></pre>
 <blockquote>
-<div>Checkpoint databases.  Commonly used in the <strong>EVENTS</strong> section of
-<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EVENTS</span> <span class="p">{</span>
+<div><p>Checkpoint databases.  Commonly used in the <strong>EVENTS</strong> section of
+<a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EVENTS</span> <span class="p">{</span>
     <span class="c1"># this is required</span>
     <span class="n">checkpoint</span>  <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/local/bin/ctl_cyrusdb -c&quot;</span> <span class="n">period</span><span class="o">=</span><span class="mi">30</span>
   <span class="o">&lt;...&gt;</span>
@@ -882,7 +879,7 @@ the <strong>START</strong> section of <a class="reference internal" href="../con
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>, <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
+<p><a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
 </div>
 </div>
 
@@ -907,7 +904,7 @@ the <strong>START</strong> section of <a class="reference internal" href="../con
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 14 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -933,7 +930,6 @@ the <strong>START</strong> section of <a class="reference internal" href="../con
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

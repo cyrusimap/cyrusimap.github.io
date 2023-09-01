@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,48 +791,37 @@
 <p>Currently supported versions of Debian include Cyrus IMAP packages in
 the repositories configured on a stock system.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The Cyrus project does not support running any versions of the Cyrus
+<p class="admonition-title">Note</p>
+<p>The Cyrus project does not support running any versions of the Cyrus
 IMAP software older than the version of the software shipped
 with the operating system itself.</p>
 </div>
 <p>To install the version of Cyrus IMAP that comes with the operating
 system, issue the following command:</p>
-<pre class="literal-block">
-# <strong class="command">apt-get install cyrus-imapd cyrus-sasl cyrus-sasl-plain</strong>
-</pre>
+<pre class="literal-block"># <strong class="command">apt-get install cyrus-imapd cyrus-sasl cyrus-sasl-plain</strong></pre>
 <p>If you want xapian, you'll need to <a class="reference internal" href="../../../developer/compiling.html#compiling"><span class="std std-ref">build all of Cyrus yourself</span></a>.</p>
-<p>Next, set a password for the default administrative user <code class="docutils literal"><span class="pre">cyrus</span></code>:</p>
-<pre class="literal-block">
-# <strong class="command">passwd cyrus</strong>
+<p>Next, set a password for the default administrative user <code class="docutils literal notranslate"><span class="pre">cyrus</span></code>:</p>
+<pre class="literal-block"># <strong class="command">passwd cyrus</strong>
 Changing password for user cyrus.
 New password:
 Retype new password:
-passwd: all authentication tokens updated successfully.
-</pre>
+passwd: all authentication tokens updated successfully.</pre>
 <p>Start and configure to start when the system boots, the
 <em class="manpage">saslauthd</em> service:</p>
-<pre class="literal-block">
-# <strong class="command">service saslauthd start</strong>
+<pre class="literal-block"># <strong class="command">service saslauthd start</strong>
 Starting saslauthd:                                        [  OK  ]
-# <strong class="command">chkconfig saslauthd on</strong>
-</pre>
+# <strong class="command">chkconfig saslauthd on</strong></pre>
 <p>You should at this moment be able to authenticate against
 <em class="manpage">saslauthd</em>:</p>
-<pre class="literal-block">
-# <strong class="command">testsaslauthd -u cyrus -p YOUR-PASSWORD</strong>
-</pre>
-<p>You should get an <code class="docutils literal"><span class="pre">0:</span> <span class="pre">OK</span> <span class="pre">&quot;Success.&quot;</span></code> message.</p>
+<pre class="literal-block"># <strong class="command">testsaslauthd -u cyrus -p YOUR-PASSWORD</strong></pre>
+<p>You should get an <code class="docutils literal notranslate"><span class="pre">0:</span> <span class="pre">OK</span> <span class="pre">&quot;Success.&quot;</span></code> message.</p>
 <p>Start the service, and ensure the service starts up when the system
 boots:</p>
-<pre class="literal-block">
-# <strong class="command">service cyrus-imapd start</strong>
-# <strong class="command">chkconfig cyrus-imapd on</strong>
-</pre>
-<p>You should now be able to login as the <code class="docutils literal"><span class="pre">cyrus</span></code> user, which is
+<pre class="literal-block"># <strong class="command">service cyrus-imapd start</strong>
+# <strong class="command">chkconfig cyrus-imapd on</strong></pre>
+<p>You should now be able to login as the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, which is
 configured by default as an administrator for Cyrus IMAP:</p>
-<pre class="literal-block">
-# <strong class="command">imtest -t &quot;&quot; -u cyrus -a cyrus localhost</strong>
+<pre class="literal-block"># <strong class="command">imtest -t &quot;&quot; -u cyrus -a cyrus localhost</strong>
 S: * OK [CAPABILITY IMAP4 IMAP4rev1 LITERAL+ ID STARTTLS LOGINDISABLED COMPRESS=DEFLATE] d5ec35c1414a Cyrus IMAP v2.3.16-Fedora-RPM-2.3.16-13.el6_6 server ready
 C: S01 STARTTLS
 S: S01 OK Begin TLS negotiation now
@@ -849,8 +840,7 @@ Security strength factor: 256
 C: Q01 LOGOUT
 * BYE LOGOUT received
 Q01 OK Completed
-Connection closed.
-</pre>
+Connection closed.</pre>
 <p>Next, continue with <a class="reference internal" href="../mta/configuration.html#imap-configuring-the-mta"><span class="std std-ref">Configuring the MTA</span></a>.</p>
 </div>
 
@@ -875,7 +865,7 @@ Connection closed.
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 11 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -901,7 +891,6 @@ Connection closed.
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

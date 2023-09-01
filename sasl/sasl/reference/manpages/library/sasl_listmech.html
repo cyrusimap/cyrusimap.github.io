@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -486,89 +486,86 @@
           <div role="main" class="document">
             
   <div class="section" id="sasl-listmech-retrieve-a-list-of-the-supported-sasl-mechanisms">
-<span id="sasl-reference-manpages-library-sasl-listmech"></span><span id="std:saslman-sasl_listmech(3)"></span><h1><strong>sasl_listmech</strong> - Retrieve a list of the supported SASL mechanisms<a class="headerlink" href="#sasl-listmech-retrieve-a-list-of-the-supported-sasl-mechanisms" title="Permalink to this headline">¶</a></h1>
+<span id="sasl-reference-manpages-library-sasl-listmech"></span><span id="std-saslman-sasl_listmech-3"></span><span id="std:saslman-sasl_listmech(3)"></span><h1><strong>sasl_listmech</strong> - Retrieve a list of the supported SASL mechanisms<a class="headerlink" href="#sasl-listmech-retrieve-a-list-of-the-supported-sasl-mechanisms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
-<span class="kt">int</span> <span class="nf">sasl_listmech</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">user</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">prefix</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sep</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">suffix</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">result</span><span class="p">,</span>
-                 <span class="kt">unsigned</span> <span class="o">*</span><span class="n">plen</span><span class="p">,</span>
-                 <span class="kt">int</span> <span class="o">*</span><span class="n">pcount</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">sasl_listmech</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">user</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">prefix</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">sep</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">suffix</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">plen</span><span class="p">,</span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pcount</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="c function">
 <dt>
-<code class="descname">int sasl_listmech(sasl_conn_t *conn,</code></dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_listmech(sasl_conn_t</span> <span class="pre">*conn,</span></code></dt>
 <dt>
-<code class="descname">const char *user,</code></dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*user,</span></code></dt>
 <dt>
-<code class="descname">const char *prefix,</code></dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*prefix,</span></code></dt>
 <dt>
-<code class="descname">const char *sep,</code></dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*sep,</span></code></dt>
 <dt>
-<code class="descname">const char *suffix,</code></dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*suffix,</span></code></dt>
 <dt>
-<code class="descname">const char **result,</code></dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**result,</span></code></dt>
 <dt>
-<code class="descname">unsigned *plen,</code></dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*plen,</span></code></dt>
 <dt>
-<code class="descname">int *pcount);</code></dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">*pcount);</span></code></dt>
 <dd><p><strong>sasl_listmech</strong> returns a string listing the SASL names of
 all the mechanisms available to the specified user. This
 is typically given to the client through a capability command
 or initial server response. Client applications need
 this list so that they know what mechanisms the server
 supports.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>conn</strong> &#8211; the SASL context for this connection</li>
-<li><strong>user</strong> &#8211; (optional) restricts the mechanism list to only those
-available to the user.</li>
-<li><strong>prefix</strong> &#8211; appended to beginning of result</li>
-<li><strong>sep</strong> &#8211; appended between mechanisms</li>
-<li><strong>suffix</strong> &#8211; appended to end of result</li>
-<li><strong>result</strong> &#8211; NULL terminated result string (allocated/freed by
-library)</li>
-<li><strong>plen</strong> &#8211; length of result filled in by library. May be NULL</li>
-<li><strong>pcount</strong> &#8211; Number of mechanisms available (filled in by library).
-May be NULL</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> – the SASL context for this connection</p></li>
+<li><p><strong>user</strong> – (optional) restricts the mechanism list to only those
+available to the user.</p></li>
+<li><p><strong>prefix</strong> – appended to beginning of result</p></li>
+<li><p><strong>sep</strong> – appended between mechanisms</p></li>
+<li><p><strong>suffix</strong> – appended to end of result</p></li>
+<li><p><strong>result</strong> – NULL terminated result string (allocated/freed by
+library)</p></li>
+<li><p><strong>plen</strong> – length of result filled in by library. May be NULL</p></li>
+<li><p><strong>pcount</strong> – Number of mechanisms available (filled in by library).
+May be NULL</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="n">sasl_listmech</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="s">&quot;(&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="s">&quot;)&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mechlist</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_listmech</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="s">&quot;(&quot;</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">,</span><span class="s">&quot;)&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mechlist</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>may give the following string as a result:</p>
 <blockquote>
-<div><cite>(ANONYMOUS,GSSAPI)</cite></div></blockquote>
+<div><p><cite>(ANONYMOUS,GSSAPI)</cite></p>
+</div></blockquote>
 </div>
 <div class="section" id="return-value">
 <h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL functions should return SASL return codes.
-See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
+See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_server_new.html#std:saslman-sasl_server_new(3)">sasl_server_new(3)</a>,
-<a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a>, <a class="reference internal" href="sasl_client_new.html#std:saslman-sasl_client_new(3)">sasl_client_new(3)</a></p>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_server_new.html#std-saslman-sasl_server_new-3">sasl_server_new(3)</a>,
+<a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>, <a class="reference internal" href="sasl_client_new.html#std-saslman-sasl_client_new-3">sasl_client_new(3)</a></p>
 </div>
 </div>
 
@@ -593,7 +590,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -620,7 +617,6 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

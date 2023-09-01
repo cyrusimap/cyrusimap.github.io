@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,21 +791,21 @@
   <div class="section" id="managing-user-deny-db">
 <h1>Managing user_deny.db<a class="headerlink" href="#managing-user-deny-db" title="Permalink to this headline">¶</a></h1>
 <p>The user_deny database allows you to deny access via POP/IMAP even if the user can authenticate to the Cyrus server. For example, if the authentication data is also used for other network services.</p>
-<p>Use <a class="reference internal" href="../../manpages/systemcommands/cyr_deny.html#std:cyrusman-cyr_deny(8)">cyr_deny(8)</a> to manage the database.</p>
+<p>Use <a class="reference internal" href="../../manpages/systemcommands/cyr_deny.html#std-cyrusman-cyr_deny-8">cyr_deny(8)</a> to manage the database.</p>
 <p>If the user_deny.db file doesn't exist in %configdirectory% (often /var/lib/imap) then you'll need to create it. In the example below, /var/lib/imap/ is used.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;&quot; &gt; /tmp/user_deny.flat</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;&quot; &gt; /tmp/user_deny.flat</span>
 <span class="c1"># /usr/lib/cyrus-imapd/cvt_cyrusdb /tmp/user_deny.flat flat /var/lib/imap/user_deny.db skiplist</span>
 <span class="c1"># chown cyrus:cyrus /var/lib/imap/user_deny.db</span>
 </pre></div>
 </div>
 <p>The database specification can be found at <a class="reference internal" href="../../../concepts/deployment/databases.html#imap-concepts-deployment-db-userdeny"><span class="std std-ref">User Access (user_deny.db)</span></a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span># su - cyrus
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># su - cyrus
 $ cyr_dbtool /var/lib/imap/user_deny.db skiplist set **username** &quot;2&lt;tab&gt;pop3&lt;tab&gt;Can&#39;t use pop.&quot;
 </pre></div>
 </div>
-<p>Here <cite>pop3</cite> is the service name as spelled in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.  In order to type a tab character, you will need to escape your tabs. In bash, this is done by typing CTRL-v and then pressing Tab.</p>
+<p>Here <cite>pop3</cite> is the service name as spelled in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.  In order to type a tab character, you will need to escape your tabs. In bash, this is done by typing CTRL-v and then pressing Tab.</p>
 <p>If you got it right, when you authenticate via pop3 you should see something like the following:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ telnet mail.example.org 110
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet mail.example.org 110
 Trying 192.168.0.2...
 Connected to mail.example.org.
 Escape character is &#39;^]&#39;.
@@ -837,7 +839,7 @@ Connection closed by foreign host.
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jan 10 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -863,7 +865,6 @@ Connection closed by foreign host.
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,10 +791,10 @@
 <span id="id1"></span><h1>GitHub guide<a class="headerlink" href="#github-guide" title="Permalink to this headline">¶</a></h1>
 <p>A walkthrough for using <a class="reference external" href="https://github.com">GitHub</a> with a view to providing updates (source or documentation or testing) to the <a class="reference external" href="https://github.com/cyrusimap/">Cyrus repository</a>.</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#github-guide-account"><span class="std std-ref">Create a GitHub account</span></a></li>
-<li><a class="reference internal" href="#github-guide-sshkey"><span class="std std-ref">Add your ssh key</span></a></li>
-<li><a class="reference internal" href="#github-guide-fork"><span class="std std-ref">Fork the repository</span></a> to make a copy of the code for you to apply changes to.</li>
-<li><a class="reference internal" href="#github-guide-pull"><span class="std std-ref">Issue a pull request</span></a> to request that your changes are incorporated back into the master codebase.</li>
+<li><p><a class="reference internal" href="#github-guide-account"><span class="std std-ref">Create a GitHub account</span></a></p></li>
+<li><p><a class="reference internal" href="#github-guide-sshkey"><span class="std std-ref">Add your ssh key</span></a></p></li>
+<li><p><a class="reference internal" href="#github-guide-fork"><span class="std std-ref">Fork the repository</span></a> to make a copy of the code for you to apply changes to.</p></li>
+<li><p><a class="reference internal" href="#github-guide-pull"><span class="std std-ref">Issue a pull request</span></a> to request that your changes are incorporated back into the master codebase.</p></li>
 </ol>
 <p>This guide assumes you are familiar with the workings of <a class="reference external" href="https://help.github.com/articles/set-up-git/">Git</a> for source control.</p>
 <div class="section" id="create-a-github-account">
@@ -816,21 +818,21 @@ or into helping out with <a class="reference external" href="https://github.com/
 any of the other <a class="reference external" href="https://github.com/cyrusimap">Cyrus component projects</a>, use the Fork button to make a copy of the repository into your own GitHub work space.</p>
 <p>GitHub has more information on <a class="reference external" href="https://help.github.com/articles/fork-a-repo/">how to fork a repository</a>.</p>
 <p>Once you have a forked copy, you can clone it into your working area on your computer.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR</span><span class="o">-</span><span class="n">USERNAME</span><span class="o">/</span><span class="n">REPOSITORY</span><span class="o">-</span><span class="n">NAME</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR</span><span class="o">-</span><span class="n">USERNAME</span><span class="o">/</span><span class="n">REPOSITORY</span><span class="o">-</span><span class="n">NAME</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p>You will then want to set your local copy to get its changes from the original repository, so it stays in sync. Use <code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to show the current origins of your clone which will currently be your fork.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git remote -v
+<p>You will then want to set your local copy to get its changes from the original repository, so it stays in sync. Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to show the current origins of your clone which will currently be your fork.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote -v
 origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
 origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 </pre></div>
 </div>
 <p>We want to set that instead to point to the primary original upstream repository.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cyrusimap</span><span class="o">/</span><span class="n">REPOSITORY</span><span class="o">-</span><span class="n">NAME</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cyrusimap</span><span class="o">/</span><span class="n">REPOSITORY</span><span class="o">-</span><span class="n">NAME</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>Now we can check to see that the upstream is set:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git remote -v
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote -v
 origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
 origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 upstream  https://github.com/cyrusimap/ORIGINAL_REPOSITORY.git (fetch)
@@ -871,7 +873,7 @@ will review your pull request and make sure it gets integrated!</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 24 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -897,7 +899,6 @@ will review your pull request and make sure it gets integrated!</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

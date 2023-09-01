@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -795,13 +797,13 @@
 <p>In a standard set up (as suggested by the documentation) each time a message arrives at a frontend, lmtpproxyd will contact the master server to determine which backend the mailbox is on.</p>
 <p>Pros:</p>
 <ul class="simple">
-<li>Most people do it this way</li>
-<li>Easy to set up</li>
+<li><p>Most people do it this way</p></li>
+<li><p>Easy to set up</p></li>
 </ul>
 <p>Cons:</p>
 <ul class="simple">
-<li>Murder master can become overloaded if you have large amount of incoming mail</li>
-<li>Mail delivery hangs if murder master is unavailable.</li>
+<li><p>Murder master can become overloaded if you have large amount of incoming mail</p></li>
+<li><p>Mail delivery hangs if murder master is unavailable.</p></li>
 </ul>
 </div>
 <div class="section" id="query-local-mailboxes-db">
@@ -809,25 +811,25 @@
 <p>Each frontend will generally have its own copy of the mailboxes.db file and lmtpproxyd can be set to query the localhost for the backend of a specific mailbox.</p>
 <p>Pros:</p>
 <ul class="simple">
-<li>Resolve mailbox location faster</li>
-<li>An increase in messages does not increase load on murder master</li>
-<li>Mail can be delivered if murder master is unavailable</li>
+<li><p>Resolve mailbox location faster</p></li>
+<li><p>An increase in messages does not increase load on murder master</p></li>
+<li><p>Mail can be delivered if murder master is unavailable</p></li>
 </ul>
 <p>Cons:</p>
 <ul class="simple">
-<li>More complicated setup</li>
-<li>There are currently two ways to setup lmtpproxyd to query the localhost: normal and alternate.</li>
+<li><p>More complicated setup</p></li>
+<li><p>There are currently two ways to setup lmtpproxyd to query the localhost: normal and alternate.</p></li>
 </ul>
-<p>If using the alternate method, then mupdate needs to be reconfigured to keep mail delivery going during a murder master outage. Add <code class="docutils literal"><span class="pre">-m</span></code> to the mupdate arguments in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>, restart, and mupdate will no longer contact the murder master. Mail delivery will work. Once the murder master has been fixed, remove <code class="docutils literal"><span class="pre">-m</span></code> so the local mupdate will start receiving updates again. Since this involves restarting Cyrus, we ran lmtpproxyd on its own machines (without imap/pop users)</p>
+<p>If using the alternate method, then mupdate needs to be reconfigured to keep mail delivery going during a murder master outage. Add <code class="docutils literal notranslate"><span class="pre">-m</span></code> to the mupdate arguments in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, restart, and mupdate will no longer contact the murder master. Mail delivery will work. Once the murder master has been fixed, remove <code class="docutils literal notranslate"><span class="pre">-m</span></code> so the local mupdate will start receiving updates again. Since this involves restarting Cyrus, we ran lmtpproxyd on its own machines (without imap/pop users)</p>
 </div>
 <div class="section" id="contact-local-mupdate-server">
 <h2>Contact local mupdate server<a class="headerlink" href="#contact-local-mupdate-server" title="Permalink to this headline">¶</a></h2>
 <p>Mupdate is running on each frontend to receive updates from the murder master. Lmtpproxyd can be configured to query the local mupdate process instead of the one on the master server.</p>
 <p>The steps are briefly outlined below</p>
 <ol class="arabic simple">
-<li>Create a config file for lmtpproxyd. Copy your current imapd.conf file and set <code class="docutils literal"><span class="pre">mupdate_server:</span> <span class="pre">localhost</span></code>. Edit cyrus.conf and tell lmtpproxyd about the new config file. <code class="docutils literal"><span class="pre">cmd=&quot;lmtpproxyd</span> <span class="pre">-C</span> <span class="pre">/etc/lmtp.conf&quot;</span></code></li>
-<li>Make sure you can login to mupdate locally. Test with mupdatetest. Example: <code class="docutils literal"><span class="pre">mupdatetest</span> <span class="pre">-u</span> <span class="pre">frontend</span> <span class="pre">-a</span> <span class="pre">frontend</span> <span class="pre">-m</span> <span class="pre">PLAIN</span> <span class="pre">localhost</span></code></li>
-<li>Depending on how restrictive your setup is, you may have to create a config file for mupdate.</li>
+<li><p>Create a config file for lmtpproxyd. Copy your current imapd.conf file and set <code class="docutils literal notranslate"><span class="pre">mupdate_server:</span> <span class="pre">localhost</span></code>. Edit cyrus.conf and tell lmtpproxyd about the new config file. <code class="docutils literal notranslate"><span class="pre">cmd=&quot;lmtpproxyd</span> <span class="pre">-C</span> <span class="pre">/etc/lmtp.conf&quot;</span></code></p></li>
+<li><p>Make sure you can login to mupdate locally. Test with mupdatetest. Example: <code class="docutils literal notranslate"><span class="pre">mupdatetest</span> <span class="pre">-u</span> <span class="pre">frontend</span> <span class="pre">-a</span> <span class="pre">frontend</span> <span class="pre">-m</span> <span class="pre">PLAIN</span> <span class="pre">localhost</span></code></p></li>
+<li><p>Depending on how restrictive your setup is, you may have to create a config file for mupdate.</p></li>
 </ol>
 </div>
 </div>
@@ -853,7 +855,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -879,7 +881,6 @@
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

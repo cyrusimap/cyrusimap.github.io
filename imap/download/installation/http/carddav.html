@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,30 +793,32 @@
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
-<p class="first sidebar-title">addressbookprefix</p>
+<p class="sidebar-title">addressbookprefix</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">addressbookprefix:</span></code> #addressbooks</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
 <blockquote>
-<div>The prefix for the addressbook mailboxes hierarchies.  The hierarchy
+<div><p><code class="docutils literal notranslate"><span class="pre">addressbookprefix:</span></code> #addressbooks</p>
+<blockquote>
+<div><p>The prefix for the addressbook mailboxes hierarchies.  The hierarchy
 delimiter will be automatically appended.  The public addressbook
 hierarchy will be at the toplevel of the shared namespace.  A
-user's personal addressbook hierarchy will be a child of their Inbox.</div></blockquote>
+user's personal addressbook hierarchy will be a child of their Inbox.</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <p>When enabled, the CardDAV module allows Cyrus to function as a contacts server.
 This module uses a subset of the mailbox hierarchy as addressbook collections,
-the toplevel of which is specified by the <code class="docutils literal"><span class="pre">addressbookprefix</span></code> option. The public
+the toplevel of which is specified by the <code class="docutils literal notranslate"><span class="pre">addressbookprefix</span></code> option. The public
 addressbook hierarchy will reside at the toplevel of the shared mailbox
 namespace. A user's personal addressbook hierarchy will be a child of their
 Inbox.</p>
 <p>For example, using the default value for addressbookprefix, an
 addressbook named Default for user &quot;murch&quot; would reside in the mailbox named
-<code class="docutils literal"><span class="pre">user.murch.#addressbooks.Default</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">user.murch.#addressbooks.Default</span></code>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Note that mailboxes in the addressbook hierarchies (those under
+<p class="admonition-title">Warning</p>
+<p>Note that mailboxes in the addressbook hierarchies (those under
 addressbookprefix) <strong>should not</strong> be accessed with an IMAP client as doing so will
 leave a mailbox in a state unsuitable for CardDAV. To this end, addressbook
 mailboxes will not returned by Cyrus imapd in response to an IMAP client's
@@ -829,28 +833,30 @@ the first time that the user authenticates to the CardDAV server. Note that the
 user MUST have an existing IMAP Inbox in order for the addressbook to be
 created.</p>
 <div class="sidebar">
-<p class="first sidebar-title">carddav_allowaddressbookadmin</p>
+<p class="sidebar-title">carddav_allowaddressbookadmin</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">carddav_allowaddressbookadmin:</span></code> 0</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
 <blockquote>
-<div>Enable per-user addressbook administration web UI on the CardDAV server.</div></blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">carddav_allowaddressbookadmin:</span></code> 0</p>
+<blockquote>
+<div><p>Enable per-user addressbook administration web UI on the CardDAV server.</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <p>There is also a Cyrus web GUI for managing addressbook resources.
 It allows you to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Create new collections</li>
-<li>Delete existing collections</li>
-<li>Download existing collections via prepared URLs</li>
+<li><p>Create new collections</p></li>
+<li><p>Delete existing collections</p></li>
+<li><p>Download existing collections via prepared URLs</p></li>
 </ul>
 </div></blockquote>
 <p>The Cyrus web GUI for addressbook management is disabled by default,
 but can be enabled with the &quot;carddav_allowaddressbookadmin&quot; option.</p>
 <p>To access the Cyrus web GUI for addressbook management, point
-a web browser at <code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/addressbooks/user/&lt;username&gt;</span></code></p>
+a web browser at <code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/addressbooks/user/&lt;username&gt;</span></code></p>
 <div class="section" id="addressbook-access-controls">
 <h3>Addressbook access controls<a class="headerlink" href="#addressbook-access-controls" title="Permalink to this headline">¶</a></h3>
 <p>Cyrus uses the same <a class="reference internal" href="caldav.html#calendar-acl"><span class="std std-ref">access controls for addressbooks</span></a>  as it
@@ -881,7 +887,7 @@ addressbooks and are ignored.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 24 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -907,7 +913,6 @@ addressbooks and are ignored.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

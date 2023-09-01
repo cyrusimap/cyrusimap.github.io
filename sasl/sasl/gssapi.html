@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -493,11 +489,11 @@
 <span id="gssapi"></span><h1>Configuring GSSAPI and Cyrus SASL<a class="headerlink" href="#configuring-gssapi-and-cyrus-sasl" title="Permalink to this headline">¶</a></h1>
 <p>This document was contributed by <a class="reference external" href="mailto:kenh&#37;&#52;&#48;cmf&#46;nrl&#46;navy&#46;mil">Ken Hornstein</a> and updated
 by <a class="reference external" href="mailto:Alexey&#46;Melnikov&#37;&#52;&#48;isode&#46;com">Alexey Melnikov</a>.</p>
-<p>A couple of people have asked me privately, &#8220;Hey, how did you get the
-GSSAPI mechanism to work?  I tried, but the sample apps kept failing&#8221;.
-(The short answer: I&#8217;m a tenacious bastard).</p>
-<p>I figured that it couldn&#8217;t hurt to give a quick explanation as to
-how you get GSSAPI working with the sample apps, since it wasn&#8217;t
+<p>A couple of people have asked me privately, “Hey, how did you get the
+GSSAPI mechanism to work?  I tried, but the sample apps kept failing”.
+(The short answer: I’m a tenacious bastard).</p>
+<p>I figured that it couldn’t hurt to give a quick explanation as to
+how you get GSSAPI working with the sample apps, since it wasn’t
 obvious to me, and I consider myself not completely ignorant of GSSAPI
 and Kerberos.</p>
 <div class="section" id="compile-cyrus-sasl-with-gssapi">
@@ -514,27 +510,27 @@ and <a class="reference external" href="https://cybersafe.com">CyberSafe</a> wor
 sample-server needs to specify the GSSAPI service name and the
 location of the plug-ins.</p>
 <ul class="simple">
-<li>On Unix: <code class="docutils literal"><span class="pre">./sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">../plugins/.libs</span></code></li>
-<li>On Windows: <code class="docutils literal"><span class="pre">sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">..\plugins</span></code></li>
+<li><p>On Unix: <code class="docutils literal notranslate"><span class="pre">./sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">../plugins/.libs</span></code></p></li>
+<li><p>On Windows: <code class="docutils literal notranslate"><span class="pre">sample-server</span> <span class="pre">-s</span> <span class="pre">host</span> <span class="pre">-p</span> <span class="pre">..\plugins</span></code></p></li>
 </ul>
-<p>In this example, I am using &#8220;host&#8221;, which already exists on my
+<p>In this example, I am using “host”, which already exists on my
 machine, but only root can read it, so I an running this as root.
 If you want to use an alternate service name, you will need to
 create that service in Kerberos, place it in a keytab readable by
 you, and point your Kerberos library at it.</p>
 <ul class="simple">
-<li>On Unix: Unix: both MIT Kerberos and Heimdal, use <code class="docutils literal"><span class="pre">/etc/krb5.keytab</span></code> on Unix by default, but this can be changed
-by setting the <code class="docutils literal"><span class="pre">KRB5_KTNAME</span></code> environment variable; the default
-for CyberSafe Kerberos is <code class="docutils literal"><span class="pre">/krb5/v5srvtab</span></code> for UNIX systems and can be
-changed by setting the <code class="docutils literal"><span class="pre">CSFC5KTNAME</span></code> environment variable.</li>
-<li>On Windows: the default service key table location for CyberSafe is
-<code class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files\CyberSafe\v5srvtab</span></code>, unless the
+<li><p>On Unix: Unix: both MIT Kerberos and Heimdal, use <code class="docutils literal notranslate"><span class="pre">/etc/krb5.keytab</span></code> on Unix by default, but this can be changed
+by setting the <code class="docutils literal notranslate"><span class="pre">KRB5_KTNAME</span></code> environment variable; the default
+for CyberSafe Kerberos is <code class="docutils literal notranslate"><span class="pre">/krb5/v5srvtab</span></code> for UNIX systems and can be
+changed by setting the <code class="docutils literal notranslate"><span class="pre">CSFC5KTNAME</span></code> environment variable.</p></li>
+<li><p>On Windows: the default service key table location for CyberSafe is
+<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\CyberSafe\v5srvtab</span></code>, unless the
 CyberSafe registry setting for the KeyTab key is set to an
 alternate path. MIT Kerberos on Windows uses the keytab filename
-krb5kt.</li>
+krb5kt.</p></li>
 </ul>
 <p>You should get a response similar to:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">client</span> <span class="n">mechanism</span> <span class="nb">list</span><span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">client</span> <span class="n">mechanism</span> <span class="nb">list</span><span class="o">...</span>
 <span class="n">Sending</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">3</span> <span class="n">mechanism</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">S</span><span class="p">:</span> <span class="n">R1NTQVBJIFBMQUlOIEFOT05ZTU9VUw</span><span class="o">==</span>
 </pre></div>
@@ -544,14 +540,14 @@ in lines that are longer than canonical input processing buffer on your
 system.  You can get around that by messing around with stty; while
 the details vary from system to system, on Solaris you can do something
 like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">stty</span> <span class="o">-</span><span class="n">icanon</span> <span class="nb">min</span> <span class="mi">1</span> <span class="n">time</span> <span class="mi">0</span> <span class="p">;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">stty</span> <span class="o">-</span><span class="n">icanon</span> <span class="nb">min</span> <span class="mi">1</span> <span class="n">time</span> <span class="mi">0</span> <span class="p">;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="obtain-kerberos-ticket">
 <h2>Obtain Kerberos ticket<a class="headerlink" href="#obtain-kerberos-ticket" title="Permalink to this headline">¶</a></h2>
 <p>Obtain a Kerberos ticket for the user you want to authenticate as.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">kinit</span> <span class="n">kenh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kinit</span> <span class="n">kenh</span>
 </pre></div>
 </div>
 </div>
@@ -559,11 +555,11 @@ like:</p>
 <h2>Start up sample client<a class="headerlink" href="#start-up-sample-client" title="Permalink to this headline">¶</a></h2>
 <p>You need to specify the service
 name, the hostname, and the userid.  An example might be</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">n</span> <span class="n">your</span><span class="o">.</span><span class="n">fqdn</span><span class="o">.</span><span class="n">here</span> <span class="o">-</span><span class="n">u</span> <span class="n">kenh</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">n</span> <span class="n">your</span><span class="o">.</span><span class="n">fqdn</span><span class="o">.</span><span class="n">here</span> <span class="o">-</span><span class="n">u</span> <span class="n">kenh</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span>
 </pre></div>
 </div>
 <p>You should get a response similar to this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Waiting</span> <span class="k">for</span> <span class="n">mechanism</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">server...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Waiting</span> <span class="k">for</span> <span class="n">mechanism</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">server...</span>
 </pre></div>
 </div>
 </div>
@@ -572,7 +568,7 @@ name, the hostname, and the userid.  An example might be</p>
 <p>Cut-and-paste the initial mechanism line from the server process
 (this includes the `` S: `` ) into the client process.  You
 should get something similar to:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">S</span><span class="p">:</span> <span class="n">R1NTQVBJIFBMQUlOIEFOT05ZTU9VUw</span><span class="o">==</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="p">:</span> <span class="n">R1NTQVBJIFBMQUlOIEFOT05ZTU9VUw</span><span class="o">==</span>
 <span class="n">Choosing</span> <span class="n">best</span> <span class="n">mechanism</span> <span class="n">from</span><span class="p">:</span> <span class="n">GSSAPI</span> <span class="n">PLAIN</span> <span class="n">ANONYMOUS</span>
 <span class="n">Using</span> <span class="n">mechanism</span> <span class="n">GSSAPI</span>
 <span class="n">Preparing</span> <span class="n">initial</span><span class="o">.</span>
@@ -581,12 +577,12 @@ should get something similar to:</p>
 <span class="n">Waiting</span> <span class="k">for</span> <span class="n">server</span> <span class="n">reply</span><span class="o">...</span>
 </pre></div>
 </div>
-<p>If GSSAPI isn&#8217;t selected as the mechanism, there is a few things that
+<p>If GSSAPI isn’t selected as the mechanism, there is a few things that
 might have gone wrong:</p>
 <ul>
-<li><p class="first">The mechanism might not have been offered by the server.  The decoded
-mechanism list offered by the server appears in the &#8220;<code class="docutils literal"><span class="pre">Choosing</span> <span class="pre">best</span>
-<span class="pre">mechanism</span></code>&#8221; line.  If GSSAPI didn&#8217;t appear in that list, then
+<li><p>The mechanism might not have been offered by the server.  The decoded
+mechanism list offered by the server appears in the “<code class="docutils literal notranslate"><span class="pre">Choosing</span> <span class="pre">best</span>
+<span class="pre">mechanism</span></code>” line.  If GSSAPI didn’t appear in that list, then
 something is wrong on the server.  Make sure that you specified the
 correct plugins directory.  If the plugin directory is correct, but
 the library fails to load, you might be running across a bug
@@ -595,11 +591,11 @@ libraries not installed in the system library path, those libraries
 are likely not able to be found when the SASL GSSAPI plugin loads.</p>
 <p>The solution varies from system to system; what I did was take
 the linker line generated by libtool and run it by hand, adding
-a <code class="docutils literal"><span class="pre">-R/path/to/kerberos/libraries</span></code> switch (this was on Solaris).
+a <code class="docutils literal notranslate"><span class="pre">-R/path/to/kerberos/libraries</span></code> switch (this was on Solaris).
 You can check with a system call tracer to see exactly what it is
 trying to do.</p>
 </li>
-<li><p class="first">The client doesn&#8217;t know about the mechanism.  The reasons for this
+<li><p>The client doesn’t know about the mechanism.  The reasons for this
 happening are the same as the server: check the -p switch, check
 to make sure the correct libraries are being loaded with the GSSAPI
 plugin.</p>
@@ -607,17 +603,17 @@ plugin.</p>
 the definition in config.h of the VL macro to (and recompiling libsasl):</p>
 </li>
 </ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#define VL(foo) printf foo;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define VL(foo) printf foo;</span>
 </pre></div>
 </div>
 <p>There is a possibility
 you might get an error that looks like this:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">-</span><span class="n">client</span><span class="p">:</span> <span class="n">Starting</span> <span class="n">SASL</span> <span class="n">negotiation</span><span class="p">:</span> <span class="n">generic</span> <span class="n">failure</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">-</span><span class="n">client</span><span class="p">:</span> <span class="n">Starting</span> <span class="n">SASL</span> <span class="n">negotiation</span><span class="p">:</span> <span class="n">generic</span> <span class="n">failure</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>This can mean that you didn&#8217;t provide all of the required information
+<p>This can mean that you didn’t provide all of the required information
 to the sample-client (did you provide a service name with -s, the
 hostname of the service with -n, and a username with -u ?), or that
 GSSAPI has failed (unfortunately, on the client you cannot find out
@@ -627,39 +623,39 @@ for that).</p>
 <div class="section" id="connect-client-to-server">
 <h2>Connect Client to Server<a class="headerlink" href="#connect-client-to-server" title="Permalink to this headline">¶</a></h2>
 <p>Cut and paste the client response (The <em>entire</em> line that begins
-with C:, including the initial <code class="docutils literal"><span class="pre">C:</span></code> ) to the server
-process.  You should get a response back that starts with <code class="docutils literal"><span class="pre">S:</span></code> .
+with C:, including the initial <code class="docutils literal notranslate"><span class="pre">C:</span></code> ) to the server
+process.  You should get a response back that starts with <code class="docutils literal notranslate"><span class="pre">S:</span></code> .
 Cut and paste that to the client, and continue this
-exchange until you either get <code class="docutils literal"><span class="pre">Negotiation</span> <span class="pre">complete</span></code>, or an error.</p>
+exchange until you either get <code class="docutils literal notranslate"><span class="pre">Negotiation</span> <span class="pre">complete</span></code>, or an error.</p>
 <p>If you get an error on the server you should get a complete error
 message (including the GSSAPI error string); on the client you
-unfortunately will only probably get <code class="docutils literal"><span class="pre">generic</span> <span class="pre">failure</span></code>, which will
+unfortunately will only probably get <code class="docutils literal notranslate"><span class="pre">generic</span> <span class="pre">failure</span></code>, which will
 again require the use of a debugger (but the VL macro should help
 with this).</p>
 <p>One common thing that happens is that on your server you might see
 the error:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">-</span><span class="n">server</span><span class="p">:</span> <span class="n">Performing</span> <span class="n">SASL</span> <span class="n">negotiation</span><span class="p">:</span> <span class="n">authentication</span> <span class="n">failure</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">-</span><span class="n">server</span><span class="p">:</span> <span class="n">Performing</span> <span class="n">SASL</span> <span class="n">negotiation</span><span class="p">:</span> <span class="n">authentication</span> <span class="n">failure</span>
     <span class="p">(</span><span class="n">Requested</span> <span class="n">identity</span> <span class="ow">not</span> <span class="n">authenticated</span> <span class="n">identity</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This comes from not having a requested identity (the -u option) that
 matches the identity that you were authenticated to via the GSSAPI.
-This is of course mechanism specific, but if for example you&#8217;re using
+This is of course mechanism specific, but if for example you’re using
 Kerberos, the Cyrus SASL library strips out the &#64;REALM from your
 identity if you are in the same realm as the server.  So if your
 Kerberos identity is user&#64;SOME.REALM and the server is in SOME.REALM,
-you need to specify &#8220;user&#8221; to the -u flag of the client.  If you&#8217;re
+you need to specify “user” to the -u flag of the client.  If you’re
 accessing a server in a foreign realm, you need to pass the full
 principal name via the -u option to make this work correctly.</p>
 <p>If you complete the negotiation successfully, you should see something
 that looks like (on both the client and server):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Negotiation</span> <span class="n">complete</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Negotiation</span> <span class="n">complete</span>
 <span class="n">Username</span><span class="p">:</span> <span class="n">kenh</span>
 <span class="n">sample</span><span class="o">-</span><span class="n">server</span><span class="p">:</span> <span class="n">realm</span><span class="p">:</span> <span class="n">can</span><span class="s1">&#39;t request info until later in exchange</span>
 <span class="n">SSF</span><span class="p">:</span> <span class="mi">56</span>
 </pre></div>
 </div>
-<p>If you get to that, then you&#8217;ve done it, and GSSAPI works successfully!</p>
+<p>If you get to that, then you’ve done it, and GSSAPI works successfully!</p>
 </div>
 </div>
 
@@ -684,7 +680,7 @@ that looks like (on both the client and server):</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -711,7 +707,6 @@ that looks like (on both the client and server):</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

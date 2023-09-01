@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -795,8 +797,8 @@ servers with a <em>backend</em> role -- these host the payload for the cluster
 <p>This makes access to mailboxes transparent to the client, even though
 different mailboxes to which the user has access reside on different
 servers.</p>
-<p>To illustrate, let John's IMAP client connect to <code class="docutils literal"><span class="pre">imap.example.org</span></code>:</p>
-<img src="../../../_images/graphviz-a580b8819035e9b4da261789b06642271baa7a26.png" alt="digraph john {
+<p>To illustrate, let John's IMAP client connect to <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code>:</p>
+digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -805,13 +807,12 @@ servers.</p>
         node [shape=record, fontname=Calibri, fontsize=11];
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
-    }" />
-<p>John's mailbox may not reside on the node that the client connects to,
+    }<p>John's mailbox may not reside on the node that the client connects to,
 though, and instead be located on a <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node -- as is
 typical for larger deployments.</p>
 <p>The client connection is therefore to be proxied to the appropriate
 <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node.</p>
-<img src="../../../_images/graphviz-6c7c78ba8966e4e092789acf9e77baf205a28efa.png" alt="digraph john {
+digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -821,12 +822,11 @@ typical for larger deployments.</p>
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;];
-    }" />
-<p>It is not at all uncommon to (reverse) proxy client connections like
-this (a task that <code class="docutils literal"><span class="pre">imap.example.org</span></code> takes on in this example).</p>
+    }<p>It is not at all uncommon to (reverse) proxy client connections like
+this (a task that <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code> takes on in this example).</p>
 <p>In the case of webservers for example, reverse proxying is a very
 common practice:</p>
-<img src="../../../_images/graphviz-22a660b7a5ef861530eb057afbc6d6b7b8d63d3f.png" alt="digraph www {
+digraph www {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -838,8 +838,7 @@ common practice:</p>
 
         &quot;http://www.example.org/&quot; -&gt; &quot;assets1.example.org&quot; [label=&quot;Static Content&quot;];
         &quot;http://www.example.org/&quot; -&gt; &quot;www1.example.org&quot; [label=&quot;Dynamic Content&quot;];
-    }" />
-<p>In the case of reverse web proxies, the proxy looks at (for example)
+    }<p>In the case of reverse web proxies, the proxy looks at (for example)
 the request URI, and based on a set of rules, forwards (proxies) the
 request on to the appropriate (internal) node. This architecture allows
 application servers (www[0-9]+.example.org) to be scaled up and down by
@@ -849,10 +848,10 @@ require no server-side processing).</p>
 <p>In the case of IMAP, a commonly used IMAP proxy is NGINX. However,
 NGINX can proxy John's connection to only one backend at a time. NGINX
 allows an external script to respond with a target backend address
-based on the authentication of the user <a class="footnote-reference" href="#id4" id="id1">[1]</a>.</p>
+based on the authentication of the user <a class="footnote-reference brackets" href="#id6" id="id1">1</a>.</p>
 <p>As such, NGINX is a socket proxy, and not a fully-featured
 application proxy:</p>
-<img src="../../../_images/graphviz-f12ccd5576f4a7badda9d85dc1a114f5b529a013.png" alt="digraph joe {
+digraph joe {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -866,49 +865,45 @@ application proxy:</p>
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;,color=&quot;green&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend2.example.org&quot; [label=&quot;Not Available&quot;,color=&quot;red&quot;];
-    }" />
-<p>This means that John could not open a mailbox that does not reside on
+    }<p>This means that John could not open a mailbox that does not reside on
 the same backend node his client connection is proxied to, and John nor
-Jane can share their mailboxes with one another <a class="footnote-reference" href="#id5" id="id2">[2]</a>.</p>
+Jane can share their mailboxes with one another <a class="footnote-reference brackets" href="#id7" id="id2">2</a>.</p>
 <p>For the proxy to be fully-featured, the proxy would need to catch all
-IMAP commands that John's client issues <a class="footnote-reference" href="#id6" id="id3">[3]</a>, and determine what is the
+IMAP commands that John's client issues <a class="footnote-reference brackets" href="#id8" id="id3">3</a>, and determine what is the
 most appropriate backend to serve the request -- not unlike the
 aforementioned web proxies.</p>
-<p>So, when John's client issues a <code class="docutils literal"><span class="pre">SELECT</span> <span class="pre">INBOX</span></code>, the connection is to
-be proxied to <code class="docutils literal"><span class="pre">backend1.example.org</span></code>, but when John's client is to
-issue a <code class="docutils literal"><span class="pre">SELECT</span> <span class="pre">&quot;Other</span> <span class="pre">Users/jane&quot;</span></code>, the connection is to be proxied
-to <code class="docutils literal"><span class="pre">backend2.example.org</span></code>.</p>
+<p>So, when John's client issues a <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">INBOX</span></code>, the connection is to
+be proxied to <code class="docutils literal notranslate"><span class="pre">backend1.example.org</span></code>, but when John's client is to
+issue a <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">&quot;Other</span> <span class="pre">Users/jane&quot;</span></code>, the connection is to be proxied
+to <code class="docutils literal notranslate"><span class="pre">backend2.example.org</span></code>.</p>
 <p><strong>This</strong> is where the Cyrus IMAP Murder functionality kicks in:</p>
 <ul>
-<li><p class="first">Mailbox location data is maintained through a central MUPDATE
+<li><p>Mailbox location data is maintained through a central MUPDATE
 server.</p>
 <p>Each backend submits its list of local mailboxes when it starts up,
 and maintains new, renamed and deleted mail folders, and Access
 Control List (ACL) changes while running.</p>
 </li>
-<li><p class="first">The MUPDATE server replicates its aggregated database from across
-all backends to all nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role.</p>
-</li>
-<li><p class="first">Nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role capture connections on the
+<li><p>The MUPDATE server replicates its aggregated database from across
+all backends to all nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role.</p></li>
+<li><p>Nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role capture connections on the
 protocol level and decide where the connection needs to be proxied
-to</p>
-</li>
-<li><p class="first">Nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role also arbiter between backends
-when a message is moved from John's <code class="docutils literal"><span class="pre">INBOX</span></code> to Jane's <code class="docutils literal"><span class="pre">INBOX</span></code> or
-vice-versa.</p>
-</li>
+to</p></li>
+<li><p>Nodes with a <a class="reference internal" href="#term-frontend"><span class="xref std std-term">frontend</span></a> role also arbiter between backends
+when a message is moved from John's <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> to Jane's <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> or
+vice-versa.</p></li>
 </ul>
 <div class="section" id="use-cases-for-the-cyrus-imap-murder">
 <h2>Use-Cases for the Cyrus IMAP Murder<a class="headerlink" href="#use-cases-for-the-cyrus-imap-murder" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Transparent access to content distributed over multiple (backend)
-nodes,</li>
-<li>Sharing content distributed over multiple nodes (calendars, address
-books, mail folders),</li>
-<li>High-availability and/or load-balanced frontends,</li>
-<li>Transport Layer Security termination, so frontends do connection
-encryption and backends spend CPU cycles on mailboxes.</li>
-<li>Access Control enforcement at the perimeter</li>
+<li><p>Transparent access to content distributed over multiple (backend)
+nodes,</p></li>
+<li><p>Sharing content distributed over multiple nodes (calendars, address
+books, mail folders),</p></li>
+<li><p>High-availability and/or load-balanced frontends,</p></li>
+<li><p>Transport Layer Security termination, so frontends do connection
+encryption and backends spend CPU cycles on mailboxes.</p></li>
+<li><p>Access Control enforcement at the perimeter</p></li>
 </ul>
 <p>Administrators of larger infrastructures will be aware of the fact that
 vertical scaling a single node only stretches so far.</p>
@@ -934,21 +929,21 @@ mailboxes hosted by more than one Cyrus IMAP server with the <em>backend</em>
 role.</p>
 <p>Cyrus IMAP can do so in either one of three topologies:</p>
 <ol class="arabic">
-<li><p class="first"><a class="reference internal" href="#imap-features-murder-discrete"><span class="std std-ref">Discrete Murder</span></a></p>
+<li><p><a class="reference internal" href="#imap-features-murder-discrete"><span class="std std-ref">Discrete Murder</span></a></p>
 <p>The frontend and backend servers are separate.</p>
 </li>
-<li><p class="first"><a class="reference internal" href="#imap-features-murder-replicated"><span class="std std-ref">Replicated Murder</span></a></p>
+<li><p><a class="reference internal" href="#imap-features-murder-replicated"><span class="std std-ref">Replicated Murder</span></a></p>
 <p>All backends have access to all mailboxes.</p>
 </li>
-<li><p class="first"><a class="reference internal" href="#imap-features-murder-unified"><span class="std std-ref">Unified Murder</span></a></p>
+<li><p><a class="reference internal" href="#imap-features-murder-unified"><span class="std std-ref">Unified Murder</span></a></p>
 <p>There's no distinction between backends and frontends, and all
 backends perform frontend roles, but not all frontends are
 automatically also backends.</p>
 </li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In the context of a Cyrus IMAP Murder, the terms <em>frontend</em> and
+<p class="admonition-title">Note</p>
+<p>In the context of a Cyrus IMAP Murder, the terms <em>frontend</em> and
 <em>backend</em> are server roles, and while these roles may be performed
 by separate servers, such as in a
 <a class="reference internal" href="#imap-features-murder-discrete"><span class="std std-ref">Discrete Murder</span></a>, but they need not be, such as
@@ -961,14 +956,14 @@ mailboxes reside through the MUPDATE protocol (<span class="target" id="index-0"
 <p>The simplest discrete murder topology puts each role on one or more
 separate systems;</p>
 <ul class="simple">
-<li>the MUPDATE master (m),</li>
-<li>one or more frontend servers (f),</li>
-<li>one or more backend servers (b).</li>
+<li><p>the MUPDATE master (m),</p></li>
+<li><p>one or more frontend servers (f),</p></li>
+<li><p>one or more backend servers (b).</p></li>
 </ul>
 <p>Each of the systems communicates with one another via the following
 connection model:</p>
-<div class="figure" id="id7">
-<img src="../../../_images/graphviz-50bd36f10190feceeb7910097ed7f398ee462fcf.png" alt="digraph {
+<div class="figure align-default" id="id9">
+digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -982,26 +977,25 @@ connection model:</p>
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=back];
 
         &quot;f+&quot; -&gt; &quot;b+&quot;;
-    }" />
-<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+    }<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
-<li><p class="first">A frontend (f) connects to the mupdate (m) master server and
+<li><p>A frontend (f) connects to the mupdate (m) master server and
 receives updates from the mupdate master server.</p>
 <p>The frontend continues to receive updates about deleted, renamed or
 created mailboxes for as long as the connection from the frontend to
 the mupdate master server exists.</p>
 <p>The frontend reconnects if the connection is interrupted.</p>
 </li>
-<li><p class="first">A backend connects to the mupdate master server and pushes updates
+<li><p>A backend connects to the mupdate master server and pushes updates
 to the mupdate server.</p>
 <p>A backend reconnects to the mupdate master server as needed.</p>
 </li>
 </ol>
 <div class="section" id="murder-backend-startup-process">
 <h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this headline">¶</a></h4>
-<div class="figure" id="id8">
-<img src="../../../_images/graphviz-8b1ee81495109dc486349f8684f91ced86ce6bb1.png" alt="digraph {
+<div class="figure align-default" id="id10">
+digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1015,11 +1009,10 @@ to the mupdate server.</p>
         &quot;m&quot; -&gt; &quot;b+&quot; [color=red,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }" />
-<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+    }<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure" id="id9">
-<img src="../../../_images/graphviz-c8eaf7af6ed0d03027ca9a0c855710e4c71deb13.png" alt="digraph {
+<div class="figure align-default" id="id11">
+digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1034,38 +1027,34 @@ to the mupdate server.</p>
         &quot;m&quot; -&gt; &quot;b+&quot; [color=green,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }" />
-<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+    }<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
-<li><p class="first">The backend (b) pushes its list of mailboxes to the mupdate master
-(m) using <code class="docutils literal"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code>.</p>
+<li><p>The backend (b) pushes its list of mailboxes to the mupdate master
+(m) using <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code>.</p>
 <p>The list of local mailboxes on the backend is routinely compared
 with the current state of the rest of the murder topology;</p>
 <ul>
-<li><p class="first">Mailboxes that exist locally but are not in MUPDATE are pushed
-to the mupdate master server.</p>
-</li>
-<li><p class="first">Mailboxes that exist locally but for which the mupdate master
+<li><p>Mailboxes that exist locally but are not in MUPDATE are pushed
+to the mupdate master server.</p></li>
+<li><p>Mailboxes that exist locally but for which the mupdate master
 server has an entry for the mailbox to live on a different
 server are deleted locally.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Additional options to
+<p class="admonition-title">Note</p>
+<p>Additional options to
 <a class="reference internal" href="../../reference/manpages/systemcommands/ctl_mboxlist.html#imap-reference-manpages-systemcommands-ctl-mboxlist"><span class="std std-ref">ctl_mboxlist</span></a> allow the deletion
 to be prevented.</p>
 </div>
 </li>
-<li><p class="first">Mailboxes that do not exist locally but exists in MUPDATE as
-living locally are removed from the mupdate master server.</p>
-</li>
+<li><p>Mailboxes that do not exist locally but exists in MUPDATE as
+living locally are removed from the mupdate master server.</p></li>
 </ul>
 </li>
-<li><p class="first">The mupdate (m) master server pushes updates to the existing list of
-mailboxes to the frontend (f) server.</p>
-</li>
+<li><p>The mupdate (m) master server pushes updates to the existing list of
+mailboxes to the frontend (f) server.</p></li>
 </ol>
-<img src="../../../_images/graphviz-6786d722ac573eb537659287d8bf600b3a13d356.png" alt="digraph {
+digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1079,51 +1068,43 @@ mailboxes to the frontend (f) server.</p>
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=both];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [dir=both];
-    }" />
-</div>
+    }</div>
 </div>
 <div class="section" id="replicated-murder">
 <span id="imap-features-murder-replicated"></span><h3>Replicated Murder<a class="headerlink" href="#replicated-murder" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
+<p class="admonition-title">Note</p>
+<p>This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
 </div>
 </div>
 <div class="section" id="unified-murder">
 <span id="imap-features-murder-unified"></span><h3>Unified Murder<a class="headerlink" href="#unified-murder" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
+<p class="admonition-title">Note</p>
+<p>This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
 </div>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">Features</span></a></p>
 <p class="rubric">Footnotes</p>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>See also: <a class="reference internal" href="../../reference/admin/nginx-proxy.html#imap-howto-nginx-proxy"><span class="std std-ref">HOWTO: Using an NGINX IMAP Proxy</span></a>.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>More literally speaking, John and Jane can <em>share</em>, just neither can
-make use of the privilege.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Including but not limited to <code class="docutils literal"><span class="pre">SELECT</span></code>, <code class="docutils literal"><span class="pre">UID</span> <span class="pre">MOVE</span></code>, <code class="docutils literal"><span class="pre">RENAME</span></code>,
-etc.</td></tr>
-</tbody>
-</table>
-<dl class="glossary docutils">
-<dt id="term-frontend">frontend</dt>
-<dd>the user interface</dd>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>See also: <a class="reference internal" href="../../reference/admin/nginx-proxy.html#imap-howto-nginx-proxy"><span class="std std-ref">HOWTO: Using an NGINX IMAP Proxy</span></a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>More literally speaking, John and Jane can <em>share</em>, just neither can
+make use of the privilege.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Including but not limited to <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>, <code class="docutils literal notranslate"><span class="pre">RENAME</span></code>,
+etc.</p>
+</dd>
 </dl>
-<dl class="glossary docutils">
-<dt id="term-backend">backend</dt>
-<dd>the server components</dd>
+<dl class="glossary simple">
+<dt id="term-frontend">frontend<a class="headerlink" href="#term-frontend" title="Permalink to this term">¶</a></dt><dd><p>the user interface</p>
+</dd>
+</dl>
+<dl class="glossary simple">
+<dt id="term-backend">backend<a class="headerlink" href="#term-backend" title="Permalink to this term">¶</a></dt><dd><p>the server components</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -1150,7 +1131,7 @@ etc.</td></tr>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 13 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1176,7 +1157,6 @@ etc.</td></tr>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

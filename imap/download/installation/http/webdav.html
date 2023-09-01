@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,31 +793,33 @@
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
-<p class="first sidebar-title">davdriveprefix</p>
+<p class="sidebar-title">davdriveprefix</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">davdriveprefix:</span></code> #drive</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
 <blockquote>
-<div>The prefix for the DAV storage mailboxes hierarchies.  The hierarchy
+<div><p><code class="docutils literal notranslate"><span class="pre">davdriveprefix:</span></code> #drive</p>
+<blockquote>
+<div><p>The prefix for the DAV storage mailboxes hierarchies.  The hierarchy
 delimiter will be automatically appended.  The public storage
 hierarchy will be at the toplevel of the shared namespace.  A
-user's personal storage hierarchy will be a child of their Inbox.</div></blockquote>
+user's personal storage hierarchy will be a child of their Inbox.</p>
+</div></blockquote>
 </div></blockquote>
 </div>
 <p>When enabled, the WebDAV module allows Cyrus to function as a storage server.
 This module uses a subset of the mailbox hierarchy as collections, the toplevel
-of which is specified by the <code class="docutils literal"><span class="pre">davdriveprefix</span></code> option. The public storage hierarchy
+of which is specified by the <code class="docutils literal notranslate"><span class="pre">davdriveprefix</span></code> option. The public storage hierarchy
 lives at the toplevel of the shared mailbox namespace. A user's personal
 storage hierarchy will be a child of their Inbox.</p>
 <p>For example, using the default value for davdriveprefix, a collection named photos
-for user &quot;murch&quot; would reside in the mailbox named <code class="docutils literal"><span class="pre">user.murch.#drive.photos</span></code>.
+for user &quot;murch&quot; would reside in the mailbox named <code class="docutils literal notranslate"><span class="pre">user.murch.#drive.photos</span></code>.
 A user would access their storage at
-<code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/&lt;davdriveprefix&gt;/user/&lt;userid&gt;</span></code>, which for
-the example above, comes to: <code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/drive/user/murch</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/&lt;davdriveprefix&gt;/user/&lt;userid&gt;</span></code>, which for
+the example above, comes to: <code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/drive/user/murch</span></code>.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Note that mailboxes in the storage hierarchies (those under <cite>davdriveprefix</cite>)
+<p class="admonition-title">Warning</p>
+<p>Note that mailboxes in the storage hierarchies (those under <cite>davdriveprefix</cite>)
 <strong>should not</strong> be accessed with an IMAP client as doing so will leave a mailbox
 in a state unsuitable for WebDAV. To this end, storage mailboxes will not
 returned by Cyrus imapd in response to an IMAP client's request for the
@@ -862,7 +866,7 @@ storage and are ignored.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -888,7 +892,6 @@ storage and are ignored.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

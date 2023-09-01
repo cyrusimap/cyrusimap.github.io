@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -151,7 +153,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +237,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#access-control-defaults">Access Control Defaults</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#access-control-identifier-aci">Access Control Identifier (ACI)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#negative-rights">Negative Rights</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#calculating-a-users-rights">Calculating a Users' Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#calculating-a-users-rights">Calculating a Users’ Rights</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#login-authentication">Login Authentication</a><ul>
@@ -252,14 +254,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#new-mail-notification">New Mail Notification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#partitions">Partitions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#specifying-partitions-with-create">Specifying Partitions with &quot;create&quot;</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#changing-partitions-with-rename">Changing Partitions with &quot;rename&quot;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#specifying-partitions-with-create">Specifying Partitions with “create”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#changing-partitions-with-rename">Changing Partitions with “rename”</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/concepts/overview_and_concepts.html#news">News</a></li>
@@ -374,7 +376,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -542,7 +544,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/reference/faq.html#installation-problems">Installation Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/install-compilationerrors.html">Compilation errors about kssl.h and krb5.h on Red Hat Linux/Fedora</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going...</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going…</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/install-linkerwarnings.html">OpenSSL Version Mismatches</a></li>
 </ul>
 </li>
@@ -559,7 +561,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-configdir-tempfs.html">Is it safe to put &lt;configdirectory&gt;/proc and &lt;configdirectory&gt;/lock on a tmpfs filesystem?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-coredump.html">How to enable core dumps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-delete-mailbox.html">Why can I not delete a mailbox as an admin user?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-deleted-expired-expunged-purged.html">When is What ... Deleted, Expired, Expunged or Purged?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-deleted-expired-expunged-purged.html">When is What … Deleted, Expired, Expunged or Purged?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-deliverdb-size.html">Why is deliver.db so large?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-freezes.html">I have multiple imapd-SERVICES configured and experience occasional freezes when I try to log in!</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-gdb.html">How to run gdb on Cyrus components</a></li>
@@ -571,13 +573,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-sharedfilesystem-gpfs.html">Shared File Systems GPFS for high availability</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-telemetry.html">How to enable telemetry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-toomanyprocesses.html">The process count keeps growing!</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-unable-join-environment.html">&quot;unable to join environment&quot; error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-vacation-mailfrom.html">Why does Cyrus set the MAIL FROM address of the sender of vacation responses to '&lt;&gt;'?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-unable-join-environment.html">“unable to join environment” error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/o-vacation-mailfrom.html">Why does Cyrus set the MAIL FROM address of the sender of vacation responses to ‘&lt;&gt;’?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../imap/reference/faq.html#common-interoperability-problems">Common Interoperability Problems</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/interop-8bit.html">Why does Cyrus reject 8-bit characters in the headers of my messages?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/interop-barenewlines.html">Why does Cyrus reject messages with &quot;bare newlines&quot;?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/interop-barenewlines.html">Why does Cyrus reject messages with “bare newlines”?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/interop-sieve-exim.html">How do I get Cyrus Sieve to play nice with Exim?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../imap/reference/faqs/interop-slow-delivery.html">Why does mail delivery go slow or hang sometimes?</a></li>
 </ul>
@@ -785,12 +787,12 @@
 <p>The Cyrus Governance Board is responsible for the overall direction of the Cyrus project. Members of the board are nominated by the Cyrus community at large. Following nomination, a vote must be called by a current member of the board. A nominated member must be elected by a simple 2/3 majority vote of the current Board. There is no upper limit to the number of members of the Board. An existing member may be removed from the board by resigning, or by a unanimous vote of the remaining members of the board.</p>
 <p>The Board is comprised of:</p>
 <ul class="simple">
-<li>Wes Craig</li>
-<li>Jeffrey Eaton</li>
-<li>Ken Murchison</li>
-<li>Benn Oshrin</li>
-<li>Dave McMurtrie</li>
-<li>Bron Gondwana</li>
+<li><p>Wes Craig</p></li>
+<li><p>Jeffrey Eaton</p></li>
+<li><p>Ken Murchison</p></li>
+<li><p>Benn Oshrin</p></li>
+<li><p>Dave McMurtrie</p></li>
+<li><p>Bron Gondwana</p></li>
 </ul>
 </div>
 <div class="section" id="ii-the-cyrus-core-developers-group">
@@ -798,11 +800,11 @@
 <p>The Cyrus Core Developers Group is responsible for the technical guidance of the Cyrus project. Members are nominated by the Cyrus developer community. Following nomination, a vote must be called by a current Core Developer. A nominated member must be elected by a simple 2/3 majority of the current Core Developers Group, then confirmed by a simple 2/3 majority of the Governance Board.</p>
 <p>The members of the Core Developers group are:</p>
 <ul class="simple">
-<li>Wes Craig</li>
-<li>Ken Murchison</li>
-<li>Matt Selsky</li>
-<li>Bron Gondwana</li>
-<li>Alexey Melnikov</li>
+<li><p>Wes Craig</p></li>
+<li><p>Ken Murchison</p></li>
+<li><p>Matt Selsky</p></li>
+<li><p>Bron Gondwana</p></li>
+<li><p>Alexey Melnikov</p></li>
 </ul>
 </div>
 <div class="section" id="iii-the-release-engineer">
@@ -810,7 +812,7 @@
 <p>The Release Engineer is responsible for making Cyrus releases. The Release Engineer is also responsible for committing contributions from non-committers in the absence of anyone accepting the responsibility for a particular issue. The Release Engineer must be elected by a simple 2/3 majority of the Core Developers Group, then confirmed by a simple 2/3 majority of the Governance Board.</p>
 <p>The release engineer is:</p>
 <ul class="simple">
-<li>Jeroen van Meeuwen</li>
+<li><p>Jeroen van Meeuwen</p></li>
 </ul>
 </div>
 <div class="section" id="iv-the-cyrus-roadmap">
@@ -820,7 +822,7 @@
 <div class="section" id="v-development-process">
 <h2>V. Development Process<a class="headerlink" href="#v-development-process" title="Permalink to this headline">¶</a></h2>
 <p>Significant new features or changes to existing code should be discussed on the cyrus-dev mailing list prior to beginning development to allow feedback from other developers. Once a solution has been proposed and accepted by rough consensus of the developers, coding should proceed. All patches must be submitted through the bug tracking system. Once submitted to the tracking system, a member of the core developers group must review the code. If there are no objections to the patch by the core developers, the core developer should then commit the code to the source repository. The submitter of the code is responsible for ensuring that the code gets reviewed by the core developers. Submitters may inquire as to the status of their patches to either the Release Engineer or CORE no more than once per week. Accepted patches will be included in the next appropriate release regardless of the Roadmap.</p>
-<p>The Release Engineer shall make releases according to the Roadmap. If there are no blocker-level bugs, a release may be made at the Release Engineer's discretion. The Release Engineer may also classify a bug as blocker or as a security fix that requires immediate release.</p>
+<p>The Release Engineer shall make releases according to the Roadmap. If there are no blocker-level bugs, a release may be made at the Release Engineer’s discretion. The Release Engineer may also classify a bug as blocker or as a security fix that requires immediate release.</p>
 <p>The Core Developers group may block a pending release with a simple majority vote.</p>
 </div>
 <div class="section" id="vi-changes-to-the-bylaws">
@@ -848,7 +850,7 @@
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 24 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -874,7 +876,6 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

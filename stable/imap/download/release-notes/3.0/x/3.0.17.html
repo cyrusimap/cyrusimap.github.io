@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,16 +791,16 @@
   <div class="section" id="cyrus-imap-3-0-17-release-notes">
 <h1>Cyrus IMAP 3.0.17 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-17-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the 3.0 series.</p>
-<p class="last">Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
 about the 3.0 series, including upgrading instructions.</p>
 </div>
 <p>Download via HTTPS:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.17/cyrus-imapd-3.0.17.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-0-16">
@@ -806,20 +808,20 @@ about the 3.0 series, including upgrading instructions.</p>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2383">Issue #2383</a>: XFER of a single user or mailbox now works again</li>
-<li>Fixed: XFER no longer tries to sync_restart (and hangs) when the destination
-backend doesn't support XFER-via-replication</li>
-<li>Fixed: XFER now reports an error when the name argument doesn't match
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2383">Issue #2383</a>: XFER of a single user or mailbox now works again</p></li>
+<li><p>Fixed: XFER no longer tries to sync_restart (and hangs) when the destination
+backend doesn't support XFER-via-replication</p></li>
+<li><p>Fixed: XFER now reports an error when the name argument doesn't match
 anything, instead of doing nothing and then reporting that it succeeded at
-it.</li>
+it.</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The formerly-standalone Cassandane tool has been merged into the
-cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
-<li>XFER will now recognise backends from the upcoming 3.6 and 3.7 versions</li>
+<li><p>The formerly-standalone Cassandane tool has been merged into the
+cyrus-imapd repository, in the 'cassandane' subdirectory.</p></li>
+<li><p>XFER will now recognise backends from the upcoming 3.6 and 3.7 versions</p></li>
 </ul>
 </div>
 </div>
@@ -846,7 +848,7 @@ cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jan 25 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -872,7 +874,6 @@ cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

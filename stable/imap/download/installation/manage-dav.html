@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -795,54 +797,49 @@ manual installation.</p>
 server. Cyrus HTTP is NOT a general purpose HTTP server (such as Apache httpd).
 Its feature set is limited to:</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Calendaring (CalDAV)</dt>
-<dd><ul class="first last">
-<li>Acts as a calendar and scheduling server by using IMAP mailboxes as calendar
-collections and <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store iCalendar data.</li>
-<li>Allows non-CalDAV/remote calendar clients to query freebusy information of
-Cyrus CalDAV users via freebusy URLs.</li>
-<li>Allows scheduling transactions between separate calendaring and
+<li><dl class="simple">
+<dt>Calendaring (CalDAV)</dt><dd><ul>
+<li><p>Acts as a calendar and scheduling server by using IMAP mailboxes as calendar
+collections and <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store iCalendar data.</p></li>
+<li><p>Allows non-CalDAV/remote calendar clients to query freebusy information of
+Cyrus CalDAV users via freebusy URLs.</p></li>
+<li><p>Allows scheduling transactions between separate calendaring and
 scheduling systems via the iSchedule protocol (currently only
-used within a Cyrus Murder).</li>
-<li>Acts as a Time Zone Distribution Service by serving iCalendar
-(VTIMEZONE) data to client systems.</li>
+used within a Cyrus Murder).</p></li>
+<li><p>Acts as a Time Zone Distribution Service by serving iCalendar
+(VTIMEZONE) data to client systems.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Contacts (CardDAV)</dt>
-<dd><ul class="first last">
-<li>Acts as a contacts server by using IMAP mailboxes as addressbook
-collections and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store vCard data.</li>
+<li><dl class="simple">
+<dt>Contacts (CardDAV)</dt><dd><ul>
+<li><p>Acts as a contacts server by using IMAP mailboxes as addressbook
+collections and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store vCard data.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>File Storage (WebDAV)</dt>
-<dd><ul class="first last">
-<li>Acts as a remote storage server server by using IMAP mailboxes as
-collections and <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> message to store files.</li>
+<li><dl class="simple">
+<dt>File Storage (WebDAV)</dt><dd><ul>
+<li><p>Acts as a remote storage server server by using IMAP mailboxes as
+collections and <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> message to store files.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>JMAP support</dt>
-<dd><ul class="first last">
-<li>Allows synchronization of mail clients via the JSON Mail Access Protocol (JMAP).</li>
+<li><dl class="simple">
+<dt>JMAP support</dt><dd><ul>
+<li><p>Allows synchronization of mail clients via the JSON Mail Access Protocol (JMAP).</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Other (RSS, static content)</dt>
-<dd><ul class="first last">
-<li>Serves static content (such as the RSS feed list template and the
-CalDAV/CardDAV web GUIs).</li>
-<li>Serves IMAP mailboxes as RSS feeds.</li>
+<li><dl class="simple">
+<dt>Other (RSS, static content)</dt><dd><ul>
+<li><p>Serves static content (such as the RSS feed list template and the
+CalDAV/CardDAV web GUIs).</p></li>
+<li><p>Serves IMAP mailboxes as RSS feeds.</p></li>
 </ul>
 </dd>
 </dl>
@@ -853,11 +850,11 @@ CalDAV/CardDAV web GUIs).</li>
 <h2>HTTPD Configuration<a class="headerlink" href="#httpd-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="general-configuration">
 <h3>General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h3>
-<p>The Cyrus httpd service is configured using options in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<p>The Cyrus httpd service is configured using options in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <div class="sidebar">
-<p class="first sidebar-title">httpmodules</p>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">httpmodules:</span></code> &lt;empty string&gt;</p>
+<p class="sidebar-title">httpmodules</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">httpmodules:</span></code> &lt;empty string&gt;</p>
 <blockquote>
 <div><p>Space-separated list of HTTP modules that will be enabled in
 httpd(8).  This option has no effect on modules that are disabled
@@ -871,10 +868,10 @@ Allowed values: <em>admin</em>, <em>caldav</em>, <em>carddav</em>, <em>cgi</em>,
 </div>
 <p>The support for RSS, CalDAV, and CardDAV is divided into separate modules which
 run as part of the Cyrus httpd service. Selection of which module(s) are enabled
-is done by setting the <code class="docutils literal"><span class="pre">httpmodules</span></code> option. <strong>By default, no modules
+is done by setting the <code class="docutils literal notranslate"><span class="pre">httpmodules</span></code> option. <strong>By default, no modules
 are enabled.</strong></p>
 <p>Cyrus httpd also can serve static content, the location of which is set by the
-<code class="docutils literal"><span class="pre">httpdocroot</span></code> option. Any content contained in the specified directory (including
+<code class="docutils literal notranslate"><span class="pre">httpdocroot</span></code> option. Any content contained in the specified directory (including
 sub-directories) will be served as static content only. Cyrus httpd does NOT
 have the ability to execute any server-side scripts.</p>
 </div>
@@ -883,11 +880,12 @@ have the ability to execute any server-side scripts.</p>
 <p>As with other Cyrus services, the Cyrus httpd service uses
 <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL</span></a> to perform its authentication.</p>
 <div class="sidebar">
-<p class="first sidebar-title">allowplaintext</p>
+<p class="sidebar-title">allowplaintext</p>
 <blockquote>
-<div><em>This shows the default value: change it in imapd.conf to suit your needs.</em></div></blockquote>
-<blockquote class="last">
-<div><p><code class="docutils literal"><span class="pre">allowplaintext:</span></code> 0</p>
+<div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
+</div></blockquote>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">allowplaintext:</span></code> 0</p>
 <blockquote>
 <div><p>If enabled, allows the use of cleartext passwords on the wire.</p>
 <p>By default, the use of cleartext passwords requires a TLS/SSL
@@ -900,7 +898,7 @@ authentication, see the <em>tls_required</em> option.</p>
 </div>
 <p>Similar to plaintext login commands supported by the other Cyrus services (IMAP
 LOGIN, POP3 USER/PASS), the Cyrus httpd service determines whether to advertise
-the HTTP Basic authentication scheme based on the <code class="docutils literal"><span class="pre">allowplaintext</span></code> option and
+the HTTP Basic authentication scheme based on the <code class="docutils literal notranslate"><span class="pre">allowplaintext</span></code> option and
 whether the client has connected over a TLS protected connection (HTTPS). BASIC
 authentication does not depend on a Cyrus SASL plugin.</p>
 <p>The advertisement of the other HTTP authentication schemes is controlled by the
@@ -954,49 +952,44 @@ are installed on the server.</p>
 configure their clients in order to access their data on Cyrus. The list below
 needs to be customized to your specific hostnames.</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>CalDAV</dt>
-<dd><ul class="first last">
-<li>Many clients find calendars automatically if you provide the correct server, username and password.</li>
-<li>Otherwise, use the direct URL: <code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/calendars/user/&lt;userid&gt;/&lt;calendar&gt;/</span></code></li>
+<li><dl class="simple">
+<dt>CalDAV</dt><dd><ul>
+<li><p>Many clients find calendars automatically if you provide the correct server, username and password.</p></li>
+<li><p>Otherwise, use the direct URL: <code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/calendars/user/&lt;userid&gt;/&lt;calendar&gt;/</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Freebusy</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal"><span class="pre">https://&lt;servername&gt;/freebusy/user/&lt;userid&gt;</span></code> - considers all CalDAV collections of the user</li>
-<li><code class="docutils literal"><span class="pre">https://&lt;servername&gt;/freebusy/user/&lt;userid&gt;/&lt;collection-name&gt;</span></code> - considers a single CalDAV collection</li>
-<li>Query parameters can be added to the URL per Section 4 of
-<a class="reference external" href="http://www.calconnect.org/pubdocs/CD0903%20Freebusy%20Read%20URL.pdf">Freebusy Read URL</a>.</li>
+<li><dl class="simple">
+<dt>Freebusy</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/freebusy/user/&lt;userid&gt;</span></code> - considers all CalDAV collections of the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/freebusy/user/&lt;userid&gt;/&lt;collection-name&gt;</span></code> - considers a single CalDAV collection</p></li>
+<li><p>Query parameters can be added to the URL per Section 4 of
+<a class="reference external" href="http://www.calconnect.org/pubdocs/CD0903%20Freebusy%20Read%20URL.pdf">Freebusy Read URL</a>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>CardDAV</dt>
-<dd><ul class="first last">
-<li>Many clients find addressbooks automatically if you provide the correct server, username and password.</li>
-<li>Otherwise, use the direct URL:<code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/addressbooks/&lt;userid&gt;/&lt;addressbook&gt;</span></code></li>
-<li>The address book(s) are automatically filtered based on the username and password supplied.</li>
+<li><dl class="simple">
+<dt>CardDAV</dt><dd><ul>
+<li><p>Many clients find addressbooks automatically if you provide the correct server, username and password.</p></li>
+<li><p>Otherwise, use the direct URL:<code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/addressbooks/&lt;userid&gt;/&lt;addressbook&gt;</span></code></p></li>
+<li><p>The address book(s) are automatically filtered based on the username and password supplied.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>WebDAV</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal"><span class="pre">https://&lt;servername&gt;/dav/drive/user/&lt;userid&gt;</span></code></li>
+<li><dl class="simple">
+<dt>WebDAV</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/drive/user/&lt;userid&gt;</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>RSS</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal"><span class="pre">https://&lt;servername&gt;/rss/</span></code></li>
-<li>Serves up all mailboxes (read-only) that the authenticated user has access to.</li>
+<li><dl class="simple">
+<dt>RSS</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/rss/</span></code></p></li>
+<li><p>Serves up all mailboxes (read-only) that the authenticated user has access to.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1026,7 +1019,7 @@ needs to be customized to your specific hostnames.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 23 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1052,7 +1045,6 @@ needs to be customized to your specific hostnames.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

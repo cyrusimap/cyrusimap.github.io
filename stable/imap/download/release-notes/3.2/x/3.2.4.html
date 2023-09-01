@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,8 +793,8 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.4/cyrus-imapd-3.2.4.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-2-3">
@@ -800,38 +802,38 @@
 <div class="section" id="build-changes">
 <h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3153">Issue #3153</a>: make sure xml_support.c is included in
-<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html#std:cyrusman-ctl_zoneinfo(8)">ctl_zoneinfo(8)</a> (thanks John M)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3154">Issue #3154</a>: crash from cyr_qsort_r on some platforms</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3163">Issue #3163</a>: use <cite>uintptr_t</cite> instead of <cite>unsigned long long</cite>
-for storing values that may be pointers (thanks OBATA Akio)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3157">Issue #3157</a>: MKCOL failed via WebDAV</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3174">Issue #3174</a>: handle platforms without <cite>futimes</cite> or
-<cite>TIMESPEC_TO_TIMEVAL()</cite> (thanks Andy Fiddaman)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3183">Issue #3183</a>: typo in handling of systems without <cite>deflatePending()</cite>
-(thanks Anatoli)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3153">Issue #3153</a>: make sure xml_support.c is included in
+<a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html#std-cyrusman-ctl_zoneinfo-8">ctl_zoneinfo(8)</a> (thanks John M)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3154">Issue #3154</a>: crash from cyr_qsort_r on some platforms</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3163">Issue #3163</a>: use <cite>uintptr_t</cite> instead of <cite>unsigned long long</cite>
+for storing values that may be pointers (thanks OBATA Akio)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3157">Issue #3157</a>: MKCOL failed via WebDAV</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3174">Issue #3174</a>: handle platforms without <cite>futimes</cite> or
+<cite>TIMESPEC_TO_TIMEVAL()</cite> (thanks Andy Fiddaman)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3183">Issue #3183</a>: typo in handling of systems without <cite>deflatePending()</cite>
+(thanks Anatoli)</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3120">Issue #3120</a>: allow replication to partitions without a corresponding
-archive partition</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3169">Issue #3169</a>: sieve scripts replicated from 2.4 with <cite>fulldirhash</cite>
-enabled were placed in wrong directory</li>
-<li>Fixed: unescape iCalendar X-parameter TEXT values</li>
-<li>Fixed: server-set JMAP properties now rejected in /set and /setcreate
-calls</li>
-<li>Fixed: changing JMAP 'id' property now rejected in /set and /setupdate</li>
-<li>Fixed: crash in <a class="reference internal" href="../../../../reference/manpages/systemcommands/httpd.html#std:cyrusman-httpd(8)">httpd(8)</a> from bad Authorization headers</li>
-<li>Fixed: invalid free on error in JMAP Contacts/set</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3212">Issue #3212</a>: wrong usage statement in <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html#std:cyrusman-ctl_zoneinfo(8)">ctl_zoneinfo(8)</a>
-(thanks Дилян Палаузов)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3210">Issue #3210</a>: uninitialised read on error</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3209">Issue #3209</a>: uninitialised read on error</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2843">Issue #2843</a>: notifications for cancelled events were not handled
-correctly</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3191">Issue #3191</a>: sync_client crashed on RESTART when TLS in use</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3120">Issue #3120</a>: allow replication to partitions without a corresponding
+archive partition</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3169">Issue #3169</a>: sieve scripts replicated from 2.4 with <cite>fulldirhash</cite>
+enabled were placed in wrong directory</p></li>
+<li><p>Fixed: unescape iCalendar X-parameter TEXT values</p></li>
+<li><p>Fixed: server-set JMAP properties now rejected in /set and /setcreate
+calls</p></li>
+<li><p>Fixed: changing JMAP 'id' property now rejected in /set and /setupdate</p></li>
+<li><p>Fixed: crash in <a class="reference internal" href="../../../../reference/manpages/systemcommands/httpd.html#std-cyrusman-httpd-8">httpd(8)</a> from bad Authorization headers</p></li>
+<li><p>Fixed: invalid free on error in JMAP Contacts/set</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3212">Issue #3212</a>: wrong usage statement in <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html#std-cyrusman-ctl_zoneinfo-8">ctl_zoneinfo(8)</a>
+(thanks Дилян Палаузов)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3210">Issue #3210</a>: uninitialised read on error</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3209">Issue #3209</a>: uninitialised read on error</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2843">Issue #2843</a>: notifications for cancelled events were not handled
+correctly</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3191">Issue #3191</a>: sync_client crashed on RESTART when TLS in use</p></li>
 </ul>
 </div>
 </div>
@@ -858,7 +860,7 @@ correctly</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 05 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -884,7 +886,6 @@ correctly</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

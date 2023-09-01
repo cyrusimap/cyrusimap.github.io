@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,46 +787,44 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-relocate_by_id(8)"></span><div class="section" id="relocate-by-id">
+  <span class="target" id="std-cyrusman-relocate_by_id-8"><span id="std:cyrusman-relocate_by_id(8)"></span></span><div class="section" id="relocate-by-id">
 <span id="imap-reference-manpages-systemcommands-relocate-by-id"></span><h1><strong>relocate_by_id</strong><a class="headerlink" href="#relocate-by-id" title="Permalink to this headline">¶</a></h1>
 <p>Relocate mailbox trees by their mailbox ids</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>relocate_by_id</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-n</strong> ] [ <strong>-q</strong> ] [ <strong>-u</strong> ] [ <em>mailbox-names</em>... ]
-</pre>
+<pre class="literal-block"><strong>relocate_by_id</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-n</strong> ] [ <strong>-q</strong> ] [ <strong>-u</strong> ] [ <em>mailbox-names</em>... ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Given a mailbox name or a space separated list of mailbox names,
 <strong>relocate_by_id</strong> relocates the mailbox and its submailboxes to
 directory trees hashed by mailbox id rather than hashed by mailbox name.</p>
-<p><strong>relocate_by_id</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses &lt;configdirectory&gt;/mailboxes.db
+<p><strong>relocate_by_id</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses &lt;configdirectory&gt;/mailboxes.db
 to locate the mailboxes on disk.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-relocate_by_id-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-relocate_by_id-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-relocate-by-id-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-relocate_by_id-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-relocate_by_id-n">
-<span id="cmdoption-relocate_by_id--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-relocate-by-id-n"></span><span id="cmdoption-relocate_by_id-dry-run"></span><span id="cmdoption-relocate-by-id-dry-run"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--dry-run</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do NOT make any changes.  Just list which directories will be relocated.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-relocate_by_id-q">
-<span id="cmdoption-relocate_by_id--quiet"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--quiet</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-relocate-by-id-q"></span><span id="cmdoption-relocate_by_id-quiet"></span><span id="cmdoption-relocate-by-id-quiet"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--quiet</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run quietly.  Suppress any error output.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-relocate_by_id-u">
-<span id="cmdoption-relocate_by_id--userids"></span><code class="descname">-u</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--userids</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-relocate-by-id-u"></span><span id="cmdoption-relocate_by_id-userids"></span><span id="cmdoption-relocate-by-id-userids"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--userids</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-relocate_by_id-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>The specified <em>mailbox-names</em> are users, not mailboxes.
 User metadata directories will also be relocated.</p>
 </dd></dl>
@@ -832,11 +832,10 @@ User metadata directories will also be relocated.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>relocate_by_id -u</strong> <em>jsmith</em>
-</pre>
+<pre class="literal-block"><strong>relocate_by_id -u</strong> <em>jsmith</em></pre>
 <blockquote>
-<div>Relocate all mailbox and metadata directories for user <em>jsmith</em>.</div></blockquote>
+<div><p>Relocate all mailbox and metadata directories for user <em>jsmith</em>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="files">
 <h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
@@ -845,7 +844,7 @@ User metadata directories will also be relocated.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -870,7 +869,7 @@ User metadata directories will also be relocated.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 27 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -896,7 +895,6 @@ User metadata directories will also be relocated.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

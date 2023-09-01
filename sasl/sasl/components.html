@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -485,7 +485,7 @@
             
   <div class="section" id="components">
 <span id="id1"></span><h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h1>
-<p>As the SASL library is a &#8216;glue layer&#8217; between many different parts of the
+<p>As the SASL library is a ‘glue layer’ between many different parts of the
 authentication system, there are a lot of different components
 that often cause confusion to users of the library who are trying to
 configure it for use on their system.  This document will try to provide
@@ -519,40 +519,40 @@ sieveshell, cyradm, and many others.</p>
 <div class="section" id="the-sasl-glue-layer">
 <h2>The SASL Glue Layer<a class="headerlink" href="#the-sasl-glue-layer" title="Permalink to this headline">¶</a></h2>
 <p>The first component of the SASL library is affectionately called the
-<code class="docutils literal"><span class="pre">glue</span></code> layer.  It takes care of ensuring that the application and
+<code class="docutils literal notranslate"><span class="pre">glue</span></code> layer.  It takes care of ensuring that the application and
 the mechanisms can work together successfully.  To this end, it does a
 variety of basic tasks:</p>
 <ul class="simple">
-<li>Loading of any plugins (more on these below)</li>
-<li>Ascertaining necessary security properties from the application to aid
-in the choice of mechanism (or to limit the available mechanisms)</li>
-<li>Listing of available plugins to the application (mostly used on the server
-side)</li>
-<li>Choosing the best mechanism from a list of available mechanisms
-for a particular authentication attempt (client-side)</li>
-<li>Routing the authentication (and in the case of a mechanism with a security
+<li><p>Loading of any plugins (more on these below)</p></li>
+<li><p>Ascertaining necessary security properties from the application to aid
+in the choice of mechanism (or to limit the available mechanisms)</p></li>
+<li><p>Listing of available plugins to the application (mostly used on the server
+side)</p></li>
+<li><p>Choosing the best mechanism from a list of available mechanisms
+for a particular authentication attempt (client-side)</p></li>
+<li><p>Routing the authentication (and in the case of a mechanism with a security
 layer, encrypted) data packets between the application and the
-chosen mechanism.</li>
-<li>Providing information about the SASL negotiation back to the application
+chosen mechanism.</p></li>
+<li><p>Providing information about the SASL negotiation back to the application
 (authenticated user, requested authorization identity, security strength of
-any negotiated security layer, and so on).</li>
+any negotiated security layer, and so on).</p></li>
 </ul>
 <p>The Cyrus SASL implementation also provides several other services to
 both its plugins and applications.  Some of these are simply general utilities,
 such as MIME Base-64 encoding and decoding, and random number generation.
 Others are more specific to the task of authentication, such as providing
 password verification services.  Such services are capable of taking
-a username and a plaintext password and saying <code class="docutils literal"><span class="pre">yes</span></code> or
-<code class="docutils literal"><span class="pre">no</span></code>.  Details of available password verification services are
+a username and a plaintext password and saying <code class="docutils literal notranslate"><span class="pre">yes</span></code> or
+<code class="docutils literal notranslate"><span class="pre">no</span></code>.  Details of available password verification services are
 discussed below.</p>
 <p>Finally, the glue code allows the mechanisms and applications access to
-two special types of plugins, Auxiliary Property or <code class="docutils literal"><span class="pre">auxprop</span></code>
+two special types of plugins, Auxiliary Property or <code class="docutils literal notranslate"><span class="pre">auxprop</span></code>
 plugins, which provide a simple database interface and can return properties
 about the user such as password, home directory, or mail
 routing address, and Username Canonicalization, which might provide
 site-specific ways to canonicalize a username or perform other tasks.</p>
 <p>In the Cyrus SASL Implementation, the glue code is entirely contained
-within <code class="docutils literal"><span class="pre">libsasl2.so</span></code> (or <code class="docutils literal"><span class="pre">libsasl2.a</span></code>)</p>
+within <code class="docutils literal notranslate"><span class="pre">libsasl2.so</span></code> (or <code class="docutils literal notranslate"><span class="pre">libsasl2.a</span></code>)</p>
 </div>
 <div class="section" id="plugins">
 <h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
@@ -563,12 +563,12 @@ things such as the mechanism profiles and the database access done by the
 auxillary property plugins.  This means that it is easy to limit what
 parts are loaded by a given application, and that third parties can write
 their own modules to provide services, just by adhering to the API description
-in <code class="docutils literal"><span class="pre">saslplug.h</span></code>.</p>
+in <code class="docutils literal notranslate"><span class="pre">saslplug.h</span></code>.</p>
 </div>
 <div class="section" id="plugins-sasl-mechanisms">
 <h3>Plugins: SASL Mechanisms<a class="headerlink" href="#plugins-sasl-mechanisms" title="Permalink to this headline">¶</a></h3>
 <p>The simplest types of plugins to understand are those which provide
-SASL mechanisms, such as CRAM-MD5, GSSAPI, PLAIN, SCRAM, SRP, and so on.
+SASL mechanisms, such as GSSAPI, PLAIN, SCRAM, SRP, and so on.
 These mechanisms take care of both server-side and client-side parts
 of the SASL negotiation.  If the given mechanism supports a security layer
 (that is, makes guarantees about privacy or integrity of data after the
@@ -576,38 +576,38 @@ negotiation is complete), the plugin provides that functionality as well.</p>
 <p>SASL mechanisms are generally defined by the IETF standards process,
 however, some mechanisms are not.  This is in contrast
 to the other types of plugins, which provide database and username
-canonicalization services to other plugins and thus aren&#8217;t standardized in
+canonicalization services to other plugins and thus aren’t standardized in
 their behavior (they are specific to our implementation).  Password verifiers
 are also an implementation detail (though saslauthd makes use of
 standards such as PAM and LDAP to perform that verification)</p>
 <p>There are several types of mechanisms, in broad strokes we have:</p>
-<dl class="docutils">
-<dt>Password Verification Mechanisms</dt>
-<dd>For example, PLAIN.
+<dl class="simple">
+<dt>Password Verification Mechanisms</dt><dd><p>For example, PLAIN.
 These receive a raw password from the remote and then pass it into the glue code for
 verification by a password verifier.  These require the existence of an
 outside security layer to hide the otherwise plaintext password from people
 who might be snooping on the wire.  These mechanisms do not require that
 the server have access to a plaintext (or plaintext-equivalent) version
-of the password.</dd>
-<dt>Shared Secret Mechanisms</dt>
-<dd>For these mechanisms,
-such as CRAM-MD5, OTP, SCRAM, and SRP,
+of the password.</p>
+</dd>
+<dt>Shared Secret Mechanisms</dt><dd><p>For these mechanisms,
+such as OTP, SCRAM, and SRP,
 there is a shared secret between the server and client (e.g. a password).
 However, in this case the password itself does not travel on the wire.
 Instead, the client passes a server a token that proves that it knows
 the secret (without actually sending the secret across the wire).
 For these mechanisms, the server generally needs a plaintext equivalent of
-the secret to be in local storage (not true for SRP).</dd>
-<dt>Kerberos Mechanisms</dt>
-<dd>Kerberos mechanisms use a trusted
-third party to authenticate the client.  These mechanisms don&#8217;t require
+the secret to be in local storage (not true for SRP).</p>
+</dd>
+<dt>Kerberos Mechanisms</dt><dd><p>Kerberos mechanisms use a trusted
+third party to authenticate the client.  These mechanisms don’t require
 the server to share any secret information with the client, it is all performed
-through the Kerberos protocol.</dd>
+through the Kerberos protocol.</p>
+</dd>
 </dl>
 <p>Mechanism plugins are generally contained in a .so file that has a name
-similar to the mechanism&#8217;s name.  Though, in a static compilation they
-can also be a part of <code class="docutils literal"><span class="pre">libsasl2.a</span></code></p>
+similar to the mechanism’s name.  Though, in a static compilation they
+can also be a part of <code class="docutils literal notranslate"><span class="pre">libsasl2.a</span></code></p>
 </div>
 <div class="section" id="plugins-auxiliary-property">
 <h3>Plugins: Auxiliary Property<a class="headerlink" href="#plugins-auxiliary-property" title="Permalink to this headline">¶</a></h3>
@@ -616,7 +616,7 @@ glue layer (and through it, to the mechanisms and application).  Cyrus SASL
 ships with two auxprop plugins: SASLdb and SQL.  Though they can be use
 in much more generic ways, auxprop plugins are mostly only used by
 shared secret mechanisms (or by the auxprop password verify) to access the
-<code class="docutils literal"><span class="pre">userPassword</span></code> attribute.  This provides a plaintext copy of the
+<code class="docutils literal notranslate"><span class="pre">userPassword</span></code> attribute.  This provides a plaintext copy of the
 password that allows for authentication to take place.</p>
 <p>Like the mechanism plugins, these are named similarly to the databases
 that they implement an interface for.</p>
@@ -631,22 +631,22 @@ are presented to the applications.</p>
 <div class="section" id="password-verification-services">
 <h2>Password Verification Services<a class="headerlink" href="#password-verification-services" title="Permalink to this headline">¶</a></h2>
 <p>As described above, the password verifiers take a username and plaintext
-password, and say either <code class="docutils literal"><span class="pre">yes</span></code> or <code class="docutils literal"><span class="pre">no</span></code>.  It is not possible
+password, and say either <code class="docutils literal notranslate"><span class="pre">yes</span></code> or <code class="docutils literal notranslate"><span class="pre">no</span></code>.  It is not possible
 to use them to verify hashes that might be provided by the shared secret
 mechanisms.</p>
-<p>Password verifiers are selected using the <code class="docutils literal"><span class="pre">pwcheck_method</span></code>
+<p>Password verifiers are selected using the <code class="docutils literal notranslate"><span class="pre">pwcheck_method</span></code>
 SASL option.  There are two main password verifiers provided with Cyrus SASL:</p>
-<dl class="docutils">
-<dt>auxprop</dt>
-<dd>This uses an auxprop plugin to fetch the password and then
-compares it with the client-provided copy to make the determination.</dd>
-<dt>saslauthd</dt>
-<dd>This calls out to the <code class="docutils literal"><span class="pre">saslauthd</span></code> daemon, which
-also ships with the distribution.  The <code class="docutils literal"><span class="pre">saslauthd</span></code> daemon has a number
+<dl class="simple">
+<dt>auxprop</dt><dd><p>This uses an auxprop plugin to fetch the password and then
+compares it with the client-provided copy to make the determination.</p>
+</dd>
+<dt>saslauthd</dt><dd><p>This calls out to the <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code> daemon, which
+also ships with the distribution.  The <code class="docutils literal notranslate"><span class="pre">saslauthd</span></code> daemon has a number
 of modules of its own, which allow it to do verification of passwords in
 a variety of ways, including PAM, LDAP, against a Kerberos database, and so on.
 This is how you would want to, for example, use the data contained in
-<code class="docutils literal"><span class="pre">/etc/shadow</span></code> to authenticate users.</dd>
+<code class="docutils literal notranslate"><span class="pre">/etc/shadow</span></code> to authenticate users.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -672,7 +672,7 @@ This is how you would want to, for example, use the data contained in
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -699,7 +699,6 @@ This is how you would want to, for example, use the data contained in
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

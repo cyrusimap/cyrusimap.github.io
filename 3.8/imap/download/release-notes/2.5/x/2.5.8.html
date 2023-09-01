@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,16 +791,16 @@
   <div class="section" id="cyrus-imap-2-5-8-release-notes">
 <h1>Cyrus IMAP 2.5.8 Release Notes<a class="headerlink" href="#cyrus-imap-2-5-8-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 2.5 series.</p>
-<p class="last">Refer to the Cyrus IMAP 2.5.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 2.5.0 Release Notes for important information
 about the 2.5 series, including upgrading instructions.</p>
 </div>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-2.5.8/cyrus-imapd-2.5.8.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-2-5-7">
@@ -806,37 +808,37 @@ about the 2.5 series, including upgrading instructions.</p>
 <div class="section" id="murder-changes">
 <h3>Murder changes<a class="headerlink" href="#murder-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Allow replicated backends in a discrete Murder to both actively
-participate in the Murder.</li>
-<li>When choosing between ANNOTATEMORE and METADATA, favour what the
-client used.</li>
+<li><p>Allow replicated backends in a discrete Murder to both actively
+participate in the Murder.</p></li>
+<li><p>When choosing between ANNOTATEMORE and METADATA, favour what the
+client used.</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_dbtool.html#std:cyrusman-cyr_dbtool(8)">cyr_dbtool(8)</a> now supports improved_mboxlist_sort (-M)</li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_dbtool.html#std-cyrusman-cyr_dbtool-8">cyr_dbtool(8)</a> now supports improved_mboxlist_sort (-M)</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed: master on pselect systems no longer chokes on repeated interrupts
-(thanks Jens Erat and team)</li>
-<li>Fixed: better iOS CalDAV support (don't announce VPOLL)</li>
-<li>Fixed: backported version detection code to detect future versions</li>
-<li>Fixed bug #3927: don't break cyrus.index on XFER of mailbox with annotations
-(thanks Wolfgang Breyha)</li>
-<li>Fixed: replication/XFER of mailbox names containing '&#64;'</li>
-<li>Fixed: METADATA and GETMETADATA pattern/list recognition</li>
-<li>Fixed bug #3862: don't leave behind inconsistent mailboxes when
-mupdate fails during mailbox rename</li>
-<li>Fixed compilation with Sun Studio 12 C Compiler (thanks Marty Lee)</li>
-<li>Fixed bug #3765: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html#std:cyrusman-ctl_cyrusdb(8)">ctl_cyrusdb(8)</a> now uses database paths from imapd.conf
-(thanks Simon Matter)</li>
-<li>Fixed task 227: service processes no longer crash with '-T 0' argument
-(thanks Ian Batten and Jens Erat)</li>
-<li>various build system fixes</li>
+<li><p>Fixed: master on pselect systems no longer chokes on repeated interrupts
+(thanks Jens Erat and team)</p></li>
+<li><p>Fixed: better iOS CalDAV support (don't announce VPOLL)</p></li>
+<li><p>Fixed: backported version detection code to detect future versions</p></li>
+<li><p>Fixed bug #3927: don't break cyrus.index on XFER of mailbox with annotations
+(thanks Wolfgang Breyha)</p></li>
+<li><p>Fixed: replication/XFER of mailbox names containing '&#64;'</p></li>
+<li><p>Fixed: METADATA and GETMETADATA pattern/list recognition</p></li>
+<li><p>Fixed bug #3862: don't leave behind inconsistent mailboxes when
+mupdate fails during mailbox rename</p></li>
+<li><p>Fixed compilation with Sun Studio 12 C Compiler (thanks Marty Lee)</p></li>
+<li><p>Fixed bug #3765: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html#std-cyrusman-ctl_cyrusdb-8">ctl_cyrusdb(8)</a> now uses database paths from imapd.conf
+(thanks Simon Matter)</p></li>
+<li><p>Fixed task 227: service processes no longer crash with '-T 0' argument
+(thanks Ian Batten and Jens Erat)</p></li>
+<li><p>various build system fixes</p></li>
 </ul>
 </div>
 </div>
@@ -863,7 +865,7 @@ mupdate fails during mailbox rename</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -889,7 +891,6 @@ mupdate fails during mailbox rename</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

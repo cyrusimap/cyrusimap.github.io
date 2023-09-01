@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,8 +793,8 @@
 <p>Unavailable for download as this is a development branch only.</p>
 <p>Access is via git.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This should be considered for
+<p class="admonition-title">Warning</p>
+<p>This should be considered for
 <strong>testing purposes</strong> and <strong>bleeding-edge features</strong> only. We will try to tag these
 snapshots at coherent development points, but there will generally be <strong>large
 breaking changes</strong> occurring between releases in this series.</p>
@@ -800,22 +802,22 @@ breaking changes</strong> occurring between releases in this series.</p>
 <div class="section" id="major-changes-since-the-3-0-x-series">
 <span id="relnotes-3-1-1-changes"></span><h2>Major changes since the 3.0.x series<a class="headerlink" href="#major-changes-since-the-3-0-x-series" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Sieve bug fixes and features.</li>
-<li>Caldav and Carddav improvements.</li>
-<li>JMAP improvements.</li>
-<li>Xapian bug fixes.</li>
-<li>Improvements to Annotations handling.</li>
-<li>DRAC support has been deprecated.</li>
+<li><p>Sieve bug fixes and features.</p></li>
+<li><p>Caldav and Carddav improvements.</p></li>
+<li><p>JMAP improvements.</p></li>
+<li><p>Xapian bug fixes.</p></li>
+<li><p>Improvements to Annotations handling.</p></li>
+<li><p>DRAC support has been deprecated.</p></li>
 </ul>
 </div>
 <div class="section" id="updates-to-default-configuration">
 <h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The <cite>specialusealways</cite> option is now enabled by default. It must
+<li><p>The <cite>specialusealways</cite> option is now enabled by default. It must
 explicitly be disabled for interoperability with legacy clients that
-can't handle RFC 6154 attributes in extended LIST commands.</li>
-<li>The values accepted by <cite>expunge_mode</cite> have changed, please see the
-documentation for more information about the changes.</li>
+can't handle RFC 6154 attributes in extended LIST commands.</p></li>
+<li><p>The values accepted by <cite>expunge_mode</cite> have changed, please see the
+documentation for more information about the changes.</p></li>
 <li></li>
 </ul>
 </div>
@@ -848,7 +850,7 @@ documentation for more information about the changes.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Sep 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -874,7 +876,6 @@ documentation for more information about the changes.</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

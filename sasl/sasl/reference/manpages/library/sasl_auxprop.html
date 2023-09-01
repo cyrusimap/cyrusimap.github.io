@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -490,38 +486,38 @@
           <div role="main" class="document">
             
   <div class="section" id="sasl-auxprop-how-to-work-with-sasl-auxiliary-properties">
-<span id="sasl-reference-manpages-library-sasl-auxprop"></span><span id="std:saslman-sasl_auxprop(3)"></span><h1><strong>sasl_auxprop</strong> - How to work with SASL auxiliary properties<a class="headerlink" href="#sasl-auxprop-how-to-work-with-sasl-auxiliary-properties" title="Permalink to this headline">¶</a></h1>
+<span id="sasl-reference-manpages-library-sasl-auxprop"></span><span id="std-saslman-sasl_auxprop-3"></span><span id="std:saslman-sasl_auxprop(3)"></span><h1><strong>sasl_auxprop</strong> - How to work with SASL auxiliary properties<a class="headerlink" href="#sasl-auxprop-how-to-work-with-sasl-auxiliary-properties" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/prop.h&gt;</span><span class="cp"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/prop.h&gt;</span>
 
-<span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">prop_new</span><span class="p">(</span><span class="kt">unsigned</span> <span class="n">estimate</span><span class="p">)</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">prop_new</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">estimate</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_dup</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">src_ctx</span><span class="p">,</span>
-             <span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">dst_ctx</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_dup</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">src_ctx</span><span class="p">,</span>
+<span class="w">             </span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">dst_ctx</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_request</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">names</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_request</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">names</span><span class="p">)</span>
 
-<span class="k">const</span> <span class="k">struct</span> <span class="n">propval</span> <span class="o">*</span><span class="n">prop_get</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">)</span>
+<span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">propval</span><span class="w"> </span><span class="o">*</span><span class="n">prop_get</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_getnames</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">names</span><span class="p">,</span>
-                  <span class="k">struct</span> <span class="n">propval</span> <span class="o">*</span><span class="n">vals</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_getnames</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">names</span><span class="p">,</span>
+<span class="w">                  </span><span class="k">struct</span><span class="w"> </span><span class="nc">propval</span><span class="w"> </span><span class="o">*</span><span class="n">vals</span><span class="p">)</span>
 
-<span class="kt">void</span> <span class="n">prop_clear</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">requests</span><span class="p">)</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">prop_clear</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">requests</span><span class="p">)</span>
 
-<span class="kt">void</span> <span class="n">prop_erase</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">)</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">prop_erase</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">)</span>
 
-<span class="kt">void</span> <span class="n">prop_dispose</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">**</span><span class="n">ctx</span><span class="p">)</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">prop_dispose</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">**</span><span class="n">ctx</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_format</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sep</span><span class="p">,</span> <span class="kt">int</span> <span class="n">seplen</span><span class="p">,</span>
-                <span class="kt">char</span> <span class="o">*</span><span class="n">outbuf</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">outmax</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="o">*</span><span class="n">outlen</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_format</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">sep</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">seplen</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">outbuf</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">outmax</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">outlen</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_set</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span>
-             <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">value</span><span class="p">,</span> <span class="kt">int</span> <span class="n">vallen</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_set</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">,</span>
+<span class="w">             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vallen</span><span class="p">)</span>
 
-<span class="kt">int</span> <span class="n">prop_setvals</span><span class="p">(</span><span class="k">struct</span> <span class="n">propctx</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span>
-                 <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">prop_setvals</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -538,287 +534,235 @@ sources).</p>
 <p>Property lookups take place directly after user canonicalization occurs.  Therefore, all requests should be
 registered with the context before that time.   Note that
 requests can also be registered using the
-<a class="reference internal" href="sasl_auxprop_request.html#std:saslman-sasl_auxprop_request(3)">sasl_auxprop_request(3)</a>  function.   Most of the functions listed
+<a class="reference internal" href="sasl_auxprop_request.html#std-saslman-sasl_auxprop_request-3">sasl_auxprop_request(3)</a>  function.   Most of the functions listed
 below, however, require a property context which can be
-obtained by calling <a class="reference internal" href="sasl_auxprop_getctx.html#std:saslman-sasl_auxprop_getctx(3)">sasl_auxprop_getctx(3)</a>.</p>
+obtained by calling <a class="reference internal" href="sasl_auxprop_getctx.html#std-saslman-sasl_auxprop_getctx-3">sasl_auxprop_getctx(3)</a>.</p>
 </div>
 <div class="section" id="api-description">
 <h2>API description<a class="headerlink" href="#api-description" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_new">
-struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a> *<code class="descname">prop_new</code><span class="sig-paren">(</span>unsigned<em>&nbsp;estimate</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_new" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">prop_new</span></code><span class="sig-paren">(</span><span class="pre">unsigned</span> <em><span class="pre">estimate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_new" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Create a new property context.  Probably unnecessary for application developers
 to call this at any point.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>estimate</strong> &#8211; is the estimate of storage needed in total for requests &amp; responses.  A value of 0 implies the library default.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>estimate</strong> – is the estimate of storage needed in total for requests &amp; responses.  A value of 0 implies the library default.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a new property context: <a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new property context: <a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_dup">
-int <code class="descname">prop_dup</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*src_ctx</em>, struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*dst_ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_dup" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_dup</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">src_ctx</span></em>, <em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">dst_ctx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_dup" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Duplicate a given property context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>src_ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; Property context to copy.</li>
-<li><strong>dst_ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; Destination context to copy into.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src_ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – Property context to copy.</p></li>
+<li><p><strong>dst_ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – Destination context to copy into.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">SASL error code.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASL error code.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_request">
-int <code class="descname">prop_request</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;**names</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_request" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_request</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><span class="pre">*</span><em><span class="pre">names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_request" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Add properties to the request list of a given context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to add add the request list to.</li>
-<li><strong>names</strong> &#8211; is the NULL-terminated array of property names,  and must persist until the requests are cleared or the context is disposed of with a call to <a class="reference internal" href="#c.prop_dispose" title="prop_dispose"><code class="xref c c-func docutils literal"><span class="pre">prop_dispose()</span></code></a>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to add add the request list to.</p></li>
+<li><p><strong>names</strong> – is the NULL-terminated array of property names,  and must persist until the requests are cleared or the context is disposed of with a call to <a class="reference internal" href="#c.prop_dispose" title="prop_dispose"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_dispose()</span></code></a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">SASL error code</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASL error code</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_get">
-const struct <a class="reference internal" href="#c.propval" title="propval">propval</a> *<code class="descname">prop_get</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_get" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propval" title="propval"><span class="pre">propval</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">prop_get</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_get" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fetch out the property values from a context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to fetch from.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to fetch from.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a NULL-terminated array of property values from the given context.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a NULL-terminated array of property values from the given context.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_getnames">
-int <code class="descname">prop_getnames</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;**names</em>, struct <a class="reference internal" href="#c.propval" title="propval">propval</a><em>&nbsp;*vals</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_getnames" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_getnames</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><span class="pre">*</span><em><span class="pre">names</span></em>, <em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propval" title="propval"><span class="pre">propval</span></a> <span class="pre">*</span><em><span class="pre">vals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_getnames" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Fill in a (provided) array of property values based
 on a list of property names.  This implies that
-the <code class="docutils literal"><span class="pre">vals</span></code> array is at least as long as the  <code class="docutils literal"><span class="pre">names</span></code>
+the <code class="docutils literal notranslate"><span class="pre">vals</span></code> array is at least as long as the  <code class="docutils literal notranslate"><span class="pre">names</span></code>
 array.  The values that are filled in by this call
-persist   until   next   call   to   <a class="reference internal" href="#c.prop_request" title="prop_request"><code class="xref c c-func docutils literal"><span class="pre">prop_request()</span></code></a>,
-<a class="reference internal" href="#c.prop_clear" title="prop_clear"><code class="xref c c-func docutils literal"><span class="pre">prop_clear()</span></code></a>, or <a class="reference internal" href="#c.prop_dispose" title="prop_dispose"><code class="xref c c-func docutils literal"><span class="pre">prop_dispose()</span></code></a> on context.  If a name
+persist   until   next   call   to   <a class="reference internal" href="#c.prop_request" title="prop_request"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_request()</span></code></a>,
+<a class="reference internal" href="#c.prop_clear" title="prop_clear"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_clear()</span></code></a>, or <a class="reference internal" href="#c.prop_dispose" title="prop_dispose"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_dispose()</span></code></a> on context.  If a name
 specified here was never requested, then its associated
 values entry will be set to NULL.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to fill in.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to fill in.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">number of matching properties that were found, or a SASL error code.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number of matching properties that were found, or a SASL error code.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_clear">
-void <code class="descname">prop_clear</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, int<em>&nbsp;requests</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_clear" title="Permalink to this definition">¶</a></dt>
+<span class="pre">void</span> <code class="sig-name descname"><span class="pre">prop_clear</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <span class="pre">int</span> <em><span class="pre">requests</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_clear" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Clear values and (optionally) requests from a property context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to clear.</li>
-<li><strong>requests</strong> &#8211; set to 1 if the requests should be cleared, 0 otherwise.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to clear.</p></li>
+<li><p><strong>requests</strong> – set to 1 if the requests should be cleared, 0 otherwise.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_erase">
-void <code class="descname">prop_erase</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;*name</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_erase" title="Permalink to this definition">¶</a></dt>
+<span class="pre">void</span> <code class="sig-name descname"><span class="pre">prop_erase</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_erase" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Securely erase the value of a property from a context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to find the property in.</li>
-<li><strong>name</strong> &#8211; is the name of the property to erase.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to find the property in.</p></li>
+<li><p><strong>name</strong> – is the name of the property to erase.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_dispose">
-void <code class="descname">prop_dispose</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;**ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_dispose" title="Permalink to this definition">¶</a></dt>
+<span class="pre">void</span> <code class="sig-name descname"><span class="pre">prop_dispose</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><span class="pre">*</span><em><span class="pre">ctx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_dispose" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Disposes of a property context and NULLifys the pointer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to clear.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to clear.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_format">
-int <code class="descname">prop_format</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;*sep</em>, int<em>&nbsp;seplen</em>, char<em>&nbsp;*outbuf</em>, unsigned<em>&nbsp;outmax</em>, unsigned<em>&nbsp;*outlen</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_format" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_format</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">sep</span></em>, <span class="pre">int</span> <em><span class="pre">seplen</span></em>, <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">outbuf</span></em>, <span class="pre">unsigned</span> <em><span class="pre">outmax</span></em>, <span class="pre">unsigned</span> <span class="pre">*</span><em><span class="pre">outlen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_format" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Format the requested property names into a string.
 This not intended for use by the application (<em>only
 by auxprop plugins</em>).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to extract values from.</li>
-<li><strong>sep</strong> &#8211; the separator to use for the string</li>
-<li><strong>outbuf</strong> &#8211; destination string. Caller must allocate the buffer of length <code class="docutils literal"><span class="pre">outmax</span></code> (including NUL terminator).</li>
-<li><strong>outlen</strong> &#8211; if non-NULL, will contain the length of the resulting string (excluding NUL terminator).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to extract values from.</p></li>
+<li><p><strong>sep</strong> – the separator to use for the string</p></li>
+<li><p><strong>outbuf</strong> – destination string. Caller must allocate the buffer of length <code class="docutils literal notranslate"><span class="pre">outmax</span></code> (including NUL terminator).</p></li>
+<li><p><strong>outlen</strong> – if non-NULL, will contain the length of the resulting string (excluding NUL terminator).</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">SASL error code.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASL error code.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_set">
-int <code class="descname">prop_set</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;*name</em>, const char<em>&nbsp;*value</em>, int<em>&nbsp;vallen</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_set" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_set</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">name</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">value</span></em>, <span class="pre">int</span> <em><span class="pre">vallen</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_set" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds a property value to the context.  <em>This is intended for use by auxprop plugins only.</em></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to add a value to.</li>
-<li><strong>name</strong> &#8211; the name of the property to receive the new value,  or NULL, which implies that the value will be added to the same property as the last call to either <a class="reference internal" href="#c.prop_set" title="prop_set"><code class="xref c c-func docutils literal"><span class="pre">prop_set()</span></code></a> or <a class="reference internal" href="#c.prop_setvals" title="prop_setvals"><code class="xref c c-func docutils literal"><span class="pre">prop_setvals()</span></code></a>.</li>
-<li><strong>value</strong> &#8211; the new value (of length <cite>vallen</cite>)</li>
-<li><strong>vallen</strong> &#8211; the length of the string <cite>value</cite>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to add a value to.</p></li>
+<li><p><strong>name</strong> – the name of the property to receive the new value,  or NULL, which implies that the value will be added to the same property as the last call to either <a class="reference internal" href="#c.prop_set" title="prop_set"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_set()</span></code></a> or <a class="reference internal" href="#c.prop_setvals" title="prop_setvals"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_setvals()</span></code></a>.</p></li>
+<li><p><strong>value</strong> – the new value (of length <cite>vallen</cite>)</p></li>
+<li><p><strong>vallen</strong> – the length of the string <cite>value</cite>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">SASL error code</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASL error code</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="c function">
 <dt id="c.prop_setvals">
-int <code class="descname">prop_setvals</code><span class="sig-paren">(</span>struct <a class="reference internal" href="#c.propctx" title="propctx">propctx</a><em>&nbsp;*ctx</em>, const char<em>&nbsp;*name</em>, const char<em>&nbsp;**values</em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_setvals" title="Permalink to this definition">¶</a></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">prop_setvals</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">struct</span></em> <a class="reference internal" href="#c.propctx" title="propctx"><span class="pre">propctx</span></a> <span class="pre">*</span><em><span class="pre">ctx</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">name</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><span class="pre">*</span><em><span class="pre">values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.prop_setvals" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds multiple values to a single property.  <em>This is intended for use by auxprop plugins only</em>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal"><span class="pre">propctx</span></code></a>) &#8211; The property context to add values to.</li>
-<li><strong>name</strong> &#8211; The name of the property to receive the new value, or NULL, which implies that the values will be added to the same property as the last call to either <a class="reference internal" href="#c.prop_set" title="prop_set"><code class="xref c c-func docutils literal"><span class="pre">prop_set()</span></code></a> or <a class="reference internal" href="#c.prop_setvals" title="prop_setvals"><code class="xref c c-func docutils literal"><span class="pre">prop_setvals()</span></code></a>.</li>
-<li><strong>values</strong> &#8211; A NULL-terminated array of values to be added the property.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctx</strong> (<a class="reference internal" href="#c.propctx" title="propctx"><code class="xref c c-type docutils literal notranslate"><span class="pre">propctx</span></code></a>) – The property context to add values to.</p></li>
+<li><p><strong>name</strong> – The name of the property to receive the new value, or NULL, which implies that the values will be added to the same property as the last call to either <a class="reference internal" href="#c.prop_set" title="prop_set"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_set()</span></code></a> or <a class="reference internal" href="#c.prop_setvals" title="prop_setvals"><code class="xref c c-func docutils literal notranslate"><span class="pre">prop_setvals()</span></code></a>.</p></li>
+<li><p><strong>values</strong> – A NULL-terminated array of values to be added the property.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">SASL error code</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SASL error code</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="data-structures">
 <h2>Data structures<a class="headerlink" href="#data-structures" title="Permalink to this headline">¶</a></h2>
-<dl class="type">
+<dl class="c type">
 <dt id="c.propval">
-<code class="descname">propval</code><a class="headerlink" href="#c.propval" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">type</span> </em><code class="sig-name descname"><span class="pre">propval</span></code><a class="headerlink" href="#c.propval" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A struct holding a name and its property values. A name can have zero or more values.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> &#8211; <code class="docutils literal"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span></code>. Name of this propval. NULL means end of list.</li>
-<li><strong>values</strong> &#8211; <code class="docutils literal"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span></code>. List of string values. If property not found, values == NULL. If property found with no values, then *values == NULL</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span></code>. Name of this propval. NULL means end of list.</p></li>
+<li><p><strong>values</strong> – <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span></code>. List of string values. If property not found, values == NULL. If property found with no values, then *values == NULL</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="type">
+<dl class="c type">
 <dt id="c.propctx">
-<code class="descname">propctx</code><a class="headerlink" href="#c.propctx" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">type</span> </em><code class="sig-name descname"><span class="pre">propctx</span></code><a class="headerlink" href="#c.propctx" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>A property context.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>values</strong> (<a class="reference internal" href="#c.propval" title="propval"><code class="xref c c-type docutils literal"><span class="pre">propval</span></code></a> *) &#8211; List of property values in this context.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<a class="reference internal" href="#c.propval" title="propval"><code class="xref c c-type docutils literal notranslate"><span class="pre">propval</span></code></a> *) – List of property values in this context.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="return-value">
 <h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
-<p>The property functions that return an int return SASL error codes.   See  <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a>.   Those that return
+<p>The property functions that return an int return SASL error codes.   See  <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>.   Those that return
 pointers will return a valid pointer on success, or NULL on any error.</p>
 </div>
 <div class="section" id="conforming-to">
@@ -827,8 +771,8 @@ pointers will return a valid pointer on success, or NULL on any error.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="sasl.html#std:saslman-sasl(3)">sasl(3)</a>, <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a>,
-<a class="reference internal" href="sasl_auxprop_request.html#std:saslman-sasl_auxprop_request(3)">sasl_auxprop_request(3)</a>, <a class="reference internal" href="sasl_auxprop_getctx.html#std:saslman-sasl_auxprop_getctx(3)">sasl_auxprop_getctx(3)</a></p>
+<p><a class="reference internal" href="sasl.html#std-saslman-sasl-3">sasl(3)</a>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>,
+<a class="reference internal" href="sasl_auxprop_request.html#std-saslman-sasl_auxprop_request-3">sasl_auxprop_request(3)</a>, <a class="reference internal" href="sasl_auxprop_getctx.html#std-saslman-sasl_auxprop_getctx-3">sasl_auxprop_getctx(3)</a></p>
 </div>
 </div>
 
@@ -853,7 +797,7 @@ pointers will return a valid pointer on success, or NULL on any error.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -880,7 +824,6 @@ pointers will return a valid pointer on success, or NULL on any error.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

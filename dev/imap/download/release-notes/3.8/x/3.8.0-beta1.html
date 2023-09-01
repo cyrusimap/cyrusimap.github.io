@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -792,83 +794,83 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.0-beta1/cyrus-imapd-3.8.0-beta1.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="major-changes-since-the-3-6-series">
 <span id="relnotes-3-8-0-beta1-changes"></span><h2>Major changes since the 3.6 series<a class="headerlink" href="#major-changes-since-the-3-6-series" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Adds the ability for replication to stage message uploads to the
-archive partition rather than the spool partition.</li>
-<li>Adds long-options support to various command line tools</li>
-<li>Adds a new BYTESIZE smart type for imapoptions that set sizes</li>
-<li>Removes empty lines from <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_expire.html#std:cyrusman-cyr_expire(8)">cyr_expire(8)</a> verbose output.  If you
-parse this output with external tools, those may need updating to match.</li>
-<li>Adds a module to ptloader which speaks HTTP.  See the &quot;pts_module&quot; and
-&quot;httppts_uri&quot; options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</li>
-<li>Adds support for IMAP Multimailbox Search (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7377.html"><strong>RFC 7377</strong></a>).</li>
-<li>Adds support for IMAP Saved Search Results (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5182.html"><strong>RFC 5182</strong></a>).</li>
-<li>Advertise support for IMAP URL-PARTIAL (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5550.html"><strong>RFC 5550</strong></a>).</li>
-<li>Implements the JMAP calendars specification
-(<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-jmap-calendars">draft-ietf-jmap-calendars</a>).</li>
-<li>Adds support for a new read-only <code class="docutils literal"><span class="pre">\Scheduled</span></code> mailbox that contains
+<li><p>Adds the ability for replication to stage message uploads to the
+archive partition rather than the spool partition.</p></li>
+<li><p>Adds long-options support to various command line tools</p></li>
+<li><p>Adds a new BYTESIZE smart type for imapoptions that set sizes</p></li>
+<li><p>Removes empty lines from <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> verbose output.  If you
+parse this output with external tools, those may need updating to match.</p></li>
+<li><p>Adds a module to ptloader which speaks HTTP.  See the &quot;pts_module&quot; and
+&quot;httppts_uri&quot; options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p></li>
+<li><p>Adds support for IMAP Multimailbox Search (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7377.html"><strong>RFC 7377</strong></a>).</p></li>
+<li><p>Adds support for IMAP Saved Search Results (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5182.html"><strong>RFC 5182</strong></a>).</p></li>
+<li><p>Advertise support for IMAP URL-PARTIAL (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5550.html"><strong>RFC 5550</strong></a>).</p></li>
+<li><p>Implements the JMAP calendars specification
+(<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-jmap-calendars">draft-ietf-jmap-calendars</a>).</p></li>
+<li><p>Adds support for a new read-only <code class="docutils literal notranslate"><span class="pre">\Scheduled</span></code> mailbox that contains
 emails created via JMAP EmailSubmission/set that are to be sent
 at a later date/time.  Also extends the JMAP EmailSubmission object
 with optional instructions for moving the message into another mailbox
-after it has been sent.</li>
-<li>Maps JMAP CalendarEvent privacy to the newly introduced iCalendar
+after it has been sent.</p></li>
+<li><p>Maps JMAP CalendarEvent privacy to the newly introduced iCalendar
 X-JMAP-PRIVACY property rather than CLASS.  See
-<a class="reference internal" href="../../../upgrade.html#upgrade-3-8-0-jmap-caldav-changes"><span class="std std-ref">JMAP/CalDAV changes</span></a> in the upgrade instructions.</li>
-<li>Improves error handling and reporting from <a class="reference internal" href="../../../../reference/manpages/systemcommands/mbexamine.html#std:cyrusman-mbexamine(8)">mbexamine(8)</a>.  If you
-have custom tooling that calls mbexamine, it may need updating.</li>
-<li>Sieve: Remove support for creating scripts with the deprecated
-<code class="docutils literal"><span class="pre">imapflags</span></code> capability and <code class="docutils literal"><span class="pre">mark</span></code> / <code class="docutils literal"><span class="pre">unmark</span></code> actions.  See
-<a class="reference internal" href="../../../upgrade.html#upgrade-3-8-0-sieve-changes"><span class="std std-ref">Sieve changes</span></a> in the upgrade instructions.</li>
-<li>Lock ordering fixes should result in fewer &quot;resource deadlock avoided&quot;
-errors</li>
+<a class="reference internal" href="../../../upgrade.html#upgrade-3-8-0-jmap-caldav-changes"><span class="std std-ref">JMAP/CalDAV changes</span></a> in the upgrade instructions.</p></li>
+<li><p>Improves error handling and reporting from <a class="reference internal" href="../../../../reference/manpages/systemcommands/mbexamine.html#std-cyrusman-mbexamine-8">mbexamine(8)</a>.  If you
+have custom tooling that calls mbexamine, it may need updating.</p></li>
+<li><p>Sieve: Remove support for creating scripts with the deprecated
+<code class="docutils literal notranslate"><span class="pre">imapflags</span></code> capability and <code class="docutils literal notranslate"><span class="pre">mark</span></code> / <code class="docutils literal notranslate"><span class="pre">unmark</span></code> actions.  See
+<a class="reference internal" href="../../../upgrade.html#upgrade-3-8-0-sieve-changes"><span class="std std-ref">Sieve changes</span></a> in the upgrade instructions.</p></li>
+<li><p>Lock ordering fixes should result in fewer &quot;resource deadlock avoided&quot;
+errors</p></li>
 </ul>
 </div>
 <div class="section" id="storage-changes">
 <span id="relnotes-3-8-0-beta1-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>None so far</li>
+<li><p>None so far</p></li>
 </ul>
 </div>
 <div class="section" id="updates-to-default-configuration">
 <h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std:cyrusman-cyr_info(8)">cyr_info(8)</a> <cite>conf</cite>, <cite>conf-all</cite> and <cite>conf-default</cite> subcommands
-accept an <cite>-s &lt;version&gt;</cite> argument to highlight <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>
+<p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> <cite>conf</cite>, <cite>conf-all</cite> and <cite>conf-default</cite> subcommands
+accept an <cite>-s &lt;version&gt;</cite> argument to highlight <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 options that are new or whose behaviour has changed since the specified
 version.  We recommend using this when evaluating a new Cyrus version to
 check which configuration options you will need to examine and maybe set or
 change during the process.</p>
 <ul>
-<li><p class="first">Adds a new BYTESIZE smart type for imapoptions that set sizes.  This allows
+<li><p>Adds a new BYTESIZE smart type for imapoptions that set sizes.  This allows
 sizes to be specified in &quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot; for better readability.</p>
-<p>These <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> options are changed in some way:</p>
+<p>These <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> options are changed in some way:</p>
 <ul class="simple">
-<li>archive_maxsize</li>
-<li>autocreate_quota</li>
-<li>autocreatequota</li>
-<li>backup_compact_minsize</li>
-<li>backup_compact_maxsize</li>
-<li>event_content_size</li>
-<li>icalendar_max_size</li>
-<li>jmap_preview_length</li>
-<li>jmap_max_size_upload</li>
-<li>jmap_max_size_blob_set</li>
-<li>jmap_max_size_request</li>
-<li>jmap_mail_max_size_attachments_per_email</li>
-<li>maxmessagesize</li>
-<li>maxquoted</li>
-<li>maxword</li>
-<li>quotawarn -&gt; quotawarnpercent</li>
-<li>quotawarnkb -&gt; quotawarnsize</li>
-<li>search_maxsize</li>
-<li>sieve_maxscriptsize</li>
-<li>vcard_max_size</li>
-<li>webdav_attachments_max_binary_attach_size</li>
+<li><p>archive_maxsize</p></li>
+<li><p>autocreate_quota</p></li>
+<li><p>autocreatequota</p></li>
+<li><p>backup_compact_minsize</p></li>
+<li><p>backup_compact_maxsize</p></li>
+<li><p>event_content_size</p></li>
+<li><p>icalendar_max_size</p></li>
+<li><p>jmap_preview_length</p></li>
+<li><p>jmap_max_size_upload</p></li>
+<li><p>jmap_max_size_blob_set</p></li>
+<li><p>jmap_max_size_request</p></li>
+<li><p>jmap_mail_max_size_attachments_per_email</p></li>
+<li><p>maxmessagesize</p></li>
+<li><p>maxquoted</p></li>
+<li><p>maxword</p></li>
+<li><p>quotawarn -&gt; quotawarnpercent</p></li>
+<li><p>quotawarnkb -&gt; quotawarnsize</p></li>
+<li><p>search_maxsize</p></li>
+<li><p>sieve_maxscriptsize</p></li>
+<li><p>vcard_max_size</p></li>
+<li><p>webdav_attachments_max_binary_attach_size</p></li>
 </ul>
 <p>This feature is transparent over upgrade and downgrade, provided the
 imapd.conf remains unchanged.</p>
@@ -882,19 +884,19 @@ imapd.conf).</p>
 <div class="section" id="security-fixes">
 <h2>Security fixes<a class="headerlink" href="#security-fixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>None so far</li>
+<li><p>None so far</p></li>
 </ul>
 </div>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4380">Issue #4380</a>: XFER to newer backends now assumes at least the current
-mailbox version, rather than the oldest supported mailbox version.</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3771">Issue #3771</a>: Special-Use annotations lost on XFER</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4187">Issue #4187</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std:cyrusman-ctl_mboxlist(8)">ctl_mboxlist(8)</a> can now detect and report
-broken UUID mailboxes.  Thanks Matthias Hunstock.</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4383">Issue #4383</a>: rolling <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std:cyrusman-squatter(8)">squatter(8)</a> only compacted its index
-databases at shutdown</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4380">Issue #4380</a>: XFER to newer backends now assumes at least the current
+mailbox version, rather than the oldest supported mailbox version.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3771">Issue #3771</a>: Special-Use annotations lost on XFER</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4187">Issue #4187</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> can now detect and report
+broken UUID mailboxes.  Thanks Matthias Hunstock.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4383">Issue #4383</a>: rolling <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> only compacted its index
+databases at shutdown</p></li>
 </ul>
 </div>
 </div>
@@ -920,7 +922,7 @@ databases at shutdown</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 24 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -946,7 +948,6 @@ databases at shutdown</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

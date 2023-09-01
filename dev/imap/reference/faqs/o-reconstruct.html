@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -787,8 +789,8 @@
             
   <div class="section" id="why-does-reconstruct-m-not-work">
 <h1>Why does reconstruct -m not work?<a class="headerlink" href="#why-does-reconstruct-m-not-work" title="Permalink to this headline">¶</a></h1>
-<p>From the <a class="reference internal" href="../manpages/systemcommands/reconstruct.html#std:cyrusman-reconstruct(8)">reconstruct(8)</a> man page:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>−m     NOTE: CURRENTLY UNAVAILABLE
+<p>From the <a class="reference internal" href="../manpages/systemcommands/reconstruct.html#std-cyrusman-reconstruct-8">reconstruct(8)</a> man page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>−m     NOTE: CURRENTLY UNAVAILABLE
              Rebuild  the  mailboxes file.  Use whatever data in the existing
              mailboxes file it can scavenge, then scans all partitions listed
              in the imapd.conf(5) file for additional mailboxes.
@@ -801,14 +803,14 @@ least, not any time soon.</p>
 preferably including a plain-text copy of it. Please see Backups for
 more information.</p>
 <p>If you do find yourself with a corrupted mailboxes.db, there are a few
-things you can try. The first is to see if <code class="docutils literal"><span class="pre">db_recover</span></code> can recover
+things you can try. The first is to see if <code class="docutils literal notranslate"><span class="pre">db_recover</span></code> can recover
 your database. If that doesnt' work, there should be backups in
-<code class="docutils literal"><span class="pre">$CONFIGDIRECTORY/db.backup1</span></code> and <code class="docutils literal"><span class="pre">$CONFIGDIRECTORY/db.backup2</span></code> that
+<code class="docutils literal notranslate"><span class="pre">$CONFIGDIRECTORY/db.backup1</span></code> and <code class="docutils literal notranslate"><span class="pre">$CONFIGDIRECTORY/db.backup2</span></code> that
 may be OK.</p>
 <p>If you're using Simon Matter's RPMs, plain-text copies of the mailboxes
 database should be being generated and saved in
-<code class="docutils literal"><span class="pre">/var/lib/imap/backup</span></code>. Try rebuilding the db from one of those using
-<a class="reference internal" href="../manpages/systemcommands/ctl_mboxlist.html#std:cyrusman-ctl_mboxlist(8)">ctl_mboxlist(8)</a>. Alternately, try asking the mailing list
+<code class="docutils literal notranslate"><span class="pre">/var/lib/imap/backup</span></code>. Try rebuilding the db from one of those using
+<a class="reference internal" href="../manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a>. Alternately, try asking the mailing list
 for help.</p>
 </div>
 
@@ -833,7 +835,7 @@ for help.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -859,7 +861,6 @@ for help.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

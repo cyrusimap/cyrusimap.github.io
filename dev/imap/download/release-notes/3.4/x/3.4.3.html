@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -792,8 +794,8 @@
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.3/cyrus-imapd-3.4.3.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-4-2">
@@ -801,46 +803,46 @@
 <div class="section" id="build-changes">
 <h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3854">Issue #3854</a>: miscellaneous build warnings reported by gcc 8.3.0 with
-optimisations turned on</li>
-<li>Fixed: typos in some GCC feature detection macros</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3769">Issue #3769</a>: undefined reference when using flock locking rather
-than fcntl (thanks Дилян Палаузов)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3843">Issue #3843</a>: man pages for optional features had been excluded from
-release tarballs</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3854">Issue #3854</a>: miscellaneous build warnings reported by gcc 8.3.0 with
+optimisations turned on</p></li>
+<li><p>Fixed: typos in some GCC feature detection macros</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3769">Issue #3769</a>: undefined reference when using flock locking rather
+than fcntl (thanks Дилян Палаузов)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3843">Issue #3843</a>: man pages for optional features had been excluded from
+release tarballs</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3605">Issue #3605</a>: don't send unsolicited updates about other mailboxes in
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3605">Issue #3605</a>: don't send unsolicited updates about other mailboxes in
 response to STATUS command.  This is technically okay but can confuse
-clients that don't expect it.</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3664">Issue #3664</a>: flush output when starting IDLE so changes are told
-immediately</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2383">Issue #2383</a>: XFER of a single user or mailbox now works again</li>
-<li>Fixed: XFER no longer tries to sync_restart (and hangs) when the destination
-backend doesn't support XFER-via-replication</li>
-<li>Fixed: XFER now reports an error when the name argument doesn't match
+clients that don't expect it.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3664">Issue #3664</a>: flush output when starting IDLE so changes are told
+immediately</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2383">Issue #2383</a>: XFER of a single user or mailbox now works again</p></li>
+<li><p>Fixed: XFER no longer tries to sync_restart (and hangs) when the destination
+backend doesn't support XFER-via-replication</p></li>
+<li><p>Fixed: XFER now reports an error when the name argument doesn't match
 anything, instead of doing nothing and then reporting that it succeeded at
-it.</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3597">Issue #3597</a>: ignore case difference in 'mailto:' prefix when
-comparing CalDAV ORGANIZERs</li>
-<li>Fixed: compare ORGANIZER in CalDAV requests against user's schedule addresses</li>
-<li>Fixed: scheduling userid now set correctly when virtdomains is disabled or
-a defaultdomain is set</li>
-<li>Fixed: use-after-free in Xapian search error logging</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3750">Issue #3750</a>: use-after-free in JMAP Calendar/set error logging</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3839">Issue #3839</a>: <cite>quota -f -u [user]</cite> no longer removes quota information
-from other, similarly-named users</li>
+it.</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3597">Issue #3597</a>: ignore case difference in 'mailto:' prefix when
+comparing CalDAV ORGANIZERs</p></li>
+<li><p>Fixed: compare ORGANIZER in CalDAV requests against user's schedule addresses</p></li>
+<li><p>Fixed: scheduling userid now set correctly when virtdomains is disabled or
+a defaultdomain is set</p></li>
+<li><p>Fixed: use-after-free in Xapian search error logging</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3750">Issue #3750</a>: use-after-free in JMAP Calendar/set error logging</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3839">Issue #3839</a>: <cite>quota -f -u [user]</cite> no longer removes quota information
+from other, similarly-named users</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The formerly-standalone Cassandane tool has been merged into the
-cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
-<li>XFER will now recognise backends from the upcoming 3.6 and 3.7 versions</li>
+<li><p>The formerly-standalone Cassandane tool has been merged into the
+cyrus-imapd repository, in the 'cassandane' subdirectory.</p></li>
+<li><p>XFER will now recognise backends from the upcoming 3.6 and 3.7 versions</p></li>
 </ul>
 </div>
 </div>
@@ -867,7 +869,7 @@ cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jan 21 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -893,7 +895,6 @@ cyrus-imapd repository, in the 'cassandane' subdirectory.</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

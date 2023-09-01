@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,16 +787,14 @@
           <div role="main" class="document">
             
   <div class="section" id="rehash">
-<span id="imap-reference-manpages-systemcommands-rehash"></span><span id="std:cyrusman-rehash(8)"></span><h1><strong>rehash</strong><a class="headerlink" href="#rehash" title="Permalink to this headline">¶</a></h1>
+<span id="imap-reference-manpages-systemcommands-rehash"></span><span id="std-cyrusman-rehash-8"></span><span id="std:cyrusman-rehash(8)"></span><h1><strong>rehash</strong><a class="headerlink" href="#rehash" title="Permalink to this headline">¶</a></h1>
 <p>rehash checks and rehashes Cyrus directories based on the hashing settings
 in the imapd.conf.</p>
 <p>Use in the event you choose to change your hashing settings. For more information
 on directory hashing, see the documentation on <a class="reference internal" href="../../admin/locations/hashing.html#imap-admin-locations-hashing"><span class="std std-ref">Directory Hashing</span></a>.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>rehash</strong> [<strong>-v</strong>] [<strong>-n</strong>] [<strong>-f</strong>|<strong>-F</strong>] [<strong>-i</strong>|<strong>-I</strong>] imapd.conf
-</pre>
+<pre class="literal-block"><strong>rehash</strong> [<strong>-v</strong>] [<strong>-n</strong>] [<strong>-f</strong>|<strong>-F</strong>] [<strong>-i</strong>|<strong>-I</strong>] imapd.conf</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -806,40 +806,40 @@ configuration file, run rehash, and then start Cyrus again.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-rehash-arg-imapd">
-<code class="descname">imapd</code><code class="descclassname">.conf</code><a class="headerlink" href="#cmdoption-rehash-arg-imapd" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-rehash-arg-imapd.conf">
+<span id="cmdoption-rehash-arg-imapd-conf"></span><code class="sig-name descname"><span class="pre">imapd.conf</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-arg-imapd.conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>imapd.conf must always be provided.  On a normal system this will be
 /etc/imapd.conf.  The correct hashing settings will be read from the
 provided imapd.conf, or can be overridden with options.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-rehash-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rehash-v" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>In -v verbose mode, each rename command will be printed, as well as
 any creation or deletion of folders.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-rehash-n">
-<code class="descname">-n</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rehash-n" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>In -n &quot;no change&quot; mode, it will just print the changes.  Note,
 verbose is always turned on in no-change mode.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-rehash-f">
-<code class="descname">-f</code><code class="descclassname"> | -F</code><a class="headerlink" href="#cmdoption-rehash-f" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">\|</span> <span class="pre">-F</span></code><a class="headerlink" href="#cmdoption-rehash-f" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">-f forces fulldirhash: no</div>
 <div class="line">-F forces fulldirhash: yes</div>
 </div>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-rehash-i">
-<code class="descname">-i</code><code class="descclassname"> | -I</code><a class="headerlink" href="#cmdoption-rehash-i" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"> <span class="pre">\|</span> <span class="pre">-I</span></code><a class="headerlink" href="#cmdoption-rehash-i" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">-i forces hashimapspool: no</div>
 <div class="line">-I forces hashimapspool: yes</div>
@@ -853,7 +853,7 @@ verbose is always turned on in no-change mode.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -878,7 +878,7 @@ verbose is always turned on in no-change mode.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 27 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -904,7 +904,6 @@ verbose is always turned on in no-change mode.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

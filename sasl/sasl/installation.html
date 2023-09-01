@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -225,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -319,12 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -347,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -363,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -377,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -408,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -489,8 +489,8 @@
 <span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Are you looking for the:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#installation-quick"><span class="std std-ref">Quick install</span></a> guide, or</li>
-<li><a class="reference internal" href="#installation-detailed"><span class="std std-ref">Detailed installation instructions for compiling from source</span></a></li>
+<li><p><a class="reference internal" href="#installation-quick"><span class="std std-ref">Quick install</span></a> guide, or</p></li>
+<li><p><a class="reference internal" href="#installation-detailed"><span class="std std-ref">Detailed installation instructions for compiling from source</span></a></p></li>
 </ul>
 <div class="section" id="quick-install-guide">
 <span id="installation-quick"></span><h2>Quick install guide<a class="headerlink" href="#quick-install-guide" title="Permalink to this headline">¶</a></h2>
@@ -500,7 +500,7 @@
 <p>Fetch the latest Cyrus SASL tarball from
 <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl/releases">https://github.com/cyrusimap/cyrus-sasl/releases</a></p>
 <p>Untar it then:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">(</span><span class="n">directory</span> <span class="n">it</span> <span class="n">was</span> <span class="n">untarred</span> <span class="n">into</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">(</span><span class="n">directory</span> <span class="n">it</span> <span class="n">was</span> <span class="n">untarred</span> <span class="n">into</span><span class="p">)</span>
 <span class="o">./</span><span class="n">configure</span>
 <span class="n">make</span>
 <span class="n">make</span> <span class="n">install</span>
@@ -513,15 +513,15 @@
 <h3>Unix package Installation<a class="headerlink" href="#unix-package-installation" title="Permalink to this headline">¶</a></h3>
 <p>Are you <a class="reference internal" href="#upgrading-from-cyrus-saslv1">upgrading from Cyrus SASLv1</a>?</p>
 <p>Please see the file install.php for instructions on how to install this package.</p>
-<p>Note that the library can use the environment variable SASL_PATH to locate the directory where the mechanisms are; this should be a colon-separated list of directories containing plugins. Otherwise it will default to the value of <cite>&#8211;with-plugindir</cite> as supplied to <cite>configure</cite> (which itself defaults to <cite>/usr/local/lib</cite>).</p>
+<p>Note that the library can use the environment variable SASL_PATH to locate the directory where the mechanisms are; this should be a colon-separated list of directories containing plugins. Otherwise it will default to the value of <cite>–with-plugindir</cite> as supplied to <cite>configure</cite> (which itself defaults to <cite>/usr/local/lib</cite>).</p>
 <p>Extra information for <a class="reference internal" href="macosx.html#install-macos"><span class="std std-ref">Mac OSX installation</span></a>.</p>
 <p>Extra information for <a class="reference internal" href="windows.html#install-windows"><span class="std std-ref">Windows installation</span></a>. This configuration has not been extensively tested.</p>
 </div>
 <div class="section" id="configuration">
 <h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
-<p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application&#8217;s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documentation for how to supply SASL options.</p>
-<p>Alternatively, Cyrus SASL looks for configuration files in <cite>/usr/lib/sasl/Appname.conf</cite> where Appname is settable by the application (for example, Sendmail 8.10 and later set this to &#8220;Sendmail&#8221;).</p>
-<p>Configuration using the application&#8217;s configuration files (via the getopt callback) will override those supplied by the SASL configuration files.</p>
+<p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application’s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documentation for how to supply SASL options.</p>
+<p>Alternatively, Cyrus SASL looks for configuration files in <cite>/usr/lib/sasl/Appname.conf</cite> where Appname is settable by the application (for example, Sendmail 8.10 and later set this to “Sendmail”).</p>
+<p>Configuration using the application’s configuration files (via the getopt callback) will override those supplied by the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at sysadmin.php and options.php</p>
 </div>
 </div>
@@ -532,18 +532,18 @@ the concepts presented in the <a class="reference internal" href="components.htm
 and in the <a class="reference internal" href="quickstart.html#quickstart"><span class="std std-ref">Quickstart</span></a> guide.</p>
 <p>You will want to have answered the following questions about your intended
 installation:</p>
-<p>1.  What mechanisms do you want to support?  Are they plaintext (LOGIN, PLAIN),
-shared secret (SCRAM, CRAM-MD5), or Kerberos (GSSAPI)?
+<p>1.  What mechanisms do you want to support?  Are they plaintext (PLAIN),
+shared secret (SCRAM), or Kerberos (GSSAPI)?
 Perhaps you will use some combination (generally plaintext with one of
 the other two types).
 2.  Given the answer to the previous question, how will the mechanisms
 perform user verification?</p>
 <blockquote>
 <div><ul class="simple">
-<li>Kerberos mechanisms just need your existing Kerberos infrastructure.</li>
-<li>The shared secret mechanisms will need an auxprop plugin backend.</li>
-<li>The plaintext mechanisms can make do with saslauthd, Courier authdaemond (not included), <em>or</em> by using an auxprop plugin backend.</li>
-<li>To use Kerberos and Plaintext, you&#8217;ll want to use saslauthd with a kerberos module for plaintext authentication.  To use Shared Secret and plaintext, you&#8217;ll want to use the auxprop plugin for password verification.</li>
+<li><p>Kerberos mechanisms just need your existing Kerberos infrastructure.</p></li>
+<li><p>The shared secret mechanisms will need an auxprop plugin backend.</p></li>
+<li><p>The plaintext mechanisms can make do with saslauthd, Courier authdaemond (not included), <em>or</em> by using an auxprop plugin backend.</p></li>
+<li><p>To use Kerberos and Plaintext, you’ll want to use saslauthd with a kerberos module for plaintext authentication.  To use Shared Secret and plaintext, you’ll want to use the auxprop plugin for password verification.</p></li>
 </ul>
 </div></blockquote>
 <p>3.  If you are using an auxprop plugin, will you be using SASLdb (and
@@ -560,19 +560,19 @@ configuration of Cyrus SASL becomes easier.</p>
 <div class="section" id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>You&#8217;ll need the source from <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl">https://github.com/cyrusimap/cyrus-sasl</a></li>
-<li>You&#8217;ll need <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/make/">GNU make</a>.</li>
-<li>If you are using SASLdb, you will need to pick your backend.
-libsasl2 can use <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/gdbm/">gdbm</a>, <a class="reference external" href="https://www.openldap.org/">LMDB</a>, or ndbm to implement its user/password lookup. Most systems come with ndbm.</li>
-<li>If you are using SQL, you&#8217;ll need to properly configure your server/tables,
+<li><p>You’ll need the source from <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl">https://github.com/cyrusimap/cyrus-sasl</a></p></li>
+<li><p>You’ll need <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/make/">GNU make</a>.</p></li>
+<li><p>If you are using SASLdb, you will need to pick your backend.
+libsasl2 can use <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/gdbm/">gdbm</a>, <a class="reference external" href="https://www.openldap.org/">LMDB</a>, or ndbm to implement its user/password lookup. Most systems come with ndbm.</p></li>
+<li><p>If you are using SQL, you’ll need to properly configure your server/tables,
 and build the necessary client libraries on the system where you will be
 building and using SASL.  Currently we support <a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> v7.2 (or higher)
-and <a class="reference external" href="https://www.mysql.com">MySQL</a>.</li>
-<li>If you are using LDAPDB, you&#8217;ll need SASL enabled <a class="reference external" href="https://www.openldap.org">OpenLDAP</a> libraries.
-v2.1.27 (or higher) or v2.2.6 (or higher) is supported.</li>
-<li>For Kerberos support, you&#8217;ll need the <a class="reference external" href="https://www-local.pdc.kth.se/kth-krb/">kerberos</a> libraries.</li>
-<li>For GSSAPI support you will need either <a class="reference external" href="https://web.mit.edu/kerberos/www/">MIT Kerberos 5</a>,
-the <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">Heimdal</a> or <a class="reference external" href="https://cybersafe.com">CyberSafe</a>.</li>
+and <a class="reference external" href="https://www.mysql.com">MySQL</a>.</p></li>
+<li><p>If you are using LDAPDB, you’ll need SASL enabled <a class="reference external" href="https://www.openldap.org">OpenLDAP</a> libraries.
+v2.1.27 (or higher) or v2.2.6 (or higher) is supported.</p></li>
+<li><p>For Kerberos support, you’ll need the <a class="reference external" href="https://www-local.pdc.kth.se/kth-krb/">kerberos</a> libraries.</p></li>
+<li><p>For GSSAPI support you will need either <a class="reference external" href="https://web.mit.edu/kerberos/www/">MIT Kerberos 5</a>,
+the <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">Heimdal</a> or <a class="reference external" href="https://cybersafe.com">CyberSafe</a>.</p></li>
 </ol>
 </div>
 <div class="section" id="build-configuration">
@@ -580,79 +580,78 @@ the <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">H
 <p>Once you have answered all the necessary questions and installed
 (and tested!) any required packages for your configuration, you are
 ready to build SASL.  Building SASL is done with the aid of
-an autoconf <code class="docutils literal"><span class="pre">configure</span></code> script, which has a <em>lot</em> of options.
-Be sure to read the output of <code class="docutils literal"><span class="pre">configure</span> <span class="pre">--help</span></code> to be sure you
-aren&#8217;t missing any.  Note that an <code class="docutils literal"><span class="pre">--enable-foo</span></code> option has a counterpart <code class="docutils literal"><span class="pre">--disable-foo</span></code>
+an autoconf <code class="docutils literal notranslate"><span class="pre">configure</span></code> script, which has a <em>lot</em> of options.
+Be sure to read the output of <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">--help</span></code> to be sure you
+aren’t missing any.  Note that an <code class="docutils literal notranslate"><span class="pre">--enable-foo</span></code> option has a counterpart <code class="docutils literal notranslate"><span class="pre">--disable-foo</span></code>
 to not enable that feature.</p>
 <p>Some of the most important configuration options are those which allow
 you to turn off the compilation of modules you do not need.  This is often
 the easiest way to solve compilation problems with Cyrus SASL.
-If you&#8217;re not going to need a particular mechanism, don&#8217;t build it!  Not
+If you’re not going to need a particular mechanism, don’t build it!  Not
 building them can also add performance improvements as it does take system
 resources to load a given plugin, even if that plugin is otherwise unused
-(even when it is disabled via the <a class="reference internal" href="options.html#cmdoption-arg-mech_list"><code class="xref std std-option docutils literal"><span class="pre">mech_list</span></code></a> option).</p>
+(even when it is disabled via the <a class="reference internal" href="options.html#cmdoption-arg-mech_list"><code class="xref std std-option docutils literal notranslate"><span class="pre">mech_list</span></code></a> option).</p>
 <p>As of this writing, modules that are enabled by default but may not
-be applicable to all systems include CRAM-MD5, SCRAM, OTP,
+be applicable to all systems include SCRAM, OTP,
 GSSAPI, PLAIN, and ANONYMOUS.  These can be disabled with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``--disable-cram``,
-``--disable-scram``, ``--disable-otp``,
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``--disable-scram``, ``--disable-otp``,
 ``--disable-gssapi``,
 ``--disable-plain``, and ``--disable-anon`` respectively.
 </pre></div>
 </div>
 <p>If you are using an SQL auxprop plugin, you may want to specify one or more
-of <code class="docutils literal"><span class="pre">--enable-sql</span></code>, <code class="docutils literal"><span class="pre">--with-mysql=PATH</span></code>, and
-<code class="docutils literal"><span class="pre">--with-pgsql=PATH</span></code>, note that PATH in the later two should be replaced
+of <code class="docutils literal notranslate"><span class="pre">--enable-sql</span></code>, <code class="docutils literal notranslate"><span class="pre">--with-mysql=PATH</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">--with-pgsql=PATH</span></code>, note that PATH in the later two should be replaced
 with the path where you installed the necessary client libraries.</p>
 <p>If you are using LDAPDB auxprop plugin, you will need to specify
-<code class="docutils literal"><span class="pre">--enable-ldapdb</span></code> and <code class="docutils literal"><span class="pre">--with-ldap=PATH</span></code>.  <strong>Warning:</strong> LDAPDB
+<code class="docutils literal notranslate"><span class="pre">--enable-ldapdb</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-ldap=PATH</span></code>.  <strong>Warning:</strong> LDAPDB
 auxprop plugin (and LDAP enabled saslauthd) introduces a circular dependency
 between OpenLDAP and SASL.  I.e., you must have OpenLDAP already built when
 building LDAPDB in SASL.  In order for LDAPDB to work at runtime, you must have
 OpenLDAP already built with SASL support. One way to solve this issue is to
 build Cyrus SASL first without ldap support, then build OpenLDAP, and then come
 back to SASL and build LDAPDB.</p>
-<p>If you&#8217;re not planning on using SASLdb at all, it may be worth
-your time to disable its use entirely with the <code class="docutils literal"><span class="pre">--with-dblib=none</span></code>
+<p>If you’re not planning on using SASLdb at all, it may be worth
+your time to disable its use entirely with the <code class="docutils literal notranslate"><span class="pre">--with-dblib=none</span></code>
 option.</p>
 <p>If you are planning on using LDAP with saslauthd, be sure to specify
-the <code class="docutils literal"><span class="pre">--with-ldap=PATH</span></code> option to <code class="docutils literal"><span class="pre">configure</span></code>.</p>
+the <code class="docutils literal notranslate"><span class="pre">--with-ldap=PATH</span></code> option to <code class="docutils literal notranslate"><span class="pre">configure</span></code>.</p>
 </div>
 <div class="section" id="building-and-installation">
 <h3>Building and Installation<a class="headerlink" href="#building-and-installation" title="Permalink to this headline">¶</a></h3>
 <p>After configure runs, you should be able to build SASL just by
-running <code class="docutils literal"><span class="pre">make</span></code>.  If this runs into problems, be sure that you
-have disabled everything that your system doesn&#8217;t need, and that you have
+running <code class="docutils literal notranslate"><span class="pre">make</span></code>.  If this runs into problems, be sure that you
+have disabled everything that your system doesn’t need, and that you have
 correctly specified paths to any dependencies you may have.</p>
-<p>To install the library, run <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> as <code class="docutils literal"><span class="pre">root</span></code> followed by
-<code class="docutils literal"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/usr/local/lib/sasl2</span> <span class="pre">/usr/lib/sasl2</span></code> (modified for your
+<p>To install the library, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> as <code class="docutils literal notranslate"><span class="pre">root</span></code> followed by
+<code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/usr/local/lib/sasl2</span> <span class="pre">/usr/lib/sasl2</span></code> (modified for your
 installation path as appropriate).  Be sure to do this last step or
 SASL will not be able to locate your plugins!</p>
 </div>
 <div class="section" id="compilation-hints">
 <h3>Compilation Hints<a class="headerlink" href="#compilation-hints" title="Permalink to this headline">¶</a></h3>
-<p>You may need to play with your CPPFLAGS and LDFLAGS  if you&#8217;re
-using vendor compilers. We use <code class="docutils literal"><span class="pre">gcc</span></code> extensively, but you&#8217;ll
+<p>You may need to play with your CPPFLAGS and LDFLAGS  if you’re
+using vendor compilers. We use <code class="docutils literal notranslate"><span class="pre">gcc</span></code> extensively, but you’ll
 probably have more luck if you use the same compiler for the library
 as you do for your applications. You can see what compilers we use on
-our platforms by looking at the &#8220;SMakefile&#8221;.</p>
+our platforms by looking at the “SMakefile”.</p>
 </div>
 <div class="section" id="application-configuration">
 <h3>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Please read about the <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL Options</span></a> to learn what
 needs to be configured so that applications can successfully use the SASL
 library.</p>
-<p>You will want to ensure that the settings of <code class="docutils literal"><span class="pre">pwcheck_method</span></code>
-and <code class="docutils literal"><span class="pre">auxprop_plugin</span></code> match the decisions you made about your
+<p>You will want to ensure that the settings of <code class="docutils literal notranslate"><span class="pre">pwcheck_method</span></code>
+and <code class="docutils literal notranslate"><span class="pre">auxprop_plugin</span></code> match the decisions you made about your
 authentication infrastructure.  (For example, if you are using
-saslauthd as a password verifier, you&#8217;ll want to be sure to set
-<code class="docutils literal"><span class="pre">pwcheck_method:</span> <span class="pre">saslauthd</span></code>).</p>
+saslauthd as a password verifier, you’ll want to be sure to set
+<code class="docutils literal notranslate"><span class="pre">pwcheck_method:</span> <span class="pre">saslauthd</span></code>).</p>
 <p>If you are using saslauthd, you will want to arrange for
-<code class="docutils literal"><span class="pre">saslauthd</span> <span class="pre">-a</span> <span class="pre">pam</span></code> (or ldap, etc) to be run
+<code class="docutils literal notranslate"><span class="pre">saslauthd</span> <span class="pre">-a</span> <span class="pre">pam</span></code> (or ldap, etc) to be run
 at boot.  If you are not going to be using saslauthd, then this is
 not necessary.</p>
 <p>Many of these pieces are covered in more detail in the
-<a class="reference internal" href="sysadmin.html#sysadmin"><span class="std std-ref">SASL System Administrator&#8217;s Guide</span></a>.</p>
+<a class="reference internal" href="sysadmin.html#sysadmin"><span class="std std-ref">SASL System Administrator’s Guide</span></a>.</p>
 </div>
 </div>
 <div class="section" id="supported-platforms">
@@ -660,7 +659,7 @@ not necessary.</p>
 <p>This has been tested under Linux 2.2, Linux 2.4, Solaris 2.7 and
 Solaris 2.8.  It should work under any platform where dynamic objects
 can be linked against other dynamic objects, and where the dynamic
-library file extension is &#8221;.so&#8221;, or where libtool creates the .la
+library file extension is “.so”, or where libtool creates the .la
 files correctly.  There is also documentation for
 <a class="reference internal" href="windows.html#install-windows"><span class="std std-ref">Win32</span></a>, <a class="reference internal" href="macosx.html#install-macos"><span class="std std-ref">MacOS X</span></a>, and
 <a class="reference internal" href="os390.html#install-os390"><span class="std std-ref">OS/390</span></a>.</p>
@@ -690,7 +689,7 @@ files correctly.  There is also documentation for
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -717,7 +716,6 @@ files correctly.  There is also documentation for
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

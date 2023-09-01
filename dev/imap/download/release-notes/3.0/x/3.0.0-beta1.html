@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,61 +792,52 @@
   <div class="section" id="cyrus-imap-3-0-0-beta1-release-notes">
 <h1>Cyrus IMAP 3.0.0 beta1 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-0-beta1-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>Cyrus IMAP 3.0 is under active development, and subject to change.</p>
-<p class="last">Do <strong>NOT</strong> use this version unless you're a developer of sorts.</p>
+<p>Do <strong>NOT</strong> use this version unless you're a developer of sorts.</p>
 </div>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.0-beta1/cyrus-imapd-3.0.0-beta1.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="major-changes">
 <span id="relnotes-3-0-0-beta1-changes"></span><h2>Major changes<a class="headerlink" href="#major-changes" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Support added for FastMail-style conversations (threaded messages).
-(See the <code class="docutils literal"><span class="pre">conversations</span></code> options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Optional <a class="reference external" href="http://xapian.org">Xapian</a> integration for faster and shinier search. Note that this requires custom
-patches to Xapian, in this release. (See the <code class="docutils literal"><span class="pre">search_engine</span></code> option in
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Archive support has arrived! Requires addition of an archive partition. (See <code class="docutils literal"><span class="pre">archive_*</span></code>
-options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Basic <a class="reference external" href="http://jmap.io">JMAP</a> support. (See <code class="docutils literal"><span class="pre">httpmodules</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p>
-</li>
-<li><p class="first">Optional <a class="reference external" href="http://www.clamav.net">ClamAV</a> integration for AntiVirus support is now working again.
-Requires separate installation of <a class="reference external" href="http://www.clamav.net">ClamAV</a>. (See configure.ac <code class="docutils literal"><span class="pre">--with-clamav=DIR</span></code>)</p>
-</li>
-<li><p class="first">Dropped support for Berkeley DB.</p>
-</li>
-<li><p class="first">The handling of configure options has changed, dropping support for
-<code class="docutils literal"><span class="pre">--with-cyrus-prefix</span></code> and <code class="docutils literal"><span class="pre">--with-service-path</span></code> in favour of the more conventional
-<code class="docutils literal"><span class="pre">--prefix</span></code>, <code class="docutils literal"><span class="pre">--bindir</span></code>, <code class="docutils literal"><span class="pre">--sbindir</span></code>, and <code class="docutils literal"><span class="pre">--libexecdir</span></code>.</p>
-</li>
-<li><p class="first">Binaries executed by the <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#imap-reference-manpages-systemcommands-master"><span class="std std-ref">master(8)</span></a>
-service process are now installed to <code class="docutils literal"><span class="pre">--libexecdir</span></code>.  Other binaries are installed to
-<code class="docutils literal"><span class="pre">--bindir</span></code> and/or <code class="docutils literal"><span class="pre">--sbindir</span></code>.</p>
-<p>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">installbinsymlinks</span></code> target can be used to set up symlinks to everything in
-<code class="docutils literal"><span class="pre">--bindir</span></code>, if you need that in your environment.</p>
+<li><p>Support added for FastMail-style conversations (threaded messages).
+(See the <code class="docutils literal notranslate"><span class="pre">conversations</span></code> options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Optional <a class="reference external" href="http://xapian.org">Xapian</a> integration for faster and shinier search. Note that this requires custom
+patches to Xapian, in this release. (See the <code class="docutils literal notranslate"><span class="pre">search_engine</span></code> option in
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Archive support has arrived! Requires addition of an archive partition. (See <code class="docutils literal notranslate"><span class="pre">archive_*</span></code>
+options in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Basic <a class="reference external" href="http://jmap.io">JMAP</a> support. (See <code class="docutils literal notranslate"><span class="pre">httpmodules</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>)</p></li>
+<li><p>Optional <a class="reference external" href="http://www.clamav.net">ClamAV</a> integration for AntiVirus support is now working again.
+Requires separate installation of <a class="reference external" href="http://www.clamav.net">ClamAV</a>. (See configure.ac <code class="docutils literal notranslate"><span class="pre">--with-clamav=DIR</span></code>)</p></li>
+<li><p>Dropped support for Berkeley DB.</p></li>
+<li><p>The handling of configure options has changed, dropping support for
+<code class="docutils literal notranslate"><span class="pre">--with-cyrus-prefix</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-service-path</span></code> in favour of the more conventional
+<code class="docutils literal notranslate"><span class="pre">--prefix</span></code>, <code class="docutils literal notranslate"><span class="pre">--bindir</span></code>, <code class="docutils literal notranslate"><span class="pre">--sbindir</span></code>, and <code class="docutils literal notranslate"><span class="pre">--libexecdir</span></code>.</p></li>
+<li><p>Binaries executed by the <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#imap-reference-manpages-systemcommands-master"><span class="std std-ref">master(8)</span></a>
+service process are now installed to <code class="docutils literal notranslate"><span class="pre">--libexecdir</span></code>.  Other binaries are installed to
+<code class="docutils literal notranslate"><span class="pre">--bindir</span></code> and/or <code class="docutils literal notranslate"><span class="pre">--sbindir</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">installbinsymlinks</span></code> target can be used to set up symlinks to everything in
+<code class="docutils literal notranslate"><span class="pre">--bindir</span></code>, if you need that in your environment.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Lots of fixes to caldav and carddav.</p>
+<li><p>Lots of fixes to caldav and carddav.</p>
 <p>Includes the addition of a new daemon (calalarmd) which periodically processes a global
 database containing the &quot;next&quot; alarm for each item, and sends the relevant mboxevents.
-(See configure.ac <code class="docutils literal"><span class="pre">--with-calalarmd</span></code>)</p>
+(See configure.ac <code class="docutils literal notranslate"><span class="pre">--with-calalarmd</span></code>)</p>
 </li>
-<li><p class="first">Replication reliability fixes.</p>
-</li>
-<li><p class="first">Improved <code class="docutils literal"><span class="pre">LIST-EXTENDED</span></code>: more imap tests now succeed.</p>
-</li>
+<li><p>Replication reliability fixes.</p></li>
+<li><p>Improved <code class="docutils literal notranslate"><span class="pre">LIST-EXTENDED</span></code>: more imap tests now succeed.</p></li>
 </ul>
 </div>
 </div>
@@ -870,7 +863,7 @@ database containing the &quot;next&quot; alarm for each item, and sends the rele
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -896,7 +889,6 @@ database containing the &quot;next&quot; alarm for each item, and sends the rele
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

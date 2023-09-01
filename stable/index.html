@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/cyrus.css" type="text/css" />
   
 
@@ -156,7 +158,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +254,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -378,7 +380,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -782,26 +784,26 @@
 <span id="imap-index"></span><h1>What is Cyrus IMAP?<a class="headerlink" href="#what-is-cyrus-imap" title="Permalink to this headline">¶</a></h1>
 <p>Cyrus IMAP is an email, contacts and calendar server. Cyrus is free and open source.</p>
 <ul class="simple">
-<li>This is the documentation for version 3.8.0 of Cyrus IMAP: <strong>stable</strong> branch.</li>
-<li>The latest development version 3.9.0-alpha0 is at <a class="reference external" href="https://www.cyrusimap.org/dev/">https://www.cyrusimap.org/dev/</a>.</li>
+<li><p>This is the documentation for version 3.8.0 of Cyrus IMAP: <strong>stable</strong> branch.</p></li>
+<li><p>The latest development version 3.9.0-alpha0 is at <a class="reference external" href="https://www.cyrusimap.org/dev/">https://www.cyrusimap.org/dev/</a>.</p></li>
 </ul>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Speed</li>
-<li>Security</li>
-<li>Efficiency</li>
-<li>Search</li>
-<li>CardDAV and CalDAV support</li>
-<li>Robust data storage</li>
-<li>Replication</li>
-<li>Scalable for large installations</li>
-<li>Flexible filtering support through Sieve</li>
-<li>Supports antivirus and antispam toolkits</li>
-<li>Handles deliverability: SPF, DKIM, DMARC</li>
-<li>Extensive authentication options, through Cyrus SASL</li>
-<li>JMAP support</li>
-<li>Long list of supported standards</li>
+<li><p>Speed</p></li>
+<li><p>Security</p></li>
+<li><p>Efficiency</p></li>
+<li><p>Search</p></li>
+<li><p>CardDAV and CalDAV support</p></li>
+<li><p>Robust data storage</p></li>
+<li><p>Replication</p></li>
+<li><p>Scalable for large installations</p></li>
+<li><p>Flexible filtering support through Sieve</p></li>
+<li><p>Supports antivirus and antispam toolkits</p></li>
+<li><p>Handles deliverability: SPF, DKIM, DMARC</p></li>
+<li><p>Extensive authentication options, through Cyrus SASL</p></li>
+<li><p>JMAP support</p></li>
+<li><p>Long list of supported standards</p></li>
 </ul>
 <p>Read more in our full <a class="reference internal" href="imap/concepts/features.html#imap-features"><span class="std std-ref">list of features</span></a>.</p>
 <p>Cyrus has been under active development since the year 1993 when the project was launched at Carnegie Mellon University. It's used in production
@@ -831,7 +833,7 @@ systems around the world, at universities and in private enterprise.</p>
 <li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#binary-naming">Binary naming</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#sample-configuration-files">Sample configuration files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#predefined-configurations">Predefined configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="imap/download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1035,7 +1037,7 @@ systems around the world, at universities and in private enterprise.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jan 06 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1061,7 +1063,6 @@ systems around the world, at universities and in private enterprise.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

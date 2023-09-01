@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
   
 
@@ -195,7 +197,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -226,7 +227,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
@@ -320,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -349,10 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="faqs/rfcs.html">RFCs and drafts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Other Documentation &amp; Resources</a></li>
@@ -365,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -379,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -410,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -491,66 +489,66 @@
             
   <div class="section" id="building-cyrus-sasl-on-windows">
 <span id="install-windows"></span><h1>Building Cyrus SASL on Windows<a class="headerlink" href="#building-cyrus-sasl-on-windows" title="Permalink to this headline">¶</a></h1>
-<p>Note, that Cyrus SASL on Windows is still largely a &#8220;work in progress&#8221;.
+<p>Note, that Cyrus SASL on Windows is still largely a “work in progress”.
 So far only the main library, plugins (SASLDB using SleepyCat, no MySQL)
 and several applications (see the list below) can be built. In particular,
-saslauthd doesn&#8217;t compile on Windows.</p>
+saslauthd doesn’t compile on Windows.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Visual Studio.</dt>
-<dd>We have tested Visual Studio 6 and Visual Studio 7 (.NET).
+<dl class="simple">
+<dt>Visual Studio.</dt><dd><p>We have tested Visual Studio 6 and Visual Studio 7 (.NET).
 By default we are using Visual Studio 7 (both 2002 and 2003 versions were tested). If you want to use Visual Studio 6,
-you need to remove the leading # character from the line containing <code class="docutils literal"><span class="pre">#VCVER=6</span></code> in win32/common.mak.</dd>
-<dt>The latest Platform SDK.</dt>
-<dd>We are currently using March 2006. (The earliest tested version was November 2001.)</dd>
-<dt>SleepyCat</dt>
-<dd>SleepyCat&#8217;s include files and libraries are required to buil SASLDB plugin,
-saslpasswd2.exe and sasldblistusers2.exe. We have tested SleepyCat 4.1.X-4.4.X.</dd>
+you need to remove the leading # character from the line containing <code class="docutils literal notranslate"><span class="pre">#VCVER=6</span></code> in win32/common.mak.</p>
+</dd>
+<dt>The latest Platform SDK.</dt><dd><p>We are currently using March 2006. (The earliest tested version was November 2001.)</p>
+</dd>
+<dt>SleepyCat</dt><dd><p>SleepyCat’s include files and libraries are required to buil SASLDB plugin,
+saslpasswd2.exe and sasldblistusers2.exe. We have tested SleepyCat 4.1.X-4.4.X.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="step-by-step">
 <h2>Step by step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h2>
-<p>These directions assume that you&#8217;ve untarred the library or used GIT
-and the sources are in <code class="docutils literal"><span class="pre">C:\SASL</span></code>.</p>
+<p>These directions assume that you’ve untarred the library or used GIT
+and the sources are in <code class="docutils literal notranslate"><span class="pre">C:\SASL</span></code>.</p>
 <div class="section" id="preparing-to-build-git-only">
 <h3>Preparing to build (GIT only!)<a class="headerlink" href="#preparing-to-build-git-only" title="Permalink to this headline">¶</a></h3>
 <p>Create the dynamic loading stubs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cd</span> <span class="n">win32</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cd</span> <span class="n">win32</span>
 <span class="o">%</span> <span class="n">PowerShell</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-</span><span class="n">File</span> <span class="n">makeinit</span><span class="o">.</span><span class="n">ps1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="building-using-nmake">
 <h3>Building using NMake<a class="headerlink" href="#building-using-nmake" title="Permalink to this headline">¶</a></h3>
-<p>Open a &#8220;Windows 2000 build environment&#8221; from the SDK&#8217;s Start Menu and
-use <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span></code> to build.</p>
-<p>To build a debug version, use <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
-<span class="pre">CFG=Debug</span></code>. For a production version, <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
-<span class="pre">CFG=Release</span></code>. If you don&#8217;t specify CFG parameter, production
+<p>Open a “Windows 2000 build environment” from the SDK’s Start Menu and
+use <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span></code> to build.</p>
+<p>To build a debug version, use <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
+<span class="pre">CFG=Debug</span></code>. For a production version, <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
+<span class="pre">CFG=Release</span></code>. If you don’t specify CFG parameter, production
 version will be built by default.</p>
 <p>As Windows build requires SleepyCat, there are additional options
 that have to be provided to NMake on the command line.
-If SleepyCat sources are located in <code class="docutils literal"><span class="pre">c:\packages\db\4.1.24</span></code>
-and built library in <code class="docutils literal"><span class="pre">c:\packages\db\4.1.24\build_win32\Release_static</span></code>,
+If SleepyCat sources are located in <code class="docutils literal notranslate"><span class="pre">c:\packages\db\4.1.24</span></code>
+and built library in <code class="docutils literal notranslate"><span class="pre">c:\packages\db\4.1.24\build_win32\Release_static</span></code>,
 you should add something like
-<code class="docutils literal"><span class="pre">DB_INCLUDE=c:\packages\db\4.1.24\build_win32</span></code>
-and <code class="docutils literal"><span class="pre">DB_LIBPATH=c:\packages\db\4.1.24\build_win32\Release_static</span></code>.</p>
-<p>Also note, that the <code class="docutils literal"><span class="pre">DB_LIB</span></code> defines the name of the SleepyCat library
+<code class="docutils literal notranslate"><span class="pre">DB_INCLUDE=c:\packages\db\4.1.24\build_win32</span></code>
+and <code class="docutils literal notranslate"><span class="pre">DB_LIBPATH=c:\packages\db\4.1.24\build_win32\Release_static</span></code>.</p>
+<p>Also note, that the <code class="docutils literal notranslate"><span class="pre">DB_LIB</span></code> defines the name of the SleepyCat library
 to link against. It defaults to libdb41s.lib.</p>
-<p>If you don&#8217;t pass the parameters described above, NMake will pick the
+<p>If you don’t pass the parameters described above, NMake will pick the
 defaults, which is probably not what you want.</p>
-<p>Another option of interest is <code class="docutils literal"><span class="pre">STATIC</span></code>.
+<p>Another option of interest is <code class="docutils literal notranslate"><span class="pre">STATIC</span></code>.
 It specifies which version of the standard C library
-to use. The default is &#8220;no&#8221;, meaning that the standard C library
+to use. The default is “no”, meaning that the standard C library
 from the MSVCRT.DLL will be used.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Targeting</span> <span class="n">Windows</span> <span class="mi">2000</span> <span class="ow">and</span> <span class="n">IE</span> <span class="mf">5.0</span> <span class="n">RETAIL</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Targeting</span> <span class="n">Windows</span> <span class="mi">2000</span> <span class="ow">and</span> <span class="n">IE</span> <span class="mf">5.0</span> <span class="n">RETAIL</span>
 
 <span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Microsoft</span> <span class="n">SDK</span><span class="o">&gt;</span> <span class="n">cd</span> \<span class="n">sasl</span>
 
-<span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">DB_INCLUDE</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1</span><span class="o">.</span><span class="mi">24</span>\<span class="n">build_win32</span>
-<span class="n">DB_LIBPATH</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1</span><span class="o">.</span><span class="mi">24</span>\<span class="n">build_win32</span>\<span class="n">Release_static</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">DB_INCLUDE</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1.24</span>\<span class="n">build_win32</span>
+<span class="n">DB_LIBPATH</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1.24</span>\<span class="n">build_win32</span>\<span class="n">Release_static</span>
 
 <span class="n">No</span> <span class="n">configuration</span> <span class="n">specified</span><span class="o">.</span> <span class="n">Defaulting</span> <span class="n">to</span> <span class="n">Release</span><span class="o">.</span>
 <span class="n">Using</span> <span class="n">MSVCRT</span><span class="o">.</span><span class="n">dll</span> <span class="k">as</span> <span class="n">C</span> <span class="n">library</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
@@ -558,15 +556,15 @@ from the MSVCRT.DLL will be used.</p>
 <span class="n">Codegeneration</span> <span class="n">defaulting</span> <span class="n">to</span> <span class="o">/</span><span class="n">MD</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>SASL NTMakefile also understands &#8220;clean&#8221; target that you can use to clean all files generated by the compiler.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">clean</span>
+<p>SASL NTMakefile also understands “clean” target that you can use to clean all files generated by the compiler.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">clean</span>
 
-<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00</span><span class="o">.</span><span class="mi">9466</span>
+<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00.9466</span>
 <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="o">.</span>  <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
 
         <span class="n">cd</span> <span class="n">lib</span> <span class="o">&amp;&amp;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span>                    <span class="n">clean</span>
 
-<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00</span><span class="o">.</span><span class="mi">9466</span>
+<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00.9466</span>
 <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="o">.</span>  <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
 
 <span class="n">No</span> <span class="n">configuration</span> <span class="n">specified</span><span class="o">.</span> <span class="n">Defaulting</span> <span class="n">to</span> <span class="n">Release</span><span class="o">.</span>
@@ -579,53 +577,53 @@ from the MSVCRT.DLL will be used.</p>
 </div>
 <div class="section" id="building-additional-plugins">
 <h3>Building additional plugins<a class="headerlink" href="#building-additional-plugins" title="Permalink to this headline">¶</a></h3>
-<p>Specify &#8220;GSSAPI=&lt;type&gt;&#8221; parameter if you want to enable GSSAPI plugin.
+<p>Specify “GSSAPI=&lt;type&gt;” parameter if you want to enable GSSAPI plugin.
 Currently only &lt;type&gt;=CyberSafe is supported and this will build the plugin
 that links against CyberSafe Kerberos.</p>
-<p>GSSAPI depends on <code class="docutils literal"><span class="pre">GSSAPI_INCLUDE</span></code> and <code class="docutils literal"><span class="pre">GSSAPI_LIBPATH</span></code> parameters.
+<p>GSSAPI depends on <code class="docutils literal notranslate"><span class="pre">GSSAPI_INCLUDE</span></code> and <code class="docutils literal notranslate"><span class="pre">GSSAPI_LIBPATH</span></code> parameters.
 You can either specify them on the command line or edit the defaults in win32common.mak</p>
-<p>Specify &#8220;SQL=&lt;type&gt;&#8221; parameter if you want to enable SQL plugin.
+<p>Specify “SQL=&lt;type&gt;” parameter if you want to enable SQL plugin.
 Currently only &lt;type&gt;=SQLITE is supported and this will build the plugin
 that links against SQLITE (www.sqlite.org).</p>
-<p>SQL=&lt;SQLITE&gt; depends on <code class="docutils literal"><span class="pre">SQLITE_INCLUDES</span></code> and <code class="docutils literal"><span class="pre">SQLITE_LIBPATH</span></code> parameters.
+<p>SQL=&lt;SQLITE&gt; depends on <code class="docutils literal notranslate"><span class="pre">SQLITE_INCLUDES</span></code> and <code class="docutils literal notranslate"><span class="pre">SQLITE_LIBPATH</span></code> parameters.
 You can either specify them on the command line or edit the defaults in win32common.mak</p>
-<p>Specify &#8220;SRP=1&#8221; parameter if you want to enable SRP plugin.
-You can also specify &#8220;DO_SRP_SETPASS=1&#8221; if you want to enable SRP setpass functionality.</p>
-<p>Specify &#8220;OTP=1&#8221; parameter if you want to enable OTP plugin.</p>
+<p>Specify “SRP=1” parameter if you want to enable SRP plugin.
+You can also specify “DO_SRP_SETPASS=1” if you want to enable SRP setpass functionality.</p>
+<p>Specify “OTP=1” parameter if you want to enable OTP plugin.</p>
 <p>The SRP and OTP plugins depend on OpenSSL. You can either specify
-<code class="docutils literal"><span class="pre">OPENSSL_INCLUDE</span></code> and <code class="docutils literal"><span class="pre">OPENSSL_LIBPATH</span></code> parameters on the command
+<code class="docutils literal notranslate"><span class="pre">OPENSSL_INCLUDE</span></code> and <code class="docutils literal notranslate"><span class="pre">OPENSSL_LIBPATH</span></code> parameters on the command
 line or edit the defaults in win32common.mak
 Note, that unless you are building one of those plugins, OpenSSL is not required!</p>
 <p>If you want to build multiple additional plugins at once, you can specify
-multiple parameters described above, for example <code class="docutils literal"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">SRP=1</span> <span class="pre">OPT=1</span></code></p>
+multiple parameters described above, for example <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">SRP=1</span> <span class="pre">OPT=1</span></code></p>
 </div>
 <div class="section" id="limitations">
 <h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
 <p>Currently all plugins except PASSDSS (passdss.c) can be built on Windows.
 However limited testings was done for some plugins as listed below:</p>
 <ul class="simple">
-<li>GSSAPI - tested using CyberSafe,</li>
-<li>SASLDB - only SleepyCat version can be built,</li>
-<li>SQL - using SQLITE, not tested</li>
+<li><p>GSSAPI - tested using CyberSafe,</p></li>
+<li><p>SASLDB - only SleepyCat version can be built,</p></li>
+<li><p>SQL - using SQLITE, not tested</p></li>
 </ul>
 <p>The following executables were built and tested (to some extent):</p>
 <ul>
-<li><p class="first">sample</p>
+<li><p>sample</p>
 <blockquote>
 <div><ul class="simple">
-<li>sample-client</li>
-<li>sample-server</li>
+<li><p>sample-client</p></li>
+<li><p>sample-server</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">utils</p>
+<li><p>utils</p>
 <blockquote>
 <div><ul class="simple">
-<li>sasldblistusers2</li>
-<li>saslpasswd2</li>
-<li>testsuite</li>
-<li>pluginviewer</li>
-<li>Note that saslauthd is <em>NOT</em> in this list.</li>
+<li><p>sasldblistusers2</p></li>
+<li><p>saslpasswd2</p></li>
+<li><p>testsuite</p></li>
+<li><p>pluginviewer</p></li>
+<li><p>Note that saslauthd is <em>NOT</em> in this list.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -655,7 +653,7 @@ However limited testings was done for some plugins as listed below:</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -682,7 +680,6 @@ However limited testings was done for some plugins as listed below:</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

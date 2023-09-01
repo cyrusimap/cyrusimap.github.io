@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -805,12 +807,12 @@ ensure messages remain available for inclusion in the next backup cycle.</p>
 <div class="section" id="configuring-cyrus-imap-for-delayed-expunge">
 <h2>Configuring Cyrus IMAP for Delayed Expunge<a class="headerlink" href="#configuring-cyrus-imap-for-delayed-expunge" title="Permalink to this headline">¶</a></h2>
 <p>To enable or disable Delayed Expunge, please check the following
-settings in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+settings in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <blockquote>
 <div><blockquote>
-<div><p><code class="docutils literal"><span class="pre">expunge_mode:</span></code> delayed</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">expunge_mode:</span></code> delayed</p>
 <blockquote>
-<div>The mode in which messages (and their corresponding cache entries)
+<div><p>The mode in which messages (and their corresponding cache entries)
 are expunged.  &quot;semidelayed&quot; mode is the old behavior in which the
 message files are purged at the time of the EXPUNGE, but index
 and cache records are retained to facilitate QRESYNC.
@@ -825,15 +827,16 @@ will clean out the retained records (and possibly message files).
 This reduces the amount of I/O that takes place at the time of
 EXPUNGE and should result in greater responsiveness for the client,
 especially when expunging a large number of messages.
-Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></div></blockquote>
+Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></p>
+</div></blockquote>
 </div></blockquote>
 </div></blockquote>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<ul class="last simple">
-<li><a class="reference internal" href="../../reference/manpages/systemcommands/unexpunge.html#imap-reference-manpages-systemcommands-unexpunge"><span class="std std-ref">unexpunge</span></a></li>
-<li><a class="reference internal" href="delayed-delete.html#imap-features-delayed-delete"><span class="std std-ref">Delayed Delete</span></a></li>
-<li><a class="reference internal" href="../../reference/faqs/o-deleted-expired-expunged-purged.html#imap-admin-deleted-expired-expunged-purged"><span class="std std-ref">When is What ... Deleted, Expired, Expunged or Purged?</span></a></li>
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../reference/manpages/systemcommands/unexpunge.html#imap-reference-manpages-systemcommands-unexpunge"><span class="std std-ref">unexpunge</span></a></p></li>
+<li><p><a class="reference internal" href="delayed-delete.html#imap-features-delayed-delete"><span class="std std-ref">Delayed Delete</span></a></p></li>
+<li><p><a class="reference internal" href="../../reference/faqs/o-deleted-expired-expunged-purged.html#imap-admin-deleted-expired-expunged-purged"><span class="std std-ref">When is What ... Deleted, Expired, Expunged or Purged?</span></a></p></li>
 </ul>
 </div>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">Features</span></a></p>
@@ -861,7 +864,7 @@ Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></div>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -887,7 +890,6 @@ Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></div>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

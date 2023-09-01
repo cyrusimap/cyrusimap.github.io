@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -789,9 +791,7 @@
 <p>Scan for viruses using configured virus scanner or manage infected messages using search criteria.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cyr_virusscan</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>imap-search-string</em> ] [ <strong>-r</strong> [ <strong>-n</strong>] ] [<strong>-v</strong>] [ <em>mboxpattern1</em> ... ]
-</pre>
+<pre class="literal-block"><strong>cyr_virusscan</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>imap-search-string</em> ] [ <strong>-r</strong> [ <strong>-n</strong>] ] [<strong>-v</strong>] [ <em>mboxpattern1</em> ... ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -812,43 +812,43 @@ This flag only works in combination with <strong>-r</strong>.  The notification 
 can by customised by template, for details see <a class="reference internal" href="#notifications">Notifications</a> below.</p>
 <p><strong>cyr_virusscan</strong> can be configured to run periodically by cron(8)
 via crontab(5) or your preferred method (i.e. /etc/cron.hourly), or by
-<a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a> via the EVENTS{} section in
-<a class="reference internal" href="../configs/cyrus.conf.html#std:cyrusman-cyrus.conf(5)">cyrus.conf(5)</a>.</p>
-<p><strong>cyr_virusscan</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a> via the EVENTS{} section in
+<a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
+<p><strong>cyr_virusscan</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p>Note that Cyrus does not ship with any virus scanners: you need to install
 one separately to make use of it with Cyrus.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cyr_virusscan-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-cyr_virusscan-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-cyr-virusscan-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_virusscan-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cyr_virusscan-n">
-<span id="cmdoption-cyr_virusscan--notify"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--notify</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr-virusscan-n"></span><span id="cmdoption-cyr_virusscan-notify"></span><span id="cmdoption-cyr-virusscan-notify"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--notify</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify mailbox owner of deleted messages via email.  This flag is
 only operable in combination with <strong>-r</strong>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cyr_virusscan-r">
-<span id="cmdoption-cyr_virusscan--remove-infected"></span><code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--remove-infected</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr-virusscan-r"></span><span id="cmdoption-cyr_virusscan-remove-infected"></span><span id="cmdoption-cyr-virusscan-remove-infected"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--remove-infected</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove infected messages.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cyr_virusscan-s">
-<span id="cmdoption-cyr_virusscan--search"></span><code class="descname">-s</code><code class="descclassname"> imap-search-string</code><code class="descclassname">, </code><code class="descname">--search</code><code class="descclassname">=imap-search-string</code><a class="headerlink" href="#cmdoption-cyr_virusscan-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr-virusscan-s"></span><span id="cmdoption-cyr_virusscan-search"></span><span id="cmdoption-cyr-virusscan-search"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"> <span class="pre">imap-search-string</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--search</span></code><code class="sig-prename descclassname"><span class="pre">=imap-search-string</span></code><a class="headerlink" href="#cmdoption-cyr_virusscan-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rather than scanning for viruses, messages matching the search
 criteria will be treated as infected.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-cyr_virusscan-v">
-<span id="cmdoption-cyr_virusscan--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-cyr-virusscan-v"></span><span id="cmdoption-cyr_virusscan-verbose"></span><span id="cmdoption-cyr-virusscan-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produce more verbose output</p>
 </dd></dl>
 
@@ -860,10 +860,10 @@ when infected messages are removed.  One notification is sent per owner,
 containing a digest of each message that was deleted from any of their
 mailboxes.</p>
 <p>The default notification subject is &quot;Automatically deleted mail&quot;, which
-can be overridden by setting <code class="docutils literal"><span class="pre">virusscan_notification_subject</span></code> in
-<a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to a UTF-8 value.</p>
+can be overridden by setting <code class="docutils literal notranslate"><span class="pre">virusscan_notification_subject</span></code> in
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to a UTF-8 value.</p>
 <p>Each infected message will be described according to the following template:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>The following message was deleted from mailbox &#39;%MAILBOX%&#39;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The following message was deleted from mailbox &#39;%MAILBOX%&#39;
 because it was infected with virus &#39;%VIRUS%&#39;
 
     Message-ID: %MSG_ID%
@@ -875,7 +875,7 @@ because it was infected with virus &#39;%VIRUS%&#39;
 </div>
 <p>To use a custom template, create a UTF-8 file containing your desired text
 and using the same %-delimited substitutions as above, and set the
-<code class="docutils literal"><span class="pre">virusscan_notification_template</span></code> option in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> to
+<code class="docutils literal notranslate"><span class="pre">virusscan_notification_template</span></code> option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to
 its path.</p>
 <p>The notification message will be properly MIME-encoded at delivery. Do not
 pre-encode the template file or the subject!</p>
@@ -888,13 +888,12 @@ deleting messages without notifying.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>cyr_virusscan</strong>
-</pre>
+<pre class="literal-block"><strong>cyr_virusscan</strong></pre>
 <blockquote>
-<div>Scan all mailboxes, printing report on the screen.  Do not
-remove infected messages.</div></blockquote>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Using ClamAV virus scanner
+<div><p>Scan all mailboxes, printing report on the screen.  Do not
+remove infected messages.</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Using ClamAV virus scanner
 Loaded 5789330 virus signatures.
 
 Mailbox Name                                       Msg UID      Status  Virus Name
@@ -909,20 +908,20 @@ Mailbox Name                                       Msg UID      Status  Virus Na
 user.bovik                                           17426        READ  Email.Trojan.Trojan-1051
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>cyr_virusscan</strong> -r -n user/bovik
-</pre>
+<pre class="literal-block"><strong>cyr_virusscan</strong> -r -n user/bovik</pre>
 <blockquote>
-<div>Scan mailbox <em>user/bovik</em>, removing infected messages and append
-notifications to Bovik's inbox.</div></blockquote>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Mailbox Name                                       Msg UID      Status  Virus Name
+<div><p>Scan mailbox <em>user/bovik</em>, removing infected messages and append
+notifications to Bovik's inbox.</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mailbox Name                                       Msg UID      Status  Virus Name
 ----------------------------------------        ----------      ------  --------------------------------------------------
 user.bovik                                         17426          READ  Email.Trojan.Trojan-1051
 </pre></div>
 </div>
 <blockquote>
-<div>A message like this would end up in bovik's inbox:</div></blockquote>
-<div class="highlight-none"><div class="highlight"><pre><span></span>The following message was deleted from mailbox &#39;INBOX&#39;
+<div><p>A message like this would end up in bovik's inbox:</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The following message was deleted from mailbox &#39;INBOX&#39;
 because it was infected with virus &#39;Email.Trojan.Trojan-1051&#39;
 
     Message-ID: &lt;201308131519.r7DFJM9K083763@tselina.kiev.ua&gt;
@@ -932,14 +931,13 @@ because it was infected with virus &#39;Email.Trojan.Trojan-1051&#39;
     IMAP UID: 17426
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>cyr_virusscan</strong> -r -n -s 'SUBJECT &quot;Fedex&quot;' user/bovik
-</pre>
+<pre class="literal-block"><strong>cyr_virusscan</strong> -r -n -s 'SUBJECT &quot;Fedex&quot;' user/bovik</pre>
 <blockquote>
-<div>Search mailbox user/bovik for messages which have Fedex in the
+<div><p>Search mailbox user/bovik for messages which have Fedex in the
 subject line, removing them all, and appending notifications to
-Bovik's inbox.</div></blockquote>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Mailbox Name                                       Msg UID      Status  Virus Name
+Bovik's inbox.</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mailbox Name                                       Msg UID      Status  Virus Name
 ----------------------------------------        ----------      ------  --------------------------------------------------
 user.bovik                                         17185          READ  Cyrus Administrator Targeted Removal (Phish, etc.)
 user.bovik                                         17203          READ  Cyrus Administrator Targeted Removal (Phish, etc.)
@@ -960,7 +958,7 @@ user.bovik                                         19268          READ  Cyrus Ad
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a>, <a class="reference external" href="https://www.clamav.net/documents/installing-clamav">ClamAV</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a>, <a class="reference external" href="https://www.clamav.net/documents/installing-clamav">ClamAV</a></p>
 </div>
 </div>
 
@@ -985,7 +983,7 @@ user.bovik                                         19268          READ  Cyrus Ad
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1011,7 +1009,6 @@ user.bovik                                         19268          READ  Cyrus Ad
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

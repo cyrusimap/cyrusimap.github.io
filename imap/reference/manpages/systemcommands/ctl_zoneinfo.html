@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,53 +786,51 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-ctl_zoneinfo(8)"></span><div class="section" id="ctl-zoneinfo">
+  <span class="target" id="std-cyrusman-ctl_zoneinfo-8"><span id="std:cyrusman-ctl_zoneinfo(8)"></span></span><div class="section" id="ctl-zoneinfo">
 <span id="imap-reference-manpages-systemcommands-ctl-zoneinfo"></span><h1><strong>ctl_zoneinfo</strong><a class="headerlink" href="#ctl-zoneinfo" title="Permalink to this headline">¶</a></h1>
 <p>perform operations on the zoneinfo database</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>ctl_zoneinfo</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-r</strong> <em>version-string</em>
+<pre class="literal-block"><strong>ctl_zoneinfo</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-r</strong> <em>version-string</em>
 
-<strong>ctl_zoneinfo</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-w</strong> <em>file</em>
-</pre>
+<strong>ctl_zoneinfo</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-w</strong> <em>file</em></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>ctl_zoneinfo</strong> is used to perform various administrative operations on
 the zoneinfo database.</p>
-<p><strong>ctl_zoneinfo</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>ctl_zoneinfo</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-**ctl_zoneinfo**-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-**ctl_zoneinfo**-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<dl class="std option">
+<dt id="cmdoption-ctl_zoneinfo-C">
+<span id="cmdoption-ctl-zoneinfo-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-**ctl_zoneinfo**-v">
-<span id="cmdoption-**ctl_zoneinfo**--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-**ctl_zoneinfo**-v" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ctl_zoneinfo-v">
+<span id="cmdoption-ctl-zoneinfo-v"></span><span id="cmdoption-ctl_zoneinfo-verbose"></span><span id="cmdoption-ctl-zoneinfo-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-**ctl_zoneinfo**-r">
-<span id="cmdoption-**ctl_zoneinfo**--rebuild"></span><code class="descname">-r</code><code class="descclassname"> version-string</code><code class="descclassname">, </code><code class="descname">--rebuild</code><code class="descclassname">=version-string</code><a class="headerlink" href="#cmdoption-**ctl_zoneinfo**-r" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ctl_zoneinfo-r">
+<span id="cmdoption-ctl-zoneinfo-r"></span><span id="cmdoption-ctl_zoneinfo-rebuild"></span><span id="cmdoption-ctl-zoneinfo-rebuild"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">version-string</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--rebuild</span></code><code class="sig-prename descclassname"><span class="pre">=version-string</span></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rebuild the zoneinfo database based on the directory structure of
 <em>configdirectory</em>/<strong>zoneinfo</strong>.  The database to be rebuilt will be
 in the default location of <em>configdirectory</em>/<strong>zoneinfo.db</strong> unless
 otherwise specified by the <em>zoneinfo_db_path</em> option in
-<a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.  The <em>version-string</em> should describe the
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.  The <em>version-string</em> should describe the
 source of the timezone data (e.g. &quot;Olson:2020a&quot;) and will be used
 by the <em>tzdist</em> module of <em class="manpage">httpd(8)</em>.  The <em>version-string</em>
 must contain a colon between the description and the version.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-**ctl_zoneinfo**-w">
-<span id="cmdoption-**ctl_zoneinfo**--windows-zone-xml"></span><code class="descname">-w</code><code class="descclassname"> file</code><code class="descclassname">, </code><code class="descname">--windows-zone-xml</code><code class="descclassname">=file</code><a class="headerlink" href="#cmdoption-**ctl_zoneinfo**-w" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ctl_zoneinfo-w">
+<span id="cmdoption-ctl-zoneinfo-w"></span><span id="cmdoption-ctl_zoneinfo-windows-zone-xml"></span><span id="cmdoption-ctl-zoneinfo-windows-zone-xml"></span><code class="sig-name descname"><span class="pre">-w</span></code><code class="sig-prename descclassname"> <span class="pre">file</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--windows-zone-xml</span></code><code class="sig-prename descclassname"><span class="pre">=file</span></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads Windows Zone XML file.</p>
 </dd></dl>
 
@@ -850,7 +850,7 @@ must contain a colon between the description and the version.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, <em class="manpage">httpd(8)</em>, <a class="reference internal" href="master.html#std:cyrusman-master(8)">master(8)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <em class="manpage">httpd(8)</em>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
 </div>
 </div>
 
@@ -875,7 +875,7 @@ must contain a colon between the description and the version.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -901,7 +901,6 @@ must contain a colon between the description and the version.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

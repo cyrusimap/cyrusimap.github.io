@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -490,10 +486,10 @@
           <div role="main" class="document">
             
   <div class="section" id="sasl-callbacks-how-to-work-with-sasl-callbacks">
-<span id="sasl-reference-manpages-library-sasl-callbacks"></span><span id="std:saslman-sasl_callbacks(3)"></span><h1><strong>sasl_callbacks</strong> - How to work with SASL callbacks<a class="headerlink" href="#sasl-callbacks-how-to-work-with-sasl-callbacks" title="Permalink to this headline">¶</a></h1>
+<span id="sasl-reference-manpages-library-sasl-callbacks"></span><span id="std-saslman-sasl_callbacks-3"></span><span id="std:saslman-sasl_callbacks(3)"></span><h1><strong>sasl_callbacks</strong> - How to work with SASL callbacks<a class="headerlink" href="#sasl-callbacks-how-to-work-with-sasl-callbacks" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -503,8 +499,8 @@
 information from the application. Common reasons are  getting
 for  getting  usernames and passwords. A client MUST
 specify   what   callbacks    they    support    in    the
-<a class="reference internal" href="sasl_client_init.html#std:saslman-sasl_client_init(3)">sasl_client_init(3)</a>/<a class="reference internal" href="sasl_server_init.html#std:saslman-sasl_server_init(3)">sasl_server_init(3)</a>
-or   <a class="reference internal" href="sasl_client_new.html#std:saslman-sasl_client_new(3)">sasl_client_new(3)</a>/<a class="reference internal" href="sasl_server_new.html#std:saslman-sasl_server_new(3)">sasl_server_new(3)</a>
+<a class="reference internal" href="sasl_client_init.html#std-saslman-sasl_client_init-3">sasl_client_init(3)</a>/<a class="reference internal" href="sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>
+or   <a class="reference internal" href="sasl_client_new.html#std-saslman-sasl_client_new-3">sasl_client_new(3)</a>/<a class="reference internal" href="sasl_server_new.html#std-saslman-sasl_server_new-3">sasl_server_new(3)</a>
 calls. If an authentication  mechanism  needs  a  callback
 that  the application does not state it supports it cannot
 be used.</p>
@@ -513,55 +509,55 @@ to make sure you are giving the appropriate value.</p>
 <p>If  an application is using the client side of the library
 functions to  handle  the  callbacks  are  not  necessary.
 Instead  the  application  may  deal  with  callbacks  via
-SASL_INTERACT&#8217;s.  See  <a class="reference internal" href="sasl_client_start.html#std:saslman-sasl_client_start(3)">sasl_client_start(3)</a>/<a class="reference internal" href="sasl_client_step.html#std:saslman-sasl_client_step(3)">sasl_client_step(3)</a>  for  more
+SASL_INTERACT’s.  See  <a class="reference internal" href="sasl_client_start.html#std-saslman-sasl_client_start-3">sasl_client_start(3)</a>/<a class="reference internal" href="sasl_client_step.html#std-saslman-sasl_client_step-3">sasl_client_step(3)</a>  for  more
 information.</p>
 <div class="section" id="common-callbacks">
 <h3>Common Callbacks<a class="headerlink" href="#common-callbacks" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>sasl_getopt_t</dt>
-<dd>Get an option value</dd>
-<dt>sasl_log_t</dt>
-<dd>Log message handler</dd>
-<dt>sasl_getpath_t</dt>
-<dd>Get  path  to search for plugins (e.g. SASL mechanisms)</dd>
-<dt>sasl_verifyfile_t</dt>
-<dd>Verify files for use by SASL</dd>
-<dt><a class="reference internal" href="sasl_canon_user_t.html#std:saslman-sasl_canon_user_t(3)">sasl_canon_user_t(3)</a></dt>
-<dd>Username canonicalization function</dd>
+<dl class="simple">
+<dt>sasl_getopt_t</dt><dd><p>Get an option value</p>
+</dd>
+<dt>sasl_log_t</dt><dd><p>Log message handler</p>
+</dd>
+<dt>sasl_getpath_t</dt><dd><p>Get  path  to search for plugins (e.g. SASL mechanisms)</p>
+</dd>
+<dt>sasl_verifyfile_t</dt><dd><p>Verify files for use by SASL</p>
+</dd>
+<dt><a class="reference internal" href="sasl_canon_user_t.html#std-saslman-sasl_canon_user_t-3">sasl_canon_user_t(3)</a></dt><dd><p>Username canonicalization function</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="client-only-callbacks">
 <h3>Client-only Callbacks<a class="headerlink" href="#client-only-callbacks" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>sasl_getsimple_t</dt>
-<dd>Get user/language list</dd>
-<dt>sasl_getsecret_t</dt>
-<dd>Get authentication secret</dd>
-<dt><a class="reference internal" href="sasl_chalprompt_t.html#std:saslman-sasl_chalprompt_t(3)">sasl_chalprompt_t(3)</a></dt>
-<dd>Display challenge and prompt for response</dd>
-<dt>sasl_getrealm_t</dt>
-<dd>Get the realm for authentication</dd>
+<dl class="simple">
+<dt>sasl_getsimple_t</dt><dd><p>Get user/language list</p>
+</dd>
+<dt>sasl_getsecret_t</dt><dd><p>Get authentication secret</p>
+</dd>
+<dt><a class="reference internal" href="sasl_chalprompt_t.html#std-saslman-sasl_chalprompt_t-3">sasl_chalprompt_t(3)</a></dt><dd><p>Display challenge and prompt for response</p>
+</dd>
+<dt>sasl_getrealm_t</dt><dd><p>Get the realm for authentication</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="server-only-callbacks">
 <h3>Server-only Callbacks<a class="headerlink" href="#server-only-callbacks" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt><a class="reference internal" href="sasl_authorize_t.html#std:saslman-sasl_authorize_t(3)">sasl_authorize_t(3)</a></dt>
-<dd>Authorize policy callback</dd>
-<dt>sasl_server_userdb_checkpass_t</dt>
-<dd>verify plaintext password</dd>
-<dt>sasl_server_userdb_setpass_t</dt>
-<dd>set plaintext password</dd>
-<dt>sasl_getconfpath_t</dt>
-<dd>Get path to search  for  SASL  configuration  file
-(server side only). New in SASL 2.1.22.</dd>
+<dl class="simple">
+<dt><a class="reference internal" href="sasl_authorize_t.html#std-saslman-sasl_authorize_t-3">sasl_authorize_t(3)</a></dt><dd><p>Authorize policy callback</p>
+</dd>
+<dt>sasl_server_userdb_checkpass_t</dt><dd><p>verify plaintext password</p>
+</dd>
+<dt>sasl_server_userdb_setpass_t</dt><dd><p>set plaintext password</p>
+</dd>
+<dt>sasl_getconfpath_t</dt><dd><p>Get path to search  for  SASL  configuration  file
+(server side only). New in SASL 2.1.22.</p>
+</dd>
 </dl>
 </div>
 </div>
 <div class="section" id="return-value">
 <h2>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
-See <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a> for a complete list.  <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal"><span class="pre">SASL_OK</span></code></a>  typically  indicates success.</p>
+See <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a> for a complete list.  <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a>  typically  indicates success.</p>
 </div>
 <div class="section" id="conforming-to">
 <h2>Conforming to<a class="headerlink" href="#conforming-to" title="Permalink to this headline">¶</a></h2>
@@ -569,13 +565,13 @@ See <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="sasl.html#std:saslman-sasl(3)">sasl(3)</a>, <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors(3)">sasl_errors(3)</a>, <a class="reference internal" href="sasl_authorize_t.html#std:saslman-sasl_authorize_t(3)">sasl_authorize_t(3)</a>,
-<a class="reference internal" href="sasl_log_t.html#std:saslman-sasl_log_t(3)">sasl_log_t(3)</a>, <a class="reference internal" href="sasl_getpath_t.html#std:saslman-sasl_getpath_t(3)">sasl_getpath_t(3)</a>,
-<a class="reference internal" href="sasl_getconfpath_t.html#std:saslman-sasl_getconfpath_t(3)">sasl_getconfpath_t(3)</a>, <a class="reference internal" href="sasl_verifyfile_t.html#std:saslman-sasl_verifyfile_t(3)">sasl_verifyfile_t(3)</a>,
-<a class="reference internal" href="sasl_canon_user_t.html#std:saslman-sasl_canon_user_t(3)">sasl_canon_user_t(3)</a>,  <a class="reference internal" href="sasl_getsimple_t.html#std:saslman-sasl_getsimple_t(3)">sasl_getsimple_t(3)</a>,
-<a class="reference internal" href="sasl_getsecret_t.html#std:saslman-sasl_getsecret_t(3)">sasl_getsecret_t(3)</a>, <a class="reference internal" href="sasl_chalprompt_t.html#std:saslman-sasl_chalprompt_t(3)">sasl_chalprompt_t(3)</a>,
-<a class="reference internal" href="sasl_getrealm_t.html#std:saslman-sasl_getrealm_t(3)">sasl_getrealm_t(3)</a>, <a class="reference internal" href="sasl_server_userdb_checkpass_t.html#std:saslman-sasl_server_userdb_checkpass_t(3)">sasl_server_userdb_checkpass_t(3)</a>,
-<a class="reference internal" href="sasl_server_userdb_setpass_t.html#std:saslman-sasl_server_userdb_setpass_t(3)">sasl_server_userdb_setpass_t(3)</a></p>
+<p><a class="reference internal" href="sasl.html#std-saslman-sasl-3">sasl(3)</a>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>, <a class="reference internal" href="sasl_authorize_t.html#std-saslman-sasl_authorize_t-3">sasl_authorize_t(3)</a>,
+<a class="reference internal" href="sasl_log_t.html#std-saslman-sasl_log_t-3">sasl_log_t(3)</a>, <a class="reference internal" href="sasl_getpath_t.html#std-saslman-sasl_getpath_t-3">sasl_getpath_t(3)</a>,
+<a class="reference internal" href="sasl_getconfpath_t.html#std-saslman-sasl_getconfpath_t-3">sasl_getconfpath_t(3)</a>, <a class="reference internal" href="sasl_verifyfile_t.html#std-saslman-sasl_verifyfile_t-3">sasl_verifyfile_t(3)</a>,
+<a class="reference internal" href="sasl_canon_user_t.html#std-saslman-sasl_canon_user_t-3">sasl_canon_user_t(3)</a>,  <a class="reference internal" href="sasl_getsimple_t.html#std-saslman-sasl_getsimple_t-3">sasl_getsimple_t(3)</a>,
+<a class="reference internal" href="sasl_getsecret_t.html#std-saslman-sasl_getsecret_t-3">sasl_getsecret_t(3)</a>, <a class="reference internal" href="sasl_chalprompt_t.html#std-saslman-sasl_chalprompt_t-3">sasl_chalprompt_t(3)</a>,
+<a class="reference internal" href="sasl_getrealm_t.html#std-saslman-sasl_getrealm_t-3">sasl_getrealm_t(3)</a>, <a class="reference internal" href="sasl_server_userdb_checkpass_t.html#std-saslman-sasl_server_userdb_checkpass_t-3">sasl_server_userdb_checkpass_t(3)</a>,
+<a class="reference internal" href="sasl_server_userdb_setpass_t.html#std-saslman-sasl_server_userdb_setpass_t-3">sasl_server_userdb_setpass_t(3)</a></p>
 </div>
 </div>
 
@@ -600,7 +596,7 @@ See <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -627,7 +623,6 @@ See <a class="reference internal" href="sasl_errors.html#std:saslman-sasl_errors
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

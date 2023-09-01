@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,55 +787,53 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-deliver(8)"></span><div class="section" id="deliver">
+  <span class="target" id="std-cyrusman-deliver-8"><span id="std:cyrusman-deliver(8)"></span></span><div class="section" id="deliver">
 <span id="imap-reference-manpages-systemcommands-deliver"></span><h1><strong>deliver</strong><a class="headerlink" href="#deliver" title="Permalink to this headline">¶</a></h1>
 <p>intro</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-d</strong> ] [ <strong>-r</strong> <em>address</em> ]
+<pre class="literal-block"><strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-d</strong> ] [ <strong>-r</strong> <em>address</em> ]
        [ <strong>-f</strong> <em>address</em> ] [ <strong>-m</strong> <em>mailbox</em> ] [ <strong>-a</strong> <em>auth-id</em> ]
        [ <strong>-q</strong> ] [ <em>userid</em> ]...
-<strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong>
-</pre>
+<strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>deliver</strong> reads a message from the standard input and delivers it to
 one or more IMAP mailboxes.</p>
-<p><strong>deliver</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><strong>deliver</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-deliver-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-deliver-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-deliver-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-d">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignored for compatibility with <strong>/bin/mail</strong>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-r">
-<span id="cmdoption-deliver--return-path"></span><code class="descname">-r</code><code class="descclassname"> address</code><code class="descclassname">, </code><code class="descname">--return-path</code><code class="descclassname">=address</code><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-deliver-return-path"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">address</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--return-path</span></code><code class="sig-prename descclassname"><span class="pre">=address</span></code><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a <strong>Return-Path:</strong> header containing <em>address</em>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-f">
-<code class="descname">-f</code><code class="descclassname"> address</code><a class="headerlink" href="#cmdoption-deliver-f" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">address</span></code><a class="headerlink" href="#cmdoption-deliver-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a <strong>Return-Path:</strong> header containing <em>address</em>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-m">
-<span id="cmdoption-deliver--mailbox"></span><code class="descname">-m</code><code class="descclassname"> mailbox</code><code class="descclassname">, </code><code class="descname">--mailbox</code><code class="descclassname">=mailbox</code><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-deliver-mailbox"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">mailbox</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--mailbox</span></code><code class="sig-prename descclassname"><span class="pre">=mailbox</span></code><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver to <strong>mailbox</strong>.  If any <em>userid</em>s are specified, attempts
-to deliver to <code class="docutils literal"><span class="pre">user.</span></code><em>userid</em><code class="docutils literal"><span class="pre">.mailbox</span></code> for each <em>userid</em>.
+to deliver to <code class="docutils literal notranslate"><span class="pre">user.</span></code><em>userid</em><code class="docutils literal notranslate"><span class="pre">.mailbox</span></code> for each <em>userid</em>.
 If the ACL on any such mailbox does not grant the sender the &quot;p&quot;
 right or if <strong>-m</strong> is not specified, then delivers to the INBOX for
 the <em>userid</em>, regardless of the ACL on the INBOX.</p>
@@ -841,31 +841,31 @@ the <em>userid</em>, regardless of the ACL on the INBOX.</p>
 the delivery fails.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-a">
-<span id="cmdoption-deliver--auth-id"></span><code class="descname">-a</code><code class="descclassname"> auth-id</code><code class="descclassname">, </code><code class="descname">--auth-id</code><code class="descclassname">=auth-id</code><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-deliver-auth-id"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"> <span class="pre">auth-id</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--auth-id</span></code><code class="sig-prename descclassname"><span class="pre">=auth-id</span></code><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the authorization id of the sender.  Defaults to &quot;anonymous&quot;.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-q">
-<span id="cmdoption-deliver--ignore-quota"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--ignore-quota</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-deliver-ignore-quota"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--ignore-quota</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver message even when receiving mailbox is over quota.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-deliver-l">
-<span id="cmdoption-deliver--lmtp"></span><code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--lmtp</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-deliver-lmtp"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--lmtp</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept messages using the LMTP protocol.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="notes">
 <h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
-<p>Depending on the setting of <code class="docutils literal"><span class="pre">reject8bit</span></code> in <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, deliver
+<p>Depending on the setting of <code class="docutils literal notranslate"><span class="pre">reject8bit</span></code> in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, deliver
 either rejects/accepts messages with 8-bit-set characters in the headers.
 If we accept messages with 8-bit-set characters in the headers, then depending
-on the setting of <code class="docutils literal"><span class="pre">munge8bit</span></code>, these characters are either left un-touched
+on the setting of <code class="docutils literal notranslate"><span class="pre">munge8bit</span></code>, these characters are either left un-touched
 or changed to &quot;X&quot;.</p>
 <p>This is because such characters can't be interpreted since the
 character set is not known, although some communities not well-served by
@@ -883,7 +883,7 @@ present in US-ASCII.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="lmtpd.html#std:cyrusman-lmtpd(8)">lmtpd(8)</a></p>
+<p><a class="reference internal" href="lmtpd.html#std-cyrusman-lmtpd-8">lmtpd(8)</a></p>
 </div>
 </div>
 
@@ -908,7 +908,7 @@ present in US-ASCII.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -934,7 +934,6 @@ present in US-ASCII.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

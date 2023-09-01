@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -793,18 +795,18 @@
 <div class="section" id="compile-jmap-support-into-cyrus">
 <h3>Compile JMAP support into Cyrus<a class="headerlink" href="#compile-jmap-support-into-cyrus" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Enable JMAP (and DAV) in Cyrus:</p>
+<li><p>Enable JMAP (and DAV) in Cyrus:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-jmap</span> <span class="pre">--enable-xapian</span></code> along with your other configuration options.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-jmap</span> <span class="pre">--enable-xapian</span></code> along with your other configuration options.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Enable <a class="reference internal" href="../concepts/deployment/databases.html#imap-concepts-deployment-db-conversations"><span class="std std-ref">conversation support</span></a></p>
+<li><p>Enable <a class="reference internal" href="../concepts/deployment/databases.html#imap-concepts-deployment-db-conversations"><span class="std std-ref">conversation support</span></a></p>
 <blockquote>
 <div><ul class="simple">
-<li>In <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>, set <code class="docutils literal"><span class="pre">conversations:</span> <span class="pre">1</span></code>, <code class="docutils literal"><span class="pre">conversations_db:</span> <span class="pre">twoskip</span></code></li>
-<li>Create a conversations.db for each user: <code class="docutils literal"><span class="pre">ctl_conversationsdb</span> <span class="pre">-b</span> <span class="pre">-r</span></code></li>
+<li><p>In <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, set <code class="docutils literal notranslate"><span class="pre">conversations:</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">conversations_db:</span> <span class="pre">twoskip</span></code></p></li>
+<li><p>Create a conversations.db for each user: <code class="docutils literal notranslate"><span class="pre">ctl_conversationsdb</span> <span class="pre">-b</span> <span class="pre">-r</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -813,8 +815,8 @@
 distinctions in CJK languages - Chinese, Japanese and Korean), this needs to be
 manually compiled due to extra patches needing to be applied.
 Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian"><span class="std std-ref">Xapian install guide</span></a> shows how.</p>
-<p>4. Once installed, the <code class="docutils literal"><span class="pre">jmap</span></code> module must be enabled in
-<a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>: <code class="docutils literal"><span class="pre">httpmodules:</span> <span class="pre">jmap</span></code></p>
+<p>4. Once installed, the <code class="docutils literal notranslate"><span class="pre">jmap</span></code> module must be enabled in
+<a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>: <code class="docutils literal notranslate"><span class="pre">httpmodules:</span> <span class="pre">jmap</span></code></p>
 </div>
 </div>
 <div class="section" id="jmap-client">
@@ -822,20 +824,20 @@ Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian">
 <div class="section" id="test-jmap-support">
 <h3>Test JMAP support<a class="headerlink" href="#test-jmap-support" title="Permalink to this headline">¶</a></h3>
 <p>Once Cyrus is running, you can test JMAP on the command line for any existing Cyrus user. The user must at least have an INBOX provisioned but is not required to have any calendars, contacts or messages.</p>
-<p>To obtain the JMAP mailbox folders for user <code class="docutils literal"><span class="pre">test</span></code>, issue the following request:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
-     -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
-     -H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
-     --user test:test <span class="se">\</span>
-     -d <span class="s1">&#39;{</span>
+<p>To obtain the JMAP mailbox folders for user <code class="docutils literal notranslate"><span class="pre">test</span></code>, issue the following request:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--user<span class="w"> </span>test:test<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">       &quot;using&quot;: [ &quot;urn:ietf:params:jmap:core&quot;, &quot;urn:ietf:params:jmap:mail&quot; ],</span>
 <span class="s1">       &quot;methodCalls&quot;: [[ &quot;Mailbox/get&quot;, {}, &quot;c1&quot; ]]</span>
-<span class="s1">     }&#39;</span> <span class="se">\</span>
-     http://localhost/jmap/
+<span class="s1">     }&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>http://localhost/jmap/
 </pre></div>
 </div>
 <p>you should get a response which looks similar to</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>{
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
   &quot;methodResponses&quot;: [
     [&quot;Mailbox/get&quot;, {
       &quot;state&quot;: &quot;0&quot;,
@@ -900,8 +902,8 @@ JMAP specification.</p>
 <div class="section" id="optional-install-sample-jmap-client">
 <h3>Optional: Install sample JMAP client<a class="headerlink" href="#optional-install-sample-jmap-client" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Cyrus does not yet implement JMAP authentication. Instead, it requires for
+<p class="admonition-title">Note</p>
+<p>Cyrus does not yet implement JMAP authentication. Instead, it requires for
 each request the HTTP Basic Auth header set with the account's username and
 password. If you intend to use the JMAP perl or web clients, make sure to add
 the required authentication headers for each request.</p>
@@ -914,8 +916,8 @@ the required authentication headers for each request.</p>
 <h3>Developing the client further<a class="headerlink" href="#developing-the-client-further" title="Permalink to this headline">¶</a></h3>
 <p>You'll want to become deeply familiar with the <a class="reference external" href="http://jmap.io/#i-want-to-get-involved-with-jmap.-what-do-i-need-to-know?">JMAP developer documentation</a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">JMAP implementation in Cyrus is a work in progress. Current status can be
+<p class="admonition-title">Note</p>
+<p>JMAP implementation in Cyrus is a work in progress. Current status can be
 viewed on the main <a class="reference internal" href="../download/installation/http/jmap.html#jmap-implementation"><span class="std std-ref">JMAP configuration page</span></a>.</p>
 </div>
 </div>
@@ -943,7 +945,7 @@ viewed on the main <a class="reference internal" href="../download/installation/
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Sep 10 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -969,7 +971,6 @@ viewed on the main <a class="reference internal" href="../download/installation/
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

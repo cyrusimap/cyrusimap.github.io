@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,28 +793,28 @@
 <h1>Cyrus IMAP 2.4.9 Release Notes<a class="headerlink" href="#cyrus-imap-2-4-9-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Changes to the Cyrus IMAP Server since 2.4.8</p>
 <ul class="simple">
-<li>fixed crashes in seen handling</li>
-<li>Bug #3453 - fixed LSUB replication</li>
-<li>Bug #3442 - allow disabling PCRE if it's buggy at your site</li>
-<li>Bug #3443 - LSUB response fixes</li>
-<li>Bug #3448 - XFER error handling (murder)</li>
-<li>Bug #3437 - fixed regression: quotaroot wasn't being updated on rename</li>
-<li>Bug #3456 - fixed crash on rename user.foo user.foo without partition change</li>
-<li>config update: database paths for most databases are now configurable in imapd.conf</li>
-<li>Bug #3303 - fixed index lock breaking on XFER (thanks Julien Coloos)</li>
-<li>Bug #3457 - fixed ESEARCH parsing (was breaking iPhones)</li>
-<li>Bug #3188 - fixed XFER with unlimited quota (thanks again Julien Coloos)</li>
-<li>Misc other quota fixes (there are still known bugs with the quota system)</li>
-<li>Bug #3169 - fixed GETQUOTAROOT for domain quotaroots</li>
-<li>Bug #3465 - fixed compilation with Perl 5.14 (thanks <a class="reference external" href="mailto:hsk&#37;&#52;&#48;imb-jena&#46;de">hsk<span>&#64;</span>imb-jena<span>&#46;</span>de</a>, and also thanks to Ondrej Sury who reported it separately)</li>
-<li>Bug #3464 - fix for sendmail exec failure. This was a nasty one, and sat with a patch for years. Big thanks to Jesús Roncero for the original patch, and to Donald Buczek for re-reporting it.</li>
-<li>Bug #3467 - compilation fix for stricter compilers</li>
-<li>Bug #3466 - fix FUD client handling of 64 bit time datatypes</li>
-<li>Bug #3477 - this is a replay of 3444 and 3446 which only got fixed on master, not in stable (thanks Leena Heino for the patch this time)</li>
-<li>Bug #3470 - finally fix the underlying logic for LIST/LSUB and children matches, which has been bandaid-fixed a few times in the past few stable releases</li>
-<li>Bug #3438 - fix authentication (-a option) for deliver command</li>
-<li>Bug #3431 - actually an enhancement - look for config files in $ENV{CYRUS_PREFIX} first</li>
-<li>Bug #3430 - fractional days and other units in cyr_expire</li>
+<li><p>fixed crashes in seen handling</p></li>
+<li><p>Bug #3453 - fixed LSUB replication</p></li>
+<li><p>Bug #3442 - allow disabling PCRE if it's buggy at your site</p></li>
+<li><p>Bug #3443 - LSUB response fixes</p></li>
+<li><p>Bug #3448 - XFER error handling (murder)</p></li>
+<li><p>Bug #3437 - fixed regression: quotaroot wasn't being updated on rename</p></li>
+<li><p>Bug #3456 - fixed crash on rename user.foo user.foo without partition change</p></li>
+<li><p>config update: database paths for most databases are now configurable in imapd.conf</p></li>
+<li><p>Bug #3303 - fixed index lock breaking on XFER (thanks Julien Coloos)</p></li>
+<li><p>Bug #3457 - fixed ESEARCH parsing (was breaking iPhones)</p></li>
+<li><p>Bug #3188 - fixed XFER with unlimited quota (thanks again Julien Coloos)</p></li>
+<li><p>Misc other quota fixes (there are still known bugs with the quota system)</p></li>
+<li><p>Bug #3169 - fixed GETQUOTAROOT for domain quotaroots</p></li>
+<li><p>Bug #3465 - fixed compilation with Perl 5.14 (thanks <a class="reference external" href="mailto:hsk&#37;&#52;&#48;imb-jena&#46;de">hsk<span>&#64;</span>imb-jena<span>&#46;</span>de</a>, and also thanks to Ondrej Sury who reported it separately)</p></li>
+<li><p>Bug #3464 - fix for sendmail exec failure. This was a nasty one, and sat with a patch for years. Big thanks to Jesús Roncero for the original patch, and to Donald Buczek for re-reporting it.</p></li>
+<li><p>Bug #3467 - compilation fix for stricter compilers</p></li>
+<li><p>Bug #3466 - fix FUD client handling of 64 bit time datatypes</p></li>
+<li><p>Bug #3477 - this is a replay of 3444 and 3446 which only got fixed on master, not in stable (thanks Leena Heino for the patch this time)</p></li>
+<li><p>Bug #3470 - finally fix the underlying logic for LIST/LSUB and children matches, which has been bandaid-fixed a few times in the past few stable releases</p></li>
+<li><p>Bug #3438 - fix authentication (-a option) for deliver command</p></li>
+<li><p>Bug #3431 - actually an enhancement - look for config files in $ENV{CYRUS_PREFIX} first</p></li>
+<li><p>Bug #3430 - fractional days and other units in cyr_expire</p></li>
 </ul>
 <p><a class="reference internal" href="../index.html#imap-release-notes-2-4"><span class="std std-ref">Cyrus IMAP 2.4 Releases</span></a></p>
 </div>
@@ -838,7 +840,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -864,7 +866,6 @@
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

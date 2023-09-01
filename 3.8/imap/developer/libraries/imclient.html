@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -786,13 +788,12 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-imclient(3)"></span><div class="section" id="imclient-library">
+  <span class="target" id="std-cyrusman-imclient-3"><span id="std:cyrusman-imclient(3)"></span></span><div class="section" id="imclient-library">
 <span id="imap-admin-commands-imclient-library"></span><h1><strong>imclient</strong> library<a class="headerlink" href="#imclient-library" title="Permalink to this headline">¶</a></h1>
 <p>Authenticating callback interface to IMAP servers</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-#include &lt;cyrus/imclient.h&gt;
+<pre class="literal-block">#include &lt;cyrus/imclient.h&gt;
 
 <strong>int imclient_connect(struct imclient **</strong><em>imclient</em> <strong>, const char *</strong><em>host</em> <strong>,
     const char *</strong><em>port</em><strong>);</strong>
@@ -812,8 +813,7 @@
     const char *</strong><em>user</em><strong>, int</strong> <em>protallowed</em><strong>);</strong>
 <strong>int imclient_havetls ();</strong>
 <strong>int imclient_starttls (struct imclient *</strong><em>imclient</em><strong>, char *</strong><em>cert_file</em><strong>,
-    char *</strong><em>key_file</em><strong>, char *</strong><em>CAfile</em><strong>, char *</strong><em>CApath</em><strong>);</strong>
-</pre>
+    char *</strong><em>key_file</em><strong>, char *</strong><em>CAfile</em><strong>, char *</strong><em>CApath</em><strong>);</strong></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -829,41 +829,40 @@ take  an  argument of type <strong>struct imclient *</strong> as the first argum
 which is  initialized by <strong>imclient_connect</strong> and freed by
 <strong>imclient_close</strong>.</p>
 <p>See below for a description of each function.</p>
-<dl class="docutils">
-<dt><strong>imclient_connect()</strong></dt>
-<dd>Connects the client server to the host. If successful, it returns
+<dl>
+<dt><strong>imclient_connect()</strong></dt><dd><p>Connects the client server to the host. If successful, it returns
 0 and sets the imclient argument to a pointer to an <strong>imclient</strong>
 struct.  The <strong>imclient</strong> struct represents the current connection,
 flags, and callbacks.  On failure, the current <strong>errno</strong> is returned
 if a system call failed, -1 is returned if the host name was not
-found, and -2 is returned if the service name was not found.</dd>
-<dt><strong>imclient_close()</strong></dt>
-<dd>Closes and frees the <strong>imclient</strong> connection.</dd>
-<dt><strong>imclient_setflags()</strong></dt>
-<dd>Sets the flags specified by the <em>flags</em> argument on the <strong>imclient</strong>
+found, and -2 is returned if the service name was not found.</p>
+</dd>
+<dt><strong>imclient_close()</strong></dt><dd><p>Closes and frees the <strong>imclient</strong> connection.</p>
+</dd>
+<dt><strong>imclient_setflags()</strong></dt><dd><p>Sets the flags specified by the <em>flags</em> argument on the <strong>imclient</strong>
 connection. Currently the only  flag allowed is
 <strong>IMCLIENT_CONN_NONSYNCLITERAL</strong> (this flag indicates that the
 server supports non-synchronizing literals described by the LITERAL+
-extension).</dd>
-<dt><strong>imclient_clearflags()</strong></dt>
-<dd>Clears the flags specified by the <em>flags</em> argument on the
-<strong>imclient</strong> connection.</dd>
-<dt><strong>imclient_servername()</strong></dt>
-<dd>Returns a char * pointer to the name of the server connected to
-by <strong>imclient</strong>.</dd>
-<dt><strong>imclient_addcallback()</strong></dt>
-<dd><p class="first">Adds an untagged data callback to the <strong>imclient</strong> connection. The
+extension).</p>
+</dd>
+<dt><strong>imclient_clearflags()</strong></dt><dd><p>Clears the flags specified by the <em>flags</em> argument on the
+<strong>imclient</strong> connection.</p>
+</dd>
+<dt><strong>imclient_servername()</strong></dt><dd><p>Returns a char * pointer to the name of the server connected to
+by <strong>imclient</strong>.</p>
+</dd>
+<dt><strong>imclient_addcallback()</strong></dt><dd><p>Adds an untagged data callback to the <strong>imclient</strong> connection. The
 function <strong>imclient_addcallback</strong> takes callbacks of the type
 <strong>imclient_proc_t</strong> which is defined to be:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">void</span> <span class="n">imclient_proc_t</span> <span class="p">(</span><span class="n">struct</span> <span class="n">imclient</span> <span class="o">*</span><span class="n">imclient</span><span class="p">,</span> <span class="n">void</span> <span class="o">*</span><span class="n">rock</span><span class="p">,</span> <span class="n">struct</span> <span class="n">imclient_reply</span> <span class="o">*</span><span class="n">reply</span><span class="p">);</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">void</span> <span class="n">imclient_proc_t</span> <span class="p">(</span><span class="n">struct</span> <span class="n">imclient</span> <span class="o">*</span><span class="n">imclient</span><span class="p">,</span> <span class="n">void</span> <span class="o">*</span><span class="n">rock</span><span class="p">,</span> <span class="n">struct</span> <span class="n">imclient_reply</span> <span class="o">*</span><span class="n">reply</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>and <strong>struct imclient_reply *</strong>
 is defined to be:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">imclient_reply</span> <span class="p">{</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">imclient_reply</span> <span class="p">{</span>
     <span class="n">char</span> <span class="o">*</span><span class="n">keyword</span><span class="p">;</span>
     <span class="n">long</span> <span class="n">msgno</span><span class="p">;</span>
     <span class="n">char</span> <span class="o">*</span><span class="n">text</span><span class="p">;</span>
@@ -871,7 +870,7 @@ is defined to be:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p class="last">After the first argument, <em>imclient</em>, there can be zero or more
+<p>After the first argument, <em>imclient</em>, there can be zero or more
 instances of the set of <em>keyword</em>, <em>flags</em>, <em>proc</em>, and <em>rock</em>,
 each adding or changing a single callback.  Each instance adds or
 changes the callback for <em>keyword</em>.  The argument <em>flags</em> specifies
@@ -884,8 +883,7 @@ imclient_processoneevent()</strong>, or <strong>imclient_authenticate()</strong>
 connection. The callback function may overwrite  the text of
 untagged data.</p>
 </dd>
-<dt><strong>imclient_send()</strong></dt>
-<dd><p class="first">Sends a new command to the <strong>imclient</strong> connection.  <em>finishproc</em>
+<dt><strong>imclient_send()</strong></dt><dd><p>Sends a new command to the <strong>imclient</strong> connection.  <em>finishproc</em>
 and <em>finishrock</em> are the function and rock called when the command
 completes.  <em>functionproc</em> may be a null pointer, in which case no
 callback is made. The callback function may not call the functions
@@ -895,8 +893,8 @@ connection.  The argument <em>fmt</em> is a <em class="manpage">printf(3)</em> l
 specification of the command. It must not include the tag as the
 tag is automatically added by <strong>imclient_send()</strong>.</p>
 <p>The defined %-sequences are:</p>
-<blockquote class="last">
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="k">for</span> <span class="o">%</span>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span> <span class="k">for</span> <span class="o">%</span>
 <span class="o">%</span><span class="n">a</span> <span class="k">for</span> <span class="n">an</span> <span class="n">IMAP</span> <span class="n">atom</span>
 <span class="o">%</span><span class="n">s</span> <span class="k">for</span> <span class="n">an</span> <span class="n">astring</span> <span class="p">(</span><span class="n">which</span> <span class="n">will</span> <span class="n">be</span> <span class="n">quoted</span> <span class="ow">or</span> <span class="n">literalized</span> <span class="k">as</span> <span class="n">needed</span><span class="p">)</span>
 <span class="o">%</span><span class="n">d</span> <span class="k">for</span> <span class="n">a</span> <span class="n">decimal</span>
@@ -907,33 +905,32 @@ tag is automatically added by <strong>imclient_send()</strong>.</p>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>imclient_getselectinfo()</strong></dt>
-<dd>Gets the information for calling <em class="manpage">select(2)</em>.  <em>fd</em> is
+<dt><strong>imclient_getselectinfo()</strong></dt><dd><p>Gets the information for calling <em class="manpage">select(2)</em>.  <em>fd</em> is
 filled in with the file descriptor to <em class="manpage">select(2)</em> for read.
 <em>wanttowrite</em> is filled in with a nonzero value if <strong>select</strong> should
-be used for write as well.</dd>
-<dt><strong>imclient_processoneevent()</strong></dt>
-<dd>Processes one input or output event on the <strong>imclient</strong> connection.</dd>
-<dt><strong>imclient_authenticate()</strong></dt>
-<dd>Authenticates the <strong>imclient</strong> connection using one of the mechanisms
+be used for write as well.</p>
+</dd>
+<dt><strong>imclient_processoneevent()</strong></dt><dd><p>Processes one input or output event on the <strong>imclient</strong> connection.</p>
+</dd>
+<dt><strong>imclient_authenticate()</strong></dt><dd><p>Authenticates the <strong>imclient</strong> connection using one of the mechanisms
 in <em>availmech</em>.  The argument <em>user</em>, if not NULL, specifies the user
 to authenticate as. If the user is NULL, the current user is used.
 The argument <em>protallowed</em> is a bitmask of permissible protection
 mechanisms.
 On success, 0 is returned.  On failure (i.e., &quot;BAD&quot; keyboard, or
 no authentication mechanisms worked), 1 is returned. On extreme
-failure (premature &quot;OK&quot;), 2 is returned.</dd>
-<dt><strong>imclient_havetls()</strong></dt>
-<dd>Returns a Boolean indicating whether the <strong>imclient</strong> library was
+failure (premature &quot;OK&quot;), 2 is returned.</p>
+</dd>
+<dt><strong>imclient_havetls()</strong></dt><dd><p>Returns a Boolean indicating whether the <strong>imclient</strong> library was
 compiled with TLS (SSL) support.  If so, <strong>imclient_starttls()</strong> may
-be used to secure the IMAP connection.</dd>
-<dt><strong>imclient_starttls()</strong></dt>
-<dd><p class="first">Issues a STARTTLS command on an existing IMAP connection and
+be used to secure the IMAP connection.</p>
+</dd>
+<dt><strong>imclient_starttls()</strong></dt><dd><p>Issues a STARTTLS command on an existing IMAP connection and
 negotiates the secure link.  The <em>cert_file</em> and <em>key_file</em> arguments
 specify the client certificate and secret key to use to
 authenticate ourselves to the server.  If client authentication is
 not needed, set both of these arguments to NULL.</p>
-<p class="last">The <em>CAfile</em> and <em>CApath</em> arguments specify a file or directory,
+<p>The <em>CAfile</em> and <em>CApath</em> arguments specify a file or directory,
 respectively, of CA certificates for validating server
 certificates. (See <em class="manpage">SSL_CTX_load_verify_locations(3)</em> for
 details.)  If both of these are NULL, the client will be unable to
@@ -948,7 +945,7 @@ succeed but a warning will be printed to stdout.</p>
 on Kerberos to do authentication.  This code performs an IMAP
 CAPABILITY request and prints out the result.</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &lt;cyrus/xmalloc.h&gt; /* example uses xstrdup */</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;cyrus/xmalloc.h&gt; /* example uses xstrdup */</span>
 <span class="c1">#include &lt;cyrus/sasl.h&gt;</span>
 <span class="c1">#include &lt;cyrus/imclient.h&gt;</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
@@ -1034,8 +1031,8 @@ CAPABILITY request and prints out the result.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../../reference/manpages/systemcommands/cyradm.html#std:cyrusman-cyradm(8)">cyradm(8)</a>,
-<a class="reference internal" href="../../reference/manpages/systemcommands/imapd.html#std:cyrusman-imapd(8)">imapd(8)</a>,
+<p><a class="reference internal" href="../../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a>,
+<a class="reference internal" href="../../reference/manpages/systemcommands/imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2033.html"><strong>RFC 2033</strong></a> (IMAP LITERAL+ extension),
 <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a> (IMAP4rev1 specification), and
 <em class="manpage">select(2)</em></p>
@@ -1067,7 +1064,7 @@ CAPABILITY request and prints out the result.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 27 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1093,7 +1090,6 @@ CAPABILITY request and prints out the result.</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

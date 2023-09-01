@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,15 +792,15 @@
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
 <p>The motivation behind moving to Sieve Bytecode is severalfold:</p>
 <ul class="simple">
-<li>Parsing a script at each execution is expensive computationally</li>
-<li>Lex/Yacc are costly in terms of memory usage and executable size,
-whereas a bytecode parser is much lighter weight.</li>
-<li>Using bytecode can simplify the code for the execution phase, which
-is far more frequently occurring than the upload/compile phase.</li>
-<li>Rewriting a significant part of the sieve execution framework forces
+<li><p>Parsing a script at each execution is expensive computationally</p></li>
+<li><p>Lex/Yacc are costly in terms of memory usage and executable size,
+whereas a bytecode parser is much lighter weight.</p></li>
+<li><p>Using bytecode can simplify the code for the execution phase, which
+is far more frequently occurring than the upload/compile phase.</p></li>
+<li><p>Rewriting a significant part of the sieve execution framework forces
 a decent amount of refactoring on what has traditionally been a
 problematic part of the Cyrus code base. There is still work to do in
-this area.</li>
+this area.</p></li>
 </ul>
 </div>
 <div class="section" id="overall-bytecode-format">
@@ -816,11 +818,11 @@ version number are the opcodes that relate to the script.</p>
 <h2>Generation<a class="headerlink" href="#generation" title="Permalink to this headline">¶</a></h2>
 <p>A Sieve Bytecode file is generated in three &quot;passes&quot;:</p>
 <ul class="simple">
-<li>Generate a parse tree using lex/yacc from the sieve script. (addr.y,
-addr-lex.l, sieve.y, sieve-lex.l).</li>
-<li>Serialize the parse tree into an intermediate form, where strings are
-held separate from the rest of the representation. (bc_generate.c)</li>
-<li>Serialize the intermediate form into the final bytecode. (bc_emit.c)</li>
+<li><p>Generate a parse tree using lex/yacc from the sieve script. (addr.y,
+addr-lex.l, sieve.y, sieve-lex.l).</p></li>
+<li><p>Serialize the parse tree into an intermediate form, where strings are
+held separate from the rest of the representation. (bc_generate.c)</p></li>
+<li><p>Serialize the intermediate form into the final bytecode. (bc_emit.c)</p></li>
 </ul>
 <p>The intermediate form is an array of bytecode_t unions, with strings
 located elsewhere in memory. The entry point is bc_generate:
@@ -836,11 +838,11 @@ are followed by a bytecode_t for a string's length, and then a
 bytecode_t which contains a pointer to a string.</p>
 <p>Commands such as ADDFLAG, SETFLAG, REMOVEFLAG, which take a stringlist,
 format the stringlist as (using bc_stringlist_generate):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">Number</span> <span class="n">of</span> <span class="n">Strings</span><span class="p">}{</span><span class="n">String</span> <span class="mi">1</span> <span class="n">Length</span><span class="p">}{</span><span class="n">String</span> <span class="mi">1</span> <span class="n">Ptr</span><span class="p">}{</span><span class="n">String</span> <span class="mi">2</span> <span class="n">Length</span><span class="p">}</span><span class="o">....</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">Number</span> <span class="n">of</span> <span class="n">Strings</span><span class="p">}{</span><span class="n">String</span> <span class="mi">1</span> <span class="n">Length</span><span class="p">}{</span><span class="n">String</span> <span class="mi">1</span> <span class="n">Ptr</span><span class="p">}{</span><span class="n">String</span> <span class="mi">2</span> <span class="n">Length</span><span class="p">}</span><span class="o">....</span>
 </pre></div>
 </div>
 <p>So their resulting final output would appear as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">Opcode</span><span class="p">}{</span><span class="o">...</span><span class="n">stringlist</span> <span class="kn">from</span> <span class="nn">above...</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">Opcode</span><span class="p">}{</span><span class="o">...</span><span class="n">stringlist</span> <span class="kn">from</span> <span class="nn">above...</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Even more complicated action opcodes (vacation, notify) etc, may take a
@@ -848,7 +850,7 @@ sequence of integer values (flags), stringlists, or individual strings.
 These are more specifically documented in the code.</p>
 <p>This leaves us with the IF keyword (and tests). In the pass 1 form, IF
 appears as the following bytecode_t structures:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">IF</span> <span class="n">opcode</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">IF</span> <span class="n">opcode</span><span class="p">}</span>
 <span class="p">{</span><span class="n">Beginning</span> <span class="n">of</span> <span class="n">the</span> <span class="n">then</span> <span class="n">block</span><span class="p">}</span>
 <span class="p">{</span><span class="n">End</span> <span class="n">of</span> <span class="n">the</span> <span class="n">then</span> <span class="n">block</span> <span class="o">/</span> <span class="n">beginning</span> <span class="n">of</span> <span class="n">the</span> <span class="k">else</span> <span class="n">block</span><span class="p">}</span>
 <span class="p">{</span><span class="n">End</span> <span class="n">of</span> <span class="n">the</span> <span class="k">else</span> <span class="n">block</span> <span class="o">/</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">no</span> <span class="k">else</span> <span class="n">block</span><span class="p">}</span>
@@ -875,7 +877,7 @@ jump).</p>
 entire list, so it can be skipped over as needed.</p>
 <p>So as to be executable without a stack, the IF statements are designed
 as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">IF</span> <span class="n">opcode</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">IF</span> <span class="n">opcode</span><span class="p">}</span>
 <span class="p">{</span><span class="o">....</span><span class="n">test</span> <span class="n">block</span><span class="o">....</span><span class="p">}</span>
 <span class="p">{</span><span class="n">JUMP</span> <span class="p">(</span><span class="n">location</span> <span class="n">of</span> <span class="n">false</span> <span class="n">condition</span><span class="p">)</span> <span class="p">}</span>
 <span class="p">{</span><span class="o">....</span><span class="n">then</span> <span class="n">block</span><span class="o">....</span><span class="p">}</span>
@@ -929,7 +931,7 @@ by putting the new commands at the end of the proper enum in bytecode.h</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -955,7 +957,6 @@ by putting the new commands at the end of the proper enum in bytecode.h</p>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

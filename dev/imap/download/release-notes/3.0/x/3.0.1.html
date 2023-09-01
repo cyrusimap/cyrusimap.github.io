@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,16 +792,16 @@
   <div class="section" id="cyrus-imap-3-0-1-release-notes">
 <h1>Cyrus IMAP 3.0.1 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-1-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 3.0 series.</p>
-<p class="last">Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
 about the 3.0 series, including upgrading instructions.</p>
 </div>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.1/cyrus-imapd-3.0.1.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-0-0">
@@ -807,33 +809,33 @@ about the 3.0 series, including upgrading instructions.</p>
 <div class="section" id="dependency-changes">
 <h3>Dependency changes<a class="headerlink" href="#dependency-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Cyrus can now be built with Xapian 1.4 (the current upstream release),
+<li><p>Cyrus can now be built with Xapian 1.4 (the current upstream release),
 if CJK support is not required in your environment.  If you need CJK
-support, you will still need to use the cyruslibs Xapian fork.</li>
+support, you will still need to use the cyruslibs Xapian fork.</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Extensive documentation enhancements (thanks Nic Bernstein)</li>
-<li>Sample cyrus.conf and imapd.conf files are now available in the doc/examples
-directory of the distribution (thanks Nic Bernstein)</li>
+<li><p>Extensive documentation enhancements (thanks Nic Bernstein)</p></li>
+<li><p>Sample cyrus.conf and imapd.conf files are now available in the doc/examples
+directory of the distribution (thanks Nic Bernstein)</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1875">Issue #1875</a>: correctly calculate INBOX for user names containing
-a dot (thanks Martin Matuska)</li>
-<li>Fixed parsing of vcard categories and nicknames</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1872">Issue #1872</a>: don't crash when removing invalid sessions</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1926">Issue #1926</a>: no longer report some client disconnects as IOERROR</li>
-<li>Fixed setting of contact nicknames via JMAP</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1915">Issue #1915</a>: delivery to shared mailboxes with virtual domains
-(thanks Martin Matuska)</li>
-<li>Fixed replication of CalDAV alarms</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1927">Issue #1927</a>: no race between xapian squatter and user deletions</li>
-<li>Fixed stats overflow in ipurge for &gt;2GB mailboxes (thanks Pavel Zhukov)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1875">Issue #1875</a>: correctly calculate INBOX for user names containing
+a dot (thanks Martin Matuska)</p></li>
+<li><p>Fixed parsing of vcard categories and nicknames</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1872">Issue #1872</a>: don't crash when removing invalid sessions</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1926">Issue #1926</a>: no longer report some client disconnects as IOERROR</p></li>
+<li><p>Fixed setting of contact nicknames via JMAP</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1915">Issue #1915</a>: delivery to shared mailboxes with virtual domains
+(thanks Martin Matuska)</p></li>
+<li><p>Fixed replication of CalDAV alarms</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1927">Issue #1927</a>: no race between xapian squatter and user deletions</p></li>
+<li><p>Fixed stats overflow in ipurge for &gt;2GB mailboxes (thanks Pavel Zhukov)</p></li>
 </ul>
 </div>
 </div>
@@ -860,7 +862,7 @@ a dot (thanks Martin Matuska)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -886,7 +888,6 @@ a dot (thanks Martin Matuska)</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

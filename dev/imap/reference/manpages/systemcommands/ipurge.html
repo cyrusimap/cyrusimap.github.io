@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -785,16 +787,14 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-ipurge(8)"></span><div class="section" id="ipurge">
+  <span class="target" id="std-cyrusman-ipurge-8"><span id="std:cyrusman-ipurge(8)"></span></span><div class="section" id="ipurge">
 <span id="imap-reference-manpages-systemcommands-ipurge"></span><h1><strong>ipurge</strong><a class="headerlink" href="#ipurge" title="Permalink to this headline">¶</a></h1>
 <p>Delete mail from IMAP mailbox or partition based on age or size</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>ipurge</strong> [ <strong>-f</strong> ] [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-x</strong> ] [ <strong>-M</strong> ] [ <strong>-X</strong> ] [ <strong>-i</strong> ] [ <strong>-s</strong> ] [ <strong>-o</strong> ] [ <strong>-n</strong> ] [ <strong>-v</strong> ]
+<pre class="literal-block"><strong>ipurge</strong> [ <strong>-f</strong> ] [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-x</strong> ] [ <strong>-M</strong> ] [ <strong>-X</strong> ] [ <strong>-i</strong> ] [ <strong>-s</strong> ] [ <strong>-o</strong> ] [ <strong>-n</strong> ] [ <strong>-v</strong> ]
         [ <strong>-d</strong> <em>days</em> | <strong>-b</strong> <em>bytes</em> | <strong>-k</strong> <em>Kbytes</em> | <strong>-m</strong> <em>Mbytes</em> ]
-        [ <em>mailbox-pattern</em>... ]
-</pre>
+        [ <em>mailbox-pattern</em>... ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -809,86 +809,86 @@ of <strong>-d</strong>, <strong>-b</strong>, <strong>-k</strong> or <strong>-m</
 that mails in mailbox(es) below INBOX.* and user.* stay untouched. Use
 the option <strong>-f</strong> to also delete mail in mailbox(es) below these
 folders. Use the <strong>-M</strong> option to not recurse into the mailboxes.</p>
-<p><em>ipurge</em> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
+<p><em>ipurge</em> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-ipurge-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-ipurge-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ipurge-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-f">
-<span id="cmdoption-ipurge--include-user-mailboxes"></span><code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--include-user-mailboxes</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-f" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-include-user-mailboxes"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--include-user-mailboxes</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force ipurge to examine mailboxes below INBOX.* and user.*.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-d">
-<span id="cmdoption-ipurge--days"></span><code class="descname">-d</code><code class="descclassname"> days</code><code class="descclassname">, </code><code class="descname">--days</code><code class="descclassname">=days</code><a class="headerlink" href="#cmdoption-ipurge-d" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-days"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"> <span class="pre">days</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--days</span></code><code class="sig-prename descclassname"><span class="pre">=days</span></code><a class="headerlink" href="#cmdoption-ipurge-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Age of message in <em>days</em>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-b">
-<span id="cmdoption-ipurge--bytes"></span><code class="descname">-b</code><code class="descclassname"> bytes</code><code class="descclassname">, </code><code class="descname">--bytes</code><code class="descclassname">=bytes</code><a class="headerlink" href="#cmdoption-ipurge-b" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-bytes"></span><code class="sig-name descname"><span class="pre">-b</span></code><code class="sig-prename descclassname"> <span class="pre">bytes</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--bytes</span></code><code class="sig-prename descclassname"><span class="pre">=bytes</span></code><a class="headerlink" href="#cmdoption-ipurge-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>bytes</em>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-k">
-<span id="cmdoption-ipurge--kbytes"></span><code class="descname">-k</code><code class="descclassname"> Kbytes</code><code class="descclassname">, </code><code class="descname">--kbytes</code><code class="descclassname">=Kbytes</code><a class="headerlink" href="#cmdoption-ipurge-k" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-kbytes"></span><code class="sig-name descname"><span class="pre">-k</span></code><code class="sig-prename descclassname"> <span class="pre">Kbytes</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--kbytes</span></code><code class="sig-prename descclassname"><span class="pre">=Kbytes</span></code><a class="headerlink" href="#cmdoption-ipurge-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>Kbytes</em> (2^10 bytes).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-m">
-<span id="cmdoption-ipurge--mbytes"></span><code class="descname">-m</code><code class="descclassname"> Mbytes</code><code class="descclassname">, </code><code class="descname">--mbytes</code><code class="descclassname">=Mbytes</code><a class="headerlink" href="#cmdoption-ipurge-m" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-mbytes"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">Mbytes</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--mbytes</span></code><code class="sig-prename descclassname"><span class="pre">=Mbytes</span></code><a class="headerlink" href="#cmdoption-ipurge-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of message in <em>Mbytes</em> (2^20 bytes).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-x">
-<span id="cmdoption-ipurge--exact-match"></span><code class="descname">-x</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--exact-match</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-x" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-exact-match"></span><code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--exact-match</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform an exact match on age or size (instead of older or larger).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-X">
-<span id="cmdoption-ipurge--delivery-time"></span><code class="descname">-X</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--delivery-time</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-X" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-delivery-time"></span><code class="sig-name descname"><span class="pre">-X</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--delivery-time</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use delivery time instead of Date: header for date matches.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-i">
-<span id="cmdoption-ipurge--invert-match"></span><code class="descname">-i</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--invert-match</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-i" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-invert-match"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--invert-match</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Invert match logic: -x means not equal, date is for newer, size is
 for smaller.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-s">
-<span id="cmdoption-ipurge--skip-flagged"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--skip-flagged</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-skip-flagged"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--skip-flagged</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip over messages that have the \Flagged flag set.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-o">
-<span id="cmdoption-ipurge--only-deleted"></span><code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--only-deleted</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-o" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-only-deleted"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--only-deleted</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only purge messages that have the \Deleted flag set.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-n">
-<span id="cmdoption-ipurge--dry-run"></span><code class="descname">-n</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--dry-run</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-n" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-dry-run"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--dry-run</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only print messages that would be deleted (dry run).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ipurge-v">
-<span id="cmdoption-ipurge--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-v" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-ipurge-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ipurge-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output/logging.</p>
 </dd></dl>
 
@@ -903,7 +903,7 @@ for smaller.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -928,7 +928,7 @@ for smaller.</p>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 16 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -954,7 +954,6 @@ for smaller.</p>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

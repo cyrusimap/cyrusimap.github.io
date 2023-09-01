@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -784,17 +786,15 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std:cyrusman-mbexamine(8)"></span><div class="section" id="mbexamine">
+  <span class="target" id="std-cyrusman-mbexamine-8"><span id="std:cyrusman-mbexamine(8)"></span></span><div class="section" id="mbexamine">
 <span id="imap-reference-manpages-systemcommands-mbexamine"></span><h1><strong>mbexamine</strong><a class="headerlink" href="#mbexamine" title="Permalink to this headline">¶</a></h1>
 <p>Examine a cyrus-format mailbox</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-u</strong> <em>uid</em> ] <em>mailbox</em>...
+<pre class="literal-block"><strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-u</strong> <em>uid</em> ] <em>mailbox</em>...
 <strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>seqnum</em>] <em>mailbox</em>...
 <strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-q</strong> <em>mailbox</em>...
-<strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-c</strong> <em>mailbox</em>...
-</pre>
+<strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-c</strong> <em>mailbox</em>...</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -802,40 +802,40 @@
 cyrus format mailbox and dump the information contained therein.  It
 can also limit its output to a specific uid or sequence number, through
 use of the <strong>-s</strong> and <strong>-u</strong> switches.</p>
-<p><strong>mbexamine</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses
+<p><strong>mbexamine</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses
 &lt;configdirectory&gt;/mailboxes.db to locate the mailbox on disk.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbexamine-C">
-<code class="descname">-C</code><code class="descclassname"> config-file</code><a class="headerlink" href="#cmdoption-mbexamine-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a>.</p>
+<span id="cmdoption-mbexamine-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-mbexamine-C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbexamine-u">
-<span id="cmdoption-mbexamine--uid"></span><code class="descname">-u</code><code class="descclassname">  uid</code><code class="descclassname">, </code><code class="descname">--uid</code><code class="descclassname">=uid</code><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine-uid"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname">&#160; <span class="pre">uid</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--uid</span></code><code class="sig-prename descclassname"><span class="pre">=uid</span></code><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given uid only.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbexamine-s">
-<span id="cmdoption-mbexamine--seq"></span><code class="descname">-s</code><code class="descclassname">  seqnum</code><code class="descclassname">, </code><code class="descname">--seq</code><code class="descclassname">=seqnum</code><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine-seq"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname">&#160; <span class="pre">seqnum</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--seq</span></code><code class="sig-prename descclassname"><span class="pre">=seqnum</span></code><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given sequence number only.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-mbexamine-q">
-<span id="cmdoption-mbexamine--check-quota"></span><code class="descname">-q</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--check-quota</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
+<span id="cmdoption-mbexamine-check-quota"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--check-quota</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the quota usage in cyrus.index to the actual message file
 sizes and report any differences.  If there are differences, the
 mailbox SHOULD be reconstructed.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-mbexamine-c">
-<span id="cmdoption-mbexamine--check-message-files"></span><code class="descname">-c</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--check-message-files</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-c" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-mbexamine-0">
+<span id="cmdoption-mbexamine-check-message-files"></span><code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--check-message-files</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the records in cyrus.index to the actual message files
 report any differences.  This can help detect issues if messages
 files were manipulated manually and/or restored incorrectly.</p>
@@ -844,12 +844,11 @@ files were manipulated manually and/or restored incorrectly.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block">
-<strong>mbexamine</strong> <em>user.jsmith</em>
-</pre>
+<pre class="literal-block"><strong>mbexamine</strong> <em>user.jsmith</em></pre>
 <blockquote>
-<div>Examine the mailbox hierarchy rooted at <em>user.jsmith</em>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
+<div><p>Examine the mailbox hierarchy rooted at <em>user.jsmith</em>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
  <span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Info</span><span class="p">:</span>
   <span class="n">Path</span> <span class="n">to</span> <span class="n">mailbox</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">jsmith</span>
   <span class="n">Mailbox</span> <span class="n">ACL</span><span class="p">:</span> <span class="n">jsmith</span>   <span class="n">lrswipkxtecda</span>
@@ -876,13 +875,12 @@ files were manipulated manually and/or restored incorrectly.</p>
 <span class="o">&lt;...&gt;</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>mbexamine -u</strong> <em>00000004 user.jsmith</em>
-</pre>
+<pre class="literal-block"><strong>mbexamine -u</strong> <em>00000004 user.jsmith</em></pre>
 <blockquote>
-<div>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> looking
-for messages with UID = <em>00000004</em>.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
+<div><p>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> looking
+for messages with UID = <em>00000004</em>.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
  <span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Info</span><span class="p">:</span>
   <span class="n">Path</span> <span class="n">to</span> <span class="n">mailbox</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">jsmith</span>
   <span class="n">Mailbox</span> <span class="n">ACL</span><span class="p">:</span> <span class="n">jsmith</span>   <span class="n">lrswipkxtecda</span>
@@ -909,26 +907,24 @@ for messages with UID = <em>00000004</em>.</div></blockquote>
 <span class="o">&lt;...&gt;</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>mbexamine -q</strong> <em>user.jsmith</em>
-</pre>
+<pre class="literal-block"><strong>mbexamine -q</strong> <em>user.jsmith</em></pre>
 <blockquote>
-<div>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> checking
-quotas.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
+<div><p>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> checking
+quotas.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
 <span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Drafts</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
 <span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Sent</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
 <span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Spam</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
 <span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Trash</span><span class="o">...</span>  <span class="n">Mailbox</span> <span class="n">has</span> <span class="n">CORRECT</span> <span class="n">total</span> <span class="n">quota</span> <span class="n">usage</span>
 </pre></div>
 </div>
-<pre class="literal-block">
-<strong>mbexamine -c</strong> <em>user.jsmith</em>
-</pre>
+<pre class="literal-block"><strong>mbexamine -c</strong> <em>user.jsmith</em></pre>
 <blockquote>
-<div>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> comparing
-index records to the actual message files in the mailbox directory.</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
+<div><p>Examine the mailbox hierarchy rooted at <em>user.jsmith</em> comparing
+index records to the actual message files in the mailbox directory.</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examining</span> <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">...</span>
  <span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Info</span><span class="p">:</span>
   <span class="n">Path</span> <span class="n">to</span> <span class="n">mailbox</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">jsmith</span>
 
@@ -963,7 +959,7 @@ index records to the actual message files in the mailbox directory.</div></block
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="../configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a></p>
+<p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
 </div>
 </div>
 
@@ -988,7 +984,7 @@ index records to the actual message files in the mailbox directory.</div></block
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 29 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1014,7 +1010,6 @@ index records to the actual message files in the mailbox directory.</div></block
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

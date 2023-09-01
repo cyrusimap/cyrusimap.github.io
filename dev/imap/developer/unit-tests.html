@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -788,22 +790,24 @@
 <div class="section" id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="#introduction">1. Introduction</a></li>
-<li><a class="reference external" href="#what-is-a-unit-test">2. What Is A Unit Test?</a></li>
-<li><a class="reference external" href="#running-the-tests">3. Running The Tests</a><ul>
-<li><a class="reference external" href="#setting-up-the-machine">3.1. Setting Up The Machine</a></li>
-<li><a class="reference external" href="#configure-scripts">3.2 Configure Script</a></li>
-<li><a class="reference external" href="#running-the-tests">3.3 Make</a></li>
-<li><a class="reference external" href="#using-valgrind">3.4 Using Valgrind</a></li>
-<li><a class="reference external" href="#the-tests-are-failing">3.5 The Tests Are Failing</a></li>
-<li><a class="reference external" href="#debugging-a-test">3.6 Debugging A Test</a></li>
+<li><p><a class="reference external" href="#introduction">1. Introduction</a></p></li>
+<li><p><a class="reference external" href="#what-is-a-unit-test">2. What Is A Unit Test?</a></p></li>
+<li><p><a class="reference external" href="#running-the-tests">3. Running The Tests</a></p>
+<ul>
+<li><p><a class="reference external" href="#setting-up-the-machine">3.1. Setting Up The Machine</a></p></li>
+<li><p><a class="reference external" href="#configure-scripts">3.2 Configure Script</a></p></li>
+<li><p><a class="reference external" href="#running-the-tests">3.3 Make</a></p></li>
+<li><p><a class="reference external" href="#using-valgrind">3.4 Using Valgrind</a></p></li>
+<li><p><a class="reference external" href="#the-tests-are-failing">3.5 The Tests Are Failing</a></p></li>
+<li><p><a class="reference external" href="#debugging-a-test">3.6 Debugging A Test</a></p></li>
 </ul>
 </li>
-<li><a class="reference external" href="#adding-your-own-tests">4. Adding Your Own Tests</a><ul>
-<li><a class="reference external" href="#where-to-put-your-tests">4.1 Where To Put Your Tests</a></li>
-<li><a class="reference external" href="#adding-a-new-suite">4.1 Adding A New Suite</a></li>
-<li><a class="reference external" href="#adding-a-test-to-a-suite">4.2 Adding A Test To A Suite</a></li>
-<li><a class="reference external" href="#suite-init-and-cleanup">4.3 Suite Init And Cleanup</a></li>
+<li><p><a class="reference external" href="#adding-your-own-tests">4. Adding Your Own Tests</a></p>
+<ul>
+<li><p><a class="reference external" href="#where-to-put-your-tests">4.1 Where To Put Your Tests</a></p></li>
+<li><p><a class="reference external" href="#adding-a-new-suite">4.1 Adding A New Suite</a></p></li>
+<li><p><a class="reference external" href="#adding-a-test-to-a-suite">4.2 Adding A Test To A Suite</a></p></li>
+<li><p><a class="reference external" href="#suite-init-and-cleanup">4.3 Suite Init And Cleanup</a></p></li>
 </ul>
 </li>
 </ul>
@@ -820,9 +824,10 @@ enough unit tests!).</p>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Unit_test">definition on Wikipedia</a>
 sheds some light:</p>
 <blockquote>
-<div>...<strong>unit testing</strong> is a method by which individual units of
+<div><p>...<strong>unit testing</strong> is a method by which individual units of
 source code are tested to determine if they are fit for use. A unit
-is the smallest testable part of an application.</div></blockquote>
+is the smallest testable part of an application.</p>
+</div></blockquote>
 <p>In other words, unit testing is about verifying that small pieces of
 code, like individual functions, modules, or classes, work in isolation.
 It is <strong>not</strong> about testing the system as a whole.</p>
@@ -830,11 +835,12 @@ It is <strong>not</strong> about testing the system as a whole.</p>
 <a class="reference external" href="http://en.wikipedia.org/wiki/Regression_testing">Wikipedia's words</a>
 means:</p>
 <blockquote>
-<div><strong>Regression testing</strong> is any type of software testing that seeks to
+<div><p><strong>Regression testing</strong> is any type of software testing that seeks to
 uncover software errors after changes to the program (e.g. bugfixes
 or new functionality) have been made, by retesting the program. The
 intent of regression testing is to assure that a change, such as a
-bugfix, did not introduce new bugs.</div></blockquote>
+bugfix, did not introduce new bugs.</p>
+</div></blockquote>
 <p>In other words, the tests are designed to be easy to run and to work out
 fully automatically whether they have passed or failed, so that they can
 be run usefully by people who didn't write them.</p>
@@ -845,26 +851,26 @@ be run usefully by people who didn't write them.</p>
 <div class="section" id="setting-up-the-machine">
 <h3>3.1. Setting Up The Machine<a class="headerlink" href="#setting-up-the-machine" title="Permalink to this headline">¶</a></h3>
 <p>Cyrus' unit tests are all located in a new directory,
-<code class="docutils literal"><span class="pre">cyrus-imapd/cunit/</span></code>. They're written in C, like the remainder of
+<code class="docutils literal notranslate"><span class="pre">cyrus-imapd/cunit/</span></code>. They're written in C, like the remainder of
 Cyrus, and use the <a class="reference external" href="http://cunit.sourceforge.net/">CUnit library from
 SourceForge</a>, with some home grown
 wrappers and other improvements to make our lives easier.</p>
 <p>Your first step is step is to ensure that the CUnit library (including
 the headers) is installed. Some modern operating systems already have
 CUnit, for example on Ubuntu you can just do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@ubuntu</span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libcunit1</span><span class="o">-</span><span class="n">dev</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@ubuntu</span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libcunit1</span><span class="o">-</span><span class="n">dev</span>
 </pre></div>
 </div>
 <p>Alternately, you can download the CUnit source, build it and install it.
 It's not a complicated or difficult library, this shouldn't take long.
-When you've done, install it in <code class="docutils literal"><span class="pre">/usr/include</span></code> and <code class="docutils literal"><span class="pre">/usr/lib</span></code>.</p>
+When you've done, install it in <code class="docutils literal notranslate"><span class="pre">/usr/include</span></code> and <code class="docutils literal notranslate"><span class="pre">/usr/lib</span></code>.</p>
 </div>
 <div class="section" id="configure-script">
 <h3>3.2 Configure Script<a class="headerlink" href="#configure-script" title="Permalink to this headline">¶</a></h3>
 <p>Because of the dependency on the CUnit library, the tests are disabled
 by default; this means you need enable them with an option to the
-<code class="docutils literal"><span class="pre">configure</span></code> script:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">unit</span><span class="o">-</span><span class="n">tests</span>
+<code class="docutils literal notranslate"><span class="pre">configure</span></code> script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">unit</span><span class="o">-</span><span class="n">tests</span>
 <span class="o">...</span>
 <span class="n">checking</span> <span class="k">for</span> <span class="n">CU</span>\<span class="n">_initialize</span>\<span class="n">_registry</span> <span class="ow">in</span> <span class="o">-</span><span class="n">lcunit</span><span class="o">...</span> <span class="n">yes</span>
 <span class="n">checking</span> <span class="n">CUnit</span><span class="o">/</span><span class="n">CUnit</span><span class="o">.</span><span class="n">h</span> <span class="n">usability</span><span class="o">...</span> <span class="n">yes</span>
@@ -876,14 +882,14 @@ by default; this means you need enable them with an option to the
 </div>
 <div class="section" id="make">
 <h3>3.3 Make<a class="headerlink" href="#make" title="Permalink to this headline">¶</a></h3>
-<p>First you need to build Cyrus itself, using the traditional <code class="docutils literal"><span class="pre">all:</span></code>
+<p>First you need to build Cyrus itself, using the traditional <code class="docutils literal notranslate"><span class="pre">all:</span></code>
 target.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="nb">all</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="nb">all</span>
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>Then, use the new <code class="docutils literal"><span class="pre">check:</span></code> target to build and run the unit tests.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>me@mybox&gt; make check
+<p>Then, use the new <code class="docutils literal notranslate"><span class="pre">check:</span></code> target to build and run the unit tests.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>me@mybox&gt; make check
  cd . &amp;&amp; /bin/bash /home/me/cyrus-imapd/missing --run automake-1.11 --foreign Makefile
  cd . &amp;&amp; /bin/bash ./config.status Makefile depfiles (a)
 config.status: creating Makefile
@@ -918,26 +924,26 @@ make[1]: Leaving directory `/home/me/cyrus-imapd/cunit&#39;
 </div>
 <p>Let's take a closer look at what's happening here.</p>
 <ol class="loweralpha simple">
-<li>The <code class="docutils literal"><span class="pre">check:</span></code> target causes automake to re-run itself. This is
+<li><p>The <code class="docutils literal notranslate"><span class="pre">check:</span></code> target causes automake to re-run itself. This is
 normal automake behaviour. Note that the older build system used to
 run make recursively in sub-directories, the newer automake-based
-system builds everything from the top directory.</li>
-<li>The <code class="docutils literal"><span class="pre">cunit/</span></code> directory contains a number of C source files
+system builds everything from the top directory.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">cunit/</span></code> directory contains a number of C source files
 (called, for reasons too complicated to explain here,
 <em>whatever</em>.testc) with test code in them. For each of those, a small
 wrapper C source file is generated and then compiled into an object
-file.</li>
-<li>Finally, all the compiled object files are linked into an
-executable, with a <code class="docutils literal"><span class="pre">main()</span></code> routine from <code class="docutils literal"><span class="pre">unit.c</span></code>, and a number
-of libraries and object files from other parts of the Cyrus tree.</li>
-<li>The resulting executable is then run.</li>
-<li>The test executable runs all the built tests one by one, telling us
+file.</p></li>
+<li><p>Finally, all the compiled object files are linked into an
+executable, with a <code class="docutils literal notranslate"><span class="pre">main()</span></code> routine from <code class="docutils literal notranslate"><span class="pre">unit.c</span></code>, and a number
+of libraries and object files from other parts of the Cyrus tree.</p></li>
+<li><p>The resulting executable is then run.</p></li>
+<li><p>The test executable runs all the built tests one by one, telling us
 which ones passed and which ones failed as it runs them. You can
 also run it manually with the name of a test as an argument, and it
-will run only the named test.</li>
-<li>At the end, the text executable prints a summary of how many tests
+will run only the named test.</p></li>
+<li><p>At the end, the text executable prints a summary of how many tests
 it ran and how many passed and failed. The key thing to look at here
-is the rightmost column, it should be all zero.</li>
+is the rightmost column, it should be all zero.</p></li>
 </ol>
 </div>
 <div class="section" id="using-valgrind">
@@ -946,8 +952,8 @@ is the rightmost column, it should be all zero.</li>
 itself; this is where <a class="reference external" href="http://valgrind.org/">the Valgrind program</a>
 comes in very handy. It detects buffer overruns and memory leaks and
 various other kinds of subtle errors.</p>
-<p>To run the unit tests with Valgrind, use the new <code class="docutils literal"><span class="pre">valgrind:</span></code> target.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>me@mybox&gt; make valgrind
+<p>To run the unit tests with Valgrind, use the new <code class="docutils literal notranslate"><span class="pre">valgrind:</span></code> target.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>me@mybox&gt; make valgrind
 ...
 valgrind --tool=memcheck --leak-check=full ./unit -v (a)
 ==2999== Memcheck, a memory error detector
@@ -981,17 +987,17 @@ valgrind --tool=memcheck --leak-check=full ./unit -v (a)
 </div>
 <p>Here's an explanation of what's happening in the example.</p>
 <ol class="loweralpha simple">
-<li>The test executable is run as before, but using the <code class="docutils literal"><span class="pre">valgrind</span></code>
-program. The first thing we see is Valgrind's banner message.</li>
-<li>The test executable proceeds as normal and eventually emits it's run
-summary, then exits.</li>
-<li>After the test executable exits, Valgrind checks for memory leaks
+<li><p>The test executable is run as before, but using the <code class="docutils literal notranslate"><span class="pre">valgrind</span></code>
+program. The first thing we see is Valgrind's banner message.</p></li>
+<li><p>The test executable proceeds as normal and eventually emits it's run
+summary, then exits.</p></li>
+<li><p>After the test executable exits, Valgrind checks for memory leaks
 and prints both a summary of all leaks and a stack trace showing
-where each block of leaked memory was allocated.</li>
+where each block of leaked memory was allocated.</p></li>
 </ol>
 <p>I'd just like to say that I love Valgrind and I think it's immensely
 useful. I would have made running the tests under Valgrind the only
-option for the <code class="docutils literal"><span class="pre">check:</span></code> target, except that Valgrind is not available
+option for the <code class="docutils literal notranslate"><span class="pre">check:</span></code> target, except that Valgrind is not available
 on all of Cyrus' supported platforms.</p>
 </div>
 <div class="section" id="the-tests-are-failing">
@@ -1006,28 +1012,28 @@ build and makes people unhappy.</p>
 <p>There are a few rules which you should follow to help us all get the
 most benefit out of unit testing</p>
 <ul class="simple">
-<li>If you see a test failing, investigate it.</li>
-<li>If you can't investigate, complain on the mailing list or raise a bug
-so that somebody else can investigate.</li>
-<li>When writing tests, write them to work in all environments and all
-combinations of <code class="docutils literal"><span class="pre">configure</span></code> script options. It's ok to have a test
+<li><p>If you see a test failing, investigate it.</p></li>
+<li><p>If you can't investigate, complain on the mailing list or raise a bug
+so that somebody else can investigate.</p></li>
+<li><p>When writing tests, write them to work in all environments and all
+combinations of <code class="docutils literal notranslate"><span class="pre">configure</span></code> script options. It's ok to have a test
 which is empty in some circumstances; it's not ok to have a test that
-fails.</li>
-<li>When adding code, write new tests for the new code.</li>
-<li>When modifying code, write new tests for the new behaviour.</li>
-<li>When looking at old code, also take a look at the <a class="reference external" href="http://ci.cyrusimap.org/job/cyrus-imapd-master/887/cobertura/">coverage
+fails.</p></li>
+<li><p>When adding code, write new tests for the new code.</p></li>
+<li><p>When modifying code, write new tests for the new behaviour.</p></li>
+<li><p>When looking at old code, also take a look at the <a class="reference external" href="http://ci.cyrusimap.org/job/cyrus-imapd-master/887/cobertura/">coverage
 report</a>
-and consider writing tests for the existing code.</li>
+and consider writing tests for the existing code.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="debugging-a-test">
 <h2>3.6 Debugging A Test<a class="headerlink" href="#debugging-a-test" title="Permalink to this headline">¶</a></h2>
-<p>With the new Cyrus build system, the file <code class="docutils literal"><span class="pre">cunit/unit</span></code> is no longer an
+<p>With the new Cyrus build system, the file <code class="docutils literal notranslate"><span class="pre">cunit/unit</span></code> is no longer an
 executable, it's a shell script which sets up some environment variables
 before running the real executable which is hidden away. This makes
 debugging a failing test somewhat challenging. The solution is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="p">(</span> <span class="n">cd</span> <span class="n">cunit</span> <span class="p">;</span> <span class="n">libtool</span> <span class="o">--</span><span class="n">mode</span><span class="o">=</span><span class="n">execute</span> <span class="n">gdb</span> <span class="o">--</span><span class="n">args</span> <span class="n">unit</span> <span class="o">-</span><span class="n">t</span> <span class="n">crc32</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="p">(</span> <span class="n">cd</span> <span class="n">cunit</span> <span class="p">;</span> <span class="n">libtool</span> <span class="o">--</span><span class="n">mode</span><span class="o">=</span><span class="n">execute</span> <span class="n">gdb</span> <span class="o">--</span><span class="n">args</span> <span class="n">unit</span> <span class="o">-</span><span class="n">t</span> <span class="n">crc32</span> <span class="p">)</span>
 <span class="o">...</span>
 <span class="n">Reading</span> <span class="n">symbols</span> <span class="kn">from</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">me</span><span class="o">/</span><span class="n">cyrus</span><span class="o">-</span><span class="n">imapd</span><span class="o">/</span><span class="n">cunit</span><span class="o">/.</span><span class="n">libs</span><span class="o">/</span><span class="n">lt</span><span class="o">-</span><span class="n">unit</span><span class="o">...</span><span class="n">done</span><span class="o">.</span>
 <span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="nb">list</span> <span class="n">crc32</span><span class="o">.</span><span class="n">testc</span><span class="p">:</span><span class="mi">1</span>
@@ -1061,14 +1067,14 @@ useful for manual debugging.</p>
 <div class="section" id="where-to-put-your-tests">
 <h2>4.1 Where To Put Your Tests<a class="headerlink" href="#where-to-put-your-tests" title="Permalink to this headline">¶</a></h2>
 <p>The unit test code in Cyrus is contained in a set of C source files in
-the <code class="docutils literal"><span class="pre">cunit</span></code> directory. For reasons too complex to go into here, these
+the <code class="docutils literal notranslate"><span class="pre">cunit</span></code> directory. For reasons too complex to go into here, these
 are named <em>whatever</em>.testc instead of the more usual <em>whatever</em>.c. If
 you look closely, you will see that each of those C source files maps to
-a &quot;Suite&quot; in CUnit parlance. For example, <code class="docutils literal"><span class="pre">cunit/glob.testc</span></code> is listed
+a &quot;Suite&quot; in CUnit parlance. For example, <code class="docutils literal notranslate"><span class="pre">cunit/glob.testc</span></code> is listed
 as the Suite &quot;glob&quot; in CUnit's runtime output.</p>
 <p>Typically, each Suite tests a single module or a related set of
-functions; for example, <code class="docutils literal"><span class="pre">cunit/glob.testc</span></code> contains tests for the glob
-module in <code class="docutils literal"><span class="pre">lib/glob.c</span></code>.</p>
+functions; for example, <code class="docutils literal notranslate"><span class="pre">cunit/glob.testc</span></code> contains tests for the glob
+module in <code class="docutils literal notranslate"><span class="pre">lib/glob.c</span></code>.</p>
 <p>So, if you want to add a new test for a module which already has some
 existing tests, the sensible thing to do is to <a class="reference external" href="#adding-a-test-to-a-suite">add a new test to the
 existing suite</a>. Otherwise, you'll need to
@@ -1076,16 +1082,16 @@ existing suite</a>. Otherwise, you'll need to
 </div>
 <div class="section" id="adding-a-new-suite">
 <h2>4.1 Adding A New Suite<a class="headerlink" href="#adding-a-new-suite" title="Permalink to this headline">¶</a></h2>
-<p>Each Suite is a single C source file in the <code class="docutils literal"><span class="pre">cunit/</span></code> directory. Your
+<p>Each Suite is a single C source file in the <code class="docutils literal notranslate"><span class="pre">cunit/</span></code> directory. Your
 first step is to create a new C source file. For this example, you'll
 create a new Suite to test the CRC32 routines which live in
-<code class="docutils literal"><span class="pre">lib/crc32.c</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">cunit</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
+<code class="docutils literal notranslate"><span class="pre">lib/crc32.c</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">cunit</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
 <span class="o">...</span>
 </pre></div>
 </div>
 <p>The file should contain something like this.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Unit</span> <span class="n">test</span> <span class="k">for</span> <span class="n">lib</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">c</span> <span class="o">*/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Unit</span> <span class="n">test</span> <span class="k">for</span> <span class="n">lib</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">c</span> <span class="o">*/</span>
 <span class="c1">#include &quot;cunit/cyrunit.h&quot;  (a)</span>
 <span class="c1">#include &quot;crc32.h&quot;  (b)</span>
 
@@ -1102,48 +1108,48 @@ create a new Suite to test the CRC32 routines which live in
 </div>
 <p>Here's an explanation of what all these bits are for.</p>
 <ol class="loweralpha simple">
-<li>You need to include the header <code class="docutils literal"><span class="pre">&quot;cunit/cyrunit.h&quot;</span></code>, which is a thin
+<li><p>You need to include the header <code class="docutils literal notranslate"><span class="pre">&quot;cunit/cyrunit.h&quot;</span></code>, which is a thin
 Cyrus wrapper around the CUnit's library's header,
-<code class="docutils literal"><span class="pre">&lt;CUnit/CUnit.h&gt;</span></code> with some extra conveniences.</li>
-<li>You should also include any headers you need for declarations of the
-functions which you'll be testing. Note that the Cyrus <code class="docutils literal"><span class="pre">lib/</span></code> and
-<code class="docutils literal"><span class="pre">imap/</span></code> directories are already in the include path, so any header
+<code class="docutils literal notranslate"><span class="pre">&lt;CUnit/CUnit.h&gt;</span></code> with some extra conveniences.</p></li>
+<li><p>You should also include any headers you need for declarations of the
+functions which you'll be testing. Note that the Cyrus <code class="docutils literal notranslate"><span class="pre">lib/</span></code> and
+<code class="docutils literal notranslate"><span class="pre">imap/</span></code> directories are already in the include path, so any header
 in there can be included without the directory prefix, e.g.
-<code class="docutils literal"><span class="pre">&quot;crc32.h&quot;</span></code> for <code class="docutils literal"><span class="pre">lib/crc32.h</span></code>.</li>
-<li>You need to have at least one function which looks like this: it
-takes no arguments, returns void, and is named <code class="docutils literal"><span class="pre">test_whatever</span></code>. It
-may be <code class="docutils literal"><span class="pre">static</span></code> or <code class="docutils literal"><span class="pre">extern</span></code>, but I recommend <code class="docutils literal"><span class="pre">static</span></code>.
+<code class="docutils literal notranslate"><span class="pre">&quot;crc32.h&quot;</span></code> for <code class="docutils literal notranslate"><span class="pre">lib/crc32.h</span></code>.</p></li>
+<li><p>You need to have at least one function which looks like this: it
+takes no arguments, returns void, and is named <code class="docutils literal notranslate"><span class="pre">test_whatever</span></code>. It
+may be <code class="docutils literal notranslate"><span class="pre">static</span></code> or <code class="docutils literal notranslate"><span class="pre">extern</span></code>, but I recommend <code class="docutils literal notranslate"><span class="pre">static</span></code>.
 Functions with this signature are automatically discovered in the
 source code by the Cyrus unit test infrastructure, so all you have
 to do is write the function. Later, a CUnit test named &quot;whatever&quot;
-will be created automatically for your <code class="docutils literal"><span class="pre">test_whatever</span></code> function.</li>
-<li>Here's a good place to define the test inputs and expected outputs.
+will be created automatically for your <code class="docutils literal notranslate"><span class="pre">test_whatever</span></code> function.</p></li>
+<li><p>Here's a good place to define the test inputs and expected outputs.
 Note that for this example you have no idea of the actual correct
 output. The right thing to do there is to manually calculate the
 expected result from first principles, or to use a different piece
 of software which you believe to be working. For this example, let's
-just use a known incorrect value and see what happens.</li>
-<li>Here's a good place for local variables you need during the test.</li>
-<li>Call the function under test (<code class="docutils literal"><span class="pre">crc32_map()</span></code> in this example) with
-known inputs, and capture the results in a local variable <code class="docutils literal"><span class="pre">c</span></code>.</li>
-<li>Compare the actual result in <code class="docutils literal"><span class="pre">c</span></code> with the expected result in
-<code class="docutils literal"><span class="pre">CRC32</span></code>. The <code class="docutils literal"><span class="pre">CU_ASSERT_EQUAL()</span></code> macro checks that it's two
+just use a known incorrect value and see what happens.</p></li>
+<li><p>Here's a good place for local variables you need during the test.</p></li>
+<li><p>Call the function under test (<code class="docutils literal notranslate"><span class="pre">crc32_map()</span></code> in this example) with
+known inputs, and capture the results in a local variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+<li><p>Compare the actual result in <code class="docutils literal notranslate"><span class="pre">c</span></code> with the expected result in
+<code class="docutils literal notranslate"><span class="pre">CRC32</span></code>. The <code class="docutils literal notranslate"><span class="pre">CU_ASSERT_EQUAL()</span></code> macro checks that it's two
 arguments are equal (using an integer comparison), and if they're
 different it prints a message and records a failure. Note that
-unlike the libc <code class="docutils literal"><span class="pre">assert()</span></code> macro, control will continue even if
+unlike the libc <code class="docutils literal notranslate"><span class="pre">assert()</span></code> macro, control will continue even if
 the assert fails. The CUnit library provides a whole family of
 similar macros, see <a class="reference external" href="http://cunit.sourceforge.net/doc/writing_tests.html#assertions">the online CUnit
 documentation</a>
-for more details.</li>
+for more details.</p></li>
 </ol>
 <p>Now you need to tell the Cyrus build system about your new Suite.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">Makefile</span><span class="o">.</span><span class="n">am</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">Makefile</span><span class="o">.</span><span class="n">am</span>
 <span class="o">...</span>
 </pre></div>
 </div>
 <p>You need to add the filename of your new test to the definition of the
-<code class="docutils literal"><span class="pre">cunit_TESTS</span></code> variable.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cunit_TESTS</span> <span class="o">=</span> \
+<code class="docutils literal notranslate"><span class="pre">cunit_TESTS</span></code> variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cunit_TESTS</span> <span class="o">=</span> \
     <span class="n">cunit</span><span class="o">/</span><span class="n">aaa</span><span class="o">-</span><span class="n">db</span><span class="o">.</span><span class="n">testc</span> \
     <span class="n">cunit</span><span class="o">/</span><span class="n">annotate</span><span class="o">.</span><span class="n">testc</span> \
     <span class="n">cunit</span><span class="o">/</span><span class="n">backend</span><span class="o">.</span><span class="n">testc</span> \
@@ -1163,7 +1169,7 @@ command <strong>make cunit/unit</strong>.</p>
 <p>Note that sometimes this doesn't quite work right, and you may be able
 to work around this problem using the command <strong>rm
 cunit/default.cunit</strong>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
 <span class="o">...</span>
 <span class="o">../</span><span class="n">cunit</span><span class="o">/</span><span class="n">cunit</span><span class="o">.</span><span class="n">pl</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">sources</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
 <span class="o">...</span>
@@ -1184,13 +1190,13 @@ cunit/default.cunit</strong>.</p>
 <p>Note how the test failure told us which in source file and at what line
 number the failure occurred, and what the actual and expected values
 were. Let's go and fix that up now.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">const</span> <span class="n">char</span> <span class="n">TEXT</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;lorem ipsum&quot;</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">const</span> <span class="n">char</span> <span class="n">TEXT</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;lorem ipsum&quot;</span><span class="p">;</span>
 <span class="n">static</span> <span class="n">uint32</span>\<span class="n">_t</span> <span class="n">CRC32</span> <span class="o">=</span> <span class="mh">0x72d7748e</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Re-run <code class="docutils literal"><span class="pre">make</span> <span class="pre">check</span></code> and you'll see your test being rebuilt and rerun,
+<p>Re-run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code> and you'll see your test being rebuilt and rerun,
 and this time passing.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
 <span class="o">...</span>
 <span class="o">../</span><span class="n">cunit</span><span class="o">/</span><span class="n">cunit</span><span class="o">.</span><span class="n">pl</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">wrapper</span> <span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
 <span class="n">gcc</span> <span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">O2</span> <span class="o">.</span><span class="n">cunit</span><span class="o">-</span><span class="n">crc32</span><span class="o">.</span><span class="n">c</span>
@@ -1210,9 +1216,9 @@ and this time passing.</p>
 <div class="section" id="adding-a-test-to-a-suite">
 <h2>4.2 Adding A Test To A Suite<a class="headerlink" href="#adding-a-test-to-a-suite" title="Permalink to this headline">¶</a></h2>
 <p>Adding a new test to an existing test is easy: all you have to do is add
-a new function to an existing C source file in the <code class="docutils literal"><span class="pre">cunit/</span></code> directory.
-As an example, let's add a test for the <code class="docutils literal"><span class="pre">crc_iovec()</span></code> function.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">cunit</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
+a new function to an existing C source file in the <code class="docutils literal notranslate"><span class="pre">cunit/</span></code> directory.
+As an example, let's add a test for the <code class="docutils literal notranslate"><span class="pre">crc_iovec()</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">vi</span> <span class="n">cunit</span><span class="o">/</span><span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
 <span class="o">...</span>
 
 <span class="n">static</span> <span class="n">void</span> <span class="n">test_iovec</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>  <span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -1236,32 +1242,32 @@ As an example, let's add a test for the <code class="docutils literal"><span cla
 </div>
 <p>Here's an explanation of what all these bits are for.</p>
 <ol class="loweralpha simple">
-<li>Your new test function should look like this: it takes no arguments,
-returns void, and is named <code class="docutils literal"><span class="pre">test_whatever</span></code>. It may be <code class="docutils literal"><span class="pre">static</span></code>
-or <code class="docutils literal"><span class="pre">extern</span></code>, but I recommend <code class="docutils literal"><span class="pre">static</span></code>. Functions with this
+<li><p>Your new test function should look like this: it takes no arguments,
+returns void, and is named <code class="docutils literal notranslate"><span class="pre">test_whatever</span></code>. It may be <code class="docutils literal notranslate"><span class="pre">static</span></code>
+or <code class="docutils literal notranslate"><span class="pre">extern</span></code>, but I recommend <code class="docutils literal notranslate"><span class="pre">static</span></code>. Functions with this
 signature are automatically discovered in the source code by the
 Cyrus unit test infrastructure, so all you have to do is write the
 function. Later, a CUnit test named &quot;whatever&quot; will be created
-automatically for your <code class="docutils literal"><span class="pre">test_whatever</span></code> function. Note that the
+automatically for your <code class="docutils literal notranslate"><span class="pre">test_whatever</span></code> function. Note that the
 opening curly brace must be on the next line or the unit test
-infrastructure will not find the function.</li>
-<li>Here's a good place to define the test inputs and expected outputs.</li>
-<li>Here's a good place for local variables you need during the test.</li>
-<li>Here you set up the input conditions for the function under test.</li>
-<li>Call the function under test with your known inputs, and capture the
-results in a local variable, here <code class="docutils literal"><span class="pre">c</span></code>.</li>
-<li>Compare the actual result in <code class="docutils literal"><span class="pre">c</span></code> with the expected result in
-<code class="docutils literal"><span class="pre">CRC32</span></code>. The <code class="docutils literal"><span class="pre">CU_ASSERT_EQUAL()</span></code> macro checks that it's two
+infrastructure will not find the function.</p></li>
+<li><p>Here's a good place to define the test inputs and expected outputs.</p></li>
+<li><p>Here's a good place for local variables you need during the test.</p></li>
+<li><p>Here you set up the input conditions for the function under test.</p></li>
+<li><p>Call the function under test with your known inputs, and capture the
+results in a local variable, here <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+<li><p>Compare the actual result in <code class="docutils literal notranslate"><span class="pre">c</span></code> with the expected result in
+<code class="docutils literal notranslate"><span class="pre">CRC32</span></code>. The <code class="docutils literal notranslate"><span class="pre">CU_ASSERT_EQUAL()</span></code> macro checks that it's two
 arguments are equal (using an integer comparison), and if they're
 different it prints a message and records a failure. Note that
-unlike the libc <code class="docutils literal"><span class="pre">assert()</span></code> macro, control will continue even if
+unlike the libc <code class="docutils literal notranslate"><span class="pre">assert()</span></code> macro, control will continue even if
 the assert fails. The CUnit library provides a whole family of
 similar macros, see <a class="reference external" href="http://cunit.sourceforge.net/doc/writing_tests.html#assertions">the online CUnit
 documentation</a>
-for more details.</li>
+for more details.</p></li>
 </ol>
-<p>Now run <code class="docutils literal"><span class="pre">make</span> <span class="pre">check</span></code> and you'll see your test being built and run.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
+<p>Now run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code> and you'll see your test being built and run.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">check</span>
 <span class="o">...</span>
 <span class="o">../</span><span class="n">cunit</span><span class="o">/</span><span class="n">cunit</span><span class="o">.</span><span class="n">pl</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">--</span><span class="n">generate</span><span class="o">-</span><span class="n">wrapper</span> <span class="n">crc32</span><span class="o">.</span><span class="n">testc</span>
 <span class="n">gcc</span> <span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">O2</span> <span class="o">.</span><span class="n">cunit</span><span class="o">-</span><span class="n">crc32</span><span class="o">.</span><span class="n">c</span>
@@ -1307,8 +1313,8 @@ necessarily a teardown function.</p>
 appropriate signature (names, arguments and return type) and the Cyrus
 unit test infrastructure will automatically discover them and arrange
 for them to be called. The functions should look like (actual example
-taken from <code class="docutils literal"><span class="pre">cunit/mboxname.testc</span></code>) this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">enum</span> <span class="n">enum_value</span> <span class="n">old_config_virtdomains</span><span class="p">;</span>
+taken from <code class="docutils literal notranslate"><span class="pre">cunit/mboxname.testc</span></code>) this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">enum</span> <span class="n">enum_value</span> <span class="n">old_config_virtdomains</span><span class="p">;</span>
 
 <span class="n">static</span> <span class="nb">int</span> <span class="n">set_up</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1325,7 +1331,7 @@ taken from <code class="docutils literal"><span class="pre">cunit/mboxname.testc
 </pre></div>
 </div>
 <p>The functions should return 0 on success, and non-zero on error. They
-must not call and <code class="docutils literal"><span class="pre">CU_*</span></code> functions or macros.</p>
+must not call and <code class="docutils literal notranslate"><span class="pre">CU_*</span></code> functions or macros.</p>
 <p>Good luck and good testing!</p>
 </div>
 </div>
@@ -1351,7 +1357,7 @@ must not call and <code class="docutils literal"><span class="pre">CU_*</span></
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 30 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1377,7 +1383,6 @@ must not call and <code class="docutils literal"><span class="pre">CU_*</span></
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -790,16 +792,16 @@
   <div class="section" id="cyrus-imap-3-0-9-release-notes">
 <h1>Cyrus IMAP 3.0.9 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-9-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 3.0 series.</p>
-<p class="last">Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
 about the 3.0 series, including upgrading instructions.</p>
 </div>
 <p>Download via HTTPS:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.9/cyrus-imapd-3.0.9.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-0-8">
@@ -812,43 +814,43 @@ this release, please report this to the mailing lists.  Thanks!</p>
 <div class="section" id="dependency-changes">
 <h3>Dependency changes<a class="headerlink" href="#dependency-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>ClamAV 0.101 is now supported (thanks Adam Gołębiowski)</li>
+<li><p>ClamAV 0.101 is now supported (thanks Adam Gołębiowski)</p></li>
 </ul>
 </div>
 <div class="section" id="new-configuration-options">
 <h3>New configuration options<a class="headerlink" href="#new-configuration-options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The new <code class="docutils literal"><span class="pre">cyrus_group</span></code> option in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std:cyrusman-imapd.conf(5)">imapd.conf(5)</a> can be used to
+<li><p>The new <code class="docutils literal notranslate"><span class="pre">cyrus_group</span></code> option in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> can be used to
 set the UNIX group that Cyrus processes run as (thanks Jakob Gahde).  The
-default is to use the primary group of the configured <code class="docutils literal"><span class="pre">cyrus_user</span></code>.  The
-old <code class="docutils literal"><span class="pre">--with-cyrus-group</span></code> configure option has been non-functional for many
-years, and has been removed.</li>
+default is to use the primary group of the configured <code class="docutils literal notranslate"><span class="pre">cyrus_user</span></code>.  The
+old <code class="docutils literal notranslate"><span class="pre">--with-cyrus-group</span></code> configure option has been non-functional for many
+years, and has been removed.</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2521">Issue #2521</a>: cyradm getquotaroot now supports mailbox names
-containing spaces (thanks Marco Favero)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2524">Issue #2524</a>: ipurge no longer crashes on partial name matches</li>
-<li>Fixed: various memory leaks (thanks Pavel Zhukov)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2534">Issue #2534</a>: com_err now built early enough (thanks
-Дилян Палаузов)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2566">Issue #2566</a>: idle socket setup no longer wrapped by asserts (thanks
-Zan Lynx)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2597">Issue #2597</a>: lmtpd segfault with sieve redirections on shared folder
-(thanks Anthony Prades)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2449">Issue #2449</a>: lmtpd segfault with sieve rejections on shared folder
-(thanks Anthony Prades)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2609">Issue #2609</a>: mbexamine now correctly handles mailbox where all mail
-is archived and <code class="docutils literal"><span class="pre">archive-partition</span></code> and <code class="docutils literal"><span class="pre">meta-partition</span></code> are enabled
-(thanks Michael Menge)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2625">Issue #2625</a>: the <code class="docutils literal"><span class="pre">ptscache_db_path</span></code> setting now works correctly</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2643">Issue #2643</a>: ptclient now returns correct group names when resolved
-by filter (thanks Felix Schumacher)</li>
-<li>Fixed: conversationsdb now stores GUID even if message has no CID</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2663">Issue #2663</a>: Q-encoded MIME headers no longer split multi-octet
-UTF words (thanks Дилян Палаузов)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2521">Issue #2521</a>: cyradm getquotaroot now supports mailbox names
+containing spaces (thanks Marco Favero)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2524">Issue #2524</a>: ipurge no longer crashes on partial name matches</p></li>
+<li><p>Fixed: various memory leaks (thanks Pavel Zhukov)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2534">Issue #2534</a>: com_err now built early enough (thanks
+Дилян Палаузов)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2566">Issue #2566</a>: idle socket setup no longer wrapped by asserts (thanks
+Zan Lynx)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2597">Issue #2597</a>: lmtpd segfault with sieve redirections on shared folder
+(thanks Anthony Prades)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2449">Issue #2449</a>: lmtpd segfault with sieve rejections on shared folder
+(thanks Anthony Prades)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2609">Issue #2609</a>: mbexamine now correctly handles mailbox where all mail
+is archived and <code class="docutils literal notranslate"><span class="pre">archive-partition</span></code> and <code class="docutils literal notranslate"><span class="pre">meta-partition</span></code> are enabled
+(thanks Michael Menge)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2625">Issue #2625</a>: the <code class="docutils literal notranslate"><span class="pre">ptscache_db_path</span></code> setting now works correctly</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2643">Issue #2643</a>: ptclient now returns correct group names when resolved
+by filter (thanks Felix Schumacher)</p></li>
+<li><p>Fixed: conversationsdb now stores GUID even if message has no CID</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2663">Issue #2663</a>: Q-encoded MIME headers no longer split multi-octet
+UTF words (thanks Дилян Палаузов)</p></li>
 </ul>
 </div>
 </div>
@@ -875,7 +877,7 @@ UTF words (thanks Дилян Палаузов)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 26 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -901,7 +903,6 @@ UTF words (thanks Дилян Палаузов)</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

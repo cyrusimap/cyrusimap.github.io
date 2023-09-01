@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -795,9 +797,9 @@
 <h2>Participants<a class="headerlink" href="#participants" title="Permalink to this headline">¶</a></h2>
 <p>Within an IMAP aggregator, there are several types of MUPDATE participants.</p>
 <ol class="arabic simple">
-<li><strong>MUPDATE Master</strong> - This component maintains the master copy of the MUPDATE database and allows operations on the database to be atomic.</li>
-<li><strong>MUPDATE Slaves</strong> - These components connect to the master and maintain a replica of the MUPDATE database. They also accept connections from clients, though these connections are of a read-only nature. Note that there are short periods of time between an update occurring on the master and it being reflected across all of the slaves.</li>
-<li><strong>MUPDATE Clients</strong> - These components query the master and slaves to obtain information from the mailbox database.</li>
+<li><p><strong>MUPDATE Master</strong> - This component maintains the master copy of the MUPDATE database and allows operations on the database to be atomic.</p></li>
+<li><p><strong>MUPDATE Slaves</strong> - These components connect to the master and maintain a replica of the MUPDATE database. They also accept connections from clients, though these connections are of a read-only nature. Note that there are short periods of time between an update occurring on the master and it being reflected across all of the slaves.</p></li>
+<li><p><strong>MUPDATE Clients</strong> - These components query the master and slaves to obtain information from the mailbox database.</p></li>
 </ol>
 </div>
 <div class="section" id="data-formats">
@@ -845,16 +847,15 @@
 </div>
 <div class="section" id="server-initial-response">
 <h2>Server Initial Response<a class="headerlink" href="#server-initial-response" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>The initial response from the server is a two line format. The first line MUST start with <code class="docutils literal"><span class="pre">*</span> <span class="pre">OK</span> <span class="pre">MUPDATE</span></code> and be followed by three strings:</dt>
-<dd><ul class="first last simple">
-<li>the server's hostname,</li>
-<li>an implementation-defined string,</li>
-<li>the version of the implementation (also implementation-defined).</li>
+<dl class="simple">
+<dt>The initial response from the server is a two line format. The first line MUST start with <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">OK</span> <span class="pre">MUPDATE</span></code> and be followed by three strings:</dt><dd><ul class="simple">
+<li><p>the server's hostname,</p></li>
+<li><p>an implementation-defined string,</p></li>
+<li><p>the version of the implementation (also implementation-defined).</p></li>
 </ul>
 </dd>
 </dl>
-<p>The second line of the initial response begins with <code class="docutils literal"><span class="pre">*</span> <span class="pre">AUTH</span></code> and is followed by a space-separated list of SASL mechanisms that the server will accept.</p>
+<p>The second line of the initial response begins with <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">AUTH</span></code> and is followed by a space-separated list of SASL mechanisms that the server will accept.</p>
 </div>
 <div class="section" id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
@@ -864,20 +865,20 @@
 <p>The AUTHENTICATE command initiates a SASL negotiation session between the client and the server. It has two parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Mandatory: the string for the authentication mechanism desired.</li>
-<li>Optional: contents of the client first send.</li>
+<li><p>Mandatory: the string for the authentication mechanism desired.</p></li>
+<li><p>Optional: contents of the client first send.</p></li>
 </ol>
 </div></blockquote>
-<p>All SASL blobs sent across the wire must be in base64 encoded format, and followed by a CR and LF combination. Clients may cancel authentication by sending a <code class="docutils literal"><span class="pre">*</span></code> followed by a <code class="docutils literal"><span class="pre">CR</span></code> and <code class="docutils literal"><span class="pre">LF</span></code>.</p>
+<p>All SASL blobs sent across the wire must be in base64 encoded format, and followed by a CR and LF combination. Clients may cancel authentication by sending a <code class="docutils literal notranslate"><span class="pre">*</span></code> followed by a <code class="docutils literal notranslate"><span class="pre">CR</span></code> and <code class="docutils literal notranslate"><span class="pre">LF</span></code>.</p>
 </div>
 <div class="section" id="activate">
 <h3>ACTIVATE<a class="headerlink" href="#activate" title="Permalink to this headline">¶</a></h3>
 <p>The ACTIVATE command takes three parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>a mailbox name,</li>
-<li>a location in <code class="docutils literal"><span class="pre">server!partition</span></code> format,</li>
-<li>and an ACL for the mailbox.</li>
+<li><p>a mailbox name,</p></li>
+<li><p>a location in <code class="docutils literal notranslate"><span class="pre">server!partition</span></code> format,</p></li>
+<li><p>and an ACL for the mailbox.</p></li>
 </ol>
 </div></blockquote>
 <p>It will tell the server to insert into its database the given mailbox in the given location with the given ACL. An OK response indicates success, a NO response indicates some sort of failure occured. This is not a valid command to issue to a slave.</p>
@@ -887,7 +888,7 @@
 <p>The DELETE command takes one parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>a mailbox name.</li>
+<li><p>a mailbox name.</p></li>
 </ol>
 </div></blockquote>
 <p>The server should delete the given mailbox from its namespace, and return OK. A NO response indicates that either the session is not currently authenticated or the given mailbox does not exist. The delete command should immediately be sent to all slave databases. This is not a valid command to issue to a slave.</p>
@@ -897,7 +898,7 @@
 <p>The FIND command takes a single parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>a mailbox name.</li>
+<li><p>a mailbox name.</p></li>
 </ol>
 </div></blockquote>
 <p>The server then responds with the current record for the given mailbox, if any and an OK response. A NO response is suitable if the connection is not currently authenticated.</p>
@@ -907,7 +908,7 @@
 <p>The LIST command is similar to running FIND across the entire database. The LIST command takes an optional parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>A prefix to match for the location field.</li>
+<li><p>A prefix to match for the location field.</p></li>
 </ol>
 </div></blockquote>
 <p>Without the parameter, LIST returns results for all mailboxes in the database. For each mailbox that matches, it issues a MAILBOX or RESERVE response to the client. When all responses are complete, it issues an OK response.</p>
@@ -925,8 +926,8 @@
 <p>A RESERVE command takes two parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>the mailbox name</li>
-<li>a location in <code class="docutils literal"><span class="pre">server!partition</span></code> format.</li>
+<li><p>the mailbox name</p></li>
+<li><p>a location in <code class="docutils literal notranslate"><span class="pre">server!partition</span></code> format.</p></li>
 </ol>
 </div></blockquote>
 <p>It will first check for an existing reservation or activation of the given mailbox name, if there does exist such an entity, a NO response is returned, otherwise a reservation entry is put into the database, and an OK response is returned on success. NO is also returned if the connection is unauthenticated. This is not a valid command to issue to a slave.</p>
@@ -941,8 +942,8 @@
 <p>A distributed database protocol such as mupdate must address the issues of synchronization. In our case, there are two places where the database can become out of sync if a connection is not dropped cleanly.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li>The master mupdate database can reflect the existence of mailboxes in the namespace that do not exist (or vice versa),</li>
-<li>The slaves need to ensure that their local database is up to date with the master whenever they come up.</li>
+<li><p>The master mupdate database can reflect the existence of mailboxes in the namespace that do not exist (or vice versa),</p></li>
+<li><p>The slaves need to ensure that their local database is up to date with the master whenever they come up.</p></li>
 </ol>
 </div></blockquote>
 <div class="section" id="synchronization-of-slaves-to-master">
@@ -977,7 +978,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1003,7 +1004,6 @@
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

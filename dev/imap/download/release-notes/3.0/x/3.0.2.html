@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,16 +793,16 @@
 <div class="section" id="cyrus-imap-3-0-2-release-notes">
 <h1>Cyrus IMAP 3.0.2 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-2-release-notes" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 3.0 series.</p>
-<p class="last">Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
+<p>Refer to the Cyrus IMAP 3.0.0 Release Notes for important information
 about the 3.0 series, including upgrading instructions.</p>
 </div>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz</a></li>
-<li><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz.sig</a></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.2/cyrus-imapd-3.0.2.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="changes-since-3-0-1">
@@ -808,44 +810,44 @@ about the 3.0 series, including upgrading instructions.</p>
 <div class="section" id="dependency-changes">
 <h3>Dependency changes<a class="headerlink" href="#dependency-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Cyrus will now have the mboxevents feature compiled in, it is no
-longer optional.</li>
+<li><p>Cyrus will now have the mboxevents feature compiled in, it is no
+longer optional.</p></li>
 </ul>
 </div>
 <div class="section" id="other-changes">
 <h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Improved JMAP support, including attachment name searching</li>
-<li>Improved spelling/gramar in documentation (thanks Josh Soref)</li>
-<li>Distribution now includes a libcyrus_imap.pc (thanks Дилян Палаузов)</li>
-<li>Improved CUnit unit tests</li>
-<li><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_backups.html#std:cyrusman-ctl_backups(8)">ctl_backups(8)</a> now supports <cite>-V</cite> argument for faster list/stat operations</li>
-<li>Cyrus distributions now contain a VERSION file, containing the released
-Cyrus version, which is preserved across autoreconf calls.</li>
-<li>Removed convert-sieve.pl: <a class="reference internal" href="../../../../reference/manpages/systemcommands/translatesieve.html#std:cyrusman-translatesieve(8)">translatesieve(8)</a> does everything you need and more.</li>
-<li>Distribution now contains Cyrus::DList, Cyrus::ImapClone, and Cyrus::SyncProto perl modules</li>
+<li><p>Improved JMAP support, including attachment name searching</p></li>
+<li><p>Improved spelling/gramar in documentation (thanks Josh Soref)</p></li>
+<li><p>Distribution now includes a libcyrus_imap.pc (thanks Дилян Палаузов)</p></li>
+<li><p>Improved CUnit unit tests</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_backups.html#std-cyrusman-ctl_backups-8">ctl_backups(8)</a> now supports <cite>-V</cite> argument for faster list/stat operations</p></li>
+<li><p>Cyrus distributions now contain a VERSION file, containing the released
+Cyrus version, which is preserved across autoreconf calls.</p></li>
+<li><p>Removed convert-sieve.pl: <a class="reference internal" href="../../../../reference/manpages/systemcommands/translatesieve.html#std-cyrusman-translatesieve-8">translatesieve(8)</a> does everything you need and more.</p></li>
+<li><p>Distribution now contains Cyrus::DList, Cyrus::ImapClone, and Cyrus::SyncProto perl modules</p></li>
 </ul>
 </div>
 <div class="section" id="bug-fixes">
 <h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1933">Issue #1933</a>: activation of replicated sieve scripts now occurs atomically</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1931">Issue #1931</a>: improved handling of missing mysql in configure</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1901">Issue #1901</a>: CyrusDB API is now C++-friendly</li>
-<li>Fixed: don't mix up X-NUM-FOLDERS quota usage on rename</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1944">Issue #1944</a>: SQLite only required if compiling with features that need it</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1914">Issue #1914</a>: VPATH builds now work correctly again</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1948">Issue #1948</a>: ACL changes are now auditlogged</li>
-<li>Fixed: JMAP downloadURL format</li>
-<li>Fixed: memory leak in httpd</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1967">Issue #1967</a>: imapd reports EXISTS count earlier and faster</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1964">Issue #1964</a>: correctly detect when librt is needed</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1909">Issue #1909</a>: tidy up --enable-sphinx/enable-xapian configure options
-(thanks Дилян Палаузов)</li>
-<li>Fixed: pkgconfig files now contain exec_prefix (thanks Дилян Палаузов)</li>
-<li>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1993">Issue #1993</a>: crc32c and xsha1 modules now build correctly on big-endian
-platforms (thanks Jason Tibbitts)</li>
-<li>Fixed: reconstruct no longer crashes on non-64bit platforms (thanks Jason Tibbitts)</li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1933">Issue #1933</a>: activation of replicated sieve scripts now occurs atomically</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1931">Issue #1931</a>: improved handling of missing mysql in configure</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1901">Issue #1901</a>: CyrusDB API is now C++-friendly</p></li>
+<li><p>Fixed: don't mix up X-NUM-FOLDERS quota usage on rename</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1944">Issue #1944</a>: SQLite only required if compiling with features that need it</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1914">Issue #1914</a>: VPATH builds now work correctly again</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1948">Issue #1948</a>: ACL changes are now auditlogged</p></li>
+<li><p>Fixed: JMAP downloadURL format</p></li>
+<li><p>Fixed: memory leak in httpd</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1967">Issue #1967</a>: imapd reports EXISTS count earlier and faster</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1964">Issue #1964</a>: correctly detect when librt is needed</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1909">Issue #1909</a>: tidy up --enable-sphinx/enable-xapian configure options
+(thanks Дилян Палаузов)</p></li>
+<li><p>Fixed: pkgconfig files now contain exec_prefix (thanks Дилян Палаузов)</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1993">Issue #1993</a>: crc32c and xsha1 modules now build correctly on big-endian
+platforms (thanks Jason Tibbitts)</p></li>
+<li><p>Fixed: reconstruct no longer crashes on non-64bit platforms (thanks Jason Tibbitts)</p></li>
 </ul>
 </div>
 </div>
@@ -872,7 +874,7 @@ platforms (thanks Jason Tibbitts)</li>
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -898,7 +900,6 @@ platforms (thanks Jason Tibbitts)</li>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

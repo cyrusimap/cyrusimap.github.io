@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../../../_static/cyrus.css" type="text/css" />
   
 
@@ -158,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal"><span class="pre">/etc/services</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +256,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
 </ul>
 </li>
@@ -380,7 +382,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
 </ul>
@@ -791,23 +793,23 @@
 <h1>Cyrus IMAP 2.4.12 Release Notes<a class="headerlink" href="#cyrus-imap-2-4-12-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Changes to the Cyrus IMAP Server since 2.4.11</p>
 <ul class="simple">
-<li>Bug #3150 - fix issue with overview and messages without a References header</li>
-<li>fixed nntp login with tab and space in password</li>
-<li>Bug #3501 - be more relaxed about names of DELETED folders</li>
-<li>Bug #3553 - fix QRESYNC passing to murder backend - thanks alec &lt;<a class="reference external" href="mailto:alec&#37;&#52;&#48;alec&#46;pl">alec<span>&#64;</span>alec<span>&#46;</span>pl</a>&gt;</li>
-<li>Bug #3554 - only show ENABLED response the first time each option is ENABLEd</li>
-<li>Lots of cleanup of build process and backporting of APIs</li>
-<li>Bug #3502 - make configure.in more portable - thanks OBATA Akio &lt;<a class="reference external" href="mailto:obata&#37;&#52;&#48;lins&#46;jp">obata<span>&#64;</span>lins<span>&#46;</span>jp</a>&gt;</li>
-<li>Bug #3533 - add missing break statements in sieve - thanks Thomas Jarosch &lt;<a class="reference external" href="mailto:thomas&#46;jarosch&#37;&#52;&#48;intra2net&#46;com">thomas<span>&#46;</span>jarosch<span>&#64;</span>intra2net<span>&#46;</span>com</a>&gt;</li>
-<li>Bug #3550 - support wildcards for ACLS in cyradm - thanks &lt;<a class="reference external" href="mailto:mark&#46;cave-ayland&#37;&#52;&#48;siriusit&#46;co&#46;uk">mark<span>&#46;</span>cave-ayland<span>&#64;</span>siriusit<span>&#46;</span>co<span>&#46;</span>uk</a>&gt;</li>
-<li>Bug #3556 - print remote server in mbpath - thanks Wolfgang Breyha &lt;<a class="reference external" href="mailto:wbreyha&#37;&#52;&#48;gmx&#46;net">wbreyha<span>&#64;</span>gmx<span>&#46;</span>net</a>&gt;</li>
-<li>Bug #3559 - make XFER work with unlimited quota - thanks Wolfgang Breyha &lt;<a class="reference external" href="mailto:wbreyha&#37;&#52;&#48;gmx&#46;net">wbreyha<span>&#64;</span>gmx<span>&#46;</span>net</a>&gt;</li>
-<li>Bug #3547 - use strconcat() in writefile()</li>
-<li>fixed a case where skiplist library could write error messages directly to stdout</li>
-<li>Bug #3545 - fix sign extension in squat_decode_64</li>
-<li>Bug #3558 - return error if backend doesn't support LIST-EXTENDED</li>
-<li>Bug #3565 - clean up in preparation for automake</li>
-<li>fixed incomplete authentication checks in nntpd, reported by Secunia as SA46093 - thanks Stefan Cornelius, Secunia Research</li>
+<li><p>Bug #3150 - fix issue with overview and messages without a References header</p></li>
+<li><p>fixed nntp login with tab and space in password</p></li>
+<li><p>Bug #3501 - be more relaxed about names of DELETED folders</p></li>
+<li><p>Bug #3553 - fix QRESYNC passing to murder backend - thanks alec &lt;<a class="reference external" href="mailto:alec&#37;&#52;&#48;alec&#46;pl">alec<span>&#64;</span>alec<span>&#46;</span>pl</a>&gt;</p></li>
+<li><p>Bug #3554 - only show ENABLED response the first time each option is ENABLEd</p></li>
+<li><p>Lots of cleanup of build process and backporting of APIs</p></li>
+<li><p>Bug #3502 - make configure.in more portable - thanks OBATA Akio &lt;<a class="reference external" href="mailto:obata&#37;&#52;&#48;lins&#46;jp">obata<span>&#64;</span>lins<span>&#46;</span>jp</a>&gt;</p></li>
+<li><p>Bug #3533 - add missing break statements in sieve - thanks Thomas Jarosch &lt;<a class="reference external" href="mailto:thomas&#46;jarosch&#37;&#52;&#48;intra2net&#46;com">thomas<span>&#46;</span>jarosch<span>&#64;</span>intra2net<span>&#46;</span>com</a>&gt;</p></li>
+<li><p>Bug #3550 - support wildcards for ACLS in cyradm - thanks &lt;<a class="reference external" href="mailto:mark&#46;cave-ayland&#37;&#52;&#48;siriusit&#46;co&#46;uk">mark<span>&#46;</span>cave-ayland<span>&#64;</span>siriusit<span>&#46;</span>co<span>&#46;</span>uk</a>&gt;</p></li>
+<li><p>Bug #3556 - print remote server in mbpath - thanks Wolfgang Breyha &lt;<a class="reference external" href="mailto:wbreyha&#37;&#52;&#48;gmx&#46;net">wbreyha<span>&#64;</span>gmx<span>&#46;</span>net</a>&gt;</p></li>
+<li><p>Bug #3559 - make XFER work with unlimited quota - thanks Wolfgang Breyha &lt;<a class="reference external" href="mailto:wbreyha&#37;&#52;&#48;gmx&#46;net">wbreyha<span>&#64;</span>gmx<span>&#46;</span>net</a>&gt;</p></li>
+<li><p>Bug #3547 - use strconcat() in writefile()</p></li>
+<li><p>fixed a case where skiplist library could write error messages directly to stdout</p></li>
+<li><p>Bug #3545 - fix sign extension in squat_decode_64</p></li>
+<li><p>Bug #3558 - return error if backend doesn't support LIST-EXTENDED</p></li>
+<li><p>Bug #3565 - clean up in preparation for automake</p></li>
+<li><p>fixed incomplete authentication checks in nntpd, reported by Secunia as SA46093 - thanks Stefan Cornelius, Secunia Research</p></li>
 </ul>
 <p><a class="reference internal" href="../index.html#imap-release-notes-2-4"><span class="std std-ref">Cyrus IMAP 2.4 Releases</span></a></p>
 </div>
@@ -833,7 +835,7 @@
         &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -859,7 +861,6 @@
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 

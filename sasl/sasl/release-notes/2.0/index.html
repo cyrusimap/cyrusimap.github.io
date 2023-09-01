@@ -28,6 +28,8 @@
   
 
   
+    <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../../_static/cyrus.css" type="text/css" />
   
 
@@ -194,9 +196,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#ntlm">NTLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#otp">OTP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../options.html#digest-md5">Digest-md5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../options.html#sasldb">SASLDB</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../options.html#notes-on-sasldb-with-lmdb">Notes on sasldb with LMDB</a></li>
 </ul>
@@ -227,9 +227,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../sysadmin.html#how-sasl-works">How SASL works</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#shared-secrets-mechanisms">Shared secrets mechanisms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanisms">Kerberos mechanisms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#kerberos-mechanism">Kerberos mechanism</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../sysadmin.html#the-otp-mechanism">The OTP mechanism</a></li>
 </ul>
 </li>
@@ -321,13 +321,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../authentication_mechanisms.html">Authentication Mechanisms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../authentication_mechanisms.html#mechanisms">Mechanisms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#anonymous">ANONYMOUS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#cram-md5">CRAM-MD5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#digest-md5">DIGEST-MD5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#external">EXTERNAL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gs2">GS2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gssapi">GSSAPI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#gss-spnego">GSS-SPNEGO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#login">LOGIN</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#otp">OTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#passdss">PASSDSS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../authentication_mechanisms.html#plain">PLAIN</a></li>
@@ -350,11 +347,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/authorize-vs-authenticate.html">What is the difference between an Authorization ID and a Authentication ID?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/crammd5-digestmd5-scram.html">Why do CRAM-MD5, DIGEST-MD5 and SCRAM not work with CyrusSaslauthd?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/openldap-sasl-gssapi.html">How do I configure OpenLDAP +SASL+GSSAPI?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/plaintextpasswords.html">Why does CyrusSasl store plaintext passwords in its databases?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../faqs/rfcs.html">RFCs and drafts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../faqs/upgrade-saslv2.html">Why am I having a problem running dbconverter-2 to upgrade from SASLv1 to SASLv2?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../faqs/scram.html">Why does SCRAM not work with CyrusSaslauthd?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../resources.html">Other Documentation &amp; Resources</a></li>
@@ -367,7 +363,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../appconvert.html#tips-for-servers">Tips for Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/programming.html">Application Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-sasl">What is SASL?</a></li>
@@ -381,16 +377,16 @@
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#briefly">Briefly</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-is-the-cyrus-sasl-library-good-for">What is the Cyrus SASL library good for?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-does-the-cyrus-sasl-library-do">What does the Cyrus SASL library do?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn&#8217;t the Cyrus SASL library do?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#what-doesn-t-the-cyrus-sasl-library-do">What doesn’t the Cyrus SASL library do?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#client-only-section">Client-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-client-s-perspective">A typical interaction from the client’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#how-does-this-look-in-code">How does this look in code</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/programming.html#server-only-section">Server-only Section</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server&#8217;s perspective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#a-typical-interaction-from-the-server-s-perspective">A typical interaction from the server’s perspective</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/programming.html#id1">How does this look in code?</a></li>
 </ul>
 </li>
@@ -412,7 +408,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer&#8217;s Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/plugprog.html">Plugin Programmer’s Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/plugprog.html#introduction">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#about-this-guide">About this Guide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/plugprog.html#what-is-sasl">What is SASL?</a></li>
@@ -494,30 +490,28 @@
 <div class="section" id="new-in-2-0-5-beta">
 <h2>New in 2.0.5-BETA<a class="headerlink" href="#new-in-2-0-5-beta" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>THIS IS A BETA-QUALITY RELEASE THAT IS NOT INTENDED FOR PRODUCTION USE.
-IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</li>
-<li>Improved performance of security layers in KERBEROS_V4, GSSAPI, and DIGEST.</li>
-<li>This release includes an OTP plugin that requires libopie.</li>
-<li>SRP plugin now in alpha stage.</li>
-<li>Includes many significant bugfixes throughout the library.</li>
+<li><p>THIS IS A BETA-QUALITY RELEASE THAT IS NOT INTENDED FOR PRODUCTION USE.
+IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p></li>
+<li><p>Improved performance of security layers in KERBEROS_V4, GSSAPI, and DIGEST.</p></li>
+<li><p>This release includes an OTP plugin that requires libopie.</p></li>
+<li><p>SRP plugin now in alpha stage.</p></li>
+<li><p>Includes many significant bugfixes throughout the library.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-0-4-beta">
 <h2>New in 2.0.4-BETA<a class="headerlink" href="#new-in-2-0-4-beta" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">THIS IS A BETA-QUALITY RELEASE THAT IS ONLY INTENDED FOR USE BY
+<li><p>THIS IS A BETA-QUALITY RELEASE THAT IS ONLY INTENDED FOR USE BY
 DEVELOPERS WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.
-IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p>
-</li>
-<li><p class="first">This release now includes Mac OS 9 and Mac OS X support.</p>
-</li>
-<li><p class="first">Significant new features include</p>
+IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p></li>
+<li><p>This release now includes Mac OS 9 and Mac OS X support.</p></li>
+<li><p>Significant new features include</p>
 <blockquote>
 <div><ul class="simple">
-<li>DES and 3DES Encryption should now be working for DIGEST-MD5</li>
-<li>Improved configuration system</li>
-<li>Improved documentation (now includes plugin writers guide)</li>
-<li>Many other bugfixes (see ChangeLog)</li>
+<li><p>DES and 3DES Encryption should now be working for DIGEST-MD5</p></li>
+<li><p>Improved configuration system</p></li>
+<li><p>Improved documentation (now includes plugin writers guide)</p></li>
+<li><p>Many other bugfixes (see ChangeLog)</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -526,65 +520,64 @@ IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p>
 <div class="section" id="new-in-2-0-3-beta">
 <h2>New in 2.0.3-BETA<a class="headerlink" href="#new-in-2-0-3-beta" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">THIS IS A BETA-QUALITY RELEASE THAT IS ONLY INTENDED FOR USE BY
+<li><p>THIS IS A BETA-QUALITY RELEASE THAT IS ONLY INTENDED FOR USE BY
 DEVELOPERS WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.
-IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p>
-</li>
-<li><p class="first">This library should be fairly close to the core features that will be
-released in a final version of Cyrus SASLv2.  It very likely has bugs.</p>
-</li>
-<li><p class="first">Major new features included in this release:</p>
+IT <em>WILL BREAK</em> ANY APPLICATION EXPECTING THE SASLv1 API.</p></li>
+<li><p>This library should be fairly close to the core features that will be
+released in a final version of Cyrus SASLv2.  It very likely has bugs.</p></li>
+<li><p>Major new features included in this release:</p>
 <blockquote>
 <div><ul class="simple">
-<li>The glue code now correctly handles client-send-first and server-send-last
-situations based on what the protocol and mechanism each support.</li>
-<li>The sasldb code has been extracted from the main library and now resides
-in a separate libsasldb.la that is available at build time.</li>
-<li>SASLdb now supports multiple auxiliary properties, though as distributed
-only userPassword is implemented and used.</li>
-<li>Much improved configure checking for various items, including
-Berkeley DB, Kerberos, and GSSAPI.</li>
-<li>Better (more standard) handling of realms in DIGEST-MD5.</li>
-<li>A new Plugin Programmer&#8217;s guide.</li>
-<li>IPv6 support.</li>
-<li>Error reporting now works in the GSSAPI plugin.</li>
+<li><p>The glue code now correctly handles client-send-first and server-send-last
+situations based on what the protocol and mechanism each support.</p></li>
+<li><p>The sasldb code has been extracted from the main library and now resides
+in a separate libsasldb.la that is available at build time.</p></li>
+<li><p>SASLdb now supports multiple auxiliary properties, though as distributed
+only userPassword is implemented and used.</p></li>
+<li><p>Much improved configure checking for various items, including
+Berkeley DB, Kerberos, and GSSAPI.</p></li>
+<li><p>Better (more standard) handling of realms in DIGEST-MD5.</p></li>
+<li><p>A new Plugin Programmer’s guide.</p></li>
+<li><p>IPv6 support.</p></li>
+<li><p>Error reporting now works in the GSSAPI plugin.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">See the ChangeLog for a more detailed list of changes.</p>
-</li>
+<li><p>See the ChangeLog for a more detailed list of changes.</p></li>
 </ul>
 </div>
 <div class="section" id="new-in-2-0-2-alpha">
 <h2>New in 2.0.2-ALPHA<a class="headerlink" href="#new-in-2-0-2-alpha" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>THIS IS AN ALPHA-QUALITY RELEASE THAT IS ONLY INTENDED FOR DEVELOPERS
-WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.</li>
-<li>This release is intended to show developers that use Cyrus SASL what
+<li><p>THIS IS AN ALPHA-QUALITY RELEASE THAT IS ONLY INTENDED FOR DEVELOPERS
+WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.</p></li>
+<li><p>This release is intended to show developers that use Cyrus SASL what
 direction we are planning on taking the library so that they can make
-plans to migrate their applications accordingly</li>
-<li>Major new features included in this release:<ul>
-<li>Ability to compile a static library including all mechanisms.  This
+plans to migrate their applications accordingly</p></li>
+<li><p>Major new features included in this release:</p>
+<ul>
+<li><p>Ability to compile a static library including all mechanisms.  This
 means lower memory usage and faster mechanism loading time, but
 is not for everyone (or even many people). See doc/advanced.html,
-as well as the &#8216;&#8211;with-staticsasl&#8217; configure flag.</li>
-<li>Man pages should now all be present and are close to being correct.</li>
-<li>Can now build libsfsasl and the smtptest program (using the &#8211;with-sfio
-configure flag)</li>
-<li>Reverted to the v1 entry points for mechanisms, to allow v1 mechanisms
-to fail loading cleanly.</li>
-<li>Auxprop and canon_user plugins can now load from DSOs</li>
-<li>Java code now compiles (but is not well tested, or up to date with the
-current Java API draft)</li>
-<li>Error handling and use of sasl_errdetail has been fleshed out and
-should now work in most cases.</li>
+as well as the ‘–with-staticsasl’ configure flag.</p></li>
+<li><p>Man pages should now all be present and are close to being correct.</p></li>
+<li><p>Can now build libsfsasl and the smtptest program (using the –with-sfio
+configure flag)</p></li>
+<li><p>Reverted to the v1 entry points for mechanisms, to allow v1 mechanisms
+to fail loading cleanly.</p></li>
+<li><p>Auxprop and canon_user plugins can now load from DSOs</p></li>
+<li><p>Java code now compiles (but is not well tested, or up to date with the
+current Java API draft)</p></li>
+<li><p>Error handling and use of sasl_errdetail has been fleshed out and
+should now work in most cases.</p></li>
 </ul>
 </li>
-<li>Still Coming:<ul>
-<li>Cleanup of the client-send-first and server-send-last situation</li>
-<li>Error reporting in GSSAPI plugin</li>
-<li>Move the sasldb code out of the main library and into plugins and
-utilities only.</li>
+<li><p>Still Coming:</p>
+<ul>
+<li><p>Cleanup of the client-send-first and server-send-last situation</p></li>
+<li><p>Error reporting in GSSAPI plugin</p></li>
+<li><p>Move the sasldb code out of the main library and into plugins and
+utilities only.</p></li>
 </ul>
 </li>
 </ul>
@@ -592,38 +585,36 @@ utilities only.</li>
 <div class="section" id="new-in-2-0-0-alpha">
 <h2>New in 2.0.0-ALPHA<a class="headerlink" href="#new-in-2-0-0-alpha" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">THIS IS AN ALPHA-QUALITY RELEASE THAT IS ONLY INTENDED FOR DEVELOPERS
-WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.</p>
-</li>
-<li><p class="first">This release is intended to show developers that use Cyrus SASL what
+<li><p>THIS IS AN ALPHA-QUALITY RELEASE THAT IS ONLY INTENDED FOR DEVELOPERS
+WHOSE APPLICATIONS MAKE USE OF THE CYRUS SASL LIBRARY.</p></li>
+<li><p>This release is intended to show developers that use Cyrus SASL what
 direction we are planning on taking the library so that they can make
-plans to migrate their applications accordingly</p>
-</li>
-<li><p class="first">This release implements the SASLv2 API.
+plans to migrate their applications accordingly</p></li>
+<li><p>This release implements the SASLv2 API.
 Some of the major improvements in the API include:</p>
 <ul class="simple">
-<li>Memory management is now sane (whoever allocates the memory is responsible
-for freeing it)</li>
-<li>Auxiliary Property plugin support (ability to interface with directory
-services as part of authentication)</li>
-<li>Username canonification plugin support</li>
-<li>Improved error reporting (not fully implemented in this release)</li>
-<li>Database support has been simplified.  We now maintain only a single
+<li><p>Memory management is now sane (whoever allocates the memory is responsible
+for freeing it)</p></li>
+<li><p>Auxiliary Property plugin support (ability to interface with directory
+services as part of authentication)</p></li>
+<li><p>Username canonification plugin support</p></li>
+<li><p>Improved error reporting (not fully implemented in this release)</p></li>
+<li><p>Database support has been simplified.  We now maintain only a single
 store of plaintext passwords that is shared by all supplied plugins
-(using the auxiliary property interface).</li>
+(using the auxiliary property interface).</p></li>
 </ul>
 <p>The new API is more fully documented in the header files sasl.h, saslplug.h
 saslutil.h, and prop.h.  The man pages, programmers guide, and system
 administrators guide have also been rewritten to deal with the new API.</p>
 </li>
-<li><p class="first">There is still a good amount of work to be done, and as this code is alpha
+<li><p>There is still a good amount of work to be done, and as this code is alpha
 quality, it has bugs, known and unknown.  Please either use our bugzilla, or email <a class="reference external" href="mailto:cyrus-bugs&#37;&#52;&#48;andrew&#46;cmu&#46;edu">cyrus-bugs<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a> with questions, comments, or bug reports.</p>
 <ul class="simple">
-<li>Most notably, the Java bindings have not been converted to work with
-the new API, and thus will not compile successfully.</li>
-<li>The current development branch with this source is in our
-cvs repository as the &#8220;sasl-v2-rjs3&#8221; branch of the &#8220;sasl&#8221; collection.
-(see <a class="reference external" href="http://asg.web.cmu.edu/cyrus/download/anoncvs.html">http://asg.web.cmu.edu/cyrus/download/anoncvs.html</a> for more info)</li>
+<li><p>Most notably, the Java bindings have not been converted to work with
+the new API, and thus will not compile successfully.</p></li>
+<li><p>The current development branch with this source is in our
+cvs repository as the “sasl-v2-rjs3” branch of the “sasl” collection.
+(see <a class="reference external" href="http://asg.web.cmu.edu/cyrus/download/anoncvs.html">http://asg.web.cmu.edu/cyrus/download/anoncvs.html</a> for more info)</p></li>
 </ul>
 </li>
 </ul>
@@ -651,7 +642,7 @@ cvs repository as the &#8220;sasl-v2-rjs3&#8221; branch of the &#8220;sasl&#8221
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.9 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -678,7 +669,6 @@ cvs repository as the &#8220;sasl-v2-rjs3&#8221; branch of the &#8220;sasl&#8221
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   
 
