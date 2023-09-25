@@ -857,7 +857,7 @@ rather than by mailbox name.  See <a class="reference internal" href="#relnotes-
 <cite>sievedir</cite>.  Compiled bytecode is still stored in <cite>sievedir</cite>.  The name of
 the mailbox can be overridden with the <cite>sieve_folder</cite>
 <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option (default: '#sieve').</p></li>
-<li><p>Experimental <cite>processimip</cite> Sieve action, for updating calendar entries
+<li><p>Experimental <a class="reference internal" href="../../../../reference/admin/sieve.html#processimip"><span class="std std-ref">processimip</span></a> Sieve action, for updating calendar entries
 based on iMIP (<span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>) messages.</p></li>
 <li><p>Support for JMAP Push (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>) over EventSource, with polling interval
 controlled by the <cite>jmap_pushpoll</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option
@@ -876,7 +876,7 @@ messages in &quot;Trash&quot;.</p></li>
 <li><p>JMAP Contact.importance property is now a per-user property rather than
 shared.</p></li>
 <li><p>JMAP Contacts now uses Apple-style labels on vCard ADR/TEL/EMAIL properties
-(via property grouping)</p></li>
+(via property grouping).</p></li>
 <li><p>JMAP Contacts avatars can now reference any valid blob, not only blobs
 originally uploaded via JMAP.</p></li>
 <li><p>Preliminary support for building with OpenSSL 3.</p></li>
@@ -935,7 +935,7 @@ inconsistencies in handling.  Affected mailboxes can be fixed by first
 running <a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std-cyrusman-reconstruct-8">reconstruct(8)</a> to repair the cache, and then
 <a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> to reindex the mailbox.</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3421">Issue #3421</a>: PROPFIND &lt;C:schedule-calendar-transp&gt; now returns an
-XML element instead of text (thanks Дилян Палаузов)</p></li>
+XML element instead of text. (thanks Дилян Палаузов)</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3896">Issue #3896</a>: the <cite>-d</cite> (dump) and <cite>-u</cite> (undump) options to
 <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> now correctly dump and undump all fields in
 mailboxes.db entries.  The intermediary file format is now JSON.  This change
@@ -968,7 +968,7 @@ are missing uniqueids.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Sep 03 2023
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Sep 25 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

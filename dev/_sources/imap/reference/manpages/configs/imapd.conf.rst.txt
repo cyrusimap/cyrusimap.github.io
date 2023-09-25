@@ -128,7 +128,7 @@ FIELD DESCRIPTIONS
         The list of realms which are to be treated as local, and thus stripped
         during identifier canonicalization (for the AFSPTS ptloader module).
         This is different from loginrealms in that it occurs later in the
-        authorization process (as the user id is canonified for PTS lookup) 
+        authorization process (as the user id is canonified for PTS lookup). 
 
     .. endblob afspts_localrealms
 
@@ -180,7 +180,7 @@ FIELD DESCRIPTIONS
 
     ``allowdeleted:`` 0
 
-        Allow access to deleted and expunged data via vendor.cmu-\* access 
+        Allow access to deleted and expunged data via vendor.cmu-\* access. 
 
 
     .. endblob allowdeleted
@@ -377,7 +377,7 @@ FIELD DESCRIPTIONS
         The pathname of a callout to be used to automatically add annotations
         or flags to a message when it is appended to a mailbox.  The path can
         be either an executable (including a script), or a UNIX domain
-        socket.  
+        socket. 
 
     .. endblob annotation_callout
 
@@ -385,7 +385,7 @@ FIELD DESCRIPTIONS
 
     ``annotation_callout_disable_append:`` 0
 
-        Disables annotations on append with xrunannotator 
+        Disables annotations on append with xrunannotator. 
 
 
     .. endblob annotation_callout_disable_append
@@ -466,7 +466,7 @@ FIELD DESCRIPTIONS
         if archiving is enabled.
 
         For backward compatibility, if no unit is specified, days is
-        assumed.  
+        assumed. 
 
     .. endblob archive_after
 
@@ -477,7 +477,7 @@ FIELD DESCRIPTIONS
         The size of the largest message that won't be archived immediately.
 
         For backward compatibility, if no unit is specified, kibibytes is
-        assumed.  
+        assumed. 
 
     .. endblob archive_maxsize
 
@@ -510,7 +510,7 @@ FIELD DESCRIPTIONS
 
         Should cyrus output log entries for every action taken on a message
         file or mailboxes list entry?  It's noisy so disabled by default, but
-        can be very useful for tracking down what happened if things look strange 
+        can be very useful for tracking down what happened if things look strange. 
 
     .. endblob auditlog
 
@@ -733,7 +733,7 @@ FIELD DESCRIPTIONS
         If set to yes and no compiled sieve script file exists, the sieve script which is
         compiled on the fly will be saved in the file name that autocreate_sieve_compiledscript
         option points to. In order a compiled script to be generated, autocreate_sieve_script and
-        autocreate_sieve_compiledscript must have valid values 
+        autocreate_sieve_compiledscript must have valid values. 
 
     .. endblob autocreate_sieve_script_compile
 
@@ -745,7 +745,7 @@ FIELD DESCRIPTIONS
         automatically becomes a user's initial default sieve filter script.  If this option is
         not specified, or the filename doesn't exist then the script defined by
         autocreate_sieve_script is compiled on the fly and installed as the user's default
-        sieve script 
+        sieve script. 
 
     .. endblob autocreate_sieve_script_compiled
 
@@ -793,7 +793,7 @@ FIELD DESCRIPTIONS
     ``autoexpunge:`` 0
 
         If set to yes, then all \Deleted messages will be automatically expunged whenever
-        an index is closed, whether CLOSE, UNSELECT, SELECT or on disconnect 
+        an index is closed, whether CLOSE, UNSELECT, SELECT or on disconnect. 
 
     .. endblob autoexpunge
 
@@ -965,7 +965,7 @@ FIELD DESCRIPTIONS
 
     ``caldav_create_attach:`` 1
 
-        Create the 'Attachments' collection if it doesn't already exist 
+        Create the 'Attachments' collection if it doesn't already exist. 
 
 
     .. endblob caldav_create_attach
@@ -974,7 +974,7 @@ FIELD DESCRIPTIONS
 
     ``caldav_create_default:`` 1
 
-        Create the 'Default' calendar if it doesn't already exist 
+        Create the 'Default' calendar if it doesn't already exist. 
 
 
     .. endblob caldav_create_default
@@ -983,7 +983,7 @@ FIELD DESCRIPTIONS
 
     ``caldav_create_sched:`` 1
 
-        Create the 'Inbox' and 'Outbox' calendars if they don't already exist 
+        Create the 'Inbox' and 'Outbox' calendars if they don't already exist. 
 
 
     .. endblob caldav_create_sched
@@ -999,7 +999,7 @@ FIELD DESCRIPTIONS
         and tasks are NEVER considered historical.
 
         For backward compatibility, if no unit is specified, days is
-        assumed.  
+        assumed. 
 
     .. endblob caldav_historical_age
 
@@ -1133,7 +1133,7 @@ FIELD DESCRIPTIONS
     ``chatty:`` 0
 
         If yes, syslog tags and commands for every IMAP command, mailboxes
-        for every lmtp connection, every POP3 command, etc 
+        for every LMTP connection, every POP3 command, etc. 
 
     .. endblob chatty
 
@@ -1169,7 +1169,7 @@ FIELD DESCRIPTIONS
         client connection (e.g. in a murder environment).
 
         For backward compatibility, if no unit is specified, seconds is
-        assumed.  
+        assumed. 
 
     .. endblob client_timeout
 
@@ -1217,7 +1217,7 @@ FIELD DESCRIPTIONS
         space-separated list of flags for which per-conversation counts
         will be kept.  Note that you need to reconstruct the conversations
         database with ctl_conversationsdb if you change this option on a
-        running server, or the counts will be wrong.  
+        running server, or the counts will be wrong. 
 
     .. endblob conversations_counted_flags
 
@@ -1259,7 +1259,7 @@ FIELD DESCRIPTIONS
     ``conversations_keep_existing:`` 1
 
         during conversations cleanup, don't clean up if there are still existing emails
-        with one of the mentioned CIDs 
+        with one of the mentioned CIDs. 
 
     .. endblob conversations_keep_existing
 
@@ -1268,7 +1268,7 @@ FIELD DESCRIPTIONS
     ``conversations_max_thread:`` 100
 
         maximum size for a single thread.  Threads will split if they have this many
-        messages in them and another message arrives 
+        messages in them and another message arrives. 
 
     .. endblob conversations_max_thread
 
@@ -1286,7 +1286,7 @@ FIELD DESCRIPTIONS
     ``conversations_max_guidexists:`` 100
 
         maximum records with the same guid.  This maps to "labels", so with the default
-        of 100, you can only have 100 labels on an email in JMAP 
+        of 100, you can only have 100 labels on an email in JMAP. 
 
     .. endblob conversations_max_guidexists
 
@@ -1313,7 +1313,7 @@ FIELD DESCRIPTIONS
     ``crossdomains_onlyother:`` 0
 
         only show the domain for users in other domains than your own (for
-        backwards compatibility if you're already sharing 
+        backwards compatibility if you're already sharing. 
 
     .. endblob crossdomains_onlyother
 
@@ -1436,7 +1436,7 @@ FIELD DESCRIPTIONS
 
     ``defaultdomain:`` internal
 
-        The default domain for virtual domain support 
+        The default domain for virtual domain support. 
 
 
     .. endblob defaultdomain
@@ -1640,7 +1640,7 @@ FIELD DESCRIPTIONS
         is included and may be truncated to a size. In "header" mode, it includes
         headers truncated to a size. In "body" mode, it includes body truncated
         to a size. In "headerbody" mode, it includes full headers and body truncated
-        to a size 
+        to a size. 
         Allowed values: *standard*, *message*, *header*, *body*, *headerbody*
 
 
@@ -1661,7 +1661,7 @@ FIELD DESCRIPTIONS
 
     ``event_exclude_flags:`` <none>
 
-        Don't send event notification for given IMAP flag(s) 
+        Don't send event notification for given IMAP flag(s). 
 
 
     .. endblob event_exclude_flags
@@ -1671,7 +1671,7 @@ FIELD DESCRIPTIONS
     ``event_exclude_specialuse:`` \\Junk
 
         Don't send event notification for folder with given special-use attributes.
-        Set ALL for any folder 
+        Set ALL for any folder. 
 
     .. endblob event_exclude_specialuse
 
@@ -1690,7 +1690,7 @@ FIELD DESCRIPTIONS
 
     ``event_groups:`` message mailbox
 
-        Space-separated list of groups of related events to turn on notification 
+        Space-separated list of groups of related events to turn on notification. 
 
         Allowed values: *message*, *quota*, *flags*, *access*, *mailbox*, *subscription*, *calendar*, *applepushservice*, *jmap*
 
@@ -1745,7 +1745,7 @@ FIELD DESCRIPTIONS
 
     ``flushseenstate:`` 1
 
-        Deprecated. No longer used 
+        Deprecated. No longer used. 
 
 
     .. endblob flushseenstate
@@ -1766,7 +1766,7 @@ FIELD DESCRIPTIONS
         Force preference of a given SASL mechanism for client side operations
         (e.g., murder environments).  This is separate from (and overridden by)
         the ability to use the <host shortname>_mechs option to set preferred
-        mechanisms for a specific host 
+        mechanisms for a specific host. 
 
     .. endblob force_sasl_client_mech
 
@@ -2384,7 +2384,7 @@ FIELD DESCRIPTIONS
 
     ``jmap_vacation:`` 1
 
-        If enabled, support the JMAP vacation extension 
+        If enabled, support the JMAP vacation extension. 
 
 
     .. endblob jmap_vacation
@@ -2403,7 +2403,7 @@ FIELD DESCRIPTIONS
     ``jmapsubmission_deleteonsend:`` 1
 
         If enabled (the default) then delete the EmailSubmission as soon as the email
-        \* has been sent 
+        \* has been sent. 
 
     .. endblob jmapsubmission_deleteonsend
 
@@ -2438,7 +2438,7 @@ FIELD DESCRIPTIONS
 
     ``iolog:`` 0
 
-        Should cyrus output I/O log entries 
+        Should cyrus output I/O log entries. 
 
 
     .. endblob iolog
@@ -2447,7 +2447,7 @@ FIELD DESCRIPTIONS
 
     ``ldap_authz:`` <none>
 
-        SASL authorization ID for the LDAP server 
+        SASL authorization ID for the LDAP server. 
 
 
     .. endblob ldap_authz
@@ -2456,7 +2456,7 @@ FIELD DESCRIPTIONS
 
     ``ldap_base:`` <empty string>
 
-        Contains the LDAP base dn for the LDAP ptloader module 
+        Contains the LDAP base dn for the LDAP ptloader module. 
 
 
     .. endblob ldap_base
@@ -2466,7 +2466,7 @@ FIELD DESCRIPTIONS
     ``ldap_bind_dn:`` <none>
 
         Bind DN for the connection to the LDAP server (simple bind).
-        Do not use for anonymous simple binds 
+        Do not use for anonymous simple binds. 
 
     .. endblob ldap_bind_dn
 
@@ -2494,7 +2494,7 @@ FIELD DESCRIPTIONS
 
     ``ldap_domain_filter:`` (&(objectclass=domainrelatedobject)(associateddomain=%s))
 
-        Filter to use searching for domains 
+        Filter to use searching for domains. 
 
 
     .. endblob ldap_domain_filter
@@ -2600,7 +2600,7 @@ FIELD DESCRIPTIONS
 
     ``ldap_user_attribute:`` <none>
 
-        Specify LDAP attribute to use as canonical user id 
+        Specify LDAP attribute to use as canonical user id. 
 
 
     .. endblob ldap_user_attribute
@@ -2662,7 +2662,7 @@ FIELD DESCRIPTIONS
     ``ldap_password:`` <none>
 
         Password for the connection to the LDAP server (SASL and simple bind).
-        Do not use for anonymous simple binds 
+        Do not use for anonymous simple binds. 
 
     .. endblob ldap_password
 
@@ -2939,7 +2939,7 @@ FIELD DESCRIPTIONS
     ``literalminus:`` 0
 
         if enabled, CAPABILITIES will reply with LITERAL- rather than
-        LITERAL+ (:rfc:`7888`).  Doesn't actually size-restrict uploads though 
+        LITERAL+ (:rfc:`7888`).  Doesn't actually size-restrict uploads though. 
 
     .. endblob literalminus
 
@@ -3087,7 +3087,7 @@ FIELD DESCRIPTIONS
 
         Default "options" field for the mailbox on create.  You'll want to know
         what you're doing before setting this, but it can apply some default
-        annotations like duplicate suppression 
+        annotations like duplicate suppression. 
 
     .. endblob mailbox_default_options
 
@@ -3107,8 +3107,8 @@ FIELD DESCRIPTIONS
 
     ``mailbox_legacy_dirs:`` 0
 
-        if enabled, new mailboxes without parents will be created with legacy paths.
-        sub mailboxes of users will still inherit the parent legacy setting 
+        If enabled, new mailboxes without parents will be created with legacy paths.
+        sub mailboxes of users will still inherit the parent legacy setting. 
 
     .. endblob mailbox_legacy_dirs
 
@@ -3180,7 +3180,7 @@ FIELD DESCRIPTIONS
         records.  Default 1000.  If set to zero, it is unlimited.
         If a message hits the limit, an error will be logged and the rest of
         the lines in the header will be skipped.  This is to avoid malformed
-        messages causing giant cache records 
+        messages causing giant cache records. 
 
     .. endblob maxheaderlines
 
@@ -3189,7 +3189,7 @@ FIELD DESCRIPTIONS
     ``maxlogins_per_host:`` 0
 
         Maximum number of logged in sessions allowed per host,
-        zero means no limit 
+        zero means no limit. 
 
     .. endblob maxlogins_per_host
 
@@ -3198,7 +3198,7 @@ FIELD DESCRIPTIONS
     ``maxlogins_per_user:`` 0
 
         Maximum number of logged in sessions allowed per user,
-        zero means no limit 
+        zero means no limit. 
 
     .. endblob maxlogins_per_user
 
@@ -3363,7 +3363,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_port:`` 3905
 
-        The port of the mupdate server for the Cyrus Murder 
+        The port of the mupdate server for the Cyrus Murder. 
 
 
     .. endblob mupdate_port
@@ -3390,7 +3390,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_server:`` <none>
 
-        The mupdate server for the Cyrus Murder 
+        The mupdate server for the Cyrus Murder. 
 
 
     .. endblob mupdate_server
@@ -3400,7 +3400,7 @@ FIELD DESCRIPTIONS
     ``mupdate_username:`` <empty string>
 
         The SASL username (Authorization Name) to use when authenticating to
-        the mupdate server 
+        the mupdate server. 
 
     .. endblob mupdate_username
 
@@ -3408,7 +3408,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_workers_max:`` 50
 
-        The maximum number of mupdate worker threads (overall) 
+        The maximum number of mupdate worker threads (overall). 
 
 
     .. endblob mupdate_workers_max
@@ -3417,7 +3417,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_workers_maxspare:`` 10
 
-        The maximum number of idle mupdate worker threads 
+        The maximum number of idle mupdate worker threads. 
 
 
     .. endblob mupdate_workers_maxspare
@@ -3426,7 +3426,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_workers_minspare:`` 2
 
-        The minimum number of idle mupdate worker threads 
+        The minimum number of idle mupdate worker threads. 
 
 
     .. endblob mupdate_workers_minspare
@@ -3435,7 +3435,7 @@ FIELD DESCRIPTIONS
 
     ``mupdate_workers_start:`` 5
 
-        The number of mupdate worker threads to start 
+        The number of mupdate worker threads to start. 
 
 
     .. endblob mupdate_workers_start
@@ -3578,7 +3578,7 @@ FIELD DESCRIPTIONS
     ``notesmailbox:`` <none>
 
         The top level mailbox in each user's account which is used to store
-        \* Apple-style Notes.  Default is blank (disabled) 
+        \* Apple-style Notes.  Default is blank (disabled). 
 
     .. endblob notesmailbox
 
@@ -3973,7 +3973,7 @@ FIELD DESCRIPTIONS
     ``ptloader_sock:`` <none>
 
         Unix domain socket that ptloader listens on.
-        (defaults to configdirectory/ptclient/ptsock) 
+        (defaults to configdirectory/ptclient/ptsock). 
 
     .. endblob ptloader_sock
 
@@ -4015,7 +4015,7 @@ FIELD DESCRIPTIONS
 
         When using the AFSKRB ptloader module with Kerberos 5 canonicalization,
         do the final 524 conversion to get a n AFS style name (using '.' instead
-        of '/', and using short names 
+        of '/', and using short names. 
 
     .. endblob ptskrb5_convert524
 
@@ -4025,7 +4025,7 @@ FIELD DESCRIPTIONS
 
         When using the AFSKRB ptloader module with Kerberos 5 canonicalization,
         strip the default realm from the userid (this does not affect the stripping
-        of realms specified by the afspts_localrealms option) 
+        of realms specified by the afspts_localrealms option). 
 
     .. endblob ptskrb5_strip_default_realm
 
@@ -4067,7 +4067,7 @@ FIELD DESCRIPTIONS
 
         If conversations it enabled and quotaroot is a user folder, use the
         conversations quota counts, which count multiple copies of exactly the
-        same message (by GUID) as only one 
+        same message (by GUID) as only one. 
 
     .. endblob quota_use_conversations
 
@@ -4110,7 +4110,7 @@ FIELD DESCRIPTIONS
         be truncated to the nearest whole kibibyte.
 
         For backward compatibility, if no unit is specified, kibibytes is
-        assumed.  
+        assumed. 
 
     .. endblob quotawarnsize
 
@@ -4129,7 +4129,7 @@ FIELD DESCRIPTIONS
     ``readonly:`` 0
 
         If enabled, all IMAP, POP and JMAP connections are read-only,
-        \* no writes allowed 
+        \* no writes allowed. 
 
     .. endblob readonly
 
@@ -4182,7 +4182,7 @@ FIELD DESCRIPTIONS
 
     ``reverseuniqueids:`` 1
 
-        Deprecated. No longer used 
+        Deprecated. No longer used. 
 
 
     .. endblob reverseuniqueids
@@ -4482,7 +4482,7 @@ FIELD DESCRIPTIONS
 
     ``search_engine:`` none
 
-        The indexing engine used to speed up searching.  
+        The indexing engine used to speed up searching. 
 
         Allowed values: *none*, *squat*, *xapian*
 
@@ -4542,7 +4542,7 @@ FIELD DESCRIPTIONS
         search snippets. Xapian-only.
 
         For backward compatibility, if no unit is specified, kibibytes is
-        assumed.  
+        assumed. 
 
     .. endblob search_maxsize
 
@@ -4572,7 +4572,7 @@ FIELD DESCRIPTIONS
     ``search_skiphtml:`` 0
 
         If enabled, HTML parts of messages are skipped, i.e. not indexed and
-        not searchable.  Otherwise, they're indexed.  
+        not searchable.  Otherwise, they're indexed. 
 
     .. endblob search_skiphtml
 
@@ -4820,7 +4820,7 @@ FIELD DESCRIPTIONS
         timsieved(8) and JMAP.
 
         For backward compatibility, if no unit is specified, kibibytes is
-        assumed.  
+        assumed. 
 
     .. endblob sieve_maxscriptsize
 
@@ -5044,7 +5044,7 @@ FIELD DESCRIPTIONS
     ``sortcache_db:`` twoskip
 
         The cyrusdb backend to use for caching sort results (currently only
-        used for xconvmultisort) 
+        used for xconvmultisort). 
         Allowed values: *skiplist*, *twoskip*, *zeroskip*
 
 
@@ -5069,7 +5069,7 @@ FIELD DESCRIPTIONS
         Whitespace separated list of special-use attributes that may not contain
         child folders.  If set, mailboxes with any of these attributes may not
         have child folders created, and these attributes cannot be added to
-        mailboxes that already have children.. 
+        mailboxes that already have children. 
 
     .. endblob specialuse_nochildren
 
@@ -5089,7 +5089,7 @@ FIELD DESCRIPTIONS
     ``specialusealways:`` 1
 
         If enabled, this option causes LIST and LSUB output to always include
-        the XLIST "special-use" flags 
+        the XLIST "special-use" flags. 
 
     .. endblob specialusealways
 
@@ -5273,7 +5273,7 @@ FIELD DESCRIPTIONS
     ``sync_authname:`` <none>
 
         The authentication name to use when authenticating to a sync server.
-        Prefix with a channel name to only apply for that channel 
+        Prefix with a channel name to only apply for that channel. 
 
     .. endblob sync_authname
 
@@ -5314,7 +5314,7 @@ FIELD DESCRIPTIONS
 
         Name of the host (replica running sync_server(8)) to which
         replication actions will be sent by sync_client(8).
-        Prefix with a channel name to only apply for that channel 
+        Prefix with a channel name to only apply for that channel. 
 
     .. endblob sync_host
 
@@ -5333,7 +5333,7 @@ FIELD DESCRIPTIONS
     ``sync_log_chain:`` 0
 
         Enable replication action logging by sync_server as well, allowing
-        chaining of replicas.  Use this on 'B' for A => B => C replication layout 
+        chaining of replicas.  Use this on 'B' for A => B => C replication layout. 
 
     .. endblob sync_log_chain
 
@@ -5367,7 +5367,7 @@ FIELD DESCRIPTIONS
     ``sync_password:`` <none>
 
         The default password to use when authenticating to a sync server.
-        Prefix with a channel name to only apply for that channel 
+        Prefix with a channel name to only apply for that channel. 
 
     .. endblob sync_password
 
@@ -5389,7 +5389,7 @@ FIELD DESCRIPTIONS
     ``sync_realm:`` <none>
 
         The authentication realm to use when authenticating to a sync server.
-        Prefix with a channel name to only apply for that channel 
+        Prefix with a channel name to only apply for that channel. 
 
     .. endblob sync_realm
 
@@ -5439,7 +5439,7 @@ FIELD DESCRIPTIONS
 
         Simple latch used to tell sync_client(8) that it should shut down at the
         next opportunity. Safer than sending signals to running processes.
-        Prefix with a channel name to only apply for that channel 
+        Prefix with a channel name to only apply for that channel. 
 
     .. endblob sync_shutdown_file
 
@@ -5463,7 +5463,7 @@ FIELD DESCRIPTIONS
         Whether sync_client should try to perform an IMAP connection
         before falling back to csync.  If this is set to "no",
         sync_client will only use csync.  Prefix with a channel name to
-        apply only for that channel 
+        apply only for that channel. 
 
     .. endblob sync_try_imap
 
@@ -5496,7 +5496,7 @@ FIELD DESCRIPTIONS
 
     ``tcp_keepalive:`` 0
 
-        Enable keepalive on TCP connections 
+        Enable keepalive on TCP connections. 
 
 
     .. endblob tcp_keepalive
@@ -5506,7 +5506,7 @@ FIELD DESCRIPTIONS
     ``tcp_keepalive_cnt:`` 0
 
         Number of TCP keepalive probes to send before declaring the
-        connection dead (0 == system default) 
+        connection dead (0 == system default). 
 
     .. endblob tcp_keepalive_cnt
 
@@ -5546,7 +5546,7 @@ FIELD DESCRIPTIONS
 
     ``telemetry_bysessionid:`` 0
 
-        If true, log by sessionid instead of PID for telemetry 
+        If true, log by sessionid instead of PID for telemetry. 
 
 
     .. endblob telemetry_bysessionid
@@ -5640,7 +5640,7 @@ FIELD DESCRIPTIONS
 
         See also Mozilla's server-side TLS recommendations:
 
-        https://wiki.mozilla.org/Security/Server_Side_TLS 
+        https://wiki.mozilla.org/Security/Server_Side_TLS . 
 
     .. endblob tls_ciphers
 
@@ -5648,7 +5648,7 @@ FIELD DESCRIPTIONS
 
     ``tls_crl_file:`` <none>
 
-        Path to a file containing the Certificate Revocation List 
+        Path to a file containing the Certificate Revocation List. 
 
 
     .. endblob tls_crl_file
@@ -5784,7 +5784,7 @@ FIELD DESCRIPTIONS
         File containing the private key belonging to the certificate in
         tls_server_cert.  If not set, tls_server_cert must contain both private and
         public key.  Two files with keys can be set, if two certificates are used, in
-        which case the files must be separated with comma without spaces 
+        which case the files must be separated with comma without spaces. 
 
     .. endblob tls_server_key
 
@@ -5880,7 +5880,7 @@ FIELD DESCRIPTIONS
 
         Convert usernames to all lowercase before login/authentication.  This
         is useful with authentication backends which ignore case during
-        username lookups (such as LDAP).  
+        username lookups (such as LDAP). 
 
     .. endblob username_tolower
 
@@ -5900,7 +5900,7 @@ FIELD DESCRIPTIONS
         Should we look up groups when using auth_unix (disable this if you are
         not using groups in ACLs for your IMAP server, and you are using auth_unix
         with a backend (such as LDAP) that can make getgrent() calls very
-        slow) 
+        slow). 
 
     .. endblob unix_group_enable
 
@@ -6093,7 +6093,7 @@ FIELD DESCRIPTIONS
         Is Object storage enabled for this server.  You also need to have
         archiving enabled and archivepartition for the mailbox.
         Only email files will be stored on object Storage archive partition will be
-        used to store any other files 
+        used to store any other files. 
 
     .. endblob object_storage_enabled
 
@@ -6103,7 +6103,7 @@ FIELD DESCRIPTIONS
 
         Dummy object storage spool; this is for test only.
         Spool where user directory (container) will be created to store all emails
-        in a flat structure  
+        in a flat structure. 
 
     .. endblob object_storage_dummy_spool
 
@@ -6177,7 +6177,7 @@ FIELD DESCRIPTIONS
         The Caringo hostname used to store archived email messages. A hostname
         identifies the physical platform cyrus must contact. This directive is used
         by the Caringo's SDK (CastorSDK: Caringo Simple Content Storage Protocol (SCSP)
-        on HTTP 1.1 using a RESTful architecture  
+        on HTTP 1.1 using a RESTful architecture. 
 
     .. endblob caringo_hostname
 
@@ -6194,7 +6194,7 @@ FIELD DESCRIPTIONS
 
     ``fastmailsharing:`` 0
 
-        If enabled, use FastMail style sharing (oldschool full server paths) 
+        If enabled, use FastMail style sharing (oldschool full server paths). 
 
 
     .. endblob fastmailsharing
