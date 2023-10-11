@@ -793,6 +793,13 @@ assume you know how to use its package management system). If you don't already
 have a preferred distro, maybe consider using Debian.</p>
 <p>First make sure you have a <a class="reference internal" href="../download/getcyrus.html#getcyrus"><span class="std std-ref">copy of the source</span></a>. You can either
 fetch the latest source from git, or download one of our release tarballs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus does not support compiling with <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gccint/LTO-Overview.html">Link Time Optimization</a>,
+but some platforms now enable Link Time Optimization by default.
+If your platform does so, you will need to override it, perhaps
+by adding <code class="docutils literal notranslate"><span class="pre">-fno-lto</span></code> to <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>.</p>
+</div>
 <div class="section" id="setting-up-dependencies">
 <h2>Setting up dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="required-build-dependencies">
@@ -1372,7 +1379,7 @@ version, operating system and affected libraries.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jul 27 2021
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 06 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
