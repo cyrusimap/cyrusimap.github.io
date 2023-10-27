@@ -864,9 +864,15 @@ sudo<span class="w"> </span>adduser<span class="w"> </span>cyrus<span class="w">
 </li>
 <li><p>Give your user account access to sudo as <code class="docutils literal notranslate"><span class="pre">cyrus</span></code></p>
 <blockquote>
-<div><ul class="simple">
+<div><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code></p></li>
-<li><p>add a line like:<code class="docutils literal notranslate"><span class="pre">username</span> <span class="pre">ALL</span> <span class="pre">=</span> <span class="pre">(cyrus)</span> <span class="pre">NOPASSWD:</span> <span class="pre">ALL</span></code>, where &quot;username&quot; is your own username</p></li>
+<li><p>add lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Defaults</span><span class="p">:</span><span class="n">username</span> <span class="n">rlimit_core</span><span class="o">=</span><span class="n">default</span>
+<span class="n">username</span> <span class="n">ALL</span> <span class="o">=</span> <span class="p">(</span><span class="n">cyrus</span><span class="p">)</span> <span class="n">NOPASSWD</span><span class="p">:</span> <span class="n">ALL</span>
+</pre></div>
+</div>
+<p>where &quot;username&quot; is your own username</p>
+</li>
 </ul>
 </div></blockquote>
 </li>
@@ -1003,7 +1009,7 @@ failed tests.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on May 15 2023
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Oct 16 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
