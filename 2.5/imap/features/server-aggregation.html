@@ -809,7 +809,7 @@ servers with a <em>backend</em> role – these host the payload for the cluster
 different mailboxes to which the user has access reside on different
 servers.</p>
 <p>To illustrate, let John’s IMAP client connect to <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code>:</p>
-digraph john {
+<div class="graphviz"><img src="../../_images/graphviz-afabfb201511f01a93a941b768b49ae61db4c7fe.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -818,12 +818,13 @@ digraph john {
         node [shape=record, fontname=Calibri, fontsize=11];
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
-    }<p>John’s mailbox may not reside on the node that the client connects to,
+    }" class="graphviz" /></div>
+<p>John’s mailbox may not reside on the node that the client connects to,
 though, and instead be located on a <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node – as is
 typical for larger deployments.</p>
 <p>The client connection is therefore to be proxied to the appropriate
 <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node.</p>
-digraph john {
+<div class="graphviz"><img src="../../_images/graphviz-f5cda1a87f6f9b54c3ddf9879eca12f7430906ae.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -833,11 +834,12 @@ digraph john {
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;];
-    }<p>It is not at all uncommon to (reverse) proxy client connections like
+    }" class="graphviz" /></div>
+<p>It is not at all uncommon to (reverse) proxy client connections like
 this (a task that <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code> takes on in this example).</p>
 <p>In the case of webservers for example, reverse proxying is an very
 common practice:</p>
-digraph www {
+<div class="graphviz"><img src="../../_images/graphviz-2a39d4d3969c1f512e83e8da11377a5f52700463.png" alt="digraph www {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -849,7 +851,8 @@ digraph www {
 
         &quot;http://www.example.org/&quot; -&gt; &quot;assets1.example.org&quot; [label=&quot;Static Content&quot;];
         &quot;http://www.example.org/&quot; -&gt; &quot;www1.example.org&quot; [label=&quot;Dynamic Content&quot;];
-    }<p>In the case of reverse web proxies, the proxy looks at (for example)
+    }" class="graphviz" /></div>
+<p>In the case of reverse web proxies, the proxy looks at (for example)
 the request URI, and based on a set of rules, forwards (proxies) the
 request on to the appropriate (internal) node. This architecture allows
 application servers (www[0-9]+.example.org) to be scaled up and down by
@@ -862,7 +865,7 @@ allows an external script to respond with a target backend address
 based on the authentication of the user <a class="footnote-reference brackets" href="#id8" id="id1">1</a>.</p>
 <p>As such, NGINX is a socket proxy, and not a fully-featured
 application proxy:</p>
-digraph joe {
+<div class="graphviz"><img src="../../_images/graphviz-d1b72681947e7121a6a2c38d727ca9f779f233e6.png" alt="digraph joe {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -876,7 +879,8 @@ digraph joe {
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;,color=&quot;green&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend2.example.org&quot; [label=&quot;Not Available&quot;,color=&quot;red&quot;];
-    }<p>This means that John could not open a mailbox that does not reside on
+    }" class="graphviz" /></div>
+<p>This means that John could not open a mailbox that does not reside on
 the same backend node his client connection is proxied to, and John nor
 Jane can share their mailboxes with one another <a class="footnote-reference brackets" href="#id9" id="id2">2</a>.</p>
 <p>For the proxy to be fully-featured, the proxy would need to catch all
@@ -974,7 +978,7 @@ separate systems;</p>
 <p>Each of the systems communicates with one another via the following
 connection model:</p>
 <div class="figure align-default" id="id11">
-digraph {
+<div class="graphviz"><img src="../../_images/graphviz-186a76c08936ba6e8f49cb4989d363f22a2baa4d.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -988,7 +992,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=back];
 
         &quot;f+&quot; -&gt; &quot;b+&quot;;
-    }<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p>A frontend (f) connects to the mupdate (m) master server and
@@ -1006,7 +1011,7 @@ to the mupdate server.</p>
 <div class="section" id="murder-backend-startup-process">
 <h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="id12">
-digraph {
+<div class="graphviz"><img src="../../_images/graphviz-3b058b5c29def1dc220836dffa0fb6130010fdb9.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1020,10 +1025,11 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=red,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id13">
-digraph {
+<div class="graphviz"><img src="../../_images/graphviz-a1162d29a1d500898d64d4ff7986d7422d6b2801.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1038,7 +1044,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=green,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p>The backend (b) pushes its list of mailboxes to the mupdate master
@@ -1065,7 +1072,7 @@ living locally are removed from the mupdate master server.</p></li>
 <li><p>The mupdate (m) master server pushes updates to the existing list of
 mailboxes to the frontend (f) server.</p></li>
 </ol>
-digraph {
+<div class="graphviz"><img src="../../_images/graphviz-1dfe74f52de4800bded46d0fff5586ee032ceb4c.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1079,7 +1086,8 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=both];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [dir=both];
-    }</div>
+    }" class="graphviz" /></div>
+</div>
 </div>
 <div class="section" id="replicated-murder">
 <span id="imap-features-murder-replicated"></span><h3>Replicated Murder<a class="headerlink" href="#replicated-murder" title="Permalink to this headline">¶</a></h3>
