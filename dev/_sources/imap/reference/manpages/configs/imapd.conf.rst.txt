@@ -3172,6 +3172,25 @@ FIELD DESCRIPTIONS
 
     .. endblob master_bind_errors_fatal
 
+    .. startblob master_pid_file
+
+    ``master_pid_file:`` {configdirectory}/master.pid
+
+        The path to a file that master(8) will write its PID to when running
+        as a daemon. 
+
+    .. endblob master_pid_file
+
+    .. startblob master_ready_file
+
+    ``master_ready_file:`` {configdirectory}/master.ready
+
+        The path to a file that master(8) will update to indicate that it is
+        ready to accept client connections.  This file will be created if it does
+        not already exist, or truncated if it does.  
+
+    .. endblob master_ready_file
+
     .. startblob maxheaderlines
 
     ``maxheaderlines:`` 1000

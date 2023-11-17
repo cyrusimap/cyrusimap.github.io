@@ -793,7 +793,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>master</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> <em>alternate cyrus.conf</em> ]
-    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ]
+    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ] [ <strong>-r</strong> <em>ready_file</em> ]
     [ <strong>-j</strong> <em>janitor period</em> ] [ <strong>-d</strong> | <strong>-D</strong> ] [ <strong>-L</strong> <em>logfile</em> ]</pre>
 </div>
 <div class="section" id="description">
@@ -843,7 +843,16 @@ entries).</p>
 <dt id="cmdoption-master-p">
 <code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">pidfile</span></code><a class="headerlink" href="#cmdoption-master-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use <em>pidfile</em> as the pidfile.  If not specified, defaults to
-<code class="docutils literal notranslate"><span class="pre">/var/run/master.pid</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
+defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.pid</span></code></p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-master-r">
+<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname">&#160; <span class="pre">ready_file</span></code><a class="headerlink" href="#cmdoption-master-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use <em>ready_file</em> as the ready file.  If not specified, uses
+<code class="docutils literal notranslate"><span class="pre">master_ready_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
+defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.ready</span></code></p>
 </dd></dl>
 
 <dl class="std option">
@@ -930,7 +939,7 @@ list the active processes that <strong>master</strong> is managing.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Jun 26 2023
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Nov 08 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
