@@ -640,7 +640,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#releasing">Releasing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/releasing.html">Releasing Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/releasing.html">Releasing Cyrus IMAP - normal releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
 </ul>
 </li>
@@ -823,7 +825,7 @@
 <h2>Releasing<a class="headerlink" href="#releasing" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="developer/releasing.html">Releasing Cyrus IMAP</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="developer/releasing.html">Releasing Cyrus IMAP - normal releases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#order-of-operations">Order of operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#release-notes">Release notes</a></li>
@@ -833,6 +835,36 @@
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#inter-version-website-consistency">Inter-version website consistency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#uploading">Uploading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/releasing.html#tell-the-world">Tell the world</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#feature-freeze">Feature freeze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#make-sure-master-is-good">Make sure master is good</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#forking-the-new-series-branch">Forking the new series branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#updating-the-master-branch">Updating the master branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#github-updates">Github updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#revert-anything-that-s-not-yet-ready">Revert anything that's not yet ready</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#tell-the-website-builder-about-the-new-branch">Tell the website builder about the new branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#first-beta">First beta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#subsequent-betas">Subsequent betas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#release-candidates">Release candidates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#release">Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/major-releasing.html#post-release">Post-release</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#make-sure-master-is-good">Make sure master is good</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#mixed-version-cassandane-testing">Mixed-version Cassandane testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#lib-imapoptions">lib/imapoptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#release-notes">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#docsrc-conf-py">docsrc/conf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#check-documentation">check documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#pr-and-or-commit">PR and/or commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#tag">Tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#tell-the-world">Tell the world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/snapshot-releasing.html#update-this-document">Update this document</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a><ul>
@@ -868,7 +900,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 13 2018
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 03 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Releasing Cyrus IMAP - normal releases &mdash; Cyrus IMAP 3.9.0-alpha0 (dev) documentation</title>
+  <title>Releasing Cyrus IMAP - major releases &mdash; Cyrus IMAP 3.9.0-alpha0 (dev) documentation</title>
   
 
   
@@ -39,8 +39,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Cyrus IMAP 3.9.0-alpha0 (dev) documentation" href="../../index.html"/>
         <link rel="up" title="IMAP Developer Guide" href="../developer.html"/>
-        <link rel="next" title="Releasing Cyrus IMAP - major releases" href="major-releasing.html"/>
-        <link rel="prev" title="imclient library" href="libraries/imclient.html"/> 
+        <link rel="next" title="Releasing Cyrus IMAP - developer snapshots" href="snapshot-releasing.html"/>
+        <link rel="prev" title="Releasing Cyrus IMAP - normal releases" href="releasing.html"/> 
 
   
   
@@ -640,8 +640,8 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../developer.html#releasing">Releasing</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Releasing Cyrus IMAP - normal releases</a></li>
-<li class="toctree-l4"><a class="reference internal" href="major-releasing.html">Releasing Cyrus IMAP - major releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasing.html">Releasing Cyrus IMAP - normal releases</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Releasing Cyrus IMAP - major releases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
 </ul>
@@ -776,11 +776,11 @@
       
           <li><a href="../developer.html">IMAP Developer Guide</a> &raquo;</li>
       
-    <li>Releasing Cyrus IMAP - normal releases</li>
+    <li>Releasing Cyrus IMAP - major releases</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/developer/releasing.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/developer/major-releasing.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -789,220 +789,393 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="releasing-cyrus-imap-normal-releases">
-<span id="imap-developer-releasing"></span><h1><a class="toc-backref" href="#id1">Releasing Cyrus IMAP - normal releases</a><a class="headerlink" href="#releasing-cyrus-imap-normal-releases" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="releasing-cyrus-imap-major-releases">
+<span id="imap-developer-major-releasing"></span><h1><a class="toc-backref" href="#id1">Releasing Cyrus IMAP - major releases</a><a class="headerlink" href="#releasing-cyrus-imap-major-releases" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#releasing-cyrus-imap-normal-releases" id="id1">Releasing Cyrus IMAP - normal releases</a></p>
+<li><p><a class="reference internal" href="#releasing-cyrus-imap-major-releases" id="id1">Releasing Cyrus IMAP - major releases</a></p>
 <ul>
 <li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
-<li><p><a class="reference internal" href="#order-of-operations" id="id3">Order of operations</a></p></li>
-<li><p><a class="reference internal" href="#release-notes" id="id4">Release notes</a></p></li>
-<li><p><a class="reference internal" href="#pre-release-testing" id="id5">Pre-release testing</a></p></li>
-<li><p><a class="reference internal" href="#linking-up-release-notes" id="id6">Linking up release notes</a></p></li>
-<li><p><a class="reference internal" href="#version-tagging" id="id7">Version tagging</a></p></li>
-<li><p><a class="reference internal" href="#inter-version-website-consistency" id="id8">Inter-version website consistency</a></p></li>
-<li><p><a class="reference internal" href="#uploading" id="id9">Uploading</a></p></li>
-<li><p><a class="reference internal" href="#tell-the-world" id="id10">Tell the world</a></p></li>
+<li><p><a class="reference internal" href="#feature-freeze" id="id3">Feature freeze</a></p></li>
+<li><p><a class="reference internal" href="#make-sure-master-is-good" id="id4">Make sure master is good</a></p></li>
+<li><p><a class="reference internal" href="#forking-the-new-series-branch" id="id5">Forking the new series branch</a></p></li>
+<li><p><a class="reference internal" href="#updating-the-master-branch" id="id6">Updating the master branch</a></p></li>
+<li><p><a class="reference internal" href="#github-updates" id="id7">Github updates</a></p></li>
+<li><p><a class="reference internal" href="#revert-anything-that-s-not-yet-ready" id="id8">Revert anything that's not yet ready</a></p></li>
+<li><p><a class="reference internal" href="#tell-the-website-builder-about-the-new-branch" id="id9">Tell the website builder about the new branch</a></p></li>
+<li><p><a class="reference internal" href="#first-beta" id="id10">First beta</a></p></li>
+<li><p><a class="reference internal" href="#subsequent-betas" id="id11">Subsequent betas</a></p></li>
+<li><p><a class="reference internal" href="#release-candidates" id="id12">Release candidates</a></p></li>
+<li><p><a class="reference internal" href="#release" id="id13">Release</a></p></li>
+<li><p><a class="reference internal" href="#post-release" id="id14">Post-release</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<p>These instructions are specifically for doing point releases (x.y.z) from
-branches that contain RST-based documentation and infrastructure.  This
-includes 2.5 and later versions.</p>
-<p>For snapshot releases from the master branch, see
-<a class="reference internal" href="snapshot-releasing.html#imap-developer-snapshot-releasing"><span class="std std-ref">Releasing Cyrus IMAP - developer snapshots</span></a></p>
-<p>For new releases from ancient branches, see <a class="reference internal" href="ancient-releasing.html#imap-developer-ancient-releasing"><span class="std std-ref">Releasing new builds of ancient Cyrus IMAP versions</span></a></p>
-<p>For major (x.y) releases, you will follow this process for publishing the
-release tarballs, but there are additional steps before and around that,
-detailed at <a class="reference internal" href="major-releasing.html#imap-developer-major-releasing"><span class="std std-ref">Releasing Cyrus IMAP - major releases</span></a>.</p>
+<p>These instructions describe the process of turning what was the master
+branch into a new release series, and making the first release from it.</p>
+<p>For normal point releases, see <a class="reference internal" href="releasing.html#imap-developer-releasing"><span class="std std-ref">Releasing Cyrus IMAP - normal releases</span></a></p>
 <div class="section" id="prerequisites">
 <h2><a class="toc-backref" href="#id2">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>You will need a GPG key that you can use for signing.  Ellie doesn't remember
-off the top of her head how to create one of these, so for now just read the
-manual like she did. :)</p>
-<p>Once you have a GPG key, it's helpful to upload your public key to
-<a class="reference external" href="http://pgp.mit.edu">the MIT key-server</a></p>
-<p>And you need permission to send to the cyrus-announce mailing list.</p>
+<p>Same as for normal releases.</p>
 </div>
-<div class="section" id="order-of-operations">
-<h2><a class="toc-backref" href="#id3">Order of operations</a><a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes you're releasing several new versions all at once(ish), for example
-maybe there's been a security fix that affected 2.4, 2.5 and 3.0.</p>
-<p>Github's release page will put a &quot;Latest Release&quot; graphic on the release with
-the newest tag (by timestamp, I think).  This means that, if you're doing new
-releases for several different versions, you want to do the oldest one first,
-and only do the release for the current-stable branch last.</p>
-<p>If you start at the current stable branch and then work your way backwards
-through the older ones, you'll get Github saying &quot;2.5.15 is the Latest
-Release&quot; even though 3.0.13 was also just released... so, even though
-releasing the current-stable fix feels more urgent, suck it up and get the
-older-branch ones out first.</p>
+<div class="section" id="feature-freeze">
+<h2><a class="toc-backref" href="#id3">Feature freeze</a><a class="headerlink" href="#feature-freeze" title="Permalink to this headline">¶</a></h2>
+<p>This is the period where new features are not being merged to the master
+branch.  It usually starts at the start of December, and continues until
+the new series has its own cyrus-imapd-x.y branch, which is usually forked
+in early January.</p>
+<p>Once the new series has its own branch, any bug fixes will need to be
+developed against master and then backported to the new branch.  In
+contrast, bug fixes that happen during the feature freeze only need to land
+once, so take advantage of this window to focus on those.</p>
+<p>The feature freeze also reduces races between the release manager doing the
+various tasks of a release and other developers merging changes.</p>
+<p>Once the new series has its own branch, normal feature development can resume
+on master -- developing features for the <em>next</em> major release.</p>
 </div>
-<div class="section" id="release-notes">
-<h2><a class="toc-backref" href="#id4">Release notes</a><a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h2>
-<p>Write up the release notes, and add them to the appropriate location under
-<code class="docutils literal notranslate"><span class="pre">docsrc/imap/download/release-notes/</span></code>.  They will not yet be linked up.</p>
-<p>Commit and push your changes, and then wait for cyrusimap.org to rebuild
-(happens each hour, and takes a few mins, so check at about 5 past).  The
-new release notes will be available at their direct URL -- easiest way to
-find it is to browse to some earlier version's release notes, then change
-version in the address bar to load up the new one.  Confirm that they are
-correct and complete.</p>
-</div>
-<div class="section" id="pre-release-testing">
-<h2><a class="toc-backref" href="#id5">Pre-release testing</a><a class="headerlink" href="#pre-release-testing" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Ensure your git repository is clean, using something like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code>.
-Note that this command will destroy any uncommitted work you might have,
-so make sure your ducks are in line before proceeding.</p></li>
+<div class="section" id="make-sure-master-is-good">
+<h2><a class="toc-backref" href="#id4">Make sure master is good</a><a class="headerlink" href="#make-sure-master-is-good" title="Permalink to this headline">¶</a></h2>
+<p>With the master branch checked out and up to date:</p>
+<ol class="arabic">
+<li><p>Ensure your git repository is clean, using something like
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code>.  Note that this command will destroy any uncommitted
+work you might have, so make sure your ducks are in line before proceeding.</p></li>
 <li><p>Generate a configure script: <code class="docutils literal notranslate"><span class="pre">autoreconf</span> <span class="pre">-i</span> <span class="pre">-s</span></code></p></li>
-<li><p>Generate everything else: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-maintainer-mode</span></code> (you do not
-need any other options at this stage).</p></li>
+<li><p>Generate everything else: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-maintainer-mode</span></code> (you do
+not need any other options at this stage).</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distcheck</span></code>.  This will generate a distribution tarball, and
 test it in various ways.  It takes about 10-15 mins to run, depending on
-your hardware.  If this command fails*, you are not ready to release --
-fix the problems, get them tested and committed, then restart the
-pre-release testing.</p></li>
+your hardware.  If you usually build Cyrus with a script that sets PATH etc,
+you will need to provide the same environment at this step.  For example,
+ellie uses an alias like this for this step:</p>
+<p><code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">distcheck=&quot;PATH=/usr/local/cyruslibs/bin:$PATH</span> <span class="pre">make</span> <span class="pre">distcheck&quot;</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distcheck</span></code> fails, you are not ready to proceed -- fix the
+problems, get them tested and committed, then restart this testing.</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distcheck</span></code> can only test so much (it doesn't know about cunit or
 cassandane), so you also need to check the tarball against those.</p>
 <ol class="lowerroman simple">
-<li><p>The tarball will be called something like <code class="docutils literal notranslate"><span class="pre">cyrus-imapd-3.0.0-rc2-23-g0241b22.tar.gz</span></code>
+<li><p>The tarball will be called something like
+<code class="docutils literal notranslate"><span class="pre">cyrus-imapd-3.0.0-rc2-23-g0241b22.tar.gz</span></code>
 (this corresponds to the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span></code> output).</p></li>
-<li><p>Extract it: <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">xfz</span> <span class="pre">cyrus-imapd-*.tar.gz</span></code> (substitute version for <code class="docutils literal notranslate"><span class="pre">*</span></code>).</p></li>
+<li><p>Extract it: <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">xfz</span> <span class="pre">cyrus-imapd-*.tar.gz</span></code>
+(substitute version for <code class="docutils literal notranslate"><span class="pre">*</span></code>).</p></li>
 <li><p>Change into the directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">cyrus-imapd-*</span></code></p></li>
-<li><p>Configure it: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">[...]</span></code> (provide the same arguments you would
-when building for Cassandane at any other time).</p></li>
+<li><p>Configure it: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">[...]</span></code> (provide the same arguments and
+environment that you would when building for Cassandane at any other
+time).</p></li>
 <li><p>Compile it: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j4</span></code> -- it should build correctly.</p></li>
 <li><p>Run the unit tests: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j4</span> <span class="pre">check</span></code> -- they should pass.</p></li>
 <li><p>Install it to your Cassandane prefix: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code></p></li>
-<li><p>Then run Cassandane normally -- it should pass.</p></li>
-<li><p>If any of this fails, fix it, commit it, then restart the pre-release
-testing.</p></li>
+<li><p>Change into the <cite>cassandane</cite> directory within the extracted source
+(not the git source!): <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">cassandane</span></code></p></li>
+<li><p>Build Cassandane's binary components: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j4</span></code></p></li>
+<li><p>Run Cassandane: <code class="docutils literal notranslate"><span class="pre">./testrunner.pl</span></code></p></li>
+<li><p>If any of this fails, get it fixed and merged, then redo this testing</p></li>
 </ol>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distcheck</span></code> doesn't work on the 2.5 branch.  For 2.5, just use
-<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">dist</span></code> instead.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Realistically, there's usually some set of expected Cassandane failures
-from each Cyrus branch, especially for 2.5.  If you're doing releases
-regularly, you've probably got a good gut feel for which failures are a
-problem and which ones are just &quot;that old thing&quot;.  If you don't do
-releases regularly, try to pull in someone who does for guidance about
-which failures are ignorable, and which should be a source of stress.</p>
-<p>If in doubt, try building and testing the previous release from the same
-series, and compare the test results.</p>
-</div>
-</div>
-<div class="section" id="linking-up-release-notes">
-<h2><a class="toc-backref" href="#id6">Linking up release notes</a><a class="headerlink" href="#linking-up-release-notes" title="Permalink to this headline">¶</a></h2>
-<p>The linkage of release notes is handled in <code class="docutils literal notranslate"><span class="pre">docsrc/conf.py</span></code>.  There's a bunch
-of places it needs to be updated.  We should iterate these in detail at some
-point, but for now the easiest thing to do is look for lines containing the
-previous version and, if it makes sense to do so, update them to contain the
-new version.</p>
-<p>After this change is committed and pushed upstream, the cyrusimap.org website
-will start showing the new version as the &quot;current&quot; version at the next hourly
-update.  So ellie likes to do this step at about 5-10 past the hour, which then
-gives her 50 minutes to finish the rest of the release process without the
-website updating before the downloads are available.</p>
-</div>
-<div class="section" id="version-tagging">
-<h2><a class="toc-backref" href="#id7">Version tagging</a><a class="headerlink" href="#version-tagging" title="Permalink to this headline">¶</a></h2>
-<p>Note: it is absolutely critical that your repository is clean and your local
-commits have been pushed upstream at this point.  If they are not, and if
-anybody else pushes in the meantime, you will end up with a mess.</p>
-<ol class="arabic">
-<li><p>Ensure your repository is clean again: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code></p></li>
-<li><p>Create a signed, annotated tag for the new version: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-s</span> <span class="pre">cyrus-imapd-&lt;version&gt;</span></code></p></li>
-<li><p>You will be prompted to enter a commit message for the tag.  I use the
-following, just because it's what the old instructions said:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">are</span> <span class="n">pleased</span> <span class="n">to</span> <span class="n">announce</span> <span class="n">the</span> <span class="n">release</span> <span class="n">of</span> <span class="n">Cyrus</span> <span class="n">IMAP</span> <span class="n">version</span> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;.</span>
-
-<span class="n">This</span> <span class="n">release</span> <span class="n">contains</span> <span class="n">features</span> <span class="ow">and</span> <span class="n">fixes</span> <span class="n">you</span> <span class="n">can</span> <span class="n">find</span> <span class="n">on</span> <span class="n">the</span> <span class="n">following</span> <span class="n">pages</span><span class="p">:</span>
-
-<span class="p">[</span><span class="n">paste</span> <span class="n">link</span> <span class="n">to</span> <span class="n">the</span> <span class="n">release</span> <span class="n">notes</span> <span class="k">for</span> <span class="n">this</span> <span class="n">version</span> <span class="n">here</span><span class="p">]</span>
-</pre></div>
-</div>
+<div class="section" id="forking-the-new-series-branch">
+<h2><a class="toc-backref" href="#id5">Forking the new series branch</a><a class="headerlink" href="#forking-the-new-series-branch" title="Permalink to this headline">¶</a></h2>
+<p>You will find (e.g. with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span></code> when viewing the master branch) that
+the master branch has a version with an odd number in the second field, e.g.
+3.<strong>7</strong>.  The new series branch should be named one number higher than
+this, making it an even number.  Thus, if master is currently 3.7, then the new
+series will be 3.8 (and then master will become 3.9).</p>
+<ol class="arabic simple">
+<li><p>Make sure your repository and master branch are up to date</p></li>
+<li><p>Checkout the master branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p>Create and check out the new series branch:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">cyrus-imapd-&lt;series&gt;</span></code></p></li>
+<li><p>Edit <cite>docsrc/conf.py</cite>.  Update all the versioning information to say that:</p>
+<ul class="simple">
+<li><p>this is version <cite>&lt;series&gt;.0-alpha0</cite></p></li>
+<li><p>the current stable version is <cite>&lt;series&gt;.0-alpha0</cite> (i.e. this one)</p></li>
+<li><p>the previous stable version is whatever the current stable version
+used to be</p></li>
+<li><p>the latest development version is the next odd number up from what it used
+to be, as a <cite>.0-alpha0</cite> -- that is, if it used to be <cite>3.7.something</cite>,
+it is now <cite>3.9.0-alpha0</cite>.</p></li>
+<li><p>(these are all lies right now, but they will become true as we go)</p></li>
+<li><p>find <cite>html_theme_options</cite> and update the option that configures which
+branch to show for the build status badge to be this branch, not &quot;master&quot;</p></li>
+<li><p>Also add a suitable entry to the <cite>extlinks</cite> table near the bottom of the
+file.</p></li>
+</ul>
 </li>
+<li><p>Update <cite>docsrc/index.rst</cite> to state that this is the stable version, not
+the development one.  It's easiest to just copy and update the text from the
+previous stable version of this file.</p></li>
+<li><p>Add release notes infrastructure:</p>
+<ol class="loweralpha simple">
+<li><p>Make the directories for the new series:
+<code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">docsrc/imap/download/release-notes/&lt;series&gt;/x</span></code>
+(note the <cite>x</cite>, it's important for some historical reason)</p></li>
+<li><p>Make the directories for the new dev version:
+<code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">docsrc/imap/download/release-notes/&lt;dev&gt;/x</span></code></p></li>
+<li><p>Create <cite>docsrc/imap/download/release-notes/&lt;version&gt;/index.rst</cite>
+for each of these, with stub contents.  It's easiest to just
+copy and update from an older one.</p></li>
+<li><p>Add stub release notes for alpha0.  This will be a file called
+<cite>docsrc/imap/download/release-notes/&lt;series&gt;/x/&lt;series&gt;.0-alpha0.rst</cite>.
+If we've been doing dev snapshots from master, start by copying the
+release notes from the most recent one of those.  If we haven't, then
+you will be starting with a blank document, in which case it's easiest
+to copy the release notes file from the previous major release, delete
+all the bullet points (leaving just the headings), and fix all the
+numbers.</p></li>
+</ol>
+</li>
+<li><p>Update <cite>README.md</cite>:</p>
+<ul class="simple">
+<li><p>It will be claiming to be the development version, but this is now (or
+will be) the stable version, so update that.  If in doubt, mimic what
+the old stable branch's copy says.  This is another set of lies that will
+become true as we go.</p></li>
+<li><p>Search through the whole document for version numbers, and update them
+sensibly for the future reality.  Do this mindfully, not with a batch
+find-replace.</p></li>
+<li><p>The stable &quot;build status&quot; badge at the very top should reference the real
+stable version for now.  This gets shown on GitHub rather than our own
+site, so it can't lie.</p></li>
+<li><p>This is also a good time for a careful review of the contents of this
+file.  Fix anything that's out of date, missing, etc.</p></li>
+</ul>
+</li>
+<li><p>Make sure your RST changes are good:  <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc-html</span></code>.  Pay attention
+to any errors or warnings (they will be coloured).  There will be some
+you can clearly ignore, such as glob patterns for future release notes
+that don't exist yet, but do your best to deal with everything else.
+The generated documentation will be under the <cite>doc/html/</cite> directory --
+examine it in your browser to make sure all your formatting and such makes
+sense.</p></li>
+<li><p>Tell Github Actions about the new branch: edit <cite>.github/workflows/main.yml</cite>
+and add the new branch to the list in the obvious spot.  Does anything else
+need to be done for this step?  Unknown... figure it out and document it!
+Also currently unknown whether this needs to happen on the master branch,
+on the branch itself, or both.  So we do it on both just in case.</p></li>
+<li><p>XXX maybe missing some stuff here still?</p></li>
+</ol>
+<p>You can double check your work by looking at what changed last time a new
+stable series was forked:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span> <span class="pre">--format=fuller</span> <span class="pre">cyrus-imapd-&lt;oldstable&gt;.0-alpha0</span></code>.
+Also look a few commits forward, in case the previous releaser
+missed steps before tagging, and had to catch them up later.</p>
+<p>Once you're satisfied that you've done everything that needed doing here:</p>
+<ol class="arabic simple">
+<li><p>Commit all these changes.  A single commit is good, we would like this to
+be the very first commit after the fork point.</p></li>
+<li><p>Create a signed, annotated tag declaring that this is now alpha0 of the .0
+release of the new series:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-s</span> <span class="pre">cyrus-imapd-&lt;series&gt;.0-alpha0</span></code></p></li>
+<li><p>You will be prompted to enter a commit message for the tag (this is
+what makes it an &quot;annotated&quot; tag).  Ellie uses something like &quot;not a real
+release, but need a tag for versioning&quot;.</p></li>
 <li><p>You will also be prompted to enter the pass phrase for your GPG key, do it.</p></li>
-<li><p>Generate a configure script: <code class="docutils literal notranslate"><span class="pre">autoreconf</span> <span class="pre">-i</span> <span class="pre">-s</span></code></p></li>
-<li><p>Generate everything else: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-maintainer-mode</span></code></p></li>
-<li><p>Create the distribution tarball: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distcheck</span></code> (yes, again! this time
-will have the correct version, now that you've tagged it.)</p></li>
-<li><p>If anything goes wrong up to here, delete the tag, fix the issue, and start
-again from scratch.</p></li>
-<li><p>Sign the distribution tarball: <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--sign</span> <span class="pre">-b</span> <span class="pre">cyrus-imapd-&lt;version&gt;.tar.gz</span></code></p></li>
-<li><p>Ellie also likes to copy the tarball and signature file somewhere safe,
-just in case something happens between now and uploading.</p></li>
-<li><p>Push the tag upstream: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;version&gt;</span></code> (assuming your
-remote is named &quot;ci&quot;).</p></li>
+<li><p>Push the new branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;series&gt;</span></code> (assuming your
+remote is named &quot;ci&quot;)</p></li>
+<li><p>Push the new tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;series&gt;.0-alpha0</span></code></p></li>
 </ol>
+<p>Fastmail specific: also push the new branch and tag to the Fastmail repo.</p>
 </div>
-<div class="section" id="inter-version-website-consistency">
-<h2><a class="toc-backref" href="#id8">Inter-version website consistency</a><a class="headerlink" href="#inter-version-website-consistency" title="Permalink to this headline">¶</a></h2>
-<p>The website is built from an amalgamation of documentation from:</p>
-<ul>
-<li><p>The current stable cyrus-imapd branch (top level)</p></li>
-<li><p>The current master cyrus-imapd branch (<code class="docutils literal notranslate"><span class="pre">/dev</span></code> hierarchy)</p></li>
-<li><p>Each of the following cyrus-imapd branches (<code class="docutils literal notranslate"><span class="pre">/x.y</span></code> hierarchies)</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>cyrus-imapd-2.5</p></li>
-<li><p>cyrus-imapd-3.0</p></li>
-<li><p>cyrus-imapd-3.2</p></li>
+<div class="section" id="updating-the-master-branch">
+<h2><a class="toc-backref" href="#id6">Updating the master branch</a><a class="headerlink" href="#updating-the-master-branch" title="Permalink to this headline">¶</a></h2>
+<p>You now need to make similar, but not identical, changes to the master branch,
+too.</p>
+<ol class="arabic simple">
+<li><p>Check out the master branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></p></li>
+<li><p>Edit <cite>docsrc/conf.py</cite>: Make all the same changes as you did before, except
+that:</p>
+<ul class="simple">
+<li><p>version and release should reflect that this is the development version,
+not the new stable version</p></li>
+<li><p>XXX anything else?</p></li>
 </ul>
-</div></blockquote>
 </li>
-<li><p>The current master cyrus-sasl branch (<code class="docutils literal notranslate"><span class="pre">/sasl</span></code> hierarchy)</p></li>
+<li><p>Create the release notes directories and populate their stub index files.
+Note that in this case you're doing both the new series stubs, and the new
+dev series stubs.  You need to do both, because someday this will be a
+stable version, and the website will need all the historical release notes.</p></li>
+<li><p>Remove all files except the template from <cite>changes/next/</cite>. These will be
+new features in the new release, which means they're no longer new on the
+master branch.  An exception is if there are changes currently on master
+that will be reverted from the new branch after forking -- in that case,
+don't delete those changes files from master.  More on this later.</p></li>
+<li><p>Update <cite>README.md</cite>.</p></li>
+<li><p>Tell Github Actions about the new branch: edit <cite>.github/workflows/main.yml</cite>
+and add the new branch to the list in the obvious spot.  Does anything else
+need to be done for this step?  Unknown... figure it out and document it!
+Also currently unknown whether this needs to happen on the master branch,
+on the branch itself, or both.  So we do it on both just in case.</p></li>
+<li><p>XXX probably steps missing here too</p></li>
+<li><p>Make sure the RST changes are good: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc-html</span></code>, pay attention
+to errors and warnings.</p></li>
+</ol>
+<p>You may think you can do this by cherry-picking your commit from the new
+release branch and then amending it with the dev version differences... and you
+can, but do so very cautiously, because the differences between these branches
+are important.</p>
+<p>You can double check your work by looking at what changed <em>on master</em> last time
+a new series forked.  As before, look a few commits ahead too, in case the
+previous releaser missed steps before tagging.</p>
+<p>Once you're satisfied that you've done everything that needed doing here:</p>
+<ol class="arabic simple">
+<li><p>Commit all these changes.  A single commit is good, we would like this to
+be the very first commit after the fork point.</p></li>
+<li><p>Create a signed, annotated tag declaring that this is now alpha0 of the .0
+&quot;release&quot; of the new development version:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-s</span> <span class="pre">cyrus-imapd-&lt;dev&gt;.0-alpha0</span></code></p></li>
+<li><p>You will be prompted to enter a commit message for the tag (this is
+what makes it an &quot;annotated&quot; tag).  Ellie uses something like &quot;not a real
+release, but need a tag for versioning&quot;.</p></li>
+<li><p>You will also be prompted to enter the pass phrase for your GPG key, do it.</p></li>
+<li><p>Push the new commit</p></li>
+<li><p>Push the new tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;dev&gt;.0-alpha0</span></code></p></li>
+</ol>
+<p><strong>Once this step is done, the feature freeze can end.</strong></p>
+<p>Fastmail specific: also push the updated master branch and new tag to the
+Fastmail repo.  This ensures our builds will also start using the new version
+number once they update past the fork point.</p>
+</div>
+<div class="section" id="github-updates">
+<h2><a class="toc-backref" href="#id7">Github updates</a><a class="headerlink" href="#github-updates" title="Permalink to this headline">¶</a></h2>
+<p>On Github, have a look at the branch protection settings that apply to the
+current stable branch.  Apply the same protections to the new branch.</p>
+<p>Create labels for the new series and new dev series.  Give them pleasant
+colours and sensible descriptions.</p>
+<ul class="simple">
+<li><p>&lt;series&gt;</p></li>
+<li><p>backport-to-&lt;series&gt;</p></li>
+<li><p>&lt;dev&gt;</p></li>
 </ul>
-<p>When making a cyrus-imapd release, you need to add the new release notes
-file to each relevant cyrus-imapd branch.  You also need to check and
-update the contents of <code class="docutils literal notranslate"><span class="pre">docsrc/conf.py</span></code> on each branch AND the cyrus-sasl
-repository.</p>
-<p>Sometimes you can just cherry-pick the commits around, but note that the
-2.5 website stores release notes files in a different path, so if you
-bother to copy release notes back to this branch, a naive cherry-pick will
-not put them in the right place!</p>
-<p>This step often gets forgotten, so if you actually follow it, and notice
-some missing versions, just go ahead and add them while you're there.</p>
+<p>Also update the description of the label for the old master version number.</p>
 </div>
-<div class="section" id="uploading">
-<h2><a class="toc-backref" href="#id9">Uploading</a><a class="headerlink" href="#uploading" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section does NOT apply to releases from the master branch.  We
-do not publish release tarballs for those.  People running master code
-are expected to use a git checkout.</p>
+<div class="section" id="revert-anything-that-s-not-yet-ready">
+<h2><a class="toc-backref" href="#id8">Revert anything that's not yet ready</a><a class="headerlink" href="#revert-anything-that-s-not-yet-ready" title="Permalink to this headline">¶</a></h2>
+<p>If there are commits on master that need to remain on master, but are not
+yet ready for release for some reason, this is a good point to revert those
+commits on the new branch only.  Any <cite>changes/next</cite> files from these commits
+should remain on master, or be copied back to master if they were accidentally
+deleted earlier.</p>
+<p>This doesn't and shouldn't happen often.</p>
 </div>
-<p>Time to upload the release tarball and signature file!</p>
+<div class="section" id="tell-the-website-builder-about-the-new-branch">
+<h2><a class="toc-backref" href="#id9">Tell the website builder about the new branch</a><a class="headerlink" href="#tell-the-website-builder-about-the-new-branch" title="Permalink to this headline">¶</a></h2>
+<p>The website is automatically rebuilt by a script, which needs to be updated
+to know about the new series.</p>
 <ol class="arabic simple">
-<li><p>Navigate to <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases">https://github.com/cyrusimap/cyrus-imapd/releases</a></p></li>
-<li><p>The tag you pushed earlier will now be available as a release, but it will
-have very little information about it</p></li>
-<li><p>Click on the tag name</p></li>
-<li><p>Click &quot;Edit tag&quot; on the right</p></li>
-<li><p><em>Leave every field on the page as it is (probably blank!), except</em>:</p></li>
-<li><p>Use the &quot;Attach binaries by dropping them here or selecting them&quot; widget
-to upload the tarball and signature files</p></li>
-<li><p>If this is an alpha/beta/rc release, click the &quot;This is a pre-release&quot;
-checkbox</p></li>
-<li><p>Click &quot;Save&quot;.  The commit message from the tag annotation will be used
-as the release description.</p></li>
+<li><p>Clone <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:cyrusimap/cyrusimap.org.git</span></code>, or ensure the clone
+you already have is up to date</p></li>
+<li><p>Update <cite>run-gp.sh</cite> to know about the new version.  You'll need to add code
+in several places, but it's pretty self-explanatory once you look at it.
+For the time being, do NOT change which version <cite>$target</cite> and
+<cite>$target/stable</cite> are rsync'd from.  We'll change these later, once the real
+release has been published.  In the meantime, we want the top level and
+stable sections to continue to be built from the existing stable branch.</p></li>
+<li><p>You can check your work by comparing your changes to previous commits</p></li>
+<li><p>Commit and push your changes.  The system that runs this script fetches
+changes automatically before running it, so the next run to start will
+use the updated version.  It starts approximately on the hour, and can
+take ~15 minutes if there are large changes, such as adding a whole new
+branch...</p></li>
+<li><p>You should now be able to access a version of the website built from the
+new branch at <cite>https://www.cyrusimap.org/&lt;version&gt;/</cite>.  Check that in your
+browser, make sure it reports the correct new versions.</p></li>
+<li><p>You should also see a new &quot;automatic commit&quot; from &quot;cyrusdocgen&quot; on
+<a class="reference external" href="https://github.com/cyrusimap/cyrusimap.github.io">https://github.com/cyrusimap/cyrusimap.github.io</a> -- that's the result of
+the run-gp.sh script having run.</p></li>
 </ol>
 </div>
-<div class="section" id="tell-the-world">
-<h2><a class="toc-backref" href="#id10">Tell the world</a><a class="headerlink" href="#tell-the-world" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-beta">
+<h2><a class="toc-backref" href="#id10">First beta</a><a class="headerlink" href="#first-beta" title="Permalink to this headline">¶</a></h2>
+<p>This work mostly happens on the new branch.</p>
 <ol class="arabic simple">
-<li><p>Send an announcement to the info-cyrus and cyrus-announce lists.</p></li>
+<li><p>Check through <cite>lib/imapoptions</cite> for options with <cite>&quot;UNRELEASED&quot;</cite> in any of
+their version fields.</p>
+<ul class="simple">
+<li><p>Replace these with the version number of the eventual actual (non-beta)
+release.  For example, if we're starting the 3.8 series, this will be
+&quot;3.8.0&quot;.  That is to say, the first real release that these changes will
+appear in.</p></li>
+<li><p>If any have been missed, there will be warnings (in yellow) when trying
+to (re)generate <cite>lib/imapopts.c</cite>.  You can run
+<code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">lib/imapoptions</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">lib/imapopts.c</span></code> to check</p></li>
+<li><p>Commit this change, and also cherry-pick it onto <cite>master</cite>.</p></li>
+</ul>
+</li>
+<li><p>Copy the stub release notes that you made for <cite>&lt;series&gt;.0-alpha0</cite> into a new
+document for <cite>&lt;series&gt;.0-beta1</cite>.</p></li>
+<li><p>Review the contents of all the <cite>changes/next/*</cite> files.  Flesh out the new
+release notes document accordingly.  (Compare previous <cite>...-beta1</cite> release
+notes to get a sense of the tone and level of detail.)</p></li>
+<li><p>Review <cite>docsrc/imap/download/upgrade.rst</cite>, also with reference to the
+<cite>changes/next/*</cite> files.  Make any necessary updates.  We expect people
+upgrading to the new version to follow these instructions, so they'd better
+be as complete and correct as we can get them.</p></li>
+<li><p>Review <cite>docsrc/imap/rfc-support.rst</cite>, also with reference to the
+<cite>changes/next/*</cite> files, and make any necessary updates.  Also compare this
+file with the version of it on the stable branch.  Check for any changes
+that don't have an accompanying <cite>changes/next</cite> file, and if there are any,
+also add suitable release notes and/or upgrade documentation for those.</p></li>
+<li><p>Check your RST changes: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc-html</span></code></p></li>
+<li><p>Once the documentation updates have been finalised, the <cite>changes/next/*</cite>
+files (except for the template) should be removed -- they are no longer
+changes.  The history is a bit easier to read later if you commit the
+doc updates and the removal of the changes files in the same commit.</p></li>
+<li><p>Follow the <a class="reference internal" href="releasing.html#imap-developer-releasing"><span class="std std-ref">Releasing Cyrus IMAP - normal releases</span></a> instructions to get
+<cite>cyrus-imapd-&lt;series&gt;.0-beta1</cite> released.</p></li>
 </ol>
+</div>
+<div class="section" id="subsequent-betas">
+<h2><a class="toc-backref" href="#id11">Subsequent betas</a><a class="headerlink" href="#subsequent-betas" title="Permalink to this headline">¶</a></h2>
+<p>Monitor Github and the mailing lists for bug reports against the previous beta.
+Make fixes against master, then backport them to the new series branch.</p>
+<p>Periodically make new beta releases, as bugs are found and fixed.</p>
+<p>Remember that until the real release is really released, the release notes
+contain the changes since the previous <em>stable</em> version.  This means each of
+the betas will start with copying the previous beta's release notes and
+adding any new details, without removing what was already there.</p>
+</div>
+<div class="section" id="release-candidates">
+<h2><a class="toc-backref" href="#id12">Release candidates</a><a class="headerlink" href="#release-candidates" title="Permalink to this headline">¶</a></h2>
+<p>After a while, the flow of bug reports and fixes will dry up, and so we start
+cutting &quot;release candidates&quot; instead.  These are effectively identical to
+betas, except we call them -rc1, -rc2, etc instead.  The change in name
+reflects our increased confidence in the software and documentation.</p>
+</div>
+<div class="section" id="release">
+<h2><a class="toc-backref" href="#id13">Release</a><a class="headerlink" href="#release" title="Permalink to this headline">¶</a></h2>
+<p>Oh boy, we've come a long way, haven't we!</p>
+<p>For this one, we've got a little more housekeeping to do.</p>
+<ol class="arabic simple">
+<li><p>Follow the <a class="reference internal" href="releasing.html#imap-developer-releasing"><span class="std std-ref">Releasing Cyrus IMAP - normal releases</span></a> normal release process as
+previous, again copy-and-updating the release notes from the last release
+candidate, except this time you're actually doing <cite>&lt;series&gt;.0</cite>, with no
+alpha, beta, or rc qualifiers.  Don't send the announcement email just
+yet though.</p></li>
+<li><p>Remember how we lied about the new version being the stable release?
+We only did that on the new branch and master, though.  <cite>docsrc/conf.py</cite>
+on each of the existing branches will still be announcing old version
+numbers in the &quot;rst_prolog&quot; section.  Go through the old branches and
+update each's <cite>docsrc/conf.py</cite> to contain the same lie.  Commit and push
+these as you go.</p></li>
+<li><p>Remember the <cite>run-gp.sh</cite> script from the cyrusimap.org repository?  Go and
+move the <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">...</span> <span class="pre">$target</span></code> and <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">...</span> <span class="pre">$target/stable</span></code> lines from
+the block for what is now the previous stable release, into the block for
+the new version (don't forget to update the numbers embedded in these lines
+too).  Once this is pushed, the next website rebuild will make it all true.</p></li>
+<li><p>Once the website is fully updated, send that announcement email.</p></li>
+</ol>
+</div>
+<div class="section" id="post-release">
+<h2><a class="toc-backref" href="#id14">Post-release</a><a class="headerlink" href="#post-release" title="Permalink to this headline">¶</a></h2>
+<p>From now on, just follow the normal release process to make point releases.
+Release notes for point releases describe the difference between this point
+release and the previous, and are much more specific than those of major
+releases.</p>
 </div>
 </div>
 
@@ -1012,10 +1185,10 @@ as the release description.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="major-releasing.html" class="btn btn-neutral float-right" title="Releasing Cyrus IMAP - major releases" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="snapshot-releasing.html" class="btn btn-neutral float-right" title="Releasing Cyrus IMAP - developer snapshots" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="libraries/imclient.html" class="btn btn-neutral" title="imclient library" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="releasing.html" class="btn btn-neutral" title="Releasing Cyrus IMAP - normal releases" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1024,7 +1197,7 @@ as the release description.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 03 2023
+        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Feb 13 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
