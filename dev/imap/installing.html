@@ -463,7 +463,6 @@
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/idled.html"><strong>idled</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/imapd.html"><strong>imapd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ipurge.html"><strong>ipurge</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/jmap_expire.html"><strong>jmap_expire</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/lmtpd.html"><strong>lmtpd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/masssievec.html"><strong>masssievec</strong></a></li>
@@ -1358,11 +1357,6 @@ something different.</p>
 
   <span class="c1"># this is only necessary if caching TLS sessions</span>
   <span class="n">tlsprune</span>      <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;tls_prune&quot;</span> <span class="n">at</span><span class="o">=</span><span class="mi">0400</span>
-
-  <span class="c1"># this is only necessary if CalDAV or JMAP are enabled</span>
-  <span class="c1"># expire JMAP notifications after 7 days and</span>
-  <span class="c1"># unlink expired JMAP notifications after 1 day</span>
-  <span class="n">jmapprune</span>     <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;jmap_expire -E 7d -X 1d&quot;</span> <span class="n">at</span> <span class="mi">0500</span>
 <span class="p">}</span>
 
 <span class="n">DAEMON</span> <span class="p">{</span>

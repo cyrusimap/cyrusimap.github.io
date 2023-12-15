@@ -463,7 +463,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/idled.html"><strong>idled</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/imapd.html"><strong>imapd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/ipurge.html"><strong>ipurge</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../systemcommands/jmap_expire.html"><strong>jmap_expire</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/lmtpd.html"><strong>lmtpd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/masssievec.html"><strong>masssievec</strong></a></li>
@@ -2138,6 +2137,12 @@ capabilities object.</p>
 maxSizeBlobSet property value of the JMAP
 &quot;<a class="reference external" href="https://cyrusimap.org/ns/jmap/blob">https://cyrusimap.org/ns/jmap/blob</a>&quot; capabilities object.</p>
 <p>For backward compatibility, if no unit is specified, kibibytes is assumed.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">jmap_max_calendareventnotifs:</span></code> 200</p>
+<blockquote>
+<div><p>The maximum count of CalendarEventNotification objects to keep per account.
+Any notifications exceeding this count are expunged to make room for new
+ones. Zero or any negative number disables this limit.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmap_max_concurrent_upload:</span></code> 5</p>
 <blockquote>

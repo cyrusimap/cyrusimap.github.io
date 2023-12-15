@@ -2255,6 +2255,17 @@ FIELD DESCRIPTIONS
 
     .. endblob jmap_max_size_blob_set
 
+    .. startblob jmap_max_calendareventnotifs
+
+    ``jmap_max_calendareventnotifs:`` 200
+
+        The maximum count of CalendarEventNotification objects to keep per account.
+        Any notifications exceeding this count are expunged to make room for new
+        ones. Zero or any negative number disables this limit.
+
+
+    .. endblob jmap_max_calendareventnotifs
+
     .. startblob jmap_max_concurrent_upload
 
     ``jmap_max_concurrent_upload:`` 5
