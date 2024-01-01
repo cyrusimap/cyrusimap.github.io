@@ -460,7 +460,6 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/idled.html"><strong>idled</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/imapd.html"><strong>imapd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/ipurge.html"><strong>ipurge</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html"><strong>jmap_expire</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/lmtpd.html"><strong>lmtpd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/reference/manpages/systemcommands/masssievec.html"><strong>masssievec</strong></a></li>
@@ -625,6 +624,7 @@
 <li class="toctree-l4"><a class="reference internal" href="imap/developer/compiling.html">Compiling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/installing.html">Installing Cyrus</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/developer/developer-testing.html">Developer Test Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/developer/coverage.html">Test Coverage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/developer/jmap.html">JMAP support</a></li>
 </ul>
 </li>
@@ -637,7 +637,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="imap/developer.html#releasing">Releasing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="imap/developer/releasing.html">Releasing Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/developer/releasing.html">Releasing Cyrus IMAP - normal releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="imap/developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="imap/developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
 </ul>
 </li>
@@ -1640,16 +1642,6 @@
 <li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/ipurge.html#see-also">See Also</a></li>
 </ul>
 </li>
-<li class="toctree-l6"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html"><strong>jmap_expire</strong></a><ul>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#synopsis">Synopsis</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#description">Description</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#options">Options</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#examples">Examples</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#history">History</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#files">Files</a></li>
-<li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/jmap_expire.html#see-also">See Also</a></li>
-</ul>
-</li>
 <li class="toctree-l6"><a class="reference internal" href="imap/reference/manpages/systemcommands/lmtpd.html"><strong>lmtpd</strong></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/lmtpd.html#synopsis">Synopsis</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/reference/manpages/systemcommands/lmtpd.html#description">Description</a></li>
@@ -2316,6 +2308,11 @@
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/developer-testing.html#tips-and-tricks">Tips and Tricks</a></li>
 </ul>
 </li>
+<li class="toctree-l6"><a class="reference internal" href="imap/developer/coverage.html">Test Coverage</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/coverage.html#one-time-setup">One-time setup</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/coverage.html#preparing-a-coverage-report">Preparing a coverage report</a></li>
+</ul>
+</li>
 <li class="toctree-l6"><a class="reference internal" href="imap/developer/jmap.html">JMAP support</a><ul>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/jmap.html#cyrus-administration">Cyrus administration</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/jmap.html#jmap-client">JMAP client</a></li>
@@ -2335,7 +2332,7 @@
 </ul>
 </li>
 <li class="toctree-l5"><a class="reference internal" href="imap/developer.html#releasing">Releasing</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="imap/developer/releasing.html">Releasing Cyrus IMAP</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="imap/developer/releasing.html">Releasing Cyrus IMAP - normal releases</a><ul>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#order-of-operations">Order of operations</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#release-notes">Release notes</a></li>
@@ -2345,6 +2342,36 @@
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#inter-version-website-consistency">Inter-version website consistency</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#uploading">Uploading</a></li>
 <li class="toctree-l7"><a class="reference internal" href="imap/developer/releasing.html#tell-the-world">Tell the world</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="imap/developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#feature-freeze">Feature freeze</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#make-sure-master-is-good">Make sure master is good</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#forking-the-new-series-branch">Forking the new series branch</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#updating-the-master-branch">Updating the master branch</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#github-updates">Github updates</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#revert-anything-that-s-not-yet-ready">Revert anything that's not yet ready</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#tell-the-website-builder-about-the-new-branch">Tell the website builder about the new branch</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#first-beta">First beta</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#subsequent-betas">Subsequent betas</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#release-candidates">Release candidates</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#release">Release</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/major-releasing.html#post-release">Post-release</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="imap/developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#make-sure-master-is-good">Make sure master is good</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#mixed-version-cassandane-testing">Mixed-version Cassandane testing</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#lib-imapoptions">lib/imapoptions</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#release-notes">Release notes</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#docsrc-conf-py">docsrc/conf.py</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#check-documentation">check documentation</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#pr-and-or-commit">PR and/or commit</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#tag">Tag</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#tell-the-world">Tell the world</a></li>
+<li class="toctree-l7"><a class="reference internal" href="imap/developer/snapshot-releasing.html#update-this-document">Update this document</a></li>
 </ul>
 </li>
 <li class="toctree-l6"><a class="reference internal" href="imap/developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a><ul>
@@ -2630,7 +2657,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2023, The Cyrus Team. Last updated on Aug 19 2016
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Aug 19 2016
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
