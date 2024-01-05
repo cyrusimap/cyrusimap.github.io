@@ -2089,6 +2089,18 @@ FIELD DESCRIPTIONS
 
     .. endblob imapmagicplus
 
+    .. startblob imap_inprogress_interval
+
+    ``imap_inprogress_interval:`` 10s
+
+        The interval after which the server will send an "INPROGRESS"
+        response code to the client during a long-running imap command
+        (e.g. search, copy).
+        The default is 10 seconds.
+        The minimum value is 0, which will disable "INPROGRESS" response codes. 
+
+    .. endblob imap_inprogress_interval
+
     .. startblob imipnotifier
 
     ``imipnotifier:`` <none>

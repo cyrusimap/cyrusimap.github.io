@@ -2040,6 +2040,14 @@ userid+namespace syntax as the authentication/authorization id.
 Using userid+ (with an empty namespace) will list only subscribed
 mailboxes.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">imap_inprogress_interval:</span></code> 10s</p>
+<blockquote>
+<div><p>The interval after which the server will send an &quot;INPROGRESS&quot;
+response code to the client during a long-running imap command
+(e.g. search, copy).
+The default is 10 seconds.
+The minimum value is 0, which will disable &quot;INPROGRESS&quot; response codes.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">imipnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Notifyd(8) method to use for &quot;IMIP&quot; notifications which are based on
