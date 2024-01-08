@@ -1386,7 +1386,9 @@ FIELD DESCRIPTIONS
 
     ``debug:`` 0
 
-        If enabled, allow syslog() to pass LOG_DEBUG messages. 
+        If enabled, allow syslog() to pass LOG_DEBUG messages.
+
+        This can be toggled for a running process by sending it SIGUSR1.
 
 
     .. endblob debug
