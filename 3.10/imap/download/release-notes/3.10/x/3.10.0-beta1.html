@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cyrus IMAP 3.10.0-alpha0 Release Notes &mdash; Cyrus IMAP 3.10.0-alpha0 documentation</title>
+  <title>Cyrus IMAP 3.10.0-beta1 Release Notes &mdash; Cyrus IMAP 3.10.0-alpha0 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
         <link rel="search" title="Search" href="../../../../../search.html"/>
     <link rel="top" title="Cyrus IMAP 3.10.0-alpha0 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Cyrus IMAP 3.10 Releases" href="../index.html"/>
-        <link rel="next" title="Cyrus IMAP 3.10.0-beta1 Release Notes" href="3.10.0-beta1.html"/>
-        <link rel="prev" title="Cyrus IMAP 3.10 Releases" href="../index.html"/> 
+        <link rel="next" title="Cyrus IMAP 3.8 Releases" href="../../3.8/index.html"/>
+        <link rel="prev" title="Cyrus IMAP 3.10.0-alpha0 Release Notes" href="3.10.0-alpha0.html"/> 
 
   
   
@@ -781,11 +781,11 @@
       
           <li><a href="../index.html">Cyrus IMAP 3.10 Releases</a> &raquo;</li>
       
-    <li>Cyrus IMAP 3.10.0-alpha0 Release Notes</li>
+    <li>Cyrus IMAP 3.10.0-beta1 Release Notes</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/download/release-notes/3.10/x/3.10.0-alpha0.rst" class="fa fa-github"> Edit on GitHub</a>
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/master/docsrc/imap/download/release-notes/3.10/x/3.10.0-beta1.rst" class="fa fa-github"> Edit on GitHub</a>
           
         
       </li>
@@ -794,21 +794,73 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-imap-3-10-0-alpha0-release-notes">
-<h1>Cyrus IMAP 3.10.0-alpha0 Release Notes<a class="headerlink" href="#cyrus-imap-3-10-0-alpha0-release-notes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cyrus-imap-3-10-0-beta1-release-notes">
+<h1>Cyrus IMAP 3.10.0-beta1 Release Notes<a class="headerlink" href="#cyrus-imap-3-10-0-beta1-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Download from GitHub:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-alpha0/cyrus-imapd-3.10.0-alpha0.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-alpha0/cyrus-imapd-3.10.0-alpha0.tar.gz</a></p></li>
-<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-alpha0/cyrus-imapd-3.10.0-alpha0.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-alpha0/cyrus-imapd-3.10.0-alpha0.tar.gz.sig</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-beta1/cyrus-imapd-3.10.0-beta1.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-beta1/cyrus-imapd-3.10.0-beta1.tar.gz</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-beta1/cyrus-imapd-3.10.0-beta1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.0-beta1/cyrus-imapd-3.10.0-beta1.tar.gz.sig</a></p></li>
 </ul>
 <div class="section" id="major-changes-since-the-3-8-series">
-<span id="relnotes-3-10-0-alpha0-changes"></span><h2>Major changes since the 3.8 series<a class="headerlink" href="#major-changes-since-the-3-8-series" title="Permalink to this headline">¶</a></h2>
+<span id="relnotes-3-10-0-beta1-changes"></span><h2>Major changes since the 3.8 series<a class="headerlink" href="#major-changes-since-the-3-8-series" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>None so far</p></li>
+<li><p>URLs found in HTML <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;area&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tags, as well as &quot;alt&quot;
+text in <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tags, are now indexed for search and snippets</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> now supports non-day durations in the
+archive/delete/expire annotations</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> no longer supports fractional durations in command
+line arguments.  Installations that passed fractional durations such as
+&quot;1.5d&quot; to any of the <code class="docutils literal notranslate"><span class="pre">-E</span></code>, <code class="docutils literal notranslate"><span class="pre">-X</span></code>, <code class="docutils literal notranslate"><span class="pre">-D</span></code>, or <code class="docutils literal notranslate"><span class="pre">-A</span></code> arguments must adapt
+these to only use integer durations such as &quot;1d12h&quot;</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> now supports the 'noexpire_until' annotation to
+disable cyr_expire per user</p></li>
+<li><p>JMAP calendar default alarms are now stored in a non-DAV mailbox annotation.
+See <a class="reference internal" href="../../../upgrade.html#upgrade-jmap-default-alarms"><span class="std std-ref">Default alarms</span></a> for upgrading instructions if you are
+already using the experimental JMAP Calendars API</p></li>
+<li><p>Removes support for parsing and generating bytecode for the deprecated
+denotify action and notify actions using the legacy (pre-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a>) syntax.
+Existing bytecode containing these actions will still be executed.  Scripts
+that contain the deprecated denotify action should be rewritten to remove
+them.  Scripts that contain notify actions using the legacy syntax should be
+rewritten to use the syntax in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a></p></li>
+<li><p>Adds support for the &quot;exp&quot; and &quot;nbf&quot; JSON Web Token claims. Thanks Bruno
+Thomas</p></li>
+<li><p>Adds support for IMAP Version 4rev2 (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc9051.html"><strong>RFC 9051</strong></a>)</p></li>
+<li><p>Adds support for IMAP NOTIFY (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5465.html"><strong>RFC 5465</strong></a>). Only available if <code class="docutils literal notranslate"><span class="pre">idled</span></code> is
+running</p></li>
+<li><p>Refresh interval for APNS subscriptions to DAV resources is now configurable.
+See the <code class="docutils literal notranslate"><span class="pre">aps_expiry</span></code> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option</p></li>
+<li><p>Upgrade IMAP Quota support to <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc9208.html"><strong>RFC 9208</strong></a>.  Sites running a Murder should
+upgrade frontend machines first, then backends</p></li>
+<li><p>Adds support for IMAP REPLACE (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8508.html"><strong>RFC 8508</strong></a>)</p></li>
+<li><p>Adds support for IMAP UIDONLY extension (<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-extra-imap-uidonly">draft-ietf-extra-imap-uidonly</a>)</p></li>
+<li><p>Adds experimental support for JMAP Contacts per upcoming IETF standards</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> now supports the &quot;wait=y&quot; <a class="reference internal" href="../../../../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>
+option when started in rolling mode from the <code class="docutils literal notranslate"><span class="pre">DAEMON</span></code> section</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> now touches a ready file to indicate it is &quot;ready for
+work&quot;.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a>.</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> now gets its pidfile name from the <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code>
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a>.</p></li>
+<li><p>Adds pcre2 support.  Prefers pcre2 over pcre if both are available. See
+<a class="reference internal" href="../../../upgrade.html#upgrade-pcre2-support"><span class="std std-ref">PCRE2 support</span></a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">proc</span></code> <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> subcommand now also reports DAEMON and
+EVENTS processes</p></li>
+<li><p>JMAP CalendarEventNotification objects are now automatically pruned.
+The <code class="docutils literal notranslate"><span class="pre">jmap_max_calendareventnotifs</span></code> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option can be
+used to tune this behaviour</p></li>
+<li><p>Cyrus now requires libical &gt;= 3.0.10 for HTTP support</p></li>
+<li><p>Sieve [current]date <code class="docutils literal notranslate"><span class="pre">:zone</span></code> parameter now accepts either a UTC offset or an
+IANA time zone ID</p></li>
+<li><p>Adds an <code class="docutils literal notranslate"><span class="pre">implicit_keep_target</span></code> Sieve action to change the target mailbox
+for an implicit keep.</p></li>
+<li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> no longer holds a mailbox lock while extracting text
+from attachments</p></li>
+<li><p>IMAP <code class="docutils literal notranslate"><span class="pre">RENAME</span></code> command no longer emits non-standard per-folder updates.  Use
+the new <code class="docutils literal notranslate"><span class="pre">XRENAME</span></code> command if you need this behaviour</p></li>
 </ul>
 </div>
 <div class="section" id="storage-changes">
-<span id="relnotes-3-10-0-alpha0-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
+<span id="relnotes-3-10-0-beta1-storage-changes"></span><h2>Storage changes<a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>None in 3.10.  But if your upgrade is skipping over 3.6 and 3.8, please do
 not miss <a class="reference internal" href="../../3.6/x/3.6.0.html#relnotes-3-6-0-storage-changes"><span class="std std-ref">3.6.0 Storage changes</span></a>
@@ -824,7 +876,12 @@ version.  We recommend using this when evaluating a new Cyrus version to
 check which configuration options you will need to examine and maybe set or
 change during the process.</p>
 <ul class="simple">
-<li><p>None so far</p></li>
+<li><p>The master pidfile name is now read from imapd.conf, and defaults
+to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.pid</span></code>.  If you have something that
+looks for this file, you should either update it to look in the new
+default location, or set <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
+to override the default.  The <code class="docutils literal notranslate"><span class="pre">-p</span></code> option to <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a>
+can still be used to override it.</p></li>
 </ul>
 </div>
 <div class="section" id="security-fixes">
@@ -836,7 +893,13 @@ change during the process.</p>
 <div class="section" id="significant-bugfixes">
 <h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>None so far</p></li>
+<li><p>Fixed: squat db reindexes are no longer always incremental</p></li>
+<li><p>Fixed: squat db corruption from unintentional indexing of fields
+intended to be skipped</p></li>
+<li><p>Fixed: squat db out of bounds access in incremental reindex docID map</p></li>
+<li><p>Restored functionality of the sync_client <code class="docutils literal notranslate"><span class="pre">-o</span></code>/<code class="docutils literal notranslate"><span class="pre">--connect-once</span></code> option</p></li>
+<li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4654">Issue #4654</a>: copying/moving messages from split conversations is now
+correct.</p></li>
 </ul>
 </div>
 </div>
@@ -847,10 +910,10 @@ change during the process.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="3.10.0-beta1.html" class="btn btn-neutral float-right" title="Cyrus IMAP 3.10.0-beta1 Release Notes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../3.8/index.html" class="btn btn-neutral float-right" title="Cyrus IMAP 3.8 Releases" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Cyrus IMAP 3.10 Releases" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="3.10.0-alpha0.html" class="btn btn-neutral" title="Cyrus IMAP 3.10.0-alpha0 Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
