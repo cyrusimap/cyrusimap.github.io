@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cyrus IMAP 2.5.7 Release Notes &mdash; Cyrus IMAP 3.10.0-alpha0 documentation</title>
+  <title>Cyrus IMAP 2.5.7 Release Notes &mdash; Cyrus IMAP 3.10.0-beta1 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.10.0-alpha0 documentation" href="../../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.10.0-beta1 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Cyrus IMAP 2.5 Releases" href="../index.html"/>
         <link rel="next" title="Cyrus IMAP 2.5.8 Release Notes" href="2.5.8.html"/>
         <link rel="prev" title="Cyrus IMAP 2.5.6 Release Notes" href="2.5.6.html"/> 
@@ -335,23 +335,25 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../upgrade.html">Upgrading to 3.8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../upgrade.html">Upgrading to 3.10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#sieve-changes">Sieve changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#master-pid-and-master-ready-files">master.pid and master.ready files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#pcre2-support">PCRE2 support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#install-new-3-10-cyrus">2. Install new 3.10 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#start-new-3-10-cyrus-and-verify">7. Start new 3.10 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -771,7 +773,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html">Docs v3.10.0-alpha0</a> &raquo;</li>
+      <li><a href="../../../../../index.html">Docs v3.10.0-beta1</a> &raquo;</li>
       
           <li><a href="../../../../../download.html">Download</a> &raquo;</li>
       
@@ -901,7 +903,7 @@ Surý for collating and sending them upstream.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../../',
-            VERSION:'3.10.0-alpha0',
+            VERSION:'3.10.0-beta1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
