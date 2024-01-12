@@ -834,15 +834,17 @@ See the <code class="docutils literal notranslate"><span class="pre">aps_expiry<
 upgrade frontend machines first, then backends</p></li>
 <li><p>Adds support for IMAP REPLACE (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8508.html"><strong>RFC 8508</strong></a>)</p></li>
 <li><p>Adds support for IMAP UIDONLY extension (<a class="reference external" href="https://tools.ietf.org/html/draft-ietf-extra-imap-uidonly">draft-ietf-extra-imap-uidonly</a>)</p></li>
-<li><p>Adds experimental support for JMAP Contacts per upcoming IETF standards</p></li>
+<li><p>Adds experimental support for JMAP Contacts per upcoming IETF standards.
+Requires the not-yet-released
+<a class="reference external" href="https://github.com/libical/libical/pull/584">libicalvcard</a></p></li>
 <li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> now supports the &quot;wait=y&quot; <a class="reference internal" href="../../../../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>
 option when started in rolling mode from the <code class="docutils literal notranslate"><span class="pre">DAEMON</span></code> section</p></li>
 <li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> now touches a ready file to indicate it is &quot;ready for
-work&quot;.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a>.</p></li>
+work&quot;.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a></p></li>
 <li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> now gets its pidfile name from the <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code>
-<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a>.</p></li>
+<a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.  See <a class="reference internal" href="../../../upgrade.html#upgrade-master-pid-ready-files"><span class="std std-ref">master.pid and master.ready files</span></a></p></li>
 <li><p>Adds pcre2 support.  Prefers pcre2 over pcre if both are available. See
-<a class="reference internal" href="../../../upgrade.html#upgrade-pcre2-support"><span class="std std-ref">PCRE2 support</span></a>.</p></li>
+<a class="reference internal" href="../../../upgrade.html#upgrade-pcre2-support"><span class="std std-ref">PCRE2 support</span></a></p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">proc</span></code> <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> subcommand now also reports DAEMON and
 EVENTS processes</p></li>
 <li><p>JMAP CalendarEventNotification objects are now automatically pruned.
@@ -852,7 +854,7 @@ used to tune this behaviour</p></li>
 <li><p>Sieve [current]date <code class="docutils literal notranslate"><span class="pre">:zone</span></code> parameter now accepts either a UTC offset or an
 IANA time zone ID</p></li>
 <li><p>Adds an <code class="docutils literal notranslate"><span class="pre">implicit_keep_target</span></code> Sieve action to change the target mailbox
-for an implicit keep.</p></li>
+for an implicit keep</p></li>
 <li><p><a class="reference internal" href="../../../../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> no longer holds a mailbox lock while extracting text
 from attachments</p></li>
 <li><p>IMAP <code class="docutils literal notranslate"><span class="pre">RENAME</span></code> command no longer emits non-standard per-folder updates.  Use
@@ -881,7 +883,7 @@ to <code class="docutils literal notranslate"><span class="pre">{configdirectory
 looks for this file, you should either update it to look in the new
 default location, or set <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 to override the default.  The <code class="docutils literal notranslate"><span class="pre">-p</span></code> option to <a class="reference internal" href="../../../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a>
-can still be used to override it.</p></li>
+can still be used to override it</p></li>
 </ul>
 </div>
 <div class="section" id="security-fixes">
@@ -899,7 +901,7 @@ intended to be skipped</p></li>
 <li><p>Fixed: squat db out of bounds access in incremental reindex docID map</p></li>
 <li><p>Restored functionality of the sync_client <code class="docutils literal notranslate"><span class="pre">-o</span></code>/<code class="docutils literal notranslate"><span class="pre">--connect-once</span></code> option</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4654">Issue #4654</a>: copying/moving messages from split conversations is now
-correct.</p></li>
+correct</p></li>
 </ul>
 </div>
 </div>
@@ -922,7 +924,7 @@ correct.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jan 08 2024
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jan 10 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

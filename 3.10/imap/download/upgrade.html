@@ -917,7 +917,7 @@ in the following annotations:</p>
 API must run a migration tool to separate CalDAV default alarm annotations from
 JMAP annotations.  This tool will remove the annotations from the calendar
 mailbox and move their contents to the Cyrus-internal annotation
-<code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-jmap/defaulalerts</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-jmap/defaultalerts</span></code></p>
 <p>CalDAV annotations on the calendar home are left as-is and are not migrated.
 Typically, Apple CalDAV clients store default alarms at this location.</p>
 <p>To migrate, call the <code class="docutils literal notranslate"><span class="pre">Admin/migrateCalendarDefaultAlarms</span></code> JMAP method as an
@@ -1341,7 +1341,7 @@ these are not in any released version.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jan 08 2024
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jan 10 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
