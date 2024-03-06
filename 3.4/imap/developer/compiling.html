@@ -891,7 +891,7 @@ required to build a functional cyrus-imapd.</p>
 <p>To install all dependencies from packages on Debian Jessie, use this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>pkg-config<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libssl-dev<span class="w"> </span>libjansson-dev<span class="w"> </span>libxml2-dev<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libsqlite3-dev<span class="w"> </span>libical-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span>libpcre3-dev<span class="w"> </span>uuid-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libsqlite3-dev<span class="w"> </span>libical-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span>libpcre2-dev<span class="w"> </span>uuid-dev<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libicu-dev
 sudo<span class="w"> </span>apt-get<span class="w"> </span>-t<span class="w"> </span>jessie-backports<span class="w"> </span>install<span class="w"> </span>libxapian-dev
 </pre></div>
@@ -1221,11 +1221,11 @@ to enable <strong>ptloader</strong> to interface with LDAP directly, for canonif
 of login usernames to mailbox names, and verification of login usernames,
 ACL subjects and group membership. Configure option: <code class="docutils literal notranslate"><span class="pre">--with-ldap</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.pcre.org/">pcre</a></p></td>
-<td><p>libpcre3-dev</p></td>
-<td><p>pcre-devel</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.pcre.org/">pcre2</a></p></td>
+<td><p>libpcre2-dev</p></td>
+<td><p>pcre2-devel</p></td>
 <td><p>yes</p></td>
-<td><p>PCRE 1 (8.x) - for utf-8/unicode
+<td><p>PCRE 2 (10.x) - for utf-8/unicode
 regular expression matching. Could be replaced by something else in the
 future. See <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/1731#issuecomment-273064554">issues/1731</a> for more information.</p></td>
 </tr>
@@ -1369,7 +1369,7 @@ version, operating system and affected libraries.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 27 2021
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Nov 08 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
