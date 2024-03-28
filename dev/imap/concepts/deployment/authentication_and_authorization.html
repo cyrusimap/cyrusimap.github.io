@@ -813,7 +813,7 @@
 </div>
 <p>The most common set of credentials is a <em>username</em> and <em>password</em>, but other forms exist like Kerberos v5 ticket exchange (for which, to obtain such, most often a password is supplied), or certificate based authentication (the secret keys for which are most often locked with a passphrase). In any case, authentication works based on a shared secret, and/or a trusted source for verification. Kerberos v5 works based on shared secrets (keytab), and certificate based authentication works based on shared, trusted sources for verification.</p>
 <p>In the case of usernames and passwords though, the exchange and verification of the credentials is at the basis of its security. Sending plain text usernames and passwords over the wire would not allow any application to verify the source of the credentials is actually the user --- who is supposed to be the only party to know the unique combination of username and password.</p>
-<p>To obfuscate the login credentials, authentication can be encrypted with CRAM-MD5 or DIGEST-MD5, but this requires the server to have a copy of the original, plain text password. The password in this case becomes the shared secret.</p>
+<p>To obfuscate the login credentials, authentication can be encrypted with SCRAM, but this requires the server to have a copy of the original, plain text password. The password in this case becomes the shared secret.</p>
 <p>Another method is to allow the plain text username and password to be transmitted over the wire, but ensure Transport Layer Security (TLS) or the more implicit Secure Socket Layer (SSL). The plain text password can now be used to compare it against a SQL database, bind to an LDAP database, attempt PAM authentication with, etc.</p>
 </div>
 <div class="section" id="users-and-mailboxes">
@@ -846,7 +846,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Sep 08 2019
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Mar 23 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

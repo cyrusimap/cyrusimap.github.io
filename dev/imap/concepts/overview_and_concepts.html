@@ -1094,7 +1094,7 @@ password.</p>
 </div>
 <div class="section" id="shared-secrets-logins">
 <h3>Shared Secrets Logins<a class="headerlink" href="#shared-secrets-logins" title="Permalink to this headline">¶</a></h3>
-<p>Some mechanisms require the user and the server to share a secret (generally a password) that can be used for comparison without actually passing the password in the clear across the network. For these mechanism (such as CRAM-MD5 and DIGEST-MD5), you will need to supply a source of passwords, such as the sasldb (which is described more fully in the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL distribution</span></a>)</p>
+<p>The SCRAM mechanisms require the user and the server to share a secret (generally a password) that can be used for comparison without actually passing the password in the clear across the network. For these mechanisms, you will need to supply a source of passwords, such as the sasldb (which is described more fully in the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL distribution</span></a>).</p>
 </div>
 </div>
 <div class="section" id="quotas">
@@ -1519,7 +1519,7 @@ servers to allow for horizontal scalability.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Sep 07 2022
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Mar 23 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
