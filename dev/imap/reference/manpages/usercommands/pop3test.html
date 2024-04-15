@@ -804,7 +804,8 @@
     [ <strong>-a</strong> <em>userid</em> ] [ <strong>-u</strong> <em>userid</em> ] [ <strong>-k</strong> <em>num</em> ] [ <strong>-l</strong> <em>num</em> ]
     [ <strong>-r</strong> <em>realm</em> ] [ <strong>-f</strong> <em>file</em> ] [ <strong>-n</strong> <em>num</em> ] [ <strong>-s</strong> ] [ <strong>-q</strong> ]
     [ <strong>-c</strong> ] [ <strong>-i</strong> ] [ <strong>-z</strong> ] [ <strong>-v</strong> ] [ <strong>-I</strong> <em>file</em> ] [ <strong>-x</strong> <em>file</em> ]
-    [ <strong>-X</strong> <em>file</em> ] [ <strong>-w</strong> <em>passwd</em> ] [ <strong>-o</strong> <em>option</em>=<em>value</em> ] <em>hostname</em></pre>
+    [ <strong>-X</strong> <em>file</em> ] [ <strong>-w</strong> <em>passwd</em> ] [ <strong>-o</strong> <em>option</em>=<em>value</em> ]
+    [ <strong>-H</strong> <em>client-ip</em> ] <em>hostname</em></pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -966,6 +967,15 @@ with -X).</p>
 <dt id="cmdoption-imtest-o">
 <span id="cmdoption-imtest-sasl-option"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"> <span class="pre">option=value</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--sasl-option</span></code><code class="sig-prename descclassname"><span class="pre">=option=value</span></code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the SASL <em>option</em> to <em>value</em>.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-imtest-H">
+<span id="cmdoption-imtest-h"></span><code class="sig-name descname"><span class="pre">-H</span></code><code class="sig-prename descclassname"> <span class="pre">client-ip</span></code><a class="headerlink" href="#cmdoption-imtest-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the HAProxy protocol and send the specified client IP
+address in a v1 header.  If the address is &quot;unknown&quot;, a v1 header
+with UNKNOWN protocol will be sent.  If the address is &quot;local&quot;,
+a v2 header with LOCAL command will be sent.</p>
 </dd></dl>
 
 </div>

@@ -798,7 +798,8 @@
 <p>LMTP server process</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block"><strong>lmtpd</strong> [ <strong>-C</strong> <em>config-file</em> ]  [ <strong>-U</strong> <em>uses</em> ] [ <strong>-T</strong> <em>timeout</em> ] [ <strong>-D</strong> ] [ <strong>-a</strong> ]</pre>
+<pre class="literal-block"><strong>lmtpd</strong> [ <strong>-C</strong> <em>config-file</em> ]  [ <strong>-U</strong> <em>uses</em> ] [ <strong>-T</strong> <em>timeout</em> ] [ <strong>-D</strong> ]
+    [ <strong>-H</strong> ] [ <strong>-a</strong> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -835,6 +836,12 @@ will disable the timeout.  The default is 60.</p>
 <dt id="cmdoption-lmtpd-D">
 <span id="cmdoption-lmtpd-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-lmtpd-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run external debugger specified in debug_command.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-lmtpd-H">
+<span id="cmdoption-lmtpd-h"></span><code class="sig-name descname"><span class="pre">-H</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-lmtpd-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell <strong>lmtpd</strong> to expect a HAProxy protocol header from the sender.</p>
 </dd></dl>
 
 <dl class="std option">

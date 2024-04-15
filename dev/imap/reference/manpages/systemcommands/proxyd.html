@@ -799,7 +799,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>imapd</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-U</strong> <em>uses</em> ] [ <strong>-T</strong> <em>timeout</em> ] [ <strong>-D</strong> ]
-    [ <strong>-s</strong> ] [ <strong>-N</strong> ] [ <strong>-p</strong> <em>ssf</em> ]</pre>
+    [ <strong>-H</strong> ] [ <strong>-s</strong> ] [ <strong>-N</strong> ] [ <strong>-p</strong> <em>ssf</em> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -853,6 +853,12 @@ will disable the timeout.  The default is 60.</p>
 <dt id="cmdoption-imapd-D">
 <span id="cmdoption-imapd-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imapd-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run external debugger specified in debug_command.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-imapd-H">
+<span id="cmdoption-imapd-h"></span><code class="sig-name descname"><span class="pre">-H</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imapd-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell <strong>imapd</strong> to expect a HAProxy protocol header from the sender.</p>
 </dd></dl>
 
 <dl class="std option">

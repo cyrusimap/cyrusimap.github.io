@@ -799,7 +799,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>nntpd</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-U</strong> <em>uses</em> ] [ <strong>-T</strong> <em>timeout</em> ] [ <strong>-D</strong> ]
-    [ <strong>-s</strong> ] [ <strong>-r</strong> ] [ <strong>-f</strong> ] [ <strong>-p</strong> <em>ssf</em> ]</pre>
+    [ <strong>-H</strong> ] [ <strong>-s</strong> ] [ <strong>-r</strong> ] [ <strong>-f</strong> ] [ <strong>-p</strong> <em>ssf</em> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -852,6 +852,12 @@ will disable the timeout.  The default is 60.</p>
 <dt id="cmdoption-nntpd-D">
 <span id="cmdoption-nntpd-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-nntpd-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run external debugger specified in debug_command.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-nntpd-H">
+<span id="cmdoption-nntpd-h"></span><code class="sig-name descname"><span class="pre">-H</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-nntpd-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell <strong>nntpd</strong> to expect a HAProxy protocol header from the sender.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -913,7 +919,7 @@ Any higher SSF implies some form of privacy protection.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 08 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

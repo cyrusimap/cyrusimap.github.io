@@ -798,7 +798,7 @@
 <p>CMU hack for getting sieve scripts onto the server</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block"><strong>timsieved</strong> [ <strong>-C</strong> <em>config-file</em> ]</pre>
+<pre class="literal-block"><strong>timsieved</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-H</strong> ]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
@@ -816,7 +816,13 @@ proxy) manage global scripts.</p>
 <dl class="std option">
 <dt id="cmdoption-timsieved-C">
 <span id="cmdoption-timsieved-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-timsieved-C" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
+<dd></dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-timsieved-H">
+<span id="cmdoption-timsieved-h"></span><code class="sig-name descname"><span class="pre">-H</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-timsieved-H" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tell <strong>timsievedd</strong> to expect a HAProxy protocol header from the sender.</p>
+<p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 </div>
@@ -866,7 +872,7 @@ proxy) manage global scripts.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 05 2017
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 08 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
