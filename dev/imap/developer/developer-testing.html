@@ -822,7 +822,8 @@ sources.</p></li>
 </div>
 <p>The quickest option for the rest is installing via CPAN, but you could build
 packages using dh-make-perl if that is preferred.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Tie::DataUUID
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>AnyEvent<span class="w"> </span>Config::IniFiles<span class="w"> </span>Data::GUID<span class="w"> </span>Digest::CRC<span class="w"> </span>File::Slurp<span class="w"> </span>IO::File::fcntl<span class="w"> </span>IO::Socket::INET6<span class="w"> </span>Net::Server::PreForkSimple<span class="w"> </span>News::NNTPClient<span class="w"> </span>Plack::Loader<span class="w"> </span>Types::Standard<span class="w"> </span>Unix::Syslog<span class="w"> </span>XML::Generator<span class="w"> </span>XML::Simple
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Tie::DataUUID
 sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Spice
 sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Fast
 sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Data::ICal::TimeZone
@@ -837,6 +838,9 @@ sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </spa
 sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Math::Int64
 </pre></div>
 </div>
+<p>With recent perl versions <code class="docutils literal notranslate"><span class="pre">Test::Unit::TestRunner</span></code> cannot be installed with <code class="docutils literal notranslate"><span class="pre">cpan</span></code>.  Download
+the package and apply the changes from <a class="reference external" href="https://sources.debian.org/patches/libtest-unit-perl/0.25-7/">https://sources.debian.org/patches/libtest-unit-perl/0.25-7/</a>
+before installing it.</p>
 </li>
 <li><p>Build Cassandane's binary components</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd/cassandane
@@ -1015,7 +1019,7 @@ failed tests.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Oct 16 2023
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 01 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
