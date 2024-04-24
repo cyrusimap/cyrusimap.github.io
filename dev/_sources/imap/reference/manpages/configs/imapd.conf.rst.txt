@@ -1414,6 +1414,17 @@ FIELD DESCRIPTIONS
 
     .. endblob debug_log_sync_partition_choice
 
+    .. startblob debug_slowio
+
+    ``debug_slowio:`` 0
+
+        If enabled, I/O operations will be artificially slowed down.  This option
+        has no effect unless Cyrus was compiled with the --enable-debug-slowio
+        configure argument.  This is mainly useful for testing certain edge case
+        handling. 
+
+    .. endblob debug_slowio
+
     .. startblob debug_writefail_guid
 
     ``debug_writefail_guid:`` <none>

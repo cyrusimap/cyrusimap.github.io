@@ -1636,6 +1636,13 @@ Example: /usr/local/bin/gdb /usr/cyrus/bin/%s %d</p>
 <div><p>If enabled, replication will log which partition it chose for staging.
 This is mainly useful for regression testing the sync_client -a switch.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">debug_slowio:</span></code> 0</p>
+<blockquote>
+<div><p>If enabled, I/O operations will be artificially slowed down.  This option
+has no effect unless Cyrus was compiled with the --enable-debug-slowio
+configure argument.  This is mainly useful for testing certain edge case
+handling.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">debug_writefail_guid:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>If set, any arriving message with this guid will fail as if the underlying
