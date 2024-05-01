@@ -837,10 +837,10 @@ configurations are only suitable for IMAP-only deployments.</p>
 <p>Here are some examples:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">create</span> <span class="pre">user.lukecage&#64;example.net</span></code> - create a user</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">create</span> <span class="pre">user.mercedesknight&#64;example.net</span></code> - create another user</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">setquota</span> <span class="pre">user.lukecage&#64;example.net</span> <span class="pre">50000</span></code> - define a quota</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">setaclmailbox</span> <span class="pre">user.lukecage&#64;example.net</span> <span class="pre">mercedesknight&#64;example.net</span> <span class="pre">read</span></code> - give Mercedes Knight read access to Luke Cage’s mailbox</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">create</span> <span class="pre">user/lukecage&#64;example.net</span></code> - create a user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">create</span> <span class="pre">user/mercedesknight&#64;example.net</span></code> - create another user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">setquota</span> <span class="pre">user/lukecage&#64;example.net</span> <span class="pre">50000</span></code> - define a quota</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">setaclmailbox</span> <span class="pre">user/lukecage&#64;example.net</span> <span class="pre">mercedesknight&#64;example.net</span> <span class="pre">read</span></code> - give Mercedes Knight read access to Luke Cage’s mailbox</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cyradm&gt;</span> <span class="pre">listmailbox</span> <span class="pre">*&#64;example.net</span></code> - list all mailboxes in the example.net domain</p></li>
 </ul>
 </div></blockquote>
@@ -849,7 +849,7 @@ configurations are only suitable for IMAP-only deployments.</p>
 <p>Each mailbox exists in only one domain</p>
 <dl>
 <dt>Domains are mutually exclusive</dt><dd><p>Users only have access to mailboxes within their own domain (intra-domain).  The following
-example will not work: <code class="docutils literal notranslate"><span class="pre">setacl</span> <span class="pre">user.mercedesknight&#64;herdomain.com</span>
+example will not work: <code class="docutils literal notranslate"><span class="pre">setacl</span> <span class="pre">user/mercedesknight&#64;herdomain.com</span>
 <span class="pre">lukecage&#64;hisdomain.com</span> <span class="pre">read</span></code>.</p>
 </dd>
 <dt>Global and Domain admins</dt><dd><p>The Cyrus virtual domains
@@ -975,11 +975,11 @@ machine, it might be necessary to fully qualify the userid with the
 specifying mailboxes outside of the <code class="docutils literal notranslate"><span class="pre">defaultdomain</span></code>.  Examples
 (using <code class="docutils literal notranslate"><span class="pre">cyradm</span></code>):</p>
 <p>To create a new INBOX for user ‘test’ in <code class="docutils literal notranslate"><span class="pre">defaultdomain</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="n">user</span><span class="o">.</span><span class="n">test</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="n">user</span><span class="o">/</span><span class="n">test</span>
 </pre></div>
 </div>
 <p>To create a new INBOX for user ‘test’ in domain ‘example.com’:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="n">user</span><span class="o">.</span><span class="n">test</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="n">user</span><span class="o">/</span><span class="n">test</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
 </pre></div>
 </div>
 <p>To list all mailboxes in domain ‘example.com’:</p>
@@ -1008,7 +1008,7 @@ specifying mailboxes outside of the <code class="docutils literal notranslate"><
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 16 2019
+        &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Apr 12 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

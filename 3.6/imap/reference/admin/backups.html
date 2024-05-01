@@ -785,6 +785,12 @@
             
   <div class="section" id="cyrus-backups">
 <span id="id1"></span><h1><a class="toc-backref" href="#id2">Cyrus Backups</a><a class="headerlink" href="#cyrus-backups" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This experimental feature is no longer under active development.  It
+is considered deprecated as of 3.10, and will be removed entirely in
+a future version.</p>
+</div>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -836,8 +842,7 @@
 <div class="section" id="introduction">
 <h2><a class="toc-backref" href="#id3">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Cyrus Backups are a replication-based backup service for Cyrus IMAP servers.
-This is currently an experimental feature. If you have the resources to try it
-out alongside your existing backup solutions, feedback would be appreciated.</p>
+This is a deprecated experimental feature.</p>
 <p>This document is intended to be a guide to the configuration and
 administration of Cyrus Backups.</p>
 <p>This document is a work in progress and at this point is incomplete.</p>
@@ -849,7 +854,10 @@ backup-related portions in detail.</p>
 </div>
 <div class="section" id="limitations">
 <h2><a class="toc-backref" href="#id4">Limitations</a><a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<p>Cyrus Backups are experimental and incomplete.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus Backups are experimental, incomplete, and deprecated as of 3.10.</p>
+</div>
 <p>The following components exist and appear to work:</p>
 <ul class="simple">
 <li><p>backupd, and therefore inbound replication</p></li>
@@ -888,6 +896,10 @@ recover them don’t yet exist:</p>
 </div>
 <div class="section" id="architecture">
 <h2><a class="toc-backref" href="#id5">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus Backups are experimental, incomplete, and deprecated as of 3.10.</p>
+</div>
 <p>Cyrus Backups are designed to run on one or more standalone, dedicated backup
 servers, with suitably-sized storage partitions. These servers generally do
 not run an IMAP daemon, nor do they have conventional mailbox storage.</p>
@@ -902,6 +914,10 @@ locations</p>
 </div>
 <div class="section" id="installation">
 <h2><a class="toc-backref" href="#id6">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus Backups are experimental, incomplete, and deprecated as of 3.10.</p>
+</div>
 <div class="section" id="requirements">
 <h3><a class="toc-backref" href="#id7">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -1072,6 +1088,10 @@ specified, default sync configuration will be used.</p>
 </div>
 <div class="section" id="administration">
 <h2><a class="toc-backref" href="#id13">Administration</a><a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus Backups are experimental, incomplete, and deprecated as of 3.10.</p>
+</div>
 <div class="section" id="storage-requirements">
 <h3><a class="toc-backref" href="#id14">Storage requirements</a><a class="headerlink" href="#storage-requirements" title="Permalink to this headline">¶</a></h3>
 <p>It’s not really known yet how to predict the storage requirements for a backup
@@ -1194,6 +1214,10 @@ of interesting configuration possibilities to shake out. Have a rummage in the
 </div>
 <div class="section" id="tools">
 <h2><a class="toc-backref" href="#id26">Tools</a><a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cyrus Backups are experimental, incomplete, and deprecated as of 3.10.</p>
+</div>
 <div class="section" id="ctl-backups">
 <h3><a class="toc-backref" href="#id27">ctl_backups</a><a class="headerlink" href="#ctl-backups" title="Permalink to this headline">¶</a></h3>
 <p>This tool is generally for mass operations that require few/fixed arguments
@@ -1283,7 +1307,7 @@ messages.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 22 2020
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 22 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
