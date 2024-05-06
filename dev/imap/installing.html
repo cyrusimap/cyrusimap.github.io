@@ -1106,7 +1106,7 @@ documentation at <a class="reference external" href="http://www.postfix.org/post
 </div>
 <p>or, if you have enabled smmapd you can automatically track mailboxes with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_domains=hash:/etc/postfix/virtual_recipient_domains&quot;</span>
-<span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_maps=socketmap:unix:/run/cyrus/socket/smmap&quot;</span>
+<span class="n">postconf</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;virtual_mailbox_maps=socketmap:unix:/run/cyrus/socket/smmap:smmapd&quot;</span>
 </pre></div>
 </div>
 </li>
