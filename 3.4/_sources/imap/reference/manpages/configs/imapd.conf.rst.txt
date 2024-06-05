@@ -2971,15 +2971,35 @@ FIELD DESCRIPTIONS
 
     .. endblob maxlogins_per_user
 
-    .. startblob maxmessagesize
+    .. startblob maxargssize
 
-    ``maxmessagesize:`` 0
+    ``maxargssize:`` 0
 
-        Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
+        Maximum total size of arguments to an IMAP command that will be
+        accepted by Cyrus.
+        Commands with arguments that exceed this limit will be rejected. 
+
+        { "maxmessagesize", 0, INT, "2.3.17" }
+        /\* Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
         messages larger than *maxmessagesize* bytes.  If set to 0, this
         will allow messages of any size (the default). 
 
-    .. endblob maxmessagesize
+    .. endblob maxargssize
+
+    .. startblob maxliteral
+
+    ``maxliteral:`` 131072
+
+        Maximum size in bytes of a single literal allowed by the IMAP parser.
+
+        Literals used for message [part] data in APPEND are only limited by
+        the 'maxmessagesize' option.
+
+        If the 'literalminus' option is enabled, non-synchonizing literals
+        will be limited to the lesser of 4K and either 'maxliteral' or
+        'maxmessagesize', depending on the use-case. 
+
+    .. endblob maxliteral
 
     .. startblob maxquoted
 
@@ -2994,7 +3014,7 @@ FIELD DESCRIPTIONS
 
     ``maxword:`` 131072
 
-        Maximum size of a single word for the parser.  Default 128k 
+        Maximum size of a single word allowed by the IMAP parser.  Default 128k 
 
 
     .. endblob maxword

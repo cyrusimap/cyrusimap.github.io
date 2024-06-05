@@ -2700,6 +2700,14 @@ zero means no limit.</p>
 <div><p>Maximum number of logged in sessions allowed per user,
 zero means no limit.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">maxargssize:</span></code> 0</p>
+<blockquote>
+<div><p>Maximum total size of arguments to an IMAP command that will be
+accepted by Cyrus.
+Commands with arguments that exceed this limit will be rejected.</p>
+<p>If set to 0 (the default), a large internally-defined limit will be applied.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">maxmessagesize:</span></code> 0</p>
 <blockquote>
 <div><p>Maximum size of messages that will be accepted by Cyrus.  This affects LMTP
@@ -2708,14 +2716,27 @@ be rejected.</p>
 <p>If set to 0 (the default), a large internally-defined limit will be applied.</p>
 <p>If no unit is specified, bytes is assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">maxliteral:</span></code> 128K</p>
+<blockquote>
+<div><p>Maximum size of a single literal allowed by the IMAP parser.</p>
+<p>If set to 0, a large internally-defined limit will be applied.</p>
+<p>If no unit is specified, bytes is assumed.</p>
+<p>Literals used for message [part] data in APPEND are only limited by
+the 'maxmessagesize' option.</p>
+<p>If the 'literalminus' option is enabled, non-synchonizing literals
+will be limited to the lesser of 4K and either 'maxliteral' or
+'maxmessagesize', depending on the use-case.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">maxquoted:</span></code> 128K</p>
 <blockquote>
-<div><p>Maximum size of a single quoted string for the parser.</p>
+<div><p>Maximum size of a single quoted string allowed by the IMAP parser.</p>
+<p>If set to 0, a large internally-defined limit will be applied.</p>
 <p>If no unit is specified, bytes is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">maxword:</span></code> 128K</p>
 <blockquote>
-<div><p>Maximum size of a single word for the parser.</p>
+<div><p>Maximum size of a single word allowed by the IMAP parser.</p>
+<p>If set to 0, a large internally-defined limit will be applied.</p>
 <p>If no unit is specified, bytes is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">mboxkey_db:</span></code> twoskip</p>

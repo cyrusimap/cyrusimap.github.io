@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>imapd.conf &mdash; Cyrus IMAP 3.6.4 documentation</title>
+  <title>imapd.conf &mdash; Cyrus IMAP 3.6.5 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.6.4 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.6.5 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="krb.equiv" href="krb.equiv.html"/>
         <link rel="prev" title="cyrus.conf" href="cyrus.conf.html"/> 
@@ -764,7 +764,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.6.4</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.6.5</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -2592,11 +2592,24 @@ zero means no limit</p>
 <div><p>Maximum number of logged in sessions allowed per user,
 zero means no limit</p>
 </div></blockquote>
-<p><code class="docutils literal notranslate"><span class="pre">maxmessagesize:</span></code> 0</p>
+<p><code class="docutils literal notranslate"><span class="pre">maxargssize:</span></code> 0</p>
 <blockquote>
-<div><p>Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
+<div><p>Maximum total size of arguments to an IMAP command that will be
+accepted by Cyrus.
+Commands with arguments that exceed this limit will be rejected.</p>
+<p>{ “maxmessagesize”, 0, INT, “2.3.17” }
+/* Maximum incoming LMTP message size.  If non-zero, lmtpd will reject
 messages larger than <em>maxmessagesize</em> bytes.  If set to 0, this
 will allow messages of any size (the default).</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">maxliteral:</span></code> 131072</p>
+<blockquote>
+<div><p>Maximum size in bytes of a single literal allowed by the IMAP parser.</p>
+<p>Literals used for message [part] data in APPEND are only limited by
+the ‘maxmessagesize’ option.</p>
+<p>If the ‘literalminus’ option is enabled, non-synchonizing literals
+will be limited to the lesser of 4K and either ‘maxliteral’ or
+‘maxmessagesize’, depending on the use-case.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">maxquoted:</span></code> 131072</p>
 <blockquote>
@@ -2604,7 +2617,7 @@ will allow messages of any size (the default).</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">maxword:</span></code> 131072</p>
 <blockquote>
-<div><p>Maximum size of a single word for the parser.  Default 128k</p>
+<div><p>Maximum size of a single word allowed by the IMAP parser.  Default 128k</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">mboxkey_db:</span></code> twoskip</p>
 <blockquote>
@@ -4350,7 +4363,7 @@ on HTTP 1.1 using a RESTful architecture</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.6.4',
+            VERSION:'3.6.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
