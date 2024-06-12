@@ -955,11 +955,6 @@ that don't exist yet, but do your best to deal with everything else.
 The generated documentation will be under the <cite>doc/html/</cite> directory --
 examine it in your browser to make sure all your formatting and such makes
 sense.</p></li>
-<li><p>Tell Github Actions about the new branch: edit <cite>.github/workflows/main.yml</cite>
-and add the new branch to the list in the obvious spot.  Does anything else
-need to be done for this step?  Unknown... figure it out and document it!
-Also currently unknown whether this needs to happen on the master branch,
-on the branch itself, or both.  So we do it on both just in case.</p></li>
 <li><p>XXX maybe missing some stuff here still?</p></li>
 </ol>
 <p>You can double check your work by looking at what changed last time a new
@@ -1008,11 +1003,6 @@ master branch.  An exception is if there are changes currently on master
 that will be reverted from the new branch after forking -- in that case,
 don't delete those changes files from master.  More on this later.</p></li>
 <li><p>Update <cite>README.md</cite>.</p></li>
-<li><p>Tell Github Actions about the new branch: edit <cite>.github/workflows/main.yml</cite>
-and add the new branch to the list in the obvious spot.  Does anything else
-need to be done for this step?  Unknown... figure it out and document it!
-Also currently unknown whether this needs to happen on the master branch,
-on the branch itself, or both.  So we do it on both just in case.</p></li>
 <li><p>XXX probably steps missing here too</p></li>
 <li><p>Make sure the RST changes are good: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc-html</span></code>, pay attention
 to errors and warnings.</p></li>
@@ -1200,7 +1190,7 @@ releases.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Feb 13 2023
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 07 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
