@@ -960,7 +960,7 @@ plus-addressing.  The default changed in 3.0 from off to on.</p>
 <p><code class="docutils literal notranslate"><span class="pre">altprefix:</span></code> Alt Folders</p>
 <blockquote>
 <div><p>Alternative INBOX spellings that can't be accessed in altnamespace
-otherwise go under here</p>
+otherwise go under here.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">annotation_db:</span></code> twoskip</p>
 <blockquote>
@@ -1454,8 +1454,7 @@ Allowed values: <em>VEVENT</em>, <em>VTODO</em>, <em>VJOURNAL</em>, <em>VFREEBUS
 <blockquote>
 <div><p>The minimum allowed interval between alarms for a recurring event.
 Primarily used to suppress alarms for MINUTELY and SECONDLY recurrences.
-The default is 5 minutes.  The minimum value is 0, which will
-allow all alarms.</p>
+The minimum value is 0, which will allow all alarms.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">calendar_suppress_duplicate_alarms:</span></code> 1</p>
 <blockquote>
@@ -1555,7 +1554,7 @@ assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">conversations_keep_existing:</span></code> 1</p>
 <blockquote>
-<div><p>during conversations cleanup, don't clean up if there are still existing emails
+<div><p>During conversations cleanup, don't clean up if there are still existing emails
 with one of the mentioned CIDs.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">conversations_max_thread:</span></code> 100</p>
@@ -1566,7 +1565,7 @@ messages in them and another message arrives.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conversations_max_guidrecords:</span></code> 5000</p>
 <blockquote>
 <div><p>maximum records with the same guid.  This is just a sanity check to stop the same
-email being added and removed over and over, so the default is 5000</p>
+email being added and removed over and over.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">conversations_max_guidexists:</span></code> 100</p>
 <blockquote>
@@ -1714,8 +1713,7 @@ immediately.</p>
 <blockquote>
 <div><p>Whether to also unsubscribe from mailboxes when they are deleted.
 Note that this behaviour contravenes <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a> section 6.3.9, but
-may be useful for avoiding user/client software confusion.
-The default is 'no'.</p>
+may be useful for avoiding user/client software confusion.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">deleteright:</span></code> c</p>
 <blockquote>
@@ -1728,13 +1726,13 @@ right, they will automatically be given the new 'x' right.</p>
 <blockquote>
 <div><p>Preclude list command on user namespace.  If set to 'yes', the
 LIST response will never include any other user's mailbox.  Admin
-users will always see all mailboxes.  The default is 'no'</p>
+users will always see all mailboxes.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">disable_shared_namespace:</span></code> 0</p>
 <blockquote>
 <div><p>Preclude list command on shared namespace.  If set to 'yes', the
 LIST response will never include any non-user mailboxes.  Admin
-users will always see all mailboxes.  The default is 'no'</p>
+users will always see all mailboxes.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">disconnect_on_vanished_mailbox:</span></code> 0</p>
 <blockquote>
@@ -1984,8 +1982,7 @@ sent across the wire.</p>
 <p><code class="docutils literal notranslate"><span class="pre">httptimeout:</span></code> 5m</p>
 <blockquote>
 <div><p>Set the length of the HTTP server's inactivity autologout timer.
-The default is 5 minutes.  The minimum value is 0, which will
-disable persistent connections.</p>
+The minimum value is 0, which will disable persistent connections.</p>
 <p>For backwards compatibility, if no unit is specified, minutes
 is assumed.</p>
 </div></blockquote>
@@ -2266,7 +2263,7 @@ annatotors to determine the $hasAttachment flag might want to disable it.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmapuploadfolder:</span></code> #jmap</p>
 <blockquote>
-<div><p>the name of the folder for JMAP uploads (#jmap)</p>
+<div><p>The name of the folder for JMAP uploads.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmapsubmission_deleteonsend:</span></code> 1</p>
 <blockquote>
@@ -2275,15 +2272,15 @@ annatotors to determine the $hasAttachment flag might want to disable it.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmapsubmissionfolder:</span></code> #jmapsubmission</p>
 <blockquote>
-<div><p>the name of the folder for JMAP Submissions (#jmapsubmission)</p>
+<div><p>The name of the folder for JMAP Submissions.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmappushsubscriptionfolder:</span></code> #jmappushsubscription</p>
 <blockquote>
-<div><p>the name of the folder for JMAP Push Subscriptions (#jmappushsubscription)</p>
+<div><p>The name of the folder for JMAP Push Subscriptions.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmapnotificationfolder:</span></code> #jmapnotification</p>
 <blockquote>
-<div><p>the name of the folder for JMAP notifications (#jmapnotification)</p>
+<div><p>The name of the folder for JMAP notifications.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">iolog:</span></code> 0</p>
 <blockquote>
@@ -2590,7 +2587,7 @@ match the path specified in cyrus.conf(5).</p>
 <div><p>Timeout used during a lmtp transaction to a remote backend (e.g. in a
 murder environment).  Can be used to prevent hung lmtpds on proxy hosts
 when a backend server becomes unresponsive during a lmtp transaction.
-The default is 5 minutes - change to zero for infinite.</p>
+Change to zero for infinite.</p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
@@ -3134,7 +3131,7 @@ used.</p>
 <p><code class="docutils literal notranslate"><span class="pre">prometheus_update_freq:</span></code> 10s</p>
 <blockquote>
 <div><p>Frequency in at which promstatsd should re-collate its statistics
-report.  The minimum value is 1 second, the default is 10 seconds.</p>
+report.  The minimum value is 1 second.</p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
@@ -3692,7 +3689,7 @@ Allowed values: <em>fileinto</em>, <em>reject</em>, <em>vacation</em>, <em>vacat
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">sieve_folder:</span></code> #sieve</p>
 <blockquote>
-<div><p>The name of the folder for storing Sieve scripts (#sieve)</p>
+<div><p>The name of the folder for storing Sieve scripts.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">sieve_maxscriptsize:</span></code> 32K</p>
 <blockquote>
@@ -3756,7 +3753,7 @@ directories: ~user/.sieve.</p>
 <p><code class="docutils literal notranslate"><span class="pre">anysievefolder:</span></code> 0</p>
 <blockquote>
 <div><p>It must be &quot;yes&quot; in order to permit the autocreation of any INBOX subfolder
-requested by a sieve filter, through the &quot;fileinto&quot; action. (default = no)</p>
+requested by a sieve filter, through the &quot;fileinto&quot; action.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">singleinstancestore:</span></code> 1</p>
 <blockquote>

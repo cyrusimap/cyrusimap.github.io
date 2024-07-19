@@ -254,7 +254,7 @@ FIELD DESCRIPTIONS
     ``altprefix:`` Alt Folders
 
         Alternative INBOX spellings that can't be accessed in altnamespace
-        otherwise go under here 
+        otherwise go under here. 
 
     .. endblob altprefix
 
@@ -872,7 +872,7 @@ FIELD DESCRIPTIONS
         will be kept indefinitely.
 
         For backward compatibility, if no unit is specified, days is
-        assumed.  
+        assumed. 
 
     .. endblob backup_retention
 
@@ -1095,8 +1095,7 @@ FIELD DESCRIPTIONS
 
         The minimum allowed interval between alarms for a recurring event.
         Primarily used to suppress alarms for MINUTELY and SECONDLY recurrences.
-        The default is 5 minutes.  The minimum value is 0, which will
-        allow all alarms. 
+        The minimum value is 0, which will allow all alarms. 
 
     .. endblob calendar_minimum_alarm_interval
 
@@ -1277,7 +1276,7 @@ FIELD DESCRIPTIONS
 
     ``conversations_keep_existing:`` 1
 
-        during conversations cleanup, don't clean up if there are still existing emails
+        During conversations cleanup, don't clean up if there are still existing emails
         with one of the mentioned CIDs. 
 
     .. endblob conversations_keep_existing
@@ -1296,7 +1295,7 @@ FIELD DESCRIPTIONS
     ``conversations_max_guidrecords:`` 5000
 
         maximum records with the same guid.  This is just a sanity check to stop the same
-        email being added and removed over and over, so the default is 5000 
+        email being added and removed over and over. 
 
     .. endblob conversations_max_guidrecords
 
@@ -1547,8 +1546,7 @@ FIELD DESCRIPTIONS
 
         Whether to also unsubscribe from mailboxes when they are deleted.
         Note that this behaviour contravenes :rfc:`3501` section 6.3.9, but
-        may be useful for avoiding user/client software confusion.
-        The default is 'no'. 
+        may be useful for avoiding user/client software confusion. 
 
     .. endblob delete_unsubscribe
 
@@ -1569,7 +1567,7 @@ FIELD DESCRIPTIONS
 
         Preclude list command on user namespace.  If set to 'yes', the
         LIST response will never include any other user's mailbox.  Admin
-        users will always see all mailboxes.  The default is 'no' 
+        users will always see all mailboxes. 
 
     .. endblob disable_user_namespace
 
@@ -1579,7 +1577,7 @@ FIELD DESCRIPTIONS
 
         Preclude list command on shared namespace.  If set to 'yes', the
         LIST response will never include any non-user mailboxes.  Admin
-        users will always see all mailboxes.  The default is 'no' 
+        users will always see all mailboxes. 
 
     .. endblob disable_shared_namespace
 
@@ -1998,8 +1996,7 @@ FIELD DESCRIPTIONS
     ``httptimeout:`` 5m
 
         Set the length of the HTTP server's inactivity autologout timer.
-        The default is 5 minutes.  The minimum value is 0, which will
-        disable persistent connections.
+        The minimum value is 0, which will disable persistent connections.
 
         For backwards compatibility, if no unit is specified, minutes
         is assumed. 
@@ -2467,7 +2464,7 @@ FIELD DESCRIPTIONS
 
     ``jmapuploadfolder:`` #jmap
 
-        the name of the folder for JMAP uploads (#jmap) 
+        The name of the folder for JMAP uploads. 
 
 
     .. endblob jmapuploadfolder
@@ -2485,7 +2482,7 @@ FIELD DESCRIPTIONS
 
     ``jmapsubmissionfolder:`` #jmapsubmission
 
-        the name of the folder for JMAP Submissions (#jmapsubmission) 
+        The name of the folder for JMAP Submissions. 
 
 
     .. endblob jmapsubmissionfolder
@@ -2494,7 +2491,7 @@ FIELD DESCRIPTIONS
 
     ``jmappushsubscriptionfolder:`` #jmappushsubscription
 
-        the name of the folder for JMAP Push Subscriptions (#jmappushsubscription) 
+        The name of the folder for JMAP Push Subscriptions. 
 
 
     .. endblob jmappushsubscriptionfolder
@@ -2503,7 +2500,7 @@ FIELD DESCRIPTIONS
 
     ``jmapnotificationfolder:`` #jmapnotification
 
-        the name of the folder for JMAP notifications (#jmapnotification) 
+        The name of the folder for JMAP notifications. 
 
 
     .. endblob jmapnotificationfolder
@@ -3109,7 +3106,7 @@ FIELD DESCRIPTIONS
         Timeout used during a lmtp transaction to a remote backend (e.g. in a
         murder environment).  Can be used to prevent hung lmtpds on proxy hosts
         when a backend server becomes unresponsive during a lmtp transaction.
-        The default is 5 minutes - change to zero for infinite.
+        Change to zero for infinite.
 
         For backward compatibility, if no unit is specified, seconds is
         assumed. 
@@ -3995,7 +3992,7 @@ FIELD DESCRIPTIONS
     ``prometheus_update_freq:`` 10s
 
         Frequency in at which promstatsd should re-collate its statistics
-        report.  The minimum value is 1 second, the default is 10 seconds.
+        report.  The minimum value is 1 second.
 
         For backward compatibility, if no unit is specified, seconds is
         assumed. 
@@ -4946,7 +4943,7 @@ FIELD DESCRIPTIONS
 
     ``sieve_folder:`` #sieve
 
-        The name of the folder for storing Sieve scripts (#sieve) 
+        The name of the folder for storing Sieve scripts. 
 
 
     .. endblob sieve_folder
@@ -5059,7 +5056,7 @@ FIELD DESCRIPTIONS
     ``anysievefolder:`` 0
 
         It must be "yes" in order to permit the autocreation of any INBOX subfolder
-        requested by a sieve filter, through the "fileinto" action. (default = no) 
+        requested by a sieve filter, through the "fileinto" action. 
 
     .. endblob anysievefolder
 
