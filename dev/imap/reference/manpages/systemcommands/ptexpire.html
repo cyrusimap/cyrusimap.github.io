@@ -798,13 +798,15 @@
 <p>Program to expire pts cache DB entries on command.</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block"><strong>ptexpire</strong> [<strong>-C</strong> <em>filename</em>] [<strong>-E</strong> <em>seconds</em>]</pre>
+<pre class="literal-block"><strong>ptexpire</strong> [<strong>-C</strong> <em>filename</em>] [<strong>-E</strong> <em>seconds</em>] [ <em>username</em> ...]</pre>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>ptexpire</strong> program sweeps the <code class="docutils literal notranslate"><span class="pre">ptscache_db</span></code> database, deleting
 entries older than the expiry duration, which defaults to 5400 seconds
 (3 hours).  The expiry duration can be changed with the <strong>-E</strong> option.</p>
+<p>Alternatively, if it's passed a list of usernames it deletes just those
+usernames, immediately.</p>
 <p><strong>ptexpire</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 </div>
 <div class="section" id="options">
@@ -850,7 +852,7 @@ entries older than the expiry duration, which defaults to 5400 seconds
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jul 27 2022
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 01 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
