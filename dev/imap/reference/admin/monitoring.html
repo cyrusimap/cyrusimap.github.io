@@ -804,8 +804,9 @@
 <div><ul class="simple">
 <li><p>Set the <cite>prometheus_enabled</cite> setting in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to &quot;yes&quot;</p></li>
 <li><p>Add the <cite>prometheus</cite> module to your <cite>httpmodules</cite> in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p></li>
-<li><p>Set the <cite>prometheus_need_auth</cite>, <cite>prometheus_update_freq</cite> and <cite>prometheus_stats_dir</cite>
-settings in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to taste</p></li>
+<li><p>Set the <cite>prometheus_need_auth</cite>, <cite>prometheus_service_update_freq</cite>,
+<cite>prometheus_master_update_freq</cite>, <cite>prometheus_usage_update_freq</cite>, and
+<cite>prometheus_stats_dir</cite> settings in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to taste</p></li>
 <li><p>Add a job to run <a class="reference internal" href="../manpages/systemcommands/promstatsd.html#std-cyrusman-promstatsd-8">promstatsd(8)</a> to the DAEMON section of
 <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> (the actual daemon process)</p></li>
 <li><p>Add a job to run <code class="docutils literal notranslate"><span class="pre">promstatsd</span> <span class="pre">-c</span></code> to the START section of <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>
@@ -820,7 +821,7 @@ settings in <a class="reference internal" href="../manpages/configs/imapd.conf.h
 <div><blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">prometheus_enabled:</span></code> 0</p>
 <blockquote>
-<div><p>Whether tracking of service metrics for Prometheus is enabled.</p>
+<div><p>Whether tracking of metrics for Prometheus is enabled.</p>
 </div></blockquote>
 </div></blockquote>
 <blockquote>
@@ -831,12 +832,29 @@ settings in <a class="reference internal" href="../manpages/configs/imapd.conf.h
 </div></blockquote>
 </div></blockquote>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">prometheus_update_freq:</span></code> 10s</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">prometheus_service_update_freq:</span></code> 10s</p>
 <blockquote>
-<div><p>Frequency in at which promstatsd should re-collate its statistics
-report.  The minimum value is 1 second.</p>
-<p>For backward compatibility, if no unit is specified, seconds is
-assumed.</p>
+<div><p>Frequency in at which promstatsd should re-collate its service
+statistics report.  The minimum value is 1 second.</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">prometheus_master_update_freq:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div><p>Frequency in at which master should re-collate its statistics report.
+If not set, <em>prometheus_service_update_freq</em> is used.</p>
+<p>If no unit is specified, seconds is assumed.</p>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">prometheus_usage_update_freq:</span></code> &lt;none&gt;</p>
+<blockquote>
+<div><p>Frequency in at which promstatsd should re-collate its usage
+statistics report.  Note that this report is relatively expensive to
+produce.  If not set, usage statistics are not reported.</p>
+<p>Best to make this a multiple of <em>prometheus_service_update_freq</em>.</p>
+<p>If no unit is specified, seconds is assumed.</p>
 </div></blockquote>
 </div></blockquote>
 <blockquote>
@@ -871,7 +889,7 @@ directory on ephemeral storage.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on May 18 2020
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Aug 07 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

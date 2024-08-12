@@ -3980,7 +3980,7 @@ FIELD DESCRIPTIONS
 
     ``prometheus_enabled:`` 0
 
-        Whether tracking of service metrics for Prometheus is enabled. 
+        Whether tracking of metrics for Prometheus is enabled. 
 
 
     .. endblob prometheus_enabled
@@ -4000,13 +4000,47 @@ FIELD DESCRIPTIONS
 
     ``prometheus_update_freq:`` 10s
 
-        Frequency in at which promstatsd should re-collate its statistics
-        report.  The minimum value is 1 second.
-
-        For backward compatibility, if no unit is specified, seconds is
-        assumed. 
+        Deprecated in favour of *prometheus_service_update_freq*,
+        *prometheus_master_update_freq*, and
+        *prometheus_usage_update_freq*. 
 
     .. endblob prometheus_update_freq
+
+    .. startblob prometheus_service_update_freq
+
+    ``prometheus_service_update_freq:`` 10s
+
+        Frequency in at which promstatsd should re-collate its service
+        statistics report.  The minimum value is 1 second.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob prometheus_service_update_freq
+
+    .. startblob prometheus_master_update_freq
+
+    ``prometheus_master_update_freq:`` <none>
+
+        Frequency in at which master should re-collate its statistics report.
+        If not set, *prometheus_service_update_freq* is used.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob prometheus_master_update_freq
+
+    .. startblob prometheus_usage_update_freq
+
+    ``prometheus_usage_update_freq:`` <none>
+
+        Frequency in at which promstatsd should re-collate its usage
+        statistics report.  Note that this report is relatively expensive to
+        produce.  If not set, usage statistics are not reported.
+
+        Best to make this a multiple of *prometheus_service_update_freq*.
+
+        If no unit is specified, seconds is assumed. 
+
+    .. endblob prometheus_usage_update_freq
 
     .. startblob prometheus_stats_dir
 

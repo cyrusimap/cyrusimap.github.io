@@ -798,7 +798,7 @@
 <p>Cyrus Prometheus statistics collating daemon</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<pre class="literal-block"><strong>promstatsd</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>frequency</em> ] [ <strong>-d</strong> ]
+<pre class="literal-block"><strong>promstatsd</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>service-frequency</em> ] [ <strong>-d</strong> ]
 
 <strong>promstatsd</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-c</strong>
 
@@ -816,17 +816,19 @@ the &quot;/metrics&quot; URL, if &quot;prometheus&quot; has been set in <strong>
 <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p><strong>promstatsd</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p>In the first synopsis, <strong>promstatsd</strong> will run as a daemon, updating the
-report at the specified <em>frequency</em>.  If the optional <strong>-f</strong> <em>frequency</em>
-argument is not provided, the <strong>prometheus_update_freq</strong> from
-<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> will be used, which defaults to 10 seconds.  This
-invocation should be run from the DAEMON section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>
-(see <a class="reference internal" href="#promstatsd-examples"><span class="std std-ref">Examples</span></a> below).</p>
+service and (optionally) usage reports at the frequencies set by the
+<strong>prometheus_service_update_freq</strong> and <strong>prometheus_usage_update_freq</strong>
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> options, which default to 10s and disabled,
+respectively.  The optional <strong>-f</strong> <em>service-frequency</em> argument can be used to
+override <strong>prometheus_service_update_freq</strong>.  This invocation should be run
+from the DAEMON section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> (see
+<a class="reference internal" href="#promstatsd-examples"><span class="std std-ref">Examples</span></a> below).</p>
 <p>In the second synopsis, <strong>promstatsd</strong> will clean up all statistics files and
 exit.  The statistics Cyrus maintains are only valid while Cyrus is running,
 so this invocation must be run from the START section of
 <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> (see <a class="reference internal" href="#promstatsd-examples"><span class="std std-ref">Examples</span></a> below) to clean up
 after the previous run, before new service processes are started.</p>
-<p>In the third synopsis, <strong>promstatsd</strong> will immediately update the report
+<p>In the third synopsis, <strong>promstatsd</strong> will immediately update the report(s)
 once, and then exit.  This can be safely used while another <strong>promstatsd</strong>
 process runs in daemon form.  It is useful if you need to update the report
 <em>now</em> for some reason, rather than waiting for the daemon's next update.</p>
@@ -849,7 +851,7 @@ process runs in daemon form.  It is useful if you need to update the report
 <dl class="std option">
 <dt id="cmdoption-promstatsd-1">
 <code class="sig-name descname"><span class="pre">-1</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-promstatsd-1" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the report once and exit.</p>
+<dd><p>Update the report(s) once and exit.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -867,10 +869,10 @@ debugging.</p>
 
 <dl class="std option">
 <dt id="cmdoption-promstatsd-f">
-<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">frequency</span></code><a class="headerlink" href="#cmdoption-promstatsd-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update the report every <em>frequency</em> seconds.  If not specified, the
-<strong>prometheus_update_freq</strong> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> will be used,
-which defaults to 10 seconds.</p>
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">service-frequency</span></code><a class="headerlink" href="#cmdoption-promstatsd-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the service report every <em>service-frequency</em> seconds.  If not
+specified, the <strong>prometheus_service_update_freq</strong> from
+<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> will be used, which defaults to 10 seconds.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -927,7 +929,7 @@ like so:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on May 18 2020
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Aug 07 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
