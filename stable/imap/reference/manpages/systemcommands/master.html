@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>master &mdash; Cyrus IMAP 3.8.4 documentation</title>
+  <title>master &mdash; Cyrus IMAP 3.10.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.8.4 documentation" href="../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.10.0 documentation" href="../../../../index.html"/>
         <link rel="up" title="Man pages" href="../index.html"/>
         <link rel="next" title="mbexamine" href="mbexamine.html"/>
         <link rel="prev" title="masssievec" href="masssievec.html"/> 
@@ -130,6 +130,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#development-version">Development Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-10">Series 3.10</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/release-notes/index.html#series-3-4">Series 3.4</a></li>
@@ -334,23 +335,26 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../download/upgrade.html">Upgrading to 3.10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#sieve-changes">Sieve changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#master-pid-and-master-ready-files">master.pid and master.ready files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#pcre2-support">PCRE2 support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#cyrus-backups-feature-is-deprecated-as-of-3-10">Cyrus Backups feature is deprecated as of 3.10</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#install-new-3-10-cyrus">2. Install new 3.10 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#start-new-3-10-cyrus-and-verify">7. Start new 3.10 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -640,7 +644,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer.html#releasing">Releasing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/releasing.html">Releasing Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/releasing.html">Releasing Cyrus IMAP - normal releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
 </ul>
 </li>
@@ -748,7 +754,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.10: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.10"></a>
 </div>
       &nbsp;
     </nav>
@@ -768,7 +774,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html">Docs v3.8.4</a> &raquo;</li>
+      <li><a href="../../../../index.html">Docs v3.10.0</a> &raquo;</li>
       
           <li><a href="../../../../operations.html">Operations</a> &raquo;</li>
       
@@ -793,7 +799,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>master</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> <em>alternate cyrus.conf</em> ]
-    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ]
+    [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ] [ <strong>-r</strong> <em>ready_file</em> ]
     [ <strong>-j</strong> <em>janitor period</em> ] [ <strong>-d</strong> | <strong>-D</strong> ] [ <strong>-L</strong> <em>logfile</em> ]</pre>
 </div>
 <div class="section" id="description">
@@ -843,7 +849,16 @@ entries).</p>
 <dt id="cmdoption-master-p">
 <code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">pidfile</span></code><a class="headerlink" href="#cmdoption-master-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use <em>pidfile</em> as the pidfile.  If not specified, defaults to
-<code class="docutils literal notranslate"><span class="pre">/var/run/master.pid</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
+defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.pid</span></code></p>
+</dd></dl>
+
+<dl class="std option">
+<dt id="cmdoption-master-r">
+<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname">&#160; <span class="pre">ready_file</span></code><a class="headerlink" href="#cmdoption-master-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use <em>ready_file</em> as the ready file.  If not specified, uses
+<code class="docutils literal notranslate"><span class="pre">master_ready_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
+defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.ready</span></code></p>
 </dd></dl>
 
 <dl class="std option">
@@ -895,6 +910,8 @@ recycled within 30s.</p>
 <p>The environment variable <strong>CYRUS_VERBOSE</strong> can be set to log additional
 debugging information. Setting the value to 1 results in base level logging.
 Setting it higher results in more log messages being generated.</p>
+<p>The <a class="reference internal" href="cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> utility's <code class="docutils literal notranslate"><span class="pre">proc</span></code> subcommand can be used to
+list the active processes that <strong>master</strong> is managing.</p>
 </div>
 <div class="section" id="files">
 <h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
@@ -906,7 +923,7 @@ Setting it higher results in more log messages being generated.</p>
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <a class="reference internal" href="pop3d.html#std-cyrusman-pop3d-8">pop3d(8)</a>, <a class="reference internal" href="lmtpd.html#std-cyrusman-lmtpd-8">lmtpd(8)</a>, <a class="reference internal" href="timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a>,
-<a class="reference internal" href="idled.html#std-cyrusman-idled-8">idled(8)</a></p>
+<a class="reference internal" href="idled.html#std-cyrusman-idled-8">idled(8)</a>, <a class="reference internal" href="cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a></p>
 </div>
 </div>
 
@@ -928,7 +945,7 @@ Setting it higher results in more log messages being generated.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Feb 13 2021
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Nov 08 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
@@ -948,7 +965,7 @@ Setting it higher results in more log messages being generated.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../',
-            VERSION:'3.8.4',
+            VERSION:'3.10.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

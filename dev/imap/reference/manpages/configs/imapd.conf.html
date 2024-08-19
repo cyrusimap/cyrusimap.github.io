@@ -1844,6 +1844,14 @@ Allowed values: <em>immediate</em>, <em>semidelayed</em>, <em>delayed</em></p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">fatals_abort:</span></code> 0</p>
+<blockquote>
+<div><p>If enabled, when fatal errors are detected, Cyrus will call abort()
+to produce a core dump, unless the error was due to a misbehaving
+client.  This is useful if you have the ability to debug a core dump.</p>
+<p>If not enabled (the default), the process will exit normally with
+an error code.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">flushseenstate:</span></code> 1</p>
 <blockquote>
 <div><p>Deprecated. No longer used.</p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cyrus IMAP 3.2.3 Release Notes &mdash; Cyrus IMAP 3.8.4 documentation</title>
+  <title>Cyrus IMAP 3.2.3 Release Notes &mdash; Cyrus IMAP 3.10.0 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../../search.html"/>
-    <link rel="top" title="Cyrus IMAP 3.8.4 documentation" href="../../../../../index.html"/>
+    <link rel="top" title="Cyrus IMAP 3.10.0 documentation" href="../../../../../index.html"/>
         <link rel="up" title="Cyrus IMAP 3.2 Releases" href="../index.html"/>
         <link rel="next" title="Cyrus IMAP 3.2.4 Release Notes" href="3.2.4.html"/>
         <link rel="prev" title="Cyrus IMAP 3.2.2 Release Notes" href="3.2.2.html"/> 
@@ -130,6 +130,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../index.html#stable-version">Stable Version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../index.html#development-version">Development Version</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../index.html#supported-product-series">Supported Product Series</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#series-3-10">Series 3.10</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#series-3-8">Series 3.8</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#series-3-6">Series 3.6</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#series-3-4">Series 3.4</a></li>
@@ -334,23 +335,26 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../installing.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../upgrade.html">Upgrading to 3.8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../upgrade.html">Upgrading to 3.10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#preparation">1. Preparation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#installation-from-tarball">Installation from tarball</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#storage-changes">Storage changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#jmap-caldav-changes">JMAP/CalDAV changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#sieve-changes">Sieve changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#master-pid-and-master-ready-files">master.pid and master.ready files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#pcre2-support">PCRE2 support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#cyrus-backups-feature-is-deprecated-as-of-3-10">Cyrus Backups feature is deprecated as of 3.10</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../upgrade.html#do-what-as-who">Do What As Who?</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#install-new-3-8-cyrus">2. Install new 3.8 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#install-new-3-10-cyrus">2. Install new 3.10 Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#start-new-3-8-cyrus-and-verify">7. Start new 3.8 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#start-new-3-10-cyrus-and-verify">7. Start new 3.10 Cyrus and verify</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
@@ -640,7 +644,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer.html#releasing">Releasing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/releasing.html">Releasing Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/releasing.html">Releasing Cyrus IMAP - normal releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/major-releasing.html">Releasing Cyrus IMAP - major releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/snapshot-releasing.html">Releasing Cyrus IMAP - developer snapshots</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
 </ul>
 </li>
@@ -748,7 +754,7 @@
       </div>
         
 <div class="buildstatus">
-    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.8: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.8"></a>
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.10: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.10"></a>
 </div>
       &nbsp;
     </nav>
@@ -768,7 +774,7 @@
 
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html">Docs v3.8.4</a> &raquo;</li>
+      <li><a href="../../../../../index.html">Docs v3.10.0</a> &raquo;</li>
       
           <li><a href="../../../../../download.html">Download</a> &raquo;</li>
       
@@ -877,7 +883,7 @@ Cyrus version</p></li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../../../',
-            VERSION:'3.8.4',
+            VERSION:'3.10.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

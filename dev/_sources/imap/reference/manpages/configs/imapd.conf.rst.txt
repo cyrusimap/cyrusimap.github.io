@@ -1771,6 +1771,19 @@ FIELD DESCRIPTIONS
 
     .. endblob failedloginpause
 
+    .. startblob fatals_abort
+
+    ``fatals_abort:`` 0
+
+        If enabled, when fatal errors are detected, Cyrus will call abort()
+        to produce a core dump, unless the error was due to a misbehaving
+        client.  This is useful if you have the ability to debug a core dump.
+
+        If not enabled (the default), the process will exit normally with
+        an error code. 
+
+    .. endblob fatals_abort
+
     .. startblob flushseenstate
 
     ``flushseenstate:`` 1
