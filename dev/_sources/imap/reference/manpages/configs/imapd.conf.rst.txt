@@ -219,6 +219,19 @@ FIELD DESCRIPTIONS
 
     .. endblob allowsetacl
 
+    .. startblob allowspecialusesubfolder
+
+    ``allowspecialusesubfolder:`` 0
+
+        If enabled, allows special-use folders to be moved into subfolders
+
+        By default, cyrus does not allow a special-use folder to be moved or
+        renamed if the new folder is not a direct folder of the users INBOX.
+        This was implemented to prevent clients renaming Sent to Trash/Sent, 
+        which would confused other clients. 
+
+    .. endblob allowspecialusesubfolder
+
     .. startblob allowusermoves
 
     ``allowusermoves:`` 0
@@ -5280,8 +5293,8 @@ FIELD DESCRIPTIONS
 
     ``specialusealways:`` 1
 
-        If enabled, this option causes LIST and LSUB output to always include
-        the XLIST "special-use" flags. 
+        If enabled, this option causes unextended LIST and LSUB output to
+        include the "special-use" flags. 
 
     .. endblob specialusealways
 

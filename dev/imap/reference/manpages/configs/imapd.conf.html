@@ -938,6 +938,14 @@ authentication, see the <em>tls_required</em> option.</p>
 <div><p>Defaults to enabled.  If disabled, disallows the use of the SETACL
 command at all via IMAP.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">allowspecialusesubfolder:</span></code> 0</p>
+<blockquote>
+<div><p>If enabled, allows special-use folders to be moved into subfolders</p>
+<p>By default, cyrus does not allow a special-use folder to be moved or
+renamed if the new folder is not a direct folder of the users INBOX.
+This was implemented to prevent clients renaming Sent to Trash/Sent,
+which would confused other clients.</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">allowusermoves:</span></code> 0</p>
 <blockquote>
 <div><p>Allow moving user accounts (with associated meta-data) via RENAME
@@ -3890,8 +3898,8 @@ or renamed to have a different parent. Default is the built-in list</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">specialusealways:</span></code> 1</p>
 <blockquote>
-<div><p>If enabled, this option causes LIST and LSUB output to always include
-the XLIST &quot;special-use&quot; flags.</p>
+<div><p>If enabled, this option causes unextended LIST and LSUB output to
+include the &quot;special-use&quot; flags.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">sql_database:</span></code> &lt;none&gt;</p>
 <blockquote>
