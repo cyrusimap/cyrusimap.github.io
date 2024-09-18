@@ -437,9 +437,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../reference/manpages/index.html#system-commands">(8) System Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
@@ -447,7 +445,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
@@ -491,7 +488,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/rehash.html"><strong>rehash</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/restore.html"><strong>restore</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/sievec.html"><strong>sievec</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/sieved.html"><strong>sieved</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
@@ -534,7 +530,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/access-control.html">Access Control</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/quotas.html">Quotas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/sieve.html">Cyrus Sieve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/backups.html">Cyrus Backups</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/nntp.html">Cyrus NNTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/protlayer.html">Cyrus Prot Layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/sop.html">Standard Operating Procedures</a></li>
@@ -667,7 +662,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/thoughts.html">Thoughts &amp; Notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/backup.html">Notes for backup implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
@@ -840,7 +834,7 @@ service process are now installed to <code class="docutils literal notranslate">
 now accepts a <code class="docutils literal notranslate"><span class="pre">-p</span></code> option.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">defaultdomain</span></code> setting in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#imap-reference-manpages-configs-imapd-conf"><span class="std std-ref">imapd.conf</span></a>
 now defaults to &quot;internal&quot; (was: NULL)</p></li>
-<li><p>Added experimental backup service.  See <a class="reference internal" href="../../../../reference/admin/backups.html#cyrus-backups"><span class="std std-ref">Cyrus Backups</span></a></p></li>
+<li><p>Added experimental backup service.  See Cyrus Backups</p></li>
 <li><p>Support for Apple's Push service (XAPPLEPUSH).  See <a class="reference internal" href="../../../../reference/admin/eventsource.html#cyrus-eventsource"><span class="std std-ref">Cyrus Eventsource</span></a></p></li>
 <li><p>Sieve now supports special use folders.  See <a class="reference internal" href="../../../../reference/admin/sieve.html#cyrus-sieve-specialuse"><span class="std std-ref">Cyrus Sieve</span></a></p></li>
 <li><p>New numeric header available for sorting: X-Spam-Score</p></li>
@@ -916,7 +910,7 @@ complains if this isn't allowed.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Mar 06 2020
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Apr 22 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

@@ -814,9 +814,8 @@ FIELD DESCRIPTIONS
 
     ``backuppartition-name:`` <none>
 
-        The pathname of the backup partition *name*.  At least one backup
-        partition pathname MUST be specified if backups are in use.  Note that
-        there is no relationship between spool partitions and backup partitions. 
+        Deprecated. No longer used. 
+
 
     .. endblob backuppartition-name
 
@@ -824,13 +823,8 @@ FIELD DESCRIPTIONS
 
     ``backup_compact_minsize:`` 0
 
-        The minimum size of chunks in each backup.  The compact tool
-        will try to combine adjacent chunks that are smaller than this.
+        Deprecated. No longer used. 
 
-        Setting this value to zero or negative disables combining of chunks.
-
-        For backward compatibility, if no unit is specified, kibibytes is
-        assumed. 
 
     .. endblob backup_compact_minsize
 
@@ -838,13 +832,8 @@ FIELD DESCRIPTIONS
 
     ``backup_compact_maxsize:`` 0
 
-        The maximum size of chunks in each backup.  The compact tool
-        will try to split chunks larger than this into smaller chunks.
+        Deprecated. No longer used. 
 
-        Setting this value to zero or negative disables splitting of chunks.
-
-        For backward compatibility, if no unit is specified, kibibytes is
-        assumed. 
 
     .. endblob backup_compact_maxsize
 
@@ -852,9 +841,8 @@ FIELD DESCRIPTIONS
 
     ``backup_compact_work_threshold:`` 1
 
-        The number of chunks that must obviously need compaction before the compact
-        tool will go ahead with the compaction.  If set to less than one, the value
-        is treated as being one. 
+        Deprecated. No longer used. 
+
 
     .. endblob backup_compact_work_threshold
 
@@ -862,8 +850,8 @@ FIELD DESCRIPTIONS
 
     ``backup_staging_path:`` <none>
 
-        The absolute path of the backup staging area.  If not specified,
-        will be temp_path/backup 
+        Deprecated. No longer used. 
+
 
     .. endblob backup_staging_path
 
@@ -871,7 +859,7 @@ FIELD DESCRIPTIONS
 
     ``backup_retention_days:`` <none>
 
-        Deprecated in favor of *backup_retention*. 
+        Deprecated. No longer used. 
 
 
     .. endblob backup_retention_days
@@ -880,12 +868,8 @@ FIELD DESCRIPTIONS
 
     ``backup_retention:`` 7d
 
-        How long to keep content in backup after it has been deleted
-        from the source.  If set to a negative value or zero, deleted content
-        will be kept indefinitely.
+        Deprecated. No longer used. 
 
-        For backward compatibility, if no unit is specified, days is
-        assumed. 
 
     .. endblob backup_retention
 
@@ -893,9 +877,7 @@ FIELD DESCRIPTIONS
 
     ``backup_db:`` twoskip
 
-        The cyrusdb backend to use for the backup locations database. 
-
-        Allowed values: *skiplist*, *sql*, *twoskip*, *zeroskip*
+        Deprecated. No longer used. 
 
 
     .. endblob backup_db
@@ -904,8 +886,8 @@ FIELD DESCRIPTIONS
 
     ``backup_db_path:`` <none>
 
-        The absolute path to the backup db file.  If not specified,
-        will be configdirectory/backups.db 
+        Deprecated. No longer used. 
+
 
     .. endblob backup_db_path
 
@@ -913,14 +895,8 @@ FIELD DESCRIPTIONS
 
     ``backup_keep_previous:`` 0
 
-        Whether the **ctl_backups compact** and **ctl_backups reindex**
-        commands should preserve the original file.  The original file will
-        be named with a timestamped suffix.  This is mostly useful for
-        debugging.
+        Deprecated. No longer used. 
 
-        Note that with this enabled, compacting a backup will actually
-        increase the disk used by it (because there will now be an extra
-        copy: the original version, and the compacted version). 
 
     .. endblob backup_keep_previous
 
@@ -6226,9 +6202,8 @@ FIELD DESCRIPTIONS
 
     ``xbackup_enabled:`` 0
 
-        Enable support for the XBACKUP command in imapd.  If enabled, admin
-        users can use this command to provoke a replication of specified users
-        to the named backup channel. 
+        Deprecated. No longer used. 
+
 
     .. endblob xbackup_enabled
 

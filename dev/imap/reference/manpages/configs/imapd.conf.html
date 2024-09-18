@@ -437,9 +437,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#system-commands">(8) System Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../systemcommands/backupd.html"><strong>backupd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
@@ -447,7 +445,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
@@ -491,7 +488,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/rehash.html"><strong>rehash</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../systemcommands/restore.html"><strong>restore</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/sievec.html"><strong>sievec</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/sieved.html"><strong>sieved</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
@@ -534,7 +530,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../admin/access-control.html">Access Control</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../admin/quotas.html">Quotas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../admin/sieve.html">Cyrus Sieve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../admin/backups.html">Cyrus Backups</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../admin/nntp.html">Cyrus NNTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../admin/protlayer.html">Cyrus Prot Layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../admin/sop.html">Standard Operating Procedures</a></li>
@@ -667,7 +662,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/thoughts.html">Thoughts &amp; Notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/backup.html">Notes for backup implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
@@ -1298,68 +1292,43 @@ an index is closed, whether CLOSE, UNSELECT, SELECT or on disconnect.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backuppartition-name:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>The pathname of the backup partition <em>name</em>.  At least one backup
-partition pathname MUST be specified if backups are in use.  Note that
-there is no relationship between spool partitions and backup partitions.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_compact_minsize:</span></code> 0</p>
 <blockquote>
-<div><p>The minimum size of chunks in each backup.  The compact tool
-will try to combine adjacent chunks that are smaller than this.</p>
-<p>Setting this value to zero or negative disables combining of chunks.</p>
-<p>For backward compatibility, if no unit is specified, kibibytes is
-assumed.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_compact_maxsize:</span></code> 0</p>
 <blockquote>
-<div><p>The maximum size of chunks in each backup.  The compact tool
-will try to split chunks larger than this into smaller chunks.</p>
-<p>Setting this value to zero or negative disables splitting of chunks.</p>
-<p>For backward compatibility, if no unit is specified, kibibytes is
-assumed.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_compact_work_threshold:</span></code> 1</p>
 <blockquote>
-<div><p>The number of chunks that must obviously need compaction before the compact
-tool will go ahead with the compaction.  If set to less than one, the value
-is treated as being one.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_staging_path:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>The absolute path of the backup staging area.  If not specified,
-will be temp_path/backup</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_retention_days:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>Deprecated in favor of <em>backup_retention</em>.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_retention:</span></code> 7d</p>
 <blockquote>
-<div><p>How long to keep content in backup after it has been deleted
-from the source.  If set to a negative value or zero, deleted content
-will be kept indefinitely.</p>
-<p>For backward compatibility, if no unit is specified, days is
-assumed.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_db:</span></code> twoskip</p>
 <blockquote>
-<div><p>The cyrusdb backend to use for the backup locations database.</p>
-<p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_db_path:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>The absolute path to the backup db file.  If not specified,
-will be configdirectory/backups.db</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">backup_keep_previous:</span></code> 0</p>
 <blockquote>
-<div><p>Whether the <strong>ctl_backups compact</strong> and <strong>ctl_backups reindex</strong>
-commands should preserve the original file.  The original file will
-be named with a timestamped suffix.  This is mostly useful for
-debugging.</p>
-<p>Note that with this enabled, compacting a backup will actually
-increase the disk used by it (because there will now be an extra
-copy: the original version, and the compacted version).</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">boundary_limit:</span></code> 1000</p>
 <blockquote>
@@ -4421,9 +4390,7 @@ zero size limit causes attachments of any size be rewritten as BINARY.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">xbackup_enabled:</span></code> 0</p>
 <blockquote>
-<div><p>Enable support for the XBACKUP command in imapd.  If enabled, admin
-users can use this command to provoke a replication of specified users
-to the named backup channel.</p>
+<div><p>Deprecated. No longer used.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">xlist-flag:</span></code> &lt;none&gt;</p>
 <blockquote>
