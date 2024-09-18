@@ -1342,6 +1342,12 @@ than any sane message should have.</p>
 <div><p>Accept invalid RRULEs (e.g. FREQ=WEEKLY;BYMONTHDAY=15)
 rather than rejecting them as errors.</p>
 </div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">caldav_alarm_support_components:</span></code> VEVENT VTODO</p>
+<blockquote>
+<div><p>Space-separated list of iCalendar component types for which
+calalarmd generates alarms.
+Allowed values: <em>VEVENT</em>, <em>VTODO</em></p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">caldav_alarm_suppress_file:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>If this file exists, calalarmd will not process events</p>
