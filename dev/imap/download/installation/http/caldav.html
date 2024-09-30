@@ -884,12 +884,19 @@ It allows you to:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Create new collections, with whichever components are required</p></li>
-<li><p>Alter existing collections with different components</p></li>
+<li><p>Alter existing collections</p></li>
 <li><p>Subscribe or download existing collections via prepared URLs</p></li>
 <li><p>Set visibility attributes such as Public or Transparent</p></li>
 <li><p>Delete existing collections</p></li>
 </ul>
 </div></blockquote>
+<p>To delete the value of a property, click on ✎ and then submit empty new value.</p>
+<p>The Name, Description, Color, and Order properties are used only for UI
+purposes.  “None color” means, that no calendar color is communicated
+to the calendar user agents.  Transparent calendars are skipped by
+server-side freebusy calculations.  The Time Zone on calendars
+is used to calculate the freebusy state on events with floating
+times.  Public toggles the <cite>lrw9</cite> rights for the <cite>anyone</cite> user.</p>
 <p>The Cyrus web GUI for CalDAV Collection Management is disabled by
 default, but can be enabled with the &quot;caldav_allowcalendaradmin&quot; option.</p>
 <div class="sidebar">
@@ -1287,7 +1294,7 @@ or corruption.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Feb 13 2023
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Sep 24 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
