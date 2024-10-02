@@ -3141,7 +3141,8 @@ FIELD DESCRIPTIONS
 
         A floating point number of seconds.  If set, time how long we wait for
         any lock, and syslog the filename and time if it's longer than this
-        value.  The default of NULL means not to time locks. 
+        value.  The default of NULL means not to time locks.  This is
+        implemented for fcntl(2) locks and has no effect on flock(2) locks. 
 
     .. endblob lock_debugtime
 
