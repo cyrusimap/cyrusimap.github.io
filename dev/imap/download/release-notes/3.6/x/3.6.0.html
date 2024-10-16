@@ -437,9 +437,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../reference/manpages/index.html#system-commands">(8) System Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
@@ -447,7 +445,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
@@ -491,7 +488,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/rehash.html"><strong>rehash</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/restore.html"><strong>restore</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/sievec.html"><strong>sievec</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/sieved.html"><strong>sieved</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/manpages/systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
@@ -534,7 +530,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/access-control.html">Access Control</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/quotas.html">Quotas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/sieve.html">Cyrus Sieve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/backups.html">Cyrus Backups</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/nntp.html">Cyrus NNTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/protlayer.html">Cyrus Prot Layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../reference/admin/sop.html">Standard Operating Procedures</a></li>
@@ -667,10 +662,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/thoughts.html">Thoughts &amp; Notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/backup.html">Notes for backup implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/notes.html">Cyrus IMAP Server: Notes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/thoughts/prot-events.html">Cyrus IMAP Server: Prot Events</a></li>
 </ul>
@@ -925,6 +918,7 @@ change during the process.</p>
 <li><p>The <cite>reverseuniqueids</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option is now deprecated
 and unused.  Reverse UNIQUEID records are now standard and cannot be turned
 off.</p></li>
+<li><p>The <cite>improved_mboxlist_sort</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option does nothing.</p></li>
 </ul>
 </div>
 <div class="section" id="security-fixes">
@@ -945,10 +939,7 @@ running <a class="reference internal" href="../../../../reference/manpages/syste
 XML element instead of text. (thanks Дилян Палаузов)</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3896">Issue #3896</a>: the <cite>-d</cite> (dump) and <cite>-u</cite> (undump) options to
 <a class="reference internal" href="../../../../reference/manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> now correctly dump and undump all fields in
-mailboxes.db entries.  The intermediary file format is now JSON.  This change
-makes it possible to follow the procedure
-for switching <cite>improved_mboxlist_sort</cite> described in
-<a class="reference internal" href="../../../../developer/thoughts/improved_mboxlist_sort.html#enabling-improved-mboxlist-sort"><span class="std std-ref">Enabling improved_mboxlist_sort</span></a>.</p></li>
+mailboxes.db entries.  The intermediary file format is now JSON.</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/4035">Issue #4035</a>: <cite>ctl_cyrusdb -r</cite> now recovers from mailboxes.db
 records with missing uniqueids, instead of crashing.  A new <cite>-P</cite> option to
 <a class="reference internal" href="../../../../reference/manpages/systemcommands/reconstruct.html#std-cyrusman-reconstruct-8">reconstruct(8)</a> enables repairing mailboxes whose header files
@@ -975,7 +966,7 @@ are missing uniqueids.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Sep 25 2023
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Aug 06 2023
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

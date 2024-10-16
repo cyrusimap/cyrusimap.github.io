@@ -664,7 +664,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/thoughts.html">Thoughts &amp; Notes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/notes.html">Cyrus IMAP Server: Notes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/thoughts/prot-events.html">Cyrus IMAP Server: Prot Events</a></li>
 </ul>
@@ -2080,14 +2079,7 @@ is prepended.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">improved_mboxlist_sort:</span></code> 0</p>
 <blockquote>
-<div><p>If enabled, a special comparator will be used which will correctly
-sort mailbox names that contain characters such as ' ' and '-'.</p>
-<p>Note that this option SHOULD NOT be changed on a live system.  The
-mailboxes database should be dumped (ctl_mboxlist) before the
-option is changed, removed, and then undumped after changing the
-option.  When not using flat files for the subscriptions databases
-the same has to be done (cyr_dbtool) for each subscription database
-See improved_mboxlist_sort.html.</p>
+<div><p>Not used anymore.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">jmapaccess_url:</span></code> &lt;none&gt;</p>
 <blockquote>
