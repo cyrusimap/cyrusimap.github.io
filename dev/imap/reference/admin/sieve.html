@@ -39,7 +39,7 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="Cyrus IMAP 3.11.0-alpha0 (dev) documentation" href="../../../index.html"/>
         <link rel="up" title="Administrator Guide" href="../admin.html"/>
-        <link rel="next" title="Cyrus Backups" href="backups.html"/>
+        <link rel="next" title="Cyrus NNTP" href="nntp.html"/>
         <link rel="prev" title="Supported Quota Types" href="quotas/quotatypes.html"/> 
 
   
@@ -432,14 +432,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../manpages/index.html#configuration-files">(5) Configuration Files</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../manpages/configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../manpages/index.html#system-commands">(8) System Commands</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
@@ -447,7 +444,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
@@ -491,7 +487,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/rehash.html"><strong>rehash</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/restore.html"><strong>restore</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/sievec.html"><strong>sievec</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/sieved.html"><strong>sieved</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../manpages/systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
@@ -534,7 +529,6 @@
 <li class="toctree-l4"><a class="reference internal" href="access-control.html">Access Control</a></li>
 <li class="toctree-l4"><a class="reference internal" href="quotas.html">Quotas</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Cyrus Sieve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="backups.html">Cyrus Backups</a></li>
 <li class="toctree-l4"><a class="reference internal" href="nntp.html">Cyrus NNTP</a></li>
 <li class="toctree-l4"><a class="reference internal" href="protlayer.html">Cyrus Prot Layer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sop.html">Standard Operating Procedures</a></li>
@@ -667,10 +661,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../developer/thoughts.html">Thoughts &amp; Notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/backup.html">Notes for backup implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/notes.html">Cyrus IMAP Server: Notes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../developer/thoughts/prot-events.html">Cyrus IMAP Server: Prot Events</a></li>
 </ul>
@@ -937,7 +929,7 @@ up:</p>
 <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
 <span class="s2">&quot;IMPLEMENTATION&quot;</span> <span class="s2">&quot;Cyrus timsieved v3.8.3&quot;</span>
 <span class="s2">&quot;VERSION&quot;</span> <span class="s2">&quot;1.0&quot;</span>
-<span class="s2">&quot;SASL&quot;</span> <span class="s2">&quot;ANONYMOUS PLAIN KERBEROS_V4 GSSAPI&quot;</span>
+<span class="s2">&quot;SASL&quot;</span> <span class="s2">&quot;ANONYMOUS PLAIN GSSAPI&quot;</span>
 <span class="s2">&quot;SIEVE&quot;</span> <span class="s2">&quot;fileinto reject envelope vacation imapflags notify subaddress regex&quot;</span>
 <span class="s2">&quot;NOTIFY&quot;</span> <span class="s2">&quot;mailto&quot;</span>
 <span class="s2">&quot;UNAUTHENTICATE&quot;</span>
@@ -1201,7 +1193,7 @@ online which describes the language.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="backups.html" class="btn btn-neutral float-right" title="Cyrus Backups" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nntp.html" class="btn btn-neutral float-right" title="Cyrus NNTP" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="quotas/quotatypes.html" class="btn btn-neutral" title="Supported Quota Types" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1213,7 +1205,7 @@ online which describes the language.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 23 2024
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Oct 24 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.

@@ -432,7 +432,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../manpages/index.html#configuration-files">(5) Configuration Files</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../manpages/configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../manpages/index.html#system-commands">(8) System Commands</a><ul>
@@ -999,7 +998,7 @@ auth name of <code class="docutils literal notranslate"><span class="pre">mailpr
 </pre></div>
 </div>
 <p>For SASL mechanisms not using authnames or passwords (e.g.
-KERBEROS_V4), the password options are not required. Note the use of
+GSSAPI), the password options are not required. Note the use of
 the same authname as configured in the proxyservers line of the
 backend's <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> above.</p>
 <p>Upon starting <a class="reference internal" href="../../manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> on the frontend, the local
@@ -1275,7 +1274,7 @@ and <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Jun 23 2024
+        &copy; Copyright 1993–2024, The Cyrus Team. Last updated on Oct 24 2024
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
