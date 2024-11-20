@@ -3725,16 +3725,15 @@ rather than generating the bounce message in Cyrus.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">sieve_vacation_min_response:</span></code> 3d</p>
 <blockquote>
-<div><p>Minimum time interval between consecutive vacation responses, per
-draft-ietf-vacation-seconds.txt.  The default is 3 days.</p>
+<div><p>Minimum time interval between consecutive vacation responses, per <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6131.html"><strong>RFC 6131</strong></a>.
+The default is 3 days.</p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">sieve_vacation_max_response:</span></code> 90d</p>
 <blockquote>
-<div><p>Maximum time interval between consecutive vacation responses, per
-draft-ietf-vacation-seconds.txt.  The default is 90 days.  The
-minimum is 7 days.</p>
+<div><p>Maximum time interval between consecutive vacation responses, per <span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6131.html"><strong>RFC 6131</strong></a>.
+The default is 90 days.  The minimum is 7 days.</p>
 <p>For backward compatibility, if no unit is specified, seconds is
 assumed.</p>
 </div></blockquote>
@@ -3787,8 +3786,8 @@ option smtp_host.</p>
 the executable defined in the config option sendmail.
 The executable must accept &quot;-bs&quot; as command line
 argument, read from stdin and must implement the minimum
-SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
-<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
+SMTP protocol as defined in section 4.5.1 of <span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a>.</p>
+<p>If the SMTP EHLO command reports AUTH (<span class="target" id="index-24"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a>) as a
 supported extension, then the MAIL FROM command includes
 the AUTH parameter, with its value set to the name of any
 authenticated user which triggered the email. The AUTH
@@ -3841,7 +3840,7 @@ Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">specialuse_extra:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Whitespace separated list of extra special-use attributes
-that can be set on a mailbox. <span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
+that can be set on a mailbox. <span class="target" id="index-25"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</p>
@@ -4128,7 +4127,7 @@ is assumed.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">imapidletimeout:</span></code> &lt;none&gt;</p>
 <blockquote>
-<div><p>Timeout for idling clients (<span class="target" id="index-24"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
+<div><p>Timeout for idling clients (<span class="target" id="index-26"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>).  If not set (the default),
 the value of &quot;timeout&quot; will be used instead.</p>
 <p>For backward compatibility, if no unit is specified, minutes
 is assumed.</p>
