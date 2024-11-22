@@ -122,7 +122,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../download/getcyrus.html#use-the-source-from-git">Use the source from Git</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../download/getcyrus.html#external-tools">External Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../download/getcyrus.html#licensing">Licensing</a></li>
 </ul>
 </li>
@@ -536,7 +535,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../reference/admin/monitoring.html">Monitoring</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../reference/admin/config-mailboxdistribution.html">Mailbox Distribution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../reference/admin/murder/murder.html">Cyrus Murder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/admin/nginx-proxy.html">HOWTO: Using an NGINX IMAP Proxy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../reference/admin/tweaking.html">Tweaking Cyrus IMAP</a></li>
 </ul>
 </li>
@@ -969,8 +967,8 @@ right <code class="docutils literal notranslate"><span class="pre">p</span></cod
 <div class="section" id="kerberos-vs-unix-authorization">
 <h4>Kerberos vs. Unix Authorization<a class="headerlink" href="#kerberos-vs-unix-authorization" title="Permalink to this headline">¶</a></h4>
 <p>The Cyrus IMAP server comes with four authorization mechanisms, one is
-compatible with Unix-style (<code class="docutils literal notranslate"><span class="pre">/etc/passwd</span></code>) authorization, one for use
-with Kerberos 4, one for use with Kerberos 5, and one for use with an
+compatible with Unix-style (<code class="docutils literal notranslate"><span class="pre">/etc/passwd</span></code>) authorization, one called
+<code class="docutils literal notranslate"><span class="pre">mboxgroups</span></code>, one for use with Kerberos 5, and one for use with an
 external authorization process (ptloader) which can interface with
 other group databases (e.g. AFS PTS groups, LDAP Groups, etc).</p>
 <div class="admonition note">
