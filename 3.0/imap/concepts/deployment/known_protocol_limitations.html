@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Known Protocol Limitations &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,23 +758,23 @@
 </div>
           <div role="main" class="document">
             
-  <section id="known-protocol-limitations">
-<h1>Known Protocol Limitations<a class="headerlink" href="#known-protocol-limitations" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="known-protocol-limitations">
+<h1>Known Protocol Limitations<a class="headerlink" href="#known-protocol-limitations" title="Permalink to this headline">¶</a></h1>
 <p>This chapter lists known limitations to protocols commonly in use today, that may impact your deployment.</p>
-<section id="pop3-and-mailbox-locking">
-<h2>POP3 and Mailbox Locking<a class="headerlink" href="#pop3-and-mailbox-locking" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="pop3-and-mailbox-locking">
+<h2>POP3 and Mailbox Locking<a class="headerlink" href="#pop3-and-mailbox-locking" title="Permalink to this headline">¶</a></h2>
 <p>POP3, as described in <a class="reference external" href="http://tools.ietf.org/html/rfc1939">RFC 1939</a>, requires a mailbox to be locked by a POP3 session.</p>
 <p>As such, when POP3 is used simultaneously across multiple clients, and a common set of mailboxes, an error similar to the following would occur:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mailbox</span> <span class="n">locked</span> <span class="n">by</span> <span class="n">POP</span> <span class="n">server</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>The exact error message may be subject to the specific error message a client application wishes to display.</p>
-</section>
-<section id="cyrus-imap-pop3-implementation">
-<h2>Cyrus IMAP POP3 Implementation<a class="headerlink" href="#cyrus-imap-pop3-implementation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="cyrus-imap-pop3-implementation">
+<h2>Cyrus IMAP POP3 Implementation<a class="headerlink" href="#cyrus-imap-pop3-implementation" title="Permalink to this headline">¶</a></h2>
 <p>The Cyrus IMAP POP3 server implementation does not have the aforementioned problem of POP3 sessions locking mailboxes. As of version 2.4.0, Cyrus IMAP allows multiple POP3 sessions to operate on a single mailbox by providing a - virtual - snapshot of the mailbox, and all operations are executed to this snapshot. A safety mechanism ensures no messages are deleted until after all existing operations have closed the mailbox - including IMAP, LMTP and POP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -802,7 +797,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -825,12 +820,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

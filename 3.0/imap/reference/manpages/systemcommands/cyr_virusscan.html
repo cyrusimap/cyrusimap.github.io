@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_virusscan &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,15 +758,15 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-cyr_virusscan-8"></span><section id="cyr-virusscan">
-<span id="imap-reference-manpages-systemcommands-cyr-virusscan"></span><h1><strong>cyr_virusscan</strong><a class="headerlink" href="#cyr-virusscan" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-cyr_virusscan-8"><span id="std:cyrusman-cyr_virusscan(8)"></span></span><div class="section" id="cyr-virusscan">
+<span id="imap-reference-manpages-systemcommands-cyr-virusscan"></span><h1><strong>cyr_virusscan</strong><a class="headerlink" href="#cyr-virusscan" title="Permalink to this headline">¶</a></h1>
 <p>Scan for viruses using configured virus scanner or manage infected messages using search criteria.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_virusscan</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>imap-search-string</em> ] [ <strong>-r</strong> [ <strong>-n</strong>] ] [<strong>-v</strong>] [ <em>mboxpattern1</em> ... ]</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyr_virusscan</strong> can be used to invoke an external virus scanner (currently
 only <a class="reference external" href="https://www.clamav.net/documents/installing-clamav">ClamAV</a> is
 supported) to scan specified IMAP mailboxes. If no mboxpattern is given,
@@ -793,44 +788,44 @@ via crontab(5) or your preferred method (i.e. /etc/cron.hourly), or by
 <p><strong>cyr_virusscan</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p>Note that Cyrus does not ship with any virus scanners: you need to install
 one separately to make use of it with Cyrus.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_virusscan-C">
-<span id="cmdoption-cyr-virusscan-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_virusscan-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_virusscan-C">
+<span id="cmdoption-cyr-virusscan-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_virusscan-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_virusscan-n">
-<span id="cmdoption-cyr-virusscan-n"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_virusscan-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_virusscan-n">
+<span id="cmdoption-cyr-virusscan-n"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Notify mailbox owner of deleted messages via email.  This flag is
 only operable in combination with <strong>-r</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_virusscan-r">
-<span id="cmdoption-cyr-virusscan-r"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_virusscan-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_virusscan-r">
+<span id="cmdoption-cyr-virusscan-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove infected messages.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_virusscan-s">
-<span id="cmdoption-cyr-virusscan-s"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"> <span class="pre">imap-search-string</span></span><a class="headerlink" href="#cmdoption-cyr_virusscan-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_virusscan-s">
+<span id="cmdoption-cyr-virusscan-s"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"> <span class="pre">imap-search-string</span></code><a class="headerlink" href="#cmdoption-cyr_virusscan-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rather than scanning for viruses, messages matching the search
 criteria will be treated as infected.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_virusscan-v">
-<span id="cmdoption-cyr-virusscan-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_virusscan-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_virusscan-v">
+<span id="cmdoption-cyr-virusscan-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_virusscan-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produce more verbose output</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_virusscan</strong></pre>
 <blockquote>
 <div><p>Scan all mailboxes, printing report on the screen.  Do not
@@ -890,20 +885,20 @@ Bovik’s inbox.</p>
 <span class="n">user</span><span class="o">.</span><span class="n">bovik</span>                                         <span class="mi">19268</span>          <span class="n">READ</span>  <span class="n">Cyrus</span> <span class="n">Administrator</span> <span class="n">Targeted</span> <span class="n">Removal</span> <span class="p">(</span><span class="n">Phish</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>Virus scan support was first introduced in Cyrus version 3.0.</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a>, <a class="reference external" href="https://www.clamav.net/documents/installing-clamav">ClamAV</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -926,7 +921,7 @@ Bovik’s inbox.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Sep 22 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -949,12 +944,9 @@ Bovik’s inbox.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

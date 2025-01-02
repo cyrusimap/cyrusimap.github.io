@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus CalDAV Scheduling Flowchart &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,10 +783,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-thoughts-caldavflow"></span><section id="cyrus-caldav-scheduling-flowchart">
-<h1>Cyrus CalDAV Scheduling Flowchart<a class="headerlink" href="#cyrus-caldav-scheduling-flowchart" title="Permalink to this heading">¶</a></h1>
-<section id="caldav-put-create-modify-via-http-put-on-a-resource-or-post-add-member-on-a-calendar">
-<h2>caldav_put() - create/modify via HTTP PUT on a resource or POST (add-member) on a calendar<a class="headerlink" href="#caldav-put-create-modify-via-http-put-on-a-resource-or-post-add-member-on-a-calendar" title="Permalink to this heading">¶</a></h2>
+  <span class="target" id="imap-developer-thoughts-caldavflow"></span><div class="section" id="cyrus-caldav-scheduling-flowchart">
+<h1>Cyrus CalDAV Scheduling Flowchart<a class="headerlink" href="#cyrus-caldav-scheduling-flowchart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="caldav-put-create-modify-via-http-put-on-a-resource-or-post-add-member-on-a-calendar">
+<h2>caldav_put() - create/modify via HTTP PUT on a resource or POST (add-member) on a calendar<a class="headerlink" href="#caldav-put-create-modify-via-http-put-on-a-resource-or-post-add-member-on-a-calendar" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check if the new resource is a scheduling resource (contains
 ORGANIZER property). If not, skip to step 4.</p></li>
@@ -810,9 +805,9 @@ ORGANIZER property). If not, skip to step 4.</p></li>
 </li>
 <li><p>Store the new/modified resource.</p></li>
 </ol>
-</section>
-<section id="caldav-delete-sched-remove-via-http-delete-on-a-resource">
-<h2>caldav_delete_sched() - remove via HTTP DELETE on a resource<a class="headerlink" href="#caldav-delete-sched-remove-via-http-delete-on-a-resource" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="caldav-delete-sched-remove-via-http-delete-on-a-resource">
+<h2>caldav_delete_sched() - remove via HTTP DELETE on a resource<a class="headerlink" href="#caldav-delete-sched-remove-via-http-delete-on-a-resource" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check if the existing resource is a scheduling resource (has
 Schedule-Tag). If not, we are done.</p></li>
@@ -821,25 +816,25 @@ Schedule-Tag). If not, we are done.</p></li>
 <a class="reference external" href="#sched_request">sched_request()</a>, otherwise goto
 <a class="reference external" href="#sched_reply">sched_reply()</a>.</p></li>
 </ol>
-</section>
-<section id="caldav-post-busytime-query-via-http-post-on-scheduling-outbox">
-<h2>caldav_post() - busytime query via HTTP POST on Scheduling Outbox<a class="headerlink" href="#caldav-post-busytime-query-via-http-post-on-scheduling-outbox" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="caldav-post-busytime-query-via-http-post-on-scheduling-outbox">
+<h2>caldav_post() - busytime query via HTTP POST on Scheduling Outbox<a class="headerlink" href="#caldav-post-busytime-query-via-http-post-on-scheduling-outbox" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Check the ACL on the owner’s Scheduling Outbox. If the authenticated
 user doesn’t have the DACL_SCHEDFB right, fail.</p></li>
 <li><p><a class="reference external" href="#sched_busytime_query">sched_busytime_query()</a>.</p></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sched-pollstatus-perform-a-voter-response-update">
-<h2>sched_pollstatus - perform a voter response update<a class="headerlink" href="#sched-pollstatus-perform-a-voter-response-update" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sched-pollstatus-perform-a-voter-response-update">
+<h2>sched_pollstatus - perform a voter response update<a class="headerlink" href="#sched-pollstatus-perform-a-voter-response-update" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sched-request-perform-an-organizer-request-attendee-status-update">
-<h2>sched_request() - perform an organizer request / attendee status update<a class="headerlink" href="#sched-request-perform-an-organizer-request-attendee-status-update" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sched-request-perform-an-organizer-request-attendee-status-update">
+<h2>sched_request() - perform an organizer request / attendee status update<a class="headerlink" href="#sched-request-perform-an-organizer-request-attendee-status-update" title="Permalink to this headline">¶</a></h2>
 <p>Check the ACL on the owner’s Scheduling Outbox. If the authenticated
 user doesn’t have the DACL_INVITE right, fail.</p>
 <p>If the request includes a resource, then set METHOD:REQUEST, otherwise
@@ -867,9 +862,9 @@ RRULE, RDATE, EXDATE to those of the new component.</p></li>
 <a class="reference external" href="#sched_deliver">sched_deliver()</a> the iTIP message.</p>
 <p>Foreach component in the new/modified resource update the
 SCHEDULE-STATUS of each ATTENDEE.</p>
-</section>
-<section id="process-attendees-create-a-suitable-itip-request-message-for-each-attendee">
-<h2>process_attendees() - create a suitable iTIP request message for each attendee<a class="headerlink" href="#process-attendees-create-a-suitable-itip-request-message-for-each-attendee" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="process-attendees-create-a-suitable-itip-request-message-for-each-attendee">
+<h2>process_attendees() - create a suitable iTIP request message for each attendee<a class="headerlink" href="#process-attendees-create-a-suitable-itip-request-message-for-each-attendee" title="Permalink to this headline">¶</a></h2>
 <p>Foreach ATTENDEE in the component, remove the SCHEDULE-STATUS parameter,
 and set PROPSTAT=NEEDS-ACTION if required.</p>
 <p>Make a copy of the component and
@@ -887,25 +882,25 @@ the attendee’s iTIP message.</p></li>
 </ol>
 <p>If the component is not the “master”, foreach attendee do
 <a class="reference external" href="#sched_exclude">sched_exclude()</a>.</p>
-</section>
-<section id="sched-exclude-exclude-an-attendee-from-a-recurrence-instance">
-<h2>sched_exclude() - exclude an attendee from a recurrence instance<a class="headerlink" href="#sched-exclude-exclude-an-attendee-from-a-recurrence-instance" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sched-exclude-exclude-an-attendee-from-a-recurrence-instance">
+<h2>sched_exclude() - exclude an attendee from a recurrence instance<a class="headerlink" href="#sched-exclude-exclude-an-attendee-from-a-recurrence-instance" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>If the component did not appear in the attendee’s iTIP message, add
 an EXDATE property (based on the RECURRENCE-ID of the component) to
 the master component of the attendee’s iTIP message.</p></li>
 </ol>
-</section>
-<section id="sched-cancel-cancel-an-organizer-event-task">
-<h2>sched_cancel() - cancel an organizer event/task<a class="headerlink" href="#sched-cancel-cancel-an-organizer-event-task" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sched-cancel-cancel-an-organizer-event-task">
+<h2>sched_cancel() - cancel an organizer event/task<a class="headerlink" href="#sched-cancel-cancel-an-organizer-event-task" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Set STATUS:CANCELLED on the component.</p></li>
 <li><p><a class="reference external" href="#process_attendees">process_attendees()</a>.</p></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sched-reply-perform-an-attendee-reply">
-<h2>sched_reply() - perform an attendee reply<a class="headerlink" href="#sched-reply-perform-an-attendee-reply" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sched-reply-perform-an-attendee-reply">
+<h2>sched_reply() - perform an attendee reply<a class="headerlink" href="#sched-reply-perform-an-attendee-reply" title="Permalink to this headline">¶</a></h2>
 <p>Check the CalDAV Scheduling parameters on ORGANIZER. If SCHEDULE-AGENT
 != SERVER, we are done.</p>
 <p>Check the ACL on the owner’s Scheduling Outbox. If the authenticated
@@ -942,52 +937,52 @@ in our iTIP message.</p></li>
 <p><a class="reference external" href="#sched_deliver">sched_deliver()</a> our iTIP message.</p>
 <p>Foreach component in the new/modified resource that appeared in our iTIP
 message, update the SCHEDULE-STATUS of the ORGANIZER.</p>
-</section>
-<section id="trim-attendees-remove-all-attendees-other-than-the-one-replying">
-<h2>trim_attendees() - remove all attendees other than the one replying<a class="headerlink" href="#trim-attendees-remove-all-attendees-other-than-the-one-replying" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="trim-attendees-remove-all-attendees-other-than-the-one-replying">
+<h2>trim_attendees() - remove all attendees other than the one replying<a class="headerlink" href="#trim-attendees-remove-all-attendees-other-than-the-one-replying" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Clone the component and remove all ATTENDEE properties other than the
 one corresponding to the owner of the calendar.</p></li>
 <li><p>Return the ATTENDEE property of owner, his/her PARTSTAT parameter,
 and the RECURRENCE-ID of the component.</p></li>
 </ol>
-</section>
-<section id="sched-vpoll-reply-add-voter-responses-to-vpoll-reply">
-<h2>sched_vpoll_reply() - add voter responses to VPOLL reply<a class="headerlink" href="#sched-vpoll-reply-add-voter-responses-to-vpoll-reply" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sched-vpoll-reply-add-voter-responses-to-vpoll-reply">
+<h2>sched_vpoll_reply() - add voter responses to VPOLL reply<a class="headerlink" href="#sched-vpoll-reply-add-voter-responses-to-vpoll-reply" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li></li>
 </ol>
-</section>
-<section id="sched-decline-decline-a-recurrence-instance-for-an-attendee">
-<h2>sched_decline() - decline a recurrence instance for an attendee<a class="headerlink" href="#sched-decline-decline-a-recurrence-instance-for-an-attendee" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sched-decline-decline-a-recurrence-instance-for-an-attendee">
+<h2>sched_decline() - decline a recurrence instance for an attendee<a class="headerlink" href="#sched-decline-decline-a-recurrence-instance-for-an-attendee" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Set PARTSTAT of ATTENDEE to DECLINED.</p></li>
 <li><p><a class="reference external" href="#clean_component">clean_component()</a>.</p></li>
 <li><p>Add the component to our iTIP message.</p></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="clean-component-sanitize-a-component-for-use-in-an-itip-message">
-<h2>clean_component() - sanitize a component for use in an iTIP message<a class="headerlink" href="#clean-component-sanitize-a-component-for-use-in-an-itip-message" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="clean-component-sanitize-a-component-for-use-in-an-itip-message">
+<h2>clean_component() - sanitize a component for use in an iTIP message<a class="headerlink" href="#clean-component-sanitize-a-component-for-use-in-an-itip-message" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Update DTSTAMP.</p></li>
 <li><p>Remove any VALARM components.</p></li>
 <li><p>For a reply/decline only, remove scheduling parameters from
 ORGANIZER.</p></li>
 </ol>
-</section>
-<section id="sched-deliver-deliver-an-itip-message-to-a-recipient">
-<h2>sched_deliver() - deliver an iTIP message to a recipient<a class="headerlink" href="#sched-deliver-deliver-an-itip-message-to-a-recipient" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="sched-deliver-deliver-an-itip-message-to-a-recipient">
+<h2>sched_deliver() - deliver an iTIP message to a recipient<a class="headerlink" href="#sched-deliver-deliver-an-itip-message-to-a-recipient" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Lookup the recipient.</p></li>
 <li><p>If local to our server goto
 <a class="reference external" href="#sched_deliver_local">sched_deliver_local()</a>, otherwise goto
 <a class="reference external" href="#sched_deliver_remote">sched_deliver_remote()</a>.</p></li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sched-deliver-local-deliver-an-itip-message-to-a-local-user">
-<h2>sched_deliver_local() - deliver an iTIP message to a local user<a class="headerlink" href="#sched-deliver-local-deliver-an-itip-message-to-a-local-user" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sched-deliver-local-deliver-an-itip-message-to-a-local-user">
+<h2>sched_deliver_local() - deliver an iTIP message to a local user<a class="headerlink" href="#sched-deliver-local-deliver-an-itip-message-to-a-local-user" title="Permalink to this headline">¶</a></h2>
 <p>Check the ACL on the owner’s Scheduling Inbox. If the sender doesn’t
 have the proper right (DACL_INVITE for request/cancel, DACL_REPLY for
 reply), fail.</p>
@@ -1020,9 +1015,9 @@ Inbox.</p>
 <p>If the iTIP method is REPLY, send an update other attendees via
 <a class="reference external" href="#sched_pollstatus">sched_pollstatus()</a> (VPOLL only) or
 <a class="reference external" href="#sched_request">sched_request()</a>.</p>
-</section>
-<section id="deliver-merge-reply-update-an-organizer-resource-with-an-attendee-reply">
-<h2>deliver_merge_reply() - update an organizer resource with an attendee reply<a class="headerlink" href="#deliver-merge-reply-update-an-organizer-resource-with-an-attendee-reply" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="deliver-merge-reply-update-an-organizer-resource-with-an-attendee-reply">
+<h2>deliver_merge_reply() - update an organizer resource with an attendee reply<a class="headerlink" href="#deliver-merge-reply-update-an-organizer-resource-with-an-attendee-reply" title="Permalink to this headline">¶</a></h2>
 <p>Foreach component in the existing resource, add it to our hash table
 keyed by RECURRENCE-ID (for comparison against iTIP message).</p>
 <p>Foreach component in the iTIP message:</p>
@@ -1048,16 +1043,16 @@ existing component.</p>
 component via
 <a class="reference external" href="#deliver_merge_vpoll_reply">deliver_merge_vpoll_reply()</a>.</p>
 <p>Return the sending ATTENDEE.</p>
-</section>
-<section id="deliver-merge-vpoll-reply-update-an-organizer-resource-with-voter-responses">
-<h2>deliver_merge_vpoll_reply() - update an organizer resource with voter responses<a class="headerlink" href="#deliver-merge-vpoll-reply-update-an-organizer-resource-with-voter-responses" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="deliver-merge-vpoll-reply-update-an-organizer-resource-with-voter-responses">
+<h2>deliver_merge_vpoll_reply() - update an organizer resource with voter responses<a class="headerlink" href="#deliver-merge-vpoll-reply-update-an-organizer-resource-with-voter-responses" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Foreach sub-component in the existing resource, replace any voter
 response(s) with those from the reply.</p></li>
 </ol>
-</section>
-<section id="deliver-merge-request-create-update-an-attendee-resource-with-an-organizer-request">
-<h2>deliver_merge_request() - create/update an attendee resource with an organizer request<a class="headerlink" href="#deliver-merge-request-create-update-an-attendee-resource-with-an-organizer-request" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="deliver-merge-request-create-update-an-attendee-resource-with-an-organizer-request">
+<h2>deliver_merge_request() - create/update an attendee resource with an organizer request<a class="headerlink" href="#deliver-merge-request-create-update-an-attendee-resource-with-an-organizer-request" title="Permalink to this headline">¶</a></h2>
 <p>Foreach VTIMEZONE component in the existing resource, add it to our hash
 table keyed by TZID (for comparison against iTIP message).</p>
 <p>Foreach VTIMEZONE component in the iTIP message:</p>
@@ -1084,9 +1079,9 @@ component to the new component.</p></li>
 <li><p>Remove the existing component from the existing object.</p></li>
 </ol>
 <p>Add the new component to the existing object.</p>
-</section>
-<section id="deliver-merge-pollstatus-update-voter-responses-on-a-voter-resource">
-<h2>deliver_merge_pollstatus() - update voter responses on a voter resource<a class="headerlink" href="#deliver-merge-pollstatus-update-voter-responses-on-a-voter-resource" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="deliver-merge-pollstatus-update-voter-responses-on-a-voter-resource">
+<h2>deliver_merge_pollstatus() - update voter responses on a voter resource<a class="headerlink" href="#deliver-merge-pollstatus-update-voter-responses-on-a-voter-resource" title="Permalink to this headline">¶</a></h2>
 <p>Foreach sub-component in the existing resource, add it to our hash table
 keyed by POLL-ITEM-ID (for comparison against iTIP message). The
 sub-component entry includes a hash table of VOTERs.</p>
@@ -1102,33 +1097,33 @@ iTIP message:</p>
 </ol>
 </li>
 </ol>
-</section>
+</div>
 <hr class="docutils" />
-<section id="sched-deliver-remote-deliver-an-itip-message-to-a-remote-user">
-<h2>sched_deliver_remote() - deliver an iTIP message to a remote user<a class="headerlink" href="#sched-deliver-remote-deliver-an-itip-message-to-a-remote-user" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="sched-deliver-remote-deliver-an-itip-message-to-a-remote-user">
+<h2>sched_deliver_remote() - deliver an iTIP message to a remote user<a class="headerlink" href="#sched-deliver-remote-deliver-an-itip-message-to-a-remote-user" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>If the recipient is local to our Murder, goto
 <a class="reference external" href="#isched_send">isched_send()</a>, otherwise goto
 <a class="reference external" href="#imip_send">imip_send()</a>.</p></li>
 <li><p>Retrieve status of iTIP message delivery.</p></li>
 </ol>
-</section>
-<section id="isched-send-deliver-an-itip-message-to-a-remote-user-via-ischedule-http">
-<h2>isched_send() - deliver an iTIP message to a remote user via iSchedule (HTTP)<a class="headerlink" href="#isched-send-deliver-an-itip-message-to-a-remote-user-via-ischedule-http" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="imip-send-deliver-an-itip-message-to-a-remote-user-via-imip-smtp">
-<h2>imip_send() - deliver an iTIP message to a remote user via iMIP (SMTP)<a class="headerlink" href="#imip-send-deliver-an-itip-message-to-a-remote-user-via-imip-smtp" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="sched-busytime-query-perform-a-busytime-query">
-<h2>sched_busytime_query() - perform a busytime query<a class="headerlink" href="#sched-busytime-query-perform-a-busytime-query" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="busytime-query-local-perform-a-busytime-query-on-a-local-user">
-<h2>busytime_query_local() - perform a busytime query on a local user<a class="headerlink" href="#busytime-query-local-perform-a-busytime-query-on-a-local-user" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="busytime-query-remote-perform-a-busytime-query-on-a-remote-user">
-<h2>busytime_query_remote() - perform a busytime query on a remote user<a class="headerlink" href="#busytime-query-remote-perform-a-busytime-query-on-a-remote-user" title="Permalink to this heading">¶</a></h2>
-</section>
-</section>
+</div>
+<div class="section" id="isched-send-deliver-an-itip-message-to-a-remote-user-via-ischedule-http">
+<h2>isched_send() - deliver an iTIP message to a remote user via iSchedule (HTTP)<a class="headerlink" href="#isched-send-deliver-an-itip-message-to-a-remote-user-via-ischedule-http" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="imip-send-deliver-an-itip-message-to-a-remote-user-via-imip-smtp">
+<h2>imip_send() - deliver an iTIP message to a remote user via iMIP (SMTP)<a class="headerlink" href="#imip-send-deliver-an-itip-message-to-a-remote-user-via-imip-smtp" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="sched-busytime-query-perform-a-busytime-query">
+<h2>sched_busytime_query() - perform a busytime query<a class="headerlink" href="#sched-busytime-query-perform-a-busytime-query" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="busytime-query-local-perform-a-busytime-query-on-a-local-user">
+<h2>busytime_query_local() - perform a busytime query on a local user<a class="headerlink" href="#busytime-query-local-perform-a-busytime-query-on-a-local-user" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="busytime-query-remote-perform-a-busytime-query-on-a-remote-user">
+<h2>busytime_query_remote() - perform a busytime query on a remote user<a class="headerlink" href="#busytime-query-remote-perform-a-busytime-query-on-a-remote-user" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
 
 
           </div>
@@ -1151,7 +1146,7 @@ iTIP message:</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1174,12 +1169,9 @@ iTIP message:</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

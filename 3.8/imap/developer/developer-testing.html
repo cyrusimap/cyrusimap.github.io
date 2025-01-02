@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Developer Test Environment &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -743,7 +738,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -792,19 +787,19 @@
 </div>
           <div role="main" class="document">
             
-  <section id="developer-test-environment">
-<span id="developer-testing"></span><h1>Developer Test Environment<a class="headerlink" href="#developer-test-environment" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="developer-test-environment">
+<span id="developer-testing"></span><h1>Developer Test Environment<a class="headerlink" href="#developer-test-environment" title="Permalink to this headline">¶</a></h1>
 <p>This assumes you have your <a class="reference internal" href="../installing.html#installing"><span class="std std-ref">basic server running</span></a> and you've made some changes and you want to test them to work out what's going right... or wrong.</p>
-<section id="installing-cassandane">
-<span id="install-cassandane"></span><h2>Installing Cassandane<a class="headerlink" href="#installing-cassandane" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="installing-cassandane">
+<span id="install-cassandane"></span><h2>Installing Cassandane<a class="headerlink" href="#installing-cassandane" title="Permalink to this headline">¶</a></h2>
 <p>Cassandane is a Perl-based integration test suite for Cyrus.
 <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/tree/master/cassandane/doc">Cassandane documentation</a>
 includes information on setting up tests and writing new tests.</p>
 <p>Why &quot;Cassandane&quot;? Wikipedia indicates that <a class="reference external" href="https://en.wikipedia.org/wiki/Cassandane">Cassandane</a> was the name of
 the consort of King Cyrus the Great of Persia, founder of the Achaemenid
 Persian Empire.  So that's kinda cool.</p>
-<section id="install-and-configure-cassandane">
-<h3>Install and configure Cassandane<a class="headerlink" href="#install-and-configure-cassandane" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="install-and-configure-cassandane">
+<h3>Install and configure Cassandane<a class="headerlink" href="#install-and-configure-cassandane" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>You already have it -- it's in the &quot;cassandane&quot; subdirectory of the cyrus-imapd
 sources.</p></li>
@@ -889,9 +884,9 @@ sudo<span class="w"> </span>adduser<span class="w"> </span>cyrus<span class="w">
 </div></blockquote>
 </li>
 </ol>
-</section>
-<section id="install-imaptest">
-<h3>Install IMAPTest<a class="headerlink" href="#install-imaptest" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="install-imaptest">
+<h3>Install IMAPTest<a class="headerlink" href="#install-imaptest" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://www.imapwiki.org/ImapTest">IMAPTest</a> is a testing suite which uses libraries from the Dovecot installation.</p>
 <ol class="arabic">
 <li><p>Fetch and compile Dovecot.</p>
@@ -921,10 +916,10 @@ for &quot;dovecot.git&quot; and &quot;imaptest.git&quot; to see how these two co
 are fetched and built, and do the same yourself.  Briefly, Dovecot is built
 from a known commit id on the upstream repository, whereas IMAPTest is built
 from the &quot;cyrus&quot; branch of our own fork.</p>
-</section>
-</section>
-<section id="rebuild-cyrus-for-testing">
-<h2>Rebuild Cyrus for Testing<a class="headerlink" href="#rebuild-cyrus-for-testing" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="rebuild-cyrus-for-testing">
+<h2>Rebuild Cyrus for Testing<a class="headerlink" href="#rebuild-cyrus-for-testing" title="Permalink to this headline">¶</a></h2>
 <p>Prepare to rebuild by making the source tree shiny and clean as if you've done a brand new checkout. Leave no old artifacts lying around!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
 make<span class="w"> </span>clean
@@ -958,9 +953,9 @@ sudo<span class="w"> </span>make<span class="w"> </span>install-binsymlinks
 sudo<span class="w"> </span>cp<span class="w"> </span>tools/mkimap<span class="w"> </span>/usr/cyrus/bin/mkimap
 </pre></div>
 </div>
-</section>
-<section id="running-the-tests">
-<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
 <p>Cassandane internals need to run as the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, but if you gave
 yourself passwordless sudo access as instructed above, then Cassandane will
 take care of switching to the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user for you.  In which case, just run
@@ -972,18 +967,18 @@ it as yourself.</p>
 </pre></div>
 </div>
 <p>Do not run it as root.</p>
-</section>
-<section id="debugging-and-stacktraces">
-<h2>Debugging and stacktraces<a class="headerlink" href="#debugging-and-stacktraces" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="debugging-and-stacktraces">
+<h2>Debugging and stacktraces<a class="headerlink" href="#debugging-and-stacktraces" title="Permalink to this headline">¶</a></h2>
 <p>Check out the guide to <a class="reference internal" href="../reference/faqs/o-gdb.html#faqs-o-gdb"><span class="std std-ref">running Cyrus components under gdb</span></a>.</p>
 <p>In the event of a crash, here's how to <a class="reference internal" href="../reference/faqs/o-coredump.html#faqs-o-coredump"><span class="std std-ref">generate a stacktrace</span></a>.</p>
 <p>Core dumps will be owned by the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, but your source tree will
 probably be owned by yourself.  Copy the core dump somewhere convenient,
 change the ownership to yourself, and then you can open the core file in
 gdb for examination.</p>
-</section>
-<section id="tips-and-tricks">
-<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="tips-and-tricks">
+<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h2>
 <p>Read the script to see other options. If you're having problems, add more
 <code class="docutils literal notranslate"><span class="pre">-v</span></code> options to the testrunner to get more info out.</p>
 <p><strong>Looking for memory leaks?</strong> Run with --valgrind to use valgrind (if it's
@@ -993,8 +988,8 @@ IMAP telemetry.</p>
 <p>Also helpful to run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/var/log/syslog</span></code>, and examine
 /var/tmp/cass as <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> to examine log files and disk structures for
 failed tests.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1017,7 +1012,7 @@ failed tests.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Oct 16 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1040,12 +1035,9 @@ failed tests.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

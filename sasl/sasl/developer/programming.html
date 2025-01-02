@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Application Programmer’s Guide &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -488,14 +483,14 @@
 </div>
           <div role="main" class="document">
             
-  <section id="application-programmer-s-guide">
-<span id="programming"></span><h1>Application Programmer’s Guide<a class="headerlink" href="#application-programmer-s-guide" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="application-programmer-s-guide">
+<span id="programming"></span><h1>Application Programmer’s Guide<a class="headerlink" href="#application-programmer-s-guide" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>NOTE: This is a work in progress. Any contributions would be
 <em>very</em> appreciated.</p>
 </div>
-<nav class="contents local" id="contents">
+<div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p>
 <ul>
@@ -562,29 +557,29 @@
 </ul>
 </li>
 </ul>
-</nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
-<section id="about-this-guide">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">About this Guide</a><a class="headerlink" href="#about-this-guide" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="about-this-guide">
+<h3><a class="toc-backref" href="#id3">About this Guide</a><a class="headerlink" href="#about-this-guide" title="Permalink to this headline">¶</a></h3>
 <p>This guide gives a tutorial on the use of the Cyrus SASL library
 for a client or server application. It complies with versions
 including and after 2.0.0. The following pages should only be
 considered a guide, not the final word on programming with the
 Cyrus SASL library. Consult the header files in the distribution in
 the case of ambiguities.</p>
-</section>
-<section id="what-is-sasl">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">What is SASL?</a><a class="headerlink" href="#what-is-sasl" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="what-is-sasl">
+<h3><a class="toc-backref" href="#id4">What is SASL?</a><a class="headerlink" href="#what-is-sasl" title="Permalink to this headline">¶</a></h3>
 <p>SASL stands for Simple Authentication Security Layer and is
-defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2222.html"><strong>RFC 2222</strong></a>. That document is very difficult to understand however and
+defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2222.html"><strong>RFC 2222</strong></a>. That document is very difficult to understand however and
 it should be unnecessary to consult it.</p>
-</section>
-</section>
-<section id="background">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Background</a><a class="headerlink" href="#background" title="Permalink to this heading">¶</a></h2>
-<section id="how-did-the-world-work-before-sasl">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">How did the world work before SASL?</a><a class="headerlink" href="#how-did-the-world-work-before-sasl" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="background">
+<h2><a class="toc-backref" href="#id5">Background</a><a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-did-the-world-work-before-sasl">
+<h3><a class="toc-backref" href="#id6">How did the world work before SASL?</a><a class="headerlink" href="#how-did-the-world-work-before-sasl" title="Permalink to this headline">¶</a></h3>
 <p>Before SASL, when a new protocol was written which required
 authentication (users proving who they are to an entity), the
 protocol had to allow explicitly for each individual authentication
@@ -608,13 +603,13 @@ IMAP, POP, and SMTP) then “Kerberos V4 for IMAP”, “Kerberos V4 for
 POP”, “Kerberos V4 for SMTP”, “CRAM MD5 for IMAP”, “CRAM-MD5 for
 POP”, etc… would need to be written. This could quickly create a
 huge number of different mechanism-protocol pairs to implement.</p>
-</section>
-<section id="sasl-to-the-rescue">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">SASL to the rescue!</a><a class="headerlink" href="#sasl-to-the-rescue" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="sasl-to-the-rescue">
+<h3><a class="toc-backref" href="#id7">SASL to the rescue!</a><a class="headerlink" href="#sasl-to-the-rescue" title="Permalink to this headline">¶</a></h3>
 <p>SASL hopefully solves all these problems. In practice it makes
 many of them easier to deal with.</p>
 <p>Protocol designers simply have to support SASL (in particular
-<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2222.html"><strong>RFC 2222</strong></a>). Consequently, any mechanism that supports SASL (just
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2222.html"><strong>RFC 2222</strong></a>). Consequently, any mechanism that supports SASL (just
 about anything you would want to use does now) is supported by the
 protocol. If a new authentication mechanism is invented the
 protocol automatically supports it without any modifications.</p>
@@ -636,28 +631,28 @@ several new types of plugins to allow for greater overall
 flexibility. Unfortunately, though similar, this new API is
 completely incompatible with the old API, and applications will
 need to be rewritten.</p>
-</section>
-</section>
-<section id="briefly">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Briefly</a><a class="headerlink" href="#briefly" title="Permalink to this heading">¶</a></h2>
-<section id="what-is-the-cyrus-sasl-library-good-for">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">What is the Cyrus SASL library good for?</a><a class="headerlink" href="#what-is-the-cyrus-sasl-library-good-for" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="briefly">
+<h2><a class="toc-backref" href="#id8">Briefly</a><a class="headerlink" href="#briefly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-the-cyrus-sasl-library-good-for">
+<h3><a class="toc-backref" href="#id9">What is the Cyrus SASL library good for?</a><a class="headerlink" href="#what-is-the-cyrus-sasl-library-good-for" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus SASL library is good for applications that wish to use
 protocols that support SASL authentication. An non-exhaustive list
 of these are: IMAP, SMTP, ACAP, and LDAP. Also if you are making a
 proprietary system and wish to support authentication it is a good
 way of supporting many different authentication types.</p>
-</section>
-<section id="what-does-the-cyrus-sasl-library-do">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">What does the Cyrus SASL library do?</a><a class="headerlink" href="#what-does-the-cyrus-sasl-library-do" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="what-does-the-cyrus-sasl-library-do">
+<h3><a class="toc-backref" href="#id10">What does the Cyrus SASL library do?</a><a class="headerlink" href="#what-does-the-cyrus-sasl-library-do" title="Permalink to this headline">¶</a></h3>
 <p>From a client point of view, the Cyrus SASL library, given a
 list of mechanisms the server supports it will decide the best
 mechanism to use and tell you what to send to the server at each
 step of the authentication. From a server perspective, it handles
 authentication requests from clients.</p>
-</section>
-<section id="what-doesn-t-the-cyrus-sasl-library-do">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">What doesn’t the Cyrus SASL library do?</a><a class="headerlink" href="#what-doesn-t-the-cyrus-sasl-library-do" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="what-doesn-t-the-cyrus-sasl-library-do">
+<h3><a class="toc-backref" href="#id11">What doesn’t the Cyrus SASL library do?</a><a class="headerlink" href="#what-doesn-t-the-cyrus-sasl-library-do" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus SASL library is neither network nor protocol aware. It
 is up to the application to send the data over the wire as well as
 to send the data in the protocol specific manner. With IMAP this
@@ -665,12 +660,12 @@ means putting it in the form: <code class="docutils literal notranslate"><span c
 just sends data in binary via bind requests. The Cyrus SASL library
 has utility base64 encode and decode routines to help with
 this.</p>
-</section>
-</section>
-<section id="client-only-section">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Client-only Section</a><a class="headerlink" href="#client-only-section" title="Permalink to this heading">¶</a></h2>
-<section id="a-typical-interaction-from-the-client-s-perspective">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">A typical interaction from the client’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-client-s-perspective" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="client-only-section">
+<h2><a class="toc-backref" href="#id12">Client-only Section</a><a class="headerlink" href="#client-only-section" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-typical-interaction-from-the-client-s-perspective">
+<h3><a class="toc-backref" href="#id13">A typical interaction from the client’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-client-s-perspective" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>A client makes a few calls to initialize SASL.</p></li>
 <li><p>Every time the client application makes a new connection it
@@ -687,11 +682,11 @@ chose</p></li>
 <li><p>Repeat the last 4 steps until the server tells you that the
 authentication is completed</p></li>
 </ul>
-</section>
-<section id="how-does-this-look-in-code">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">How does this look in code</a><a class="headerlink" href="#how-does-this-look-in-code" title="Permalink to this heading">¶</a></h3>
-<section id="initialize-the-library">
-<h4><a class="toc-backref" href="#id15" role="doc-backlink">1. Initialize the library</a><a class="headerlink" href="#initialize-the-library" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="how-does-this-look-in-code">
+<h3><a class="toc-backref" href="#id14">How does this look in code</a><a class="headerlink" href="#how-does-this-look-in-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="initialize-the-library">
+<h4><a class="toc-backref" href="#id15">1. Initialize the library</a><a class="headerlink" href="#initialize-the-library" title="Permalink to this headline">¶</a></h4>
 <p>This is done once, using <a class="reference internal" href="../reference/manpages/library/sasl_client_init.html#std-saslman-sasl_client_init-3">sasl_client_init(3)</a>.</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 
@@ -706,9 +701,9 @@ authentication is completed</p></li>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
-</section>
-<section id="make-a-new-sasl-connection">
-<h4><a class="toc-backref" href="#id16" role="doc-backlink">2. Make a new SASL connection</a><a class="headerlink" href="#make-a-new-sasl-connection" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="make-a-new-sasl-connection">
+<h4><a class="toc-backref" href="#id16">2. Make a new SASL connection</a><a class="headerlink" href="#make-a-new-sasl-connection" title="Permalink to this headline">¶</a></h4>
 <p>For every network connection, make a new SASL connection, using
 <a class="reference internal" href="../reference/manpages/library/sasl_client_new.html#std-saslman-sasl_client_new-3">sasl_client_new(3)</a>:</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* The SASL context kept for the life of the connection */</span>
@@ -733,9 +728,9 @@ authentication is completed</p></li>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
-</section>
-<section id="get-the-mechanism-list">
-<h4><a class="toc-backref" href="#id17" role="doc-backlink">3. Get the mechanism list</a><a class="headerlink" href="#get-the-mechanism-list" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="get-the-mechanism-list">
+<h4><a class="toc-backref" href="#id17">3. Get the mechanism list</a><a class="headerlink" href="#get-the-mechanism-list" title="Permalink to this headline">¶</a></h4>
 <p>Next get the list of SASL mechanisms the server supports. This is
 usually done through a capability command. Format the list as a
 single string separated by spaces. Feed this string into SASL to
@@ -777,9 +772,9 @@ is not valid after the next call to <a class="reference internal" href="../refer
 start the authentication process. This may or may not allow for
 initial data to be sent (see the documentation of the protocol to
 see).</p>
-</section>
-<section id="start-authentication">
-<h4><a class="toc-backref" href="#id18" role="doc-backlink">4. Start authentication</a><a class="headerlink" href="#start-authentication" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="start-authentication">
+<h4><a class="toc-backref" href="#id18">4. Start authentication</a><a class="headerlink" href="#start-authentication" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>For IMAP this might look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">tag</span><span class="p">}</span> <span class="s2">&quot;AUTHENTICATE&quot;</span> <span class="p">{</span><span class="n">mechusing</span><span class="p">}</span>\<span class="n">r</span>\<span class="n">n</span>
@@ -794,9 +789,9 @@ see).</p>
 </div>
 </li>
 </ul>
-</section>
-<section id="check-results">
-<span id="client-authentication-step"></span><h4><a class="toc-backref" href="#id19" role="doc-backlink">5. Check Results</a><a class="headerlink" href="#check-results" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="check-results">
+<span id="client-authentication-step"></span><h4><a class="toc-backref" href="#id19">5. Check Results</a><a class="headerlink" href="#check-results" title="Permalink to this headline">¶</a></h4>
 <p>Read what the server sent back. It can be one of three
 things:</p>
 <ol class="arabic simple">
@@ -841,9 +836,9 @@ authentication using <a class="reference internal" href="../reference/manpages/l
 specific manner and send it across the network to the server.</p>
 <p>Go <a class="reference internal" href="#client-authentication-step"><span class="std std-ref">back to check results</span></a> (this process
 repeats until authentication either succeeds or fails.</p>
-</section>
-<section id="authentication-successful">
-<span id="client-authentication-success"></span><h4><a class="toc-backref" href="#id20" role="doc-backlink">6. Authentication Successful</a><a class="headerlink" href="#authentication-successful" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="authentication-successful">
+<span id="client-authentication-success"></span><h4><a class="toc-backref" href="#id20">6. Authentication Successful</a><a class="headerlink" href="#authentication-successful" title="Permalink to this headline">¶</a></h4>
 <p>Before we’re done we need to call <a class="reference internal" href="../reference/manpages/library/sasl_client_step.html#std-saslman-sasl_client_step-3">sasl_client_step(3)</a> one more
 time to make sure the server isn’t trying to fool us. Some
 protocols include data along with the last step. If so this data
@@ -863,9 +858,9 @@ server.</p>
 <p>Don’t throw away the SASL connection object (sasl_conn_t *) yet
 though. If a security layer was negotiated you will need it to
 encode and decode the data sent over the network.</p>
-</section>
-<section id="cleaning-up">
-<h4><a class="toc-backref" href="#id21" role="doc-backlink">7. Cleaning up</a><a class="headerlink" href="#cleaning-up" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="cleaning-up">
+<h4><a class="toc-backref" href="#id21">7. Cleaning up</a><a class="headerlink" href="#cleaning-up" title="Permalink to this headline">¶</a></h4>
 <p>When you are finally done with connection to server, dispose of
 SASL connection using <a class="reference internal" href="../reference/manpages/library/sasl_dispose.html#std-saslman-sasl_dispose-3">sasl_dispose(3)</a>:</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_dispose</span><span class="p">(</span><span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>
@@ -883,13 +878,13 @@ use <a class="reference internal" href="../reference/manpages/library/sasl_done.
 </div>
 <p>But note that applications should be using
 <a class="reference internal" href="../reference/manpages/library/sasl_client_done.html#std-saslman-sasl_client_done-3">sasl_client_done(3)</a>/<a class="reference internal" href="../reference/manpages/library/sasl_server_done.html#std-saslman-sasl_server_done-3">sasl_server_done(3)</a> whenever possible.</p>
-</section>
-</section>
-</section>
-<section id="server-only-section">
-<h2><a class="toc-backref" href="#id22" role="doc-backlink">Server-only Section</a><a class="headerlink" href="#server-only-section" title="Permalink to this heading">¶</a></h2>
-<section id="a-typical-interaction-from-the-server-s-perspective">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">A typical interaction from the server’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-server-s-perspective" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="server-only-section">
+<h2><a class="toc-backref" href="#id22">Server-only Section</a><a class="headerlink" href="#server-only-section" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-typical-interaction-from-the-server-s-perspective">
+<h3><a class="toc-backref" href="#id23">A typical interaction from the server’s perspective</a><a class="headerlink" href="#a-typical-interaction-from-the-server-s-perspective" title="Permalink to this headline">¶</a></h3>
 <p>The server makes a few Cyrus SASL calls for initialization. When it
 gets a new connection it should make a new context for that
 connection immediately. The client may then request a list of
@@ -898,11 +893,11 @@ authenticate at some point. The client will specify the mechanism
 it wishes to use. The server should negotiate this authentication
 and keep around the context afterwards for encoding and decoding
 the layers.</p>
-</section>
-<section id="id1">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">How does this look in code?</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
-<section id="initialization">
-<h4><a class="toc-backref" href="#id25" role="doc-backlink">Initialization</a><a class="headerlink" href="#initialization" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id24">How does this look in code?</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="initialization">
+<h4><a class="toc-backref" href="#id25">Initialization</a><a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h4>
 <p>This is done once, using <a class="reference internal" href="../reference/manpages/library/sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>.
 The application name is used for reading configuration information.</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
@@ -995,13 +990,13 @@ occurring an arbitrary number of times, using <a class="reference internal" href
 <p>This continues until authentication succeeds. When the connection
 is concluded, make a call to <a class="reference internal" href="../reference/manpages/library/sasl_dispose.html#std-saslman-sasl_dispose-3">sasl_dispose(3)</a>, as with the
 client connection.</p>
-</section>
-</section>
-</section>
-<section id="common-section">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink">Common Section</a><a class="headerlink" href="#common-section" title="Permalink to this heading">¶</a></h2>
-<section id="callbacks-and-interactions">
-<span id="callbacks"></span><h3><a class="toc-backref" href="#id27" role="doc-backlink">Callbacks and Interactions</a><a class="headerlink" href="#callbacks-and-interactions" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="common-section">
+<h2><a class="toc-backref" href="#id26">Common Section</a><a class="headerlink" href="#common-section" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="callbacks-and-interactions">
+<span id="callbacks"></span><h3><a class="toc-backref" href="#id27">Callbacks and Interactions</a><a class="headerlink" href="#callbacks-and-interactions" title="Permalink to this headline">¶</a></h3>
 <p>When the application starts and calls <a class="reference internal" href="../reference/manpages/library/sasl_client_init.html#std-saslman-sasl_client_init-3">sasl_client_init(3)</a> you must
 specify for what data you support callbacks and/or interactions.</p>
 <p>These are for the library getting information needed for
@@ -1100,9 +1095,9 @@ postman and a USER of tmartin)</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_client_init</span><span class="p">(</span><span class="n">callbacks</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="security-layers">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink">Security layers</a><a class="headerlink" href="#security-layers" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="security-layers">
+<h3><a class="toc-backref" href="#id28">Security layers</a><a class="headerlink" href="#security-layers" title="Permalink to this headline">¶</a></h3>
 <p>All is well and good to securely authenticate, but if you don’t
 have some sort of integrity or privacy layer, anyone can hijack
 your TCP session after authentication. If your application has
@@ -1196,12 +1191,12 @@ time, Y.</p></li>
 </ul>
 </dd>
 </dl>
-</section>
-</section>
-<section id="example-applications-that-come-with-the-cyrus-sasl-library">
-<h2><a class="toc-backref" href="#id29" role="doc-backlink">Example applications that come with the Cyrus SASL library</a><a class="headerlink" href="#example-applications-that-come-with-the-cyrus-sasl-library" title="Permalink to this heading">¶</a></h2>
-<section id="sample-client-and-sample-server">
-<h3><a class="toc-backref" href="#id30" role="doc-backlink"><cite>sample-client</cite> and <cite>sample-server</cite></a><a class="headerlink" href="#sample-client-and-sample-server" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="example-applications-that-come-with-the-cyrus-sasl-library">
+<h2><a class="toc-backref" href="#id29">Example applications that come with the Cyrus SASL library</a><a class="headerlink" href="#example-applications-that-come-with-the-cyrus-sasl-library" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sample-client-and-sample-server">
+<h3><a class="toc-backref" href="#id30"><cite>sample-client</cite> and <cite>sample-server</cite></a><a class="headerlink" href="#sample-client-and-sample-server" title="Permalink to this headline">¶</a></h3>
 <p>The sample client and server included with this distribution were
 initially written to help debug mechanisms. They base64 encode all
 the data and print it out on standard output.</p>
@@ -1212,9 +1207,9 @@ mechanisms depend on these being present).</p>
 <span class="pre">not</span> <span class="pre">available</span></code> message, or similar; this is due to the fact
 that some mechanisms do not support realms and therefore never set
 it.</p>
-</section>
-<section id="cyrus-imapd-v2-1-0-or-later">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink">Cyrus imapd v2.1.0 or later</a><a class="headerlink" href="#cyrus-imapd-v2-1-0-or-later" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="cyrus-imapd-v2-1-0-or-later">
+<h3><a class="toc-backref" href="#id31">Cyrus imapd v2.1.0 or later</a><a class="headerlink" href="#cyrus-imapd-v2-1-0-or-later" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus IMAP server now incorporates SASLv2 for all its
 authentication needs. It is a good example of a fairly large server
 application. Also of interest is the prot layer, included in
@@ -1222,25 +1217,25 @@ libcyrus. This is a stdio-like interface that automatically takes
 care of layers using a simple <code class="docutils literal notranslate"><span class="pre">prot_setsasl()</span></code> call.</p>
 <p>Cyrus imapd also sets a <code class="docutils literal notranslate"><span class="pre">SASL_CB_PROXY_POLICY</span></code> callback,
 which should be of interest to many applications.</p>
-</section>
-<section id="imtest-from-cyrus-2-1-0-or-later">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink"><cite>imtest</cite>, from Cyrus 2.1.0 or later</a><a class="headerlink" href="#imtest-from-cyrus-2-1-0-or-later" title="Permalink to this heading">¶</a></h3>
-<p><a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/imtest.html#imap-reference-manpages-usercommands-imtest" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">imtest(3)</span></a>
+</div>
+<div class="section" id="imtest-from-cyrus-2-1-0-or-later">
+<h3><a class="toc-backref" href="#id32"><cite>imtest</cite>, from Cyrus 2.1.0 or later</a><a class="headerlink" href="#imtest-from-cyrus-2-1-0-or-later" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/imtest.html#imap-reference-manpages-usercommands-imtest" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">imtest(3)</span></a>
 is an application included with Cyrus IMAPd. It is
 a very simple IMAP client, but should be of interest to those
 writing applications. It also uses the prot layer, but it is easy
 to incorporate similar support without using the prot layer.
 Likewise, there are other sample client applications that you can
 look at including
-<a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/smtptest.html#imap-reference-manpages-usercommands-smtptest" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">smtptest(3)</span></a>
-and <a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/pop3test.html#imap-reference-manpages-usercommands-pop3test" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">pop3test(3)</span></a>
+<a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/smtptest.html#imap-reference-manpages-usercommands-smtptest" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">smtptest(3)</span></a>
+and <a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/pop3test.html#imap-reference-manpages-usercommands-pop3test" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">pop3test(3)</span></a>
 in the Cyrus IMAPd distribution, respectively.</p>
-</section>
-</section>
-<section id="miscellaneous-information">
-<h2><a class="toc-backref" href="#id33" role="doc-backlink">Miscellaneous Information</a><a class="headerlink" href="#miscellaneous-information" title="Permalink to this heading">¶</a></h2>
-<section id="empty-exchanges">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink">Empty exchanges</a><a class="headerlink" href="#empty-exchanges" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="miscellaneous-information">
+<h2><a class="toc-backref" href="#id33">Miscellaneous Information</a><a class="headerlink" href="#miscellaneous-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="empty-exchanges">
+<h3><a class="toc-backref" href="#id34">Empty exchanges</a><a class="headerlink" href="#empty-exchanges" title="Permalink to this headline">¶</a></h3>
 <p>Some SASL mechanisms intentionally send no data; an application
 should be prepared to either send or receive an empty exchange. The
 SASL profile for the protocol should define how to send an empty
@@ -1252,14 +1247,14 @@ and the lack of a string (NULL) is extremely important in many
 cases (most notably, the client-send first scenario), and the
 application must ensure that it is passing the correct values to
 the SASL library at all times.</p>
-</section>
-<section id="idle">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink">Idle</a><a class="headerlink" href="#idle" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="idle">
+<h3><a class="toc-backref" href="#id35">Idle</a><a class="headerlink" href="#idle" title="Permalink to this headline">¶</a></h3>
 <p>While the implementation and the plugins correctly implement the
 idle calls, none of them currently do anything.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1282,7 +1277,7 @@ idle calls, none of them currently do anything.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1306,12 +1301,9 @@ idle calls, none of them currently do anything.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

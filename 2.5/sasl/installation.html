@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus SASL Installation &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../imap/introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../imap/installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#sasl">SASL</a></li>
@@ -802,34 +797,34 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-sasl-installation">
-<h1>Cyrus SASL Installation<a class="headerlink" href="#cyrus-sasl-installation" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-sasl-installation">
+<h1>Cyrus SASL Installation<a class="headerlink" href="#cyrus-sasl-installation" title="Permalink to this headline">¶</a></h1>
 <p>You can install Cyrus SASL via packages or via tarball.</p>
 <p>Contributors will want to <a class="reference external" href="developer/installation.html">compile from source</a>.</p>
-<section id="unix-package-installation">
-<h2>Unix package Installation<a class="headerlink" href="#unix-package-installation" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="unix-package-installation">
+<h2>Unix package Installation<a class="headerlink" href="#unix-package-installation" title="Permalink to this headline">¶</a></h2>
 <p>Are you <a class="reference internal" href="#upgrading-from-cyrus-saslv1">upgrading from Cyrus SASLv1</a>?</p>
 <p>Please see the file install.php for instructions on how to install this package.</p>
 <p>Note that the library can use the environment variable SASL_PATH to locate the directory where the mechanisms are; this should be a colon-separated list of directories containing plugins. Otherwise it will default to the value of <cite>–with-plugindir</cite> as supplied to <cite>configure</cite> (which itself defaults to <cite>/usr/local/lib</cite>).</p>
-</section>
-<section id="mac-osx-installation">
-<h2>Mac OSX Installation<a class="headerlink" href="#mac-osx-installation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="mac-osx-installation">
+<h2>Mac OSX Installation<a class="headerlink" href="#mac-osx-installation" title="Permalink to this headline">¶</a></h2>
 <p>Please read macosx.php</p>
-</section>
-<section id="windows-installation">
-<h2>Windows Installation<a class="headerlink" href="#windows-installation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="windows-installation">
+<h2>Windows Installation<a class="headerlink" href="#windows-installation" title="Permalink to this headline">¶</a></h2>
 <p>Please read windows.php. This configuration has not been extensively tested.</p>
-</section>
-<section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application’s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documetation for how to supply SASL options.</p>
 <p>Alternatively, Cyrus SASL looks for configuration files in <cite>/usr/lib/sasl/Appname.conf</cite> where Appname is settable by the application (for example, Sendmail 8.10 and later set this to “Sendmail”).</p>
 <p>Configuration using the application’s configuration files (via the getopt callback) will override those supplied by the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at sysadmin.php and options.php</p>
 <div class="toctree-wrapper compound" id="upgrading-from-cyrus-saslv1">
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -852,7 +847,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -876,12 +871,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

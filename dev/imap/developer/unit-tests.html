@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Unit Tests &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -787,10 +782,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-unit-tests"></span><section id="unit-tests">
-<h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this heading">¶</a></h1>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h2>
+  <span class="target" id="imap-developer-unit-tests"></span><div class="section" id="unit-tests">
+<h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="#introduction">1. Introduction</a></p></li>
 <li><p><a class="reference external" href="#what-is-a-unit-test">2. What Is A Unit Test?</a></p></li>
@@ -813,16 +808,16 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="introduction">
-<h2>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Recently, a set of regression unit tests has been added to Cyrus. This
 document explains the purpose implementation of those unit tests, and
 gives an example of how to add more unit tests (because there are never
 enough unit tests!).</p>
-</section>
-<section id="what-is-a-unit-test">
-<h2>2. What Is A Unit Test?<a class="headerlink" href="#what-is-a-unit-test" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="what-is-a-unit-test">
+<h2>2. What Is A Unit Test?<a class="headerlink" href="#what-is-a-unit-test" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Unit_test">definition on Wikipedia</a>
 sheds some light:</p>
 <blockquote>
@@ -846,12 +841,12 @@ bugfix, did not introduce new bugs.</p>
 <p>In other words, the tests are designed to be easy to run and to work out
 fully automatically whether they have passed or failed, so that they can
 be run usefully by people who didn't write them.</p>
-</section>
-<section id="running-the-tests">
-<h2>3. Running The Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="running-the-tests">
+<h2>3. Running The Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
 <p>This section takes you through the process of running Cyrus' unit tests.</p>
-<section id="setting-up-the-machine">
-<h3>3.1. Setting Up The Machine<a class="headerlink" href="#setting-up-the-machine" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="setting-up-the-machine">
+<h3>3.1. Setting Up The Machine<a class="headerlink" href="#setting-up-the-machine" title="Permalink to this headline">¶</a></h3>
 <p>Cyrus' unit tests are all located in a new directory,
 <code class="docutils literal notranslate"><span class="pre">cyrus-imapd/cunit/</span></code>. They're written in C, like the remainder of
 Cyrus, and use the <a class="reference external" href="http://cunit.sourceforge.net/">CUnit library from
@@ -866,9 +861,9 @@ CUnit, for example on Ubuntu you can just do:</p>
 <p>Alternately, you can download the CUnit source, build it and install it.
 It's not a complicated or difficult library, this shouldn't take long.
 When you've done, install it in <code class="docutils literal notranslate"><span class="pre">/usr/include</span></code> and <code class="docutils literal notranslate"><span class="pre">/usr/lib</span></code>.</p>
-</section>
-<section id="configure-script">
-<h3>3.2 Configure Script<a class="headerlink" href="#configure-script" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configure-script">
+<h3>3.2 Configure Script<a class="headerlink" href="#configure-script" title="Permalink to this headline">¶</a></h3>
 <p>Because of the dependency on the CUnit library, the tests are disabled
 by default; this means you need enable them with an option to the
 <code class="docutils literal notranslate"><span class="pre">configure</span></code> script:</p>
@@ -881,9 +876,9 @@ by default; this means you need enable them with an option to the
 <span class="o">...</span>
 </pre></div>
 </div>
-</section>
-<section id="make">
-<h3>3.3 Make<a class="headerlink" href="#make" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="make">
+<h3>3.3 Make<a class="headerlink" href="#make" title="Permalink to this headline">¶</a></h3>
 <p>First you need to build Cyrus itself, using the traditional <code class="docutils literal notranslate"><span class="pre">all:</span></code>
 target.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">me</span><span class="nd">@mybox</span><span class="o">&gt;</span> <span class="n">make</span> <span class="nb">all</span>
@@ -947,9 +942,9 @@ will run only the named test.</p></li>
 it ran and how many passed and failed. The key thing to look at here
 is the rightmost column, it should be all zero.</p></li>
 </ol>
-</section>
-<section id="using-valgrind">
-<h3>3.4 Using Valgrind<a class="headerlink" href="#using-valgrind" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="using-valgrind">
+<h3>3.4 Using Valgrind<a class="headerlink" href="#using-valgrind" title="Permalink to this headline">¶</a></h3>
 <p>Some failure modes are subtle, and cannot be detected in the C code
 itself; this is where <a class="reference external" href="http://valgrind.org/">the Valgrind program</a>
 comes in very handy. It detects buffer overruns and memory leaks and
@@ -1001,9 +996,9 @@ where each block of leaked memory was allocated.</p></li>
 useful. I would have made running the tests under Valgrind the only
 option for the <code class="docutils literal notranslate"><span class="pre">check:</span></code> target, except that Valgrind is not available
 on all of Cyrus' supported platforms.</p>
-</section>
-<section id="the-tests-are-failing">
-<h3>3.5 The Tests Are Failing<a class="headerlink" href="#the-tests-are-failing" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="the-tests-are-failing">
+<h3>3.5 The Tests Are Failing<a class="headerlink" href="#the-tests-are-failing" title="Permalink to this headline">¶</a></h3>
 <p>So you've noticed that some of the tests are failing. Let me make the
 guiding principle of unit testing as clear as possible: <strong>THE UNIT TESTS
 SHOULD NOT FAIL</strong>. All of the tests are designed to pass all the time,
@@ -1027,10 +1022,10 @@ fails.</p></li>
 report</a>
 and consider writing tests for the existing code.</p></li>
 </ul>
-</section>
-</section>
-<section id="debugging-a-test">
-<h2>3.6 Debugging A Test<a class="headerlink" href="#debugging-a-test" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="debugging-a-test">
+<h2>3.6 Debugging A Test<a class="headerlink" href="#debugging-a-test" title="Permalink to this headline">¶</a></h2>
 <p>With the new Cyrus build system, the file <code class="docutils literal notranslate"><span class="pre">cunit/unit</span></code> is no longer an
 executable, it's a shell script which sets up some environment variables
 before running the real executable which is hidden away. This makes
@@ -1061,13 +1056,13 @@ debugging a failing test somewhat challenging. The solution is:</p>
 </div>
 <p>Note the <strong>-t</strong> option. This turns off test timeouts, which is very
 useful for manual debugging.</p>
-</section>
-<section id="adding-your-own-tests">
-<h2>4. Adding Your Own Tests<a class="headerlink" href="#adding-your-own-tests" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="adding-your-own-tests">
+<h2>4. Adding Your Own Tests<a class="headerlink" href="#adding-your-own-tests" title="Permalink to this headline">¶</a></h2>
 <p>Adding your own tests is quite simple. Here's how.</p>
-</section>
-<section id="where-to-put-your-tests">
-<h2>4.1 Where To Put Your Tests<a class="headerlink" href="#where-to-put-your-tests" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="where-to-put-your-tests">
+<h2>4.1 Where To Put Your Tests<a class="headerlink" href="#where-to-put-your-tests" title="Permalink to this headline">¶</a></h2>
 <p>The unit test code in Cyrus is contained in a set of C source files in
 the <code class="docutils literal notranslate"><span class="pre">cunit</span></code> directory. For reasons too complex to go into here, these
 are named <em>whatever</em>.testc instead of the more usual <em>whatever</em>.c. If
@@ -1081,9 +1076,9 @@ module in <code class="docutils literal notranslate"><span class="pre">lib/glob.
 existing tests, the sensible thing to do is to <a class="reference external" href="#adding-a-test-to-a-suite">add a new test to the
 existing suite</a>. Otherwise, you'll need to
 <a class="reference external" href="#adding-a-new-suite">add a new Suite</a>.</p>
-</section>
-<section id="adding-a-new-suite">
-<h2>4.1 Adding A New Suite<a class="headerlink" href="#adding-a-new-suite" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="adding-a-new-suite">
+<h2>4.1 Adding A New Suite<a class="headerlink" href="#adding-a-new-suite" title="Permalink to this headline">¶</a></h2>
 <p>Each Suite is a single C source file in the <code class="docutils literal notranslate"><span class="pre">cunit/</span></code> directory. Your
 first step is to create a new C source file. For this example, you'll
 create a new Suite to test the CRC32 routines which live in
@@ -1214,9 +1209,9 @@ and this time passing.</p>
   <span class="n">Test</span><span class="p">:</span> <span class="nb">map</span> <span class="o">...</span> <span class="n">passed</span>
 </pre></div>
 </div>
-</section>
-<section id="adding-a-test-to-a-suite">
-<h2>4.2 Adding A Test To A Suite<a class="headerlink" href="#adding-a-test-to-a-suite" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="adding-a-test-to-a-suite">
+<h2>4.2 Adding A Test To A Suite<a class="headerlink" href="#adding-a-test-to-a-suite" title="Permalink to this headline">¶</a></h2>
 <p>Adding a new test to an existing test is easy: all you have to do is add
 a new function to an existing C source file in the <code class="docutils literal notranslate"><span class="pre">cunit/</span></code> directory.
 As an example, let's add a test for the <code class="docutils literal notranslate"><span class="pre">crc_iovec()</span></code> function.</p>
@@ -1287,9 +1282,9 @@ for more details.</p></li>
   <span class="n">Test</span><span class="p">:</span> <span class="n">iovec</span> <span class="o">...</span> <span class="n">passed</span>
 </pre></div>
 </div>
-</section>
-<section id="suite-setup-and-teardown">
-<h2>4.3 Suite Setup And Teardown<a class="headerlink" href="#suite-setup-and-teardown" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="suite-setup-and-teardown">
+<h2>4.3 Suite Setup And Teardown<a class="headerlink" href="#suite-setup-and-teardown" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes the behaviour of the functions under test depend on external
 influences such as environment variables, global variables, or the
 presence of certain files.</p>
@@ -1335,8 +1330,8 @@ taken from <code class="docutils literal notranslate"><span class="pre">cunit/mb
 <p>The functions should return 0 on success, and non-zero on error. They
 must not call and <code class="docutils literal notranslate"><span class="pre">CU_*</span></code> functions or macros.</p>
 <p>Good luck and good testing!</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1359,7 +1354,7 @@ must not call and <code class="docutils literal notranslate"><span class="pre">C
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 30 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1382,12 +1377,9 @@ must not call and <code class="docutils literal notranslate"><span class="pre">C
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

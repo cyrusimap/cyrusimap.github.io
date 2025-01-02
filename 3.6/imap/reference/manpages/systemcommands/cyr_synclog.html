@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_synclog &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,88 +783,88 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-cyr_synclog-8"></span><section id="cyr-synclog">
-<span id="imap-reference-manpages-systemcommands-cyr-synclog"></span><h1><strong>cyr_synclog</strong><a class="headerlink" href="#cyr-synclog" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-cyr_synclog-8"><span id="std:cyrusman-cyr_synclog(8)"></span></span><div class="section" id="cyr-synclog">
+<span id="imap-reference-manpages-systemcommands-cyr-synclog"></span><h1><strong>cyr_synclog</strong><a class="headerlink" href="#cyr-synclog" title="Permalink to this headline">¶</a></h1>
 <p>is used to append a value to the log file.  You can either specify
 the log type and value, or an entire log line.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_synclog</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <em>-{type}</em> <em>value</em> ]
 <strong>cyr_synclog</strong> [ <strong>-C</strong> <em>config-file</em> ] <em>&quot;&lt;raw-log-line&gt;&quot;</em></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyr_synclog</strong> is used to append a value to the log file.  You can
 either specify the log type and value, or an entire log line.</p>
 <p>Running without any options will print a short usage document.</p>
 <p><strong>cyr_synclog</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-C">
-<span id="cmdoption-cyr-synclog-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-C">
+<span id="cmdoption-cyr-synclog-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-u">
-<span id="cmdoption-cyr-synclog-u"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">user</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-u">
+<span id="cmdoption-cyr-synclog-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">user</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-u" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-U">
-<span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">unuser</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-U" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-U">
+<code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">unuser</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-U" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-v">
-<span id="cmdoption-cyr-synclog-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">sieve</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-v">
+<span id="cmdoption-cyr-synclog-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">sieve</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-v" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-m">
-<span id="cmdoption-cyr-synclog-m"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">mailbox</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-m">
+<span id="cmdoption-cyr-synclog-m"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">mailbox</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-m" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-M">
-<span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">unmailbox</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-M" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-M">
+<code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">unmailbox</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-M" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-a">
-<span id="cmdoption-cyr-synclog-a"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">append</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-a">
+<span id="cmdoption-cyr-synclog-a"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">append</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-a" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-c">
-<span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">acl</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-c" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-c">
+<code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">acl</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-c" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-q">
-<span id="cmdoption-cyr-synclog-q"></span><span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">quota</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-q" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-q">
+<span id="cmdoption-cyr-synclog-q"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">quota</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-q" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-n">
-<span id="cmdoption-cyr-synclog-n"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">annotation</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-n">
+<span id="cmdoption-cyr-synclog-n"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">annotation</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-n" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-s">
-<span id="cmdoption-cyr-synclog-s"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">seen</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-s">
+<span id="cmdoption-cyr-synclog-s"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">seen</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-s" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_synclog-b">
-<span id="cmdoption-cyr-synclog-b"></span><span class="sig-name descname"><span class="pre">-b</span></span><span class="sig-prename descclassname">&#160;&#160; <span class="pre">subscription</span></span><a class="headerlink" href="#cmdoption-cyr_synclog-b" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_synclog-b">
+<span id="cmdoption-cyr-synclog-b"></span><code class="sig-name descname"><span class="pre">-b</span></code><code class="sig-prename descclassname">&#160;&#160; <span class="pre">subscription</span></code><a class="headerlink" href="#cmdoption-cyr_synclog-b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_synclog -m</strong> <em>user.brong</em></pre>
 <blockquote>
 <div><p>Add the mailbox <em>user.brong</em> to the log.</p>
@@ -888,21 +883,21 @@ either specify the log type and value, or an entire log line.</p>
 <div><p>Add a log line, using the raw format, to mark mailbox
 <em>user.brong</em> as seen by user <em>brong</em>.</p>
 </div></blockquote>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>This command was introduced in version 3.0.</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf,
 &lt;configdirectory&gt;/sync/log</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -925,7 +920,7 @@ either specify the log type and value, or an entire log line.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -948,12 +943,9 @@ either specify the log type and value, or an entire log line.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Supported Quota Types &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -790,8 +785,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="supported-quota-types">
-<span id="imap-admin-quotas-types"></span><h1>Supported Quota Types<a class="headerlink" href="#supported-quota-types" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="supported-quota-types">
+<span id="imap-admin-quotas-types"></span><h1>Supported Quota Types<a class="headerlink" href="#supported-quota-types" title="Permalink to this headline">¶</a></h1>
 <p>The Cyrus IMAP server supports quotas on Storage (KB), Messages (#),
 Folders (#) and Annotation Storage (KB).  These types each have their
 own identifier:</p>
@@ -803,24 +798,24 @@ own identifier:</p>
 <li><p>X-ANNOTATION-STORAGE</p></li>
 </ul>
 </div></blockquote>
-<section id="storage-quotas">
-<h2>Storage Quotas<a class="headerlink" href="#storage-quotas" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="storage-quotas">
+<h2>Storage Quotas<a class="headerlink" href="#storage-quotas" title="Permalink to this headline">¶</a></h2>
 <p>Storage quotas are defined as the number of kilobytes (KB) of the
-relevant <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a> messages located within a quota root. Each copy of
+relevant <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> messages located within a quota root. Each copy of
 a message is counted independently, even when the server can conserve
 disk space use by making hard links to message files. The additional
 disk space overhead used by mailbox index and cache files is not
 charged against a quota. On servers with <code class="docutils literal notranslate"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code>
 and/or <code class="docutils literal notranslate"><span class="pre">expunge_mode:delayed</span></code> space used by deleted mailboxes or
 expunged messages are not charged against quota.</p>
-</section>
-<section id="numeric-quotas">
-<h2>Numeric Quotas<a class="headerlink" href="#numeric-quotas" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="numeric-quotas">
+<h2>Numeric Quotas<a class="headerlink" href="#numeric-quotas" title="Permalink to this headline">¶</a></h2>
 <p>Numeric Quotas are quite simply a limit on the number of a particular
 class of object.  Cyrus IMAP currently supports quotas on the number of
 messages and/or folders below a given quota root.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -843,7 +838,7 @@ messages and/or folders below a given quota root.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 20 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -866,12 +861,9 @@ messages and/or folders below a given quota root.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

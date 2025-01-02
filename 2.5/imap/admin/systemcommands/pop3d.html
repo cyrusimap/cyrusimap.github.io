@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>pop3d &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,16 +799,16 @@
 </div>
           <div role="main" class="document">
             
-  <section id="pop3d">
-<span id="pop3-admin-commands-pop3d"></span><span id="std-cyrusman-pop3d-8"></span><h1><strong>pop3d</strong><a class="headerlink" href="#pop3d" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="pop3d">
+<span id="pop3-admin-commands-pop3d"></span><span id="std-cyrusman-pop3d-8"></span><span id="std:cyrusman-pop3d(8)"></span><h1><strong>pop3d</strong><a class="headerlink" href="#pop3d" title="Permalink to this headline">¶</a></h1>
 <p>POP3 server process</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>pop3d</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-U</strong> <em>uses</em> ] [ <strong>-T</strong> <em>timeout</em> ] [ <strong>-D</strong> ]
     [ <strong>-s</strong> ] [ <strong>-k</strong> ] [ <strong>-p</strong> <em>ssf</em> ]</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>pop3d</strong> is an POP3 server.  It accepts commands on its standard
 input and responds on its standard output.  It MUST be invoked by
 <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a> with those descriptors attached to a remote client
@@ -824,60 +819,60 @@ the <code class="docutils literal notranslate"><span class="pre">configdirectory
 protocol telemetry logs for sessions authenticating as <em>user</em>.</p>
 <p>The telemetry logs will be stored in the <code class="docutils literal notranslate"><span class="pre">log</span></code>/<em>user</em> directory with
 a filename of the <strong>pop3d</strong> process-id.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-C">
-<span id="cmdoption-pop3d-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-pop3d-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-C">
+<span id="cmdoption-pop3d-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-pop3d-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <em class="manpage">imapd.conf(5)</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-U">
-<span id="cmdoption-pop3d-u"></span><span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname">&#160; <span class="pre">uses</span></span><a class="headerlink" href="#cmdoption-pop3d-U" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-U">
+<span id="cmdoption-pop3d-u"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname">&#160; <span class="pre">uses</span></code><a class="headerlink" href="#cmdoption-pop3d-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>The maximum number of times that the process should be used for new
 connections before shutting down.  The default is 250.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-T">
-<span id="cmdoption-pop3d-t"></span><span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname">&#160; <span class="pre">timeout</span></span><a class="headerlink" href="#cmdoption-pop3d-T" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-T">
+<span id="cmdoption-pop3d-t"></span><code class="sig-name descname"><span class="pre">-T</span></code><code class="sig-prename descclassname">&#160; <span class="pre">timeout</span></code><a class="headerlink" href="#cmdoption-pop3d-T" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of seconds that the process will wait for a new
 connection before shutting down.  Note that a value of 0 (zero)
 will disable the timeout.  The default is 60.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-D">
-<span id="cmdoption-pop3d-d"></span><span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pop3d-D" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-D">
+<span id="cmdoption-pop3d-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-pop3d-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run external debugger specified in debug_command.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-s">
-<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pop3d-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-s">
+<code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-pop3d-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serve POP3 over SSL (pop3s).  All data to and from <strong>pop3d</strong> is
 encrypted using the Secure Sockets Layer.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-k">
-<span class="sig-name descname"><span class="pre">-k</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pop3d-k" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-k">
+<code class="sig-name descname"><span class="pre">-k</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-pop3d-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serve MIT’s KPOP (Kerberized POP) protocol instead.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-pop3d-p">
-<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname">&#160; <span class="pre">ssf</span></span><a class="headerlink" href="#cmdoption-pop3d-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-pop3d-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">ssf</span></code><a class="headerlink" href="#cmdoption-pop3d-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tell <strong>pop3d</strong> that an external layer exists.  An <em>SSF</em> (security
 strength factor) of 1 means an integrity protection layer exists.
 Any higher SSF implies some form of privacy protection.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>pop3d</strong> is commonly included in the SERVICES section of
 <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> like so:</p>
 <pre class="literal-block">SERVICES {
@@ -890,17 +885,17 @@ Any higher SSF implies some form of privacy protection.</p>
     notify      cmd=&quot;notifyd&quot; listen=&quot;/var/run/cyrus/socket/notify&quot; proto=&quot;udp&quot; prefork=1
     httpd       cmd=&quot;httpd&quot; listen=8080 prefork=1 maxchild=20
 }</pre>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>,
 <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -923,7 +918,7 @@ Any higher SSF implies some form of privacy protection.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -947,12 +942,9 @@ Any higher SSF implies some form of privacy protection.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

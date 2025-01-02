@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Deployment Scenarios &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -743,7 +738,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -792,11 +787,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="deployment-scenarios">
-<h1>Deployment Scenarios<a class="headerlink" href="#deployment-scenarios" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="deployment-scenarios">
+<h1>Deployment Scenarios<a class="headerlink" href="#deployment-scenarios" title="Permalink to this headline">¶</a></h1>
 <p>Depending on the target use of Cyrus IMAP, different features and architectures may be used to make optimal use of the Cyrus IMAP features. This chapter briefly touches different deployment scenarios.</p>
-<section id="single-server-deployments">
-<h2>Single Server Deployments<a class="headerlink" href="#single-server-deployments" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="single-server-deployments">
+<h2>Single Server Deployments<a class="headerlink" href="#single-server-deployments" title="Permalink to this headline">¶</a></h2>
 <p>In a deployment scenario with a single server, use this checklist to make sure you get the right scalability and functionality;</p>
 <ul class="simple">
 <li><p>In the foreseeable future, might this deployment run for multiple domain name spaces?</p></li>
@@ -804,12 +799,12 @@
 <li><p>Is high-availability required?</p></li>
 </ul>
 <p>If the answer to all of these questions is a consistent no, then please continue with the Installation Guide.</p>
-</section>
-<section id="multi-server-deployments">
-<h2>Multi Server Deployments<a class="headerlink" href="#multi-server-deployments" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="multi-server-deployments">
+<h2>Multi Server Deployments<a class="headerlink" href="#multi-server-deployments" title="Permalink to this headline">¶</a></h2>
 <p>A variety of options are available to scale up the deployment of Cyrus IMAP beyond a single server. Each of them has their own set of features, advantages, disadvantages and consequences on day-to-day administration, migration and capacity planning and support. Please consider a deployment that requires scaling up carefully.</p>
-<section id="cyrus-imap-murder">
-<h3>Cyrus IMAP Murder<a class="headerlink" href="#cyrus-imap-murder" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="cyrus-imap-murder">
+<h3>Cyrus IMAP Murder<a class="headerlink" href="#cyrus-imap-murder" title="Permalink to this headline">¶</a></h3>
 <p>A Cyrus IMAP Murder groups Cyrus IMAP servers together, allowing the addition and removal of individual Cyrus IMAP servers to and from the group. Functionally, a Cyrus IMAP Murder consists of the following three components;</p>
 <ul class="simple">
 <li><p>one or more frontends, receiving the connections from the clients, authenticating them and depending on the type of Cyrus IMAP Murder, referring the client to the correct backend server, or proxying the connection.</p></li>
@@ -822,18 +817,18 @@
 <li><p>require shared mailboxes and user mailboxes to be shared regardless of any limitations to whether or not they reside on the same backend server,</p></li>
 </ul>
 <p>Different types of Cyrus IMAP Murder deployments exist. Please see <a class="reference internal" href="#id1">Cyrus_IMAP_Murder</a> for a review of your options.</p>
-</section>
-<section id="imap-proxy">
-<h3>IMAP Proxy<a class="headerlink" href="#imap-proxy" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="imap-proxy">
+<h3>IMAP Proxy<a class="headerlink" href="#imap-proxy" title="Permalink to this headline">¶</a></h3>
 <p>An IMAP proxy like NGINX could sit in front of a number of stand-alone Cyrus IMAP servers, proxying client connections through to the correct stand-alone Cyrus IMAP server for a user.</p>
 <p>Note that in this type of setup, it is the user authentication that directs the proxy to the correct stand-alone Cyrus IMAP server. As such, shared mailboxes can only exist on the stand-alone Cyrus IMAP server to which the user is proxied -- in other words, on which the user's own mailbox is supposed to exist.</p>
-</section>
-</section>
-</section>
-<section id="cyrus-murder-server-aggregation">
-<span id="id1"></span><h1>Cyrus Murder: Server aggregation<a class="headerlink" href="#cyrus-murder-server-aggregation" title="Permalink to this heading">¶</a></h1>
-<section id="the-discrete-murder">
-<h2>The Discrete Murder<a class="headerlink" href="#the-discrete-murder" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="cyrus-murder-server-aggregation">
+<span id="id1"></span><h1>Cyrus Murder: Server aggregation<a class="headerlink" href="#cyrus-murder-server-aggregation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-discrete-murder">
+<h2>The Discrete Murder<a class="headerlink" href="#the-discrete-murder" title="Permalink to this headline">¶</a></h2>
 <p>A <em>discrete</em> murder - also known as a standard murder - characteristically uses separate frontend and backend servers. At the time of this writing, this is the recommended type of Cyrus IMAP Murder for deployments that require;</p>
 <ul class="simple">
 <li><p>load-balancing and/or high availability of their Cyrus IMAP deployments,</p></li>
@@ -842,27 +837,27 @@
 <li><p>Have very large numbers of mailboxes, (this one's because of the mupdate RAM consumption)</p></li>
 </ul>
 <p>It is worth noting that in a <em>discrete</em> murder, backends only know of the mailboxes that reside in their local mailbox spool(s). Since the user's subscription database is kept on the backend server that hosts their mailbox, should the deployment require that all users can subscribe to all mailboxes that they have permission to in the murder, the setting <code class="docutils literal notranslate"><span class="pre">allowallsubscribe</span></code> needs to be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> (1). This, however, allows users to subscribe to non-existent mailboxes.</p>
-</section>
-<section id="the-unified-murder">
-<h2>The Unified Murder<a class="headerlink" href="#the-unified-murder" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="the-unified-murder">
+<h2>The Unified Murder<a class="headerlink" href="#the-unified-murder" title="Permalink to this headline">¶</a></h2>
 <p>A <em>unified</em> murder characteristically joins the functional aspects of a server being frontend and backend together onto one single Cyrus IMAP server. A Cyrus IMAP server in a unified murder can thus perform both as a frontend as well as a backend. All backends would thus have all information on all mailboxes on all other backends.</p>
 <p>At the time of this writing, but subject to change in the near future, a participating node in a Cyrus IMAP Unified Murder cannot be made a dedicated frontend. This creates a disadvantage over a <em>discrete</em> murder, as the frontend function cannot be taken out of rotation without also losing the backend function.</p>
 <p>Because in using mailbox creation and transfer routines a participating node cannot be excluded from selection for or availability of the (new) location of the (new) mailbox, no guarantee can exists the participating node does not hold any mailboxes. Short of a deployment specific interface to creating and transferring mailboxes that provides such guarantee, as a logical consequence, to shoot a participating node in a Cyrus IMAP Unified Murder in the head, all mailboxes must be transferred to other backends prior to service shutdown, or the availability of the mailboxes is impacted.</p>
 <p>The unified murder also has some great advantages. Since all backends know about all mailboxes in the murder, administrators can choose to not permit subscriptions to non-existent folders. In a discrete murder, where backends know only of the mailboxes in the local mailbox spool(s), such permission is (often) required.</p>
-</section>
-<section id="the-shared-murder">
-<h2>The Shared Murder<a class="headerlink" href="#the-shared-murder" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="the-shared-murder">
+<h2>The Shared Murder<a class="headerlink" href="#the-shared-murder" title="Permalink to this headline">¶</a></h2>
 <p><em>To be written</em></p>
-</section>
-</section>
-<section id="cyrus-replication">
-<h1>Cyrus Replication<a class="headerlink" href="#cyrus-replication" title="Permalink to this heading">¶</a></h1>
+</div>
+</div>
+<div class="section" id="cyrus-replication">
+<h1>Cyrus Replication<a class="headerlink" href="#cyrus-replication" title="Permalink to this headline">¶</a></h1>
 <p><em>To be written</em></p>
-</section>
-<section id="hosted-environments">
-<h1>Hosted Environments<a class="headerlink" href="#hosted-environments" title="Permalink to this heading">¶</a></h1>
+</div>
+<div class="section" id="hosted-environments">
+<h1>Hosted Environments<a class="headerlink" href="#hosted-environments" title="Permalink to this headline">¶</a></h1>
 <p><em>To be written</em></p>
-</section>
+</div>
 
 
           </div>
@@ -885,7 +880,7 @@
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Sep 08 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -908,12 +903,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

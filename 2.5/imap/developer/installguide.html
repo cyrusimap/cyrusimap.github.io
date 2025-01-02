@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Developer Environment Installation &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -802,14 +797,14 @@
 </div>
           <div role="main" class="document">
             
-  <section id="developer-environment-installation">
-<span id="imapinstallguide"></span><h1>Developer Environment Installation<a class="headerlink" href="#developer-environment-installation" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="developer-environment-installation">
+<span id="imapinstallguide"></span><h1>Developer Environment Installation<a class="headerlink" href="#developer-environment-installation" title="Permalink to this headline">¶</a></h1>
 <p>You’ve decided to help add to the Cyrus project, excellent!</p>
 <p>These instructions are based on Debian 8.0 because it has to be based on something. Other Linux distributions will be similar in the broad ideas but may differ in the specifics. If you already have a preferred distro, use that (we assume you know how to use its package management system). If you don’t already have a preferred distro, maybe consider using Debian.</p>
-<section id="cyrus">
-<h2>Cyrus<a class="headerlink" href="#cyrus" title="Permalink to this heading">¶</a></h2>
-<section id="fetching-cyrus">
-<h3>Fetching Cyrus<a class="headerlink" href="#fetching-cyrus" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="cyrus">
+<h2>Cyrus<a class="headerlink" href="#cyrus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fetching-cyrus">
+<h3>Fetching Cyrus<a class="headerlink" href="#fetching-cyrus" title="Permalink to this headline">¶</a></h3>
 <p>You’ll need access to the cyrus-imapd git repository.</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -845,9 +840,9 @@
 </dl>
 </li>
 </ol>
-</section>
-<section id="setting-up-dependencies">
-<h3>Setting up dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="setting-up-dependencies">
+<h3>Setting up dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>Install tools for building</dt><dd><ul class="simple">
@@ -873,9 +868,9 @@
 </dl>
 </li>
 </ol>
-</section>
-<section id="compile-cyrus">
-<h3>Compile Cyrus<a class="headerlink" href="#compile-cyrus" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="compile-cyrus">
+<h3>Compile Cyrus<a class="headerlink" href="#compile-cyrus" title="Permalink to this headline">¶</a></h3>
 <p>There are additional <a class="reference internal" href="install-xapian.html#imapinstall-xapian"><span class="std std-ref">compile and installation steps</span></a> if you are using Xapian for searching.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
 
@@ -901,12 +896,12 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
 <p>The <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option sets where Cyrus is installed to. Adjust to suit.</p>
 <p>It may be of use to also add <code class="docutils literal notranslate"><span class="pre">--std=gnu99</span></code> to the <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code>.  That generates TONS of warnings.</p>
 <p>You may see warnings regarding libical v2.0 being recommended to support certain functionality. Currently libical v1.0.1 is sufficient, unless you need/want RSCALE (non-gregorian recurrences), VPOLL (consensus scheduling), or VAVAILABILITY (specifying availability over time) functionality. If v2 is required, it will need to be installed from <a class="reference external" href="https://github.com/libical/libical">github</a>.</p>
-</section>
-</section>
-<section id="arcanist">
-<h2>Arcanist<a class="headerlink" href="#arcanist" title="Permalink to this heading">¶</a></h2>
-<section id="installing-arcanist">
-<h3>Installing Arcanist<a class="headerlink" href="#installing-arcanist" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="arcanist">
+<h2>Arcanist<a class="headerlink" href="#arcanist" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-arcanist">
+<h3>Installing Arcanist<a class="headerlink" href="#installing-arcanist" title="Permalink to this headline">¶</a></h3>
 <p>Arcanist is a tool for managing workflow (code review, etc), which sits between git and Phabricator.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -924,10 +919,10 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
 </li>
 <li><p>Get familiar with the <a class="reference internal" href="process.html#devprocess"><span class="std std-ref">Arcanist workflow</span></a></p></li>
 </ol>
-</section>
-</section>
-<section id="setting-up-syslog">
-<h2>Setting up syslog<a class="headerlink" href="#setting-up-syslog" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="setting-up-syslog">
+<h2>Setting up syslog<a class="headerlink" href="#setting-up-syslog" title="Permalink to this headline">¶</a></h2>
 <p>A lot of Cyrus’s debugging information gets logged with <code class="docutils literal notranslate"><span class="pre">syslog</span></code>, so you’ll want to be able to capture it and find it later (especially when debugging cassandane tests)</p>
 <ol class="arabic">
 <li><p>Find the correct place to edit syslog config for your system (for me, I needed to create <code class="docutils literal notranslate"><span class="pre">/etc/rsyslog.d/cyrus.conf</span></code>)</p></li>
@@ -963,8 +958,8 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
 </ol>
 <hr class="docutils" />
 <p>Ready to get a <a class="reference internal" href="basicserver.html#basicserver"><span class="std std-ref">basic server</span></a> up and running now you’re all installed?</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -987,7 +982,7 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1011,12 +1006,9 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

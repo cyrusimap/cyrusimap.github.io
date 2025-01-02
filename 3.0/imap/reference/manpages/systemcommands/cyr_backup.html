@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_backup &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,11 +758,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyr-backup">
-<span id="imap-reference-manpages-systemcommands-cyr-backup"></span><span id="std-cyrusman-cyr_backup-8"></span><h1><strong>cyr_backup</strong><a class="headerlink" href="#cyr-backup" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyr-backup">
+<span id="imap-reference-manpages-systemcommands-cyr-backup"></span><span id="std-cyrusman-cyr_backup-8"></span><span id="std:cyrusman-cyr_backup(8)"></span><h1><strong>cyr_backup</strong><a class="headerlink" href="#cyr-backup" title="Permalink to this headline">¶</a></h1>
 <p>Inspect contents of Cyrus backups.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list chunks
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list mailboxes
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list messages
@@ -780,17 +775,17 @@
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json mailboxes
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json messages
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json headers <em>guid</em>...</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyr_backup</strong> is a tool for inspecting the contents of a Cyrus backup.</p>
 <p><strong>cyr_backup</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p>In all invocations, <em>backup</em> is interpreted according to the specified MODE.
 See <a class="reference internal" href="#cyr-backup-modes"><span class="std std-ref">Modes</span></a> below.</p>
 <p><strong>cyr_backup</strong> provides the following sub-commands:</p>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-arg-list">
-<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-list" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-arg-list">
+<code class="sig-name descname"><span class="pre">list</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-list" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block"><strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list chunks
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list mailboxes
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> list messages
@@ -799,8 +794,8 @@ See <a class="reference internal" href="#cyr-backup-modes"><span class="std std-
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-arg-show">
-<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-show" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-arg-show">
+<code class="sig-name descname"><span class="pre">show</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-show" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block"><strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> show mailboxes [ <em>mboxname</em> | <em>uniqueid</em> ]...
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> show messages <em>guid</em>...</pre>
 <p><strong>show mailboxes</strong> shows the contents (i.e. the contained messages) of
@@ -812,8 +807,8 @@ each message are shown.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-arg-dump">
-<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-dump" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-arg-dump">
+<code class="sig-name descname"><span class="pre">dump</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-dump" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block"><strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> dump chunk <em>id</em>
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> dump message <em>guid</em></pre>
 <p>Dump the contents of the specified chunk or message contained in the named
@@ -827,8 +822,8 @@ process, when the restoration destination does not support the
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-arg-json">
-<span class="sig-name descname"><span class="pre">json</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-json" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-arg-json">
+<code class="sig-name descname"><span class="pre">json</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-json" title="Permalink to this definition">¶</a></dt>
 <dd><pre class="literal-block"><strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json chunks
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json mailboxes
 <strong>cyr_backup</strong> [OPTIONS] [MODE] <em>backup</em> json messages
@@ -837,34 +832,34 @@ process, when the restoration destination does not support the
 named <em>backup</em> to standard out, in JSON format.</p>
 </dd></dl>
 
-</section>
-<section id="options">
-<span id="cyr-backup-options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<span id="cyr-backup-options"></span><h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_backup-C">
-<span id="cmdoption-cyr-backup-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_backup-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_backup-C">
+<span id="cmdoption-cyr-backup-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_backup-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_backup-v">
-<span id="cmdoption-cyr-backup-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_backup-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_backup-v">
+<span id="cmdoption-cyr-backup-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_backup-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity.  Can be specified multiple times.</p>
 </dd></dl>
 
-</section>
-<section id="modes">
-<span id="cyr-backup-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="modes">
+<span id="cyr-backup-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_backup-f">
-<span id="cmdoption-cyr-backup-f"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_backup-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_backup-f">
+<span id="cmdoption-cyr-backup-f"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_backup-f" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a filename.  The named file does not need to be
 known about in the backups database.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_backup-m">
-<span id="cmdoption-cyr-backup-m"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_backup-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_backup-m">
+<span id="cmdoption-cyr-backup-m"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_backup-m" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a mailbox name.  There must be a known backup
 for the user whose mailbox this is.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
@@ -872,28 +867,28 @@ and <strong>backup_db_path</strong> configuration options.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_backup-u">
-<span id="cmdoption-cyr-backup-u"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_backup-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_backup-u">
+<span id="cmdoption-cyr-backup-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_backup-u" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a userid.  There must be a known backup for
 the specified user.</p>
 <p>This is the default if no mode is specified.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="restore.html#std-cyrusman-restore-8">restore(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -916,7 +911,7 @@ the specified user.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Dec 09 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -939,12 +934,9 @@ the specified user.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

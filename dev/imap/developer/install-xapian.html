@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Xapian for searching &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,11 +784,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="xapian-for-searching">
-<span id="imapinstall-xapian"></span><h1>Xapian for searching<a class="headerlink" href="#xapian-for-searching" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="xapian-for-searching">
+<span id="imapinstall-xapian"></span><h1>Xapian for searching<a class="headerlink" href="#xapian-for-searching" title="Permalink to this headline">¶</a></h1>
 <p>Cyrus can be configured to use <a class="reference external" href="http://xapian.org">Xapian</a> to power its searches.</p>
-<section id="compiling-xapian-for-cyrus">
-<h2>Compiling Xapian for Cyrus<a class="headerlink" href="#compiling-xapian-for-cyrus" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="compiling-xapian-for-cyrus">
+<h2>Compiling Xapian for Cyrus<a class="headerlink" href="#compiling-xapian-for-cyrus" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If CJK support is not required in your environment, you can use Cyrus with a
@@ -817,17 +812,17 @@ sh<span class="w"> </span>build.sh<span class="w"> </span><span class="nv">$CYRU
 </pre></div>
 </div>
 <p>Then follow on with the Cyrus <a class="reference internal" href="compiling.html#compiling"><span class="std std-ref">compilation instructions</span></a>, adding <code class="docutils literal notranslate"><span class="pre">--enable-xapian</span></code> to the flags to <code class="docutils literal notranslate"><span class="pre">./configure</span></code>.</p>
-</section>
-<section id="additional-dependencies-required-for-cyrus-with-xapian-support">
-<h2>Additional dependencies required for Cyrus with Xapian support<a class="headerlink" href="#additional-dependencies-required-for-cyrus-with-xapian-support" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="additional-dependencies-required-for-cyrus-with-xapian-support">
+<h2>Additional dependencies required for Cyrus with Xapian support<a class="headerlink" href="#additional-dependencies-required-for-cyrus-with-xapian-support" title="Permalink to this headline">¶</a></h2>
 <p>When building Cyrus with Xapian support enabled, the following additional
 packages are required:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://rsync.samba.org">rsync</a> (used when compacting databases)</p></li>
 </ul>
-</section>
-<section id="configuring-xapian">
-<span id="id1"></span><h2>Configuring Xapian<a class="headerlink" href="#configuring-xapian" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="configuring-xapian">
+<span id="id1"></span><h2>Configuring Xapian<a class="headerlink" href="#configuring-xapian" title="Permalink to this headline">¶</a></h2>
 <p>Xapian requires a running <a class="reference internal" href="../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a> instance:</p>
 <ul>
 <li><p>In <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> set up a daemon squatter to run:</p>
@@ -853,8 +848,8 @@ packages are required:</p>
 </div>
 <p>If you want to do more complex search tiers and repacking, you'll want to read:</p>
 <p><a class="reference external" href="http://lists.tartarus.org/pipermail/xapian-discuss/2014-October/009112.html">http://lists.tartarus.org/pipermail/xapian-discuss/2014-October/009112.html</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -877,7 +872,7 @@ packages are required:</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 14 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -900,12 +895,9 @@ packages are required:</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

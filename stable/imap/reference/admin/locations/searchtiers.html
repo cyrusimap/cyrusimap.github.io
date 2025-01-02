@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Search Tiers &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -800,14 +795,14 @@
 </div>
           <div role="main" class="document">
             
-  <section id="search-tiers">
-<span id="imap-admin-searchtiers"></span><h1>Search Tiers<a class="headerlink" href="#search-tiers" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="search-tiers">
+<span id="imap-admin-searchtiers"></span><h1>Search Tiers<a class="headerlink" href="#search-tiers" title="Permalink to this headline">¶</a></h1>
 <p>The Xapian search engine supports searching from multiple databases at
 once, creating a tiered database structure.  To use Xapian, these tiers
 must be defined in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> with the
 <cite>defaultsearchtier</cite> and <cite>searchpartition-name</cite> settings.</p>
-<section id="default-search-tier-name">
-<h2>Default Search Tier Name<a class="headerlink" href="#default-search-tier-name" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="default-search-tier-name">
+<h2>Default Search Tier Name<a class="headerlink" href="#default-search-tier-name" title="Permalink to this headline">¶</a></h2>
 <p>Specify the name of the default search tier using the <cite>defaultsearchtier</cite>
 setting:</p>
 <blockquote>
@@ -821,9 +816,9 @@ of an according <em>searchtierpartition-name</em> entry.</p>
 <p>This option MUST be specified for xapian search.</p>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="search-tier-partition-location">
-<h2>Search Tier Partition Location<a class="headerlink" href="#search-tier-partition-location" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="search-tier-partition-location">
+<h2>Search Tier Partition Location<a class="headerlink" href="#search-tier-partition-location" title="Permalink to this headline">¶</a></h2>
 <p>Each search tier to be used requires a partition location be specified
 via a <cite>searchpartition-name</cite> setting, wherein &quot;name&quot; is replaced
 with the name of the mail spool for which this search partition is to
@@ -875,8 +870,8 @@ store this tier1's search index for the part1 partition.</p>
 <p>This option MUST be specified for xapian search.</p>
 </div></blockquote>
 </div></blockquote>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -899,7 +894,7 @@ store this tier1's search index for the part1 partition.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Feb 13 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -922,12 +917,9 @@ store this tier1's search index for the part1 partition.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

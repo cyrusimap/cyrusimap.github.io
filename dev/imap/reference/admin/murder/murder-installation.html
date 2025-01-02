@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Murder: Installation and Administration &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -791,10 +786,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-murder-installation-and-administration">
-<span id="murder-installation"></span><h1>Cyrus Murder: Installation and Administration<a class="headerlink" href="#cyrus-murder-installation-and-administration" title="Permalink to this heading">¶</a></h1>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="cyrus-murder-installation-and-administration">
+<span id="murder-installation"></span><h1>Cyrus Murder: Installation and Administration<a class="headerlink" href="#cyrus-murder-installation-and-administration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../../architecture.html#architecture-murder"><span class="std std-ref">Overall structure of a Cyrus Murder</span></a>.</p>
 <p>The Cyrus Murder provides the ability to horizontally scale your Cyrus
 IMAP environment across multiple servers. It is similar in nature to
@@ -805,16 +800,16 @@ future, should probably just consider using a simple proxy solution.</p>
 <p>Before beginning Cyrus Murder configuration, we strongly recommended a
 thorough review of the <a class="reference internal" href="murder-concepts.html#murder-concepts"><span class="std std-ref">Cyrus Murder Concepts</span></a>
 guide.</p>
-</section>
-<section id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>Master</dt><dd><p>In this document, Master always means the MUPDATE master server.</p>
 </dd>
 </dl>
-</section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Cyrus IMAPd must be built with the <code class="docutils literal notranslate"><span class="pre">--enable-murder</span></code> configure
 option. This builds the proxyds and the associated utilities.</p>
 <div class="admonition note">
@@ -823,8 +818,8 @@ option. This builds the proxyds and the associated utilities.</p>
 separate package for aggregation support.  For example, on Debian
 and derived distros, install the <code class="docutils literal notranslate"><span class="pre">cyrus-murder</span></code> package.</p>
 </div>
-<section id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>At least one Cyrus IMAP server instance. If there are more than
@@ -835,9 +830,9 @@ mailbox names must be unique (or in different namespaces)</p></li>
 same as one of the frontend servers.</p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="configuring-the-mupdate-master">
-<h3>Configuring the MUPDATE Master<a class="headerlink" href="#configuring-the-mupdate-master" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configuring-the-mupdate-master">
+<h3>Configuring the MUPDATE Master<a class="headerlink" href="#configuring-the-mupdate-master" title="Permalink to this headline">¶</a></h3>
 <p>The MUPDATE Master server needs to be running the mupdate service in
 master mode. The MUPDATE master may be one of the cluster's frontend
 instances, in which case no slave mupdate process should be run on this
@@ -862,9 +857,9 @@ able to authenticate as admins on the master.</p>
 </pre></div>
 </div>
 <p>SASL must also be configured as needed to properly allow authentication.</p>
-</section>
-<section id="setting-up-the-backends-to-push-changes-to-the-mupdate-master">
-<h3>Setting up the backends to push changes to the MUPDATE Master<a class="headerlink" href="#setting-up-the-backends-to-push-changes-to-the-mupdate-master" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="setting-up-the-backends-to-push-changes-to-the-mupdate-master">
+<h3>Setting up the backends to push changes to the MUPDATE Master<a class="headerlink" href="#setting-up-the-backends-to-push-changes-to-the-mupdate-master" title="Permalink to this headline">¶</a></h3>
 <p>On the backends, configuration to be a part of a murder is easy. Simply
 set the <code class="docutils literal notranslate"><span class="pre">mupdate_server</span></code> option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> and add
 an entry to <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> to push the mailboxes list to
@@ -912,9 +907,9 @@ the MUPDATE Master and the back end, as well.</p>
 <p class="admonition-title">Note</p>
 <p>Do not set <code class="docutils literal notranslate"><span class="pre">proxyservers</span></code> on frontends.</p>
 </div>
-</section>
-<section id="exporting-the-database-from-the-backend">
-<h3>Exporting the database from the backend<a class="headerlink" href="#exporting-the-database-from-the-backend" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="exporting-the-database-from-the-backend">
+<h3>Exporting the database from the backend<a class="headerlink" href="#exporting-the-database-from-the-backend" title="Permalink to this headline">¶</a></h3>
 <p>The existing mailboxes database must be exported to the MUPDATE Master.
 Use the <a class="reference internal" href="../../manpages/systemcommands/ctl_mboxlist.html#std-cyrusman-ctl_mboxlist-8">ctl_mboxlist(8)</a> command to do so. For the first
 synchronization, change to the cyrus user, and run <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code>.</p>
@@ -955,9 +950,9 @@ denied if the mupdate master is down), it is possible when first
 creating the mupdate database or when bringing a new backend server
 into the murder.</p>
 </div>
-</section>
-<section id="configuring-the-front-ends">
-<h3>Configuring the front ends<a class="headerlink" href="#configuring-the-front-ends" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configuring-the-front-ends">
+<h3>Configuring the front ends<a class="headerlink" href="#configuring-the-front-ends" title="Permalink to this headline">¶</a></h3>
 <p>Configuring the front ends is a two step process. First, define
 mupdate_server (and friends) as done for the backends above. However,
 as the frontends only talk to the mupdate master via a slave running on
@@ -1009,29 +1004,29 @@ mailboxes database should automatically synchronize with the contents
 of the MUPDATE master, and it's ready to go. Clients should connect to
 the frontends, and the frontends will proxy or refer as applicable to
 the backend servers.</p>
-</section>
-<section id="additional-backend-configuration">
-<h3>Additional backend configuration<a class="headerlink" href="#additional-backend-configuration" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="additional-backend-configuration">
+<h3>Additional backend configuration<a class="headerlink" href="#additional-backend-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Authentication system expecting usernames, passwords, etc, to
 authenticate, will also need to specify proxy_authname (and friends) in
 the backend imapd.confs. This is so the backends can authenticate to
 each other to facilitate mailbox moves. (Backend machines will need to
 be full admins).</p>
-</section>
-<section id="delivering-mail">
-<h3>Delivering mail<a class="headerlink" href="#delivering-mail" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="delivering-mail">
+<h3>Delivering mail<a class="headerlink" href="#delivering-mail" title="Permalink to this headline">¶</a></h3>
 <p>To deliver mail to a Murder, configure MTAs just as before, but instead
 of connecting directly to lmtpd on a back end, they should connect to
 lmtpproxyd on any front end. Remote MTAs may connect to the lmtpproxyd
 running on any front end machine (listening  on a TCP socket), or
 install master and lmtpproxyd on your SMTP servers to connect via Unix
 domain socket.</p>
-</section>
-</section>
-<section id="administration">
-<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this heading">¶</a></h2>
-<section id="keeping-the-database-synced">
-<h3>Keeping the database synced<a class="headerlink" href="#keeping-the-database-synced" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="administration">
+<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="keeping-the-database-synced">
+<h3>Keeping the database synced<a class="headerlink" href="#keeping-the-database-synced" title="Permalink to this headline">¶</a></h3>
 <p>Consistency in the database is maintained by pushing the current status
 of the backends to the master, and having the frontends stay up to date
 with the master's database. Since the frontends resync themselves
@@ -1044,9 +1039,9 @@ try to reconnect and resync their database upon reconnection)</p>
 to resync the mupdate master using <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code>. If two servers
 do have the same mailbox, this will need to be resolved before database
 consistency can be guaranteed.</p>
-</section>
-<section id="moving-mailboxes-between-backends">
-<h3>Moving Mailboxes between backends<a class="headerlink" href="#moving-mailboxes-between-backends" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="moving-mailboxes-between-backends">
+<h3>Moving Mailboxes between backends<a class="headerlink" href="#moving-mailboxes-between-backends" title="Permalink to this headline">¶</a></h3>
 <p>There is currently no 100% foolproof way to do this, however, if you
 issue a rename command to a frontend (as you would to move a mailbox
 between partitions), and replace the partition name with the name of
@@ -1070,16 +1065,16 @@ otherwise quotas can appear to be violated, since each backend only
 takes care of its own quota.</p>
 <p>In general, it's better to leave trees of mailboxes on the same server,
 and not move submailboxes of inboxes between servers.</p>
-</section>
-<section id="adding-additional-backend-servers">
-<h3>Adding additional backend servers<a class="headerlink" href="#adding-additional-backend-servers" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="adding-additional-backend-servers">
+<h3>Adding additional backend servers<a class="headerlink" href="#adding-additional-backend-servers" title="Permalink to this headline">¶</a></h3>
 <p>This is very easy to do, simply configure an empty backend server and
 set its <code class="docutils literal notranslate"><span class="pre">mupdate_server</span></code> parameter to point at the mupdate master.
 Then, issue mailbox creates to it as you would any other backend
 server.</p>
-</section>
-<section id="distributing-mailboxes-between-back-ends">
-<h3>Distributing Mailboxes between Back Ends<a class="headerlink" href="#distributing-mailboxes-between-back-ends" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="distributing-mailboxes-between-back-ends">
+<h3>Distributing Mailboxes between Back Ends<a class="headerlink" href="#distributing-mailboxes-between-back-ends" title="Permalink to this headline">¶</a></h3>
 <p>Several options exist within <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to aid in the
 distribution of new users and mailboxes within a murder; across servers
 and partitions.  We recommend exploring these:</p>
@@ -1174,13 +1169,13 @@ automatically excluded from selection mode.</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="backups">
-<h3>Backups<a class="headerlink" href="#backups" title="Permalink to this heading">¶</a></h3>
-</section>
-</section>
-<section id="gotchas">
-<h2>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="backups">
+<h3>Backups<a class="headerlink" href="#backups" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="gotchas">
+<h2>Gotchas<a class="headerlink" href="#gotchas" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><strong>Clients dealing with a pool of frontend servers</strong></dt><dd><p>Some clients may not be terribly efficient caching connections to a
 pool of imap servers, this isn't a problem, as such, but it may
@@ -1226,9 +1221,9 @@ suspect, very rarely) lead to inconsistencies in the mupdate
 database.</p>
 </dd>
 </dl>
-</section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><strong>Mailbox operations are being denied</strong></dt><dd><p>This is an indication that the mupdate master may be down. Restart
 it.</p>
@@ -1256,8 +1251,8 @@ on <a class="reference external" href="https://lists.andrew.cmu.edu/pipermail/cy
 and <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2774">https://github.com/cyrusimap/cyrus-imapd/issues/2774</a> .</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1280,7 +1275,7 @@ and <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Oct 24 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1303,12 +1298,9 @@ and <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

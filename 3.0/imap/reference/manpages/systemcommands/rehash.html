@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>rehash &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,51 +758,51 @@
 </div>
           <div role="main" class="document">
             
-  <section id="rehash">
-<span id="imap-reference-manpages-systemcommands-rehash"></span><span id="std-cyrusman-rehash-8"></span><h1><strong>rehash</strong><a class="headerlink" href="#rehash" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="rehash">
+<span id="imap-reference-manpages-systemcommands-rehash"></span><span id="std-cyrusman-rehash-8"></span><span id="std:cyrusman-rehash(8)"></span><h1><strong>rehash</strong><a class="headerlink" href="#rehash" title="Permalink to this headline">¶</a></h1>
 <p>rehash checks and rehashes Cyrus directories based on the hashing settings
 in the imapd.conf.</p>
 <p>Use in the event you choose to change your hashing settings. For more information
 on directory hashing, see the documentation on <a class="reference internal" href="../../admin/locations/hashing.html#imap-admin-locations-hashing"><span class="std std-ref">Directory Hashing</span></a>.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>rehash</strong> [<strong>-v</strong>] [<strong>-n</strong>] [<strong>-f</strong>|<strong>-F</strong>] [<strong>-i</strong>|<strong>-I</strong>] imapd.conf</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>rehash</strong> fixes the hashing on Cyrus directories.</p>
 <p>It should be safe to run rehash on a running system, but it may mess things up
 horribly if you have some processes still running with old config, and some with
 new - so it is always recommended to fully shut down Cyrus, change the
 configuration file, run rehash, and then start Cyrus again.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rehash-arg-imapd.conf">
-<span id="cmdoption-rehash-arg-imapd-conf"></span><span class="sig-name descname"><span class="pre">imapd.conf</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rehash-arg-imapd.conf" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rehash-arg-imapd.conf">
+<span id="cmdoption-rehash-arg-imapd-conf"></span><code class="sig-name descname"><span class="pre">imapd.conf</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-arg-imapd.conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>imapd.conf must always be provided.  On a normal system this will be
 /etc/imapd.conf.  The correct hashing settings will be read from the
 provided imapd.conf, or can be overridden with options.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rehash-v">
-<span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rehash-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rehash-v">
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>In -v verbose mode, each rename command will be printed, as well as
 any creation or deletion of folders.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rehash-n">
-<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rehash-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rehash-n">
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>In -n “no change” mode, it will just print the changes.  Note,
 verbose is always turned on in no-change mode.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rehash-f">
-<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">|</span> <span class="pre">-F</span></span><a class="headerlink" href="#cmdoption-rehash-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rehash-f">
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">|</span> <span class="pre">-F</span></code><a class="headerlink" href="#cmdoption-rehash-f" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">-f forces fulldirhash: no</div>
 <div class="line">-F forces fulldirhash: yes</div>
@@ -815,24 +810,24 @@ verbose is always turned on in no-change mode.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-rehash-i">
-<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-rehash-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rehash-i">
+<code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-rehash-i" title="Permalink to this definition">¶</a></dt>
 <dd><div class="line-block">
 <div class="line">-i forces hashimapspool: no</div>
 <div class="line">-I forces hashimapspool: yes</div>
 </div>
 </dd></dl>
 
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -855,7 +850,7 @@ verbose is always turned on in no-change mode.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jul 05 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -878,12 +873,9 @@ verbose is always turned on in no-change mode.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

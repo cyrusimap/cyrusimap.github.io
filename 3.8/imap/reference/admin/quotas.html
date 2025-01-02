@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Quotas &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -743,7 +738,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -792,8 +787,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="quotas">
-<span id="imap-admin-quotas"></span><h1>Quotas<a class="headerlink" href="#quotas" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="quotas">
+<span id="imap-admin-quotas"></span><h1>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h1>
 <p>Cyrus IMAP features a flexible Quota scheme with support for limiting
 various resources, such as storage or number of folders or messages.</p>
 <div class="toctree-wrapper compound">
@@ -802,8 +797,8 @@ various resources, such as storage or number of folders or messages.</p>
 <li class="toctree-l1"><a class="reference internal" href="quotas/quotatypes.html">Supported Quota Types</a></li>
 </ul>
 </div>
-<section id="monitor-and-repair">
-<span id="imap-admin-quotas-repair"></span><h2>Monitor and Repair<a class="headerlink" href="#monitor-and-repair" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="monitor-and-repair">
+<span id="imap-admin-quotas-repair"></span><h2>Monitor and Repair<a class="headerlink" href="#monitor-and-repair" title="Permalink to this headline">¶</a></h2>
 <p>Quotas may be monitored and repaired via the <a class="reference internal" href="../manpages/systemcommands/quota.html#std-cyrusman-quota-8">quota(8)</a>
 command:</p>
 <blockquote>
@@ -811,9 +806,9 @@ command:</p>
 <li><p><a class="reference internal" href="../manpages/systemcommands/quota.html#imap-reference-manpages-systemcommands-quota"><span class="std std-ref">quota</span></a></p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="controlling-quota-behavior">
-<span id="imap-admin-quotas-config"></span><h2>Controlling Quota Behavior<a class="headerlink" href="#controlling-quota-behavior" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="controlling-quota-behavior">
+<span id="imap-admin-quotas-config"></span><h2>Controlling Quota Behavior<a class="headerlink" href="#controlling-quota-behavior" title="Permalink to this headline">¶</a></h2>
 <p>How restrictive quotas will be may be tailored to the needs of different
 sites, via the use of several settings in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>:</p>
 <blockquote>
@@ -889,9 +884,9 @@ as unlimited message quota, rather than a message quota of zero.</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="quota-database">
-<span id="imap-admin-quotas-database"></span><h2>Quota Database<a class="headerlink" href="#quota-database" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="quota-database">
+<span id="imap-admin-quotas-database"></span><h2>Quota Database<a class="headerlink" href="#quota-database" title="Permalink to this headline">¶</a></h2>
 <p>Quota information is stored either in a database (i.e. twoskip,
 skiplist) or in &quot;quotalegacy&quot; format, which is a filesystem hierarchy.
 This is controlled by the <code class="docutils literal notranslate"><span class="pre">quota_db</span></code> setting in
@@ -913,9 +908,9 @@ not specified will be configdirectory/quotas.db or configdirectory/quota/</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="converting-quotas-database">
-<span id="imap-admin-quotas-convert-db"></span><h2>Converting Quotas Database<a class="headerlink" href="#converting-quotas-database" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="converting-quotas-database">
+<span id="imap-admin-quotas-convert-db"></span><h2>Converting Quotas Database<a class="headerlink" href="#converting-quotas-database" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../manpages/systemcommands/cvt_cyrusdb.html#std-cyrusman-cvt_cyrusdb-8">cvt_cyrusdb(8)</a> utility may be used to convert between
 formats.  It's usage with <code class="docutils literal notranslate"><span class="pre">quotalegacy</span></code> is a special case, in that
 the first argument (&quot;&lt;old db&gt;&quot;) will be the path to the <em>base</em> of the
@@ -933,8 +928,8 @@ the first argument (&quot;&lt;old db&gt;&quot;) will be the path to the <em>base
 </pre></div>
 </div>
 <p id="imap-admin-quotas-end">Back to <a class="reference internal" href="../admin.html#imap-admin"><span class="std std-ref">Administrator Guide</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -957,7 +952,7 @@ the first argument (&quot;&lt;old db&gt;&quot;) will be the path to the <em>base
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Sep 07 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -980,12 +975,9 @@ the first argument (&quot;&lt;old db&gt;&quot;) will be the path to the <em>base
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Running Cyrus IMAP Services on Non-Standard Ports &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -790,10 +785,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="running-cyrus-imap-services-on-non-standard-ports">
-<h1>Running Cyrus IMAP Services on Non-Standard Ports<a class="headerlink" href="#running-cyrus-imap-services-on-non-standard-ports" title="Permalink to this heading">¶</a></h1>
-<section id="globally-changing-the-service-port">
-<h2>Globally changing the service port<a class="headerlink" href="#globally-changing-the-service-port" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="running-cyrus-imap-services-on-non-standard-ports">
+<h1>Running Cyrus IMAP Services on Non-Standard Ports<a class="headerlink" href="#running-cyrus-imap-services-on-non-standard-ports" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="globally-changing-the-service-port">
+<h2>Globally changing the service port<a class="headerlink" href="#globally-changing-the-service-port" title="Permalink to this headline">¶</a></h2>
 <p>When running on non-standard ports, for example lmtp on port 26,
 update <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> and change the default ‘24’ to ‘26’. This should
 work correctly if everything on the system needs to know the new port number.</p>
@@ -806,9 +801,9 @@ work correctly if everything on the system needs to know the new port number.</p
 <span class="n">lmtp</span>            <span class="mi">26</span><span class="o">/</span><span class="n">udp</span>                          <span class="c1"># LMTP Mail Delivery</span>
 </pre></div>
 </div>
-</section>
-<section id="changing-the-service-port-just-for-cyrus">
-<h2>Changing the service port just for Cyrus<a class="headerlink" href="#changing-the-service-port-just-for-cyrus" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="changing-the-service-port-just-for-cyrus">
+<h2>Changing the service port just for Cyrus<a class="headerlink" href="#changing-the-service-port-just-for-cyrus" title="Permalink to this headline">¶</a></h2>
 <p>If you need to run a service on a non-standard port <strong>without changing the port for this service system-wide</strong>, you can add a new service to <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> and reference this new service name within <code class="docutils literal notranslate"><span class="pre">cyrus.conf</span></code></p>
 <p>If you were migrating mail on a server from a different imapd to Cyrus, you might need to run the Cyrus imapd on port 1143 while the original imapd is still on the normal port of 143. To do this, add a new service name to <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">imapnew</span>         <span class="mi">1143</span><span class="o">/</span><span class="n">tcp</span>            <span class="c1"># Temporary imap port</span>
@@ -823,14 +818,14 @@ work correctly if everything on the system needs to know the new port number.</p
 </pre></div>
 </div>
 <p>You may wish to make Cyrus only listen on the loopback interface until the migration is complete. If this is the case, you would use <code class="docutils literal notranslate"><span class="pre">listen=&quot;127.0.0.1:imapnew&quot;</span></code></p>
-</section>
-<section id="security-enhanced-linux">
-<h2>Security Enhanced Linux<a class="headerlink" href="#security-enhanced-linux" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="security-enhanced-linux">
+<h2>Security Enhanced Linux<a class="headerlink" href="#security-enhanced-linux" title="Permalink to this headline">¶</a></h2>
 <p>When running SELinux there are extra steps to take, …</p>
 <p>verify label for the port with semanage port -l &lt;port&gt;
 label the port used: semanage port -a -t &lt;type&gt; -p tcp &lt;port&gt;</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -853,7 +848,7 @@ label the port used: semanage port -a -t &lt;type&gt; -p tcp &lt;port&gt;</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -876,12 +871,9 @@ label the port used: semanage port -a -t &lt;type&gt; -p tcp &lt;port&gt;</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

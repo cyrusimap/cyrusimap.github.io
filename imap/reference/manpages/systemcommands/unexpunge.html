@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>unexpunge &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -798,36 +793,36 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-unexpunge-8"></span><section id="unexpunge">
-<span id="imap-reference-manpages-systemcommands-unexpunge"></span><h1><strong>unexpunge</strong><a class="headerlink" href="#unexpunge" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-unexpunge-8"><span id="std:cyrusman-unexpunge(8)"></span></span><div class="section" id="unexpunge">
+<span id="imap-reference-manpages-systemcommands-unexpunge"></span><h1><strong>unexpunge</strong><a class="headerlink" href="#unexpunge" title="Permalink to this headline">¶</a></h1>
 <p>Recover messages the user has (accidentally) deleted.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong> <em>mailbox</em> [ <em>uid</em>... ]
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-t</strong> <em>time-interval</em> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <strong>mailbox</strong>
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-a</strong> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <em>mailbox</em>
 <strong>unexpunge</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-u</strong> [ <strong>-d</strong> ] [ <strong>-v</strong> ] [ <strong>-f</strong> <em>flagname</em> ] <em>mailbox</em> <em>uid</em>...</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>unexpunge</strong> program is used to list or restore messages which have
 been deleted from a mailbox, but still reside in the Cyrus IMAP mail
 spool.</p>
 <p>This utility is only useful when the server is configured with
 <code class="docutils literal notranslate"><span class="pre">expunge_mode</span></code> set to <code class="docutils literal notranslate"><span class="pre">delayed</span></code> in its configuration file.</p>
 <p><strong>unexpunge</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-C">
-<span id="cmdoption-unexpunge-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-unexpunge-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-C">
+<span id="cmdoption-unexpunge-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-unexpunge-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-l">
-<span id="cmdoption-unexpunge-list"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--list</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-unexpunge-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-l">
+<span id="cmdoption-unexpunge-list"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--list</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the expunged messages in the specified mailbox which are
 available for restoration.
 Optionally, only list the messages in the mailbox matching the
@@ -835,8 +830,8 @@ UIDs in the space-separated list at the end of the command invocation.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-t">
-<span id="cmdoption-unexpunge-within-time-interval"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"> <span class="pre">time-interval</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--within-time-interval</span></span><span class="sig-prename descclassname"><span class="pre">=time-interval</span></span><a class="headerlink" href="#cmdoption-unexpunge-t" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-t">
+<span id="cmdoption-unexpunge-within-time-interval"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"> <span class="pre">time-interval</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--within-time-interval</span></code><code class="sig-prename descclassname"><span class="pre">=time-interval</span></code><a class="headerlink" href="#cmdoption-unexpunge-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unexpunge messages which were expunged within the last
 <code class="docutils literal notranslate"><span class="pre">time-interval</span></code> seconds.
 Use one of the trailing modifiers -- <code class="docutils literal notranslate"><span class="pre">m</span></code> (minutes), <code class="docutils literal notranslate"><span class="pre">h</span></code> (hours),
@@ -844,41 +839,41 @@ Use one of the trailing modifiers -- <code class="docutils literal notranslate">
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-a">
-<span id="cmdoption-unexpunge-all"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-unexpunge-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-a">
+<span id="cmdoption-unexpunge-all"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--all</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore <strong>all</strong> of the expunged messages in the specified mailbox.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-u">
-<span id="cmdoption-unexpunge-uids"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--uids</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-unexpunge-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-u">
+<span id="cmdoption-unexpunge-uids"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--uids</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore only messages matching the UIDs, in a space-separated list
 at the end of the command invocation, in the specified mailbox.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-d">
-<span id="cmdoption-unexpunge-unset-deleted"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--unset-deleted</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-unexpunge-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-d">
+<span id="cmdoption-unexpunge-unset-deleted"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--unset-deleted</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unset the <em>\Deleted</em> flag on any restored messages.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-f">
-<span id="cmdoption-unexpunge-set-flag"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">flagname</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--set-flag</span></span><span class="sig-prename descclassname"><span class="pre">=flagname</span></span><a class="headerlink" href="#cmdoption-unexpunge-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-f">
+<span id="cmdoption-unexpunge-set-flag"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">flagname</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--set-flag</span></code><code class="sig-prename descclassname"><span class="pre">=flagname</span></code><a class="headerlink" href="#cmdoption-unexpunge-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the user flag <em>\flagname</em> on the messages restored, making it
 easier for the user(s) to find the restored messages and operate on
 them (in a batch).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-unexpunge-v">
-<span id="cmdoption-unexpunge-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-unexpunge-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-unexpunge-v">
+<span id="cmdoption-unexpunge-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-unexpunge-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output/logging.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>unexpunge -l</strong> <em>user/john&#64;example.org</em></pre>
 <blockquote>
 <div><p>List the messages that are expunged and could be restored for mailbox
@@ -994,16 +989,16 @@ bulk operations.</p>
 <div><p>The same command, supporting the <code class="docutils literal notranslate"><span class="pre">unixhierarchysep:</span> <span class="pre">yes</span></code>
 option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </div></blockquote>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1026,7 +1021,7 @@ option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyr
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 01 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1049,12 +1044,9 @@ option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyr
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

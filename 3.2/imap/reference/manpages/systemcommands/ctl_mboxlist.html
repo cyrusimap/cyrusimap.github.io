@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ctl_mboxlist &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -736,7 +731,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,34 +780,34 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-ctl_mboxlist-8"></span><section id="ctl-mboxlist">
-<span id="imap-reference-manpages-systemcommands-ctl-mboxlist"></span><h1><strong>ctl_mboxlist</strong><a class="headerlink" href="#ctl-mboxlist" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-ctl_mboxlist-8"><span id="std:cyrusman-ctl_mboxlist(8)"></span></span><div class="section" id="ctl-mboxlist">
+<span id="imap-reference-manpages-systemcommands-ctl-mboxlist"></span><h1><strong>ctl_mboxlist</strong><a class="headerlink" href="#ctl-mboxlist" title="Permalink to this headline">¶</a></h1>
 <p>Perform operations on the mailbox list database</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-d</strong> [ <strong>-x</strong> ] [<strong>-y</strong>] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-f</strong> <em>filename</em> ]
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-u</strong> [ <strong>-f</strong> <em>filename</em> ]
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-m</strong> [ <strong>-a</strong> ] [ <strong>-w</strong> ] [ <strong>-i</strong> ] [ <strong>-f</strong> <em>filename</em> ]
 <strong>ctl_mboxlist</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-v</strong> [ <strong>-f</strong> <em>filename</em> ]</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>ctl_mboxlist</strong> is used to perform various administrative operations on
 the mailbox list database.</p>
 <p><strong>ctl_mboxlist</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.
 The <em>configdirectory</em> option in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> is used to determine the default location of the mailboxes database.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-C">
-<span id="cmdoption-ctl-mboxlist-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-C">
+<span id="cmdoption-ctl-mboxlist-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-d">
-<span id="cmdoption-ctl-mboxlist-d"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-d">
+<span id="cmdoption-ctl-mboxlist-d"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the contents of the database to standard output in a portable
 flat-text format.  NOTE: In Cyrus versions 2.2.13 and earlier, the
 dump format did not include the mailbox type flags, breaking remote
@@ -821,36 +816,36 @@ undumped.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-x">
-<span id="cmdoption-ctl-mboxlist-x"></span><span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-x" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-x">
+<span id="cmdoption-ctl-mboxlist-x"></span><code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, remove the mailboxes dumped from the mailbox
 list (mostly useful when specified with <strong>-p</strong>).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-y">
-<span id="cmdoption-ctl-mboxlist-y"></span><span class="sig-name descname"><span class="pre">-y</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-y" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-y">
+<span id="cmdoption-ctl-mboxlist-y"></span><code class="sig-name descname"><span class="pre">-y</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-y" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, also list intermediary mailboxes which would
 be hidden from IMAP.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-p">
-<span id="cmdoption-ctl-mboxlist-p"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">partition</span></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-p">
+<span id="cmdoption-ctl-mboxlist-p"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">partition</span></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>When performing a dump, dump only those mailboxes that live on
 <em>partition</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-f">
-<span id="cmdoption-ctl-mboxlist-f"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">filename</span></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-f">
+<span id="cmdoption-ctl-mboxlist-f"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">filename</span></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the database specified by <em>filename</em> instead of the default
 (<em>configdirectory/mailboxes.db*</em>).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-u">
-<span id="cmdoption-ctl-mboxlist-u"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-u">
+<span id="cmdoption-ctl-mboxlist-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the contents of the database from standard input.  The input
 MUST be in the format output by the <strong>-d</strong> option.</p>
 </dd></dl>
@@ -861,15 +856,15 @@ MUST be in the format output by the <strong>-d</strong> option.</p>
 break remote mailboxes.</p>
 </div>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-m">
-<span id="cmdoption-ctl-mboxlist-m"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-m">
+<span id="cmdoption-ctl-mboxlist-m"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>For backend servers in the Cyrus Murder, synchronize the local
 mailbox list file with the MUPDATE server.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-a">
-<span id="cmdoption-ctl-mboxlist-a"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-a">
+<span id="cmdoption-ctl-mboxlist-a"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, assume the local mailboxes file is authoritative,
 that is, only change the mupdate server, do not delete any local
 mailboxes.</p>
@@ -881,22 +876,22 @@ mailboxes.</p>
 the murder.</p>
 </div>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-w">
-<span id="cmdoption-ctl-mboxlist-w"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-w">
+<span id="cmdoption-ctl-mboxlist-w"></span><code class="sig-name descname"><span class="pre">-w</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, print out what would be done but do not perform
 the operations.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-i">
-<span id="cmdoption-ctl-mboxlist-i"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-i">
+<span id="cmdoption-ctl-mboxlist-i"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <strong>-m</strong>, asks for verification before deleting local
 mailboxes.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_mboxlist-v">
-<span id="cmdoption-ctl-mboxlist-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_mboxlist-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_mboxlist-v">
+<span id="cmdoption-ctl-mboxlist-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_mboxlist-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verify the consistency of the mailbox list database and the spool
 partition(s). Mailboxes present in the database and not located on a
 spool partition, and those located on a spool partition (directory
@@ -904,9 +899,9 @@ containing a valid cyrus.header file) and not present in the database
 will be reported.  Note that this function is very I/O intensive.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>ctl_mboxlist -d</strong></pre>
 <blockquote>
 <div><p>Dump the mailboxes list in portable text format.</p>
@@ -967,16 +962,16 @@ Murder.</p>
 <div><p>Synchronize our mailboxes database with the MUPDATE server interactively,
 asking for verification before deleting any local mailboxes.</p>
 </div></blockquote>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf, &lt;configdirectory&gt;/mailboxes.db</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -999,7 +994,7 @@ asking for verification before deleting any local mailboxes.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Oct 17 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1022,12 +1017,9 @@ asking for verification before deleting any local mailboxes.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

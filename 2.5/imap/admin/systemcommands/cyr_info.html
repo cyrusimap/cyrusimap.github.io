@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_info &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,43 +799,43 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyr-info">
-<span id="imap-admin-systemcommands-cyr-info"></span><span id="std-cyrusman-cyr_info-8"></span><h1><strong>cyr_info</strong><a class="headerlink" href="#cyr-info" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyr-info">
+<span id="imap-admin-systemcommands-cyr-info"></span><span id="std-cyrusman-cyr_info-8"></span><span id="std:cyrusman-cyr_info(8)"></span><h1><strong>cyr_info</strong><a class="headerlink" href="#cyr-info" title="Permalink to this headline">¶</a></h1>
 <p>General cyrus inspection tool</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_info</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> <em>config-file</em> ] [ <strong>-n</strong> <em>servicename</em> ] <em>command</em></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyr_info</strong> is a tool for getting information from Cyrus.  The intent
 is to extend this tool with useful commands to make managing and
 configuring Cyrus easier.</p>
 <p><strong>cyr_info</strong> reads its configuration options out of the <em class="manpage">imapd.conf(5)</em> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_info-C">
-<span id="cmdoption-cyr-info-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_info-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_info-C">
+<span id="cmdoption-cyr-info-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_info-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <em class="manpage">imapd.conf(5)</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_info-M">
-<span id="cmdoption-cyr-info-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_info-M" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_info-M">
+<span id="cmdoption-cyr-info-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_info-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read service specifications from <em>config-file</em> (cyrus.conf format).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_info-n">
-<span id="cmdoption-cyr-info-n"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">servicename</span></span><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_info-n">
+<span id="cmdoption-cyr-info-n"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">servicename</span></code><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the configuration as if for the service named <em>name</em>.</p>
 </dd></dl>
 
-</section>
-<section id="commands">
-<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <p><em>allconf</em></p>
 <blockquote>
 <div><p>Print ALL configuration options - including default options</p>
@@ -861,9 +856,9 @@ configuration options for the named service.</p>
 <blockquote>
 <div><p>Print all currently connected processes in the proc directory</p>
 </div></blockquote>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_info</strong> <em>proc</em></pre>
 <blockquote>
 <div><p>List all the proc files and who they’re logged in as.</p>
@@ -885,21 +880,21 @@ configuration options for the named service.</p>
 <span class="n">user_folder_limit</span><span class="p">:</span> <span class="mi">5000</span>
 </pre></div>
 </div>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>This command was introduced in version 3.0.</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf,
 /etc/cyrus.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -922,7 +917,7 @@ configuration options for the named service.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -946,12 +941,9 @@ configuration options for the named service.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

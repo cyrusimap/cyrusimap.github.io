@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>installsieve &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,72 +783,72 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-installsieve-1"></span><section id="installsieve">
-<span id="imap-reference-manpages-usercommands-installsieve"></span><h1><strong>installsieve</strong><a class="headerlink" href="#installsieve" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-installsieve-1"><span id="std:cyrusman-installsieve(1)"></span></span><div class="section" id="installsieve">
+<span id="imap-reference-manpages-usercommands-installsieve"></span><h1><strong>installsieve</strong><a class="headerlink" href="#installsieve" title="Permalink to this headline">¶</a></h1>
 <p>User utility for managing sieve scripts</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>installsieve</strong> [ <strong>-v</strong> <em>name</em> ] [ <strong>-l</strong> ] [ <strong>-p</strong> <em>port</em> ] [ <strong>-i</strong> <em>file</em> ]
     [ <strong>-a</strong> <em>name</em> ] [ <strong>-d</strong> <em>name</em> ] [ <strong>-m</strong> <em>mechanism</em> ] [ <strong>-g</strong> <em>name</em> ]
     [ <strong>-u</strong> <em>user</em> ]</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>installsieve</strong> is a utility that allows users to manage their sieve scripts kept on
 the server.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This program is deprecated. Please use sieveshell</p>
 </div>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-v">
-<span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname">&#160; <span class="pre">name</span></span><a class="headerlink" href="#cmdoption-installsieve-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-v">
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname">&#160; <span class="pre">name</span></code><a class="headerlink" href="#cmdoption-installsieve-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>View script with the given name. The script if retrieved successfully
 is output to standard output.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-l">
-<span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-installsieve-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-l">
+<code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-installsieve-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List all of the scripts currently on the server. If one of the
 scripts is active an arrow is printed indicating that it is the
 active script.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-p">
-<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname">&#160; <span class="pre">port</span></span><a class="headerlink" href="#cmdoption-installsieve-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-p">
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">port</span></code><a class="headerlink" href="#cmdoption-installsieve-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port to connect to. If left off this defaults to <strong>sieve</strong> as
 defined in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-i">
-<span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname">&#160; <span class="pre">file</span></span><a class="headerlink" href="#cmdoption-installsieve-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-i">
+<code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname">&#160; <span class="pre">file</span></code><a class="headerlink" href="#cmdoption-installsieve-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Install a file onto the server. If a script with the same name
 already exists on the server it is overwritten. Upon successfully
 putting the script on the server the script is set active.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-a">
-<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname">&#160; <span class="pre">name</span></span><a class="headerlink" href="#cmdoption-installsieve-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-a">
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname">&#160; <span class="pre">name</span></code><a class="headerlink" href="#cmdoption-installsieve-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set <em>name</em> as the active script. The list of available names can be
 obtained from the <strong>-l</strong> option.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-d">
-<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname">&#160; <span class="pre">name</span></span><a class="headerlink" href="#cmdoption-installsieve-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-d">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname">&#160; <span class="pre">name</span></code><a class="headerlink" href="#cmdoption-installsieve-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the sieve script on the server with <em>name</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-m">
-<span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname">&#160; <span class="pre">mechanism</span></span><a class="headerlink" href="#cmdoption-installsieve-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-m">
+<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname">&#160; <span class="pre">mechanism</span></code><a class="headerlink" href="#cmdoption-installsieve-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force <strong>installsieve</strong> to use <em>mechanism</em> for authentication. If
 not specified the strongest authentication mechanism supported by
 the server is chosen.  Specify <em>login</em> to use the LOGIN command
@@ -861,33 +856,33 @@ instead of AUTHENTICATE.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-g">
-<span class="sig-name descname"><span class="pre">-g</span></span><span class="sig-prename descclassname">&#160; <span class="pre">name</span></span><a class="headerlink" href="#cmdoption-installsieve-g" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-g">
+<code class="sig-name descname"><span class="pre">-g</span></code><code class="sig-prename descclassname">&#160; <span class="pre">name</span></code><a class="headerlink" href="#cmdoption-installsieve-g" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the sieve script with <em>name</em> and save it to disk with a
 “.script” extension. If a file with that name already exists it is
 overwritten.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-installsieve-u">
-<span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname">&#160; <span class="pre">userid</span></span><a class="headerlink" href="#cmdoption-installsieve-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-installsieve-u">
+<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname">&#160; <span class="pre">userid</span></code><a class="headerlink" href="#cmdoption-installsieve-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid/Authname to use for authentication; by default, the current
 user.</p>
 </dd></dl>
 
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This program is deprecated. Please use sieveshell</p>
 </div>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="sieveshell.html#std-cyrusman-sieveshell-1">sieveshell(1)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -910,7 +905,7 @@ user.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 16 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -933,12 +928,9 @@ user.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

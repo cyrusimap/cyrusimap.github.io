@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>restore &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,15 +758,15 @@
 </div>
           <div role="main" class="document">
             
-  <section id="restore">
-<span id="imap-reference-manpages-systemcommands-restore"></span><span id="std-cyrusman-restore-8"></span><h1><strong>restore</strong><a class="headerlink" href="#restore" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="restore">
+<span id="imap-reference-manpages-systemcommands-restore"></span><span id="std-cyrusman-restore-8"></span><span id="std:cyrusman-restore(8)"></span><h1><strong>restore</strong><a class="headerlink" href="#restore" title="Permalink to this headline">¶</a></h1>
 <p>Restore content from Cyrus backups.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>restore</strong> [OPTIONS] <em>server</em> [MODE] <em>backup</em> [ <em>mboxname</em> | <em>uniqueid</em> | <em>guid</em> ]...</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>restore</strong> is a tool for restoring messages and mailboxes from a Cyrus backup
 to a Cyrus IMAP server.  It must be run from the server containing the backup
 storage.</p>
@@ -807,12 +802,12 @@ been specified, or when the <strong>-r</strong> option is in use.</p>
 set to the one stored in the backup.  The <strong>-A</strong> option can be used to override
 this.  Mailboxes that are not created during the restoration process (i.e. when
 restoring into mailboxes that already exists) will not have their ACLs altered.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-A">
-<span id="cmdoption-restore-a"></span><span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"> <span class="pre">[acl]</span></span><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-A">
+<span id="cmdoption-restore-a"></span><code class="sig-name descname"><span class="pre">-A</span></code><code class="sig-prename descclassname"> <span class="pre">[acl]</span></code><a class="headerlink" href="#cmdoption-restore-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply specified <em>acl</em> to restored mailboxes, rather than their ACLs as
 stored in the backup.</p>
 <p>If <em>acl</em> is the empty string (e.g. <code class="docutils literal notranslate"><span class="pre">-A</span> <span class="pre">&quot;&quot;</span></code>) or is unspecified, mailboxes
@@ -822,14 +817,14 @@ different user’s mailbox.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-C">
-<span id="cmdoption-restore-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-restore-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-C">
+<span id="cmdoption-restore-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-restore-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-D">
-<span id="cmdoption-restore-d"></span><span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-D">
+<span id="cmdoption-restore-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don’t trim <strong>deletedprefix</strong> from mailbox names prior to restoring.  This
 is mainly useful for rebuilding failed servers, where deleted mailboxes
 should be restored as deleted mailboxes, not as new ones.</p>
@@ -842,8 +837,8 @@ and <strong>delete_mode</strong> configuration options.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-F">
-<span id="cmdoption-restore-f"></span><span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"> <span class="pre">input-file</span></span><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-F">
+<span id="cmdoption-restore-f"></span><code class="sig-name descname"><span class="pre">-F</span></code><code class="sig-prename descclassname"> <span class="pre">input-file</span></code><a class="headerlink" href="#cmdoption-restore-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the list of mailboxes or messages from <em>input-file</em> instead of from
 the command line arguments.</p>
 <p><em>input-file</em> should contain one object specification (either an <em>mboxname</em>,
@@ -852,8 +847,8 @@ a ‘#’ character, are ignored.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-L">
-<span id="cmdoption-restore-l"></span><span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-L">
+<span id="cmdoption-restore-l"></span><code class="sig-name descname"><span class="pre">-L</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local operations only.  Actions required to restore the requested mailboxes
 and messages will be performed on the destination server only.
 <a class="reference internal" href="mupdate.html#std-cyrusman-mupdate-8">mupdate(8)</a> actions will not occur.</p>
@@ -863,8 +858,8 @@ part of a murder.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-M">
-<span id="cmdoption-restore-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"> <span class="pre">mboxname</span></span><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-M">
+<span id="cmdoption-restore-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"> <span class="pre">mboxname</span></code><a class="headerlink" href="#cmdoption-restore-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Messages are restored to the mailbox with the specified <em>mboxname</em>.  If no
 mailbox of this name exists, one will be created.</p>
 <p>If multiple mailbox objects are to be restored, whether due to being
@@ -878,14 +873,14 @@ their original mailboxes.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-P">
-<span id="cmdoption-restore-p"></span><span class="sig-name descname"><span class="pre">-P</span></span><span class="sig-prename descclassname"> <span class="pre">partition</span></span><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-P">
+<span id="cmdoption-restore-p"></span><code class="sig-name descname"><span class="pre">-P</span></code><code class="sig-prename descclassname"> <span class="pre">partition</span></code><a class="headerlink" href="#cmdoption-restore-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore mailboxes to the specified <em>partition</em></p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-U">
-<span id="cmdoption-restore-u"></span><span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-U">
+<span id="cmdoption-restore-u"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to preserve uidvalidity and other related fields, such that the
 restored mailboxes and messages appear like they never left, and IMAP
 clients can avoid expensive state updates.</p>
@@ -898,21 +893,21 @@ was specified.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-X">
-<span id="cmdoption-restore-x"></span><span class="sig-name descname"><span class="pre">-X</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-X">
+<span id="cmdoption-restore-x"></span><code class="sig-name descname"><span class="pre">-X</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do not restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>See also <strong>-x</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-0">
-<span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-0" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-0">
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to restore all mailboxes in the specified <em>backup</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-n">
-<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-n">
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do nothing.  The work required to perform the restoration will be
 calculated (and reported depending on verbosity level), but no
 restoration will take place, and no connection will be made to
@@ -921,29 +916,29 @@ the destination server.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-r">
-<span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-r">
+<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recurse into submailboxes.  When restoring mailboxes, also restore
 any mailboxes contained within them.</p>
 <p>The default is to restore only explicitly-specified mailboxes.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-v">
-<span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-v">
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity level.  This option can be specified multiple times
 for additional verbosity.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-w">
-<span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"> <span class="pre">seconds</span></span><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-w">
+<code class="sig-name descname"><span class="pre">-w</span></code><code class="sig-prename descclassname"> <span class="pre">seconds</span></code><a class="headerlink" href="#cmdoption-restore-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wait <em>seconds</em> before starting.  This is useful for attaching a debugger.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-1">
-<span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-1" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-1">
+<code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only restore messages that are marked as expunged in the <em>backup</em>.</p>
 <p>This can be convenient for restoring messages that were accidentally
 deleted by the user, without needing to track down individual message
@@ -952,25 +947,25 @@ guids.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-z">
-<span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-z">
+<code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Require compression for server connection.  The restore will abort
 if compression is unavailable.</p>
 </dd></dl>
 
-</section>
-<section id="modes">
-<span id="restore-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="modes">
+<span id="restore-modes"></span><h2>Modes<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-2">
-<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-2" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-2">
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-2" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a filename.  The named file does not need to be
 known about in the backups database.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-3">
-<span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-3" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-3">
+<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-3" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a mailbox name.  There must be a known backup
 for the user whose mailbox this is.</p>
 <p>Known backups are recorded in the database specified by the <strong>backup_db</strong>
@@ -978,33 +973,33 @@ and <strong>backup_db_path</strong> configuration options.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-restore-4">
-<span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-restore-4" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-restore-4">
+<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-restore-4" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>backup</em> is interpreted as a userid.  There must be a known backup for
 the specified user.</p>
 <p>This is the default if no mode is specified.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>,
 <em class="manpage">services(5)</em>,
 <a class="reference internal" href="cyr_backup.html#std-cyrusman-cyr_backup-8">cyr_backup(8)</a>,
 <a class="reference internal" href="imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <a class="reference internal" href="mupdate.html#std-cyrusman-mupdate-8">mupdate(8)</a>,
 <a class="reference internal" href="sync_server.html#std-cyrusman-sync_server-8">sync_server(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1027,7 +1022,7 @@ the specified user.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Dec 04 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1050,12 +1045,9 @@ the specified user.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

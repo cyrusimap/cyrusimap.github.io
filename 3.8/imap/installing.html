@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Installing Cyrus &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="download/getcyrus.html">Get Cyrus</a><ul>
@@ -743,7 +738,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -790,11 +785,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="installing-cyrus">
-<span id="installing"></span><h1>Installing Cyrus<a class="headerlink" href="#installing-cyrus" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="installing-cyrus">
+<span id="installing"></span><h1>Installing Cyrus<a class="headerlink" href="#installing-cyrus" title="Permalink to this headline">¶</a></h1>
 <p>This guide assumes you have already <a class="reference internal" href="developer/compiling.html#compiling"><span class="std std-ref">compiled Cyrus</span></a>.</p>
-<section id="install-cyrus">
-<h2>Install Cyrus<a class="headerlink" href="#install-cyrus" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="install-cyrus">
+<h2>Install Cyrus<a class="headerlink" href="#install-cyrus" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option given to <code class="docutils literal notranslate"><span class="pre">configure</span></code> (during <a class="reference internal" href="developer/compiling.html#compiling"><span class="std std-ref">compilation</span></a>) sets where Cyrus is installed to.</p>
 <p>If unspecified, it will go to whatever destination is your system default (often <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code>).
 To check: the final output of the configure step will display where a <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> will install to.</p>
@@ -803,9 +798,9 @@ To check: the final output of the configure step will display where a <code clas
 make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span class="c1"># Only needed if you&#39;re testing older Cyrus versions</span>
 </pre></div>
 </div>
-</section>
-<section id="optional-components">
-<h2>Optional Components<a class="headerlink" href="#optional-components" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="optional-components">
+<h2>Optional Components<a class="headerlink" href="#optional-components" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download/installation/manage-dav.html">HTTP modules</a><ul>
@@ -822,9 +817,9 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
 </li>
 </ul>
 </div>
-</section>
-<section id="setting-up-syslog">
-<h2>Setting up syslog<a class="headerlink" href="#setting-up-syslog" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="setting-up-syslog">
+<h2>Setting up syslog<a class="headerlink" href="#setting-up-syslog" title="Permalink to this headline">¶</a></h2>
 <p>A lot of Cyrus's debugging information gets logged with <code class="docutils literal notranslate"><span class="pre">syslog</span></code>, so you'll want to be able to capture it and find it later (especially when debugging cassandane tests)</p>
 <ol class="arabic">
 <li><p>Find the correct place to edit syslog config for your system (for me, I needed to create <code class="docutils literal notranslate"><span class="pre">/etc/rsyslog.d/cyrus.conf</span></code>)</p></li>
@@ -857,11 +852,11 @@ make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span 
 </div>
 </li>
 </ol>
-</section>
-<section id="create-cyrus-environment">
-<h2>Create Cyrus environment<a class="headerlink" href="#create-cyrus-environment" title="Permalink to this heading">¶</a></h2>
-<section id="set-up-the-cyrus-mail-user-and-group">
-<h3>Set up the cyrus:mail user and group<a class="headerlink" href="#set-up-the-cyrus-mail-user-and-group" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="create-cyrus-environment">
+<h2>Create Cyrus environment<a class="headerlink" href="#create-cyrus-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-the-cyrus-mail-user-and-group">
+<h3>Set up the cyrus:mail user and group<a class="headerlink" href="#set-up-the-cyrus-mail-user-and-group" title="Permalink to this headline">¶</a></h3>
 <p>Now let's create a <strong>special user account just for the Cyrus server</strong>
 to sandbox Cyrus: called <code class="docutils literal notranslate"><span class="pre">cyrus</span></code>. We'll also create a <code class="docutils literal notranslate"><span class="pre">mail</span></code> group
 as well. This allows Cyrus to give other programs some permissions if
@@ -884,7 +879,7 @@ cyrus:x:999:8:Cyrus IMAP Server:/var/lib/imap:/bin/bash
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">var/lib/imap</span></code> directory above is an example. Use the same directory
 specified in the <code class="docutils literal notranslate"><span class="pre">configdirectory</span></code> option in <a class="reference internal" href="reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-<aside class="sidebar">
+<div class="sidebar">
 <p class="sidebar-title">configdirectory</p>
 <p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
 <blockquote>
@@ -894,7 +889,7 @@ specified in the <code class="docutils literal notranslate"><span class="pre">co
 required.</p>
 </div></blockquote>
 </div></blockquote>
-</aside>
+</div>
 <p>If your installation uses system locations for things like SSL
 certificates (i.e. <code class="docutils literal notranslate"><span class="pre">/etc/ssl/certs</span> <span class="pre">/etc/ssl/private</span></code>), then you should
 also add the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user to the appropriate group to gain access to
@@ -903,9 +898,9 @@ the PKI files.  On Debian/Ubuntu systems, for example, this group is
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">ssl</span><span class="o">-</span><span class="n">cert</span> <span class="n">cyrus</span>
 </pre></div>
 </div>
-</section>
-<section id="authentication-with-sasl">
-<h3>Authentication with SASL<a class="headerlink" href="#authentication-with-sasl" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="authentication-with-sasl">
+<h3>Authentication with SASL<a class="headerlink" href="#authentication-with-sasl" title="Permalink to this headline">¶</a></h3>
 <p>Now, let's set up <strong>SASL</strong>. This will allow you to connect to your
 local IMAP server and login, just like any IMAP user would before
 checking for new emails.</p>
@@ -941,16 +936,16 @@ the user exists and is set up correctly:</p>
 </pre></div>
 </div>
 <p>You should get an <code class="docutils literal notranslate"><span class="pre">0:</span> <span class="pre">OK</span> <span class="pre">&quot;Success.&quot;</span></code> message.</p>
-</section>
-<section id="mail-delivery-from-your-mta">
-<span id="mta-lda-delivery"></span><h3>Mail delivery from your MTA<a class="headerlink" href="#mail-delivery-from-your-mta" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="mail-delivery-from-your-mta">
+<span id="mta-lda-delivery"></span><h3>Mail delivery from your MTA<a class="headerlink" href="#mail-delivery-from-your-mta" title="Permalink to this headline">¶</a></h3>
 <p>Your Cyrus IMAP server will want to receive the emails accepted by your
 SMTP server (ie Sendmail, Postfix, Exim). In Cyrus, this happens via a
 protocol called LMTP, which is usually supported by your SMTP server.</p>
-<section id="integration-with-sendmail">
-<h4>Integration with Sendmail<a class="headerlink" href="#integration-with-sendmail" title="Permalink to this heading">¶</a></h4>
-<section id="objectives">
-<h5>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">¶</a></h5>
+<div class="section" id="integration-with-sendmail">
+<h4>Integration with Sendmail<a class="headerlink" href="#integration-with-sendmail" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="objectives">
+<h5>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h5>
 <p>This manual describes how to integrate Sendmail with Cyrus IMAP.  <a class="reference external" href="http://open-sendmail.sourceforge.net">Open Sendmail</a> presents alternative approaches, but these do not integrate well with email addresses from virtual domains, which are hosted by Cyrus IMAP, but are not in the <cite>virtuser</cite> table.</p>
 <p>Cyrus IMAP can manage many domains.  It has a default domain, and other, virtual domains.</p>
 <p>Sendmail can also manage many domains.  Its primary domains are stored in the <cite>w</cite> class and are read from <cite>/etc/mail/local-host-names</cite>.  The rewritings for these domains are modified using the aliases database.  Sendmail handles unqualified email addresses and addresses from the domains in the <cite>w</cite> class the same. Sendmail in addition can manage further, virtual domains by defining the <cite>VirtHost</cite> class.  The redirections for the virtual domains are controlled by <cite>virtusertable</cite>.</p>
@@ -960,16 +955,16 @@ protocol called LMTP, which is usually supported by your SMTP server.</p>
 <p>The user database is not considered in this guide.</p>
 <p>Plus addressing works, when the destination folder does exist and is lowercased:  If <cite>user1</cite> has folders <cite>abc</cite> and <cite>mNp</cite>, emails for <cite>user1+abc</cite> and <cite>user1+aBc</cite> will be accepted, emails for <cite>user1+mNp</cite> and <cite>user1+mnp</cite> will be rejected.  The lowercase limitation comes from <cite>smmapd</cite>.  Emails for <cite>user1+def</cite> will be rejected, if <cite>user1</cite> has no mailbox <cite>def</cite>, even if a Sieve script would place such mails in existing folders.</p>
 <p>Plus addressing does not survive aliases rewriting.  If the aliases table contains <cite>user2: user1</cite>, emails for <cite>user2+abc</cite> will be rejected, while emails for <cite>user2</cite> or <cite>user1+abc</cite> will be accepted.  After inserting <cite>user2+abc: user1+abc</cite> in the aliases table, emails for <cite>user2+abc</cite> will be accepted.</p>
-</section>
-<section id="install-sendmail">
-<h5>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="install-sendmail">
+<h5>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this headline">¶</a></h5>
 <p>We'll set up LMTP with the Sendmail SMTP server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">sendmail</span>
 </pre></div>
 </div>
-</section>
-<section id="add-cf-feature-anfi-vcyrus-m4">
-<h5>Add cf/feature/anfi_vcyrus.m4<a class="headerlink" href="#add-cf-feature-anfi-vcyrus-m4" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="add-cf-feature-anfi-vcyrus-m4">
+<h5>Add cf/feature/anfi_vcyrus.m4<a class="headerlink" href="#add-cf-feature-anfi-vcyrus-m4" title="Permalink to this headline">¶</a></h5>
 <p>Create the file cf/feature/anfi_vcyrus.m4:</p>
 <div class="highlight-m4 notranslate"><div class="highlight"><pre><span></span>divert(-1)
 dnl
@@ -996,9 +991,9 @@ R$+ $| $*             $: $1
 <p>This file creates a map called <cite>cyrus</cite>, which connects to the Cyrus` <cite>smmapd</cite> service.</p>
 <p>The file extends the <cite>localaddr=5</cite> and <cite>Local_localaddr</cite> rulesets to verify whether an address is known to Cyrus IMAP.  The rulesets are called from the <cite>local</cite> mailer, as the <cite>local</cite> mailer has the <cite>5</cite> mailer flag set.  The ruleset changes the mailer to <cite>cyrusv2</cite> and the email is accepted if and only if the address is known to Cyrus IMAP.</p>
 <p>The temporary rejections do not work in practice.  If <cite>smmapd</cite> is down, the email is queued instead of being rejected.  The 451 line above is there to encourage discussion.</p>
-</section>
-<section id="patching-m4-proto-m4">
-<h5>Patching m4/proto.m4<a class="headerlink" href="#patching-m4-proto-m4" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="patching-m4-proto-m4">
+<h5>Patching m4/proto.m4<a class="headerlink" href="#patching-m4-proto-m4" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/cf/m4/proto.m4 b/cf/m4/proto.m4</span>
 <span class="gd">--- a/cf/m4/proto.m4</span>
 <span class="gi">+++ b/cf/m4/proto.m4</span>
@@ -1017,9 +1012,9 @@ R$+ $| $*             $: $1
 </div>
 <p>Where many spaces in a row stand for the tabulator key.</p>
 <p>If an address from a virtual domain is not found in the <cite>virtusertable</cite>, ask <cite>smmapd</cite> if the address is known to Cyrus IMAP.  If it is known, deliver it to Cyrus IMAP.</p>
-</section>
-<section id="patching-mailer-cyrusv2-m4">
-<h5>Patching mailer/cyrusv2.m4<a class="headerlink" href="#patching-mailer-cyrusv2-m4" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="patching-mailer-cyrusv2-m4">
+<h5>Patching mailer/cyrusv2.m4<a class="headerlink" href="#patching-mailer-cyrusv2-m4" title="Permalink to this headline">¶</a></h5>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gh">diff --git a/cf/mailer/cyrusv2.m4 b/cf/mailer/cyrusv2.m4</span>
 <span class="gd">--- a/cf/mailer/cyrusv2.m4</span>
 <span class="gi">+++ b/cf/mailer/cyrusv2.m4</span>
@@ -1035,9 +1030,9 @@ R$+ $| $*             $: $1
 </div>
 <p>The <cite>8</cite> flag means, that Cyrus LMTPd can accept 8bit data and sendmail will not convert 8bit data to 7bit before passing it to Cyrus IMAP.  The <cite>A&#64;/:|</cite> functionality will be performed by the <cite>local</cite> mailer, before the <cite>cyrusv2</cite> mailer is called.  The <cite>cyrus2v</cite> mailer is used only to pass data to Cyrus IMAP, after it is verified, that Cyrus IMAP hosts a particular mailbox.  Thus the <cite>cyrus2v</cite> mailer does not call the <cite>localaddr=5</cite> rule set in order to avoid loops. (If the <cite>cyrusv2</cite> mailer calls the <cite>localaddr=5</cite> ruleset and the <cite>localaddr=5</cite> ruleset calls the <cite>cyrusv2</cite> mailer, there is an endless loop).</p>
 <p>The patch to <cite>m4/proto.m4</cite> also requires a mailer, which does not call the <cite>localaddr=5</cite> ruleset.  Because of this, substituting the <cite>local</cite> mailer by <cite>define(`confLOCAL_MAILER', `cyrusv2')dnl</cite> will not work.  The proposed setup needs one mailer calling the <cite>localaddr=5</cite> ruleset (here the <cite>local</cite> mailer) and one mailer not calling the <cite>localaddr=5</cite> ruleset (the <cite>cyrusv2</cite> mailer).</p>
-</section>
-<section id="sendmail-communication">
-<h5>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="sendmail-communication">
+<h5>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this headline">¶</a></h5>
 <p>For LMTP and SMMAP to work with Sendmail, it is necessary to create a folder that will contain the UNIX socket used by Sendmail and Cyrus to deliver/receive emails:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
 <span class="n">sudo</span> <span class="n">chown</span> <span class="n">cyrus</span><span class="p">:</span><span class="n">mail</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
@@ -1045,9 +1040,9 @@ R$+ $| $*             $: $1
 </pre></div>
 </div>
 <p>Do the same for the <cite>smmapd</cite> socket.</p>
-</section>
-<section id="adjustments-for-the-mc-files">
-<h5>Adjustments for the <cite>.mc</cite> files<a class="headerlink" href="#adjustments-for-the-mc-files" title="Permalink to this heading">¶</a></h5>
+</div>
+<div class="section" id="adjustments-for-the-mc-files">
+<h5>Adjustments for the <cite>.mc</cite> files<a class="headerlink" href="#adjustments-for-the-mc-files" title="Permalink to this headline">¶</a></h5>
 <p>In your <cite>.mc</cite> files add:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FEATURE(`anfi_vcyrus&#39;)dnl
 MAILER(`cyrusv2&#39;)dnl
@@ -1072,12 +1067,12 @@ $ sendmail -C sendmail-mail.cf -bv zzz@domain1.org
 zzz@domain1.org... deliverable: mailer cyrusv2, user zzz@domain1.org
 </pre></div>
 </div>
-</section>
-</section>
-<section id="postfix">
-<h4>Postfix<a class="headerlink" href="#postfix" title="Permalink to this heading">¶</a></h4>
-<section id="install-postfix">
-<h5>Install Postfix<a class="headerlink" href="#install-postfix" title="Permalink to this heading">¶</a></h5>
+</div>
+</div>
+<div class="section" id="postfix">
+<h4>Postfix<a class="headerlink" href="#postfix" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="install-postfix">
+<h5>Install Postfix<a class="headerlink" href="#install-postfix" title="Permalink to this headline">¶</a></h5>
 <p>We'll set up LMTP with the Postfix SMTP server (consider which other
 Postfix related packages you may also desire):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">postfix</span> <span class="n">postfix</span><span class="o">-</span><span class="n">doc</span> <span class="n">postfix</span><span class="o">-</span><span class="n">pcre</span> <span class="n">postfix</span><span class="o">-</span><span class="n">ldap</span> <span class="o">...</span>
@@ -1134,11 +1129,11 @@ version of this, where the socket patch matches what's set in the
 </div>
 </li>
 </ol>
-</section>
-</section>
-</section>
-<section id="protocol-ports">
-<h3>Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="protocol-ports">
+<h3>Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus IMAP server provides service interfaces via either TCP/IP
 ports or Unix domain sockets.  For the former, Cyrus requires that there
 are proper entries in the host's <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> file.  The following
@@ -1158,9 +1153,9 @@ are required for any host using the listed services:</p>
 </pre></div>
 </div>
 <p>Make sure that these lines are present or add them if they are missing.</p>
-</section>
-<section id="cyrus-config-files">
-<h3>Cyrus config files<a class="headerlink" href="#cyrus-config-files" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="cyrus-config-files">
+<h3>Cyrus config files<a class="headerlink" href="#cyrus-config-files" title="Permalink to this headline">¶</a></h3>
 <p>Set up a simple directory structure for Cyrus to store emails, owned by
 the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user and group <code class="docutils literal notranslate"><span class="pre">mail</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cyrus</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span>
@@ -1373,9 +1368,9 @@ structure: use <a class="reference internal" href="reference/manpages/systemcomm
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">cyrus</span> <span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">mkimap</span>
 </pre></div>
 </div>
-</section>
-<section id="optional-setting-up-tls-certificates">
-<h3>Optional: Setting up TLS certificates<a class="headerlink" href="#optional-setting-up-tls-certificates" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="optional-setting-up-tls-certificates">
+<h3>Optional: Setting up TLS certificates<a class="headerlink" href="#optional-setting-up-tls-certificates" title="Permalink to this headline">¶</a></h3>
 <p>Obtain a certificate, e.g. from
 <a class="reference external" href="https://letsencrypt.org/">Let’s Encrypt</a>.  You need a file with
 the full chain and a private key in
@@ -1401,9 +1396,9 @@ following command:</p>
 <p>Make sure to replace <cite>imapuser</cite> with whatever user you set up with
 saslpasswd2 before, and to replace <cite>secret</cite> with the actual password
 you set for that user.</p>
-</section>
-<section id="prepare-ephemeral-run-time-storage-directories">
-<h3>Prepare ephemeral (run-time) storage directories<a class="headerlink" href="#prepare-ephemeral-run-time-storage-directories" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="prepare-ephemeral-run-time-storage-directories">
+<h3>Prepare ephemeral (run-time) storage directories<a class="headerlink" href="#prepare-ephemeral-run-time-storage-directories" title="Permalink to this headline">¶</a></h3>
 <p>If you will be using ephemeral (run-time) storage locations on an OS or
 distro on which the directory skeleton does not persist over reboots,
 you will need to use your distro's standard method to ensure that any
@@ -1466,10 +1461,10 @@ fixdirs () {
 }
 </pre></div>
 </div>
-</section>
-</section>
-<section id="launch-cyrus">
-<h2>Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="launch-cyrus">
+<h2>Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">master</span><span class="o">/</span><span class="n">master</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
 </div>
@@ -1479,9 +1474,9 @@ problems.</p>
 daemons. This
 <a class="reference external" href="https://www.linux.com/learn/managing-linux-daemons-init-scripts">https://www.linux.com/learn/managing-linux-daemons-init-scripts</a> is old,
 but has a good explanation of the concepts required.</p>
-</section>
-<section id="send-a-test-email">
-<h2>Send a test email<a class="headerlink" href="#send-a-test-email" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="send-a-test-email">
+<h2>Send a test email<a class="headerlink" href="#send-a-test-email" title="Permalink to this headline">¶</a></h2>
 <p>We will send a test email to our local development environment to check
 if:</p>
 <ul class="simple">
@@ -1559,9 +1554,9 @@ need to add them to SASL (as before):</p>
 <p>You can now configure a mail client to access your new mailserver and
 connect to the mailbox for <a class="reference external" href="mailto:example&#37;&#52;&#48;localhost">example<span>&#64;</span>localhost</a> via IMAP and see the
 message.</p>
-</section>
-<section id="checking-carddav-and-caldav">
-<h2>Checking CardDAV and CalDAV<a class="headerlink" href="#checking-carddav-and-caldav" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="checking-carddav-and-caldav">
+<h2>Checking CardDAV and CalDAV<a class="headerlink" href="#checking-carddav-and-caldav" title="Permalink to this headline">¶</a></h2>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">/etc/cyrus.conf</span></code> and add (or uncomment) this line in the
 SERVICES section:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span>        <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;httpd&quot;</span> <span class="n">listen</span><span class="o">=</span><span class="s2">&quot;http&quot;</span> <span class="n">prefork</span><span class="o">=</span><span class="mi">0</span>
@@ -1578,10 +1573,10 @@ addressbook and calendar entry for the sample example user:</p>
 <span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">example</span><span class="o">@</span><span class="p">[</span><span class="n">hostname</span><span class="p">]:</span><span class="n">mypassword</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">X</span> <span class="n">PROPFIND</span> <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Depth: 1&#39;</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">dav</span><span class="o">/</span><span class="n">principals</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">example</span><span class="o">@</span><span class="p">[</span><span class="n">hostname</span><span class="p">]</span><span class="o">/</span>
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>Some common issues are explained below.</p>
 <p class="rubric">I have all kinds of weird Perl errors when running cyradm</p>
 <p>The solution is to set the Perl library path right. To be honest, I was too lazy to figure out exactly which path was right, so I added this snippet to my <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file:</p>
@@ -1618,8 +1613,8 @@ addressbook and calendar entry for the sample example user:</p>
 <p class="rubric">My question isn't answered here</p>
 <p>Join us on the <a class="reference internal" href="support/feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing lists</span></a> if you need help
 or just want to chat about Cyrus, IMAP, etc.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1642,7 +1637,7 @@ or just want to chat about Cyrus, IMAP, etc.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jan 08 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1665,12 +1660,9 @@ or just want to chat about Cyrus, IMAP, etc.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

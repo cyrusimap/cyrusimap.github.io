@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Configuring GSSAPI and Cyrus SASL &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,8 +485,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="configuring-gssapi-and-cyrus-sasl">
-<span id="gssapi"></span><h1>Configuring GSSAPI and Cyrus SASL<a class="headerlink" href="#configuring-gssapi-and-cyrus-sasl" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="configuring-gssapi-and-cyrus-sasl">
+<span id="gssapi"></span><h1>Configuring GSSAPI and Cyrus SASL<a class="headerlink" href="#configuring-gssapi-and-cyrus-sasl" title="Permalink to this headline">¶</a></h1>
 <p>This document was contributed by <a class="reference external" href="mailto:kenh&#37;&#52;&#48;cmf&#46;nrl&#46;navy&#46;mil">Ken Hornstein</a> and updated
 by <a class="reference external" href="mailto:Alexey&#46;Melnikov&#37;&#52;&#48;isode&#46;com">Alexey Melnikov</a>.</p>
 <p>A couple of people have asked me privately, “Hey, how did you get the
@@ -501,16 +496,16 @@ GSSAPI mechanism to work?  I tried, but the sample apps kept failing”.
 how you get GSSAPI working with the sample apps, since it wasn’t
 obvious to me, and I consider myself not completely ignorant of GSSAPI
 and Kerberos.</p>
-<section id="compile-cyrus-sasl-with-gssapi">
-<h2>Compile Cyrus SASL with GSSAPI<a class="headerlink" href="#compile-cyrus-sasl-with-gssapi" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="compile-cyrus-sasl-with-gssapi">
+<h2>Compile Cyrus SASL with GSSAPI<a class="headerlink" href="#compile-cyrus-sasl-with-gssapi" title="Permalink to this headline">¶</a></h2>
 <p>Compile the Cyrus-SASL distribution with the GSSAPI plugin
 for your favorite GSS-API mechanism.  I personally use the GSSAPI
 libraries included with the <a class="reference external" href="https://web.mit.edu/kerberos/www/">MIT Kerberos 5 distribution</a>;
 <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">Heimdal</a>
 and <a class="reference external" href="https://cybersafe.com">CyberSafe</a> work as well.</p>
-</section>
-<section id="start-sample-server">
-<h2>Start sample server<a class="headerlink" href="#start-sample-server" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="start-sample-server">
+<h2>Start sample server<a class="headerlink" href="#start-sample-server" title="Permalink to this headline">¶</a></h2>
 <p>The command-line used for
 sample-server needs to specify the GSSAPI service name and the
 location of the plug-ins.</p>
@@ -548,16 +543,16 @@ like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">stty</span> <span class="o">-</span><span class="n">icanon</span> <span class="nb">min</span> <span class="mi">1</span> <span class="n">time</span> <span class="mi">0</span> <span class="p">;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span> <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="obtain-kerberos-ticket">
-<h2>Obtain Kerberos ticket<a class="headerlink" href="#obtain-kerberos-ticket" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="obtain-kerberos-ticket">
+<h2>Obtain Kerberos ticket<a class="headerlink" href="#obtain-kerberos-ticket" title="Permalink to this headline">¶</a></h2>
 <p>Obtain a Kerberos ticket for the user you want to authenticate as.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kinit</span> <span class="n">kenh</span>
 </pre></div>
 </div>
-</section>
-<section id="start-up-sample-client">
-<h2>Start up sample client<a class="headerlink" href="#start-up-sample-client" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="start-up-sample-client">
+<h2>Start up sample client<a class="headerlink" href="#start-up-sample-client" title="Permalink to this headline">¶</a></h2>
 <p>You need to specify the service
 name, the hostname, and the userid.  An example might be</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">s</span> <span class="n">host</span> <span class="o">-</span><span class="n">n</span> <span class="n">your</span><span class="o">.</span><span class="n">fqdn</span><span class="o">.</span><span class="n">here</span> <span class="o">-</span><span class="n">u</span> <span class="n">kenh</span> <span class="o">-</span><span class="n">p</span> <span class="o">../</span><span class="n">plugins</span><span class="o">/.</span><span class="n">libs</span>
@@ -567,9 +562,9 @@ name, the hostname, and the userid.  An example might be</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Waiting</span> <span class="k">for</span> <span class="n">mechanism</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">server...</span>
 </pre></div>
 </div>
-</section>
-<section id="connect-server-to-client">
-<h2>Connect Server to Client<a class="headerlink" href="#connect-server-to-client" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="connect-server-to-client">
+<h2>Connect Server to Client<a class="headerlink" href="#connect-server-to-client" title="Permalink to this headline">¶</a></h2>
 <p>Cut-and-paste the initial mechanism line from the server process
 (this includes the `` S: `` ) into the client process.  You
 should get something similar to:</p>
@@ -624,9 +619,9 @@ hostname of the service with -n, and a username with -u ?), or that
 GSSAPI has failed (unfortunately, on the client you cannot find out
 the internal GSSAPI error; you will need to break out the debugger
 for that).</p>
-</section>
-<section id="connect-client-to-server">
-<h2>Connect Client to Server<a class="headerlink" href="#connect-client-to-server" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="connect-client-to-server">
+<h2>Connect Client to Server<a class="headerlink" href="#connect-client-to-server" title="Permalink to this headline">¶</a></h2>
 <p>Cut and paste the client response (The <em>entire</em> line that begins
 with C:, including the initial <code class="docutils literal notranslate"><span class="pre">C:</span></code> ) to the server
 process.  You should get a response back that starts with <code class="docutils literal notranslate"><span class="pre">S:</span></code> .
@@ -661,8 +656,8 @@ that looks like (on both the client and server):</p>
 </pre></div>
 </div>
 <p>If you get to that, then you’ve done it, and GSSAPI works successfully!</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -685,7 +680,7 @@ that looks like (on both the client and server):</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -709,12 +704,9 @@ that looks like (on both the client and server):</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

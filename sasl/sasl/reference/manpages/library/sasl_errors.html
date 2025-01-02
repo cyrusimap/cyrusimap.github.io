@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_errors - SASL error codes &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,217 +485,217 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-errors-sasl-error-codes">
-<span id="sasl-reference-manpages-library-sasl-errors"></span><span id="std-saslman-sasl_errors-3"></span><h1><strong>sasl_errors</strong> - SASL error codes<a class="headerlink" href="#sasl-errors-sasl-error-codes" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-errors-sasl-error-codes">
+<span id="sasl-reference-manpages-library-sasl-errors"></span><span id="std-saslman-sasl_errors-3"></span><span id="std:saslman-sasl_errors(3)"></span><h1><strong>sasl_errors</strong> - SASL error codes<a class="headerlink" href="#sasl-errors-sasl-error-codes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The  following  are  the  general  error codes that may be
 returned by calls into the SASL library, and  their  meanings (that may vary slightly based on context).</p>
-<section id="common-result-codes">
-<h3>Common Result Codes<a class="headerlink" href="#common-result-codes" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="common-result-codes">
+<h3>Common Result Codes<a class="headerlink" href="#common-result-codes" title="Permalink to this headline">¶</a></h3>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_OK">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_OK</span></span></span><a class="headerlink" href="#c.SASL_OK" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_OK">
+<code class="sig-name descname"><span class="pre">SASL_OK</span></code><a class="headerlink" href="#c.SASL_OK" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Success</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_CONTINUE">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_CONTINUE</span></span></span><a class="headerlink" href="#c.SASL_CONTINUE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_CONTINUE">
+<code class="sig-name descname"><span class="pre">SASL_CONTINUE</span></code><a class="headerlink" href="#c.SASL_CONTINUE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Another step is needed in authentication</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_FAIL">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_FAIL</span></span></span><a class="headerlink" href="#c.SASL_FAIL" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_FAIL">
+<code class="sig-name descname"><span class="pre">SASL_FAIL</span></code><a class="headerlink" href="#c.SASL_FAIL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Generic Failure</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOMEM">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOMEM</span></span></span><a class="headerlink" href="#c.SASL_NOMEM" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOMEM">
+<code class="sig-name descname"><span class="pre">SASL_NOMEM</span></code><a class="headerlink" href="#c.SASL_NOMEM" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Memory shortage failure</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BUFOVER">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BUFOVER</span></span></span><a class="headerlink" href="#c.SASL_BUFOVER" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BUFOVER">
+<code class="sig-name descname"><span class="pre">SASL_BUFOVER</span></code><a class="headerlink" href="#c.SASL_BUFOVER" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Overflowed buffer</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOMECH">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOMECH</span></span></span><a class="headerlink" href="#c.SASL_NOMECH" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOMECH">
+<code class="sig-name descname"><span class="pre">SASL_NOMECH</span></code><a class="headerlink" href="#c.SASL_NOMECH" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Mechanism  not  supported  / No mechanisms matched
 requirements</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADPROT">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADPROT</span></span></span><a class="headerlink" href="#c.SASL_BADPROT" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADPROT">
+<code class="sig-name descname"><span class="pre">SASL_BADPROT</span></code><a class="headerlink" href="#c.SASL_BADPROT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Bad / Invalid Protocol or Protocol cancel</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOTDONE">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOTDONE</span></span></span><a class="headerlink" href="#c.SASL_NOTDONE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOTDONE">
+<code class="sig-name descname"><span class="pre">SASL_NOTDONE</span></code><a class="headerlink" href="#c.SASL_NOTDONE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Cannot request information / Not  applicable  until
 later in exchange</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADPARAM">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADPARAM</span></span></span><a class="headerlink" href="#c.SASL_BADPARAM" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADPARAM">
+<code class="sig-name descname"><span class="pre">SASL_BADPARAM</span></code><a class="headerlink" href="#c.SASL_BADPARAM" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Invalid Parameter Supplied</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_TRYAGAIN">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_TRYAGAIN</span></span></span><a class="headerlink" href="#c.SASL_TRYAGAIN" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_TRYAGAIN">
+<code class="sig-name descname"><span class="pre">SASL_TRYAGAIN</span></code><a class="headerlink" href="#c.SASL_TRYAGAIN" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Transient Failure (e.g. weak key)</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADMAC">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADMAC</span></span></span><a class="headerlink" href="#c.SASL_BADMAC" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADMAC">
+<code class="sig-name descname"><span class="pre">SASL_BADMAC</span></code><a class="headerlink" href="#c.SASL_BADMAC" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Integrity Check Failed</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOTINIT">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOTINIT</span></span></span><a class="headerlink" href="#c.SASL_NOTINIT" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOTINIT">
+<code class="sig-name descname"><span class="pre">SASL_NOTINIT</span></code><a class="headerlink" href="#c.SASL_NOTINIT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>SASL library not initialized</p>
 </dd></dl>
 
-</section>
-<section id="client-only-result-codes">
-<h3>Client-only Result Codes<a class="headerlink" href="#client-only-result-codes" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="client-only-result-codes">
+<h3>Client-only Result Codes<a class="headerlink" href="#client-only-result-codes" title="Permalink to this headline">¶</a></h3>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_INTERACT">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_INTERACT</span></span></span><a class="headerlink" href="#c.SASL_INTERACT" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_INTERACT">
+<code class="sig-name descname"><span class="pre">SASL_INTERACT</span></code><a class="headerlink" href="#c.SASL_INTERACT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Needs user interaction</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADSERV">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADSERV</span></span></span><a class="headerlink" href="#c.SASL_BADSERV" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADSERV">
+<code class="sig-name descname"><span class="pre">SASL_BADSERV</span></code><a class="headerlink" href="#c.SASL_BADSERV" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Server failed mutual authentication step</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_WRONGMECH">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_WRONGMECH</span></span></span><a class="headerlink" href="#c.SASL_WRONGMECH" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_WRONGMECH">
+<code class="sig-name descname"><span class="pre">SASL_WRONGMECH</span></code><a class="headerlink" href="#c.SASL_WRONGMECH" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Mechanism does not support requested feature</p>
 </dd></dl>
 
-</section>
-<section id="server-only-result-codes">
-<h3>Server-only Result Codes<a class="headerlink" href="#server-only-result-codes" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="server-only-result-codes">
+<h3>Server-only Result Codes<a class="headerlink" href="#server-only-result-codes" title="Permalink to this headline">¶</a></h3>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADAUTH">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADAUTH</span></span></span><a class="headerlink" href="#c.SASL_BADAUTH" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADAUTH">
+<code class="sig-name descname"><span class="pre">SASL_BADAUTH</span></code><a class="headerlink" href="#c.SASL_BADAUTH" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Authentication Failure</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOAUTHZ">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOAUTHZ</span></span></span><a class="headerlink" href="#c.SASL_NOAUTHZ" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOAUTHZ">
+<code class="sig-name descname"><span class="pre">SASL_NOAUTHZ</span></code><a class="headerlink" href="#c.SASL_NOAUTHZ" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Authorization Failure</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_TOOWEAK">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_TOOWEAK</span></span></span><a class="headerlink" href="#c.SASL_TOOWEAK" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_TOOWEAK">
+<code class="sig-name descname"><span class="pre">SASL_TOOWEAK</span></code><a class="headerlink" href="#c.SASL_TOOWEAK" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Mechanism too weak for this user</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_ENCRYPT">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_ENCRYPT</span></span></span><a class="headerlink" href="#c.SASL_ENCRYPT" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_ENCRYPT">
+<code class="sig-name descname"><span class="pre">SASL_ENCRYPT</span></code><a class="headerlink" href="#c.SASL_ENCRYPT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Encryption needed to use mechanism</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_TRANS">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_TRANS</span></span></span><a class="headerlink" href="#c.SASL_TRANS" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_TRANS">
+<code class="sig-name descname"><span class="pre">SASL_TRANS</span></code><a class="headerlink" href="#c.SASL_TRANS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>One  time  use of a plaintext password will enable
 requested mechanism for user</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_EXPIRED">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_EXPIRED</span></span></span><a class="headerlink" href="#c.SASL_EXPIRED" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_EXPIRED">
+<code class="sig-name descname"><span class="pre">SASL_EXPIRED</span></code><a class="headerlink" href="#c.SASL_EXPIRED" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Passphrase expired, must be reset</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_DISABLED">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_DISABLED</span></span></span><a class="headerlink" href="#c.SASL_DISABLED" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_DISABLED">
+<code class="sig-name descname"><span class="pre">SASL_DISABLED</span></code><a class="headerlink" href="#c.SASL_DISABLED" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Account Disabled</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOUSER">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOUSER</span></span></span><a class="headerlink" href="#c.SASL_NOUSER" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOUSER">
+<code class="sig-name descname"><span class="pre">SASL_NOUSER</span></code><a class="headerlink" href="#c.SASL_NOUSER" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>User Not Found</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_BADVERS">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_BADVERS</span></span></span><a class="headerlink" href="#c.SASL_BADVERS" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_BADVERS">
+<code class="sig-name descname"><span class="pre">SASL_BADVERS</span></code><a class="headerlink" href="#c.SASL_BADVERS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Version mismatch with plug-in</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOVERIFY">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOVERIFY</span></span></span><a class="headerlink" href="#c.SASL_NOVERIFY" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOVERIFY">
+<code class="sig-name descname"><span class="pre">SASL_NOVERIFY</span></code><a class="headerlink" href="#c.SASL_NOVERIFY" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>User exists, but no verifier for user</p>
 </dd></dl>
 
-</section>
-<section id="password-setting-result-codes">
-<h3>Password Setting Result Codes<a class="headerlink" href="#password-setting-result-codes" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="password-setting-result-codes">
+<h3>Password Setting Result Codes<a class="headerlink" href="#password-setting-result-codes" title="Permalink to this headline">¶</a></h3>
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_PWLOCK">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_PWLOCK</span></span></span><a class="headerlink" href="#c.SASL_PWLOCK" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_PWLOCK">
+<code class="sig-name descname"><span class="pre">SASL_PWLOCK</span></code><a class="headerlink" href="#c.SASL_PWLOCK" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Passphrase locked</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOCHANGE">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOCHANGE</span></span></span><a class="headerlink" href="#c.SASL_NOCHANGE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOCHANGE">
+<code class="sig-name descname"><span class="pre">SASL_NOCHANGE</span></code><a class="headerlink" href="#c.SASL_NOCHANGE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Requested change was not needed</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_WEAKPASS">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_WEAKPASS</span></span></span><a class="headerlink" href="#c.SASL_WEAKPASS" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_WEAKPASS">
+<code class="sig-name descname"><span class="pre">SASL_WEAKPASS</span></code><a class="headerlink" href="#c.SASL_WEAKPASS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Passphrase is too week for security policy.</p>
 </dd></dl>
 
 <dl class="c macro">
-<dt class="sig sig-object c" id="c.SASL_NOUSERPASS">
-<span class="sig-name descname"><span class="n"><span class="pre">SASL_NOUSERPASS</span></span></span><a class="headerlink" href="#c.SASL_NOUSERPASS" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.SASL_NOUSERPASS">
+<code class="sig-name descname"><span class="pre">SASL_NOUSERPASS</span></code><a class="headerlink" href="#c.SASL_NOUSERPASS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>User supplied passwords are not permitted</p>
 </dd></dl>
 
-</section>
-</section>
-<section id="conforming-to">
-<h2>Conforming to<a class="headerlink" href="#conforming-to" title="Permalink to this heading">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a></p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="conforming-to">
+<h2>Conforming to<a class="headerlink" href="#conforming-to" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a></p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="sasl.html#std-saslman-sasl-3">sasl(3)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -723,7 +718,7 @@ requested mechanism for user</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -747,12 +742,9 @@ requested mechanism for user</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

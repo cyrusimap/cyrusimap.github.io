@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Development Process &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -802,11 +797,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="development-process">
-<span id="devprocess"></span><h1>Development Process<a class="headerlink" href="#development-process" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="development-process">
+<span id="devprocess"></span><h1>Development Process<a class="headerlink" href="#development-process" title="Permalink to this headline">¶</a></h1>
 <p>We need to develop not just for ourselves, but for the legions who follow us. This means following good development process to provide transparency, maintainability and readability to what we’re doing.</p>
-<section id="coding-style">
-<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="coding-style">
+<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Unix style: CRLF line endings</p></li>
 <li><p>No trailing spaces.</p></li>
@@ -817,16 +812,16 @@
 <li><p>Comments. More comments. Still more comments. Nobody will know what your brilliant idea was when you wrote that gnarly piece of code unless you tell them.</p></li>
 <li><p>Commit messages. Commit discrete changes, don’t munge six different fixes into a single commit. And provide a clear message (preferably tied into a Maniphest task/Differential diff) of what problem these changes address.</p></li>
 </ul>
-</section>
-<section id="making-changes">
-<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this heading">¶</a></h2>
-<section id="before-you-begin">
-<h3>Before you begin<a class="headerlink" href="#before-you-begin" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="making-changes">
+<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="before-you-begin">
+<h3>Before you begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h3>
 <p>Found a bug? Got an enhancement? Great!</p>
 <p>Something to consider before you leap in with a new feature: this is an open source project. If your change isn’t a basic part of what is already planned, will you be around to support it? Can you justify why it’s in the best interests of the project to have your change included? We’d love to talk it through with you: contact us via the <a class="reference internal" href="../../feedback.html#feedback"><span class="std std-ref">mailing lists</span></a>.</p>
-</section>
-<section id="using-phabricator-arcanist">
-<h3>Using Phabricator/Arcanist<a class="headerlink" href="#using-phabricator-arcanist" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="using-phabricator-arcanist">
+<h3>Using Phabricator/Arcanist<a class="headerlink" href="#using-phabricator-arcanist" title="Permalink to this headline">¶</a></h3>
 <p>This assumes you aren’t a member of the <a class="reference external" href="https://git.cyrus.foundation/tag/imap_committers/">IMAP Committers</a> group on <a class="reference external" href="https://git.cyrus.foundation/">Phabricator</a> and thus are subject to a mandatory review step by the <a class="reference external" href="https://git.cyrus.foundation/tag/imap_reviewers/">IMAP Reviewers</a> group.</p>
 <ol class="arabic simple">
 <li><p>Take ownership of a <a class="reference external" href="https://git.cyrus.foundation/maniphest/">Maniphest</a> task (or create a new task). You’ll need a <a class="reference external" href="https://git.cyrus.foundation/">Phabricator</a> account to do this.</p></li>
@@ -849,8 +844,8 @@
 <li><p>Wait for review (a quick note to the mailing list can speed this along)</p></li>
 <li><p>Once approved, it’ll be merged into the master.</p></li>
 </ol>
-<section id="reviewing-code">
-<h4>Reviewing Code<a class="headerlink" href="#reviewing-code" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="reviewing-code">
+<h4>Reviewing Code<a class="headerlink" href="#reviewing-code" title="Permalink to this headline">¶</a></h4>
 <p>Reviewing Differential revisions is a job for volunteer members of the <a class="reference external" href="https://git.cyrus.foundation/tag/imap_reviewers/">IMAP Reviewers</a>, <a class="reference external" href="https://git.cyrus.foundation/tag/sasl_reviewers/">SASL Reviewers</a> and/or <a class="reference external" href="https://git.cyrus.foundation/tag/documentation_reviewers/">Documentation Reviewers</a> projects. Only those people that have direct commit access are eligible to become a reviewer (because otherwise the process doesn’t work).</p>
 <p>When a reviewer initially starts review, they execute <code class="docutils literal notranslate"><span class="pre">arc</span> <span class="pre">patch</span> <span class="pre">D5</span></code>. This gets Arcanist to checkout a branch arcpatch-D5 (or a variant of that name, such as arcpatch-D5_1 if arcpatch-D5 already existed) and the changeset for the revision is applied.</p>
 <p>The reviewer examines and comments on the related Differential revision. If the change is to be accepted, the reviewer must set the Differential to ‘Accepted’. This allows the diff to be landed.</p>
@@ -858,24 +853,24 @@
 <div class="line">For changes to be applied to master: <code class="docutils literal notranslate"><span class="pre">arc</span> <span class="pre">land</span> <span class="pre">arcpatch-D5</span></code></div>
 <div class="line">For changes to apply on another branch: <code class="docutils literal notranslate"><span class="pre">arc</span> <span class="pre">land</span> <span class="pre">arcpatch-D5</span> <span class="pre">--onto</span> <span class="pre">cyrus-imapd-2.4</span></code></div>
 </div>
-</section>
-</section>
-<section id="patches-through-the-mailing-list">
-<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="patches-through-the-mailing-list">
+<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this headline">¶</a></h3>
 <p>If you’re not planning on regularly submitting changes, you can just send your patch through to the mailing list and one of the regular maintainers will see about incorporating it.</p>
-</section>
-</section>
-<section id="useful-developer-information">
-<h2>Useful Developer Information<a class="headerlink" href="#useful-developer-information" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="useful-developer-information">
+<h2>Useful Developer Information<a class="headerlink" href="#useful-developer-information" title="Permalink to this headline">¶</a></h2>
 <p>Some combined <a class="reference internal" href="developer-tips.html#cyrus-hacking"><span class="std std-ref">tips on developing with Cyrus</span></a> have been collected.</p>
-</section>
-<section id="community-participation">
-<h2>Community Participation<a class="headerlink" href="#community-participation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="community-participation">
+<h2>Community Participation<a class="headerlink" href="#community-participation" title="Permalink to this headline">¶</a></h2>
 <p>Join us! The project is only as good as the sum of its people. We all work together, despite the tyranny of distance and timezones.</p>
 <p>Meetings are currently <span class="xref std std-ref">held online via Zoom</span>.</p>
 <p>There’s also <a class="reference internal" href="../../feedback.html#feedback"><span class="std std-ref">mailing lists</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -898,7 +893,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -922,12 +917,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

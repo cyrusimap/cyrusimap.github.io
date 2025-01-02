@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Releasing Cyrus IMAP - major releases &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,9 +784,9 @@
 </div>
           <div role="main" class="document">
             
-  <section id="releasing-cyrus-imap-major-releases">
-<span id="imap-developer-major-releasing"></span><h1><a class="toc-backref" href="#id1" role="doc-backlink">Releasing Cyrus IMAP - major releases</a><a class="headerlink" href="#releasing-cyrus-imap-major-releases" title="Permalink to this heading">¶</a></h1>
-<nav class="contents" id="contents">
+  <div class="section" id="releasing-cyrus-imap-major-releases">
+<span id="imap-developer-major-releasing"></span><h1><a class="toc-backref" href="#id1">Releasing Cyrus IMAP - major releases</a><a class="headerlink" href="#releasing-cyrus-imap-major-releases" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#releasing-cyrus-imap-major-releases" id="id1">Releasing Cyrus IMAP - major releases</a></p>
@@ -812,16 +807,16 @@
 </ul>
 </li>
 </ul>
-</nav>
+</div>
 <p>These instructions describe the process of turning what was the master
 branch into a new release series, and making the first release from it.</p>
 <p>For normal point releases, see <a class="reference internal" href="releasing.html#imap-developer-releasing"><span class="std std-ref">Releasing Cyrus IMAP - normal releases</span></a></p>
-<section id="prerequisites">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id2">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>Same as for normal releases.</p>
-</section>
-<section id="feature-freeze">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Feature freeze</a><a class="headerlink" href="#feature-freeze" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="feature-freeze">
+<h2><a class="toc-backref" href="#id3">Feature freeze</a><a class="headerlink" href="#feature-freeze" title="Permalink to this headline">¶</a></h2>
 <p>This is the period where new features are not being merged to the master
 branch.  It usually starts at the start of December, and continues until
 the new series has its own cyrus-imapd-x.y branch, which is usually forked
@@ -834,9 +829,9 @@ once, so take advantage of this window to focus on those.</p>
 various tasks of a release and other developers merging changes.</p>
 <p>Once the new series has its own branch, normal feature development can resume
 on master -- developing features for the <em>next</em> major release.</p>
-</section>
-<section id="make-sure-master-is-good">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Make sure master is good</a><a class="headerlink" href="#make-sure-master-is-good" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="make-sure-master-is-good">
+<h2><a class="toc-backref" href="#id4">Make sure master is good</a><a class="headerlink" href="#make-sure-master-is-good" title="Permalink to this headline">¶</a></h2>
 <p>With the master branch checked out and up to date:</p>
 <ol class="arabic">
 <li><p>Ensure your git repository is clean, using something like
@@ -877,9 +872,9 @@ time).</p></li>
 </ol>
 </li>
 </ol>
-</section>
-<section id="forking-the-new-series-branch">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Forking the new series branch</a><a class="headerlink" href="#forking-the-new-series-branch" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="forking-the-new-series-branch">
+<h2><a class="toc-backref" href="#id5">Forking the new series branch</a><a class="headerlink" href="#forking-the-new-series-branch" title="Permalink to this headline">¶</a></h2>
 <p>You will find (e.g. with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span></code> when viewing the master branch) that
 the master branch has a version with an odd number in the second field, e.g.
 3.<strong>7</strong>.  The new series branch should be named one number higher than
@@ -975,9 +970,9 @@ remote is named &quot;ci&quot;)</p></li>
 <li><p>Push the new tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;series&gt;.0-alpha0</span></code></p></li>
 </ol>
 <p>Fastmail specific: also push the new branch and tag to the Fastmail repo.</p>
-</section>
-<section id="updating-the-master-branch">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Updating the master branch</a><a class="headerlink" href="#updating-the-master-branch" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="updating-the-master-branch">
+<h2><a class="toc-backref" href="#id6">Updating the master branch</a><a class="headerlink" href="#updating-the-master-branch" title="Permalink to this headline">¶</a></h2>
 <p>You now need to make similar, but not identical, changes to the master branch,
 too.</p>
 <ol class="arabic simple">
@@ -1029,9 +1024,9 @@ release, but need a tag for versioning&quot;.</p></li>
 <p>Fastmail specific: also push the updated master branch and new tag to the
 Fastmail repo.  This ensures our builds will also start using the new version
 number once they update past the fork point.</p>
-</section>
-<section id="github-updates">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Github updates</a><a class="headerlink" href="#github-updates" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="github-updates">
+<h2><a class="toc-backref" href="#id7">Github updates</a><a class="headerlink" href="#github-updates" title="Permalink to this headline">¶</a></h2>
 <p>On Github, have a look at the branch protection settings that apply to the
 current stable branch.  Apply the same protections to the new branch.</p>
 <p>Create labels for the new series and new dev series.  Give them pleasant
@@ -1042,18 +1037,18 @@ colours and sensible descriptions.</p>
 <li><p>&lt;dev&gt;</p></li>
 </ul>
 <p>Also update the description of the label for the old master version number.</p>
-</section>
-<section id="revert-anything-that-s-not-yet-ready">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Revert anything that's not yet ready</a><a class="headerlink" href="#revert-anything-that-s-not-yet-ready" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="revert-anything-that-s-not-yet-ready">
+<h2><a class="toc-backref" href="#id8">Revert anything that's not yet ready</a><a class="headerlink" href="#revert-anything-that-s-not-yet-ready" title="Permalink to this headline">¶</a></h2>
 <p>If there are commits on master that need to remain on master, but are not
 yet ready for release for some reason, this is a good point to revert those
 commits on the new branch only.  Any <cite>changes/next</cite> files from these commits
 should remain on master, or be copied back to master if they were accidentally
 deleted earlier.</p>
 <p>This doesn't and shouldn't happen often.</p>
-</section>
-<section id="tell-the-website-builder-about-the-new-branch">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Tell the website builder about the new branch</a><a class="headerlink" href="#tell-the-website-builder-about-the-new-branch" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="tell-the-website-builder-about-the-new-branch">
+<h2><a class="toc-backref" href="#id9">Tell the website builder about the new branch</a><a class="headerlink" href="#tell-the-website-builder-about-the-new-branch" title="Permalink to this headline">¶</a></h2>
 <p>The website is automatically rebuilt by a script, which needs to be updated
 to know about the new series.</p>
 <ol class="arabic simple">
@@ -1078,9 +1073,9 @@ browser, make sure it reports the correct new versions.</p></li>
 <a class="reference external" href="https://github.com/cyrusimap/cyrusimap.github.io">https://github.com/cyrusimap/cyrusimap.github.io</a> -- that's the result of
 the run-gp.sh script having run.</p></li>
 </ol>
-</section>
-<section id="first-beta">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">First beta</a><a class="headerlink" href="#first-beta" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="first-beta">
+<h2><a class="toc-backref" href="#id10">First beta</a><a class="headerlink" href="#first-beta" title="Permalink to this headline">¶</a></h2>
 <p>This work mostly happens on the new branch.</p>
 <ol class="arabic simple">
 <li><p>Check through <cite>lib/imapoptions</cite> for options with <cite>&quot;UNRELEASED&quot;</cite> in any of
@@ -1118,9 +1113,9 @@ doc updates and the removal of the changes files in the same commit.</p></li>
 <li><p>Follow the <a class="reference internal" href="releasing.html#imap-developer-releasing"><span class="std std-ref">Releasing Cyrus IMAP - normal releases</span></a> instructions to get
 <cite>cyrus-imapd-&lt;series&gt;.0-beta1</cite> released.</p></li>
 </ol>
-</section>
-<section id="subsequent-betas">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Subsequent betas</a><a class="headerlink" href="#subsequent-betas" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="subsequent-betas">
+<h2><a class="toc-backref" href="#id11">Subsequent betas</a><a class="headerlink" href="#subsequent-betas" title="Permalink to this headline">¶</a></h2>
 <p>Monitor Github and the mailing lists for bug reports against the previous beta.
 Make fixes against master, then backport them to the new series branch.</p>
 <p>Periodically make new beta releases, as bugs are found and fixed.</p>
@@ -1128,16 +1123,16 @@ Make fixes against master, then backport them to the new series branch.</p>
 contain the changes since the previous <em>stable</em> version.  This means each of
 the betas will start with copying the previous beta's release notes and
 adding any new details, without removing what was already there.</p>
-</section>
-<section id="release-candidates">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Release candidates</a><a class="headerlink" href="#release-candidates" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="release-candidates">
+<h2><a class="toc-backref" href="#id12">Release candidates</a><a class="headerlink" href="#release-candidates" title="Permalink to this headline">¶</a></h2>
 <p>After a while, the flow of bug reports and fixes will dry up, and so we start
 cutting &quot;release candidates&quot; instead.  These are effectively identical to
 betas, except we call them -rc1, -rc2, etc instead.  The change in name
 reflects our increased confidence in the software and documentation.</p>
-</section>
-<section id="release">
-<h2><a class="toc-backref" href="#id13" role="doc-backlink">Release</a><a class="headerlink" href="#release" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="release">
+<h2><a class="toc-backref" href="#id13">Release</a><a class="headerlink" href="#release" title="Permalink to this headline">¶</a></h2>
 <p>Oh boy, we've come a long way, haven't we!</p>
 <p>For this one, we've got a little more housekeeping to do.</p>
 <ol class="arabic simple">
@@ -1159,15 +1154,15 @@ the new version (don't forget to update the numbers embedded in these lines
 too).  Once this is pushed, the next website rebuild will make it all true.</p></li>
 <li><p>Once the website is fully updated, send that announcement email.</p></li>
 </ol>
-</section>
-<section id="post-release">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">Post-release</a><a class="headerlink" href="#post-release" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="post-release">
+<h2><a class="toc-backref" href="#id14">Post-release</a><a class="headerlink" href="#post-release" title="Permalink to this headline">¶</a></h2>
 <p>From now on, just follow the normal release process to make point releases.
 Release notes for point releases describe the difference between this point
 release and the previous, and are much more specific than those of major
 releases.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1190,7 +1185,7 @@ releases.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 07 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1213,12 +1208,9 @@ releases.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>mbexamine &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,64 +783,64 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-mbexamine-8"></span><section id="mbexamine">
-<span id="imap-reference-manpages-systemcommands-mbexamine"></span><h1><strong>mbexamine</strong><a class="headerlink" href="#mbexamine" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-mbexamine-8"><span id="std:cyrusman-mbexamine(8)"></span></span><div class="section" id="mbexamine">
+<span id="imap-reference-manpages-systemcommands-mbexamine"></span><h1><strong>mbexamine</strong><a class="headerlink" href="#mbexamine" title="Permalink to this headline">¶</a></h1>
 <p>Examine a cyrus-format mailbox</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-u</strong> <em>uid</em> ] <em>mailbox</em>...
 <strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>seqnum</em>] <em>mailbox</em>...
 <strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-q</strong> <em>mailbox</em>...
 <strong>mbexamine</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-c</strong> <em>mailbox</em>...</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>mbexamine</strong> will examine the header, index, and cache files of a
 cyrus format mailbox and dump the information contained therein.  It
 can also limit its output to a specific uid or sequence number, through
 use of the <strong>-s</strong> and <strong>-u</strong> switches.</p>
 <p><strong>mbexamine</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>. It uses
 &lt;configdirectory&gt;/mailboxes.db to locate the mailbox on disk.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mbexamine-C">
-<span id="cmdoption-mbexamine-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-mbexamine-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mbexamine-C">
+<span id="cmdoption-mbexamine-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-mbexamine-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mbexamine-u">
-<span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname">&#160; <span class="pre">uid</span></span><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mbexamine-u">
+<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname">&#160; <span class="pre">uid</span></code><a class="headerlink" href="#cmdoption-mbexamine-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given uid only.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mbexamine-s">
-<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname">&#160; <span class="pre">seqnum</span></span><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mbexamine-s">
+<code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname">&#160; <span class="pre">seqnum</span></code><a class="headerlink" href="#cmdoption-mbexamine-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump information for the given sequence number only.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mbexamine-q">
-<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mbexamine-q">
+<code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the quota usage in cyrus.index to the actual message file
 sizes and report any differences.  If there are differences, the
 mailbox SHOULD be reconstructed.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mbexamine-0">
-<span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mbexamine-0" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mbexamine-0">
+<code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mbexamine-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare the records in cyrus.index to the actual message files
 report any differences.  This can help detect issues if messages
 files were manipulated manually and/or restored incorrectly.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>mbexamine</strong> <em>user.jsmith</em></pre>
 <blockquote>
 <div><p>Examine the mailbox hierarchy rooted at <em>user.jsmith</em>.</p>
@@ -953,17 +948,17 @@ index records to the actual message files in the mailbox directory.</p>
    <span class="n">Subj</span><span class="p">:</span>                                                        <span class="s2">&quot;Re: vacation&quot;</span>
 </pre></div>
 </div>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf,
 &lt;configdirectory&gt;/mailboxes.db</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -986,7 +981,7 @@ index records to the actual message files in the mailbox directory.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1009,12 +1004,9 @@ index records to the actual message files in the mailbox directory.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

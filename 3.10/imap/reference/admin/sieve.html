@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Sieve &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -798,9 +793,9 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-sieve">
-<span id="id1"></span><h1><a class="toc-backref" href="#id4" role="doc-backlink">Cyrus Sieve</a><a class="headerlink" href="#cyrus-sieve" title="Permalink to this heading">¶</a></h1>
-<nav class="contents" id="contents">
+  <div class="section" id="cyrus-sieve">
+<span id="id1"></span><h1><a class="toc-backref" href="#id4">Cyrus Sieve</a><a class="headerlink" href="#cyrus-sieve" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#cyrus-sieve" id="id4">Cyrus Sieve</a></p>
@@ -835,30 +830,30 @@
 </ul>
 </li>
 </ul>
-</nav>
-<section id="introduction">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id5">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Cyrus Sieve is an implementation of the Sieve mail filtering language
-( <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3028.html"><strong>RFC 3028</strong></a> ). It allows a series of tests to be applied against an incoming
+( <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a> ). It allows a series of tests to be applied against an incoming
 message, with actions to take place if there is a match.</p>
 <p>Mail filtering occurs on delivery of the message (within lmtpd).</p>
 <p>Cyrus compiles sieve scripts to bytecode to reduce the overhead of parsing the
 scripts fully inside of lmtpd. This occurs automatically if
 <a class="reference internal" href="../manpages/usercommands/sieveshell.html#std-cyrusman-sieveshell-1">sieveshell(1)</a> is used to place the scripts on the server.</p>
 <p>Sieve scripts can be placed either by the <a class="reference internal" href="../manpages/systemcommands/timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a> daemon
-(implementing the ManageSieve protocol <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5804.html"><strong>RFC 5804</strong></a>; this is the preferred
+(implementing the ManageSieve protocol <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5804.html"><strong>RFC 5804</strong></a>; this is the preferred
 options since it allows for syntax checking) or in the user's home directory
 as a .sieve file.</p>
-</section>
-<section id="installing-sieve">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Installing Sieve</a><a class="headerlink" href="#installing-sieve" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="installing-sieve">
+<h2><a class="toc-backref" href="#id6">Installing Sieve</a><a class="headerlink" href="#installing-sieve" title="Permalink to this headline">¶</a></h2>
 <p>This section assumes that you <a class="reference internal" href="../../developer/compiling.html#compiling"><span class="std std-ref">compiled Cyrus</span></a> with sieve
 support. If you specified <code class="docutils literal notranslate"><span class="pre">--disable-sieve</span></code> when running <code class="docutils literal notranslate"><span class="pre">./configure</span></code>,
 you did NOT compile the server with sieve support.</p>
-<section id="configure-sieve">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Configure sieve</a><a class="headerlink" href="#configure-sieve" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="configure-sieve">
+<h3><a class="toc-backref" href="#id7">Configure sieve</a><a class="headerlink" href="#configure-sieve" title="Permalink to this headline">¶</a></h3>
 <p>Depending on what's in your <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> file, sieve will usually be set
-to listen on port 2000 (old convention) or port 4190 (as specified by <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5804.html"><strong>RFC 5804</strong></a>).</p>
+to listen on port 2000 (old convention) or port 4190 (as specified by <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5804.html"><strong>RFC 5804</strong></a>).</p>
 <p>Add lines to the SERVICES section of <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> to make the
 server listen to the right ports for sieveshell commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sieve</span>         <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;timsieved&quot;</span> <span class="n">listen</span><span class="o">=</span><span class="s2">&quot;servername:sieve&quot;</span> <span class="n">prefork</span><span class="o">=</span><span class="mi">0</span>
@@ -869,9 +864,9 @@ server listen to the right ports for sieveshell commands:</p>
 <strong>sievedir</strong> <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option (default: <code class="docutils literal notranslate"><span class="pre">/usr/sieve</span></code>).
 This directory must exist and be writeable by the cyrus user for <code class="docutils literal notranslate"><span class="pre">timsieved</span></code>
 to function, so organise that now.</p>
-</section>
-<section id="configure-outgoing-mail">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">Configure outgoing mail</a><a class="headerlink" href="#configure-outgoing-mail" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configure-outgoing-mail">
+<h3><a class="toc-backref" href="#id8">Configure outgoing mail</a><a class="headerlink" href="#configure-outgoing-mail" title="Permalink to this headline">¶</a></h3>
 <p>Some Sieve actions (redirect, vacation) can send outgoing mail.</p>
 <p>You'll need to make sure that lmtpd can send outgoing messages. Currently, it
 invokes <code class="docutils literal notranslate"><span class="pre">/usr/lib/sendmail</span></code> by default to send messages. Change this by
@@ -881,18 +876,18 @@ adding a line like:</p>
 </div>
 <p>in your <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>. If you're using Postfix or another MTA, make
 sure that the sendmail referenced in &quot;/etc/imapd.conf&quot; is Sendmail-compatible.</p>
-</section>
-</section>
-<section id="managing-sieve-scripts">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Managing Sieve Scripts</a><a class="headerlink" href="#managing-sieve-scripts" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="managing-sieve-scripts">
+<h2><a class="toc-backref" href="#id9">Managing Sieve Scripts</a><a class="headerlink" href="#managing-sieve-scripts" title="Permalink to this headline">¶</a></h2>
 <p>Since Cyrus is based around the concept of a sealed-server, the normal way for
 users to manipulate Sieve scripts is through the <a class="reference internal" href="../manpages/usercommands/sieveshell.html#std-cyrusman-sieveshell-1">sieveshell(1)</a>
 utility, in communication with the <a class="reference internal" href="../manpages/systemcommands/timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a> service.</p>
 <p>If, for some reason, you do have user home directories on the server, you can
 use the <strong>sieveusehomedir</strong> option in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> and have the
 sieve script stored in the home directory of the user as <code class="docutils literal notranslate"><span class="pre">~/.sieve</span></code>.</p>
-<section id="sieve-scripts-in-shared-folders">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">Sieve scripts in shared folders</a><a class="headerlink" href="#sieve-scripts-in-shared-folders" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="sieve-scripts-in-shared-folders">
+<h3><a class="toc-backref" href="#id10">Sieve scripts in shared folders</a><a class="headerlink" href="#sieve-scripts-in-shared-folders" title="Permalink to this headline">¶</a></h3>
 <p>Cyrus has two types of repositories where Sieve scripts can live:</p>
 <ol class="arabic simple">
 <li><p><strong>Personal</strong> is per user and</p></li>
@@ -922,10 +917,10 @@ attach:</p>
 <span class="n">localhost</span><span class="o">.</span><span class="n">localdomain</span><span class="o">&gt;</span> <span class="n">mboxcfg</span> <span class="n">shared</span><span class="o">.</span><span class="n">folder</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">sieve</span> <span class="n">my_script</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="testing-the-sieve-server">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Testing the Sieve Server</a><a class="headerlink" href="#testing-the-sieve-server" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="testing-the-sieve-server">
+<h2><a class="toc-backref" href="#id11">Testing the Sieve Server</a><a class="headerlink" href="#testing-the-sieve-server" title="Permalink to this headline">¶</a></h2>
 <p>The Sieve server, <a class="reference internal" href="../manpages/systemcommands/timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a>, is used for transporting user Sieve
 scripts to the sealed IMAP server. It is incompatible with the
 <strong>sieveusehomedir</strong> option. It is named after the principal author, Tim Martin,
@@ -993,11 +988,11 @@ should be rejected.</p>
 <span class="o">&gt;</span> <span class="n">quit</span>
 </pre></div>
 </div>
-</section>
-<section id="cyrus-sieve-support">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink">Cyrus Sieve Support</a><a class="headerlink" href="#cyrus-sieve-support" title="Permalink to this heading">¶</a></h2>
-<section id="special-use-folders">
-<span id="cyrus-sieve-specialuse"></span><h3><a class="toc-backref" href="#id13" role="doc-backlink">Special use folders</a><a class="headerlink" href="#special-use-folders" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="cyrus-sieve-support">
+<h2><a class="toc-backref" href="#id12">Cyrus Sieve Support</a><a class="headerlink" href="#cyrus-sieve-support" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="special-use-folders">
+<span id="cyrus-sieve-specialuse"></span><h3><a class="toc-backref" href="#id13">Special use folders</a><a class="headerlink" href="#special-use-folders" title="Permalink to this headline">¶</a></h3>
 <p>Some mail clients allow users to rename the system folders, such as Archive and
 Trash. This can make sieve scripts break if they are using folder names
 explicitly. Fortunately such folders have a special use flag, allowing you to
@@ -1009,49 +1004,49 @@ access them from sieve without needing to know their current titles.</p>
 <li><p>\Sent</p></li>
 <li><p>\Trash</p></li>
 </ul>
-</section>
-<section id="supported-extensions">
-<span id="cyrus-sieve-extensions"></span><h3><a class="toc-backref" href="#id14" role="doc-backlink">Supported extensions</a><a class="headerlink" href="#supported-extensions" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="supported-extensions">
+<span id="cyrus-sieve-extensions"></span><h3><a class="toc-backref" href="#id14">Supported extensions</a><a class="headerlink" href="#supported-extensions" title="Permalink to this headline">¶</a></h3>
 <p>Sieve has a lot of
 <a class="reference external" href="http://www.iana.org/assignments/sieve-extensions/sieve-extensions.xhtml">extensions</a>.
 Cyrus supports a subset of these:</p>
 <ul class="simple">
-<li><p>Sieve language reference <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5228.html"><strong>RFC 5228</strong></a></p></li>
-<li><p>Vacation Extension <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5230.html"><strong>RFC 5230</strong></a></p></li>
-<li><p>Vacation Seconds <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6131.html"><strong>RFC 6131</strong></a></p></li>
-<li><p>Relational Tests <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5231.html"><strong>RFC 5231</strong></a></p></li>
-<li><p>Subaddress Extension <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5233.html"><strong>RFC 5233</strong></a></p></li>
-<li><p>Copying Without Side Effects <span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3894.html"><strong>RFC 3894</strong></a></p></li>
+<li><p>Sieve language reference <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5228.html"><strong>RFC 5228</strong></a></p></li>
+<li><p>Vacation Extension <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5230.html"><strong>RFC 5230</strong></a></p></li>
+<li><p>Vacation Seconds <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6131.html"><strong>RFC 6131</strong></a></p></li>
+<li><p>Relational Tests <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5231.html"><strong>RFC 5231</strong></a></p></li>
+<li><p>Subaddress Extension <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5233.html"><strong>RFC 5233</strong></a></p></li>
+<li><p>Copying Without Side Effects <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3894.html"><strong>RFC 3894</strong></a></p></li>
 <li><p>Regular Expression Extension <a class="reference external" href="https://tools.ietf.org/html/draft-ietf-sieve-regex">draft-ietf-sieve-regex</a></p></li>
-<li><p>Checking Mailbox Status and Accessing Mailbox Metadata <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5490.html"><strong>RFC 5490</strong></a></p></li>
-<li><p>Notify Extension <span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5435.html"><strong>RFC 5435</strong></a></p></li>
-<li><p>Include <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6609.html"><strong>RFC 6609</strong></a></p></li>
-<li><p>Date <span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5260.html"><strong>RFC 5260</strong></a></p></li>
-<li><p>Index <span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5260.html"><strong>RFC 5260</strong></a></p></li>
-<li><p>Variables <span class="target" id="index-14"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5229.html"><strong>RFC 5229</strong></a></p></li>
-<li><p>Editheader Extension <span class="target" id="index-15"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5293.html"><strong>RFC 5293</strong></a></p></li>
-<li><p>Reject and Extended Reject <span class="target" id="index-16"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5429.html"><strong>RFC 5429</strong></a></p></li>
-<li><p>Externally Stored Lists <span class="target" id="index-17"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6134.html"><strong>RFC 6134</strong></a></p></li>
-<li><p>Duplicate Extension <span class="target" id="index-18"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7352.html"><strong>RFC 7352</strong></a></p></li>
-<li><p>Ihave Extension <span class="target" id="index-19"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5463.html"><strong>RFC 5463</strong></a></p></li>
-<li><p>Delivering to Special-Use Mailboxes <span class="target" id="index-20"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc8579.html"><strong>RFC 8579</strong></a></p></li>
-<li><p>IMAP flag Extension <span class="target" id="index-21"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5232.html"><strong>RFC 5232</strong></a></p></li>
-<li><p>Body Extension <span class="target" id="index-22"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5173.html"><strong>RFC 5173</strong></a></p></li>
+<li><p>Checking Mailbox Status and Accessing Mailbox Metadata <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5490.html"><strong>RFC 5490</strong></a></p></li>
+<li><p>Notify Extension <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a></p></li>
+<li><p>Include <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6609.html"><strong>RFC 6609</strong></a></p></li>
+<li><p>Date <span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5260.html"><strong>RFC 5260</strong></a></p></li>
+<li><p>Index <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5260.html"><strong>RFC 5260</strong></a></p></li>
+<li><p>Variables <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5229.html"><strong>RFC 5229</strong></a></p></li>
+<li><p>Editheader Extension <span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5293.html"><strong>RFC 5293</strong></a></p></li>
+<li><p>Reject and Extended Reject <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5429.html"><strong>RFC 5429</strong></a></p></li>
+<li><p>Externally Stored Lists <span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6134.html"><strong>RFC 6134</strong></a></p></li>
+<li><p>Duplicate Extension <span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7352.html"><strong>RFC 7352</strong></a></p></li>
+<li><p>Ihave Extension <span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5463.html"><strong>RFC 5463</strong></a></p></li>
+<li><p>Delivering to Special-Use Mailboxes <span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8579.html"><strong>RFC 8579</strong></a></p></li>
+<li><p>IMAP flag Extension <span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5232.html"><strong>RFC 5232</strong></a></p></li>
+<li><p>Body Extension <span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5173.html"><strong>RFC 5173</strong></a></p></li>
 </ul>
-</section>
-<section id="cyrus-imap-specific-extensions">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">Cyrus IMAP Specific Extensions</a><a class="headerlink" href="#cyrus-imap-specific-extensions" title="Permalink to this heading">¶</a></h3>
-<section id="log">
-<span id="vnd-cyrus-log"></span><h4><a class="toc-backref" href="#id16" role="doc-backlink">log</a><a class="headerlink" href="#log" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="cyrus-imap-specific-extensions">
+<h3><a class="toc-backref" href="#id15">Cyrus IMAP Specific Extensions</a><a class="headerlink" href="#cyrus-imap-specific-extensions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="log">
+<span id="vnd-cyrus-log"></span><h4><a class="toc-backref" href="#id16">log</a><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h4>
 <p>Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span> <span class="s2">&quot;vnd.cyrus.log&quot;</span><span class="p">;</span>
 <span class="n">log</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The <strong>log</strong> action sends the string to syslog with INFO priority.</p>
-</section>
-<section id="processimip">
-<span id="id2"></span><h4><a class="toc-backref" href="#id17" role="doc-backlink">processimip</a><a class="headerlink" href="#processimip" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="processimip">
+<span id="id2"></span><h4><a class="toc-backref" href="#id17">processimip</a><a class="headerlink" href="#processimip" title="Permalink to this headline">¶</a></h4>
 <p>Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">require</span> <span class="s2">&quot;vnd.cyrus.imip&quot;</span><span class="p">;</span>
 <span class="n">processimip</span> <span class="p">[</span> <span class="s2">&quot;:invitesonly&quot;</span> <span class="o">/</span> <span class="s2">&quot;:deletecanceled&quot;</span> <span class="p">]</span> <span class="p">[</span> <span class="s2">&quot;:outcome&quot;</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">]</span> <span class="p">[</span> <span class="s2">&quot;:errstr&quot;</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">]</span> <span class="p">[</span> <span class="s2">&quot;:calendarid&quot;</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">];</span>
@@ -1077,6 +1072,11 @@ if envelope &quot;to&quot; &quot;me+imip@domain&quot; {
 </div>
 <p>After <strong>processimip</strong> returns the <em>outcome</em> and <em>errstr</em> variables have one of these values:</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 34%" />
+<col style="width: 59%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>outcome</p></th>
 <th class="head"><p>errstr</p></th>
@@ -1158,10 +1158,10 @@ if envelope &quot;to&quot; &quot;me+imip@domain&quot; {
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="sieve-tools">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Sieve Tools</a><a class="headerlink" href="#sieve-tools" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="sieve-tools">
+<h3><a class="toc-backref" href="#id18">Sieve Tools</a><a class="headerlink" href="#sieve-tools" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../manpages/systemcommands/timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a> - server side daemon to accept requests from
 sieveshell</p></li>
@@ -1176,10 +1176,10 @@ via MANAGESIEVE</p></li>
 <li><p><a class="reference internal" href="../manpages/systemcommands/translatesieve.html#std-cyrusman-translatesieve-8">translatesieve(8)</a> - utility script to translate sieve scripts to
 use <strong>unixhierarchysep</strong> and/or <strong>altnamespace</strong></p></li>
 </ul>
-</section>
-</section>
-<section id="writing-sieve">
-<h2><a class="toc-backref" href="#id19" role="doc-backlink">Writing Sieve</a><a class="headerlink" href="#writing-sieve" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="writing-sieve">
+<h2><a class="toc-backref" href="#id19">Writing Sieve</a><a class="headerlink" href="#writing-sieve" title="Permalink to this headline">¶</a></h2>
 <p>Sieve scripts can be used to automatically delete or forward messages; to send
 autoreplies; to sort them in folders; to mark messages as read or flagged; to
 test messages for spam or viruses; or to reject messages at or after delivery.
@@ -1188,8 +1188,8 @@ test messages for spam or viruses; or to reject messages at or after delivery.
 online which describes the language.</p>
 <p>For those who prefer a client to write code in, Sieve.info has a
 <a class="reference external" href="http://sieve.info/clients">list of desktop, web and command line clients</a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1212,7 +1212,7 @@ online which describes the language.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Sep 23 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1235,12 +1235,9 @@ online which describes the language.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

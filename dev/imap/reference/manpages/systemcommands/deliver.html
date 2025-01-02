@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>deliver &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,51 +784,51 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-deliver-8"></span><section id="deliver">
-<span id="imap-reference-manpages-systemcommands-deliver"></span><h1><strong>deliver</strong><a class="headerlink" href="#deliver" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-deliver-8"><span id="std:cyrusman-deliver(8)"></span></span><div class="section" id="deliver">
+<span id="imap-reference-manpages-systemcommands-deliver"></span><h1><strong>deliver</strong><a class="headerlink" href="#deliver" title="Permalink to this headline">¶</a></h1>
 <p>intro</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-d</strong> ] [ <strong>-r</strong> <em>address</em> ]
        [ <strong>-f</strong> <em>address</em> ] [ <strong>-m</strong> <em>mailbox</em> ] [ <strong>-a</strong> <em>auth-id</em> ]
        [ <strong>-q</strong> ] [ <em>userid</em> ]...
 <strong>deliver</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>deliver</strong> reads a message from the standard input and delivers it to
 one or more IMAP mailboxes.</p>
 <p><strong>deliver</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-C">
-<span id="cmdoption-deliver-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-deliver-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-C">
+<span id="cmdoption-deliver-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-deliver-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-d">
-<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-deliver-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-d">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignored for compatibility with <strong>/bin/mail</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-r">
-<span id="cmdoption-deliver-return-path"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"> <span class="pre">address</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--return-path</span></span><span class="sig-prename descclassname"><span class="pre">=address</span></span><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-r">
+<span id="cmdoption-deliver-return-path"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">address</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--return-path</span></code><code class="sig-prename descclassname"><span class="pre">=address</span></code><a class="headerlink" href="#cmdoption-deliver-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a <strong>Return-Path:</strong> header containing <em>address</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-f">
-<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">address</span></span><a class="headerlink" href="#cmdoption-deliver-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-f">
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">address</span></code><a class="headerlink" href="#cmdoption-deliver-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert a <strong>Return-Path:</strong> header containing <em>address</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-m">
-<span id="cmdoption-deliver-mailbox"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"> <span class="pre">mailbox</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--mailbox</span></span><span class="sig-prename descclassname"><span class="pre">=mailbox</span></span><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-m">
+<span id="cmdoption-deliver-mailbox"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">mailbox</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--mailbox</span></code><code class="sig-prename descclassname"><span class="pre">=mailbox</span></code><a class="headerlink" href="#cmdoption-deliver-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver to <strong>mailbox</strong>.  If any <em>userid</em>s are specified, attempts
 to deliver to <code class="docutils literal notranslate"><span class="pre">user.</span></code><em>userid</em><code class="docutils literal notranslate"><span class="pre">.mailbox</span></code> for each <em>userid</em>.
 If the ACL on any such mailbox does not grant the sender the &quot;p&quot;
@@ -844,26 +839,26 @@ the delivery fails.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-a">
-<span id="cmdoption-deliver-auth-id"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"> <span class="pre">auth-id</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--auth-id</span></span><span class="sig-prename descclassname"><span class="pre">=auth-id</span></span><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-a">
+<span id="cmdoption-deliver-auth-id"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"> <span class="pre">auth-id</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--auth-id</span></code><code class="sig-prename descclassname"><span class="pre">=auth-id</span></code><a class="headerlink" href="#cmdoption-deliver-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the authorization id of the sender.  Defaults to &quot;anonymous&quot;.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-q">
-<span id="cmdoption-deliver-ignore-quota"></span><span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--ignore-quota</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-q">
+<span id="cmdoption-deliver-ignore-quota"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--ignore-quota</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deliver message even when receiving mailbox is over quota.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-deliver-l">
-<span id="cmdoption-deliver-lmtp"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--lmtp</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-deliver-l">
+<span id="cmdoption-deliver-lmtp"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--lmtp</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-deliver-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Accept messages using the LMTP protocol.</p>
 </dd></dl>
 
-</section>
-<section id="notes">
-<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <p>Depending on the setting of <code class="docutils literal notranslate"><span class="pre">reject8bit</span></code> in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, deliver
 either rejects/accepts messages with 8-bit-set characters in the headers.
 If we accept messages with 8-bit-set characters in the headers, then depending
@@ -873,21 +868,21 @@ or changed to &quot;X&quot;.</p>
 character set is not known, although some communities not well-served by
 US-ASCII assume that those characters can be used to represent characters not
 present in US-ASCII.</p>
-<p>A method for encoding 8-bit-set characters is provided by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2047.html"><strong>RFC 2047</strong></a>.</p>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<p>A method for encoding 8-bit-set characters is provided by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a>.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>[NB: Examples needed]</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="lmtpd.html#std-cyrusman-lmtpd-8">lmtpd(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -910,7 +905,7 @@ present in US-ASCII.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 09 2022
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -933,12 +928,9 @@ present in US-ASCII.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

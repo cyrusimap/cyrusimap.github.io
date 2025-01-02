@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Sieve Bytecode &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,10 +783,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-thoughts-bytecode"></span><section id="cyrus-imap-server-sieve-bytecode">
-<h1>Cyrus IMAP Server: Sieve Bytecode<a class="headerlink" href="#cyrus-imap-server-sieve-bytecode" title="Permalink to this heading">¶</a></h1>
-<section id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">¶</a></h2>
+  <span class="target" id="imap-developer-thoughts-bytecode"></span><div class="section" id="cyrus-imap-server-sieve-bytecode">
+<h1>Cyrus IMAP Server: Sieve Bytecode<a class="headerlink" href="#cyrus-imap-server-sieve-bytecode" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
 <p>The motivation behind moving to Sieve Bytecode is severalfold:</p>
 <ul class="simple">
 <li><p>Parsing a script at each execution is expensive computationally</p></li>
@@ -804,9 +799,9 @@ a decent amount of refactoring on what has traditionally been a
 problematic part of the Cyrus code base. There is still work to do in
 this area.</p></li>
 </ul>
-</section>
-<section id="overall-bytecode-format">
-<h2>Overall Bytecode Format<a class="headerlink" href="#overall-bytecode-format" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="overall-bytecode-format">
+<h2>Overall Bytecode Format<a class="headerlink" href="#overall-bytecode-format" title="Permalink to this headline">¶</a></h2>
 <p>In the final bytecode, each opcode/parameter is aligned on a 4-byte
 boundary. Strings are NUL-terminated (and padded to a 4-byte boundary as
 needed).</p>
@@ -815,9 +810,9 @@ scripts portable, but version 1 does not have this feature.</p>
 <p>At the beginning of the file, there is a magic header to identify it as
 a bytecode file, and a 4 byte version number. Immediately following the
 version number are the opcodes that relate to the script.</p>
-</section>
-<section id="generation">
-<h2>Generation<a class="headerlink" href="#generation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="generation">
+<h2>Generation<a class="headerlink" href="#generation" title="Permalink to this headline">¶</a></h2>
 <p>A Sieve Bytecode file is generated in three “passes”:</p>
 <ul class="simple">
 <li><p>Generate a parse tree using lex/yacc from the sieve script. (addr.y,
@@ -890,9 +885,9 @@ as follows:</p>
 <p>The idea being that if the test is true, the instruction pointer should
 move to the then block, otherwise the else block will be hit
 automatically (due to the unconditional jump).</p>
-</section>
-<section id="evaluation">
-<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
 <p>The evaluation routines are in bc_eval.c, the basic idea is that we can
 simply mmap the bytecode, run straight through it, and complete the
 processing without maintaining a stack.</p>
@@ -903,14 +898,14 @@ performed, or as actions/tests are skipped.</p>
 <p>Of special note in bc_eval.c is the unwrap_string function which will
 pull a string out of the bytecode, and return the instruction pointer at
 the end of the string.</p>
-</section>
-<section id="other-things-to-consider">
-<h2>Other things to consider<a class="headerlink" href="#other-things-to-consider" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="other-things-to-consider">
+<h2>Other things to consider<a class="headerlink" href="#other-things-to-consider" title="Permalink to this headline">¶</a></h2>
 <p>The Bytecode can be extended to contain other extensions. This could
 require regeneration of older scripts. In many cases this can be avoided
 by putting the new commands at the end of the proper enum in bytecode.h</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -933,7 +928,7 @@ by putting the new commands at the end of the proper enum in bytecode.h</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -956,12 +951,9 @@ by putting the new commands at the end of the proper enum in bytecode.h</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

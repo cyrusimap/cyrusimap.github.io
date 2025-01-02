@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Do It Yourself &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -802,8 +797,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="do-it-yourself">
-<h1>Do It Yourself<a class="headerlink" href="#do-it-yourself" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="do-it-yourself">
+<h1>Do It Yourself<a class="headerlink" href="#do-it-yourself" title="Permalink to this headline">¶</a></h1>
 <p>The following guides outline building Cyrus IMAP from a fresh clone of
 the GIT repository’s branches, or a tarball of a released version.</p>
 <div class="admonition warning">
@@ -814,8 +809,8 @@ Cyrus IMAP versions is <strong>high</strong>.</p>
 have an appropriate comprehension of dependencies and building those
 yourself if you have to.</p>
 </div>
-<section id="from-git">
-<h2>From GIT<a class="headerlink" href="#from-git" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="from-git">
+<h2>From GIT<a class="headerlink" href="#from-git" title="Permalink to this headline">¶</a></h2>
 <p>Clone the GIT repository:</p>
 <pre class="literal-block">$ <strong class="command">git clone git&#64;github.com:cyrusimap/cyrus-imapd.git</strong></pre>
 <p>Check out the desired branch or revision:</p>
@@ -827,16 +822,16 @@ yourself if you have to.</p>
   remotes/origin/cyrus-imapd-2.5
 $ <strong class="command">git checkout $BRANCH</strong></pre>
 <p>Continue with <a class="reference internal" href="#imap-installation-diy-build-dependencies"><span class="std std-ref">Build Dependencies</span></a>.</p>
-</section>
-<section id="from-tarball">
-<h2>From Tarball<a class="headerlink" href="#from-tarball" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="from-tarball">
+<h2>From Tarball<a class="headerlink" href="#from-tarball" title="Permalink to this headline">¶</a></h2>
 <p>Download the <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases">latest stable tarball</a> : version 3.10.0.</p>
 <p>Extract the tarball:</p>
 <pre class="literal-block">$ <strong class="command">tar xzvf cyrus-imapd-x.y.z.tar.gz</strong></pre>
 <p>Continue with <a class="reference internal" href="#imap-installation-diy-build-dependencies"><span class="std std-ref">Build Dependencies</span></a>.</p>
-</section>
-<section id="build-dependencies">
-<span id="imap-installation-diy-build-dependencies"></span><h2>Build Dependencies<a class="headerlink" href="#build-dependencies" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="build-dependencies">
+<span id="imap-installation-diy-build-dependencies"></span><h2>Build Dependencies<a class="headerlink" href="#build-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>If you run an operating system or Linux distribution that already
 includes packages for Cyrus IMAP, then the build dependencies for
 Cyrus IMAP are specified in the packaging specification for that
@@ -847,8 +842,8 @@ CentOS system for example, you can run the following commands:</p>
 # <strong class="command">yum-builddep cyrus-imapd</strong></pre>
 <p>Consult the upstream documentation of your platform for further
 information on the availability of such commands and their usage.</p>
-<section id="required-build-dependencies">
-<h3>Required Build Dependencies<a class="headerlink" href="#required-build-dependencies" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="required-build-dependencies">
+<h3>Required Build Dependencies<a class="headerlink" href="#required-build-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>The following list includes the names of packages used in RPM-based
 distributions:</p>
 <p><strong>autoconf</strong> 2.63 or higher</p>
@@ -895,9 +890,9 @@ distributions:</p>
 <blockquote>
 <div><p>from <a class="reference external" href="http://pkgconfig.freedesktop.org">http://pkgconfig.freedesktop.org</a></p>
 </div></blockquote>
-</section>
-<section id="optional-build-dependencies">
-<h3>Optional Build Dependencies<a class="headerlink" href="#optional-build-dependencies" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="optional-build-dependencies">
+<h3>Optional Build Dependencies<a class="headerlink" href="#optional-build-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>The following build dependencies are optional, and enable functionality,
 Cyrus IMAP code maintenance tasks or documentation rendering.</p>
 <p><strong>CUnit-devel</strong></p>
@@ -1049,10 +1044,10 @@ from <a class="reference external" href="http://www.perl.org/">http://www.perl.o
 <div><p>from <a class="reference external" href="http://www.valgrind.org/">http://www.valgrind.org/</a></p>
 </div></blockquote>
 <p>Continue with <a class="reference internal" href="#imap-installation-diy-configure"><span class="std std-ref">Configure the Build</span></a></p>
-</section>
-</section>
-<section id="configure-the-build">
-<span id="imap-installation-diy-configure"></span><h2>Configure the Build<a class="headerlink" href="#configure-the-build" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="configure-the-build">
+<span id="imap-installation-diy-configure"></span><h2>Configure the Build<a class="headerlink" href="#configure-the-build" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">$ <strong class="command">autoreconf -vi</strong>
 $ <strong class="command">./configure [options]</strong></pre>
 <p>Check the summary after <code class="docutils literal notranslate"><span class="pre">./configure</span></code> completes successfully. The
@@ -1087,8 +1082,8 @@ may (read: will) differ:</p>
 <p>To view additional options, and disable or enable specific features,
 please see:</p>
 <pre class="literal-block"># <strong class="command">./configure --help</strong></pre>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1111,7 +1106,7 @@ please see:</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1135,12 +1130,9 @@ please see:</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

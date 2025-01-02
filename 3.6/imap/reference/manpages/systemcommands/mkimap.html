@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>mkimap &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,16 +783,16 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-mkimap-8"></span><section id="mkimap">
-<span id="imap-reference-manpages-systemcommands-mkimap"></span><h1><strong>mkimap</strong><a class="headerlink" href="#mkimap" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-mkimap-8"><span id="std:cyrusman-mkimap(8)"></span></span><div class="section" id="mkimap">
+<span id="imap-reference-manpages-systemcommands-mkimap"></span><h1><strong>mkimap</strong><a class="headerlink" href="#mkimap" title="Permalink to this headline">¶</a></h1>
 <p>A (small) Perl script to aid in creating spool and configuration
 directories for Cyrus IMAP installations.</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>mkimap</strong> <em>config-file</em></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>mkimap</strong> script reads in the configuration file specified on the
 command-line or uses <code class="file docutils literal notranslate"><span class="pre">/etc/imapd.conf</span></code> to determine a list of
 directories that Cyrus IMAP would need to operate.</p>
@@ -815,18 +810,18 @@ directories that Cyrus IMAP would need to operate.</p>
 <p>This utility needs to be executed as the user <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> (or the user
 you run the Cyrus IMAP service as).</p>
 </div>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-mkimap-arg-config-file">
-<span class="sig-name descname"><span class="pre">config-file</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-mkimap-arg-config-file" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-mkimap-arg-config-file">
+<code class="sig-name descname"><span class="pre">config-file</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-mkimap-arg-config-file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>mkimap</strong> <em>/etc/imapd.conf</em></pre>
 <blockquote>
 <div><p>Create necessary directories based on settings in
@@ -843,11 +838,11 @@ you run the Cyrus IMAP service as).</p>
 <span class="n">done</span>
 </pre></div>
 </div>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
-</section>
-</section>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
 
 
           </div>
@@ -870,7 +865,7 @@ you run the Cyrus IMAP service as).</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -893,12 +888,9 @@ you run the Cyrus IMAP service as).</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

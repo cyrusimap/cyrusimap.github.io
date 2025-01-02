@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Performance Recommendations &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,11 +758,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="performance-recommendations">
-<h1>Performance Recommendations<a class="headerlink" href="#performance-recommendations" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="performance-recommendations">
+<h1>Performance Recommendations<a class="headerlink" href="#performance-recommendations" title="Permalink to this headline">¶</a></h1>
 <p>This chapter lists a variety of options to increase the Cyrus IMAP performance.</p>
-<section id="databases-on-temporary-filesystems">
-<h2>Databases on Temporary Filesystems<a class="headerlink" href="#databases-on-temporary-filesystems" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="databases-on-temporary-filesystems">
+<h2>Databases on Temporary Filesystems<a class="headerlink" href="#databases-on-temporary-filesystems" title="Permalink to this headline">¶</a></h2>
 <p>Some databases and files and directory trees can be moved into a temporary filesystem, which may be an in-memory filesystem.</p>
 <p>In-memory filesystems are faster then disk filesystems, but are limited in space and volatile as well. The following list includes configuration settings that could make the corresponding databases, files and directory trees be created and maintained on a temporary filesystem.</p>
 <ul class="simple">
@@ -780,8 +775,8 @@
 <p class="admonition-title">Important</p>
 <p>Cyrus IMAP requires the parent directories to exist, and be writeable by the POSIX user account Cyrus IMAP runs under, prior to starting the <code class="docutils literal notranslate"><span class="pre">master</span></code> process.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -804,7 +799,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Aug 26 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -827,12 +822,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

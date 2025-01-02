@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Access Control Identifier (ACI) &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -800,8 +795,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="access-control-identifier-aci">
-<span id="imap-admin-access-control-identifiers"></span><h1>Access Control Identifier (ACI)<a class="headerlink" href="#access-control-identifier-aci" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="access-control-identifier-aci">
+<span id="imap-admin-access-control-identifiers"></span><h1>Access Control Identifier (ACI)<a class="headerlink" href="#access-control-identifier-aci" title="Permalink to this headline">¶</a></h1>
 <p>The Access Control Identifier (ACI) part of an ACL entry specifies the
 user or group for which the entry applies.  Group identifiers are
 distinguished be the prefix &quot;group:&quot;.  For example, &quot;group:accounting&quot;.</p>
@@ -809,17 +804,17 @@ distinguished be the prefix &quot;group:&quot;.  For example, &quot;group:accoun
 explained below. The meaning of other identifiers usually depends on
 the authorization mechanism being used (selected by <code class="docutils literal notranslate"><span class="pre">--with-auth</span></code> at
 compile time, defaulting to Unix).</p>
-<section id="anonymous-and-anyone">
-<h2><code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code><a class="headerlink" href="#anonymous-and-anyone" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="anonymous-and-anyone">
+<h2><code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code><a class="headerlink" href="#anonymous-and-anyone" title="Permalink to this headline">¶</a></h2>
 <p>With any authorization mechanism, two special identifiers are defined.
 The identifier <code class="docutils literal notranslate"><span class="pre">anonymous</span></code> refers to the anonymous, or unauthenticated
 user. The identifier <code class="docutils literal notranslate"><span class="pre">anyone</span></code> refers to all users, including the
 anonymous user.</p>
 <p>Both <code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code> may commonly be used with the <strong>post</strong>
 right <code class="docutils literal notranslate"><span class="pre">p</span></code> to allow message insertion to mailboxes.</p>
-</section>
-<section id="kerberos-vs-unix-authorization">
-<h2>Kerberos vs. Unix Authorization<a class="headerlink" href="#kerberos-vs-unix-authorization" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="kerberos-vs-unix-authorization">
+<h2>Kerberos vs. Unix Authorization<a class="headerlink" href="#kerberos-vs-unix-authorization" title="Permalink to this headline">¶</a></h2>
 <p>The Cyrus IMAP server comes with four authorization mechanisms, one is
 compatible with Unix-style (<code class="docutils literal notranslate"><span class="pre">/etc/passwd</span></code>) authorization, one for use
 with Kerberos 4, one for use with Kerberos 5, and one for use with an
@@ -834,8 +829,8 @@ the act of determining what rights you have. Authentication is
 discussed in the <a class="reference internal" href="../../../concepts/overview_and_concepts.html#imap-concepts-login-authentication"><span class="std std-ref">Login Authentication</span></a> part of
 this document.</p>
 </div>
-<section id="unix-authorization">
-<h3>Unix Authorization<a class="headerlink" href="#unix-authorization" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="unix-authorization">
+<h3>Unix Authorization<a class="headerlink" href="#unix-authorization" title="Permalink to this headline">¶</a></h3>
 <p>In the Unix authorization mechanism, ACIs are either a valid userid or
 the string <code class="docutils literal notranslate"><span class="pre">group:</span></code> followed by a group listed in <code class="docutils literal notranslate"><span class="pre">/etc/group</span></code>.
 Thus:</p>
@@ -854,9 +849,9 @@ be configured to have the groups available, one of which includes
 <p>NSS augmentations, such as <code class="docutils literal notranslate"><span class="pre">nss_ldap</span></code>, <code class="docutils literal notranslate"><span class="pre">pam_ldap</span></code> or <code class="docutils literal notranslate"><span class="pre">sssd</span></code>
 may be used to provide Cyrus access to group information via NSS.</p>
 </div>
-</section>
-<section id="kerberos-authorization">
-<h3>Kerberos Authorization<a class="headerlink" href="#kerberos-authorization" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="kerberos-authorization">
+<h3>Kerberos Authorization<a class="headerlink" href="#kerberos-authorization" title="Permalink to this headline">¶</a></h3>
 <p>Using the Kerberos authorization mechanism, ACIs are of the form:</p>
 <blockquote>
 <div><p><em>$principal</em>.*$instance*&#64;*$realm*</p>
@@ -873,16 +868,16 @@ the second identity during canonicalization. For example, a line in
 </div>
 <p>will cause the identity <code class="docutils literal notranslate"><span class="pre">bovik&#64;REMOTE.COM</span></code> to be treated as if it
 were the local identity <code class="docutils literal notranslate"><span class="pre">bovik</span></code>.</p>
-</section>
-<section id="alternative-authorization">
-<h3>Alternative Authorization<a class="headerlink" href="#alternative-authorization" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="alternative-authorization">
+<h3>Alternative Authorization<a class="headerlink" href="#alternative-authorization" title="Permalink to this headline">¶</a></h3>
 <p>A site may wish to write their own authorization mechanism, perhaps to
 implement a local group mechanism. If it does so (by implementing an
 <code class="docutils literal notranslate"><span class="pre">auth_[whatever]</span></code> PTS module), it will dictate its own form and
 meaning of identifiers.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -905,7 +900,7 @@ meaning of identifiers.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -928,12 +923,9 @@ meaning of identifiers.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>imclient library &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,11 +799,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="imclient-library">
-<span id="imap-admin-commands-imclient-library"></span><h1><strong>imclient</strong> library<a class="headerlink" href="#imclient-library" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="imclient-library">
+<span id="imap-admin-commands-imclient-library"></span><h1><strong>imclient</strong> library<a class="headerlink" href="#imclient-library" title="Permalink to this headline">¶</a></h1>
 <p>Authenticating callback interface to IMAP/IMSP servers</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">#include &lt;cyrus/imclient.h&gt;
 
 <strong>int imclient_connect(struct imclient **</strong><em>imclient</em> <strong>, const char *</strong><em>host</em> <strong>,
@@ -830,9 +825,9 @@
 <strong>int imclient_havetls ();</strong>
 <strong>int imclient_starttls (struct imclient *</strong><em>imclient</em><strong>, char *</strong><em>cert_file</em><strong>,
     char *</strong><em>key_file</em><strong>, char *</strong><em>CAfile</em><strong>, char *</strong><em>CApath</em><strong>);</strong></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The imclient library functions are distributed with Cyrus IMAP and IMSP.
 These functions are used for building IMAP/IMSP client software. These
 functions handle Kerberos authentication and can set callbacks based on the
@@ -954,9 +949,9 @@ validate the server’s certificate, in which case the connection may
 succeed but a warning will be printed to stdout.</p>
 </dd>
 </dl>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The following code is a possible skeletion of <strong>imclient</strong> that relies
 on Kerberos to do authentication.  This code preforms an IMAP
 CAPABILITY request and prints out the result.</p>
@@ -1040,24 +1035,24 @@ CAPABILITY request and prints out the result.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</section>
-<section id="bugs">
-<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="bugs">
+<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h2>
 <p>No known bugs.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p>cyradm(8),
 <a class="reference internal" href="../../admin/systemcommands/imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2033.html"><strong>RFC 2033</strong></a> (IMAP LITERAL+ extension),
-<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2060.html"><strong>RFC 2060</strong></a> (IMAP4rev1 specification), and
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2033.html"><strong>RFC 2033</strong></a> (IMAP LITERAL+ extension),
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a> (IMAP4rev1 specification), and
 <em class="manpage">select(2)</em></p>
-</section>
-<section id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
 <p>IMAP, ACAP, IMSP, Kerberos, Authentication</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1080,7 +1075,7 @@ CAPABILITY request and prints out the result.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1104,12 +1099,9 @@ CAPABILITY request and prints out the result.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

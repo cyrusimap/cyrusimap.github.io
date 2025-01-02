@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Quickstart Guide &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   
@@ -108,7 +103,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="imap/download/getcyrus.html">Get Cyrus</a><ul>
@@ -713,7 +708,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,8 +753,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="quickstart-guide">
-<h1>Quickstart Guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="quickstart-guide">
+<h1>Quickstart Guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="imap/quickstart/introduction.html">Introduction to Cyrus IMAP</a><ul>
@@ -768,15 +763,15 @@
 </li>
 </ul>
 </div>
-<section id="coming-soon">
-<h2>Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="coming-soon">
+<h2>Coming Soon<a class="headerlink" href="#coming-soon" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The deb packages referenced below are not yet available.  Sorry!</p>
 </div>
-</section>
-<section id="quick-install">
-<h2>Quick install<a class="headerlink" href="#quick-install" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="quick-install">
+<h2>Quick install<a class="headerlink" href="#quick-install" title="Permalink to this headline">¶</a></h2>
 <p>A quick guide to getting a basic installation of Cyrus up and running in 5 minutes.</p>
 <p>The first place to start with a new installation of Cyrus IMAP is with
 your OS distribution of choice and their packaging, where available.  If
@@ -787,8 +782,8 @@ supported distribution whenever possible.  At this time the only
 official Cyrus packages are for Debian Jessie (with backports enabled).</p>
 <p>Please download both the packages (*.deb) and the signature files.
 Installation is a two step process:</p>
-<section id="install-cyrus-reference-packages">
-<h3>1. Install Cyrus reference packages<a class="headerlink" href="#install-cyrus-reference-packages" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="install-cyrus-reference-packages">
+<h3>1. Install Cyrus reference packages<a class="headerlink" href="#install-cyrus-reference-packages" title="Permalink to this headline">¶</a></h3>
 <p>First, invoke the <code class="docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-i</span></code> command with the list of all packages:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dpkg -i \
     cyrus-common_3.0.1-jessie_amd64.deb  \
@@ -807,18 +802,18 @@ Installation is a two step process:</p>
 </div>
 <p>That step will produce an error, as there will doubtless be unmet
 dependencies.  Not to worry, there’s a fix for that…</p>
-</section>
-<section id="use-apt-get-install-f-to-complete-installation">
-<h3>2. Use “apt-get install -f” to complete installation<a class="headerlink" href="#use-apt-get-install-f-to-complete-installation" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="use-apt-get-install-f-to-complete-installation">
+<h3>2. Use “apt-get install -f” to complete installation<a class="headerlink" href="#use-apt-get-install-f-to-complete-installation" title="Permalink to this headline">¶</a></h3>
 <p>Now invoke <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">-f</span></code> to pull in the dependencies and
 complete the installation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install -f
 </pre></div>
 </div>
 <p>The packaging should pull along all necessary support libraries, etc..</p>
-</section>
-<section id="setup-the-cyrus-mail-user-and-group">
-<h3>3. Setup the cyrus:mail user and group<a class="headerlink" href="#setup-the-cyrus-mail-user-and-group" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="setup-the-cyrus-mail-user-and-group">
+<h3>3. Setup the cyrus:mail user and group<a class="headerlink" href="#setup-the-cyrus-mail-user-and-group" title="Permalink to this headline">¶</a></h3>
 <p>Now let’s create a <strong>special user account just for the Cyrus server</strong>
 to sandbox Cyrus: called <code class="docutils literal notranslate"><span class="pre">cyrus</span></code>. We’ll also create a <code class="docutils literal notranslate"><span class="pre">mail</span></code> group
 as well. This allows Cyrus to give other programs some permissions if
@@ -841,7 +836,7 @@ cyrus:x:999:8:Cyrus IMAP Server:/var/lib/imap:/bin/bash
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">var/lib/imap</span></code> directory above is an example. Use the same directory
 specified in the <code class="docutils literal notranslate"><span class="pre">configdirectory</span></code> option in <a class="reference internal" href="imap/reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-<aside class="sidebar">
+<div class="sidebar">
 <p class="sidebar-title">configdirectory</p>
 <p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
 <blockquote>
@@ -851,7 +846,7 @@ specified in the <code class="docutils literal notranslate"><span class="pre">co
 required.</p>
 </div></blockquote>
 </div></blockquote>
-</aside>
+</div>
 <p>If your installation uses system locations for things like SSL
 certificates (i.e. <code class="docutils literal notranslate"><span class="pre">/etc/ssl/certs</span> <span class="pre">/etc/ssl/private</span></code>), then you should
 also add the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user to the appropriate group to gain access to
@@ -860,9 +855,9 @@ the PKI files.  On Debian/Ubuntu systems, for example, this group is
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="n">ssl</span><span class="o">-</span><span class="n">cert</span> <span class="n">cyrus</span>
 </pre></div>
 </div>
-</section>
-<section id="setting-up-authentication-with-sasl">
-<h3>4. Setting up authentication with SASL<a class="headerlink" href="#setting-up-authentication-with-sasl" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="setting-up-authentication-with-sasl">
+<h3>4. Setting up authentication with SASL<a class="headerlink" href="#setting-up-authentication-with-sasl" title="Permalink to this headline">¶</a></h3>
 <p>Now, let’s set up <strong>SASL</strong>. This will allow you to connect to your
 local IMAP server and login, just like any IMAP user would before
 checking for new emails.</p>
@@ -898,14 +893,14 @@ the user exists and is set up correctly:</p>
 </pre></div>
 </div>
 <p>You should get an <code class="docutils literal notranslate"><span class="pre">0:</span> <span class="pre">OK</span> <span class="pre">&quot;Success.&quot;</span></code> message.</p>
-</section>
-<section id="setup-mail-delivery-from-your-mta">
-<h3>5. Setup mail delivery from your MTA<a class="headerlink" href="#setup-mail-delivery-from-your-mta" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="setup-mail-delivery-from-your-mta">
+<h3>5. Setup mail delivery from your MTA<a class="headerlink" href="#setup-mail-delivery-from-your-mta" title="Permalink to this headline">¶</a></h3>
 <p>Your Cyrus IMAP server will want to receive the emails accepted by your
 SMTP server (ie Sendmail, Postfix, etc). In Cyrus, this happens via a
 protocol called LMTP, which is usually supported by your SMTP server.</p>
-<section id="install-sendmail">
-<h4>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="install-sendmail">
+<h4>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this headline">¶</a></h4>
 <p>We’ll set up LMTP with the Sendmail SMTP server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">sendmail</span>
 </pre></div>
@@ -923,18 +918,18 @@ protocol called LMTP, which is usually supported by your SMTP server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sendmailconfig</span>
 </pre></div>
 </div>
-</section>
-<section id="sendmail-communication">
-<h4>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="sendmail-communication">
+<h4>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this headline">¶</a></h4>
 <p>One last thing we need to do for LMTP to work with Sendmail is to create a folder that will contain the UNIX socket used by Sendmail and Cyrus to deliver/receive emails:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
 <span class="n">sudo</span> <span class="n">chown</span> <span class="n">cyrus</span><span class="p">:</span><span class="n">mail</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
 <span class="n">sudo</span> <span class="n">chmod</span> <span class="mi">750</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
 </pre></div>
 </div>
-</section>
-<section id="install-postfix">
-<h4>Install Postfix<a class="headerlink" href="#install-postfix" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="install-postfix">
+<h4>Install Postfix<a class="headerlink" href="#install-postfix" title="Permalink to this headline">¶</a></h4>
 <p>We’ll set up LMTP with the Postfix SMTP server (consider which other
 Postfix related packages you may also desire):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">postfix</span> <span class="n">postfix</span><span class="o">-</span><span class="n">doc</span> <span class="n">postfix</span><span class="o">-</span><span class="n">pcre</span> <span class="n">postfix</span><span class="o">-</span><span class="n">ldap</span> <span class="o">...</span>
@@ -985,10 +980,10 @@ version of this, where the socket patch matches what’s set in the
 </div>
 </li>
 </ol>
-</section>
-</section>
-<section id="protocol-ports">
-<h3>6. Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="protocol-ports">
+<h3>6. Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this headline">¶</a></h3>
 <p>The Cyrus IMAP server provides service interfaces via either TCP/IP
 ports or Unix domain sockets.  For the former, Cyrus requires that there
 are proper entries in the host’s <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> file.  The following
@@ -1009,9 +1004,9 @@ are required for any host using the listed services:</p>
 </pre></div>
 </div>
 <p>Make sure that these lines are present or add them if they are missing.</p>
-</section>
-<section id="configuring-cyrus">
-<h3>7. Configuring Cyrus<a class="headerlink" href="#configuring-cyrus" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configuring-cyrus">
+<h3>7. Configuring Cyrus<a class="headerlink" href="#configuring-cyrus" title="Permalink to this headline">¶</a></h3>
 <p>(Nearly there)</p>
 <p>Set up a simple directory structure for Cyrus to store emails, owned by
 the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user and group <code class="docutils literal notranslate"><span class="pre">mail</span></code>:</p>
@@ -1119,9 +1114,9 @@ in a Murder or Replication environment.</p>
 <span class="o">...</span>
 </pre></div>
 </div>
-</section>
-<section id="launch-cyrus">
-<h3>8. Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="launch-cyrus">
+<h3>8. Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this headline">¶</a></h3>
 <p>If using our packages on Debian Jessie, you will have a SystemV
 compatible init script installed, with systemd support.  Start Cyrus
 with the following command:</p>
@@ -1129,9 +1124,9 @@ with the following command:</p>
 </pre></div>
 </div>
 <p>Tada!  You should now have a working Cyrus IMAP server.</p>
-</section>
-<section id="feature-overview">
-<h3>Feature overview<a class="headerlink" href="#feature-overview" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="feature-overview">
+<h3>Feature overview<a class="headerlink" href="#feature-overview" title="Permalink to this headline">¶</a></h3>
 <p>The features (compile-time configuration options) supported in our
 reference packages are:</p>
 <dl class="simple">
@@ -1192,9 +1187,9 @@ reference packages are:</p>
 </ul>
 </dd>
 </dl>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1217,7 +1212,7 @@ reference packages are:</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jan 24 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1240,12 +1235,9 @@ reference packages are:</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 

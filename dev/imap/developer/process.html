@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Development Process &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -740,7 +735,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,11 +784,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="development-process">
-<span id="devprocess"></span><h1>Development Process<a class="headerlink" href="#development-process" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="development-process">
+<span id="devprocess"></span><h1>Development Process<a class="headerlink" href="#development-process" title="Permalink to this headline">¶</a></h1>
 <p>We need to develop not just for ourselves, but for those who follow us. This means following good development process to provide transparency, maintainability and readability to what we're doing.</p>
-<section id="coding-style">
-<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="coding-style">
+<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Unix style: LF line endings.</p></li>
 <li><p>No trailing spaces.</p></li>
@@ -804,16 +799,16 @@
 <li><p>Comments. More comments. Still more comments. Nobody will know what your brilliant idea was when you wrote that gnarly piece of code unless you tell them.</p></li>
 <li><p>Commit messages. Commit discrete changes, don't munge six different fixes into a single commit. And provide a clear message (preferably tied into a GitHub issue) of what problem these changes address.</p></li>
 </ul>
-</section>
-<section id="making-changes">
-<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this heading">¶</a></h2>
-<section id="before-you-begin">
-<h3>Before you begin<a class="headerlink" href="#before-you-begin" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="making-changes">
+<h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="before-you-begin">
+<h3>Before you begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline">¶</a></h3>
 <p>Found a bug? Got an enhancement? Great!</p>
 <p>New Feature considerations: this is an open source project. If your change isn't a basic part of what is already planned, will you be around to support it? Can you justify why it's in the best interests of the project to have your change included? We'd love to talk it through with you: contact us via the <a class="reference internal" href="../support/feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing lists</span></a>.</p>
-</section>
-<section id="using-github">
-<h3>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="using-github">
+<h3>Using GitHub<a class="headerlink" href="#using-github" title="Permalink to this headline">¶</a></h3>
 <p>First, check out our <a class="reference internal" href="github-guide.html#github-guide"><span class="std std-ref">Guide to GitHub</span></a>, which covers:</p>
 <ol class="arabic simple">
 <li><p>Create a GitHub account.</p></li>
@@ -830,23 +825,23 @@
 <li><p>Wait for review (a quick note to the mailing list can speed this along).</p></li>
 <li><p>Once approved, it'll be merged into the master.</p></li>
 </ol>
-</section>
-<section id="patches-through-the-mailing-list">
-<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="patches-through-the-mailing-list">
+<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this headline">¶</a></h3>
 <p>If you're not planning on regularly submitting changes, you can just send your patch through to the mailing list and one of the regular maintainers will see about incorporating it.</p>
-</section>
-</section>
-<section id="useful-developer-information">
-<h2>Useful Developer Information<a class="headerlink" href="#useful-developer-information" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="useful-developer-information">
+<h2>Useful Developer Information<a class="headerlink" href="#useful-developer-information" title="Permalink to this headline">¶</a></h2>
 <p>Some combined <a class="reference internal" href="guidance.html#imap-developer-guidance"><span class="std std-ref">tips on developing with Cyrus</span></a> have been collected.</p>
-</section>
-<section id="community-participation">
-<h2>Community Participation<a class="headerlink" href="#community-participation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="community-participation">
+<h2>Community Participation<a class="headerlink" href="#community-participation" title="Permalink to this headline">¶</a></h2>
 <p>Join us! The project is only as good as the sum of its people. We all work together, despite the tyranny of distance and timezones.</p>
 <p>Meetings are currently <a class="reference internal" href="../support/feedback-meetings.html#feedback-meetings"><span class="std std-ref">held online via Zoom</span></a>.</p>
 <p>There's also <a class="reference internal" href="../../support.html#support"><span class="std std-ref">mailing lists</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -869,7 +864,7 @@
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 07 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -892,12 +887,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

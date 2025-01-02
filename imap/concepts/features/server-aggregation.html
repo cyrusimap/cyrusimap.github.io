@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Murder (Server Aggregation) &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -798,8 +793,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-imap-murder-server-aggregation">
-<span id="imap-features-murder"></span><h1>Cyrus IMAP Murder (Server Aggregation)<a class="headerlink" href="#cyrus-imap-murder-server-aggregation" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-imap-murder-server-aggregation">
+<span id="imap-features-murder"></span><h1>Cyrus IMAP Murder (Server Aggregation)<a class="headerlink" href="#cyrus-imap-murder-server-aggregation" title="Permalink to this headline">¶</a></h1>
 <p>A Cyrus IMAP Murder consists of a group of Cyrus IMAP servers
 functioning as one large, transparent IMAP cluster.</p>
 <p>In a Cyrus IMAP Murder, one or more servers with a <em>frontend</em> role
@@ -810,7 +805,7 @@ servers with a <em>backend</em> role -- these host the payload for the cluster
 different mailboxes to which the user has access reside on different
 servers.</p>
 <p>To illustrate, let John's IMAP client connect to <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code>:</p>
-digraph john {
+<div class="graphviz"><img src="../../../_images/graphviz-aac7da08f43846f8664240603228a082601a3d55.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -819,12 +814,13 @@ digraph john {
         node [shape=record, fontname=Calibri, fontsize=11];
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
-    }<p>John's mailbox may not reside on the node that the client connects to,
+    }" class="graphviz" /></div>
+<p>John's mailbox may not reside on the node that the client connects to,
 though, and instead be located on a <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node -- as is
 typical for larger deployments.</p>
 <p>The client connection is therefore to be proxied to the appropriate
 <a class="reference internal" href="#term-backend"><span class="xref std std-term">backend</span></a> node.</p>
-digraph john {
+<div class="graphviz"><img src="../../../_images/graphviz-26c71bf0933a3f07db0adb06736a204d6ba2e7e2.png" alt="digraph john {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -834,11 +830,12 @@ digraph john {
 
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;];
-    }<p>It is not at all uncommon to (reverse) proxy client connections like
+    }" class="graphviz" /></div>
+<p>It is not at all uncommon to (reverse) proxy client connections like
 this (a task that <code class="docutils literal notranslate"><span class="pre">imap.example.org</span></code> takes on in this example).</p>
 <p>In the case of webservers for example, reverse proxying is a very
 common practice:</p>
-digraph www {
+<div class="graphviz"><img src="../../../_images/graphviz-ba6d524e5f7adb073a02dc4d7f0d53971018d133.png" alt="digraph www {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -850,7 +847,8 @@ digraph www {
 
         &quot;http://www.example.org/&quot; -&gt; &quot;assets1.example.org&quot; [label=&quot;Static Content&quot;];
         &quot;http://www.example.org/&quot; -&gt; &quot;www1.example.org&quot; [label=&quot;Dynamic Content&quot;];
-    }<p>In the case of reverse web proxies, the proxy looks at (for example)
+    }" class="graphviz" /></div>
+<p>In the case of reverse web proxies, the proxy looks at (for example)
 the request URI, and based on a set of rules, forwards (proxies) the
 request on to the appropriate (internal) node. This architecture allows
 application servers (www[0-9]+.example.org) to be scaled up and down by
@@ -860,10 +858,10 @@ require no server-side processing).</p>
 <p>In the case of IMAP, a commonly used IMAP proxy is NGINX. However,
 NGINX can proxy John's connection to only one backend at a time. NGINX
 allows an external script to respond with a target backend address
-based on the authentication of the user <a class="footnote-reference brackets" href="#id6" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+based on the authentication of the user <a class="footnote-reference brackets" href="#id6" id="id1">1</a>.</p>
 <p>As such, NGINX is a socket proxy, and not a fully-featured
 application proxy:</p>
-digraph joe {
+<div class="graphviz"><img src="../../../_images/graphviz-47bed0896a2bb672d4f54b18722750dbf3b11f90.png" alt="digraph joe {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -877,11 +875,12 @@ digraph joe {
         &quot;Desktop Client&quot; -&gt; &quot;imap.example.org&quot; [label=&quot;Client Connection&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend1.example.org&quot; [label=&quot;Proxied Connection&quot;,color=&quot;green&quot;];
         &quot;imap.example.org&quot; -&gt; &quot;backend2.example.org&quot; [label=&quot;Not Available&quot;,color=&quot;red&quot;];
-    }<p>This means that John could not open a mailbox that does not reside on
+    }" class="graphviz" /></div>
+<p>This means that John could not open a mailbox that does not reside on
 the same backend node his client connection is proxied to, and John nor
-Jane can share their mailboxes with one another <a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+Jane can share their mailboxes with one another <a class="footnote-reference brackets" href="#id7" id="id2">2</a>.</p>
 <p>For the proxy to be fully-featured, the proxy would need to catch all
-IMAP commands that John's client issues <a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, and determine what is the
+IMAP commands that John's client issues <a class="footnote-reference brackets" href="#id8" id="id3">3</a>, and determine what is the
 most appropriate backend to serve the request -- not unlike the
 aforementioned web proxies.</p>
 <p>So, when John's client issues a <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">INBOX</span></code>, the connection is to
@@ -905,8 +904,8 @@ to</p></li>
 when a message is moved from John's <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> to Jane's <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> or
 vice-versa.</p></li>
 </ul>
-<section id="use-cases-for-the-cyrus-imap-murder">
-<h2>Use-Cases for the Cyrus IMAP Murder<a class="headerlink" href="#use-cases-for-the-cyrus-imap-murder" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="use-cases-for-the-cyrus-imap-murder">
+<h2>Use-Cases for the Cyrus IMAP Murder<a class="headerlink" href="#use-cases-for-the-cyrus-imap-murder" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Transparent access to content distributed over multiple (backend)
 nodes,</p></li>
@@ -933,9 +932,9 @@ connections are proxied to the same backend node).</p>
 <p>In larger environments however (again), users that are required to be
 able to share content often results in groups of several dozens,
 hundreds or even thousands, making it very, very hard to maintain.</p>
-</section>
-<section id="cyrus-imap-murder-topologies">
-<h2>Cyrus IMAP Murder Topologies<a class="headerlink" href="#cyrus-imap-murder-topologies" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="cyrus-imap-murder-topologies">
+<h2>Cyrus IMAP Murder Topologies<a class="headerlink" href="#cyrus-imap-murder-topologies" title="Permalink to this headline">¶</a></h2>
 <p>A Cyrus IMAP Murder topology serves the need to <strong>aggregate</strong> the
 mailboxes hosted by more than one Cyrus IMAP server with the <em>backend</em>
 role.</p>
@@ -962,9 +961,9 @@ by separate servers, such as in a
 in a <a class="reference internal" href="#imap-features-murder-unified"><span class="std std-ref">Unified Murder</span></a>.</p>
 </div>
 <p>All Cyrus IMAP Murder topologies exchange information about where
-mailboxes reside through the MUPDATE protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3656.html"><strong>RFC 3656</strong></a>).</p>
-<section id="discrete-murder">
-<span id="imap-features-murder-discrete"></span><h3>Discrete Murder<a class="headerlink" href="#discrete-murder" title="Permalink to this heading">¶</a></h3>
+mailboxes reside through the MUPDATE protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3656.html"><strong>RFC 3656</strong></a>).</p>
+<div class="section" id="discrete-murder">
+<span id="imap-features-murder-discrete"></span><h3>Discrete Murder<a class="headerlink" href="#discrete-murder" title="Permalink to this headline">¶</a></h3>
 <p>The simplest discrete murder topology puts each role on one or more
 separate systems;</p>
 <ul class="simple">
@@ -974,8 +973,8 @@ separate systems;</p>
 </ul>
 <p>Each of the systems communicates with one another via the following
 connection model:</p>
-<figure class="align-default" id="id9">
-digraph {
+<div class="figure align-default" id="id9">
+<div class="graphviz"><img src="../../../_images/graphviz-26540d7e5534673feba1dcb17d4339c46a5bb59d.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -989,10 +988,9 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=back];
 
         &quot;f+&quot; -&gt; &quot;b+&quot;;
-    }<figcaption>
-<p><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Connection model for a Discrete Murder topology</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
 <ol class="arabic">
 <li><p>A frontend (f) connects to the mupdate (m) master server and
 receives updates from the mupdate master server.</p>
@@ -1006,10 +1004,10 @@ to the mupdate server.</p>
 <p>A backend reconnects to the mupdate master server as needed.</p>
 </li>
 </ol>
-<section id="murder-backend-startup-process">
-<h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this heading">¶</a></h4>
-<figure class="align-default" id="id10">
-digraph {
+<div class="section" id="murder-backend-startup-process">
+<h4>Murder Backend Startup Process<a class="headerlink" href="#murder-backend-startup-process" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-default" id="id10">
+<div class="graphviz"><img src="../../../_images/graphviz-56b6da7ce3446b1cfe25825c038101f97149e331.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1023,12 +1021,11 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=red,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<figcaption>
-<p><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id11">
-digraph {
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Communication during Backend startup (1)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id11">
+<div class="graphviz"><img src="../../../_images/graphviz-576b968661b0cdf14d09ee6a30d7edbf8fb5f3f0.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1043,10 +1040,9 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [color=green,dir=back,label=&quot;(1)&quot;];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [color=white];
-    }<figcaption>
-<p><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+    }" class="graphviz" /></div>
+<p class="caption"><span class="caption-text">Communication during Backend startup (2)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
 <ol class="arabic">
 <li><p>The backend (b) pushes its list of mailboxes to the mupdate master
 (m) using <code class="docutils literal notranslate"><span class="pre">ctl_mboxlist</span> <span class="pre">-m</span></code>.</p>
@@ -1072,7 +1068,7 @@ living locally are removed from the mupdate master server.</p></li>
 <li><p>The mupdate (m) master server pushes updates to the existing list of
 mailboxes to the frontend (f) server.</p></li>
 </ol>
-digraph {
+<div class="graphviz"><img src="../../../_images/graphviz-eb1b90869007c5278c2a2e65037cb2e36874e3de.png" alt="digraph {
         rankdir=LR;
         nodesep=2;
 
@@ -1086,50 +1082,48 @@ digraph {
         &quot;m&quot; -&gt; &quot;b+&quot; [dir=both];
 
         &quot;f+&quot; -&gt; &quot;b+&quot; [dir=both];
-    }</section>
-</section>
-<section id="replicated-murder">
-<span id="imap-features-murder-replicated"></span><h3>Replicated Murder<a class="headerlink" href="#replicated-murder" title="Permalink to this heading">¶</a></h3>
+    }" class="graphviz" /></div>
+</div>
+</div>
+<div class="section" id="replicated-murder">
+<span id="imap-features-murder-replicated"></span><h3>Replicated Murder<a class="headerlink" href="#replicated-murder" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
 </div>
-</section>
-<section id="unified-murder">
-<span id="imap-features-murder-unified"></span><h3>Unified Murder<a class="headerlink" href="#unified-murder" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="unified-murder">
+<span id="imap-features-murder-unified"></span><h3>Unified Murder<a class="headerlink" href="#unified-murder" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section needs to be written. Would you like to <a class="reference internal" href="../../developer/documentation.html#contribute-docs"><span class="std std-ref">help out</span></a>?</p>
 </div>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">Features</span></a></p>
 <p class="rubric">Footnotes</p>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>See also: <a class="reference internal" href="../../reference/admin/nginx-proxy.html#imap-howto-nginx-proxy"><span class="std std-ref">HOWTO: Using an NGINX IMAP Proxy</span></a>.</p>
-</aside>
-<aside class="footnote brackets" id="id7" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>More literally speaking, John and Jane can <em>share</em>, just neither can
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>See also: <a class="reference internal" href="../../reference/admin/nginx-proxy.html#imap-howto-nginx-proxy"><span class="std std-ref">HOWTO: Using an NGINX IMAP Proxy</span></a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>More literally speaking, John and Jane can <em>share</em>, just neither can
 make use of the privilege.</p>
-</aside>
-<aside class="footnote brackets" id="id8" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
-<p>Including but not limited to <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>, <code class="docutils literal notranslate"><span class="pre">RENAME</span></code>,
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Including but not limited to <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>, <code class="docutils literal notranslate"><span class="pre">RENAME</span></code>,
 etc.</p>
-</aside>
-</aside>
-<dl class="simple glossary">
+</dd>
+</dl>
+<dl class="glossary simple">
 <dt id="term-frontend">frontend<a class="headerlink" href="#term-frontend" title="Permalink to this term">¶</a></dt><dd><p>the user interface</p>
 </dd>
 </dl>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-backend">backend<a class="headerlink" href="#term-backend" title="Permalink to this term">¶</a></dt><dd><p>the server components</p>
 </dd>
 </dl>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1152,7 +1146,7 @@ etc.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Feb 13 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1175,12 +1169,9 @@ etc.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

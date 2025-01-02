@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_authorize_t - The SASL authorization callback &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,10 +485,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-authorize-t-the-sasl-authorization-callback">
-<span id="sasl-reference-manpages-library-sasl-authorize-t"></span><span id="std-saslman-sasl_authorize_t-3"></span><h1><strong>sasl_authorize_t</strong> - The SASL authorization callback<a class="headerlink" href="#sasl-authorize-t-the-sasl-authorization-callback" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-authorize-t-the-sasl-authorization-callback">
+<span id="sasl-reference-manpages-library-sasl-authorize-t"></span><span id="std-saslman-sasl_authorize_t-3"></span><span id="std:saslman-sasl_authorize_t(3)"></span><h1><strong>sasl_authorize_t</strong> - The SASL authorization callback<a class="headerlink" href="#sasl-authorize-t-the-sasl-authorization-callback" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">#include &lt;sasl/sasl.h&gt;
 
 
@@ -502,9 +497,9 @@ int sasl_authorize_t(void *context,
                     const char *auth_identity, unsigned alen,
                     const char *def_realm, unsigned urlen,
                     struct propctx *propctx)</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>sasl_authorize_t</strong>  is  used to check whether the authorized
 user auth_identity may act  as  the  user  requested_user.
 For  example  the  user root may wish to authenticate with
@@ -512,17 +507,17 @@ his credentials but act as the user mmercer (with  all  of
 mmercer’s  rights  not roots). A server application should
 be very careful, and probably err on the side of  caution,
 when determining which users may proxy as whom.</p>
-</section>
-<section id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
 See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="sasl.html#std-saslman-sasl-3">sasl(3)</a>, <a class="reference internal" href="sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -545,7 +540,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -569,12 +564,9 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

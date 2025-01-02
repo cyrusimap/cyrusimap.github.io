@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Deleting and Undeleting Messages and Folders &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,39 +799,39 @@
 </div>
           <div role="main" class="document">
             
-  <section id="deleting-and-undeleting-messages-and-folders">
-<span id="imap-admin-sop-restoring-expunged-messages"></span><h1>Deleting and Undeleting Messages and Folders<a class="headerlink" href="#deleting-and-undeleting-messages-and-folders" title="Permalink to this heading">¶</a></h1>
-<section id="terminology-definitions">
-<h2>Terminology &amp; Definitions<a class="headerlink" href="#terminology-definitions" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="deleting-and-undeleting-messages-and-folders">
+<span id="imap-admin-sop-restoring-expunged-messages"></span><h1>Deleting and Undeleting Messages and Folders<a class="headerlink" href="#deleting-and-undeleting-messages-and-folders" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="terminology-definitions">
+<h2>Terminology &amp; Definitions<a class="headerlink" href="#terminology-definitions" title="Permalink to this headline">¶</a></h2>
 <p>This section clarifies some of the subtle nuances between delete,
 expunge and expire in different contexts, used throughout this chapter.</p>
-<section id="message-context">
-<h3>Message context<a class="headerlink" href="#message-context" title="Permalink to this heading">¶</a></h3>
-<dl class="simple glossary">
+<div class="section" id="message-context">
+<h3>Message context<a class="headerlink" href="#message-context" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary simple">
 <dt id="term-Delete">Delete<a class="headerlink" href="#term-Delete" title="Permalink to this term">¶</a></dt><dd><p>sets the <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code> flag on the message using
 <code class="docutils literal notranslate"><span class="pre">STORE</span> <span class="pre">+Flags</span> <span class="pre">\Deleted</span></code> via IMAP client</p>
 </dd>
 </dl>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-Expunge">Expunge<a class="headerlink" href="#term-Expunge" title="Permalink to this term">¶</a></dt><dd><p>delete messages from the cyrus folder index that have the
 <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code> flag set using EXPUNGE via IMAP client. With
 <code class="docutils literal notranslate"><span class="pre">expunge_mode:</span> <span class="pre">delayed</span></code>, this doesn’t delete the file from
 the filesystem.</p>
 </dd>
 </dl>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-Unexpunge">Unexpunge<a class="headerlink" href="#term-Unexpunge" title="Permalink to this term">¶</a></dt><dd><p>recover messages into the cyrus folder index based on filesystem
 content (only possible with <code class="docutils literal notranslate"><span class="pre">expunge_mode:</span> <span class="pre">delayed</span></code>)</p>
 </dd>
 </dl>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-Undelete">Undelete<a class="headerlink" href="#term-Undelete" title="Permalink to this term">¶</a></dt><dd><p>remove the <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code> flag on the message using
 <code class="docutils literal notranslate"><span class="pre">STORE</span> <span class="pre">-Flags</span> <span class="pre">\Deleted</span></code> via IMAP client.</p>
 </dd>
 </dl>
-</section>
-<section id="folder-context">
-<h3>Folder context<a class="headerlink" href="#folder-context" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="folder-context">
+<h3>Folder context<a class="headerlink" href="#folder-context" title="Permalink to this headline">¶</a></h3>
 <dl class="glossary">
 <dt id="term-0">Delete<a class="headerlink" href="#term-0" title="Permalink to this term">¶</a></dt><dd><p>deletes the folder and all messages inside it using <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>
 via IMAP client. If using <code class="docutils literal notranslate"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code>, this renames
@@ -845,15 +840,15 @@ the folder, rather than deletes the folder, as discussed below.</p>
 list and the filesystem.</p>
 </dd>
 </dl>
-<dl class="simple glossary">
+<dl class="glossary simple">
 <dt id="term-1">Undelete<a class="headerlink" href="#term-1" title="Permalink to this term">¶</a></dt><dd><p>rename the deleted folder back to the original location using
 <code class="docutils literal notranslate"><span class="pre">renamemailbox</span></code> in <code class="docutils literal notranslate"><span class="pre">cyradm</span></code>.</p>
 </dd>
 </dl>
-</section>
-</section>
-<section id="expiring-deleted-messages-and-folders">
-<h2>Expiring Deleted Messages and Folders<a class="headerlink" href="#expiring-deleted-messages-and-folders" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="expiring-deleted-messages-and-folders">
+<h2>Expiring Deleted Messages and Folders<a class="headerlink" href="#expiring-deleted-messages-and-folders" title="Permalink to this headline">¶</a></h2>
 <p>In the EVENTS block of cyrus.conf, you should have a line similar to the
 following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">delprune</span>  <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;cyr_expire -E 1 -D 7 -X 7 -a&quot;</span> <span class="n">at</span><span class="o">=</span><span class="mi">2300</span>
@@ -890,9 +885,9 @@ doesn’t hurt to specify it in <a class="reference internal" href="../configs/i
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 2.3.9.</span></p>
 </div>
-</section>
-<section id="undeleting-folders">
-<h2>Undeleting Folders<a class="headerlink" href="#undeleting-folders" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="undeleting-folders">
+<h2>Undeleting Folders<a class="headerlink" href="#undeleting-folders" title="Permalink to this headline">¶</a></h2>
 <p>The following assumes that you are using the UNIX hierarchy separator.
 If it’s off then replace ‘/’ in the names with ‘.’</p>
 <p>With the previous configuration options in place, whenever a mail folder
@@ -944,9 +939,9 @@ when the first folder was deleted.</p>
 <blockquote>
 <div><p><a class="reference external" href="http://git.kolab.org/pykolab/tree/pykolab/imap/cyrus.py">http://git.kolab.org/pykolab/tree/pykolab/imap/cyrus.py</a>.</p>
 </div></blockquote>
-</section>
-<section id="undeleting-messages-in-a-mailbox">
-<h2>Undeleting messages in a mailbox<a class="headerlink" href="#undeleting-messages-in-a-mailbox" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="undeleting-messages-in-a-mailbox">
+<h2>Undeleting messages in a mailbox<a class="headerlink" href="#undeleting-messages-in-a-mailbox" title="Permalink to this headline">¶</a></h2>
 <p>The following examples assume you have an installation of cyrus where
 there are binaries in <code class="docutils literal notranslate"><span class="pre">/usr/lib/cyrus-imapd/</span></code> - if not, adjust path to
 suit.</p>
@@ -990,8 +985,8 @@ undeleted.</p>
 <p>For folder names that have spaces ‘ ‘, the spaces need to be escaped
 with a backslash.</p>
 <pre class="literal-block"># <strong class="command">/usr/lib/cyrus-imapd/unexpunge -adv user/john/DeletedMessages&#64;example.org</strong></pre>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1014,7 +1009,7 @@ with a backslash.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1038,12 +1033,9 @@ with a backslash.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

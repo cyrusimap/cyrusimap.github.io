@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Mailbox File Formats &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -736,7 +731,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,10 +780,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-imap-server-mailbox-file-formats">
-<span id="imap-developer-guidance-mailbox-format"></span><h1>Cyrus IMAP Server: Mailbox File Formats<a class="headerlink" href="#cyrus-imap-server-mailbox-file-formats" title="Permalink to this heading">¶</a></h1>
-<section id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="cyrus-imap-server-mailbox-file-formats">
+<span id="imap-developer-guidance-mailbox-format"></span><h1>Cyrus IMAP Server: Mailbox File Formats<a class="headerlink" href="#cyrus-imap-server-mailbox-file-formats" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
 <p>This documentation refers to the “version 12” cyrus index format and
 associated mailbox files.</p>
 <p>No external tools should make use of this information. The only
@@ -808,15 +803,15 @@ following files:</p>
 between multiple disks, with the files being in the same relative
 directory on the meta disk. See the <code class="docutils literal notranslate"><span class="pre">imapd.conf</span></code> option
 <code class="docutils literal notranslate"><span class="pre">metapartition_files</span></code> for more information</p>
-</section>
-<section id="message-files">
-<h2>Message Files<a class="headerlink" href="#message-files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="message-files">
+<h2>Message Files<a class="headerlink" href="#message-files" title="Permalink to this headline">¶</a></h2>
 <p>The message files are named by their UID, followed by a “.”, so UID 423
 would be named “<code class="docutils literal notranslate"><span class="pre">423.</span></code>”. They are stored in wire-format: lines are
 terminated by CRLF and binary data is not allowed.</p>
-</section>
-<section id="cyrus-header">
-<h2><code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code><a class="headerlink" href="#cyrus-header" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="cyrus-header">
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code><a class="headerlink" href="#cyrus-header" title="Permalink to this headline">¶</a></h2>
 <p>This file contains mailbox-wide information that does not change often.
 Its format:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Mailbox</span> <span class="n">Header</span> <span class="n">Magic</span> <span class="n">String</span><span class="o">&gt;</span>
@@ -830,16 +825,16 @@ so they remain with the mailbox during renames, and also by the
 replication subsystem to detect mailbox renames.</p>
 <p>The ACL is a copy of the value stored in mailboxes.db, and isn’t
 actually used.</p>
-<section id="locking-considerations">
-<h3>Locking Considerations<a class="headerlink" href="#locking-considerations" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="locking-considerations">
+<h3>Locking Considerations<a class="headerlink" href="#locking-considerations" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
 changes to the <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file to ensure consistency. All changes
 are made by rewriting the entire file and renaming the new version into
 place.</p>
-</section>
-</section>
-<section id="cyrus-cache">
-<h2><code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code><a class="headerlink" href="#cyrus-cache" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="cyrus-cache">
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code><a class="headerlink" href="#cyrus-cache" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file is a pure cache of information that’s also
 present in the message files. It exists to make ENVELOPE and specific
 header fetches more efficient, as well as to assist with searches and
@@ -963,17 +958,17 @@ These are in the same format they would appear in the message file:</p>
 <dt>Subject</dt><dd><p>The Subject header.</p>
 </dd>
 </dl>
-<section id="id1">
-<h3>Locking Considerations<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id1">
+<h3>Locking Considerations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file must be locked in exclusive mode while making
 changes to the <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> file to ensure consistency. All new cache
 records are created by reading the current end-of-file offset, appending
 the new cache record, and storing that start offset into the associated
 cyrus.index record.</p>
-</section>
-</section>
-<section id="cyrus-index">
-<h2><code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code><a class="headerlink" href="#cyrus-index" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="cyrus-index">
+<h2><code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code><a class="headerlink" href="#cyrus-index" title="Permalink to this headline">¶</a></h2>
 <p>The cyrus.index file is NOT just a cache - it stores information not
 present in the message file!</p>
 <p>The cyrus.index file consists of a fixed width header, followed by fixed
@@ -1003,8 +998,8 @@ individual records are aligned on 8 byte boundaries.</p>
 records are evenly spaced throughout the file. All of the message
 records are at well-known offsets, making any part of the file
 accessable at roughly equal speed.</p>
-<section id="id2">
-<h3>Locking Considerations<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="id2">
+<h3>Locking Considerations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> files can not be repacked (i.e. records can not change
 UID for a particular offset, and the file can’t be rewritten or deleted)
 unless there’s an exclusive namelock held for the mailbox name. This is
@@ -1018,9 +1013,9 @@ are no direct “offset” reads done any more, instead the mailbox API
 provides a way to read an entire cyrus.index header or cyrus.index
 record into a struct, performing consistency checks. Writes are also
 done with a complete record struct.</p>
-</section>
-<section id="detail-of-cyrus-index-header">
-<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header<a class="headerlink" href="#detail-of-cyrus-index-header" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="detail-of-cyrus-index-header">
+<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header<a class="headerlink" href="#detail-of-cyrus-index-header" title="Permalink to this headline">¶</a></h3>
 <p>The index header contains the following information, in order:</p>
 <dl>
 <dt>Generation Number (4 bytes)</dt><dd><p>A number that is basically the “revision number” of the mailbox. It
@@ -1134,9 +1129,9 @@ start of the buffer to just before this field.</p>
 <p>There are also spare fields in the index header, to allow for future
 expansion without forcing an upgrade of the file, and to round up to be
 divisible by 8 bytes.</p>
-</section>
-<section id="detail-of-cyrus-index-records">
-<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> records<a class="headerlink" href="#detail-of-cyrus-index-records" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="detail-of-cyrus-index-records">
+<h3>Detail of <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> records<a class="headerlink" href="#detail-of-cyrus-index-records" title="Permalink to this headline">¶</a></h3>
 <p>These records start immediately following the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> header,
 and are all fixed size. They are in-order by uid of the message.</p>
 <dl class="simple">
@@ -1188,10 +1183,10 @@ if you have a lock on the <code class="docutils literal notranslate"><span class
 wait until they get an exclusive lock to make modifications.</p>
 </dd>
 </dl>
-</section>
-</section>
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Expunge is super quick now - it’s just a flag update!</p></li>
 <li><p>Append is relatively fast (it only adds to the end of both the cache
@@ -1220,9 +1215,9 @@ modes are not possible in the “Hardware RAID disk model” (which we
 will describe somewhere else when we get around to it).</p>
 </li>
 </ul>
-</section>
-<section id="future-considerations">
-<h2>Future considerations<a class="headerlink" href="#future-considerations" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="future-considerations">
+<h2>Future considerations<a class="headerlink" href="#future-considerations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Cache all header fields? (or all up to Xk?) This could greatly
 improve speeds of clients that just ask for everything, but also
@@ -1237,8 +1232,8 @@ doesn’t matter much.</p></li>
 <li><p>It would be useful to store a uniqueid -&gt; mailbox name index, so that
 we could fix arbitron again.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1261,7 +1256,7 @@ we could fix arbitron again.</p></li>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 09 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1284,12 +1279,9 @@ we could fix arbitron again.</p></li>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

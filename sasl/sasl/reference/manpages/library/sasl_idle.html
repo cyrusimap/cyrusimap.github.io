@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_idle - Perform precalculations during an idle period &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,26 +485,26 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-idle-perform-precalculations-during-an-idle-period">
-<span id="sasl-reference-manpages-library-sasl-idle"></span><span id="std-saslman-sasl_idle-3"></span><h1><strong>sasl_idle</strong> - Perform precalculations during an idle period<a class="headerlink" href="#sasl-idle-perform-precalculations-during-an-idle-period" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-idle-perform-precalculations-during-an-idle-period">
+<span id="sasl-reference-manpages-library-sasl-idle"></span><span id="std-saslman-sasl_idle-3"></span><span id="std:saslman-sasl_idle(3)"></span><h1><strong>sasl_idle</strong> - Perform precalculations during an idle period<a class="headerlink" href="#sasl-idle-perform-precalculations-during-an-idle-period" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">sasl_idle</span><span class="p">(</span><span class="w"> </span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <dl class="c function">
-<dt class="sig sig-object c" id="c.sasl_idle">
-<span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sasl_idle</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="sasl_auxprop_getctx.html#c.sasl_conn_t" title="sasl_conn_t"><span class="n"><span class="pre">sasl_conn_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">conn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.sasl_idle" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="c.sasl_idle">
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">sasl_idle</span></code><span class="sig-paren">(</span><a class="reference internal" href="sasl_auxprop_getctx.html#c.sasl_conn_t" title="sasl_conn_t"><span class="pre">sasl_conn_t</span></a> <span class="pre">*</span><em><span class="pre">conn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.sasl_idle" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>sasl_idle()</strong> may be called during an idle period to allow the
 SASL library or any mechanisms to perform any necessary
 precalculation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>conn</strong> – may be NULL to do precalculation prior to a
 connection taking place.</p></li>
@@ -518,16 +513,16 @@ connection taking place.</p></li>
 </dl>
 </dd></dl>
 
-</section>
-<section id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>Returns 1 if action was taken, 0 if no action was taken.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite></p>
-</section>
-</section>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite></p>
+</div>
+</div>
 
 
           </div>
@@ -550,7 +545,7 @@ connection taking place.</p></li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -574,12 +569,9 @@ connection taking place.</p></li>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

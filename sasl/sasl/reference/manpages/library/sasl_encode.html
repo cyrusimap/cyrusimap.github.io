@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_encode - Encode data for transport to authenticated host &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,10 +485,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-encode-encode-data-for-transport-to-authenticated-host">
-<span id="sasl-reference-manpages-library-sasl-encode"></span><span id="std-saslman-sasl_encode-3"></span><h1><strong>sasl_encode</strong> - Encode data for transport to authenticated host<a class="headerlink" href="#sasl-encode-encode-data-for-transport-to-authenticated-host" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-encode-encode-data-for-transport-to-authenticated-host">
+<span id="sasl-reference-manpages-library-sasl-encode"></span><span id="std-saslman-sasl_encode-3"></span><span id="std:saslman-sasl_encode(3)"></span><h1><strong>sasl_encode</strong> - Encode data for transport to authenticated host<a class="headerlink" href="#sasl-encode-encode-data-for-transport-to-authenticated-host" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">sasl_encode</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
@@ -509,9 +504,9 @@
 <span class="w">                </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">outputlen</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>sasl_encode</strong> encodes data to be sent to be sent to a remote host  who  we’ve
 had  a successful authentication session with. If there  is  a  negotiated
 security  the  data  in signed/encrypted  and  the  output  should be sent
@@ -520,18 +515,18 @@ output is identical to the input.</p>
 <p><strong>sasl_encodev</strong> does the same, but for a <cite>struct iovec</cite> instead
 of a character buffer.</p>
 <dl class="c function">
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_encode(sasl_conn_t</span> <span class="pre">*conn,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span> <span class="pre">input,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">inputlen,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span> <span class="pre">output,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*</span> <span class="pre">outputlen);</span></span></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_encode(sasl_conn_t</span> <span class="pre">*conn,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*</span> <span class="pre">input,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">inputlen,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span> <span class="pre">output,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*</span> <span class="pre">outputlen);</span></code></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>conn</strong> – is the SASL connection context</p></li>
 <li><p><strong>output</strong> – contains the decoded data and is allocated/freed by
@@ -541,20 +536,20 @@ the library.</p></li>
 </dd>
 </dl>
 <dl class="c function">
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_encodev(sasl_conn_t</span> <span class="pre">*conn,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">struct</span> <span class="pre">iovec</span> <span class="pre">*</span> <span class="pre">invec,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">numiov,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span> <span class="pre">output,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*</span> <span class="pre">outputlen);</span></span></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_encodev(sasl_conn_t</span> <span class="pre">*conn,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">struct</span> <span class="pre">iovec</span> <span class="pre">*</span> <span class="pre">invec,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">numiov,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**</span> <span class="pre">output,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*</span> <span class="pre">outputlen);</span></code></dt>
 <dd></dd></dl>
 
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>conn</strong> – is the SASL connection context</p></li>
 <li><p><strong>output</strong> – contains the decoded data and is allocated/freed by
@@ -565,19 +560,19 @@ the library.</p></li>
 </dl>
 </dd></dl>
 
-</section>
-<section id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
 See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
 <p>Other return codes indicate errors and should be handled.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_decode.html#std-saslman-sasl_decode-3">sasl_decode(3)</a>,
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_decode.html#std-saslman-sasl_decode-3">sasl_decode(3)</a>,
 <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -600,7 +595,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -624,12 +619,9 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

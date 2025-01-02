@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Mailbox Distribution &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -788,8 +783,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="mailbox-distribution">
-<h1>Mailbox Distribution<a class="headerlink" href="#mailbox-distribution" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="mailbox-distribution">
+<h1>Mailbox Distribution<a class="headerlink" href="#mailbox-distribution" title="Permalink to this headline">¶</a></h1>
 <p>In a Cyrus IMAP Murder, the backend server and/or partition on which a new mailbox is created, when created through a Cyrus IMAP Murder frontend, is traditionally selected by querying each of the configured backends (<strong>serverlist</strong> setting in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> on the Murder frontend) for the absolute amount of free disk space. The largest amount of absolute free disk space is used as the server and partition on which to create the new mailbox.</p>
 <p>On a Cyrus IMAP Murder frontend, a default backend can be configured using the <strong>defaultserver</strong> setting in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, and on a Cyrus IMAP Murder backend, a default partition can be configured with the <strong>defaultpartition</strong> setting in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p>As of Cyrus IMAP 2.5, the server and/or partition on which new mailboxes are created is fully configurable, and provides a lot more option value with more intelligent selection routines available. Please note that the related settings can be changed at any time and without impact to existing mailboxes.</p>
@@ -799,16 +794,16 @@
 <p><strong>Only on Mailbox Creation</strong></p>
 <p>Please note that the settings only impact backend and partition selection during the creation of mailboxes. No automatic balancing of mailboxes by number, use or size during runtime is currently available, nor is any storage hierarchy concept.</p>
 </div>
-<section id="selection-modes">
-<h2>Selection Modes<a class="headerlink" href="#selection-modes" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="selection-modes">
+<h2>Selection Modes<a class="headerlink" href="#selection-modes" title="Permalink to this headline">¶</a></h2>
 <p>Selection modes configurable on frontend and backend share the same principles. In each case, a list of available items are considered: those are the backends when creating the mailbox through a frontend, and the partitions when being on the backend. Depending on the configured selection mode, each item has an associated (disk) capacity and free space which will be used to select the most fitting one.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Unified murder</strong>
 Please remember that when using a unified murder configuration, a server is both a frontend and a backend: you can create and access local or remote mailboxes. Since configuration settings are distinct for each role the server can take, you can apply different selection modes for each role.</p>
 </div>
-<section id="available-selection-modes">
-<h3>Available Selection Modes<a class="headerlink" href="#available-selection-modes" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="available-selection-modes">
+<h3>Available Selection Modes<a class="headerlink" href="#available-selection-modes" title="Permalink to this headline">¶</a></h3>
 <p><strong>random</strong></p>
 <blockquote>
 <div><p>Choice is (pseudo-)random. Each item has the same probability of being selected.</p>
@@ -897,34 +892,34 @@ Using the freespace-percent-weighted mode, the percentage usages will converge t
 <p><strong>Usage convergence</strong>
 Using the freespace-percent-weighted-delta mode, items percentage usages will converge towards the most used one. And then items usage will grow equally.</p>
 </div>
-</section>
-<section id="guidelines">
-<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="guidelines">
+<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
 <p>Which mode to use depends primarily on whether you are building the platform from scratch, or adding servers and partitions and if you plan to create a lot of empty mailboxes in a short period of time.</p>
 <p>The Selection mode can be changed as needed.</p>
 <p>If you plan to create a lot of empty mailboxes in a short period of time, use <strong>random</strong>. The other modes rely on the amount of freespace on backends and partitions, and thus would create most (if not all) the mailboxes at the same place, which will become an issue later as those mailboxes grow.</p>
 <p>If you only care about the amount of free space, you can use the default mode (<strong>freespace-most</strong>) or <strong>freespace-percent-most</strong>.</p>
 <p>Otherwise you should use <strong>freespace-percent-weighted-delta</strong>, which is generally good enough for situations where mailbox creation pace is slow, or <strong>freespace-percent-weighted</strong>.</p>
-</section>
-</section>
-<section id="special-cases">
-<h2>Special cases<a class="headerlink" href="#special-cases" title="Permalink to this heading">¶</a></h2>
-<section id="what-happens-when-two-items-are-equal-as-most-fitting">
-<h3>What happens when two items are equal as most fitting ?<a class="headerlink" href="#what-happens-when-two-items-are-equal-as-most-fitting" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="special-cases">
+<h2>Special cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-happens-when-two-items-are-equal-as-most-fitting">
+<h3>What happens when two items are equal as most fitting ?<a class="headerlink" href="#what-happens-when-two-items-are-equal-as-most-fitting" title="Permalink to this headline">¶</a></h3>
 <p>The freespace-most and freespace-percent-most modes do select the item with the most free space or percent of free space. It may happen that two or more items do have the same value. If this value appears as most fitting, only one item will be selected, but you may not know in advance which one will be. In particular, it may not be the first one that appears listed in your configuration.</p>
 <p>Also note that after the mailbox is created on the selected item, it will have less free space and thus shall not be seen as most fitting next time.</p>
-</section>
-<section id="what-happens-when-two-items-are-actually-the-same">
-<h3>What happens when two items are actually the same ?<a class="headerlink" href="#what-happens-when-two-items-are-actually-the-same" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="what-happens-when-two-items-are-actually-the-same">
+<h3>What happens when two items are actually the same ?<a class="headerlink" href="#what-happens-when-two-items-are-actually-the-same" title="Permalink to this headline">¶</a></h3>
 <p>Each item has an associated id:</p>
 <ul class="simple">
 <li><p>its name for a backend</p></li>
 <li><p>its device id for a partition</p></li>
 </ul>
 <p>If two or more items share the same id when using the freespace-most or freespace-percent-most mode, only one of those items will actually be checked, as if the others were not configured. You may not know in advance which one will be.</p>
-</section>
-<section id="items-exclusion">
-<h3>Items Exclusion<a class="headerlink" href="#items-exclusion" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="items-exclusion">
+<h3>Items Exclusion<a class="headerlink" href="#items-exclusion" title="Permalink to this headline">¶</a></h3>
 <p>When using a selection mode other than random, items can be automatically excluded if their usage percentage is beyond a configured integer setting:</p>
 <ul class="simple">
 <li><p><strong>serverlist_select_soft_usage_limit</strong> on a frontend</p></li>
@@ -942,29 +937,29 @@ Items are only excluded when creating a new user mailbox according to the config
 If you explicitly specify an excluded item, the mailbox will be created on that item.
 Mailboxes previously created there are of course still accessible, and subfolders are by default still created at the same place than the parent folder.</p>
 </div>
-</section>
-<section id="items-usage-data-reset">
-<h3>Items Usage Data Reset<a class="headerlink" href="#items-usage-data-reset" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="items-usage-data-reset">
+<h3>Items Usage Data Reset<a class="headerlink" href="#items-usage-data-reset" title="Permalink to this headline">¶</a></h3>
 <p>By default items usage data are retrieved only once upon service initialization (that is when an imapd instance is created). This only concerns selection modes other than random.</p>
 <p>If you tend to use the same service instance for a long lapse of time and perform a large amount of mailboxes creation, usage data will soon be out-of-date. For the cases where it is useful to refresh those data, you can configure the number of creation requests after which data are reset:</p>
 <ul class="simple">
 <li><p><strong>serverlist_select_usage_reinit</strong> for a frontend</p></li>
 <li><p><strong>partition_select_usage_reinit</strong> for a backend</p></li>
 </ul>
-</section>
-</section>
-<section id="application">
-<h2>Application<a class="headerlink" href="#application" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="application">
+<h2>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h2>
 <p>What each item (disk) capacity and free space represents depends on the situation.</p>
-<section id="on-backend">
-<h3>On backend<a class="headerlink" href="#on-backend" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="on-backend">
+<h3>On backend<a class="headerlink" href="#on-backend" title="Permalink to this headline">¶</a></h3>
 <p>On the backend a partition is represented by its disk capacity and free space. Each example listed in Available Selection Modes can be interpreted in a straightforward way by replacing references to item by partition.</p>
-</section>
-<section id="on-frontend">
-<h3>On frontend<a class="headerlink" href="#on-frontend" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="on-frontend">
+<h3>On frontend<a class="headerlink" href="#on-frontend" title="Permalink to this headline">¶</a></h3>
 <p>On the frontend a backend is represented by its available partition with the most percentage of free space, except for the <strong>freespace-most</strong> mode where it is the sum of all its available partitions. Of course this does not apply to the <strong>random</strong> mode.</p>
-<section id="example-of-backend-representation-on-frontend">
-<h4>Example of backend representation on frontend<a class="headerlink" href="#example-of-backend-representation-on-frontend" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="example-of-backend-representation-on-frontend">
+<h4>Example of backend representation on frontend<a class="headerlink" href="#example-of-backend-representation-on-frontend" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><p>Suppose that a backend has a 2000GiB capacity, 900GiB being free (45% free space), composed of 2 partitions</p>
 <ul class="simple">
@@ -978,18 +973,18 @@ Mailboxes previously created there are of course still accessible, and subfolder
 </ul>
 </div></blockquote>
 <p>Keeping that in mind, you can refer to examples listed in Available Selection Modes to determine how most fitting backends are selected.</p>
-</section>
-</section>
-<section id="backends-exclusion">
-<h3>Backends Exclusion<a class="headerlink" href="#backends-exclusion" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="backends-exclusion">
+<h3>Backends Exclusion<a class="headerlink" href="#backends-exclusion" title="Permalink to this headline">¶</a></h3>
 <p>For details on exclusion based on disk usage, see Section “Items Exclusion”.</p>
-<section id="example-of-backend-exclusion-using-serverlist-select-soft-usage-limit">
-<h4>Example of backend exclusion using serverlist_select_soft_usage_limit<a class="headerlink" href="#example-of-backend-exclusion-using-serverlist-select-soft-usage-limit" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="example-of-backend-exclusion-using-serverlist-select-soft-usage-limit">
+<h4>Example of backend exclusion using serverlist_select_soft_usage_limit<a class="headerlink" href="#example-of-backend-exclusion-using-serverlist-select-soft-usage-limit" title="Permalink to this headline">¶</a></h4>
 <p>The backend in  “Example of backend representation on frontend” would be excluded using the <strong>freespace-most</strong> selection mode and setting <strong>serverlist_select_soft_usage_limit</strong> to 50 since in that mode it is represented by a disk usage of 55%. In other modes it would not be excluded, since it would be represented by a disk usage of 30%.</p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1012,7 +1007,7 @@ Mailboxes previously created there are of course still accessible, and subfolder
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1035,12 +1030,9 @@ Mailboxes previously created there are of course still accessible, and subfolder
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

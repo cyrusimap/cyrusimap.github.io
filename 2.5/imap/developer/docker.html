@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Docker Images &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -802,8 +797,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="docker-images">
-<span id="imap-developer-docker-images"></span><h1>Docker Images<a class="headerlink" href="#docker-images" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="docker-images">
+<span id="imap-developer-docker-images"></span><h1>Docker Images<a class="headerlink" href="#docker-images" title="Permalink to this headline">¶</a></h1>
 <p>The Cyrus IMAP uses Docker images for testing builds and performing unit
 tests for, at the time of this writing, 13 (releases of) Linux
 distributions.</p>
@@ -828,8 +823,8 @@ audit.</p>
 it is likely the commit broke the build (or that the <cite>Dr. Jenkins</cite>
 script does not work). This raises a concern too.</p></li>
 </ul>
-<section id="quick-notes">
-<h2>Quick Notes<a class="headerlink" href="#quick-notes" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="quick-notes">
+<h2>Quick Notes<a class="headerlink" href="#quick-notes" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>If the environment variables <code class="docutils literal notranslate"><span class="pre">PHAB_CERT</span></code> and <code class="docutils literal notranslate"><span class="pre">PHAB_USER</span></code> are
 specified, Arcanist is installed and configured.</p>
@@ -858,9 +853,9 @@ terminal window you have open reflect the name of the image you are
 running and running multiple of them is not just a bunch of windows
 titled with container IDs.</p></li>
 </ul>
-</section>
-<section id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">COMMIT</span></code></p>
 <blockquote>
 <div><p>More commonly referred to as a <em>git ref</em>, the <code class="docutils literal notranslate"><span class="pre">COMMIT</span></code> environment
@@ -908,8 +903,8 @@ specified.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">PHAB_CERT</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">PHAB_USER</span></code></p>
-<section id="future-environment-variables">
-<h3>Future Environment Variables<a class="headerlink" href="#future-environment-variables" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="future-environment-variables">
+<h3>Future Environment Variables<a class="headerlink" href="#future-environment-variables" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">BUILD_ID</span></code></p>
 <blockquote>
 <div><p>We intend to run the Docker containers as part of the
@@ -921,10 +916,10 @@ commits individually.</p>
 <blockquote>
 <div><p>Report to a <a class="reference external" href="https://git.cyrus.foundation/maniphest/">Maniphest</a> ticket rather than the <a class="reference external" href="https://git.cyrus.foundation/diffusion/">Diffusion</a> commit.</p>
 </div></blockquote>
-</section>
-</section>
-<section id="running-the-tests-yourself">
-<h2>Running the Tests Yourself<a class="headerlink" href="#running-the-tests-yourself" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="running-the-tests-yourself">
+<h2>Running the Tests Yourself<a class="headerlink" href="#running-the-tests-yourself" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">$ <strong class="command">docker run -ti cyrusimapd/heisenbug</strong></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -932,16 +927,16 @@ commits individually.</p>
 how tests are run when they result in a comment or concern on a
 commit.</p>
 </div>
-</section>
-<section id="getting-an-interactive-shell">
-<span id="imap-developer-docker-images-interactive-shell"></span><h2>Getting an Interactive Shell<a class="headerlink" href="#getting-an-interactive-shell" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="getting-an-interactive-shell">
+<span id="imap-developer-docker-images-interactive-shell"></span><h2>Getting an Interactive Shell<a class="headerlink" href="#getting-an-interactive-shell" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block">$ <strong class="command">docker run -ti --entrypoint=&quot;/bin/bash&quot; cyrusimapd/heisenbug -s</strong></pre>
 <p>This will give you an interactive shell.</p>
 <p>The images are configured with an entry point of <code class="file docutils literal notranslate"><span class="pre">/entrypoint.sh</span></code>,
 so maybe you want to execute that.</p>
-</section>
-<section id="functions-for-your-convenience">
-<h2>Functions for Your Convenience<a class="headerlink" href="#functions-for-your-convenience" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="functions-for-your-convenience">
+<h2>Functions for Your Convenience<a class="headerlink" href="#functions-for-your-convenience" title="Permalink to this headline">¶</a></h2>
 <p>Functions are pulled from <code class="file docutils literal notranslate"><span class="pre">/entrypoint.sh</span></code> so you can
 <strong class="command">source /functions.sh</strong> which gives you the following commands:</p>
 <p><code class="docutils literal notranslate"><span class="pre">_make_relaxed</span></code></p>
@@ -954,11 +949,11 @@ opposed to <code class="docutils literal notranslate"><span class="pre">-g</span
 <div><p>This command configures the build with strict <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code>, turning
 all warnings to errors: <code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">-Wall</span> <span class="pre">-Wextra</span> <span class="pre">-Werror</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="build-process-steps">
-<h2>Build Process Steps<a class="headerlink" href="#build-process-steps" title="Permalink to this heading">¶</a></h2>
-<section id="configure-maintainer-mode">
-<h3><code class="docutils literal notranslate"><span class="pre">./configure</span></code> (maintainer mode)<a class="headerlink" href="#configure-maintainer-mode" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="build-process-steps">
+<h2>Build Process Steps<a class="headerlink" href="#build-process-steps" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configure-maintainer-mode">
+<h3><code class="docutils literal notranslate"><span class="pre">./configure</span></code> (maintainer mode)<a class="headerlink" href="#configure-maintainer-mode" title="Permalink to this headline">¶</a></h3>
 <p>If the <code class="docutils literal notranslate"><span class="pre">CONFIGURE_OPTS</span></code> environment variable has been specified, the
 following commands are run automatically:</p>
 <pre class="literal-block">$ <strong class="command">./configure --enable-maintainer-mode</strong>
@@ -973,9 +968,9 @@ $ <strong class="command">make \
 <a class="reference internal" href="#imap-developer-docker-images-configure-for-real"><span class="std std-ref">./configure (for real)</span></a> takes care of
 specifying the required <code class="docutils literal notranslate"><span class="pre">--enable-maintainer-mode</span></code> option.</p>
 </div>
-</section>
-<section id="configure-for-real">
-<span id="imap-developer-docker-images-configure-for-real"></span><h3><code class="docutils literal notranslate"><span class="pre">./configure</span></code> (for real)<a class="headerlink" href="#configure-for-real" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="configure-for-real">
+<span id="imap-developer-docker-images-configure-for-real"></span><h3><code class="docutils literal notranslate"><span class="pre">./configure</span></code> (for real)<a class="headerlink" href="#configure-for-real" title="Permalink to this headline">¶</a></h3>
 <p>Configure is run for real, using either the defined <code class="docutils literal notranslate"><span class="pre">CONFIGURE_OPTS</span></code>
 or a default of (at the time of this writing):</p>
 <pre class="literal-block">./configure \
@@ -992,23 +987,23 @@ or a default of (at the time of this writing):</p>
     --with-ldap=/usr</pre>
 <p>If the second run of <code class="docutils literal notranslate"><span class="pre">./configure</span></code> fails for whatever reason, the
 script checks out the <em>parent</em> of the <em>current</em> commit and tries again.</p>
-</section>
-<section id="make-relaxed">
-<span id="imap-developer-docker-images-make-relaxed"></span><h3><code class="docutils literal notranslate"><span class="pre">make</span></code> (relaxed)<a class="headerlink" href="#make-relaxed" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="make-relaxed">
+<span id="imap-developer-docker-images-make-relaxed"></span><h3><code class="docutils literal notranslate"><span class="pre">make</span></code> (relaxed)<a class="headerlink" href="#make-relaxed" title="Permalink to this headline">¶</a></h3>
 <p>The first run of <code class="docutils literal notranslate"><span class="pre">make</span></code> is <em>relaxed</em>, meaning that <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> are
 default.</p>
-</section>
-<section id="make-strict">
-<h3><code class="docutils literal notranslate"><span class="pre">make</span></code> (strict)<a class="headerlink" href="#make-strict" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="make-strict">
+<h3><code class="docutils literal notranslate"><span class="pre">make</span></code> (strict)<a class="headerlink" href="#make-strict" title="Permalink to this headline">¶</a></h3>
 <p>The second run of <code class="docutils literal notranslate"><span class="pre">make</span></code> is <em>strict</em>, meaning that <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> are
 default.</p>
-</section>
-<section id="make-check">
-<h3><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code><a class="headerlink" href="#make-check" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="make-check">
+<h3><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span></code><a class="headerlink" href="#make-check" title="Permalink to this headline">¶</a></h3>
 <p>Execute the CUnit tests in <code class="docutils literal notranslate"><span class="pre">cunit.</span></code>.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1031,7 +1026,7 @@ default.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1055,12 +1050,9 @@ default.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

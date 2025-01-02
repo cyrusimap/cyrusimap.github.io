@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP 3.4.1 Release Notes &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../download.html">Download</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../getcyrus.html">Get Cyrus</a><ul>
@@ -739,7 +734,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -790,8 +785,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-imap-3-4-1-release-notes">
-<h1>Cyrus IMAP 3.4.1 Release Notes<a class="headerlink" href="#cyrus-imap-3-4-1-release-notes" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-imap-3-4-1-release-notes">
+<h1>Cyrus IMAP 3.4.1 Release Notes<a class="headerlink" href="#cyrus-imap-3-4-1-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
@@ -799,10 +794,10 @@
 <li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.1/cyrus-imapd-3.4.1.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.4.1/cyrus-imapd-3.4.1.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
-<section id="changes-since-3-4-0">
-<span id="relnotes-3-4-1-changes"></span><h2>Changes since 3.4.0<a class="headerlink" href="#changes-since-3-4-0" title="Permalink to this heading">¶</a></h2>
-<section id="security-fixes">
-<h3>Security fixes:<a class="headerlink" href="#security-fixes" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="changes-since-3-4-0">
+<span id="relnotes-3-4-1-changes"></span><h2>Changes since 3.4.0<a class="headerlink" href="#changes-since-3-4-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="security-fixes">
+<h3>Security fixes:<a class="headerlink" href="#security-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32056">CVE-2021-32056</a>: Remote authenticated users could bypass intended
 access restrictions on certain server annotations.  Additionally, a
@@ -810,16 +805,16 @@ long-standing bug in replication did not allow server annotations to be
 replicated.  Combining these two bugs, a remote authenticated user could
 stall replication, requiring administrator intervention.</p></li>
 </ul>
-</section>
-<section id="build-changes">
-<h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="build-changes">
+<h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3462">Issue #3462</a>: using GLIBC-only macro to check for GCC features
 (thanks Andy Fiddaman)</p></li>
 </ul>
-</section>
-<section id="bug-fixes">
-<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="bug-fixes">
+<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3456">Issue #3456</a>: per-server annotations were unable to replicate</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3468">Issue #3468</a>: <cite>ctl_cyrusdb -r</cite> assertion on startup when mboxlist_db
@@ -827,9 +822,9 @@ configured to “skiplist” (thanks Felix J. Ogris)</p></li>
 <li><p>Fixed: JMAP email updates must result in non-empty mailboxIds</p></li>
 <li><p>Fixed: output JMAP dates as Dates, not UTCDates</p></li>
 </ul>
-</section>
-<section id="fixes-to-nonstandard-jmap-extensions">
-<h3>Fixes to nonstandard JMAP extensions<a class="headerlink" href="#fixes-to-nonstandard-jmap-extensions" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="fixes-to-nonstandard-jmap-extensions">
+<h3>Fixes to nonstandard JMAP extensions<a class="headerlink" href="#fixes-to-nonstandard-jmap-extensions" title="Permalink to this headline">¶</a></h3>
 <p>(These extensions are not yet formally standardised, and are only available
 with the <cite>jmap_nonstandard_extensions</cite> <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option
 enabled.)</p>
@@ -839,9 +834,9 @@ enabled.)</p>
 events</p></li>
 <li><p>Fixed: JMAP Calendars Extension - do not use Participant.email for scheduling</p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -864,7 +859,7 @@ events</p></li>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 03 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -887,12 +882,9 @@ events</p></li>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../../_static/sphinx_highlight.js"></script>
 
   
 

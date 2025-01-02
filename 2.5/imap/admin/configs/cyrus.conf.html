@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyrus.conf &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,11 +799,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-conf">
-<span id="imap-admin-configs-cyrus-conf"></span><span id="std-cyrusman-cyrus.conf-5"></span><h1><strong>cyrus.conf</strong><a class="headerlink" href="#cyrus-conf" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-conf">
+<span id="imap-admin-configs-cyrus-conf"></span><span id="std-cyrusman-cyrus.conf-5"></span><span id="std:cyrusman-cyrus.conf(5)"></span><h1><strong>cyrus.conf</strong><a class="headerlink" href="#cyrus-conf" title="Permalink to this headline">¶</a></h1>
 <p>Cyrus configuration file</p>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyrus.conf</strong> is the configuration file for the Cyrus <strong>master</strong>
 process.  It defines the startup procedures, services and events to be
 spawned by <strong>master</strong>.</p>
@@ -825,12 +820,12 @@ into sections of the form</p>
 <p>where <em>section</em> is the name of the section, <em>name</em> is the name of the
 entry and <em>arguments</em> is the whitespace-separated list of arguments for
 the entry.  The <em>name</em> may be any sequence of alphabetic and numeric
-characters, but may not contain punctuation such as ‘-’ or ‘_’.  In the
+characters, but may not contain punctuation such as ‘-‘ or ‘_’.  In the
 <strong>SERVICES</strong> section, names must be unique.</p>
 <p>Blank lines and lines beginning with ``#’’ are ignored.</p>
-</section>
-<section id="section-descriptions">
-<h2>Section Descriptions<a class="headerlink" href="#section-descriptions" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="section-descriptions">
+<h2>Section Descriptions<a class="headerlink" href="#section-descriptions" title="Permalink to this headline">¶</a></h2>
 <p>The paragraphs below detail the three sections (<strong>START</strong>,
 <strong>SERVICES</strong>, <strong>EVENTS</strong>) that can be placed in the <code class="docutils literal notranslate"><span class="pre">/etc/cyrus.conf</span></code>
 file.  The arguments that are available for each entry within the
@@ -839,8 +834,8 @@ section are described, and each argument’s default value is shown.</p>
 Some arguments have no default value, these are listed with
 ``&lt;no default&gt;’’.  For string arguments, the value MUST be enclosed in
 double quotes.</p>
-<section id="start">
-<h3>START<a class="headerlink" href="#start" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="start">
+<h3>START<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
 <p>This section lists the processes to run before any
 <strong>SERVICES</strong> are spawned.  This section is typically used to
 initialize databases and start long running daemons.</p>
@@ -849,9 +844,9 @@ initialize databases and start long running daemons.</p>
 <div><p>The command (with options) to spawn as a child process.  This
 string argument is required.</p>
 </div></blockquote>
-</section>
-<section id="services">
-<h3>SERVICES<a class="headerlink" href="#services" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="services">
+<h3>SERVICES<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h3>
 <p>This section is the heart of the <strong>/etc/cyrus.conf</strong> file.  It lists
 the processes that should be spawned to handle client connections made
 on certain Internet/UNIX sockets.</p>
@@ -916,9 +911,9 @@ process. This integer value is optional.</p>
 will insert sleeps to ensure it doesn’t fork faster than this
 on average.</p>
 </div></blockquote>
-</section>
-<section id="events">
-<h3>EVENTS<a class="headerlink" href="#events" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="events">
+<h3>EVENTS<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
 <p>This section lists processes that should be run at specific intervals,
 similar to cron jobs.  This section is typically used to perform
 scheduled cleanup/maintenance.</p>
@@ -939,10 +934,10 @@ integer value is optional, but SHOULD be a positive integer &gt;
 If set to a valid time (0000-2359), period is automatically
 set to 1440. This string argument is optional.</p>
 </div></blockquote>
-</section>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example cyrus.conf</span>
 
 <span class="n">START</span> <span class="p">{</span>
@@ -963,9 +958,9 @@ set to 1440. This string argument is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="access-control">
-<h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="access-control">
+<h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this headline">¶</a></h2>
 <p>When TCP Wrappers is used to control access to Cyrus services, the
 <em>name</em> of the service entry should be used as the process name in
 the <em class="manpage">hosts_access(5)</em> table.  For instance, in the example above,
@@ -973,9 +968,9 @@ the <em class="manpage">hosts_access(5)</em> table.  For instance, in the exampl
 names.  This allows a single daemon such as imapd to be run in
 different modes or configurations (i.e., SSL and non-SSL enabled) yet
 still have separate access control rules.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../systemcommands/master.html#std-cyrusman-master-8">master(8)</a>,
 <a class="reference internal" href="../systemcommands/imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <a class="reference internal" href="../systemcommands/pop3d.html#std-cyrusman-pop3d-8">pop3d(8)</a>,
@@ -987,8 +982,8 @@ still have separate access control rules.</p>
 <a class="reference internal" href="../systemcommands/ctl_deliver.html#std-cyrusman-ctl_deliver-8">ctl_deliver(8)</a>,
 <a class="reference internal" href="../systemcommands/tls_prune.html#std-cyrusman-tls_prune-8">tls_prune(8)</a>,
 <em class="manpage">hosts_access(5)</em></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1011,7 +1006,7 @@ still have separate access control rules.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1035,12 +1030,9 @@ still have separate access control rules.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

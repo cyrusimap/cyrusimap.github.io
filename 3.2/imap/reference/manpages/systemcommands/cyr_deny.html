@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_deny &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -736,7 +731,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,17 +780,17 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-cyr_deny-8"></span><section id="cyr-deny">
-<span id="imap-reference-manpages-systemcommands-cyr-deny"></span><h1><strong>cyr_deny</strong><a class="headerlink" href="#cyr-deny" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-cyr_deny-8"><span id="std:cyrusman-cyr_deny(8)"></span></span><div class="section" id="cyr-deny">
+<span id="imap-reference-manpages-systemcommands-cyr-deny"></span><h1><strong>cyr_deny</strong><a class="headerlink" href="#cyr-deny" title="Permalink to this headline">¶</a></h1>
 <p>deny users access to Cyrus services</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>cyr_deny</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-s</strong> <em>services</em> ] [ <strong>-m</strong> <em>message</em> ] <em>user</em>
 <strong>cyr_deny</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-a</strong> <em>user</em>
 <strong>cyr_deny</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-l</strong></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>cyr_deny</strong> is used to deny individual users access to Cyrus services.
 The first synopsis denies user <em>user</em> access to Cyrus services, the
 second synopsis allows access again.  <strong>cyr_deny</strong> works by adding an
@@ -803,61 +798,61 @@ entry to the Cyrus <code class="docutils literal notranslate"><span class="pre">
 the entries in the database.  The service names to be matched are those
 as used in <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
 <p><strong>cyr_deny</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_deny-C">
-<span id="cmdoption-cyr-deny-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_deny-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_deny-C">
+<span id="cmdoption-cyr-deny-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_deny-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_deny-a">
-<span id="cmdoption-cyr-deny-a"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"> <span class="pre">user</span></span><a class="headerlink" href="#cmdoption-cyr_deny-a" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_deny-a">
+<span id="cmdoption-cyr-deny-a"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"> <span class="pre">user</span></code><a class="headerlink" href="#cmdoption-cyr_deny-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow access to all services for user <em>user</em> (remove any entry
 from the deny database).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_deny-s">
-<span id="cmdoption-cyr-deny-s"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"> <span class="pre">services</span></span><a class="headerlink" href="#cmdoption-cyr_deny-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_deny-s">
+<span id="cmdoption-cyr-deny-s"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"> <span class="pre">services</span></code><a class="headerlink" href="#cmdoption-cyr_deny-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deny access only to the given <em>services</em>, which is a
 comma-separated list of wildcard patterns.  The default is “*”
 which denies access to all services.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_deny-m">
-<span id="cmdoption-cyr-deny-m"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"> <span class="pre">message</span></span><a class="headerlink" href="#cmdoption-cyr_deny-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_deny-m">
+<span id="cmdoption-cyr-deny-m"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">message</span></code><a class="headerlink" href="#cmdoption-cyr_deny-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide a message which is sent to the user to explain why access is
 being denied.  A default message is used if none is specified.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-cyr_deny-l">
-<span id="cmdoption-cyr-deny-l"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_deny-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-cyr_deny-l">
+<span id="cmdoption-cyr-deny-l"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_deny-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the entries in the deny database.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>[NB: Examples needed]</p>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>This command was introduced in version 3.0.</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf, &lt;configdirectory&gt;/user_deny.db</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -880,7 +875,7 @@ being denied.  A default message is used if none is specified.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 10 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -903,12 +898,9 @@ being denied.  A default message is used if none is specified.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

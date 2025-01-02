@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Mailbox Distribution &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,8 +758,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="mailbox-distribution">
-<span id="imap-features-mailbox-distribution"></span><h1>Mailbox Distribution<a class="headerlink" href="#mailbox-distribution" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="mailbox-distribution">
+<span id="imap-features-mailbox-distribution"></span><h1>Mailbox Distribution<a class="headerlink" href="#mailbox-distribution" title="Permalink to this headline">¶</a></h1>
 <p>Prior to Cyrus IMAP version 2.5.0, when creating a mailbox, should no
 target partition have been specified, the mailbox is either created on:</p>
 <ul class="simple">
@@ -777,16 +772,22 @@ configured.</p></li>
 <p>New configuration options are available since Cyrus IMAP 2.5.0, that
 allow more weighted and better balanced backend and partition
 selection.</p>
-<section id="partition-selection-mode">
-<h2>Partition Selection Mode<a class="headerlink" href="#partition-selection-mode" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="partition-selection-mode">
+<h2>Partition Selection Mode<a class="headerlink" href="#partition-selection-mode" title="Permalink to this headline">¶</a></h2>
 <p>Among the partitions, how the most fitting one is selected depends on
 the configured selection mode, using the <code class="docutils literal notranslate"><span class="pre">partition_select_mode</span></code>
 setting in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p class="rubric">Available Selection Modes</p>
-<aside class="sidebar">
+<div class="sidebar">
 <p class="sidebar-title">Example Scenario for Selection Modes</p>
 <p>Suppose that the partitions configured are:</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 27%" />
+<col style="width: 24%" />
+<col style="width: 15%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Partition</p></th>
 <th class="head"><p>Total</p></th>
@@ -817,7 +818,7 @@ setting in <a class="reference internal" href="../../reference/manpages/configs/
 </tr>
 </tbody>
 </table>
-</aside>
+</div>
 <ul>
 <li><p><strong>random</strong></p>
 <p>Choice is (pseudo-)random. Each partition has the same probability
@@ -915,10 +916,10 @@ percentage usages converge towards the most used one, after
 which partitions usages grow equally.</p>
 </div>
 </div></blockquote>
-<section id="special-cases">
-<h3>Special Cases<a class="headerlink" href="#special-cases" title="Permalink to this heading">¶</a></h3>
-<section id="q-what-happens-when-two-partitions-are-equal-as-most-fitting">
-<h4>Q: What happens when two partitions are equal as most fitting?<a class="headerlink" href="#q-what-happens-when-two-partitions-are-equal-as-most-fitting" title="Permalink to this heading">¶</a></h4>
+<div class="section" id="special-cases">
+<h3>Special Cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="q-what-happens-when-two-partitions-are-equal-as-most-fitting">
+<h4>Q: What happens when two partitions are equal as most fitting?<a class="headerlink" href="#q-what-happens-when-two-partitions-are-equal-as-most-fitting" title="Permalink to this headline">¶</a></h4>
 <p>Suppose you are using the <code class="docutils literal notranslate"><span class="pre">freespace-most</span></code> selection mode, that two
 (or more) partitions have the same free size, and that this freespace
 happens to be the biggest one of all configured partitions.</p>
@@ -929,9 +930,9 @@ particular, it may not be the first one that appears listed in your
 <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> configuration file.</p>
 <p>Also note that since the selected partition will now have less free
 space, it shall not be seen as most fitting next time.</p>
-</section>
-<section id="q-what-happens-when-two-partitions-point-to-the-same-device">
-<h4>Q: What happens when two partitions point to the same device?<a class="headerlink" href="#q-what-happens-when-two-partitions-point-to-the-same-device" title="Permalink to this heading">¶</a></h4>
+</div>
+<div class="section" id="q-what-happens-when-two-partitions-point-to-the-same-device">
+<h4>Q: What happens when two partitions point to the same device?<a class="headerlink" href="#q-what-happens-when-two-partitions-point-to-the-same-device" title="Permalink to this headline">¶</a></h4>
 <p>Suppose you are using the <code class="docutils literal notranslate"><span class="pre">freespace-most</span></code> or
 <code class="docutils literal notranslate"><span class="pre">freespace-percent-most</span></code> selection mode, and that two (or more)
 partitions actually point to a different directory on the same
@@ -942,10 +943,10 @@ partition hierarchy for this. You may not know in advance which one will
 be: it depends of the order in which configured partitions are stored in
 memory (<code class="docutils literal notranslate"><span class="pre">hashtable</span></code>). In particular, it may not be the first one that
 appears listed in your <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> configuration file.</p>
-</section>
-</section>
-<section id="excluding-partitions">
-<h3>Excluding Partitions<a class="headerlink" href="#excluding-partitions" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="excluding-partitions">
+<h3>Excluding Partitions<a class="headerlink" href="#excluding-partitions" title="Permalink to this headline">¶</a></h3>
 <p><strong>partition_select_exclude</strong></p>
 <blockquote>
 <div><p>Partitions listed in the <code class="docutils literal notranslate"><span class="pre">partition_select_exclude</span></code> setting in
@@ -993,9 +994,9 @@ be created on that partition.</p>
 accessible, and subfolders are by default still created on the same
 partition as the parent folder.</p>
 </div>
-</section>
-<section id="partition-s-usage-information-reset">
-<h3>Partition’s Usage Information Reset<a class="headerlink" href="#partition-s-usage-information-reset" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="partition-s-usage-information-reset">
+<h3>Partition’s Usage Information Reset<a class="headerlink" href="#partition-s-usage-information-reset" title="Permalink to this headline">¶</a></h3>
 <p>By default, partition’s usage information is retrieved only once – when
 the service first initializes.</p>
 <p>If you tend to use the same service instance for a long lapse of time
@@ -1007,10 +1008,10 @@ number of creation requests.</p>
 <p class="admonition-title">Note</p>
 <p>This only concerns selection modes other than <cite>random`</cite>.</p>
 </div>
-</section>
-</section>
-<section id="backend-selection-mode-cyrus-imap-murder">
-<h2>Backend Selection Mode (Cyrus IMAP Murder)<a class="headerlink" href="#backend-selection-mode-cyrus-imap-murder" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="backend-selection-mode-cyrus-imap-murder">
+<h2>Backend Selection Mode (Cyrus IMAP Murder)<a class="headerlink" href="#backend-selection-mode-cyrus-imap-murder" title="Permalink to this headline">¶</a></h2>
 <p>Upon creating a user mailbox, if the target server is not given as
 extra parameter, the mailbox is created on either;</p>
 <ul class="simple">
@@ -1024,17 +1025,24 @@ extra parameter, the mailbox is created on either;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">serverlist_select_usage_reinit</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">serverlist_select_soft_usage_limit</span></code></p></li>
 </ul>
-<section id="available-selection-modes-on-frontend">
-<h3>Available Selection Modes on Frontend<a class="headerlink" href="#available-selection-modes-on-frontend" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="available-selection-modes-on-frontend">
+<h3>Available Selection Modes on Frontend<a class="headerlink" href="#available-selection-modes-on-frontend" title="Permalink to this headline">¶</a></h3>
 <p><strong>random</strong></p>
 <blockquote>
 <div><p>The selection is (pseudo-)random. Each backend has the same
 probability of being selected.</p>
 </div></blockquote>
-<aside class="sidebar">
+<div class="sidebar">
 <p class="sidebar-title">Example Scenario for Selection Modes</p>
 <p>Suppose that the partitions configured are:</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 12%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Backend</p></th>
 <th class="head"><p>Partition</p></th>
@@ -1100,7 +1108,7 @@ probability of being selected.</p>
 </tr>
 </tbody>
 </table>
-</aside>
+</div>
 <p><strong>freespace-most</strong></p>
 <blockquote>
 <div><p>The backend which has the most absolute free space (counted in KiB
@@ -1163,15 +1171,15 @@ each backend. It is computed as follows:</p>
 <li><p>59.2% for <code class="docutils literal notranslate"><span class="pre">be3</span></code></p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="excluding-backends">
-<h3>Excluding Backends<a class="headerlink" href="#excluding-backends" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="excluding-backends">
+<h3>Excluding Backends<a class="headerlink" href="#excluding-backends" title="Permalink to this headline">¶</a></h3>
 <p>When using a selection mode other than <code class="docutils literal notranslate"><span class="pre">random</span></code>, backends are
 automatically excluded if their considered usage percentage is beyond
 the <code class="docutils literal notranslate"><span class="pre">serverlist_select_soft_usage_limit</span></code> integer setting.</p>
-</section>
-<section id="backend-s-usage-information-reset">
-<h3>Backend’s Usage Information Reset<a class="headerlink" href="#backend-s-usage-information-reset" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="backend-s-usage-information-reset">
+<h3>Backend’s Usage Information Reset<a class="headerlink" href="#backend-s-usage-information-reset" title="Permalink to this headline">¶</a></h3>
 <p>By default backends usage data are retrieved only once upon service
 initialization.</p>
 <div class="admonition note">
@@ -1184,9 +1192,9 @@ configure the <code class="docutils literal notranslate"><span class="pre">serve
 disk usage information is refreshed after the configured number of
 creation requests.</p>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">Features</span></a></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1209,7 +1217,7 @@ creation requests.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1232,12 +1240,9 @@ creation requests.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
   

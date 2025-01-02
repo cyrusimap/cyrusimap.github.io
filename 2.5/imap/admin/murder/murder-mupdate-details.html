@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Murder Mupdate Details &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,65 +799,65 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-murder-mupdate-details">
-<span id="murder-mupdate-details"></span><h1>Cyrus Murder Mupdate Details<a class="headerlink" href="#cyrus-murder-mupdate-details" title="Permalink to this heading">¶</a></h1>
-<p>Please note that this document is not an authoritative MUPDATE protocol reference. For that, you should refer to <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3656.html"><strong>RFC 3656</strong></a>.</p>
+  <div class="section" id="cyrus-murder-mupdate-details">
+<span id="murder-mupdate-details"></span><h1>Cyrus Murder Mupdate Details<a class="headerlink" href="#cyrus-murder-mupdate-details" title="Permalink to this headline">¶</a></h1>
+<p>Please note that this document is not an authoritative MUPDATE protocol reference. For that, you should refer to <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3656.html"><strong>RFC 3656</strong></a>.</p>
 <p>The Mailbox Update (MUPDATE) protocol is the backend that allows the CyrusMurder to function with a unified mailbox namespace, despite having multiple frontend and backend servers. This document is to serve as a reference guide to that protocol.</p>
 <p>Past implementations of the aggregator made use of ACAP as the mailbox backend protocol. MUPDATE is designed to be more lightweight than ACAP while at the same time allowing the database to be distributed across multiple servers.</p>
-<section id="participants">
-<h2>Participants<a class="headerlink" href="#participants" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="participants">
+<h2>Participants<a class="headerlink" href="#participants" title="Permalink to this headline">¶</a></h2>
 <p>Within an IMAP aggregator, there are several types of MUPDATE participants.</p>
 <ol class="arabic simple">
 <li><p><strong>MUPDATE Master</strong> - This component maintains the master copy of the MUPDATE database and allows operations on the database to be atomic.</p></li>
 <li><p><strong>MUPDATE Slaves</strong> - These components connect to the master and maintain a replica of the MUPDATE database. They also accept connections from clients, though these connections are of a read-only nature. Note that there are short periods of time between an update occuring on the master and it being reflected across all of the slaves.</p></li>
 <li><p><strong>MUPDATE Clients</strong> - These components query the master and slaves to obtain information from the mailbox database.</p></li>
 </ol>
-</section>
-<section id="data-formats">
-<h2>Data Formats<a class="headerlink" href="#data-formats" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="data-formats">
+<h2>Data Formats<a class="headerlink" href="#data-formats" title="Permalink to this headline">¶</a></h2>
 <p>MUPDATE uses data formats similar to those used in IMAP. That is, it uses Atoms and Strings. All commands and tags in the protocol are transmitted as atoms. Every other piece of data contained within the protocol is a string, and must be quoted as such.</p>
-<section id="atoms">
-<h3>Atoms<a class="headerlink" href="#atoms" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="atoms">
+<h3>Atoms<a class="headerlink" href="#atoms" title="Permalink to this headline">¶</a></h3>
 <p>An atom consists of one or more alphanumeric characters.</p>
-</section>
-<section id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
 <p>Just like IMAP, a string may be either literal or a quoted string.</p>
 <p>A literal is a sequence of zero or more octets (including CR and LF), prefix-quoted with an octet count in the form of an open brace (“{“), the number of octets, an optional plus sign to indicate that the data follows immediately (and a ready response is not necessary), a close brace (“}”), and CRLF. If the plus sign is omitted, then the receiving side MUST send a “+ go ahead” response.</p>
 <p>A quoted string is a sequence of zero or more 7-bit characters, excluding CR and LF, with double quote (&lt;”&gt;) characters at each end.</p>
 <p>The empty string is represented as either “” (a quoted string with zero characters between double quotes) or as {0} followed by CRLF (a literal with an octet count of 0).</p>
-</section>
-</section>
-<section id="server-responses">
-<h2>Server Responses<a class="headerlink" href="#server-responses" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="server-responses">
+<h2>Server Responses<a class="headerlink" href="#server-responses" title="Permalink to this headline">¶</a></h2>
 <p>There are three responses that the server may issue to a client for every command, and two responses that are only valid in response to a FIND, LIST, or UPDATE, and one response that is only valid for UPDATE. All responses are tagged by the same tag as the command that caused them.</p>
-<section id="response-ok">
-<h3>Response: OK<a class="headerlink" href="#response-ok" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="response-ok">
+<h3>Response: OK<a class="headerlink" href="#response-ok" title="Permalink to this headline">¶</a></h3>
 <p>A tagged OK response indicates that the operation completed successfully. There is a mandatory implementation-defined string attached with the OK response that may be used to give the user additional information.</p>
-</section>
-<section id="response-no">
-<h3>Response: NO<a class="headerlink" href="#response-no" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="response-no">
+<h3>Response: NO<a class="headerlink" href="#response-no" title="Permalink to this headline">¶</a></h3>
 <p>A tagged NO response indicates that the operation was denied by the server. There is a mandatory implementation-defined string attached with the NO response that may be used to explain the cause of the denial.</p>
-</section>
-<section id="response-bad">
-<h3>Response: BAD<a class="headerlink" href="#response-bad" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="response-bad">
+<h3>Response: BAD<a class="headerlink" href="#response-bad" title="Permalink to this headline">¶</a></h3>
 <p>A tagged BAD response indicates that the command from the client could not be parsed. There is a mandatory implementation-defined string attached with the BAD response that may be used to explain the cause of the failure.</p>
-</section>
-<section id="response-reserve">
-<h3>Response: RESERVE<a class="headerlink" href="#response-reserve" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="response-reserve">
+<h3>Response: RESERVE<a class="headerlink" href="#response-reserve" title="Permalink to this headline">¶</a></h3>
 <p>A tagged RESERVE response includes two parameters, the name of the mailbox and a location identifier in the format “server!partition”. This response is valid for FIND, UPDATE, and LIST commands. It indicates that the mailbox name is currently reserved in the namespace, however the mailbox does not currently exist.</p>
-</section>
-<section id="response-mailbox">
-<h3>Response: MAILBOX<a class="headerlink" href="#response-mailbox" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="response-mailbox">
+<h3>Response: MAILBOX<a class="headerlink" href="#response-mailbox" title="Permalink to this headline">¶</a></h3>
 <p>A tagged MAILBOX response includes three parameters, the name of the mailbox, the location identifier (as with RESERVE), and the ACL of the mailbox. This response is valid for FIND, UPDATE, and LIST commands. IT indicates that the mailbox named is currently active on the given server with the given ACL.</p>
-</section>
-<section id="response-delete">
-<h3>Response: DELETE<a class="headerlink" href="#response-delete" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="response-delete">
+<h3>Response: DELETE<a class="headerlink" href="#response-delete" title="Permalink to this headline">¶</a></h3>
 <p>A tagged DELETE response includes one parameter, the mailbox name. It indicates that the given name has been freed from the namespace and is no longer available. It is valid only in response to an UPDATE command.</p>
-</section>
-</section>
-<section id="server-initial-response">
-<h2>Server Initial Response<a class="headerlink" href="#server-initial-response" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="server-initial-response">
+<h2>Server Initial Response<a class="headerlink" href="#server-initial-response" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>The initial response from the server is a two line format. The first line MUST start with <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">OK</span> <span class="pre">MUPDATE</span></code> and be followed by three strings:</dt><dd><ul class="simple">
 <li><p>the server’s hostname,</p></li>
@@ -872,12 +867,12 @@
 </dd>
 </dl>
 <p>The second line of the initial response begins with <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">AUTH</span></code> and is followed by a space-separated list of SASL mechanisms that the server will accept.</p>
-</section>
-<section id="commands">
-<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <p>The following are the valid commands that a client may send to the MUPDATE server: AUTHENTICATE, ACTIVATE, DELETE, FIND, LIST, LOGOUT, NOOP, RESERVE, and UPDATE. Only AUTHENTICATE and LOGOUT may be issued before a successful authentication has occured. Only LOGOUT and NOOP may be issued after UPDATE has been successfully issued. Only one successful AUTHENTICATE command may be issued per session.</p>
-<section id="authenticate">
-<h3>AUTHENTICATE<a class="headerlink" href="#authenticate" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="authenticate">
+<h3>AUTHENTICATE<a class="headerlink" href="#authenticate" title="Permalink to this headline">¶</a></h3>
 <p>The AUTHENTICATE command initiates a SASL negotiation session between the client and the server. It has two parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -886,9 +881,9 @@
 </ol>
 </div></blockquote>
 <p>All SASL blobs sent across the wire must be in base64 encoded format, and followed by a CR and LF combination. Clients may cancel authentication by sending a <code class="docutils literal notranslate"><span class="pre">*</span></code> followed by a <code class="docutils literal notranslate"><span class="pre">CR</span></code> and <code class="docutils literal notranslate"><span class="pre">LF</span></code>.</p>
-</section>
-<section id="activate">
-<h3>ACTIVATE<a class="headerlink" href="#activate" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="activate">
+<h3>ACTIVATE<a class="headerlink" href="#activate" title="Permalink to this headline">¶</a></h3>
 <p>The ACTIVATE command takes three parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -898,9 +893,9 @@
 </ol>
 </div></blockquote>
 <p>It will tell the server to insert into its database the given mailbox in the given location with the given ACL. An OK response indicates success, a NO response indicates some sort of failure occured. This is not a valid command to issue to a slave.</p>
-</section>
-<section id="delete">
-<h3>DELETE<a class="headerlink" href="#delete" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="delete">
+<h3>DELETE<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>The DELETE command takes one parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -908,9 +903,9 @@
 </ol>
 </div></blockquote>
 <p>The server should delete the given mailbox from its namespace, and return OK. A NO response indicates that either the session is not currently authenticated or the given mailbox does not exist. The delete command should immediately be sent to all slave databases. This is not a valid command to issue to a slave.</p>
-</section>
-<section id="find">
-<h3>FIND<a class="headerlink" href="#find" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="find">
+<h3>FIND<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h3>
 <p>The FIND command takes a single parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -918,9 +913,9 @@
 </ol>
 </div></blockquote>
 <p>The server then responds with the current record for the given mailbox, if any and an OK response. A NO response is suitable if the connection is not currently authenticated.</p>
-</section>
-<section id="list">
-<h3>LIST<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="list">
+<h3>LIST<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
 <p>The LIST command is similar to running FIND across the entire database. The LIST command takes an optional parameter:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -928,17 +923,17 @@
 </ol>
 </div></blockquote>
 <p>Without the parameter, LIST returns results for all mailboxes in the database. For each mailbox that matches, it issues a MAILBOX or RESERVE response to the client. When all responses are complete, it issues an OK response.</p>
-</section>
-<section id="logout">
-<h3>LOGOUT<a class="headerlink" href="#logout" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="logout">
+<h3>LOGOUT<a class="headerlink" href="#logout" title="Permalink to this headline">¶</a></h3>
 <p>The LOGOUT command tells the server to close the connection. Its only valid response is an OK response.</p>
-</section>
-<section id="noop">
-<h3>NOOP<a class="headerlink" href="#noop" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="noop">
+<h3>NOOP<a class="headerlink" href="#noop" title="Permalink to this headline">¶</a></h3>
 <p>The NOOP command takes no parameters. An OK response indicates success. If this command is issued after an UPDATE command, then the OK response also indicates that all pending transactions have been sent to the listening slave.</p>
-</section>
-<section id="reserve">
-<h3>RESERVE<a class="headerlink" href="#reserve" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="reserve">
+<h3>RESERVE<a class="headerlink" href="#reserve" title="Permalink to this headline">¶</a></h3>
 <p>A RESERVE command takes two parameters:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -947,14 +942,14 @@
 </ol>
 </div></blockquote>
 <p>It will first check for an existing reservation or activation of the given mailbox name, if there does exist such an entity, a NO response is returned, otherwise a reservation entry is put into the database, and an OK response is returned on success. NO is also returned if the connection is unauthenticated. This is not a valid command to issue to a slave.</p>
-</section>
-<section id="update">
-<h3>UPDATE<a class="headerlink" href="#update" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="update">
+<h3>UPDATE<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
 <p>The UPDATE command is how a slave initiates an update stream from the master (though it is valid to issue the command to a slave as well). In response to the command, the server returns a list of all mailboxes (as a LIST command with no parameters) and then an OK response. From this point forward whenever an update occurs to the master’s database, it will stream the update to the slave (that is, it will send a RESERVE, MAILBOX, or DELETE response as the updates happen to its database). Only NOOP or LOGOUT are valid after this command is issued. This command may only be issued in the authenticated state.</p>
-</section>
-</section>
-<section id="database-synchronization">
-<h2>Database Synchronization<a class="headerlink" href="#database-synchronization" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="database-synchronization">
+<h2>Database Synchronization<a class="headerlink" href="#database-synchronization" title="Permalink to this headline">¶</a></h2>
 <p>A distributed database protocol such as mupdate must address the issues of synchronization. In our case, there are two places where the database can become out of sync if a connection is not dropped cleanly.</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -962,16 +957,16 @@
 <li><p>The slaves need to ensure that their local database is up to date with the master whenever they come up.</p></li>
 </ol>
 </div></blockquote>
-<section id="synchronization-of-slaves-to-master">
-<h3>Synchronization of Slaves to Master<a class="headerlink" href="#synchronization-of-slaves-to-master" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="synchronization-of-slaves-to-master">
+<h3>Synchronization of Slaves to Master<a class="headerlink" href="#synchronization-of-slaves-to-master" title="Permalink to this headline">¶</a></h3>
 <p>Synchronization of slave databases to the master’s database is simple. When the slave issues the UPDATE command to the master, the master dumps the entire contents of its database to the slave. The slave may then use this information to verify and update its local database.</p>
-</section>
-<section id="synchronization-of-master-to-backend-servers">
-<h3>Synchronization of Master to Backend Servers<a class="headerlink" href="#synchronization-of-master-to-backend-servers" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="synchronization-of-master-to-backend-servers">
+<h3>Synchronization of Master to Backend Servers<a class="headerlink" href="#synchronization-of-master-to-backend-servers" title="Permalink to this headline">¶</a></h3>
 <p>When server that holds mailboxes in the namespace comes up, it should perform a LIST operation against the master mupdate server, and then issue ACTIVATE and DELETE commands as necessary to bring the master’s list of what is on this particular backend servers into sync with what actually exists on the backend server. Note that this document does not specify how to deal with conflicts (where one mailbox resides on multiple backend servers).</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -994,7 +989,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1018,12 +1013,9 @@
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

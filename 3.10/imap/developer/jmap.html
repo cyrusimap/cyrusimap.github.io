@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>JMAP support &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -749,7 +744,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -798,13 +793,13 @@
 </div>
           <div role="main" class="document">
             
-  <section id="jmap-support">
-<span id="developer-jmap"></span><h1>JMAP support<a class="headerlink" href="#jmap-support" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="jmap-support">
+<span id="developer-jmap"></span><h1>JMAP support<a class="headerlink" href="#jmap-support" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://jmap.io/">JMAP</a> is an alternate mechanism for synchronising a mail client with a mail server, intended as a replacement for IMAP. It is a transport-agnostic, stateless JSON-based API, aiming to be compatible with the IMAP data model, but with reduced data usage and more efficient synchronisation.</p>
-<section id="cyrus-administration">
-<h2>Cyrus administration<a class="headerlink" href="#cyrus-administration" title="Permalink to this heading">¶</a></h2>
-<section id="compile-jmap-support-into-cyrus">
-<h3>Compile JMAP support into Cyrus<a class="headerlink" href="#compile-jmap-support-into-cyrus" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="cyrus-administration">
+<h2>Cyrus administration<a class="headerlink" href="#cyrus-administration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="compile-jmap-support-into-cyrus">
+<h3>Compile JMAP support into Cyrus<a class="headerlink" href="#compile-jmap-support-into-cyrus" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Enable JMAP (and DAV) in Cyrus:</p>
 <blockquote>
@@ -828,12 +823,12 @@ manually compiled due to extra patches needing to be applied.
 Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian"><span class="std std-ref">Xapian install guide</span></a> shows how.</p>
 <p>4. Once installed, the <code class="docutils literal notranslate"><span class="pre">jmap</span></code> module must be enabled in
 <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>: <code class="docutils literal notranslate"><span class="pre">httpmodules:</span> <span class="pre">jmap</span></code></p>
-</section>
-</section>
-<section id="jmap-client">
-<h2>JMAP client<a class="headerlink" href="#jmap-client" title="Permalink to this heading">¶</a></h2>
-<section id="test-jmap-support">
-<h3>Test JMAP support<a class="headerlink" href="#test-jmap-support" title="Permalink to this heading">¶</a></h3>
+</div>
+</div>
+<div class="section" id="jmap-client">
+<h2>JMAP client<a class="headerlink" href="#jmap-client" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-jmap-support">
+<h3>Test JMAP support<a class="headerlink" href="#test-jmap-support" title="Permalink to this headline">¶</a></h3>
 <p>Once Cyrus is running, you can test JMAP on the command line for any existing Cyrus user. The user must at least have an INBOX provisioned but is not required to have any calendars, contacts or messages.</p>
 <p>To obtain the JMAP mailbox folders for user <code class="docutils literal notranslate"><span class="pre">test</span></code>, issue the following request:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
@@ -909,9 +904,9 @@ Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian">
 </div>
 <p>Similar requests exist to obtain contacts and calendars. For details, see the
 JMAP specification.</p>
-</section>
-<section id="optional-install-sample-jmap-client">
-<h3>Optional: Install sample JMAP client<a class="headerlink" href="#optional-install-sample-jmap-client" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="optional-install-sample-jmap-client">
+<h3>Optional: Install sample JMAP client<a class="headerlink" href="#optional-install-sample-jmap-client" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Cyrus does not yet implement JMAP authentication. Instead, it requires for
@@ -922,18 +917,18 @@ the required authentication headers for each request.</p>
 <p>You can set up the <a class="reference external" href="https://github.com/jmapio/jmap-perl">JMAP Proxy (perl)</a> to sit in front of a standard IMAP server and query that over a custom JMAP client.</p>
 <p>Or you can install a sample <a class="reference external" href="https://github.com/jmapio/jmap-demo-webmail">JMAP web client</a> which requires the <a class="reference external" href="https://github.com/fastmail/overture">Overture.js library</a> and <a class="reference external" href="https://github.com/jmapio/jmap-js">JMAP JS library</a> to talk to a JMAP-enabled Cyrus server and build from there (subject to the <a class="reference external" href="https://tldrlegal.com/license/mit-license">MIT license</a>).</p>
 <p>The web client is a simple example (no compose, contacts or calendars). When you create your account, the most recent 50 emails will be downloaded in their entirety, so the first page should be snappy immediately. After that, you are redirected to the landing page. A background task will continue to pull in batches of messages and add them to your account, so you will see older messages appear while you are using the interface.</p>
-</section>
-<section id="developing-the-client-further">
-<h3>Developing the client further<a class="headerlink" href="#developing-the-client-further" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="developing-the-client-further">
+<h3>Developing the client further<a class="headerlink" href="#developing-the-client-further" title="Permalink to this headline">¶</a></h3>
 <p>You'll want to become deeply familiar with the <a class="reference external" href="http://jmap.io/#i-want-to-get-involved-with-jmap.-what-do-i-need-to-know?">JMAP developer documentation</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JMAP implementation in Cyrus is a work in progress. Current status can be
 viewed on the main <a class="reference internal" href="../download/installation/http/jmap.html#jmap-implementation"><span class="std std-ref">JMAP configuration page</span></a>.</p>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -956,7 +951,7 @@ viewed on the main <a class="reference internal" href="../download/installation/
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Sep 10 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -979,12 +974,9 @@ viewed on the main <a class="reference internal" href="../download/installation/
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

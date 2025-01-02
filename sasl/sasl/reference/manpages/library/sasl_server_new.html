@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_server_new - Create a new server authentication object &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,10 +485,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-server-new-create-a-new-server-authentication-object">
-<span id="sasl-reference-manpages-library-sasl-server-new"></span><span id="std-saslman-sasl_server_new-3"></span><h1><strong>sasl_server_new</strong> - Create a new server authentication object<a class="headerlink" href="#sasl-server-new-create-a-new-server-authentication-object" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-server-new-create-a-new-server-authentication-object">
+<span id="sasl-reference-manpages-library-sasl-server-new"></span><span id="std-saslman-sasl_server_new-3"></span><span id="std:saslman-sasl_server_new(3)"></span><h1><strong>sasl_server_new</strong> - Create a new server authentication object<a class="headerlink" href="#sasl-server-new-create-a-new-server-authentication-object" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">sasl_server_new</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">service</span><span class="p">,</span>
@@ -506,31 +501,31 @@
 <span class="w">                </span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">pconn</span><span class="p">);</span>
 </pre></div>
 </div>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <dl class="c function">
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_server_new(const</span> <span class="pre">char</span> <span class="pre">*service,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*serverFQDN,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*user_realm,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*iplocalport,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*ipremoteport,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">sasl_callback_t</span> <span class="pre">*callbacks,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">flags,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">sasl_conn_t</span> <span class="pre">**</span> <span class="pre">pconn);</span></span></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_server_new(const</span> <span class="pre">char</span> <span class="pre">*service,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*serverFQDN,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*user_realm,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*iplocalport,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*ipremoteport,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">sasl_callback_t</span> <span class="pre">*callbacks,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">flags,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">sasl_conn_t</span> <span class="pre">**</span> <span class="pre">pconn);</span></code></dt>
 <dd><p><strong>sasl_server_new()</strong> creates a new SASL context. This context will  be
 used  for  all SASL calls for one connection. It handles both authentication
 and integrity/encryption  layers after authentication.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>service</strong> – is the registered name of the service (usually the
 protocol name) using SASL (e.g. “imap”).</p></li>
@@ -559,8 +554,8 @@ SASL calls for this connection.</p></li>
 </dl>
 </dd></dl>
 
-<section id="connection-flags">
-<h3>Connection flags<a class="headerlink" href="#connection-flags" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="connection-flags">
+<h3>Connection flags<a class="headerlink" href="#connection-flags" title="Permalink to this headline">¶</a></h3>
 <p>Flags that may be passed to <strong>sasl_server_new()</strong>:</p>
 <ul class="simple">
 <li><p><cite>SASL_SUCCESS_DATA</cite>: The protocol supports a server‐last send</p></li>
@@ -570,22 +565,22 @@ SASL calls for this connection.</p></li>
 </dl>
 </li>
 </ul>
-</section>
-</section>
-<section id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
 See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
 <p>Other return codes indicate errors and should either be handled or the
 authentication session should be quit.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>,
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>,
 <a class="reference internal" href="sasl_server_start.html#std-saslman-sasl_server_start-3">sasl_server_start(3)</a>, <a class="reference internal" href="sasl_server_step.html#std-saslman-sasl_server_step-3">sasl_server_step(3)</a>,
 <a class="reference internal" href="sasl_setprop.html#std-saslman-sasl_setprop-3">sasl_setprop(3)</a>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -608,7 +603,7 @@ authentication session should be quit.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -632,12 +627,9 @@ authentication session should be quit.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

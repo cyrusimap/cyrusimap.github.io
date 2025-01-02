@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Automatic Creation of Mailboxes &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -802,8 +797,8 @@
 </div>
           <div role="main" class="document">
             
-  <section id="automatic-creation-of-mailboxes">
-<h1>Automatic Creation of Mailboxes<a class="headerlink" href="#automatic-creation-of-mailboxes" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="automatic-creation-of-mailboxes">
+<h1>Automatic Creation of Mailboxes<a class="headerlink" href="#automatic-creation-of-mailboxes" title="Permalink to this headline">¶</a></h1>
 <p>Cyrus IMAP features the ability to create mailboxes automatically;</p>
 <ul class="simple">
 <li><p>for successful login events,</p></li>
@@ -868,8 +863,8 @@ by <em>lmtpd(8)</em> and delivery of the message continues.</p>
 </div></blockquote>
 <p>Other settings in <a class="reference internal" href="../admin/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> affecting automatic
 options.</p>
-<section id="autocreation-of-mailboxes">
-<h2>Autocreation of mailboxes<a class="headerlink" href="#autocreation-of-mailboxes" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="autocreation-of-mailboxes">
+<h2>Autocreation of mailboxes<a class="headerlink" href="#autocreation-of-mailboxes" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">autocreate_inbox_folders:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -890,9 +885,9 @@ stripped, so “Junk | Trash” results in two folders: “Junk” and
 </ol>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="automatic-quota-settings">
-<h2>Automatic quota settings<a class="headerlink" href="#automatic-quota-settings" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="automatic-quota-settings">
+<h2>Automatic quota settings<a class="headerlink" href="#automatic-quota-settings" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">autocreate_quota_messages:</span></code> -1</p>
 <blockquote>
@@ -906,9 +901,9 @@ configured in this option.</p>
 as unlimited message quota, rather than a message quota of zero.</p>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="autocreation-of-sieve-scripts">
-<h2>Autocreation of Sieve scripts<a class="headerlink" href="#autocreation-of-sieve-scripts" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="autocreation-of-sieve-scripts">
+<h2>Autocreation of Sieve scripts<a class="headerlink" href="#autocreation-of-sieve-scripts" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">autocreate_sieve_folders:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -949,9 +944,9 @@ autocreate_sieve_script is compiled on the fly and installed as the user’s def
 sieve script</p>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="automated-folder-subscriptions">
-<h2>Automated folder subscriptions<a class="headerlink" href="#automated-folder-subscriptions" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="automated-folder-subscriptions">
+<h2>Automated folder subscriptions<a class="headerlink" href="#automated-folder-subscriptions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">autocreate_subscribe_folders:</span></code> &lt;none&gt;</p>
 <blockquote>
@@ -976,9 +971,9 @@ to it. Otherwise, subscribing to the shared folder fails.</p>
 to subscribe to.</p>
 </div></blockquote>
 </div></blockquote>
-</section>
-<section id="autocreation-of-users">
-<h2>Autocreation of users<a class="headerlink" href="#autocreation-of-users" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="autocreation-of-users">
+<h2>Autocreation of users<a class="headerlink" href="#autocreation-of-users" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">autocreate_users:</span></code> anyone</p>
 <blockquote>
@@ -996,8 +991,8 @@ all options.</p>
 <li><p><a class="reference internal" href="quota.html#imap-features-quota"><span class="std std-ref">Quota</span></a></p></li>
 </ul>
 </div>
-<section id="limitations-to-the-automatic-creation-of-mailboxes">
-<h3>Limitations to the Automatic Creation of Mailboxes<a class="headerlink" href="#limitations-to-the-automatic-creation-of-mailboxes" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="limitations-to-the-automatic-creation-of-mailboxes">
+<h3>Limitations to the Automatic Creation of Mailboxes<a class="headerlink" href="#limitations-to-the-automatic-creation-of-mailboxes" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>A user may in fact be able to succesfully login to IMAP with both a
 full primary recipient email address such as
@@ -1025,9 +1020,9 @@ are exclusively male, this may still apply to that organization.</p>
 </li>
 </ol>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">IMAP Features</span></a></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -1050,7 +1045,7 @@ are exclusively male, this may still apply to that organization.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1074,12 +1069,9 @@ are exclusively male, this may still apply to that organization.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ctl_zoneinfo &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -714,7 +709,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -763,36 +758,36 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-ctl_zoneinfo-8"></span><section id="ctl-zoneinfo">
-<span id="imap-reference-manpages-systemcommands-ctl-zoneinfo"></span><h1><strong>ctl_zoneinfo</strong><a class="headerlink" href="#ctl-zoneinfo" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-ctl_zoneinfo-8"><span id="std:cyrusman-ctl_zoneinfo(8)"></span></span><div class="section" id="ctl-zoneinfo">
+<span id="imap-reference-manpages-systemcommands-ctl-zoneinfo"></span><h1><strong>ctl_zoneinfo</strong><a class="headerlink" href="#ctl-zoneinfo" title="Permalink to this headline">¶</a></h1>
 <p>perform operations on the zoneinfo database</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>ctl_zoneinfo</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-r</strong> <em>version-string</em></pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>ctl_zoneinfo</strong> is used to perform various administrative operations on
 the zoneinfo database.</p>
 <p><strong>ctl_zoneinfo</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_zoneinfo-C">
-<span id="cmdoption-ctl-zoneinfo-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-ctl_zoneinfo-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_zoneinfo-C">
+<span id="cmdoption-ctl-zoneinfo-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_zoneinfo-v">
-<span id="cmdoption-ctl-zoneinfo-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_zoneinfo-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_zoneinfo-v">
+<span id="cmdoption-ctl-zoneinfo-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable verbose output.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-ctl_zoneinfo-r">
-<span id="cmdoption-ctl-zoneinfo-r"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"> <span class="pre">version-string</span></span><a class="headerlink" href="#cmdoption-ctl_zoneinfo-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ctl_zoneinfo-r">
+<span id="cmdoption-ctl-zoneinfo-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">version-string</span></code><a class="headerlink" href="#cmdoption-ctl_zoneinfo-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rebuild the zoneinfo database based on the directory structure of
 <em>configdirectory</em>/<strong>zoneinfo</strong>.  The database to be rebuilt will be
 in the default location of <em>configdirectory</em>/<strong>zoneinfo.db</strong> unless
@@ -802,25 +797,25 @@ source of the timezone data (e.g. “Olson 2013h”) and will be used
 by the <em>timezone</em> module of <em class="manpage">httpd(8)</em>.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>[NB: Examples needed]</p>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>This command was introduced in version 2.5</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf,
 &lt;configdirectory&gt;/zoneinfo.db</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <em class="manpage">httpd(8)</em>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -843,7 +838,7 @@ by the <em>timezone</em> module of <em class="manpage">httpd(8)</em>.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -866,12 +861,9 @@ by the <em>timezone</em> module of <em class="manpage">httpd(8)</em>.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

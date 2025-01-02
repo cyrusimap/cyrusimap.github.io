@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sync_client &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -109,7 +104,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -736,7 +731,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,35 +780,35 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-sync_client-8"></span><section id="sync-client">
-<span id="imap-reference-manpages-systemcommands-sync-client"></span><h1><strong>sync_client</strong><a class="headerlink" href="#sync-client" title="Permalink to this heading">¶</a></h1>
+  <span class="target" id="std-cyrusman-sync_client-8"><span id="std:cyrusman-sync_client(8)"></span></span><div class="section" id="sync-client">
+<span id="imap-reference-manpages-systemcommands-sync-client"></span><h1><strong>sync_client</strong><a class="headerlink" href="#sync-client" title="Permalink to this headline">¶</a></h1>
 <p>Client side of the synchronization (replication) engine</p>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <pre class="literal-block"><strong>sync_client</strong> [ <strong>-v</strong> ] [ <strong>-l</strong> ] [ <strong>-L</strong> ] [ <strong>-z</strong> ] [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-S</strong> <em>server-name</em> ]
     [ <strong>-f</strong> <em>input-file</em> ] [ <strong>-F</strong> <em>shutdown_file</em> ] [ <strong>-w</strong> <em>wait_interval</em> ]
     [ <strong>-t</strong> <em>timeout</em> ] [ <strong>-d</strong> <em>delay</em> ] [ <strong>-r</strong> ] [ <strong>-n</strong> <em>channel</em> ] [ <strong>-u</strong> ] [ <strong>-m</strong> ]
     [ <strong>-p</strong> <em>partition</em> ] [ <strong>-A</strong> ] [ <strong>-s</strong> ] [ <strong>-O</strong> ] <em>objects</em>...</pre>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>sync_client</strong> is the client side of the replication system.  It runs
 on the client (master) system and connects to the target (replica)
 system and generates an appropriate sequence of transactions to
 synchronize the replica system with the master system.</p>
 <p><strong>sync_client</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</section>
-<section id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-C">
-<span id="cmdoption-sync-client-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-sync_client-C" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-C">
+<span id="cmdoption-sync-client-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-sync_client-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-A">
-<span id="cmdoption-sync-client-a"></span><span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-A" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-A">
+<span id="cmdoption-sync-client-a"></span><code class="sig-name descname"><span class="pre">-A</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>All users mode.
 Sync every user on the server to the replica (doesn’t do non-user
 mailboxes at all… this could be considered a bug and maybe it
@@ -821,8 +816,8 @@ should do those mailboxes independently)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-d">
-<span id="cmdoption-sync-client-d"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"> <span class="pre">delay</span></span><a class="headerlink" href="#cmdoption-sync_client-d" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-d">
+<span id="cmdoption-sync-client-d"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"> <span class="pre">delay</span></code><a class="headerlink" href="#cmdoption-sync_client-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum delay between replication runs in rolling replication mode.
 Larger values provide better efficiency as transactions can be
 merged. Smaller values mean that the replica system is more up to
@@ -831,8 +826,8 @@ transactions as a single group. Default: 3 seconds.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-f">
-<span id="cmdoption-sync-client-f"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">input-file</span></span><a class="headerlink" href="#cmdoption-sync_client-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-f">
+<span id="cmdoption-sync-client-f"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">input-file</span></code><a class="headerlink" href="#cmdoption-sync_client-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>In mailbox or user replication mode: provides list of users or
 mailboxes to replicate.  In rolling replication mode, specifies an
 alternate log file (<strong>sync_client</strong> will exit after processing the
@@ -840,8 +835,8 @@ log file).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-F">
-<span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"> <span class="pre">shutdown-file</span></span><a class="headerlink" href="#cmdoption-sync_client-F" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-F">
+<code class="sig-name descname"><span class="pre">-F</span></code><code class="sig-prename descclassname"> <span class="pre">shutdown-file</span></code><a class="headerlink" href="#cmdoption-sync_client-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rolling replication checks for this file at the end of each
 replication cycle and shuts down if it is present. Used to request
 a nice clean shutdown at the first convenient point. The file is
@@ -850,28 +845,28 @@ removed on shutdown. Overrides <code class="docutils literal notranslate"><span 
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-l">
-<span id="cmdoption-sync-client-l"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-l">
+<span id="cmdoption-sync-client-l"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose logging mode.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-L">
-<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-L" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-L">
+<code class="sig-name descname"><span class="pre">-L</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform only local mailbox operations (do not do mupdate operations).
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-m">
-<span id="cmdoption-sync-client-m"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-m" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-m">
+<span id="cmdoption-sync-client-m"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mailbox mode.
 Remaining arguments are list of mailboxes which should be replicated.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-n">
-<span id="cmdoption-sync-client-n"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">channel</span></span><a class="headerlink" href="#cmdoption-sync_client-n" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-n">
+<span id="cmdoption-sync-client-n"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">channel</span></code><a class="headerlink" href="#cmdoption-sync_client-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the named channel for rolling replication mode.  If multiple
 channels are specified in <code class="docutils literal notranslate"><span class="pre">sync_log_channels</span></code> then use one of them.
 This option is probably best combined with <strong>-S</strong> to connect to a
@@ -879,15 +874,15 @@ different server with each channel.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-o">
-<span id="cmdoption-sync-client-o"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-o" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-o">
+<span id="cmdoption-sync-client-o"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only attempt to connect to the backend server once rather than
 waiting up to 1000 seconds before giving up.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-O">
-<span class="sig-name descname"><span class="pre">-O</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-O" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-O">
+<code class="sig-name descname"><span class="pre">-O</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-O" title="Permalink to this definition">¶</a></dt>
 <dd><p>No copyback mode. Replication will stop if the replica reports a CRC
 error, rather than doing a full mailbox sync. Useful if moving users to a
 new server, where you don’t want any errors to cause the source servers
@@ -895,16 +890,16 @@ to change the account.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-p">
-<span id="cmdoption-sync-client-p"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">partition</span></span><a class="headerlink" href="#cmdoption-sync_client-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-p">
+<span id="cmdoption-sync-client-p"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">partition</span></code><a class="headerlink" href="#cmdoption-sync_client-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>In mailbox or user replication mode: provides the name of the
 partition on the replica to which the mailboxes/users should be
 replicated.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-r">
-<span id="cmdoption-sync-client-r"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-r">
+<span id="cmdoption-sync-client-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rolling (repeat) replication mode. Pick up a list of actions
 recorded by the <a class="reference internal" href="lmtpd.html#std-cyrusman-lmtpd-8">lmtpd(8)</a>, <a class="reference internal" href="imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <a class="reference internal" href="pop3d.html#std-cyrusman-pop3d-8">pop3d(8)</a> and <a class="reference internal" href="nntpd.html#std-cyrusman-nntpd-8">nntpd(8)</a> daemons from the file
@@ -913,8 +908,8 @@ appears.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-s">
-<span id="cmdoption-sync-client-s"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-s">
+<span id="cmdoption-sync-client-s"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sieve mode.
 Remaining arguments are list of users whose Sieve files should be
 replicated. Principally used for debugging purposes: not exposed to
@@ -922,54 +917,54 @@ replicated. Principally used for debugging purposes: not exposed to
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-S">
-<span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"> <span class="pre">servername</span></span><a class="headerlink" href="#cmdoption-sync_client-S" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-S">
+<code class="sig-name descname"><span class="pre">-S</span></code><code class="sig-prename descclassname"> <span class="pre">servername</span></code><a class="headerlink" href="#cmdoption-sync_client-S" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells <strong>sync_client</strong> with which server to communicate.  Overrides
 the <code class="docutils literal notranslate"><span class="pre">sync_host</span></code> configuration option.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-t">
-<span id="cmdoption-sync-client-t"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"> <span class="pre">timeout</span></span><a class="headerlink" href="#cmdoption-sync_client-t" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-t">
+<span id="cmdoption-sync-client-t"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"> <span class="pre">timeout</span></code><a class="headerlink" href="#cmdoption-sync_client-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timeout for single replication run in rolling replication.
 <strong>sync_client</strong> will negotiate a restart after this many seconds.
 Default: 600 seconds</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-u">
-<span id="cmdoption-sync-client-u"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-u">
+<span id="cmdoption-sync-client-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>User mode.
 Remaining arguments are list of users who should be replicated.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-v">
-<span id="cmdoption-sync-client-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-v">
+<span id="cmdoption-sync-client-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose mode.  Use twice (<strong>-v -v</strong>) to log all protocol traffic to
 stderr.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-w">
-<span id="cmdoption-sync-client-w"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"> <span class="pre">interval</span></span><a class="headerlink" href="#cmdoption-sync_client-w" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-w">
+<span id="cmdoption-sync-client-w"></span><code class="sig-name descname"><span class="pre">-w</span></code><code class="sig-prename descclassname"> <span class="pre">interval</span></code><a class="headerlink" href="#cmdoption-sync_client-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wait this long before starting. This option is typically used so
 that we can attach a debugger to one end of the replication system
 or the other.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-sync_client-z">
-<span id="cmdoption-sync-client-z"></span><span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sync_client-z" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-sync_client-z">
+<span id="cmdoption-sync-client-z"></span><code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sync_client-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Require compression.
 The replication protocol will always try to enable deflate
 compression if both ends support it.  Set this flag when you want
 to abort if compression is not available.</p>
 </dd></dl>
 
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>On a replication master, the following would be added to the START
 section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>:</p>
 <blockquote>
@@ -978,21 +973,21 @@ section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cy
 </div>
 </div></blockquote>
 <p>[NB: More examples needed]</p>
-</section>
-<section id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-L</strong> feature, local updates only, was added in version 3.0.</p>
-</section>
-<section id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="sync_server.html#std-cyrusman-sync_server-8">sync_server(8)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>,
 <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -1015,7 +1010,7 @@ section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cy
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Sep 18 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1038,12 +1033,9 @@ section of <a class="reference internal" href="../configs/cyrus.conf.html#std-cy
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

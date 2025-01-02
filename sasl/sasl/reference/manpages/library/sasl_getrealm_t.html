@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_getrealm_t - Realm Acquisition Callback &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -445,7 +440,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -490,10 +485,10 @@
 </div>
           <div role="main" class="document">
             
-  <section id="sasl-getrealm-t-realm-acquisition-callback">
-<span id="sasl-reference-manpages-library-sasl-getrealm-t"></span><span id="std-saslman-sasl_getrealm_t-3"></span><h1><strong>sasl_getrealm_t</strong> - Realm Acquisition Callback<a class="headerlink" href="#sasl-getrealm-t-realm-acquisition-callback" title="Permalink to this heading">¶</a></h1>
-<section id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+  <div class="section" id="sasl-getrealm-t-realm-acquisition-callback">
+<span id="sasl-reference-manpages-library-sasl-getrealm-t"></span><span id="std-saslman-sasl_getrealm_t-3"></span><span id="std:saslman-sasl_getrealm_t(3)"></span><h1><strong>sasl_getrealm_t</strong> - Realm Acquisition Callback<a class="headerlink" href="#sasl-getrealm-t-realm-acquisition-callback" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">sasl_getrealm_t</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span>
@@ -502,18 +497,18 @@
 <span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <dl class="c function">
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_getrealm_t(void</span> <span class="pre">*context,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">int</span> <span class="pre">id,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**availrealms,</span></span></dt>
-<dt class="sig sig-object c">
-<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**result)</span></span></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_getrealm_t(void</span> <span class="pre">*context,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">int</span> <span class="pre">id,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**availrealms,</span></code></dt>
+<dt>
+<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**result)</span></code></dt>
 <dd><p><strong>sasl_getrealm_t()</strong> is used when there is an interaction with
 SASL_CB_GETREALM as the type.</p>
 <p>If a mechanism would use this  callback,  but  it  is  not
@@ -522,7 +517,7 @@ selected.  (Note that a  mechanism  may  still  force  the
 existence  of  a  getrealm callback by SASL_CB_GETREALM to
 its required_prompts list).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>context</strong> – context from the callback record</p></li>
 <li><p><strong>id</strong> – callback ID (SASL_CB_GETREALM)</p></li>
@@ -534,18 +529,18 @@ terminated, may be empty.</p></li>
 </dl>
 </dd></dl>
 
-</section>
-<section id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
 See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
 <p>Other return codes indicate errors and should be handled.</p>
-</section>
-<section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a></p>
-</section>
-</section>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a></p>
+</div>
+</div>
 
 
           </div>
@@ -568,7 +563,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -592,12 +587,9 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

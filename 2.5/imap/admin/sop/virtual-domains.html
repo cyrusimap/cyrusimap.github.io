@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Virtual Domains &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -107,7 +102,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -246,7 +241,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
+<p class="caption"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -602,7 +597,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
+<p class="caption"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -703,7 +698,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -804,11 +799,11 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-virtual-domains">
-<h1>Cyrus Virtual Domains<a class="headerlink" href="#cyrus-virtual-domains" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-virtual-domains">
+<h1>Cyrus Virtual Domains<a class="headerlink" href="#cyrus-virtual-domains" title="Permalink to this headline">¶</a></h1>
 <p>First of all see the <code class="docutils literal notranslate"><span class="pre">install-virtdomains.html</span></code> file in your Cyrus distribution.</p>
-<section id="global-admins">
-<h2>Global admins<a class="headerlink" href="#global-admins" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="global-admins">
+<h2>Global admins<a class="headerlink" href="#global-admins" title="Permalink to this headline">¶</a></h2>
 <p>Pay attention to this in the documentation:</p>
 <p>Global administrators are specified with an unqualified userid in the
 admins option and have access to any mailbox on the server. Because
@@ -850,12 +845,12 @@ to be the same. A part of my <a class="reference internal" href="../configs/imap
 </pre></div>
 </div>
 <p>As you can see the first user is the global admin, while the second user is the admin for the mail.ugent.be domain.</p>
-</section>
-<section id="replication-and-virtual-domains">
-<h2>Replication and virtual domains<a class="headerlink" href="#replication-and-virtual-domains" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="replication-and-virtual-domains">
+<h2>Replication and virtual domains<a class="headerlink" href="#replication-and-virtual-domains" title="Permalink to this headline">¶</a></h2>
 <p>In 2.3.3 this doesn’t work: <a class="reference external" href="http://asg.web.cmu.edu/archive/message.php?mailbox=archive.info-cyrus&amp;msg=39577">http://asg.web.cmu.edu/archive/message.php?mailbox=archive.info-cyrus&amp;msg=39577</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
@@ -878,7 +873,7 @@ to be the same. A part of my <a class="reference internal" href="../configs/imap
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -902,12 +897,9 @@ to be the same. A part of my <a class="reference internal" href="../configs/imap
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

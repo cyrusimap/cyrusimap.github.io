@@ -5,8 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus SASL &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -28,10 +27,6 @@
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   
 
-  
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   
@@ -105,7 +100,7 @@
         
           
           
-              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getsasl.html">Get SASL</a><ul>
@@ -443,7 +438,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support/Community</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -484,31 +479,31 @@
 </div>
           <div role="main" class="document">
             
-  <section id="cyrus-sasl">
-<span id="sasl-index"></span><h1>Cyrus SASL<a class="headerlink" href="#cyrus-sasl" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="cyrus-sasl">
+<span id="sasl-index"></span><h1>Cyrus SASL<a class="headerlink" href="#cyrus-sasl" title="Permalink to this headline">¶</a></h1>
 <p>Welcome to Cyrus SASL.</p>
-<section id="what-is-cyrus-sasl">
-<h2>What is Cyrus SASL?<a class="headerlink" href="#what-is-cyrus-sasl" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="what-is-cyrus-sasl">
+<h2>What is Cyrus SASL?<a class="headerlink" href="#what-is-cyrus-sasl" title="Permalink to this headline">¶</a></h2>
 <p>Simple Authentication and Security Layer (<a class="reference external" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer">SASL</a>) is a specification that describes how authentication mechanisms can be plugged into an application protocol on the wire. Cyrus SASL is an implementation of SASL that makes it easy for application developers to integrate authentication mechanisms into their application in a generic way.</p>
 <p>The latest stable version of Cyrus SASL is 2.1.28.</p>
-<p><a class="reference external" href="https://www.cyrusimap.org/index.html#imap-index" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">Cyrus IMAP</span></a> uses Cyrus SASL to provide authentication support to the mail server, however it is just one project using Cyrus SASL.</p>
-<section id="features">
-<h3>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="https://www.cyrusimap.org/index.html#imap-index" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">Cyrus IMAP</span></a> uses Cyrus SASL to provide authentication support to the mail server, however it is just one project using Cyrus SASL.</p>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>Cyrus SASL provides a number of authentication plugins out of the box.</p>
 <blockquote>
 <div><p>LMDB, GDBM, or NDBM (sasldb), PAM, MySQL, PostgreSQL, SQLite, LDAP, Active Directory (LDAP), DCE, Kerberos 5, proxied IMAP auth, getpwent, shadow, SIA, Courier Authdaemon, httpform, APOP and SASL mechanisms: ANONYMOUS, EXTERNAL, GSSAPI, OTP, PASSDSS, PLAIN, SCRAM, SRP</p>
 </div></blockquote>
 <p>This document is an introduction to <strong>Cyrus SASL</strong>. It is not intended to be an exhaustive reference for the SASL Application Programming Interface (API), which is detailed in the SASL manual pages, and the libsasl.h header file.</p>
-</section>
-<section id="known-bugs">
-<h3>Known Bugs<a class="headerlink" href="#known-bugs" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="known-bugs">
+<h3>Known Bugs<a class="headerlink" href="#known-bugs" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">libtool</span></code> doesn’t always link libraries together.  In our environment,
 we only have static Krb5 libraries; the GSSAPI plugin should link
 these libraries in on platforms that support it (Solaris and Linux
 among them) but it does not.  It also doesn’t always get the runpath
 of libraries correct.</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getsasl.html">Get SASL</a><ul>
@@ -666,14 +661,14 @@ of libraries correct.</p>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
+<p class="caption"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -694,7 +689,7 @@ of libraries correct.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -718,12 +713,9 @@ of libraries correct.</p>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/documentation_options.js"></script>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 
