@@ -775,14 +775,14 @@ still need to use the cyruslibs Xapian fork and compile from source.</p>
 <p>To build Xapian, fetch the cyruslibs package which comes with pre-patched Xapian and some other
 dependencies. They are installed in <code class="docutils literal notranslate"><span class="pre">/usr/local/cyruslibs</span></code> by default unless overridden on the
 command line.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYRUSLIBS</span><span class="o">=</span><span class="s2">&quot;/usr/local/cyruslibs&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib/pkgconfig:</span><span class="nv">$PKG_CONFIG_PATH</span><span class="s2">&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-Wl,-rpath,</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib -Wl,-rpath,</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib/x86_64-linux-gnu&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$CYRUSLIBS</span><span class="s2">/bin&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CYRUSLIBS</span><span class="o">=</span><span class="s2">&quot;/usr/local/cyruslibs&quot;</span>
+<span class="nb">export</span> <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib/pkgconfig:</span><span class="nv">$PKG_CONFIG_PATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-Wl,-rpath,</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib -Wl,-rpath,</span><span class="nv">$CYRUSLIBS</span><span class="s2">/lib/x86_64-linux-gnu&quot;</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$CYRUSLIBS</span><span class="s2">/bin&quot;</span>
 
-git<span class="w"> </span>clone<span class="w"> </span>git@github.com:cyrusimap/cyruslibs.git
-<span class="nb">cd</span><span class="w"> </span>cyruslibs
-sh<span class="w"> </span>build.sh<span class="w"> </span><span class="nv">$CYRUSLIBS_DIR</span>
+git clone git@github.com:cyrusimap/cyruslibs.git
+<span class="nb">cd</span> cyruslibs
+sh build.sh <span class="nv">$CYRUSLIBS_DIR</span>
 </pre></div>
 </div>
 <p>Then follow on with the Cyrus <a class="reference internal" href="compiling.html#compiling"><span class="std std-ref">compilation instructions</span></a>, adding <code class="docutils literal notranslate"><span class="pre">--enable-xapian</span></code> to the flags to <code class="docutils literal notranslate"><span class="pre">./configure</span></code>.</p>

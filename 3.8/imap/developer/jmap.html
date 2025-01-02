@@ -825,15 +825,15 @@ Our <a class="reference internal" href="install-xapian.html#imapinstall-xapian">
 <h3>Test JMAP support<a class="headerlink" href="#test-jmap-support" title="Permalink to this headline">¶</a></h3>
 <p>Once Cyrus is running, you can test JMAP on the command line for any existing Cyrus user. The user must at least have an INBOX provisioned but is not required to have any calendars, contacts or messages.</p>
 <p>To obtain the JMAP mailbox folders for user <code class="docutils literal notranslate"><span class="pre">test</span></code>, issue the following request:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>--user<span class="w"> </span>test:test<span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X POST <span class="se">\</span>
+     -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+     -H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+     --user test:test <span class="se">\</span>
+     -d <span class="s1">&#39;{</span>
 <span class="s1">       &quot;using&quot;: [ &quot;urn:ietf:params:jmap:core&quot;, &quot;urn:ietf:params:jmap:mail&quot; ],</span>
 <span class="s1">       &quot;methodCalls&quot;: [[ &quot;Mailbox/get&quot;, {}, &quot;c1&quot; ]]</span>
-<span class="s1">     }&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">     </span>http://localhost/jmap/
+<span class="s1">     }&#39;</span> <span class="se">\</span>
+     http://localhost/jmap/
 </pre></div>
 </div>
 <p>you should get a response which looks similar to</p>

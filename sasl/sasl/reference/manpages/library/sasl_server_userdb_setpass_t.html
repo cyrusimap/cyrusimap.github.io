@@ -489,15 +489,15 @@
 <span id="sasl-reference-manpages-library-sasl-server-userdb-setpass-t"></span><span id="std-saslman-sasl_server_userdb_setpass_t-3"></span><span id="std:saslman-sasl_server_userdb_setpass_t(3)"></span><h1><strong>sasl_server_userdb_setpass_t</strong> - UserDB Plaintext Password Setting Callback<a class="headerlink" href="#sasl-server-userdb-setpass-t-userdb-plaintext-password-setting-callback" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">sasl_server_userdb_setpass_t</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-<span class="w">                                 </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span>
-<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">user</span><span class="p">,</span>
-<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pass</span><span class="p">,</span>
-<span class="w">                                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">passlen</span><span class="p">,</span>
-<span class="w">                                 </span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">propctx</span><span class="p">,</span>
-<span class="w">                                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">flags</span><span class="p">)</span>
+<span class="kt">int</span> <span class="n">sasl_server_userdb_setpass_t</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+                                 <span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
+                                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">user</span><span class="p">,</span>
+                                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pass</span><span class="p">,</span>
+                                 <span class="kt">unsigned</span> <span class="n">passlen</span><span class="p">,</span>
+                                 <span class="k">struct</span> <span class="nc">propctx</span> <span class="o">*</span><span class="n">propctx</span><span class="p">,</span>
+                                 <span class="kt">unsigned</span> <span class="n">flags</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

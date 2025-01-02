@@ -688,7 +688,7 @@ authentication is completed</p></li>
 <div class="section" id="initialize-the-library">
 <h4><a class="toc-backref" href="#id15">1. Initialize the library</a><a class="headerlink" href="#initialize-the-library" title="Permalink to this headline">¶</a></h4>
 <p>This is done once, using <a class="reference internal" href="../reference/manpages/library/sasl_client_init.html#std-saslman-sasl_client_init-3">sasl_client_init(3)</a>.</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
 
 <span class="cm">/* attempt to start sasl</span>
 <span class="cm"> * See the section on Callbacks and Interactions for an</span>
@@ -697,8 +697,8 @@ authentication is completed</p></li>
 
 <span class="n">result</span><span class="o">=</span><span class="n">sasl_client_init</span><span class="p">(</span><span class="n">callbacks</span><span class="p">);</span>
 
-<span class="w">    </span><span class="cm">/* check to see if that worked */</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
+    <span class="cm">/* check to see if that worked */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
 </div>
@@ -707,25 +707,25 @@ authentication is completed</p></li>
 <p>For every network connection, make a new SASL connection, using
 <a class="reference internal" href="../reference/manpages/library/sasl_client_new.html#std-saslman-sasl_client_new-3">sasl_client_new(3)</a>:</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* The SASL context kept for the life of the connection */</span>
-<span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">;</span>
+<span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">;</span>
 
 
 <span class="cm">/* client new connection */</span>
-<span class="n">result</span><span class="o">=</span><span class="n">sasl_client_new</span><span class="p">(</span><span class="s">&quot;imap&quot;</span><span class="p">,</span><span class="w">     </span><span class="cm">/* The service we are using */</span>
-<span class="w">           </span><span class="n">serverFQDN</span><span class="p">,</span><span class="w"> </span><span class="cm">/* The fully qualified domain</span>
+<span class="n">result</span><span class="o">=</span><span class="n">sasl_client_new</span><span class="p">(</span><span class="s">&quot;imap&quot;</span><span class="p">,</span>     <span class="cm">/* The service we are using */</span>
+           <span class="n">serverFQDN</span><span class="p">,</span> <span class="cm">/* The fully qualified domain</span>
 <span class="cm">                                      name of the server we&#39;re</span>
 <span class="cm">                                      connecting to */</span>
-<span class="w">           </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="cm">/* Local and remote IP</span>
+           <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* Local and remote IP</span>
 <span class="cm">                                      address strings</span>
 <span class="cm">                                      (NULL disables mechanisms</span>
 <span class="cm">                                       which require this info)*/</span>
-<span class="w">                       </span><span class="nb">NULL</span><span class="p">,</span><span class="w">       </span><span class="cm">/* connection-specific</span>
+                       <span class="nb">NULL</span><span class="p">,</span>       <span class="cm">/* connection-specific</span>
 <span class="cm">                                      callbacks */</span>
-<span class="w">           </span><span class="mi">0</span><span class="p">,</span><span class="w">          </span><span class="cm">/* security flags */</span>
-<span class="w">           </span><span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span><span class="w">     </span><span class="cm">/* allocated on success */</span>
+           <span class="mi">0</span><span class="p">,</span>          <span class="cm">/* security flags */</span>
+           <span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>     <span class="cm">/* allocated on success */</span>
 
 <span class="cm">/* check to see if that worked */</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
 </div>
@@ -735,32 +735,32 @@ authentication is completed</p></li>
 usually done through a capability command. Format the list as a
 single string separated by spaces. Feed this string into SASL to
 begin the authentication process.</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="n">sasl_interact_t</span><span class="w"> </span><span class="o">*</span><span class="n">client_interact</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
-<span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">mechusing</span><span class="p">;</span>
-<span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">outlen</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span> <span class="n">sasl_interact_t</span> <span class="o">*</span><span class="n">client_interact</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+ <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">out</span><span class="p">,</span> <span class="o">*</span><span class="n">mechusing</span><span class="p">;</span>
+ <span class="kt">unsigned</span> <span class="n">outlen</span><span class="p">;</span>
 
-<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+ <span class="k">do</span> <span class="p">{</span>
 
-<span class="w">   </span><span class="n">result</span><span class="o">=</span><span class="n">sasl_client_start</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w">      </span><span class="cm">/* the same context from</span>
+   <span class="n">result</span><span class="o">=</span><span class="n">sasl_client_start</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>      <span class="cm">/* the same context from</span>
 <span class="cm">                                          above */</span>
-<span class="w">            </span><span class="n">mechlist</span><span class="p">,</span><span class="w">  </span><span class="cm">/* the list of mechanisms</span>
+            <span class="n">mechlist</span><span class="p">,</span>  <span class="cm">/* the list of mechanisms</span>
 <span class="cm">                          from the server */</span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span><span class="w"> </span><span class="cm">/* filled in if an</span>
+            <span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span> <span class="cm">/* filled in if an</span>
 <span class="cm">                                 interaction is needed */</span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">out</span><span class="p">,</span><span class="w">      </span><span class="cm">/* filled in on success */</span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">outlen</span><span class="p">,</span><span class="w">   </span><span class="cm">/* filled in on success */</span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">mechusing</span><span class="p">);</span>
+            <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span>      <span class="cm">/* filled in on success */</span>
+            <span class="o">&amp;</span><span class="n">outlen</span><span class="p">,</span>   <span class="cm">/* filled in on success */</span>
+            <span class="o">&amp;</span><span class="n">mechusing</span><span class="p">);</span>
 
-<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">)</span>
-<span class="w">   </span><span class="p">{</span>
-<span class="w">      </span><span class="cm">/* [deal with the interactions. See interactions section below] */</span>
-<span class="w">   </span><span class="p">}</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="cm">/* [deal with the interactions. See interactions section below] */</span>
+   <span class="p">}</span>
 
 
-<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">);</span><span class="w"> </span><span class="cm">/* the mechanism may ask us to fill</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">);</span> <span class="cm">/* the mechanism may ask us to fill</span>
 <span class="cm">                                    in things many times. result is</span>
 <span class="cm">                                    SASL_CONTINUE on success */</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">)</span> <span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
 <p>Note that you do not need to worry about the allocation and freeing
@@ -812,24 +812,24 @@ in IMAP.</p></li>
 <p>Convert the continuation data to binary format (for example, this
 may include base64 decoding it). Perform another step in the
 authentication using <a class="reference internal" href="../reference/manpages/library/sasl_client_step.html#std-saslman-sasl_client_step-3">sasl_client_step(3)</a>:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">result</span><span class="o">=</span><span class="n">sasl_client_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w">  </span><span class="cm">/* our context */</span>
-<span class="w">          </span><span class="n">in</span><span class="p">,</span><span class="w">    </span><span class="cm">/* the data from the server */</span>
-<span class="w">          </span><span class="n">inlen</span><span class="p">,</span><span class="w"> </span><span class="cm">/* its length */</span>
-<span class="w">          </span><span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span><span class="w">  </span><span class="cm">/* this should be</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
+  <span class="n">result</span><span class="o">=</span><span class="n">sasl_client_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>  <span class="cm">/* our context */</span>
+          <span class="n">in</span><span class="p">,</span>    <span class="cm">/* the data from the server */</span>
+          <span class="n">inlen</span><span class="p">,</span> <span class="cm">/* its length */</span>
+          <span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span>  <span class="cm">/* this should be</span>
 <span class="cm">                                unallocated and NULL */</span>
-<span class="w">          </span><span class="o">&amp;</span><span class="n">out</span><span class="p">,</span><span class="w">     </span><span class="cm">/* filled in on success */</span>
-<span class="w">          </span><span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span><span class="w"> </span><span class="cm">/* filled in on success */</span>
+          <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span>     <span class="cm">/* filled in on success */</span>
+          <span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span> <span class="cm">/* filled in on success */</span>
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">)</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">     </span><span class="cm">/* [deal with the interactions. See below] */</span>
-<span class="w">  </span><span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="p">)</span>
+  <span class="p">{</span>
+     <span class="cm">/* [deal with the interactions. See below] */</span>
+  <span class="p">}</span>
 
 
-<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SASL_CONTINUE</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_INTERACT</span> <span class="o">||</span> <span class="n">result</span> <span class="o">==</span> <span class="n">SASL_CONTINUE</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
 <p>Format the output (variable out of length outlen) in the protocol
@@ -843,14 +843,14 @@ repeats until authentication either succeeds or fails.</p>
 time to make sure the server isn’t trying to fool us. Some
 protocols include data along with the last step. If so this data
 should be used here. If not use a length of zero.</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_client_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w">  </span><span class="cm">/* our context */</span>
-<span class="w">        </span><span class="n">in</span><span class="p">,</span><span class="w">    </span><span class="cm">/* the data from the server */</span>
-<span class="w">        </span><span class="n">inlen</span><span class="p">,</span><span class="w"> </span><span class="cm">/* it&#39;s length */</span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span><span class="w">  </span><span class="cm">/* this should be unallocated and NULL */</span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">out</span><span class="p">,</span><span class="w">     </span><span class="cm">/* filled in on success */</span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span><span class="w"> </span><span class="cm">/* filled in on success */</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_client_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>  <span class="cm">/* our context */</span>
+        <span class="n">in</span><span class="p">,</span>    <span class="cm">/* the data from the server */</span>
+        <span class="n">inlen</span><span class="p">,</span> <span class="cm">/* it&#39;s length */</span>
+        <span class="o">&amp;</span><span class="n">client_interact</span><span class="p">,</span>  <span class="cm">/* this should be unallocated and NULL */</span>
+        <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span>     <span class="cm">/* filled in on success */</span>
+        <span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span> <span class="cm">/* filled in on success */</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="cm">/* [failure] */</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="cm">/* [failure] */</span>
 </pre></div>
 </div>
 <p>Congratulations. You have successfully authenticated to the
@@ -900,66 +900,66 @@ the layers.</p>
 <h4><a class="toc-backref" href="#id25">Initialization</a><a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h4>
 <p>This is done once, using <a class="reference internal" href="../reference/manpages/library/sasl_server_init.html#std-saslman-sasl_server_init-3">sasl_server_init(3)</a>.
 The application name is used for reading configuration information.</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
 
 <span class="cm">/* Initialize SASL */</span>
-<span class="n">result</span><span class="o">=</span><span class="n">sasl_server_init</span><span class="p">(</span><span class="n">callbacks</span><span class="p">,</span><span class="w">      </span><span class="cm">/* Callbacks supported */</span>
-<span class="w">                        </span><span class="s">&quot;TestServer&quot;</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Name of the application */</span>
+<span class="n">result</span><span class="o">=</span><span class="n">sasl_server_init</span><span class="p">(</span><span class="n">callbacks</span><span class="p">,</span>      <span class="cm">/* Callbacks supported */</span>
+                        <span class="s">&quot;TestServer&quot;</span><span class="p">);</span>  <span class="cm">/* Name of the application */</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../reference/manpages/library/sasl_server_new.html#std-saslman-sasl_server_new-3">sasl_server_new(3)</a> should be called for each new connection. It should
 be called when the socket is accepted.</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
 
 <span class="cm">/* Make a new context for this connection */</span>
-<span class="n">result</span><span class="o">=</span><span class="n">sasl_server_new</span><span class="p">(</span><span class="s">&quot;smtp&quot;</span><span class="p">,</span><span class="w"> </span><span class="cm">/* Registered name of service */</span>
-<span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="cm">/* my fully qualified domain name;</span>
+<span class="n">result</span><span class="o">=</span><span class="n">sasl_server_new</span><span class="p">(</span><span class="s">&quot;smtp&quot;</span><span class="p">,</span> <span class="cm">/* Registered name of service */</span>
+        <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* my fully qualified domain name;</span>
 <span class="cm">                NULL says use gethostname() */</span>
-<span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="cm">/* The user realm used for password</span>
+        <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* The user realm used for password</span>
 <span class="cm">                lookups; NULL means default to serverFQDN</span>
 <span class="cm">                Note: This does not affect Kerberos */</span>
-<span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="cm">/* IP Address information strings */</span>
-<span class="w">        </span><span class="nb">NULL</span><span class="p">,</span><span class="w">   </span><span class="cm">/* Callbacks supported only for this connection */</span>
-<span class="w">        </span><span class="mi">0</span><span class="p">,</span><span class="w">  </span><span class="cm">/* security flags (security layers are enabled</span>
+        <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="cm">/* IP Address information strings */</span>
+        <span class="nb">NULL</span><span class="p">,</span>   <span class="cm">/* Callbacks supported only for this connection */</span>
+        <span class="mi">0</span><span class="p">,</span>  <span class="cm">/* security flags (security layers are enabled</span>
 <span class="cm">               using security properties, separately) */</span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>
+        <span class="o">&amp;</span><span class="n">conn</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When a client requests the list of mechanisms supported by the
 server, use <a class="reference internal" href="../reference/manpages/library/sasl_listmech.html#std-saslman-sasl_listmech-3">sasl_listmech(3)</a>. This particular call might
 produce the string: <code class="docutils literal notranslate"><span class="pre">{PLAIN,</span> <span class="pre">GSSAPI,</span> <span class="pre">CRAM-MD5,</span> <span class="pre">DIGEST-MD5}</span></code></p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_listmech</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w">  </span><span class="cm">/* The context for this connection */</span>
-<span class="w">         </span><span class="nb">NULL</span><span class="p">,</span><span class="w">  </span><span class="cm">/* not supported */</span>
-<span class="w">         </span><span class="s">&quot;{&quot;</span><span class="p">,</span><span class="w">   </span><span class="cm">/* What to prepend the string with */</span>
-<span class="w">         </span><span class="s">&quot;, &quot;</span><span class="p">,</span><span class="w">  </span><span class="cm">/* What to separate mechanisms with */</span>
-<span class="w">         </span><span class="s">&quot;}&quot;</span><span class="p">,</span><span class="w">   </span><span class="cm">/* What to append to the string */</span>
-<span class="w">         </span><span class="o">&amp;</span><span class="n">result_string</span><span class="p">,</span><span class="w"> </span><span class="cm">/* The produced string. */</span>
-<span class="w">                     </span><span class="o">&amp;</span><span class="n">string_length</span><span class="p">,</span><span class="w"> </span><span class="cm">/* length of the string */</span>
-<span class="w">                     </span><span class="o">&amp;</span><span class="n">number_of_mechanisms</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Number of mechanisms in</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">=</span><span class="n">sasl_listmech</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>  <span class="cm">/* The context for this connection */</span>
+         <span class="nb">NULL</span><span class="p">,</span>  <span class="cm">/* not supported */</span>
+         <span class="s">&quot;{&quot;</span><span class="p">,</span>   <span class="cm">/* What to prepend the string with */</span>
+         <span class="s">&quot;, &quot;</span><span class="p">,</span>  <span class="cm">/* What to separate mechanisms with */</span>
+         <span class="s">&quot;}&quot;</span><span class="p">,</span>   <span class="cm">/* What to append to the string */</span>
+         <span class="o">&amp;</span><span class="n">result_string</span><span class="p">,</span> <span class="cm">/* The produced string. */</span>
+                     <span class="o">&amp;</span><span class="n">string_length</span><span class="p">,</span> <span class="cm">/* length of the string */</span>
+                     <span class="o">&amp;</span><span class="n">number_of_mechanisms</span><span class="p">);</span> <span class="cm">/* Number of mechanisms in</span>
 <span class="cm">                                            the string */</span>
 </pre></div>
 </div>
 <p>When a client requests to authenticate, use <a class="reference internal" href="../reference/manpages/library/sasl_server_start.html#std-saslman-sasl_server_start-3">sasl_server_start(3)</a>:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">out</span><span class="p">;</span>
-<span class="kt">unsigned</span><span class="w"> </span><span class="n">outlen</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">out</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="n">outlen</span><span class="p">;</span>
 
-<span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sasl_server_start</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="cm">/* context */</span>
-<span class="w">             </span><span class="n">mechanism_client_chose</span><span class="p">,</span>
-<span class="w">             </span><span class="n">clientin</span><span class="p">,</span><span class="w">    </span><span class="cm">/* the optional string the client gave us */</span>
-<span class="w">             </span><span class="n">clientinlen</span><span class="p">,</span><span class="w"> </span><span class="cm">/* and it&#39;s length */</span>
-<span class="w">             </span><span class="o">&amp;</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="cm">/* The output of the library.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sasl_server_start</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="cm">/* context */</span>
+             <span class="n">mechanism_client_chose</span><span class="p">,</span>
+             <span class="n">clientin</span><span class="p">,</span>    <span class="cm">/* the optional string the client gave us */</span>
+             <span class="n">clientinlen</span><span class="p">,</span> <span class="cm">/* and it&#39;s length */</span>
+             <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span> <span class="cm">/* The output of the library.</span>
 <span class="cm">                      Might not be NULL terminated */</span>
-<span class="w">             </span><span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span>
+             <span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">))</span>
-<span class="w">  </span><span class="cm">/* failure. Send protocol specific message that says authentication failed */</span>
-<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_OK</span><span class="p">)</span>
-<span class="w">  </span><span class="cm">/* authentication succeeded. Send client the protocol specific message</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">))</span>
+  <span class="cm">/* failure. Send protocol specific message that says authentication failed */</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_OK</span><span class="p">)</span>
+  <span class="cm">/* authentication succeeded. Send client the protocol specific message</span>
 <span class="cm">   to say that authentication is complete */</span>
 <span class="k">else</span>
-<span class="w">  </span><span class="cm">/* send data &#39;out&#39; with length &#39;outlen&#39; over the network in protocol</span>
+  <span class="cm">/* send data &#39;out&#39; with length &#39;outlen&#39; over the network in protocol</span>
 <span class="cm">   specific format */</span>
 </pre></div>
 </div>
@@ -968,22 +968,22 @@ data from the client decoded from protocol specific format to a
 string of bytes of length <code class="docutils literal notranslate"><span class="pre">clientinlen</span></code>. This step may occur
 zero or more times. An application must be able to deal with it
 occurring an arbitrary number of times, using <a class="reference internal" href="../reference/manpages/library/sasl_server_step.html#std-saslman-sasl_server_step-3">sasl_server_step(3)</a>:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
 
 <span class="n">result</span><span class="o">=</span><span class="n">sasl_server_step</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span>
-<span class="w">                        </span><span class="n">clientin</span><span class="p">,</span><span class="w">      </span><span class="cm">/* what the client gave */</span>
-<span class="w">                        </span><span class="n">clientinlen</span><span class="p">,</span><span class="w">   </span><span class="cm">/* it&#39;s length */</span>
-<span class="w">                        </span><span class="o">&amp;</span><span class="n">out</span><span class="p">,</span><span class="w">          </span><span class="cm">/* allocated by library on success.</span>
+                        <span class="n">clientin</span><span class="p">,</span>      <span class="cm">/* what the client gave */</span>
+                        <span class="n">clientinlen</span><span class="p">,</span>   <span class="cm">/* it&#39;s length */</span>
+                        <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span>          <span class="cm">/* allocated by library on success.</span>
 <span class="cm">                                          Might not be NULL terminated */</span>
-<span class="w">                        </span><span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span>
+                        <span class="o">&amp;</span><span class="n">outlen</span><span class="p">);</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">))</span>
-<span class="w">    </span><span class="cm">/* failure. Send protocol specific message that says authentication failed */</span>
-<span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_OK</span><span class="p">)</span>
-<span class="w">    </span><span class="cm">/* authentication succeeded. Send client the protocol specific message</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_OK</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="n">SASL_CONTINUE</span><span class="p">))</span>
+    <span class="cm">/* failure. Send protocol specific message that says authentication failed */</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">SASL_OK</span><span class="p">)</span>
+    <span class="cm">/* authentication succeeded. Send client the protocol specific message</span>
 <span class="cm">       to say that authentication is complete */</span>
 <span class="k">else</span>
-<span class="w">    </span><span class="cm">/* send data &#39;out&#39; with length &#39;outlen&#39; over the network in protocol</span>
+    <span class="cm">/* send data &#39;out&#39; with length &#39;outlen&#39; over the network in protocol</span>
 <span class="cm">        specific format */</span>
 </pre></div>
 </div>
@@ -1050,45 +1050,45 @@ postman and a USER of tmartin)</p>
 <p>An example of a way to handle callbacks:</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* callbacks we support. This is a global variable at the</span>
 <span class="cm">    top of the program */</span>
-<span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">sasl_callback_t</span><span class="w"> </span><span class="n">callbacks</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">SASL_CB_GETREALM</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w">  </span><span class="cm">/* we&#39;ll just use an interaction if this comes up */</span>
-<span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">SASL_CB_USER</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w">      </span><span class="cm">/* we&#39;ll just use an interaction if this comes up */</span>
-<span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">SASL_CB_AUTHNAME</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">getauthname_func</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="cm">/* A mechanism should call getauthname_func</span>
+ <span class="k">static</span> <span class="n">sasl_callback_t</span> <span class="n">callbacks</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="p">{</span>
+   <span class="n">SASL_CB_GETREALM</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span>  <span class="cm">/* we&#39;ll just use an interaction if this comes up */</span>
+ <span class="p">},</span> <span class="p">{</span>
+   <span class="n">SASL_CB_USER</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span>      <span class="cm">/* we&#39;ll just use an interaction if this comes up */</span>
+ <span class="p">},</span> <span class="p">{</span>
+   <span class="n">SASL_CB_AUTHNAME</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">getauthname_func</span><span class="p">,</span> <span class="nb">NULL</span> <span class="cm">/* A mechanism should call getauthname_func</span>
 <span class="cm">                                                if it needs the authentication name */</span>
-<span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">SASL_CB_PASS</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">getsecret_func</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="w">      </span><span class="cm">/* Call getsecret_func if need secret */</span>
-<span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">SASL_CB_LIST_END</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span>
-<span class="w"> </span><span class="p">}</span>
-<span class="w"> </span><span class="p">};</span>
+ <span class="p">},</span> <span class="p">{</span>
+   <span class="n">SASL_CB_PASS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">getsecret_func</span><span class="p">,</span> <span class="nb">NULL</span>      <span class="cm">/* Call getsecret_func if need secret */</span>
+ <span class="p">},</span> <span class="p">{</span>
+   <span class="n">SASL_CB_LIST_END</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span>
+ <span class="p">}</span>
+ <span class="p">};</span>
 
 
-<span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getsecret_func</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-<span class="w">   </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
-<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
-<span class="w">   </span><span class="n">sasl_secret_t</span><span class="w"> </span><span class="o">**</span><span class="n">psecret</span><span class="p">)</span>
-<span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="cm">/* [ask the user for their secret] */</span>
+ <span class="k">static</span> <span class="kt">int</span> <span class="n">getsecret_func</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+   <span class="kt">void</span> <span class="o">*</span><span class="n">context</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
+   <span class="kt">int</span> <span class="n">id</span><span class="p">,</span>
+   <span class="n">sasl_secret_t</span> <span class="o">**</span><span class="n">psecret</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="cm">/* [ask the user for their secret] */</span>
 
-<span class="w">    </span><span class="cm">/* [allocate psecret and insert the secret] */</span>
+    <span class="cm">/* [allocate psecret and insert the secret] */</span>
 
-<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">SASL_OK</span><span class="p">;</span>
-<span class="w"> </span><span class="p">}</span>
+   <span class="k">return</span> <span class="n">SASL_OK</span><span class="p">;</span>
+ <span class="p">}</span>
 
-<span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getauthname_func</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span>
-<span class="w">                             </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
-<span class="w">                             </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">,</span>
-<span class="w">                             </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">len</span><span class="p">)</span>
-<span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="o">!=</span><span class="n">SASL_CB_AUTHNAME</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">SASL_FAIL</span><span class="p">;</span>
+ <span class="k">static</span> <span class="kt">int</span> <span class="n">getauthname_func</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
+                             <span class="kt">int</span> <span class="n">id</span><span class="p">,</span>
+                             <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">result</span><span class="p">,</span>
+                             <span class="kt">unsigned</span> <span class="o">*</span><span class="n">len</span><span class="p">)</span>
+ <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">id</span><span class="o">!=</span><span class="n">SASL_CB_AUTHNAME</span><span class="p">)</span> <span class="k">return</span> <span class="n">SASL_FAIL</span><span class="p">;</span>
 
-<span class="w">    </span><span class="cm">/* [fill in result and len] */</span>
+    <span class="cm">/* [fill in result and len] */</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">SASL_OK</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">SASL_OK</span><span class="p">;</span>
+  <span class="p">}</span>
 </pre></div>
 </div>
 <p>in the main program somewhere</p>
@@ -1106,17 +1106,17 @@ negotiated.</p>
 <p>To set that you support a security layer, set a security
 property structure with <code class="docutils literal notranslate"><span class="pre">max_ssf</span></code> set to a non-zero
 number:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_security_properties_t</span><span class="w"> </span><span class="n">secprops</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="n">sasl_security_properties_t</span> <span class="n">secprops</span><span class="p">;</span>
 
-<span class="n">secprops</span><span class="p">.</span><span class="n">min_ssf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">secprops</span><span class="p">.</span><span class="n">max_ssf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span>
-<span class="n">secprops</span><span class="p">.</span><span class="n">maxbufsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* SEE BELOW */</span><span class="p">;</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">min_ssf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">max_ssf</span> <span class="o">=</span> <span class="mi">256</span><span class="p">;</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">maxbufsize</span> <span class="o">=</span> <span class="cm">/* SEE BELOW */</span><span class="p">;</span>
 
-<span class="n">secprops</span><span class="p">.</span><span class="n">property_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="n">secprops</span><span class="p">.</span><span class="n">property_values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="n">secprops</span><span class="p">.</span><span class="n">security_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SASL_SEC_NOANONYMOUS</span><span class="p">;</span><span class="w"> </span><span class="cm">/* as appropriate */</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">property_names</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">property_values</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">secprops</span><span class="p">.</span><span class="n">security_flags</span> <span class="o">=</span> <span class="n">SASL_SEC_NOANONYMOUS</span><span class="p">;</span> <span class="cm">/* as appropriate */</span>
 
-<span class="n">sasl_setprop</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">SASL_SEC_PROPS</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">secprops</span><span class="p">);</span>
+<span class="n">sasl_setprop</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">SASL_SEC_PROPS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">secprops</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">secprops</span></code> variable will be copied during the call to
@@ -1130,14 +1130,14 @@ acceptable security layer strength.</p>
 <p>After authentication is successful, you can determine whether or
 not a security layer has been negotiated by looking at the SASL_SSF
 property:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ssfp</span><span class="p">;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">ssfp</span><span class="p">;</span>
 
-<span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sasl_getprop</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="w"> </span><span class="n">SASL_SSF</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ssfp</span><span class="p">);</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">SASL_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="cm">/* ??? */</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sasl_getprop</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">SASL_SSF</span><span class="p">,</span> <span class="p">(</span><span class="k">const</span> <span class="o">**</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">ssfp</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="n">SASL_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* ??? */</span>
 <span class="p">}</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">ssfp</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="cm">/* yay, we have a security layer! */</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">ssfp</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* yay, we have a security layer! */</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1220,15 +1220,15 @@ which should be of interest to many applications.</p>
 </div>
 <div class="section" id="imtest-from-cyrus-2-1-0-or-later">
 <h3><a class="toc-backref" href="#id32"><cite>imtest</cite>, from Cyrus 2.1.0 or later</a><a class="headerlink" href="#imtest-from-cyrus-2-1-0-or-later" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/imtest.html#imap-reference-manpages-usercommands-imtest" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">imtest(3)</span></a>
+<p><a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/imtest.html#imap-reference-manpages-usercommands-imtest" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">imtest(3)</span></a>
 is an application included with Cyrus IMAPd. It is
 a very simple IMAP client, but should be of interest to those
 writing applications. It also uses the prot layer, but it is easy
 to incorporate similar support without using the prot layer.
 Likewise, there are other sample client applications that you can
 look at including
-<a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/smtptest.html#imap-reference-manpages-usercommands-smtptest" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">smtptest(3)</span></a>
-and <a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/pop3test.html#imap-reference-manpages-usercommands-pop3test" title="(in Cyrus IMAP v3.8.4)"><span class="xref std std-ref">pop3test(3)</span></a>
+<a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/smtptest.html#imap-reference-manpages-usercommands-smtptest" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">smtptest(3)</span></a>
+and <a class="reference external" href="https://www.cyrusimap.org/imap/reference/manpages/usercommands/pop3test.html#imap-reference-manpages-usercommands-pop3test" title="(in Cyrus IMAP v3.10.0)"><span class="xref std std-ref">pop3test(3)</span></a>
 in the Cyrus IMAPd distribution, respectively.</p>
 </div>
 </div>

@@ -905,7 +905,7 @@ replication can be applied.</p>
 indicate the replication of <a class="reference internal" href="../../../glossary.html#term-disk-volumes"><span class="xref std std-term">disk volumes</span></a> as a whole. A
 simplistic replication scenario of a data disk between two nodes could
 look as follows:</p>
-<div class="graphviz"><img src="../../../_images/graphviz-3d117e14f1a624d46409d9f38d14363039c26823.png" alt="digraph drbd {
+digraph drbd {
         rankdir = LR;
         splines = true;
         overlab = prism;
@@ -938,8 +938,7 @@ look as follows:</p>
             }
 
         &quot;Data Disk 0&quot; -&gt; &quot;Data Disk 1&quot; [label=&quot;One-Way Replication&quot;];
-    }" class="graphviz" /></div>
-<p>For a fully detailed picture of the internal structures, please see the
+    }<p>For a fully detailed picture of the internal structures, please see the
 <a class="reference external" href="http://www.drbd.org/">DRBD</a> website, the canonical experts on this level of replication.</p>
 <p>Normally storage-level replication occurs in such
 fashion that it can be compared with a distributed version of a RAID-1
@@ -1012,7 +1011,7 @@ parts (called &quot;bricks&quot;) that make up the larger volume.</p>
 <p>Additional features may include the use of a geographically oriented set
 of parameters for the calculation and assignment of replicated chunks of
 data (ie. &quot;brick replication topology&quot;).</p>
-<div class="graphviz"><img src="../../../_images/graphviz-b94689a1c06f2d38b8797872ac6d90bc2bea88ca.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1041,8 +1040,7 @@ data (ie. &quot;brick replication topology&quot;).</p>
                 &quot;Storage Access Point&quot; -&gt; &quot;Brick #3&quot; [color=green];
                 &quot;Storage Access Point&quot; -&gt; &quot;Brick #4&quot; [color=green];
             }
-    }" class="graphviz" /></div>
-<p>Current implementations of this type of technology include <a class="reference external" href="http://www.glusterfs.org">GlusterFS</a>
+    }<p>Current implementations of this type of technology include <a class="reference external" href="http://www.glusterfs.org">GlusterFS</a>
 and <a class="reference external" href="http://ceph.com">Ceph</a>. Put way too simplistically, both technologies apply very
 smart ways of storing individual objects, sometimes with additional
 facilities for certain object types. How they work exactly is far beyond
@@ -1076,7 +1074,7 @@ many very small objects each individually addressed frequently, and in
 short-lived I/O operations, and consider the use of these distributed
 filesystems for a different level of object storage, such as disk images
 for a virtualization environment:</p>
-<div class="graphviz"><img src="../../../_images/graphviz-afb8d78934110ec33e73c0a576318971d3e3aa3c.png" alt="digraph {
+   digraph {
            rankdir = TB;
            splines = true;
            overlab = prism;
@@ -1127,8 +1125,7 @@ Manager w/ Integrated Distributed (File-) Locking&quot;;
            &quot;Hypervisor #1&quot; -&gt; &quot;Brick #4&quot; [dir=both,label=&quot;Guest #1&quot;];
            &quot;Hypervisor #1&quot; -&gt; &quot;Brick #3&quot; [dir=both,label=&quot;Guest #2&quot;];
            &quot;Hypervisor #2&quot; -&gt; &quot;Brick #3&quot; [dir=both,label=&quot;Guest #3&quot;];
-       }" class="graphviz" /></div>
-<p>In this illustration, <em>Hypervisor #1</em> and <em>Hypervisor #2</em> are storage
+       }<p>In this illustration, <em>Hypervisor #1</em> and <em>Hypervisor #2</em> are storage
 clients, and replicated bricks hold the disk images of each guest.</p>
 <p>Each hypervisor can, in parallel, perform I/O against each individual
 disk image, allowing (for example) both <em>Hypervisor #1</em> and
@@ -1223,7 +1220,7 @@ without interruption.</p>
 <p>Multipath is an enhancement technique in which multiple paths that are
 available to the storage can be balanced, shaped and failed over
 automatically. Imagine the following networking diagram:</p>
-<div class="graphviz"><img src="../../../_images/graphviz-94191218877563f76f61e4eafc1cbe44611f1b1e.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1253,8 +1250,7 @@ automatically. Imagine the following networking diagram:</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" class="graphviz" /></div>
-<p>The <em>null</em> situation is depicted in the previous wiring diagram. When
+    }<p>The <em>null</em> situation is depicted in the previous wiring diagram. When
 multipath kicks in, primary vs. secondary paths will be chosen for each
 individual target (that is unique). However, the system maintains a list
 of potential paths, and continuously monitors all paths for their
@@ -1264,7 +1260,7 @@ to 4 paths to <em>iSCSI Target #1</em> -- <em>4</em> paths, not <em>8</em>, beca
 networking of <em>Switch #1</em> and <em>Switch #2</em> is not considered a path with
 iSCSI -- <em>two nodes</em> and <em>two send targets each</em>.</p>
 <p>Multipath chooses one path to the available storage:</p>
-<div class="graphviz"><img src="../../../_images/graphviz-bcf8927eec26409fd3af5aaaf76d6d8e349f78d9.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1297,12 +1293,11 @@ iSCSI -- <em>two nodes</em> and <em>two send targets each</em>.</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none,color=green];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" class="graphviz" /></div>
-<p>Should one port, bridge, controller, switch or cable fail, then the I/O
+    }<p>Should one port, bridge, controller, switch or cable fail, then the I/O
 can fall back on to any of the remaining available paths.</p>
 <p>As per the example, this might mean the following (with <em>Canister #2</em>
 failing):</p>
-<div class="graphviz"><img src="../../../_images/graphviz-a8c8ff6e847d79fecdbe8cb1424b8b50a9e36934.png" alt="digraph {
+digraph {
         rankdir = TB;
         splines = true;
         overlab = prism;
@@ -1335,8 +1330,7 @@ failing):</p>
 
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #1&quot; [dir=none,color=red];
         &quot;Canister #2&quot; -&gt; &quot;iSCSI Target #2&quot; [dir=none];
-    }" class="graphviz" /></div>
-</div>
+    }</div>
 </div>
 <div class="section" id="performance">
 <span id="imap-deployment-storage-performance"></span><h2>Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h2>

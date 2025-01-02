@@ -872,25 +872,25 @@
 <div class="section" id="compile-cyrus">
 <h3>Compile Cyrus<a class="headerlink" href="#compile-cyrus" title="Permalink to this headline">¶</a></h3>
 <p>There are additional <a class="reference internal" href="install-xapian.html#imapinstall-xapian"><span class="std std-ref">compile and installation steps</span></a> if you are using Xapian for searching.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd
 
-autoreconf<span class="w"> </span>-i<span class="w"> </span>-s<span class="w">   </span><span class="c1"># generates a configure script, and its various dependencies</span>
+autoreconf -i -s   <span class="c1"># generates a configure script, and its various dependencies</span>
 
-./configure<span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-W -Wno-unused-parameter -g -O0 -Wall -Wextra -Werror -fPIC&quot;</span><span class="w"> </span><span class="se">\</span>
---enable-coverage<span class="w"> </span>--enable-calalarmd<span class="w"> </span>--enable-apple-push-service<span class="w"> </span>--enable-autocreate<span class="w"> </span><span class="se">\</span>
---enable-nntp<span class="w"> </span>--enable-http<span class="w"> </span>--enable-unit-tests<span class="w"> </span><span class="se">\</span>
---enable-replication<span class="w"> </span>--with-openssl<span class="o">=</span>yes<span class="w"> </span>--enable-nntp<span class="w"> </span>--enable-murder<span class="w"> </span><span class="se">\</span>
---enable-idled<span class="w"> </span>--enable-event-notification<span class="w"> </span>--enable-sieve<span class="w"> </span>--prefix<span class="o">=</span>/usr/cyrus
+./configure <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-W -Wno-unused-parameter -g -O0 -Wall -Wextra -Werror -fPIC&quot;</span> <span class="se">\</span>
+--enable-coverage --enable-calalarmd --enable-apple-push-service --enable-autocreate <span class="se">\</span>
+--enable-nntp --enable-http --enable-unit-tests <span class="se">\</span>
+--enable-replication --with-openssl<span class="o">=</span>yes --enable-nntp --enable-murder <span class="se">\</span>
+--enable-idled --enable-event-notification --enable-sieve --prefix<span class="o">=</span>/usr/cyrus
 
-make<span class="w"> </span>lex-fix<span class="w">   </span><span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
+make lex-fix   <span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
 
 make
 
-make<span class="w"> </span>check
+make check
 
-make<span class="w"> </span>install<span class="w">  </span><span class="c1"># optional if you&#39;re just developing on this machine</span>
+make install  <span class="c1"># optional if you&#39;re just developing on this machine</span>
 
-make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span class="c1"># Useful if you&#39;re testing older Cyrus versions</span>
+make install-binsymlinks    <span class="c1"># Useful if you&#39;re testing older Cyrus versions</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option sets where Cyrus is installed to. Adjust to suit.</p>

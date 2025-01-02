@@ -818,15 +818,15 @@
 <div class="section" id="install-cyrus-3rd-party-dependencies">
 <h2>2. Install Cyrus 3rd party dependencies<a class="headerlink" href="#install-cyrus-3rd-party-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Now, let’s install libraries and tools used by Cyrus IMAP. This includes a C compiler, some Perl libraries (used for Cyrus’s command line utilities such as cyradm) or C clients for various databases (ie Mysql, Postgresql, etc). Just like the previous command, this one may take a few minutes to complete. But it’s worth it!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>autotools-dev<span class="w"> </span>bash-completion<span class="w"> </span>bison<span class="w"> </span>build-essential<span class="w"> </span>comerr-dev<span class="w"> </span><span class="se">\</span>
-debhelper<span class="w"> </span>flex<span class="w"> </span>g++<span class="w"> </span>git<span class="w"> </span>gperf<span class="w"> </span>groff<span class="w"> </span>heimdal-dev<span class="w"> </span>libbsd-resource-perl<span class="w"> </span>libclone-perl<span class="w"> </span>libconfig-inifiles-perl<span class="w"> </span><span class="se">\</span>
-libcunit1-dev<span class="w"> </span>libdatetime-perl<span class="w"> </span>libdb-dev<span class="w"> </span>libdigest-sha-perl<span class="w"> </span>libencode-imaputf7-perl<span class="w"> </span>libfile-chdir-perl<span class="w"> </span><span class="se">\</span>
-libglib2.0-dev<span class="w"> </span>libical-dev<span class="w"> </span>libio-socket-inet6-perl<span class="w"> </span>libio-stringy-perl<span class="w"> </span>libjansson-dev<span class="w"> </span>libldap2-dev<span class="w"> </span><span class="se">\</span>
-libmysqlclient-dev<span class="w"> </span>libnet-server-perl<span class="w"> </span>libnews-nntpclient-perl<span class="w"> </span>libpam0g-dev<span class="w"> </span>libpcre3-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span><span class="se">\</span>
-libsnmp-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libtest-unit-perl<span class="w"> </span>libtool<span class="w"> </span>libunix-syslog-perl<span class="w"> </span>liburi-perl<span class="w"> </span><span class="se">\</span>
-libxapian-dev<span class="w"> </span>libxml-generator-perl<span class="w"> </span>libxml-xpath-perl<span class="w"> </span>libxml2-dev<span class="w"> </span>libwrap0-dev<span class="w"> </span>libzephyr-dev<span class="w"> </span>lsb-base<span class="w"> </span><span class="se">\</span>
-net-tools<span class="w"> </span>perl<span class="w"> </span>php5-cli<span class="w"> </span>php5-curl<span class="w"> </span>pkg-config<span class="w"> </span>po-debconf<span class="w"> </span>tcl-dev<span class="w"> </span><span class="se">\</span>
-transfig<span class="w"> </span>uuid-dev<span class="w"> </span>vim<span class="w"> </span>wamerican<span class="w"> </span>wget<span class="w"> </span>xutils-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>sasl2-bin<span class="w"> </span>rsyslog<span class="w"> </span>sudo<span class="w"> </span>acl<span class="w"> </span>telnet
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y autoconf automake autotools-dev bash-completion bison build-essential comerr-dev <span class="se">\</span>
+debhelper flex g++ git gperf groff heimdal-dev libbsd-resource-perl libclone-perl libconfig-inifiles-perl <span class="se">\</span>
+libcunit1-dev libdatetime-perl libdb-dev libdigest-sha-perl libencode-imaputf7-perl libfile-chdir-perl <span class="se">\</span>
+libglib2.0-dev libical-dev libio-socket-inet6-perl libio-stringy-perl libjansson-dev libldap2-dev <span class="se">\</span>
+libmysqlclient-dev libnet-server-perl libnews-nntpclient-perl libpam0g-dev libpcre3-dev libsasl2-dev <span class="se">\</span>
+libsnmp-dev libsqlite3-dev libssl-dev libtest-unit-perl libtool libunix-syslog-perl liburi-perl <span class="se">\</span>
+libxapian-dev libxml-generator-perl libxml-xpath-perl libxml2-dev libwrap0-dev libzephyr-dev lsb-base <span class="se">\</span>
+net-tools perl php5-cli php5-curl pkg-config po-debconf tcl-dev <span class="se">\</span>
+transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sudo acl telnet
 </pre></div>
 </div>
 </div>
@@ -1049,7 +1049,7 @@ transfig<span class="w"> </span>uuid-dev<span class="w"> </span>vim<span class="
 </div>
 <p>You should see a prompt appear:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Trying</span> <span class="p">::</span><span class="mf">1.</span><span class="o">..</span>
-<span class="n">Trying</span> <span class="mf">127.0.0.1</span><span class="o">...</span>
+<span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
 <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
 <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
 <span class="mi">220</span> <span class="o">...</span> <span class="n">ESMTP</span> <span class="n">Sendmail</span> <span class="o">...</span>

@@ -865,13 +865,13 @@ mailbox.  This is not a memory leak.</p>
 <p>Long-running (idling) connections may have previously intervened with
 mailbox deletions and general cleanup work, resulting in one connection
 blocking another from, for example, deleting and recreating a mailbox:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span>C1:<span class="w"> </span>SELECT<span class="w"> </span><span class="s2">&quot;Foo&quot;</span>
-C2:<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;Foo&quot;</span>
-C2:<span class="w"> </span>CREATE<span class="w"> </span><span class="s2">&quot;Foo&quot;</span>
-</pre></div></td></tr></table></div>
-</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>C1: SELECT <span class="s2">&quot;Foo&quot;</span>
+C2: DELETE <span class="s2">&quot;Foo&quot;</span>
+C2: CREATE <span class="s2">&quot;Foo&quot;</span>
+</pre></div>
+</td></tr></table></div>
 <p>The <code class="docutils literal notranslate"><span class="pre">CREATE</span></code> command on line 3 (by client 2, while client 1 still has
 the <code class="docutils literal notranslate"><span class="pre">Foo</span></code> mailbox selected) would have failed before, but does now
 succeed.</p>

@@ -810,36 +810,36 @@ Persian Empire.  So that's kinda cool.</p>
 <li><p>You already have it -- it's in the &quot;cassandane&quot; subdirectory of the cyrus-imapd
 sources.</p></li>
 <li><p>Install dependencies</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libanyevent-perl<span class="w"> </span>libtest-unit-perl<span class="w"> </span>libconfig-inifiles-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libdatetime-perl<span class="w"> </span>libbsd-resource-perl<span class="w"> </span>libxml-generator-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libencode-imaputf7-perl<span class="w"> </span>libio-stringy-perl<span class="w"> </span>libnews-nntpclient-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libfile-chdir-perl<span class="w"> </span>libfile-libmagic-perl<span class="w"> </span>libnet-server-perl<span class="w"> </span>libunix-syslog-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libdata-uuid-perl<span class="w"> </span>libjson-xs-perl<span class="w"> </span>libdata-ical-perl<span class="w"> </span>libjson-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libdatetime-format-ical-perl<span class="w"> </span>libtext-levenshteinxs-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libmime-types-perl<span class="w"> </span>libdatetime-format-iso8601-perl<span class="w"> </span>libcal-dav-perl<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>libclone-perl<span class="w"> </span>libstring-crc32-perl<span class="w"> </span>libnet-ldap-server-perl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libanyevent-perl libtest-unit-perl libconfig-inifiles-perl <span class="se">\</span>
+    libdatetime-perl libbsd-resource-perl libxml-generator-perl <span class="se">\</span>
+    libencode-imaputf7-perl libio-stringy-perl libnews-nntpclient-perl <span class="se">\</span>
+    libfile-chdir-perl libfile-libmagic-perl libnet-server-perl libunix-syslog-perl <span class="se">\</span>
+    libdata-uuid-perl libjson-xs-perl libdata-ical-perl libjson-perl <span class="se">\</span>
+    libdatetime-format-ical-perl libtext-levenshteinxs-perl <span class="se">\</span>
+    libmime-types-perl libdatetime-format-iso8601-perl libcal-dav-perl <span class="se">\</span>
+    libclone-perl libstring-crc32-perl libnet-ldap-server-perl
 </pre></div>
 </div>
 <p>The quickest option for the rest is installing via CPAN, but you could build
 packages using dh-make-perl if that is preferred.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Tie::DataUUID
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Spice
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Fast
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Data::ICal::TimeZone
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Text::VCardFast
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Mail::IMAPTalk
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>List::Pairwise
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Convert::Base64
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::DAVTalk
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::CardDAVTalk
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::CalDAVTalk
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Mail::JMAPTalk
-sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Math::Int64
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo cpan -i Tie::DataUUID
+sudo cpan -i XML::Spice
+sudo cpan -i XML::Fast
+sudo cpan -i Data::ICal::TimeZone
+sudo cpan -i Text::VCardFast
+sudo cpan -i Mail::IMAPTalk
+sudo cpan -i List::Pairwise
+sudo cpan -i Convert::Base64
+sudo cpan -i Net::DAVTalk
+sudo cpan -i Net::CardDAVTalk
+sudo cpan -i Net::CalDAVTalk
+sudo cpan -i Mail::JMAPTalk
+sudo cpan -i Math::Int64
 </pre></div>
 </div>
 </li>
 <li><p>Build Cassandane's binary components</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd/cassandane
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
 make
 </pre></div>
 </div>
@@ -863,8 +863,8 @@ suppress the binary tests as they are buggy upstream still.</p>
 </div></blockquote>
 </li>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user and matching group and also add <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> to group <code class="docutils literal notranslate"><span class="pre">mail</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>adduser<span class="w"> </span>--system<span class="w"> </span>--group<span class="w"> </span>cyrus
-sudo<span class="w"> </span>adduser<span class="w"> </span>cyrus<span class="w"> </span>mail
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo adduser --system --group cyrus
+sudo adduser cyrus mail
 </pre></div>
 </div>
 </li>
@@ -927,10 +927,10 @@ from the &quot;cyrus&quot; branch of our own fork.</p>
 <div class="section" id="rebuild-cyrus-for-testing">
 <h2>Rebuild Cyrus for Testing<a class="headerlink" href="#rebuild-cyrus-for-testing" title="Permalink to this headline">¶</a></h2>
 <p>Prepare to rebuild by making the source tree shiny and clean as if you've done a brand new checkout. Leave no old artifacts lying around!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
-make<span class="w"> </span>clean
-git<span class="w"> </span>clean<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-d
-autoreconf<span class="w"> </span>-v<span class="w"> </span>-i
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd
+make clean
+git clean -f -x -d
+autoreconf -v -i
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -942,21 +942,21 @@ autoreconf<span class="w"> </span>-v<span class="w"> </span>-i
 </pre></div>
 </div>
 <p>Configure the environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr/cyrus<span class="w"> </span>--with-cyrus-prefix<span class="o">=</span>/usr/cyrus<span class="w"> </span><span class="se">\</span>
---enable-autocreate<span class="w"> </span>--enable-http<span class="w"> </span>--enable-unit-tests<span class="w"> </span><span class="se">\</span>
---enable-replication<span class="w"> </span>--enable-nntp<span class="w"> </span>--enable-murder<span class="w"> </span><span class="se">\</span>
---enable-idled<span class="w"> </span>--enable-xapian<span class="w"> </span>--enable-calalarmd<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure --prefix<span class="o">=</span>/usr/cyrus --with-cyrus-prefix<span class="o">=</span>/usr/cyrus <span class="se">\</span>
+--enable-autocreate --enable-http --enable-unit-tests <span class="se">\</span>
+--enable-replication --enable-nntp --enable-murder <span class="se">\</span>
+--enable-idled --enable-xapian --enable-calalarmd <span class="se">\</span>
 --enable-backup
 
-make<span class="w"> </span>lex-fix<span class="w">   </span><span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
+make lex-fix   <span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
 </pre></div>
 </div>
 <p>And finally, make it.</p>
 <p>If you're testing across versions, the binsymlinks is necessary as older Cyrus doesn't have the binaries in the new locations. This uses the default install path of <code class="docutils literal notranslate"><span class="pre">/usr/cyrus/</span></code>. It can be useful to also have <code class="docutils literal notranslate"><span class="pre">/usr/cyrus25</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/cyrus24</span></code>, etc, if you're testing with older versions as well.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j16<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j16<span class="w"> </span>check
-sudo<span class="w"> </span>make<span class="w"> </span>install
-sudo<span class="w"> </span>make<span class="w"> </span>install-binsymlinks
-sudo<span class="w"> </span>cp<span class="w"> </span>tools/mkimap<span class="w"> </span>/usr/cyrus/bin/mkimap
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j16 <span class="o">&amp;&amp;</span> make -j16 check
+sudo make install
+sudo make install-binsymlinks
+sudo cp tools/mkimap /usr/cyrus/bin/mkimap
 </pre></div>
 </div>
 </div>
@@ -968,7 +968,7 @@ take care of switching to the <code class="docutils literal notranslate"><span c
 it as yourself.</p>
 <p>If you didn't give yourself this access, you will first need to become the
 <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user by some other means, and then run it from there.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd/cassandane
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
 ./testrunner.pl
 </pre></div>
 </div>

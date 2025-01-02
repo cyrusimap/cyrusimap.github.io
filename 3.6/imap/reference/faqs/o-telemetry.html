@@ -787,8 +787,8 @@
 <span id="faqs-o-telemetry"></span><h1>How to enable telemetry<a class="headerlink" href="#how-to-enable-telemetry" title="Permalink to this headline">¶</a></h1>
 <p>To enable telemetry logging for a user, create a directory on disk for that user. Cyrus will automatically write logging information to this directory for all new connections. You don’t need to restart Cyrus; closing the mail client and restarting it will do the trick.</p>
 <p>The directory path is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/<span class="w">             </span><span class="c1"># for example /var/imap/log/darth</span>
-chown<span class="w"> </span>cyrus<span class="w"> </span><span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/<span class="w">       </span><span class="c1"># The cyrus user needs write access to this directory.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/             <span class="c1"># for example /var/imap/log/darth</span>
+chown cyrus <span class="nv">$configdirectory</span>/log/<span class="nv">$userid</span>/       <span class="c1"># The cyrus user needs write access to this directory.</span>
 </pre></div>
 </div>
 <p>If you have virtdomains enabled, then the username is the login name. In this case if you login as <code class="docutils literal notranslate"><span class="pre">darth&#64;vader.net</span></code>, then the path is <code class="docutils literal notranslate"><span class="pre">/var/imap/log/darth&#64;vader.net/</span></code></p>

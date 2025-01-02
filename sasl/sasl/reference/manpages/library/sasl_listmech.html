@@ -489,16 +489,16 @@
 <span id="sasl-reference-manpages-library-sasl-listmech"></span><span id="std-saslman-sasl_listmech-3"></span><span id="std:saslman-sasl_listmech(3)"></span><h1><strong>sasl_listmech</strong> - Retrieve a list of the supported SASL mechanisms<a class="headerlink" href="#sasl-listmech-retrieve-a-list-of-the-supported-sasl-mechanisms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">sasl_listmech</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">user</span><span class="p">,</span>
-<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">prefix</span><span class="p">,</span>
-<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">sep</span><span class="p">,</span>
-<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">suffix</span><span class="p">,</span>
-<span class="w">                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">,</span>
-<span class="w">                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">plen</span><span class="p">,</span>
-<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">pcount</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">sasl_listmech</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">user</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">prefix</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sep</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">suffix</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">result</span><span class="p">,</span>
+                 <span class="kt">unsigned</span> <span class="o">*</span><span class="n">plen</span><span class="p">,</span>
+                 <span class="kt">int</span> <span class="o">*</span><span class="n">pcount</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

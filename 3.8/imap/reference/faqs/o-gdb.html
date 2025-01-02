@@ -807,7 +807,7 @@ depending on permissions. If they haven't been installed (and you're in the
 source/build tree), you need to run gdb from <code class="docutils literal notranslate"><span class="pre">libtool</span></code> in order for everything
 to work.</p>
 <p>For example, if you wanted to debug cyr_virusscan:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>libtool<span class="w"> </span>--mode<span class="o">=</span>execute<span class="w"> </span>gdb<span class="w"> </span>imap/cyr_virusscan
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ libtool --mode<span class="o">=</span>execute gdb imap/cyr_virusscan
 </pre></div>
 </div>
 <p>Command line arguments for a tool you're debugging, must be given to gdb before

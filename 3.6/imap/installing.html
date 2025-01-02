@@ -789,9 +789,9 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option given to <code class="docutils literal notranslate"><span class="pre">configure</span></code> (during <a class="reference internal" href="developer/compiling.html#compiling"><span class="std std-ref">compilation</span></a>) sets where Cyrus is installed to.</p>
 <p>If unspecified, it will go to whatever destination is your system default (often <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code>).
 To check: the final output of the configure step will display where a <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> will install to.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install<span class="w">  </span><span class="c1"># optional if you&#39;re just developing on this machine</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install  <span class="c1"># optional if you&#39;re just developing on this machine</span>
 
-make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span class="c1"># Only needed if you&#39;re testing older Cyrus versions</span>
+make install-binsymlinks    <span class="c1"># Only needed if you&#39;re testing older Cyrus versions</span>
 </pre></div>
 </div>
 </div>
@@ -994,16 +994,16 @@ R$+ $| $*             $: $1
 <span class="gd">--- a/cf/m4/proto.m4</span>
 <span class="gi">+++ b/cf/m4/proto.m4</span>
 <span class="gu">@@ -1147,6 +1147,10 @@ dnl if no match, change marker to prevent a second @domain lookup</span>
-<span class="w"> </span>R&lt;@&gt; $+ + $* &lt; @ $+ . &gt;      $: &lt; $(virtuser @ $3 $@ $1 $@ $2 $@ +$2 $: ! $) &gt; $1 + $2 &lt; @ $3 . &gt;
-<span class="w"> </span>dnl without +detail
-<span class="w"> </span>R&lt;@&gt; $+ &lt; @ $+ . &gt;           $: &lt; $(virtuser @ $2 $@ $1 $: @ $) &gt; $1 &lt; @ $2 . &gt;
+ R&lt;@&gt; $+ + $* &lt; @ $+ . &gt;      $: &lt; $(virtuser @ $3 $@ $1 $@ $2 $@ +$2 $: ! $) &gt; $1 + $2 &lt; @ $3 . &gt;
+ dnl without +detail
+ R&lt;@&gt; $+ &lt; @ $+ . &gt;           $: &lt; $(virtuser @ $2 $@ $1 $: @ $) &gt; $1 &lt; @ $2 . &gt;
 <span class="gi">+dnl If a virtual address is not in the virtusertable, but cyrus knows about the address, deliver it.</span>
 <span class="gi">+R&lt; error : $-.$-.$- : $+ &gt; $+ &lt; @ $={VirtHost} . &gt;           $: &lt; error : $1.$2.$3 : $4 &gt; $5 &lt; $6 . &gt; $| $(cyrus  $5@$6 $: $)</span>
 <span class="gi">+R&lt; error : $-.$-.$- : $+ &gt; $* &lt; $* . &gt; $| $*&lt;OK&gt;             $#cyrusv2 $@ $: $5@$6</span>
 <span class="gi">+R&lt; error : $-.$-.$- : $+ &gt; $* $| $*&lt;TMPFS&gt;           $#error $@ 4.3.0 $: &quot;451 Temporary system failure. Please try again later.&quot;</span>
-<span class="w"> </span>dnl no match
-<span class="w"> </span>R&lt;@&gt; $+                              $: $1
-<span class="w"> </span>dnl remove mark
+ dnl no match
+ R&lt;@&gt; $+                              $: $1
+ dnl remove mark
 </pre></div>
 </div>
 <p>Where many spaces in a row stand for the tabulator key.</p>
@@ -1015,13 +1015,13 @@ R$+ $| $*             $: $1
 <span class="gd">--- a/cf/mailer/cyrusv2.m4</span>
 <span class="gi">+++ b/cf/mailer/cyrusv2.m4</span>
 <span class="gu">@@ -11,7 +11,7 @@ PUSHDIVERT(-1)</span>
-<span class="w"> </span>#
+ #
 
-<span class="w"> </span>_DEFIFNOT(`_DEF_CYRUSV2_MAILER_FLAGS&#39;, `lsDFMnqXz&#39;)
+ _DEFIFNOT(`_DEF_CYRUSV2_MAILER_FLAGS&#39;, `lsDFMnqXz&#39;)
 <span class="gd">-_DEFIFNOT(`CYRUSV2_MAILER_FLAGS&#39;, `A@/:|m&#39;)</span>
 <span class="gi">+_DEFIFNOT(`CYRUSV2_MAILER_FLAGS&#39;, `8m&#39;)</span>
-<span class="w"> </span>ifdef(`CYRUSV2_MAILER_ARGS&#39;,, `define(`CYRUSV2_MAILER_ARGS&#39;, `FILE /var/imap/socket/lmtp&#39;)&#39;)
-<span class="w"> </span>define(`_CYRUSV2_QGRP&#39;, `ifelse(defn(`CYRUSV2_MAILER_QGRP&#39;),`&#39;,`&#39;, ` Q=CYRUSV2_MAILER_QGRP,&#39;)&#39;)dnl
+ ifdef(`CYRUSV2_MAILER_ARGS&#39;,, `define(`CYRUSV2_MAILER_ARGS&#39;, `FILE /var/imap/socket/lmtp&#39;)&#39;)
+ define(`_CYRUSV2_QGRP&#39;, `ifelse(defn(`CYRUSV2_MAILER_QGRP&#39;),`&#39;,`&#39;, ` Q=CYRUSV2_MAILER_QGRP,&#39;)&#39;)dnl
 </pre></div>
 </div>
 <p>The <cite>8</cite> flag means, that Cyrus LMTPd can accept 8bit data and sendmail will not convert 8bit data to 7bit before passing it to Cyrus IMAP.  The <cite>A&#64;/:|</cite> functionality will be performed by the <cite>local</cite> mailer, before the <cite>cyrusv2</cite> mailer is called.  The <cite>cyrus2v</cite> mailer is used only to pass data to Cyrus IMAP, after it is verified, that Cyrus IMAP hosts a particular mailbox.  Thus the <cite>cyrus2v</cite> mailer does not call the <cite>localaddr=5</cite> rule set in order to avoid loops. (If the <cite>cyrusv2</cite> mailer calls the <cite>localaddr=5</cite> ruleset and the <cite>localaddr=5</cite> ruleset calls the <cite>cyrusv2</cite> mailer, there is an endless loop).</p>
@@ -1512,7 +1512,7 @@ SMTP commands.</p>
 </div>
 <p>You should see a prompt appear:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Trying</span> <span class="p">::</span><span class="mf">1.</span><span class="o">..</span>
-<span class="n">Trying</span> <span class="mf">127.0.0.1</span><span class="o">...</span>
+<span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
 <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
 <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
 <span class="mi">220</span> <span class="o">...</span> <span class="n">ESMTP</span> <span class="n">Sendmail</span> <span class="o">...</span>

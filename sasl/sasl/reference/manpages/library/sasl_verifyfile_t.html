@@ -489,18 +489,18 @@
 <span id="sasl-reference-manpages-library-sasl-verifyfile-t"></span><span id="std-saslman-sasl_verifyfile_t-3"></span><span id="std:saslman-sasl_verifyfile_t(3)"></span><h1><strong>sasl_verifyfile_t</strong> - The SASL file verification<a class="headerlink" href="#sasl-verifyfile-t-the-sasl-file-verification" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
 
-<span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">SASL_VRFY_PLUGIN</span><span class="p">,</span><span class="w"> </span><span class="cm">/* a DLL/shared library plugin */</span>
-<span class="w">    </span><span class="n">SASL_VRFY_CONF</span><span class="p">,</span><span class="w">   </span><span class="cm">/* a configuration file */</span>
-<span class="w">    </span><span class="n">SASL_VRFY_PASSWD</span><span class="p">,</span><span class="w"> </span><span class="cm">/* a password storage file */</span>
-<span class="w">    </span><span class="n">SASL_VRFY_OTHER</span><span class="w">   </span><span class="cm">/* some other file type */</span>
-<span class="p">}</span><span class="w"> </span><span class="n">sasl_verify_type_t</span>
+<span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
+    <span class="n">SASL_VRFY_PLUGIN</span><span class="p">,</span> <span class="cm">/* a DLL/shared library plugin */</span>
+    <span class="n">SASL_VRFY_CONF</span><span class="p">,</span>   <span class="cm">/* a configuration file */</span>
+    <span class="n">SASL_VRFY_PASSWD</span><span class="p">,</span> <span class="cm">/* a password storage file */</span>
+    <span class="n">SASL_VRFY_OTHER</span>   <span class="cm">/* some other file type */</span>
+<span class="p">}</span> <span class="n">sasl_verify_type_t</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">sasl_verifyfile_t</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span>
-<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="p">,</span>
-<span class="w">                </span><span class="n">sasl_verify_type_t</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
+<span class="kt">int</span> <span class="n">sasl_verifyfile_t</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
+                <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span>
+                <span class="n">sasl_verify_type_t</span> <span class="n">type</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

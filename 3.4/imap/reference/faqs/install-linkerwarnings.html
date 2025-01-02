@@ -797,8 +797,8 @@ components to use whichever version is appropriate.</p>
 <p>If two different versions of the OpenSSL libraries linked into one program, it
 results in program instability. To check if this is happening, look for warnings
 from the linker like the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/bin/ld:<span class="w"> </span>warning:<span class="w"> </span>libssl.so.10,<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>/usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so,<span class="w"> </span>may<span class="w"> </span>conflict<span class="w"> </span>with<span class="w"> </span>libssl.so.1.1
-/usr/bin/ld:<span class="w"> </span>warning:<span class="w"> </span>libcrypto.so.10,<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>/usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so,<span class="w"> </span>may<span class="w"> </span>conflict<span class="w"> </span>with<span class="w"> </span>libcrypto.so.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/bin/ld: warning: libssl.so.10, needed by /usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so, may conflict with libssl.so.1.1
+/usr/bin/ld: warning: libcrypto.so.10, needed by /usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so, may conflict with libcrypto.so.1.1
 </pre></div>
 </div>
 <p>In this case, ClamAV is still linked against OpenSSL 1.0, while Cyrus is

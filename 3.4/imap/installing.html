@@ -789,9 +789,9 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option given to <code class="docutils literal notranslate"><span class="pre">configure</span></code> (during <a class="reference internal" href="developer/compiling.html#compiling"><span class="std std-ref">compilation</span></a>) sets where Cyrus is installed to.</p>
 <p>If unspecified, it will go to whatever destination is your system default (often <code class="docutils literal notranslate"><span class="pre">/usr/local</span></code>).
 To check: the final output of the configure step will display where a <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> will install to.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install<span class="w">  </span><span class="c1"># optional if you&#39;re just developing on this machine</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make install  <span class="c1"># optional if you&#39;re just developing on this machine</span>
 
-make<span class="w"> </span>install-binsymlinks<span class="w">    </span><span class="c1"># Only needed if you&#39;re testing older Cyrus versions</span>
+make install-binsymlinks    <span class="c1"># Only needed if you&#39;re testing older Cyrus versions</span>
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@ SMTP commands.</p>
 </div>
 <p>You should see a prompt appear:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Trying</span> <span class="p">::</span><span class="mf">1.</span><span class="o">..</span>
-<span class="n">Trying</span> <span class="mf">127.0.0.1</span><span class="o">...</span>
+<span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
 <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
 <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
 <span class="mi">220</span> <span class="o">...</span> <span class="n">ESMTP</span> <span class="n">Sendmail</span> <span class="o">...</span>

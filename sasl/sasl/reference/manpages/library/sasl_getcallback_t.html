@@ -489,12 +489,12 @@
 <span id="sasl-reference-manpages-library-sasl-getcallback-t"></span><span id="std-saslman-sasl_getcallback_t-3"></span><span id="std:saslman-sasl_getcallback_t(3)"></span><h1><strong>sasl_getcallback_t</strong> - callback function to lookup a sasl_callback_t for a connection<a class="headerlink" href="#sasl-getcallback-t-callback-function-to-lookup-a-sasl-callback-t-for-a-connection" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/saslplug.h&gt;</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/saslplug.h&gt;</span><span class="cp"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">sasl_getcallback_t</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-<span class="w">               </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">callbacknum</span><span class="p">,</span>
-<span class="w">                         </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">**</span><span class="n">proc</span><span class="p">)(</span><span class="w"> </span><span class="p">),</span>
-<span class="w">                         </span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="n">pcontext</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">sasl_getcallback_t</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+               <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">callbacknum</span><span class="p">,</span>
+                         <span class="kt">int</span> <span class="p">(</span><span class="o">**</span><span class="n">proc</span><span class="p">)(</span> <span class="p">),</span>
+                         <span class="kt">void</span> <span class="o">**</span><span class="n">pcontext</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

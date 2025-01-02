@@ -807,20 +807,20 @@
 2.2, and the patches in the cyrus-imapd repository are against that version.</p>
 <p>To build the library:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># choose your own adventures here</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">XAPIAN_DIR</span><span class="o">=</span>/opt/xapian
-<span class="nb">export</span><span class="w"> </span><span class="nv">CYRUS_DIR</span><span class="o">=</span>/opt/cyrus
-<span class="nb">export</span><span class="w"> </span><span class="nv">SRC_DIR</span><span class="o">=</span>/opt/src
+<span class="nb">export</span> <span class="nv">XAPIAN_DIR</span><span class="o">=</span>/opt/xapian
+<span class="nb">export</span> <span class="nv">CYRUS_DIR</span><span class="o">=</span>/opt/cyrus
+<span class="nb">export</span> <span class="nv">SRC_DIR</span><span class="o">=</span>/opt/src
 
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$SRC_DIR</span>
-wget<span class="w"> </span>http://oligarchy.co.uk/xapian/1.2.21/xapian-core-1.2.21.tar.xz
-tar<span class="w"> </span>-xf<span class="w"> </span>xapian-core-1.2.21.tar.xz
-<span class="nb">cd</span><span class="w"> </span>xapian-core-1.2.21
-tar<span class="w"> </span>-xf<span class="w"> </span><span class="nv">$cyrusdir</span>/contrib/xapian_quilt.tar.gz
-<span class="nv">QUILT_PATCHES</span><span class="o">=</span>xapian_quilt<span class="w"> </span>quilt<span class="w"> </span>push<span class="w"> </span>-a
-autoreconf<span class="w"> </span>-v<span class="w"> </span>-i
-./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$XAPIAN_DIR</span>
+<span class="nb">cd</span> <span class="nv">$SRC_DIR</span>
+wget http://oligarchy.co.uk/xapian/1.2.21/xapian-core-1.2.21.tar.xz
+tar -xf xapian-core-1.2.21.tar.xz
+<span class="nb">cd</span> xapian-core-1.2.21
+tar -xf <span class="nv">$cyrusdir</span>/contrib/xapian_quilt.tar.gz
+<span class="nv">QUILT_PATCHES</span><span class="o">=</span>xapian_quilt quilt push -a
+autoreconf -v -i
+./configure --prefix<span class="o">=</span><span class="nv">$XAPIAN_DIR</span>
 make
-make<span class="w"> </span>install
+make install
 </pre></div>
 </div>
 <p>Then follow on with the Cyrus <a class="reference internal" href="installguide.html#imapinstallguide"><span class="std std-ref">compilation instructions</span></a>, adding <code class="docutils literal notranslate"><span class="pre">--enable-xapian</span></code> to the flags to <code class="docutils literal notranslate"><span class="pre">./configure</span></code></p>

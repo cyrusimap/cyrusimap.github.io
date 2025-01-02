@@ -792,16 +792,16 @@
 </div>
 <div class="section" id="synopsis">
 <h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span><span class="w"> </span><span class="nv">cyradm</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">authid</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">authz</span><span class="w"> </span><span class="n">authzid</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="p">[</span><span class="k">no</span><span class="p">]</span><span class="n">rc</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">systemrc</span><span class="w"> </span><span class="n">file</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">userrc</span><span class="w"> </span><span class="n">file</span><span class="p">]</span><span class="w"> </span><span class="o">\</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">port</span><span class="w"> </span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">auth</span><span class="w"> </span><span class="n">mechanism</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">server</span><span class="p">]</span><span class="w"> </span><span class="n">server</span>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span> <span class="nv">cyradm</span> <span class="p">[</span><span class="o">--</span><span class="n">user</span> <span class="n">authid</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">authz</span> <span class="n">authzid</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="p">[</span><span class="k">no</span><span class="p">]</span><span class="n">rc</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">systemrc</span> <span class="n">file</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">userrc</span> <span class="n">file</span><span class="p">]</span> <span class="o">\</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="o">--</span><span class="n">port</span> <span class="n">n</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">auth</span> <span class="n">mechanism</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">server</span><span class="p">]</span> <span class="n">server</span>
 </pre></div>
 </div>
 <p>but possibly</p>
-<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span><span class="w"> </span><span class="nv">perl</span><span class="w"> </span><span class="o">-</span><span class="nn">MCyrus::IMAP::</span><span class="n">Shell</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s">&#39;run(&quot;myscript&quot;)&#39;</span>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span> <span class="nv">perl</span> <span class="o">-</span><span class="nn">MCyrus::IMAP::</span><span class="n">Shell</span> <span class="o">-</span><span class="n">e</span> <span class="s">&#39;run(&quot;myscript&quot;)&#39;</span>
 </pre></div>
 </div>
 <p>or even (not recommended)</p>
-<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="nn">Cyrus::IMAP::Admin::Shell</span><span class="p">;</span>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nn">Cyrus::IMAP::Admin::Shell</span><span class="p">;</span>
 
 <span class="n">run</span><span class="p">(</span><span class="s">&#39;myscriptname&#39;</span><span class="p">);</span>
 </pre></div>
@@ -919,11 +919,11 @@ corresponding user.</p>
 <li><p>Example Usage</p></li>
 </ul>
 <blockquote>
-<div><div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`cm user.john`</span>
-<span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
-<span class="n">user</span><span class="o">.</span><span class="n">john</span><span class="w"> </span><span class="p">(</span><span class="o">\</span><span class="n">HasNoChildren</span><span class="p">)</span>
-<span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`lam user.john`</span>
-<span class="n">john</span><span class="w"> </span><span class="n">lrswipkxtecda</span>
+<div><div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`cm user.john`</span>
+<span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
+<span class="n">user</span><span class="o">.</span><span class="n">john</span> <span class="p">(</span><span class="o">\</span><span class="n">HasNoChildren</span><span class="p">)</span>
+<span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lam user.john`</span>
+<span class="n">john</span> <span class="n">lrswipkxtecda</span>
 </pre></div>
 </div>
 <p>Note that in the above example, the <code class="docutils literal notranslate"><span class="pre">unixhierarchysep</span></code> setting in
@@ -936,11 +936,11 @@ follows:</p>
 <li><p>Example Usage with <code class="docutils literal notranslate"><span class="pre">unixhierarchysep:</span> <span class="pre">1</span></code></p></li>
 </ul>
 <blockquote>
-<div><div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`cm user/john`</span>
-<span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
-<span class="n">user</span><span class="o">/</span><span class="n">john</span><span class="w"> </span><span class="p">(</span><span class="o">\</span><span class="n">HasNoChildren</span><span class="p">)</span>
-<span class="n">localhost</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">command:</span><span class="sb">`lam user/john`</span>
-<span class="n">john</span><span class="w"> </span><span class="n">lrswipkxtecda</span>
+<div><div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`cm user/john`</span>
+<span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lm`</span>
+<span class="n">user</span><span class="o">/</span><span class="n">john</span> <span class="p">(</span><span class="o">\</span><span class="n">HasNoChildren</span><span class="p">)</span>
+<span class="n">localhost</span><span class="o">&gt;</span> <span class="p">:</span><span class="n">command:</span><span class="sb">`lam user/john`</span>
+<span class="n">john</span> <span class="n">lrswipkxtecda</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1248,7 +1248,7 @@ them (unless overridden by a mailbox annotation).</p>
 squat|/&lt;explicit annotation&gt;].</p>
 <p>Note that <em>value</em> with a leading backslash must be escaped with an
 additional backslash.  For example:</p>
-<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">setmetadata</span><span class="w"> </span><span class="o">--</span><span class="n">private</span><span class="w"> </span><span class="n">Spam</span><span class="w"> </span><span class="n">specialuse</span><span class="w"> </span><span class="s">&quot;\\Junk&quot;</span>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">setmetadata</span> <span class="o">--</span><span class="n">private</span> <span class="n">Spam</span> <span class="n">specialuse</span> <span class="s">&quot;\\Junk&quot;</span>
 </pre></div>
 </div>
 <p>Note, too, that &quot;private&quot; annotations are private to the user currently
@@ -1257,7 +1257,7 @@ annotations for another user you must authorize as that user.</p>
 <p>In addition to the use of optional flag <strong>--private</strong>, one may use a more
 explicit syntax, prefixing the annotation with '/shared/' or '/private/'
 as in this example:</p>
-<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">setmetadata</span><span class="w"> </span><span class="n">Spam</span><span class="w"> </span><span class="sr">/private/s</span><span class="n">pecialuse</span><span class="w"> </span><span class="s">&quot;\\Junk&quot;</span>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="n">setmetadata</span> <span class="n">Spam</span> <span class="sr">/private/s</span><span class="n">pecialuse</span> <span class="s">&quot;\\Junk&quot;</span>
 </pre></div>
 </div>
 <p>aliases: <code class="docutils literal notranslate"><span class="pre">setmd</span></code></p>
