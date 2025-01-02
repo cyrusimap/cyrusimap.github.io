@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>OpenSSL Version Mismatches &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,8 +798,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="openssl-version-mismatches">
-<span id="openssl-versions"></span><span id="linker-warnings"></span><h1>OpenSSL Version Mismatches<a class="headerlink" href="#openssl-version-mismatches" title="Permalink to this headline">¶</a></h1>
+  <section id="openssl-version-mismatches">
+<span id="openssl-versions"></span><span id="linker-warnings"></span><h1>OpenSSL Version Mismatches<a class="headerlink" href="#openssl-version-mismatches" title="Permalink to this heading">¶</a></h1>
 <p>Your system may have multiple versions of OpenSSL on it. it is possible that
 some libraries which Cyrus can use might be linked against different versions of
 the OpenSSL libraries, or that those may be different from the version which
@@ -807,13 +812,13 @@ components to use whichever version is appropriate.</p>
 <p>If two different versions of the OpenSSL libraries linked into one program, it
 results in program instability. To check if this is happening, look for warnings
 from the linker like the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/bin/ld: warning: libssl.so.10, needed by /usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so, may conflict with libssl.so.1.1
-/usr/bin/ld: warning: libcrypto.so.10, needed by /usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so, may conflict with libcrypto.so.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/bin/ld:<span class="w"> </span>warning:<span class="w"> </span>libssl.so.10,<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>/usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so,<span class="w"> </span>may<span class="w"> </span>conflict<span class="w"> </span>with<span class="w"> </span>libssl.so.1.1
+/usr/bin/ld:<span class="w"> </span>warning:<span class="w"> </span>libcrypto.so.10,<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>/usr/lib/gcc/x86_64-redhat-linux/7/../../../../lib64/libclamav.so,<span class="w"> </span>may<span class="w"> </span>conflict<span class="w"> </span>with<span class="w"> </span>libcrypto.so.1.1
 </pre></div>
 </div>
 <p>In this case, ClamAV is still linked against OpenSSL 1.0, while Cyrus is
 building with OpenSSL 1.1.</p>
-</div>
+</section>
 
 
           </div>
@@ -836,7 +841,7 @@ building with OpenSSL 1.1.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 13 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -859,9 +864,12 @@ building with OpenSSL 1.1.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

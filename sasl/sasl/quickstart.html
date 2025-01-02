@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Quickstart guide &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -101,7 +106,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -439,7 +444,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -480,16 +485,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="quickstart-guide">
-<span id="quickstart"></span><h1>Quickstart guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this headline">¶</a></h1>
+  <section id="quickstart-guide">
+<span id="quickstart"></span><h1>Quickstart guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this heading">¶</a></h1>
 <p>This document offers a general overview of the Cyrus SASL library.
 The Cyrus SASL Libray provides applications with an implementation
 of the Simple Authentication and Security Layer (RFC2222), and
 several authentication mechanisms.  Users interested in the “big picture”
 of what is provided by the library should read about
 <a class="reference internal" href="components.html#components"><span class="std std-ref">Cyrus SASL Components</span></a>.</p>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h2>
 <p>The following <a class="reference internal" href="authentication_mechanisms.html#authentication-mechanisms"><span class="std std-ref">Authentication Mechanisms</span></a> are included in
 this distribution:</p>
 <ul class="simple">
@@ -521,9 +526,9 @@ the <a class="reference internal" href="developer/programming.html#programming">
 <li><p>no libsasl calls are made after sasl_done() is begun</p></li>
 <li><p>when using GSSAPI, you use a thread-safe GSS / Kerberos 5 library.</p></li>
 </ul>
-</div>
-<div class="section" id="typical-installation">
-<h2>Typical Installation<a class="headerlink" href="#typical-installation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="typical-installation">
+<h2>Typical Installation<a class="headerlink" href="#typical-installation" title="Permalink to this heading">¶</a></h2>
 <p>If you are upgrading from Cyrus SASLv1, please see <a class="reference internal" href="upgrading.html#upgrading-v1-v2"><span class="std std-ref">upgrade guide</span></a>.</p>
 <p>Please see the <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation guide</span></a> for instructions
 on how to install this package.</p>
@@ -534,9 +539,9 @@ value of <code class="docutils literal notranslate"><span class="pre">--with-plu
 itself defaults to <code class="docutils literal notranslate"><span class="pre">/usr/local/lib</span></code>).</p>
 <p>Looking to <a class="reference internal" href="macosx.html#install-macos"><span class="std std-ref">Install on Mac OSX?</span></a></p>
 <p>Looking to <a class="reference internal" href="windows.html#install-windows"><span class="std std-ref">Install on Windows?</span></a></p>
-</div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
 <p>There are two main ways to configure the SASL library for a given
 application.  The first (and typically easiest) is to make use
 of the application’s configuration files.  Provided the application supports it
@@ -551,8 +556,8 @@ the <code class="docutils literal notranslate"><span class="pre">getopt</span></
 the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at the
 <a class="reference internal" href="sysadmin.html#sysadmin"><span class="std std-ref">Sysadmin guide</span></a> and the information on <a class="reference internal" href="options.html#options"><span class="std std-ref">options</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -575,7 +580,7 @@ the SASL configuration files.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -599,9 +604,12 @@ the SASL configuration files.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

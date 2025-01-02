@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Tips for Hacking on Cyrus &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,16 +763,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="tips-for-hacking-on-cyrus">
-<span id="cyrus-hacking"></span><h1>Tips for Hacking on Cyrus<a class="headerlink" href="#tips-for-hacking-on-cyrus" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="memory-allocation">
-<h2>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h2>
+  <section id="tips-for-hacking-on-cyrus">
+<span id="cyrus-hacking"></span><h1>Tips for Hacking on Cyrus<a class="headerlink" href="#tips-for-hacking-on-cyrus" title="Permalink to this heading">¶</a></h1>
+<section id="memory-allocation">
+<h2>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this heading">¶</a></h2>
 <p>All Cyrus memory allocation should be done through the <code class="docutils literal notranslate"><span class="pre">libcyrus</span></code> functions. These are all written to correctly call fatal() in the event of an out-of-memory condition.</p>
 <p>In addition to xmalloc and xrealloc, we provide replacements for strdup, strndup, and a malloc that will guarantee zeroed block of memory (xzmalloc).</p>
 <p>If you are going to need to do a large number of small allocations, and then free them all at once, you should look at the memory pool routines, which are much faster, but will leak memory until you free the entire pool at once.</p>
-</div>
-<div class="section" id="strlcpy-vs-strncpy-vs-memcpy">
-<h2>strlcpy vs strncpy vs memcpy<a class="headerlink" href="#strlcpy-vs-strncpy-vs-memcpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="strlcpy-vs-strncpy-vs-memcpy">
+<h2>strlcpy vs strncpy vs memcpy<a class="headerlink" href="#strlcpy-vs-strncpy-vs-memcpy" title="Permalink to this heading">¶</a></h2>
 <p>Use strlcpy when the size of the buffer is known, e.g.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
 <span class="n">strlcpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
@@ -784,27 +789,27 @@
 <span class="n">buf</span><span class="p">[</span><span class="n">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\0</span><span class="s1">&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="map-refresh-and-map-free">
-<h2>map_refresh and map_free<a class="headerlink" href="#map-refresh-and-map-free" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="map-refresh-and-map-free">
+<h2>map_refresh and map_free<a class="headerlink" href="#map-refresh-and-map-free" title="Permalink to this heading">¶</a></h2>
 <p>In many cases, it is far more effective to read a file via the operating system’s mmap facility than it is to via the traditional read() and lseek system calls. To this end, Cyrus provides an operating system independent wrapper around the mmap() services (or lack thereof) of the operating system.</p>
 <p>Cyrus currently only supports read-only memory maps, all writes back to a file need to be done via the more traditional facilities. This is to enable very low-performance support for operating systems which do not provide an mmap() facility via a fake userspace mmap.</p>
 <p>To create a map, simply call map_refresh on the map (details are in lib/map.h). To free it, call map_free on the same map.</p>
 <p>Despite the fact that the maps are read-only, it is often useful to open the file descriptors O_RDWR, especially if the file decriptors could possibly be used for writing elsewhere in the code. Some operating systems REQUIRE file descriptors that are mmap()ed to be opened O_RDWR, so just do it.</p>
-</div>
-<div class="section" id="network-functionality">
-<h2>Network Functionality<a class="headerlink" href="#network-functionality" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="network-functionality">
+<h2>Network Functionality<a class="headerlink" href="#network-functionality" title="Permalink to this heading">¶</a></h2>
 <p>Read about <a class="reference internal" href="../reference/admin/protlayer.html#admin-protlayer"><span class="std std-ref">Cyrus IMAP Prot Layer</span></a>.</p>
-</div>
-<div class="section" id="authorization-modules">
-<h2>Authorization modules<a class="headerlink" href="#authorization-modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="authorization-modules">
+<h2>Authorization modules<a class="headerlink" href="#authorization-modules" title="Permalink to this heading">¶</a></h2>
 <p><strong>TO DO:</strong></p>
 <blockquote>
 <div><p>Describe what the authorization modules do, what API needs to be implemented, etc. Also possibly discuss the auth_pts module.</p>
 </div></blockquote>
-</div>
-<div class="section" id="other">
-<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Command line apps should link cli_fatal.o so they all fatal() in the same way, unless there is a really good reason they need to do something unique.</p></li>
 <li><dl class="simple">
@@ -820,9 +825,9 @@
 </li>
 <li><p>All services should have a shut_down call. It should be the ONLY way of exiting the application (every “clean” exit from the system should be via shut_down()). fatal() should always make an attempt to call shut_down() if it can (though it should have a recursive fatal() trap just in case). Similarly, commandline utilities probably don’t need a shut_down().</p></li>
 </ul>
-</div>
-<div class="section" id="file-locking">
-<h2>File Locking<a class="headerlink" href="#file-locking" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="file-locking">
+<h2>File Locking<a class="headerlink" href="#file-locking" title="Permalink to this heading">¶</a></h2>
 <p>In order to guard against deadlocks, we want to maintain
 the same order of acquiring locks throughout the system
 (this may be violated in one or two places, but when it is it is
@@ -837,8 +842,8 @@ by these rules, we can avoid deadlock.</p>
 </pre></div>
 </div>
 <p>These try to go from least general to most general, so we hold the largest locks for the shortest period of time.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -861,7 +866,7 @@ by these rules, we can avoid deadlock.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 24 2016
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -884,9 +889,12 @@ by these rules, we can avoid deadlock.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

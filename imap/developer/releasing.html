@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Releasing Cyrus IMAP - normal releases &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,9 +798,9 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="releasing-cyrus-imap-normal-releases">
-<span id="imap-developer-releasing"></span><h1><a class="toc-backref" href="#id1">Releasing Cyrus IMAP - normal releases</a><a class="headerlink" href="#releasing-cyrus-imap-normal-releases" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
+  <section id="releasing-cyrus-imap-normal-releases">
+<span id="imap-developer-releasing"></span><h1><a class="toc-backref" href="#id1" role="doc-backlink">Releasing Cyrus IMAP - normal releases</a><a class="headerlink" href="#releasing-cyrus-imap-normal-releases" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#releasing-cyrus-imap-normal-releases" id="id1">Releasing Cyrus IMAP - normal releases</a></p>
@@ -812,7 +817,7 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>These instructions are specifically for doing point releases (x.y.z) from
 branches that contain RST-based documentation and infrastructure.  This
 includes 2.5 and later versions.</p>
@@ -822,17 +827,17 @@ includes 2.5 and later versions.</p>
 <p>For major (x.y) releases, you will follow this process for publishing the
 release tarballs, but there are additional steps before and around that,
 detailed at <a class="reference internal" href="major-releasing.html#imap-developer-major-releasing"><span class="std std-ref">Releasing Cyrus IMAP - major releases</span></a>.</p>
-<div class="section" id="prerequisites">
-<h2><a class="toc-backref" href="#id2">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<section id="prerequisites">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <p>You will need a GPG key that you can use for signing.  Ellie doesn't remember
 off the top of her head how to create one of these, so for now just read the
 manual like she did. :)</p>
 <p>Once you have a GPG key, it's helpful to upload your public key to
 <a class="reference external" href="http://pgp.mit.edu">the MIT key-server</a></p>
 <p>And you need permission to send to the cyrus-announce mailing list.</p>
-</div>
-<div class="section" id="order-of-operations">
-<h2><a class="toc-backref" href="#id3">Order of operations</a><a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="order-of-operations">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Order of operations</a><a class="headerlink" href="#order-of-operations" title="Permalink to this heading">¶</a></h2>
 <p>Sometimes you're releasing several new versions all at once(ish), for example
 maybe there's been a security fix that affected 2.4, 2.5 and 3.0.</p>
 <p>Github's release page will put a &quot;Latest Release&quot; graphic on the release with
@@ -844,9 +849,9 @@ through the older ones, you'll get Github saying &quot;2.5.15 is the Latest
 Release&quot; even though 3.0.13 was also just released... so, even though
 releasing the current-stable fix feels more urgent, suck it up and get the
 older-branch ones out first.</p>
-</div>
-<div class="section" id="release-notes">
-<h2><a class="toc-backref" href="#id4">Release notes</a><a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="release-notes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Release notes</a><a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h2>
 <p>Write up the release notes, and add them to the appropriate location under
 <code class="docutils literal notranslate"><span class="pre">docsrc/imap/download/release-notes/</span></code>.  They will not yet be linked up.</p>
 <p>Commit and push your changes, and then wait for cyrusimap.org to rebuild
@@ -855,9 +860,9 @@ new release notes will be available at their direct URL -- easiest way to
 find it is to browse to some earlier version's release notes, then change
 version in the address bar to load up the new one.  Confirm that they are
 correct and complete.</p>
-</div>
-<div class="section" id="pre-release-testing">
-<h2><a class="toc-backref" href="#id5">Pre-release testing</a><a class="headerlink" href="#pre-release-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pre-release-testing">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Pre-release testing</a><a class="headerlink" href="#pre-release-testing" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Ensure your git repository is clean, using something like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code>.
 Note that this command will destroy any uncommitted work you might have,
@@ -904,9 +909,9 @@ which failures are ignorable, and which should be a source of stress.</p>
 <p>If in doubt, try building and testing the previous release from the same
 series, and compare the test results.</p>
 </div>
-</div>
-<div class="section" id="linking-up-release-notes">
-<h2><a class="toc-backref" href="#id6">Linking up release notes</a><a class="headerlink" href="#linking-up-release-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="linking-up-release-notes">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Linking up release notes</a><a class="headerlink" href="#linking-up-release-notes" title="Permalink to this heading">¶</a></h2>
 <p>The linkage of release notes is handled in <code class="docutils literal notranslate"><span class="pre">docsrc/conf.py</span></code>.  There's a bunch
 of places it needs to be updated.  We should iterate these in detail at some
 point, but for now the easiest thing to do is look for lines containing the
@@ -917,9 +922,9 @@ will start showing the new version as the &quot;current&quot; version at the nex
 update.  So ellie likes to do this step at about 5-10 past the hour, which then
 gives her 50 minutes to finish the rest of the release process without the
 website updating before the downloads are available.</p>
-</div>
-<div class="section" id="version-tagging">
-<h2><a class="toc-backref" href="#id7">Version tagging</a><a class="headerlink" href="#version-tagging" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="version-tagging">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Version tagging</a><a class="headerlink" href="#version-tagging" title="Permalink to this heading">¶</a></h2>
 <p>Note: it is absolutely critical that your repository is clean and your local
 commits have been pushed upstream at this point.  If they are not, and if
 anybody else pushes in the meantime, you will end up with a mess.</p>
@@ -949,9 +954,9 @@ just in case something happens between now and uploading.</p></li>
 <li><p>Push the tag upstream: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;version&gt;</span></code> (assuming your
 remote is named &quot;ci&quot;).</p></li>
 </ol>
-</div>
-<div class="section" id="inter-version-website-consistency">
-<h2><a class="toc-backref" href="#id8">Inter-version website consistency</a><a class="headerlink" href="#inter-version-website-consistency" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="inter-version-website-consistency">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Inter-version website consistency</a><a class="headerlink" href="#inter-version-website-consistency" title="Permalink to this heading">¶</a></h2>
 <p>The website is built from an amalgamation of documentation from:</p>
 <ul>
 <li><p>The current stable cyrus-imapd branch (top level)</p></li>
@@ -977,9 +982,9 @@ bother to copy release notes back to this branch, a naive cherry-pick will
 not put them in the right place!</p>
 <p>This step often gets forgotten, so if you actually follow it, and notice
 some missing versions, just go ahead and add them while you're there.</p>
-</div>
-<div class="section" id="uploading">
-<h2><a class="toc-backref" href="#id9">Uploading</a><a class="headerlink" href="#uploading" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="uploading">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Uploading</a><a class="headerlink" href="#uploading" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section does NOT apply to releases from the master branch.  We
@@ -1001,14 +1006,14 @@ checkbox</p></li>
 <li><p>Click &quot;Save&quot;.  The commit message from the tag annotation will be used
 as the release description.</p></li>
 </ol>
-</div>
-<div class="section" id="tell-the-world">
-<h2><a class="toc-backref" href="#id10">Tell the world</a><a class="headerlink" href="#tell-the-world" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tell-the-world">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Tell the world</a><a class="headerlink" href="#tell-the-world" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Send an announcement to the info-cyrus and cyrus-announce lists.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1031,7 +1036,7 @@ as the release description.</p></li>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Feb 03 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1054,9 +1059,12 @@ as the release description.</p></li>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Index API &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -787,17 +792,17 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-api-index"></span><div class="section" id="index-api">
-<h1>Index API<a class="headerlink" href="#index-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+  <span class="target" id="imap-developer-api-index"></span><section id="index-api">
+<h1>Index API<a class="headerlink" href="#index-api" title="Permalink to this heading">¶</a></h1>
+<section id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">¶</a></h2>
 <p>The Index API is implemented in <code class="docutils literal notranslate"><span class="pre">imap/index.h</span></code> and <code class="docutils literal notranslate"><span class="pre">imap/index.c</span></code>.
 It provides a snapshot view into the underlying mailbox (see <cite>the
 Mailbox API documentation &lt;mailbox-api.html&gt;</cite>) which obeys IMAP
 semantics, as well as all the searching and sorting logic.</p>
-</div>
-<div class="section" id="opening-and-closing">
-<h2>Opening and closing<a class="headerlink" href="#opening-and-closing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="opening-and-closing">
+<h2>Opening and closing<a class="headerlink" href="#opening-and-closing" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">index_state</span> <span class="o">*</span><span class="n">state</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="n">struct</span> <span class="n">index_init</span> <span class="n">init</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">r</span><span class="p">;</span>
@@ -819,9 +824,9 @@ semantics, as well as all the searching and sorting logic.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">index_init</span></code> interface sucks. So does passing lots of parameters.
 For now, this will do! Just pass NULL if you're only reading, or use the
 code already in imapd and you'll be fine.</p>
-</div>
-<div class="section" id="the-index-model">
-<h2>The Index Model<a class="headerlink" href="#the-index-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-index-model">
+<h2>The Index Model<a class="headerlink" href="#the-index-model" title="Permalink to this heading">¶</a></h2>
 <p>Ok - I think a few words about the index model and how it differs from
 direct mailbox access are needed! In the past, index.c used pointers
 directly into the mmaped <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> file and maintained the old
@@ -850,8 +855,8 @@ generated any network traffic. Now start generating the response.</p>
 <li><p>call <code class="docutils literal notranslate"><span class="pre">index_tellchanges</span></code> to tell about all other changes</p></li>
 <li><p>return any response that the command itself required</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -874,7 +879,7 @@ generated any network traffic. Now start generating the response.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -897,9 +902,12 @@ generated any network traffic. Now start generating the response.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

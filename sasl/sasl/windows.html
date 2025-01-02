@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Building Cyrus SASL on Windows &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -487,14 +492,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="building-cyrus-sasl-on-windows">
-<span id="install-windows"></span><h1>Building Cyrus SASL on Windows<a class="headerlink" href="#building-cyrus-sasl-on-windows" title="Permalink to this headline">¶</a></h1>
+  <section id="building-cyrus-sasl-on-windows">
+<span id="install-windows"></span><h1>Building Cyrus SASL on Windows<a class="headerlink" href="#building-cyrus-sasl-on-windows" title="Permalink to this heading">¶</a></h1>
 <p>Note, that Cyrus SASL on Windows is still largely a “work in progress”.
 So far only the main library, plugins (SASLDB using SleepyCat, no MySQL)
 and several applications (see the list below) can be built. In particular,
 saslauthd doesn’t compile on Windows.</p>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>Visual Studio.</dt><dd><p>We have tested Visual Studio 6 and Visual Studio 7 (.NET).
 By default we are using Visual Studio 7 (both 2002 and 2003 versions were tested). If you want to use Visual Studio 6,
@@ -506,21 +511,21 @@ you need to remove the leading # character from the line containing <code class=
 saslpasswd2.exe and sasldblistusers2.exe. We have tested SleepyCat 4.1.X-4.4.X.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="step-by-step">
-<h2>Step by step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="step-by-step">
+<h2>Step by step<a class="headerlink" href="#step-by-step" title="Permalink to this heading">¶</a></h2>
 <p>These directions assume that you’ve untarred the library or used GIT
 and the sources are in <code class="docutils literal notranslate"><span class="pre">C:\SASL</span></code>.</p>
-<div class="section" id="preparing-to-build-git-only">
-<h3>Preparing to build (GIT only!)<a class="headerlink" href="#preparing-to-build-git-only" title="Permalink to this headline">¶</a></h3>
+<section id="preparing-to-build-git-only">
+<h3>Preparing to build (GIT only!)<a class="headerlink" href="#preparing-to-build-git-only" title="Permalink to this heading">¶</a></h3>
 <p>Create the dynamic loading stubs:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">cd</span> <span class="n">win32</span>
 <span class="o">%</span> <span class="n">PowerShell</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-</span><span class="n">File</span> <span class="n">makeinit</span><span class="o">.</span><span class="n">ps1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="building-using-nmake">
-<h3>Building using NMake<a class="headerlink" href="#building-using-nmake" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-using-nmake">
+<h3>Building using NMake<a class="headerlink" href="#building-using-nmake" title="Permalink to this heading">¶</a></h3>
 <p>Open a “Windows 2000 build environment” from the SDK’s Start Menu and
 use <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span></code> to build.</p>
 <p>To build a debug version, use <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span>
@@ -547,8 +552,8 @@ from the MSVCRT.DLL will be used.</p>
 
 <span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Microsoft</span> <span class="n">SDK</span><span class="o">&gt;</span> <span class="n">cd</span> \<span class="n">sasl</span>
 
-<span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">DB_INCLUDE</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1</span><span class="o">.</span><span class="mi">24</span>\<span class="n">build_win32</span>
-<span class="n">DB_LIBPATH</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1</span><span class="o">.</span><span class="mi">24</span>\<span class="n">build_win32</span>\<span class="n">Release_static</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">DB_INCLUDE</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1.24</span>\<span class="n">build_win32</span>
+<span class="n">DB_LIBPATH</span><span class="o">=</span><span class="n">c</span><span class="p">:</span>\<span class="n">packages</span>\<span class="n">db</span>\<span class="mf">4.1.24</span>\<span class="n">build_win32</span>\<span class="n">Release_static</span>
 
 <span class="n">No</span> <span class="n">configuration</span> <span class="n">specified</span><span class="o">.</span> <span class="n">Defaulting</span> <span class="n">to</span> <span class="n">Release</span><span class="o">.</span>
 <span class="n">Using</span> <span class="n">MSVCRT</span><span class="o">.</span><span class="n">dll</span> <span class="k">as</span> <span class="n">C</span> <span class="n">library</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
@@ -559,12 +564,12 @@ from the MSVCRT.DLL will be used.</p>
 <p>SASL NTMakefile also understands “clean” target that you can use to clean all files generated by the compiler.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">sasl</span><span class="o">&gt;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span> <span class="n">clean</span>
 
-<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00</span><span class="o">.</span><span class="mi">9466</span>
+<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00.9466</span>
 <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="o">.</span>  <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
 
         <span class="n">cd</span> <span class="n">lib</span> <span class="o">&amp;&amp;</span> <span class="n">nmake</span> <span class="o">/</span><span class="n">f</span> <span class="n">NTMakefile</span>                    <span class="n">clean</span>
 
-<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00</span><span class="o">.</span><span class="mi">9466</span>
+<span class="n">Microsoft</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Program</span> <span class="n">Maintenance</span> <span class="n">Utility</span> <span class="n">Version</span> <span class="mf">7.00.9466</span>
 <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="o">.</span>  <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
 
 <span class="n">No</span> <span class="n">configuration</span> <span class="n">specified</span><span class="o">.</span> <span class="n">Defaulting</span> <span class="n">to</span> <span class="n">Release</span><span class="o">.</span>
@@ -574,9 +579,9 @@ from the MSVCRT.DLL will be used.</p>
 <span class="n">Defaulting</span> <span class="n">SleepyCat</span> <span class="n">library</span> <span class="n">path</span> <span class="n">to</span> <span class="n">c</span><span class="p">:</span>\<span class="n">work</span>\<span class="n">isode</span>\<span class="n">db</span>\<span class="n">build_win32</span>\<span class="n">Release_static</span><span class="o">.</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="building-additional-plugins">
-<h3>Building additional plugins<a class="headerlink" href="#building-additional-plugins" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-additional-plugins">
+<h3>Building additional plugins<a class="headerlink" href="#building-additional-plugins" title="Permalink to this heading">¶</a></h3>
 <p>Specify “GSSAPI=&lt;type&gt;” parameter if you want to enable GSSAPI plugin.
 Currently only &lt;type&gt;=CyberSafe is supported and this will build the plugin
 that links against CyberSafe Kerberos.</p>
@@ -596,9 +601,9 @@ line or edit the defaults in win32common.mak
 Note, that unless you are building one of those plugins, OpenSSL is not required!</p>
 <p>If you want to build multiple additional plugins at once, you can specify
 multiple parameters described above, for example <code class="docutils literal notranslate"><span class="pre">nmake</span> <span class="pre">/f</span> <span class="pre">NTMakefile</span> <span class="pre">SRP=1</span> <span class="pre">OTP=1</span></code></p>
-</div>
-<div class="section" id="limitations">
-<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h3>
 <p>Currently all plugins except PASSDSS (passdss.c) can be built on Windows.
 However limited testings was done for some plugins as listed below:</p>
 <ul class="simple">
@@ -628,9 +633,9 @@ However limited testings was done for some plugins as listed below:</p>
 </div></blockquote>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -653,7 +658,7 @@ However limited testings was done for some plugins as listed below:</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -677,9 +682,12 @@ However limited testings was done for some plugins as listed below:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

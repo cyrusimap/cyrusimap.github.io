@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>WebDAV &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,11 +790,11 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="webdav">
-<span id="id1"></span><h1>WebDAV<a class="headerlink" href="#webdav" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="sidebar">
+  <section id="webdav">
+<span id="id1"></span><h1>WebDAV<a class="headerlink" href="#webdav" title="Permalink to this heading">¶</a></h1>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<aside class="sidebar">
 <p class="sidebar-title">davdriveprefix</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -803,7 +808,7 @@ hierarchy will be at the toplevel of the shared namespace.  A
 user’s personal storage hierarchy will be a child of their Inbox.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>When enabled, the WebDAV module allows Cyrus to function as a storage server.
 This module uses a subset of the mailbox hierarchy as collections, the toplevel
 of which is specified by the <code class="docutils literal notranslate"><span class="pre">davdriveprefix</span></code> option. The public storage hierarchy
@@ -823,24 +828,24 @@ returned by Cyrus imapd in response to an IMAP client’s request for the
 available mailbox list, but Cyrus imapd can not otherwise prevent an IMAP client
 from accessing them.</p>
 </div>
-</div>
-<div class="section" id="administration">
-<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="provisioning">
-<h3>Provisioning<a class="headerlink" href="#provisioning" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="administration">
+<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this heading">¶</a></h2>
+<section id="provisioning">
+<h3>Provisioning<a class="headerlink" href="#provisioning" title="Permalink to this heading">¶</a></h3>
 <p>The WebDAV module will automatically create a toplevel (root) collection for a
 user the first time that the user authenticates to the WebDAV server. Note that
 the user MUST have an existing IMAP Inbox in order for the root collection to be
 created.</p>
-</div>
-<div class="section" id="storage-access-controls">
-<h3>Storage access controls<a class="headerlink" href="#storage-access-controls" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="storage-access-controls">
+<h3>Storage access controls<a class="headerlink" href="#storage-access-controls" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus uses the same <a class="reference internal" href="caldav.html#calendar-acl"><span class="std std-ref">access controls for storage</span></a>  as it
 does for calendars, except that the scheduling rights (7, 8, 9) have no use with
 storage and are ignored.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -863,7 +868,7 @@ storage and are ignored.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -886,9 +891,12 @@ storage and are ignored.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

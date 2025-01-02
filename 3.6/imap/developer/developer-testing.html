@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Developer Test Environment &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,53 +788,53 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="developer-test-environment">
-<span id="developer-testing"></span><h1>Developer Test Environment<a class="headerlink" href="#developer-test-environment" title="Permalink to this headline">¶</a></h1>
+  <section id="developer-test-environment">
+<span id="developer-testing"></span><h1>Developer Test Environment<a class="headerlink" href="#developer-test-environment" title="Permalink to this heading">¶</a></h1>
 <p>This assumes you have your <a class="reference internal" href="../installing.html#installing"><span class="std std-ref">basic server running</span></a> and you’ve made some changes and you want to test them to work out what’s going right… or wrong.</p>
-<div class="section" id="installing-cassandane">
-<span id="install-cassandane"></span><h2>Installing Cassandane<a class="headerlink" href="#installing-cassandane" title="Permalink to this headline">¶</a></h2>
+<section id="installing-cassandane">
+<span id="install-cassandane"></span><h2>Installing Cassandane<a class="headerlink" href="#installing-cassandane" title="Permalink to this heading">¶</a></h2>
 <p>Cassandane is a Perl-based integration test suite for Cyrus.
 <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/tree/master/cassandane/doc">Cassandane documentation</a>
 includes information on setting up tests and writing new tests.</p>
 <p>Why “Cassandane”? Wikipedia indicates that <a class="reference external" href="https://en.wikipedia.org/wiki/Cassandane">Cassandane</a> was the name of
 the consort of King Cyrus the Great of Persia, founder of the Achaemenid
 Persian Empire.  So that’s kinda cool.</p>
-<div class="section" id="install-and-configure-cassandane">
-<h3>Install and configure Cassandane<a class="headerlink" href="#install-and-configure-cassandane" title="Permalink to this headline">¶</a></h3>
+<section id="install-and-configure-cassandane">
+<h3>Install and configure Cassandane<a class="headerlink" href="#install-and-configure-cassandane" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p>You already have it – it’s in the “cassandane” subdirectory of the cyrus-imapd
 sources.</p></li>
 <li><p>Install dependencies</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libanyevent-perl libtest-unit-perl libconfig-inifiles-perl <span class="se">\</span>
-    libdatetime-perl libbsd-resource-perl libxml-generator-perl <span class="se">\</span>
-    libencode-imaputf7-perl libio-stringy-perl libnews-nntpclient-perl <span class="se">\</span>
-    libfile-chdir-perl libfile-libmagic-perl libnet-server-perl libunix-syslog-perl <span class="se">\</span>
-    libdata-uuid-perl libjson-xs-perl libdata-ical-perl libjson-perl <span class="se">\</span>
-    libdatetime-format-ical-perl libtext-levenshteinxs-perl <span class="se">\</span>
-    libmime-types-perl libdatetime-format-iso8601-perl libcal-dav-perl <span class="se">\</span>
-    libclone-perl libstring-crc32-perl libnet-ldap-server-perl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libanyevent-perl<span class="w"> </span>libtest-unit-perl<span class="w"> </span>libconfig-inifiles-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libdatetime-perl<span class="w"> </span>libbsd-resource-perl<span class="w"> </span>libxml-generator-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libencode-imaputf7-perl<span class="w"> </span>libio-stringy-perl<span class="w"> </span>libnews-nntpclient-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libfile-chdir-perl<span class="w"> </span>libfile-libmagic-perl<span class="w"> </span>libnet-server-perl<span class="w"> </span>libunix-syslog-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libdata-uuid-perl<span class="w"> </span>libjson-xs-perl<span class="w"> </span>libdata-ical-perl<span class="w"> </span>libjson-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libdatetime-format-ical-perl<span class="w"> </span>libtext-levenshteinxs-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libmime-types-perl<span class="w"> </span>libdatetime-format-iso8601-perl<span class="w"> </span>libcal-dav-perl<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libclone-perl<span class="w"> </span>libstring-crc32-perl<span class="w"> </span>libnet-ldap-server-perl
 </pre></div>
 </div>
 <p>The quickest option for the rest is installing via CPAN, but you could build
 packages using dh-make-perl if that is preferred.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo cpan -i Tie::DataUUID
-sudo cpan -i XML::Spice
-sudo cpan -i XML::Fast
-sudo cpan -i Data::ICal::TimeZone
-sudo cpan -i Text::VCardFast
-sudo cpan -i Mail::IMAPTalk
-sudo cpan -i List::Pairwise
-sudo cpan -i Convert::Base64
-sudo cpan -i Net::DAVTalk
-sudo cpan -i Net::CardDAVTalk
-sudo cpan -i Net::CalDAVTalk
-sudo cpan -i Mail::JMAPTalk
-sudo cpan -i Math::Int64
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Tie::DataUUID
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Spice
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>XML::Fast
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Data::ICal::TimeZone
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Text::VCardFast
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Mail::IMAPTalk
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>List::Pairwise
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Convert::Base64
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::DAVTalk
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::CardDAVTalk
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Net::CalDAVTalk
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Mail::JMAPTalk
+sudo<span class="w"> </span>cpan<span class="w"> </span>-i<span class="w"> </span>Math::Int64
 </pre></div>
 </div>
 </li>
 <li><p>Build Cassandane’s binary components</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd/cassandane
 make
 </pre></div>
 </div>
@@ -853,8 +858,8 @@ suppress the binary tests as they are buggy upstream still.</p>
 </div></blockquote>
 </li>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user and matching group and also add <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> to group <code class="docutils literal notranslate"><span class="pre">mail</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo adduser --system --group cyrus
-sudo adduser cyrus mail
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>adduser<span class="w"> </span>--system<span class="w"> </span>--group<span class="w"> </span>cyrus
+sudo<span class="w"> </span>adduser<span class="w"> </span>cyrus<span class="w"> </span>mail
 </pre></div>
 </div>
 </li>
@@ -880,9 +885,9 @@ sudo adduser cyrus mail
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="install-imaptest">
-<h3>Install IMAPTest<a class="headerlink" href="#install-imaptest" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="install-imaptest">
+<h3>Install IMAPTest<a class="headerlink" href="#install-imaptest" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="http://www.imapwiki.org/ImapTest">IMAPTest</a> is a testing suite which uses libraries from the Dovecot installation.</p>
 <ol class="arabic">
 <li><p>Fetch and compile Dovecot.</p>
@@ -903,15 +908,15 @@ sudo adduser cyrus mail
 </div></blockquote>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="rebuild-cyrus-for-testing">
-<h2>Rebuild Cyrus for Testing<a class="headerlink" href="#rebuild-cyrus-for-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="rebuild-cyrus-for-testing">
+<h2>Rebuild Cyrus for Testing<a class="headerlink" href="#rebuild-cyrus-for-testing" title="Permalink to this heading">¶</a></h2>
 <p>Prepare to rebuild by making the source tree shiny and clean as if you’ve done a brand new checkout. Leave no old artifacts lying around!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd
-make clean
-git clean -f -x -d
-autoreconf -v -i
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
+make<span class="w"> </span>clean
+git<span class="w"> </span>clean<span class="w"> </span>-f<span class="w"> </span>-x<span class="w"> </span>-d
+autoreconf<span class="w"> </span>-v<span class="w"> </span>-i
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -923,49 +928,49 @@ autoreconf -v -i
 </pre></div>
 </div>
 <p>Configure the environment.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure --prefix<span class="o">=</span>/usr/cyrus --with-cyrus-prefix<span class="o">=</span>/usr/cyrus <span class="se">\</span>
---enable-autocreate --enable-http --enable-unit-tests <span class="se">\</span>
---enable-replication --enable-nntp --enable-murder <span class="se">\</span>
---enable-idled --enable-xapian --enable-calalarmd <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure<span class="w"> </span>--prefix<span class="o">=</span>/usr/cyrus<span class="w"> </span>--with-cyrus-prefix<span class="o">=</span>/usr/cyrus<span class="w"> </span><span class="se">\</span>
+--enable-autocreate<span class="w"> </span>--enable-http<span class="w"> </span>--enable-unit-tests<span class="w"> </span><span class="se">\</span>
+--enable-replication<span class="w"> </span>--enable-nntp<span class="w"> </span>--enable-murder<span class="w"> </span><span class="se">\</span>
+--enable-idled<span class="w"> </span>--enable-xapian<span class="w"> </span>--enable-calalarmd<span class="w"> </span><span class="se">\</span>
 --enable-backup
 
-make lex-fix   <span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
+make<span class="w"> </span>lex-fix<span class="w">   </span><span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
 </pre></div>
 </div>
 <p>And finally, make it.</p>
 <p>If you’re testing across versions, the binsymlinks is necessary as older Cyrus doesn’t have the binaries in the new locations. This uses the default install path of <code class="docutils literal notranslate"><span class="pre">/usr/cyrus/</span></code>. It can be useful to also have <code class="docutils literal notranslate"><span class="pre">/usr/cyrus25</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/cyrus24</span></code>, etc, if you’re testing with older versions as well.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make -j16 <span class="o">&amp;&amp;</span> make -j16 check
-sudo make install
-sudo make install-binsymlinks
-sudo cp tools/mkimap /usr/cyrus/bin/mkimap
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>-j16<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j16<span class="w"> </span>check
+sudo<span class="w"> </span>make<span class="w"> </span>install
+sudo<span class="w"> </span>make<span class="w"> </span>install-binsymlinks
+sudo<span class="w"> </span>cp<span class="w"> </span>tools/mkimap<span class="w"> </span>/usr/cyrus/bin/mkimap
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-the-tests">
-<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">¶</a></h2>
 <p>Cassandane internals need to run as the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, but if you gave
 yourself passwordless sudo access as instructed above, then Cassandane will
 take care of switching to the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user for you.  In which case, just run
 it as yourself.</p>
 <p>If you didn’t give yourself this access, you will first need to become the
 <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user by some other means, and then run it from there.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd/cassandane
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd/cassandane
 ./testrunner.pl
 </pre></div>
 </div>
 <p>Do not run it as root.</p>
-</div>
-<div class="section" id="debugging-and-stacktraces">
-<h2>Debugging and stacktraces<a class="headerlink" href="#debugging-and-stacktraces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="debugging-and-stacktraces">
+<h2>Debugging and stacktraces<a class="headerlink" href="#debugging-and-stacktraces" title="Permalink to this heading">¶</a></h2>
 <p>Check out the guide to <a class="reference internal" href="../reference/faqs/o-gdb.html#faqs-o-gdb"><span class="std std-ref">running Cyrus components under gdb</span></a>.</p>
 <p>In the event of a crash, here’s how to <a class="reference internal" href="../reference/faqs/o-coredump.html#faqs-o-coredump"><span class="std std-ref">generate a stacktrace</span></a>.</p>
 <p>Core dumps will be owned by the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, but your source tree will
 probably be owned by yourself.  Copy the core dump somewhere convenient,
 change the ownership to yourself, and then you can open the core file in
 gdb for examination.</p>
-</div>
-<div class="section" id="tips-and-tricks">
-<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tips-and-tricks">
+<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this heading">¶</a></h2>
 <p>Read the script to see other options. If you’re having problems, add more
 <code class="docutils literal notranslate"><span class="pre">-v</span></code> options to the testrunner to get more info out.</p>
 <p><strong>Looking for memory leaks?</strong> Run with –valgrind to use valgrind (if it’s
@@ -975,8 +980,8 @@ IMAP telemetry.</p>
 <p>Also helpful to run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/var/log/syslog</span></code>, and examine
 /var/tmp/cass as <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> to examine log files and disk structures for
 failed tests.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -999,7 +1004,7 @@ failed tests.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Oct 16 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1022,9 +1027,12 @@ failed tests.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

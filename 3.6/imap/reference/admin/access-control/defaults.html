@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Access Control Defaults &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,10 +790,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="access-control-defaults">
-<span id="imap-admin-access-control-defaults"></span><h1>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="administrators">
-<h2>Administrators<a class="headerlink" href="#administrators" title="Permalink to this headline">¶</a></h2>
+  <section id="access-control-defaults">
+<span id="imap-admin-access-control-defaults"></span><h1>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this heading">¶</a></h1>
+<section id="administrators">
+<h2>Administrators<a class="headerlink" href="#administrators" title="Permalink to this heading">¶</a></h2>
 <p>Regardless of the ACL on a mailbox, users who are listed in the
 <code class="docutils literal notranslate"><span class="pre">admins</span></code> configuration option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> implicitly
 have the <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> rights on all mailboxes.</p>
@@ -797,9 +802,9 @@ have the <code class="docutils literal notranslate"><span class="pre">l</span></
 <p class="admonition-title">Warning</p>
 <p>An admin user should not be a normal email account.</p>
 </div>
-</div>
-<div class="section" id="mailbox-owners">
-<h2>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mailbox-owners">
+<h2>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this heading">¶</a></h2>
 <p>The user who owns a mailbox folder has additional rights which are set
 regardless of any additional ACLs. These are:</p>
 <ul class="simple">
@@ -809,9 +814,9 @@ regardless of any additional ACLs. These are:</p>
 <li><p><strong>a</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-a"><span class="std std-ref">administer</span></a></p></li>
 </ul>
 <p>These are set in <code class="docutils literal notranslate"><span class="pre">implicit_owner_rights</span></code> of <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="default">
-<h2>Default<a class="headerlink" href="#default" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="default">
+<h2>Default<a class="headerlink" href="#default" title="Permalink to this heading">¶</a></h2>
 <p>For all other mailboxes not owned by a user, any user accessing these
 mailboxes have the following default privileges:</p>
 <ul class="simple">
@@ -820,18 +825,18 @@ mailboxes have the following default privileges:</p>
 <li><p><strong>s</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-s"><span class="std std-ref">seen</span></a></p></li>
 </ul>
 <p>These are set in <code class="docutils literal notranslate"><span class="pre">defaultacl</span></code> of <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="initial-acls-for-newly-created-mailboxes">
-<h2>Initial ACLs for Newly Created Mailboxes<a class="headerlink" href="#initial-acls-for-newly-created-mailboxes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initial-acls-for-newly-created-mailboxes">
+<h2>Initial ACLs for Newly Created Mailboxes<a class="headerlink" href="#initial-acls-for-newly-created-mailboxes" title="Permalink to this heading">¶</a></h2>
 <p>When a mailbox is created, its ACL starts off with a copy of the ACL of its closest parent mailbox. When a user is created, the ACL on the user’s <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> starts off with a single entry granting all rights to the user. When a non-user mailbox is created and does not have a parent, its ACL is initialized to the value of the <code class="docutils literal notranslate"><span class="pre">defaultacl</span></code> option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="other-implicit-rights">
-<h2>Other Implicit Rights<a class="headerlink" href="#other-implicit-rights" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-implicit-rights">
+<h2>Other Implicit Rights<a class="headerlink" href="#other-implicit-rights" title="Permalink to this heading">¶</a></h2>
 <p>Note that some rights are available implicitly, for example ‘anonymous’
 always has ‘p’ on user INBOXes, and users always have <code class="docutils literal notranslate"><span class="pre">la</span></code> rights on
 mailboxes within their INBOX hierarchy.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -854,7 +859,7 @@ mailboxes within their INBOX hierarchy.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jan 20 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -877,9 +882,12 @@ mailboxes within their INBOX hierarchy.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Namelocks &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,10 +788,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-guidance-namelocks"></span><div class="section" id="cyrus-imap-server-namelocks">
-<h1>Cyrus IMAP Server: Namelocks<a class="headerlink" href="#cyrus-imap-server-namelocks" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+  <span class="target" id="imap-developer-guidance-namelocks"></span><section id="cyrus-imap-server-namelocks">
+<h1>Cyrus IMAP Server: Namelocks<a class="headerlink" href="#cyrus-imap-server-namelocks" title="Permalink to this heading">¶</a></h1>
+<section id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">¶</a></h2>
 <p>Name locks are an addition to the cyrus internals to address a range of
 race conditions and complexities. These ills are most easily avoided by
 ensuring that only one process can do certain operations at once. Name
@@ -811,9 +816,9 @@ namelock while trying to assert the name on the mupdate server. If this
 failed (someone else got in first) then the mailbox could be cleaned up
 locally before releasing the exclusive namelock, meaning other users on
 the local server would never see it existing.</p>
-</div>
-<div class="section" id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">¶</a></h2>
 <p>It’s a simple matter of having a file under $configdirectory/lock - in a
 directory tree using the same hashing structure as the mailbox tree.
 This directory can be symlinked or mounted to a tmpfs since the locks
@@ -822,9 +827,9 @@ up, the easiest approach is to only ever delete lock files during
 restart, so the unlock code doesn’t try to remove them. Lock files are
 zero byte in size, and are locked using the flock or fcntl primitives
 used by the rest of cyrus.</p>
-</div>
-<div class="section" id="api">
-<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this heading">¶</a></h2>
 <p>Lock types:</p>
 <ul class="simple">
 <li><p>LOCK_SHARED - shared lock on the name. Required whenever you have an
@@ -838,8 +843,8 @@ IMAP_MAILBOX_LOCKED rather than blocking until the lock is
 available.</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">mboxname</span></code> is always an <strong>internal name</strong>, so convert it first.</p>
-<div class="section" id="example">
-<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>struct mboxlock *lock = NULL;
 int locktype = LOCK_SHARED; /* or LOCK_EXCLUSIVE or LOCK_NONBLOCKING */
 
@@ -853,9 +858,9 @@ if (!r) {
 <p>If mboxname_lock fails, lock will remain NULL. It should always be
 initialised to NULL before being passed to mailbox_lock. It will be set
 back to NULL by mboxname_release.</p>
-</div>
-<div class="section" id="re-locking-considerations">
-<h3>Re-locking considerations<a class="headerlink" href="#re-locking-considerations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="re-locking-considerations">
+<h3>Re-locking considerations<a class="headerlink" href="#re-locking-considerations" title="Permalink to this heading">¶</a></h3>
 <p>It is not possible to hold multiple locks to the same name within the
 same process. If you call mboxname_lock with the same name within a
 process, and the <strong>same locktype</strong> then a reference counter is
@@ -866,9 +871,9 @@ returned to avoid breaking the locking semantics. This is a restriction
 of the underlying fcntl/flock subsystem.</p>
 <p>On the way out, the reference counter is decremented with each release
 and the lock isn’t freed until the counter gets back to zero.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -891,7 +896,7 @@ and the lock isn’t freed until the counter gets back to zero.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -914,9 +919,12 @@ and the lock isn’t freed until the counter gets back to zero.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

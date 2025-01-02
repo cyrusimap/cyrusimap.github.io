@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>System Administrators &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,16 +488,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="system-administrators">
-<span id="sysadmin"></span><h1>System Administrators<a class="headerlink" href="#system-administrators" title="Permalink to this headline">¶</a></h1>
+  <section id="system-administrators">
+<span id="sysadmin"></span><h1>System Administrators<a class="headerlink" href="#system-administrators" title="Permalink to this heading">¶</a></h1>
 <p>This document covers configuring SASL for system administrators,
 specifically those administrators who are installing a server that
 uses the Cyrus SASL library.  You may want to read
 <a class="reference internal" href="components.html#components"><span class="std std-ref">about components</span></a> which presents an
 overview of the Cyrus SASL distribution
 and describes how the components interact, as well as the <a class="reference internal" href="installation.html#installation"><span class="std std-ref">installation guide</span></a></p>
-<div class="section" id="what-sasl-is">
-<span id="saslintro"></span><h2>What SASL is<a class="headerlink" href="#what-sasl-is" title="Permalink to this headline">¶</a></h2>
+<section id="what-sasl-is">
+<span id="saslintro"></span><h2>What SASL is<a class="headerlink" href="#what-sasl-is" title="Permalink to this heading">¶</a></h2>
 <p>SASL, the Simple Authentication and Security Layer, is a generic
 mechanism for protocols to accomplish authentication.  Since protocols
 (such as SMTP or IMAP) use SASL, it is a natural place for code
@@ -509,8 +514,8 @@ different specifications need be written instead of n times m
 different specifications.  With the Cyrus SASL library, the mechanisms
 need only be written once, and they’ll work with all servers that use
 it.</p>
-<div class="section" id="authentication-and-authorization-identifiers">
-<span id="authid"></span><h3>Authentication and authorization identifiers<a class="headerlink" href="#authentication-and-authorization-identifiers" title="Permalink to this headline">¶</a></h3>
+<section id="authentication-and-authorization-identifiers">
+<span id="authid"></span><h3>Authentication and authorization identifiers<a class="headerlink" href="#authentication-and-authorization-identifiers" title="Permalink to this heading">¶</a></h3>
 <p>An important concept to become familiar with is the difference between
 an “authorization identifier” and an “authentication identifier”.</p>
 <dl>
@@ -538,9 +543,9 @@ password.</p>
 library will only allow the same user to act for another (that is,
 userid must equal authid).  See your application’s documentation for
 details about changing the default proxy/authorization policies.</p>
-</div>
-<div class="section" id="realms">
-<span id="id1"></span><h3>Realms<a class="headerlink" href="#realms" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="realms">
+<span id="id1"></span><h3>Realms<a class="headerlink" href="#realms" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus SASL library supports the concept of “realms”.  A realm is
 an abstract set of users and certain mechanisms authenticate users in
 a certain realm.</p>
@@ -574,16 +579,16 @@ to query the server, while the rimap and PAM plugins ignore it entirely).</p>
 the ‘&#64;’ sign.  So, usernames like <a class="reference external" href="mailto:rjs3&#37;&#52;&#48;ANDREW&#46;CMU&#46;EDU">rjs3<span>&#64;</span>ANDREW<span>&#46;</span>CMU<span>&#46;</span>EDU</a>, is user ‘rjs3’
 in the realm ‘ANDREW.CMU.EDU’.  If no realm is provided, the server’s
 FQDN is assumed (likewise when specifying a realm for saslpasswd2).</p>
-</div>
-</div>
-<div class="section" id="how-sasl-works">
-<span id="saslhow"></span><h2>How SASL works<a class="headerlink" href="#how-sasl-works" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="how-sasl-works">
+<span id="saslhow"></span><h2>How SASL works<a class="headerlink" href="#how-sasl-works" title="Permalink to this heading">¶</a></h2>
 <p>How SASL works is governed by what mechanism the client and server
 choose to use and the exact implementation of that mechanism.  This
 section describes the way these mechanisms act in the Cyrus SASL
 implementation.</p>
-<div class="section" id="the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">
-<h3>The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords<a class="headerlink" href="#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords" title="Permalink to this headline">¶</a></h3>
+<section id="the-plain-mechanism-sasl-checkpass-and-plaintext-passwords">
+<h3>The PLAIN mechanism, <code class="docutils literal notranslate"><span class="pre">sasl_checkpass()</span></code>, and plaintext passwords<a class="headerlink" href="#the-plain-mechanism-sasl-checkpass-and-plaintext-passwords" title="Permalink to this heading">¶</a></h3>
 <p>The PLAIN mechanism is not a secure method of authentication by
 itself.  It is intended for connections that are being encrypted by
 another level.  (For example, the IMAP command “STARTTLS” creates an
@@ -658,9 +663,9 @@ support a new method, and to add that method to
 adding a routine is to create a new saslauthd mechanism.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="shared-secrets-mechanisms">
-<h3>Shared secrets mechanisms<a class="headerlink" href="#shared-secrets-mechanisms" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="shared-secrets-mechanisms">
+<h3>Shared secrets mechanisms<a class="headerlink" href="#shared-secrets-mechanisms" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus SASL library also supports a “shared secret”
 authentication method: SCRAM.
 This method relies on the client and the server sharing a “secret”,
@@ -708,9 +713,9 @@ read/write access to sasldb, not just read access.  By default,
 no point in enabling this option if “pwcheck_method” is “auxprop”,
 and the sasldb plugin is installed, since you’ll be transitioning from
 a plaintext store to a plaintext store)</p>
-</div>
-<div class="section" id="kerberos-mechanism">
-<h3>Kerberos mechanism<a class="headerlink" href="#kerberos-mechanism" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="kerberos-mechanism">
+<h3>Kerberos mechanism<a class="headerlink" href="#kerberos-mechanism" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus SASL library also comes with a mechanism that make use of
 Kerberos: GSSAPI (tested against MIT Kerberos 5, Heimdal
 Kerberos 5 and CyberSafe Kerberos 5).  This mechanism makes use of the
@@ -719,9 +724,9 @@ kerberos infrastructure and thus has no password database.</p>
 to a service key, stored in a <a class="reference internal" href="options.html#cmdoption-arg-keytab"><code class="xref std std-option docutils literal notranslate"><span class="pre">keytab</span></code></a> file.</p>
 <p>A SASL application must be able to read its keytab file.</p>
 <p>You may want to consult the <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">GSSAPI Tutorial</span></a>.</p>
-</div>
-<div class="section" id="the-otp-mechanism">
-<h3>The OTP mechanism<a class="headerlink" href="#the-otp-mechanism" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-otp-mechanism">
+<h3>The OTP mechanism<a class="headerlink" href="#the-otp-mechanism" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus SASL library also supports the One-Time-Password (OTP)
 mechanism.  This mechanism is similar to SCRAM
 and SRP in that is uses a shared secret and a challenge/response exchange.
@@ -730,8 +735,8 @@ that the secret is used to generate a sequence of one-time (single
 use) passwords which prevents reply attacks, and that secret need
 not be stored on the system.  These one-time passwords are stored in the
 <code class="docutils literal notranslate"><span class="pre">/etc/sasldb2</span></code> database.</p>
-<div class="section" id="otp-via-opie">
-<h4>OTP via OPIE<a class="headerlink" href="#otp-via-opie" title="Permalink to this headline">¶</a></h4>
+<section id="otp-via-opie">
+<h4>OTP via OPIE<a class="headerlink" href="#otp-via-opie" title="Permalink to this heading">¶</a></h4>
 <p>For sites with an existing OTP infrastructure using OPIE, Cyrus SASL
 can be configured to use OPIE v2.4 instead of using its own database
 and server-side routines.</p>
@@ -743,11 +748,11 @@ file is configurable in SASL; by default it is <code class="docutils literal not
 but this is modifiable by the <a class="reference internal" href="options.html#cmdoption-arg-opiekeys"><code class="xref std std-option docutils literal notranslate"><span class="pre">opiekeys</span></code></a> option.</p>
 <p>A SASL server application must be able to read and write the
 opiekeys file.</p>
-</div>
-</div>
-</div>
-<div class="section" id="auxiliary-properties">
-<h2>Auxiliary Properties<a class="headerlink" href="#auxiliary-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="auxiliary-properties">
+<h2>Auxiliary Properties<a class="headerlink" href="#auxiliary-properties" title="Permalink to this heading">¶</a></h2>
 <p>SASLv2 introduces the concept of Auxiliary Properties.  That is, the ability
 for information related to authentication and authorization to all be looked
 up at once from a directory during the authentication process.  SASL Plugins
@@ -756,14 +761,14 @@ such as the SASLdb, LDAP or a SQL database.  Applications can look up arbitrary 
 <p>Note that this means that if your password database is in a SASLdb, and
 you wish to use it for plaintext password lookups through the sasldb, you
 will need to set the sasl <a class="reference internal" href="options.html#cmdoption-arg-pwcheck_method"><code class="xref std std-option docutils literal notranslate"><span class="pre">pwcheck_method</span></code></a> to be <code class="docutils literal notranslate"><span class="pre">auxprop</span></code>.</p>
-</div>
-<div class="section" id="how-to-set-configuration-options">
-<h2>How to set configuration options<a class="headerlink" href="#how-to-set-configuration-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-to-set-configuration-options">
+<h2>How to set configuration options<a class="headerlink" href="#how-to-set-configuration-options" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus SASL library comes with a built-in configuration file
 reader.  However, it is also possible for applications to redefine
 where the library gets it’s configuration options from.</p>
-<div class="section" id="the-default-configuration-file">
-<span id="saslconf"></span><h3>The default configuration file<a class="headerlink" href="#the-default-configuration-file" title="Permalink to this headline">¶</a></h3>
+<section id="the-default-configuration-file">
+<span id="saslconf"></span><h3>The default configuration file<a class="headerlink" href="#the-default-configuration-file" title="Permalink to this heading">¶</a></h3>
 <p>By default, the Cyrus SASL library reads its options from
 <code class="docutils literal notranslate"><span class="pre">/usr/lib/sasl2/App.conf</span></code> (where “App” is the application
 defined name of the application).  For instance, Sendmail reads its
@@ -775,18 +780,18 @@ sample server application included with the library looks in
 <span class="n">pwcheck_method</span><span class="p">:</span> <span class="n">saslauthd</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="application-configuration">
-<h3>Application configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="application-configuration">
+<h3>Application configuration<a class="headerlink" href="#application-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Applications can redefine how the SASL library looks for configuration
 information.  Check your application’s documentation for specifics.</p>
 <p>For instance, Cyrus imapd reads its sasl options from its own
 configuration file, <code class="docutils literal notranslate"><span class="pre">/etc/imapd.conf</span></code>, by prepending all SASL
 options with <code class="docutils literal notranslate"><span class="pre">sasl_</span></code>: the SASL option “pwcheck_method” is set
 by changing “sasl_pwcheck_method” in <code class="docutils literal notranslate"><span class="pre">/etc/imapd.conf</span></code>.</p>
-</div>
-<div class="section" id="default-pathnames">
-<h3>Default pathnames<a class="headerlink" href="#default-pathnames" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="default-pathnames">
+<h3>Default pathnames<a class="headerlink" href="#default-pathnames" title="Permalink to this heading">¶</a></h3>
 <p>Some pathnames hardcoded into the SASL libraries can be overridden
 at runtime using environment variables or, on Windows, in the
 system registry. The Windows registry key is</p>
@@ -811,10 +816,10 @@ system registry. The Windows registry key is</p>
 <dt>SASL_DBNAME</dt><dd><p>the pathname of the <code class="docutils literal notranslate"><span class="pre">sasldb</span></code> file</p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
 <dl>
 <dt>Why doesn’t OTP doesn’t appear as an available mechanism?</dt><dd><p>If using OPIE, check that the <code class="docutils literal notranslate"><span class="pre">opiekeys</span></code> file is
 readable by the user running the daemon.  For Cyrus imapd, it must
@@ -857,8 +862,8 @@ information.</p>
 with us, including mailing lists and IRC.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -881,7 +886,7 @@ with us, including mailing lists and IRC.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -905,9 +910,12 @@ with us, including mailing lists and IRC.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

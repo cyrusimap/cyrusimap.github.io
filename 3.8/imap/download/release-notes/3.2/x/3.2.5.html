@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP 3.2.5 Release Notes &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../download.html">Download</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,8 +794,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-imap-3-2-5-release-notes">
-<h1>Cyrus IMAP 3.2.5 Release Notes<a class="headerlink" href="#cyrus-imap-3-2-5-release-notes" title="Permalink to this headline">¶</a></h1>
+  <section id="cyrus-imap-3-2-5-release-notes">
+<h1>Cyrus IMAP 3.2.5 Release Notes<a class="headerlink" href="#cyrus-imap-3-2-5-release-notes" title="Permalink to this heading">¶</a></h1>
 <p>Download from GitHub:</p>
 <blockquote>
 <div><ul class="simple">
@@ -798,10 +803,10 @@
 <li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.5/cyrus-imapd-3.2.5.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="changes-since-3-2-4">
-<span id="relnotes-3-2-5-changes"></span><h2>Changes since 3.2.4<a class="headerlink" href="#changes-since-3-2-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="build-changes">
-<h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this headline">¶</a></h3>
+<section id="changes-since-3-2-4">
+<span id="relnotes-3-2-5-changes"></span><h2>Changes since 3.2.4<a class="headerlink" href="#changes-since-3-2-4" title="Permalink to this heading">¶</a></h2>
+<section id="build-changes">
+<h3>Build changes<a class="headerlink" href="#build-changes" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3172">Issue #3172</a>: add fallback implementation of <cite>memrchr()</cite> (thanks
 Andy Fiddaman)</p></li>
@@ -811,9 +816,9 @@ on non-Linux/x86_64 platforms (thanks Anatoli)</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3275">Issue #3275</a>: <cite>--enable-srs</cite> configure option was always ignored
 (thanks Carlos Velasco)</p></li>
 </ul>
-</div>
-<div class="section" id="bug-fixes">
-<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bug-fixes">
+<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3180">Issue #3180</a>: httpd process hang when using HTTP/2</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3239">Issue #3239</a>: don't redefine MAXDOMNAME/MAXLOGNAME if already defined
@@ -827,16 +832,16 @@ with different seen settings</p></li>
 (thanks Daniel O'Connor)</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3272">Issue #3272</a>: add handler stub for JMAP eventSourceUrl</p></li>
 </ul>
-</div>
-<div class="section" id="other">
-<h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Added <cite>--password</cite> and <cite>--execfile</cite> options to <a class="reference internal" href="../../../../reference/manpages/usercommands/sieveshell.html#std-cyrusman-sieveshell-1">sieveshell(1)</a>,
 based on patch from Debian in <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/3281">Issue #3281</a> (thanks Xavier Guimard)</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -859,7 +864,7 @@ based on patch from Debian in <a class="reference external" href="https://github
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 16 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -882,9 +887,12 @@ based on patch from Debian in <a class="reference external" href="https://github
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../../_static/sphinx_highlight.js"></script>
 
   
 

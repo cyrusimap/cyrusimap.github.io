@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Hacking &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -780,14 +785,14 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-guidance-hacking"></span><div class="section" id="cyrus-imap-server-hacking">
-<h1>Cyrus IMAP Server: Hacking<a class="headerlink" href="#cyrus-imap-server-hacking" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="imap-developer-guidance-hacking"></span><section id="cyrus-imap-server-hacking">
+<h1>Cyrus IMAP Server: Hacking<a class="headerlink" href="#cyrus-imap-server-hacking" title="Permalink to this heading">¶</a></h1>
 <p>This file aims to be a guide to Cyrus coding style/conventions/useful
 utilities for people trying to approach the code in a sane way.  It’s
 not well organized right now but hopefully that will improve with time
 ;)</p>
-<div class="section" id="memory-allocation">
-<h2>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h2>
+<section id="memory-allocation">
+<h2>Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>All cyrus memory allocation should be done through the libcyrus
 functions.  These are all written to correctly call <code class="docutils literal notranslate"><span class="pre">fatal()</span></code> in
@@ -800,9 +805,9 @@ and then free them all at once, you should look at the memory pool
 routines, which are much faster, but will leak memory until you
 free the entire pool at once.</p></li>
 </ul>
-</div>
-<div class="section" id="strlcpy-vs-strncpy-vs-memcpy">
-<h2>strlcpy vs strncpy vs memcpy<a class="headerlink" href="#strlcpy-vs-strncpy-vs-memcpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="strlcpy-vs-strncpy-vs-memcpy">
+<h2>strlcpy vs strncpy vs memcpy<a class="headerlink" href="#strlcpy-vs-strncpy-vs-memcpy" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>use <code class="docutils literal notranslate"><span class="pre">strlcpy</span></code> when you know the size of the buffer, e.g.:</p></li>
 </ul>
@@ -830,9 +835,9 @@ look like:</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strncpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="map-refresh-and-map-free">
-<h2>map_refresh and map_free<a class="headerlink" href="#map-refresh-and-map-free" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="map-refresh-and-map-free">
+<h2>map_refresh and map_free<a class="headerlink" href="#map-refresh-and-map-free" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>In many cases, it is far more effective to read a file via the
 operating system’s mmap facility than it is to via the traditional
@@ -852,9 +857,9 @@ descriptors could possibly be used for writing elsewhere in the
 code. Some operating systems REQUIRE file descriptors that are
 <code class="docutils literal notranslate"><span class="pre">mmap()</span></code>-ed to be opened O_RDWR, so just do it.</p></li>
 </ul>
-</div>
-<div class="section" id="network-functions">
-<h2>Network Functions<a class="headerlink" href="#network-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="network-functions">
+<h2>Network Functions<a class="headerlink" href="#network-functions" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Cyrus abstracts socket stream access to a concept we refer to as
 “prot streams”  Prot Streams take care of all of the necessary
@@ -862,12 +867,12 @@ SASL and TLS/SSL encryption that may need to happen before data
 goes out/comes in from the network.  The API is documented in
 lib/prot.h</p></li>
 </ul>
-</div>
-<div class="section" id="todo-authorization-modules">
-<h2>(todo) Authorization Modules<a class="headerlink" href="#todo-authorization-modules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="general-hints">
-<h2>General Hints<a class="headerlink" href="#general-hints" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="todo-authorization-modules">
+<h2>(todo) Authorization Modules<a class="headerlink" href="#todo-authorization-modules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="general-hints">
+<h2>General Hints<a class="headerlink" href="#general-hints" title="Permalink to this heading">¶</a></h2>
 <p>Some general hints that all made it into my 11/15 16:47 commit that I
 think may be generally useful to people hacking on the cyrus source:</p>
 <ul class="simple">
@@ -892,9 +897,9 @@ make an attempt to call <code class="docutils literal notranslate"><span class="
 have a recursive <code class="docutils literal notranslate"><span class="pre">fatal()</span></code> trap just in case).  Similarly,
 command line utilities probably don’t need a <code class="docutils literal notranslate"><span class="pre">shut_down()</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="coding-standards">
-<h2>Coding Standards<a class="headerlink" href="#coding-standards" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="coding-standards">
+<h2>Coding Standards<a class="headerlink" href="#coding-standards" title="Permalink to this heading">¶</a></h2>
 <p>These are the generally agreed upon coding standards as thrashed
 out on the cyrus-devel list in June 2010.</p>
 <ul class="simple">
@@ -1157,8 +1162,8 @@ offset and a “within this mmap” offset though, and it also applies to
 using the same variable name for native order and network order numbers,
 which is where I’ve seen it a few times and been super frustrated!)</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1181,7 +1186,7 @@ which is where I’ve seen it a few times and been super frustrated!)</p></li>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 16 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1204,9 +1209,12 @@ which is where I’ve seen it a few times and been super frustrated!)</p></li>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

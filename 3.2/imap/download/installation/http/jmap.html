@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>JMAP &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -782,23 +787,23 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="jmap">
-<h1>JMAP<a class="headerlink" href="#jmap" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-jmap">
-<h2>About JMAP<a class="headerlink" href="#about-jmap" title="Permalink to this headline">¶</a></h2>
+  <section id="jmap">
+<h1>JMAP<a class="headerlink" href="#jmap" title="Permalink to this heading">¶</a></h1>
+<section id="about-jmap">
+<h2>About JMAP<a class="headerlink" href="#about-jmap" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="http://jmap.io/">JMAP</a> is an alternate mechanism for synchronising a mail
 client with a mail server, intended as a replacement for IMAP. It is a
 transport-agnostic, stateless JSON-based API, aiming to be compatible with the
 IMAP data model, but with reduced data usage and more efficient synchronisation.</p>
-</div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
 <p>JMAP support needs to be compiled in to the server using additional
 compile flags. Depending on your distribution, your package provider may
 have already done so. If not, check the
 <a class="reference internal" href="../../../developer/jmap.html#developer-jmap"><span class="std std-ref">JMAP developer guide</span></a> for instructions on how to do
 so manually, assuming you have the source.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">JMAP configuration</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -821,7 +826,7 @@ in per-user databases.</p>
 <p>Allowed values: <em>skiplist</em>, <em>sql</em>, <em>twoskip</em>, <em>zeroskip</em></p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>Once it’s compiled, JMAP needs to be enabled in <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p>Enable <a class="reference internal" href="../../../concepts/deployment/databases.html#imap-concepts-deployment-db-conversations"><span class="std std-ref">conversation support</span></a></p>
 <blockquote>
@@ -831,18 +836,18 @@ in per-user databases.</p>
 <a class="reference internal" href="../../../reference/manpages/systemcommands/ctl_conversationsdb.html#std-cyrusman-ctl_conversationsdb-8">ctl_conversationsdb(8)</a>: <code class="docutils literal notranslate"><span class="pre">ctl_conversationsdb</span> <span class="pre">-b</span> <span class="pre">-r</span></code></p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="jmap-clients">
-<h2>JMAP clients<a class="headerlink" href="#jmap-clients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="jmap-clients">
+<h2>JMAP clients<a class="headerlink" href="#jmap-clients" title="Permalink to this heading">¶</a></h2>
 <p>The official JMAP website maintains a list of <a class="reference external" href="http://jmap.io/software.html">known clients with JMAP support</a>.</p>
 <p>The Cyrus <a class="reference internal" href="../../../developer/jmap.html#developer-jmap"><span class="std std-ref">JMAP developer guide</span></a> has information on using
 the sample test clients.</p>
-</div>
-<div class="section" id="jmap-implementation-status">
-<span id="jmap-implementation"></span><h2>JMAP implementation status<a class="headerlink" href="#jmap-implementation-status" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="jmap-implementation-status">
+<span id="jmap-implementation"></span><h2>JMAP implementation status<a class="headerlink" href="#jmap-implementation-status" title="Permalink to this heading">¶</a></h2>
 <p>The JMAP implementation in Cyrus is at various stages of maturity.</p>
-<div class="section" id="working">
-<h3>Working<a class="headerlink" href="#working" title="Permalink to this headline">¶</a></h3>
+<section id="working">
+<h3>Working<a class="headerlink" href="#working" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>Contacts</strong></dt><dd><ul>
@@ -875,9 +880,9 @@ the sample test clients.</p>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="not-yet-implemented">
-<h3>Not yet implemented<a class="headerlink" href="#not-yet-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="not-yet-implemented">
+<h3>Not yet implemented<a class="headerlink" href="#not-yet-implemented" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Remote mailboxes</strong></p></li>
 <li><dl class="simple">
@@ -888,9 +893,9 @@ the sample test clients.</p>
 </dl>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -913,7 +918,7 @@ the sample test clients.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 02 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -936,9 +941,12 @@ the sample test clients.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

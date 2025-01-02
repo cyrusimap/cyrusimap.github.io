@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>How to run gdb on Cyrus components &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -787,14 +792,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="how-to-run-gdb-on-cyrus-components">
-<span id="faqs-o-gdb"></span><h1>How to run gdb on Cyrus components<a class="headerlink" href="#how-to-run-gdb-on-cyrus-components" title="Permalink to this headline">¶</a></h1>
-<div class="sidebar">
+  <section id="how-to-run-gdb-on-cyrus-components">
+<span id="faqs-o-gdb"></span><h1>How to run gdb on Cyrus components<a class="headerlink" href="#how-to-run-gdb-on-cyrus-components" title="Permalink to this heading">¶</a></h1>
+<aside class="sidebar">
 <p class="sidebar-title">What is a service daemon?</p>
 <p>A service daemon is any program based around master/service.c. This includes
 imapd, lmtpd (and some others), but does <em>not</em> include the command line
 tools.</p>
-</div>
+</aside>
 <p>An easy way to debug something in a service daemon is to write a
 <a class="reference internal" href="../../developer/developer-testing.html#developer-testing"><span class="std std-ref">Cassandane test</span></a> that tries to reproduce the
 bug. Cassandane has a <code class="docutils literal notranslate"><span class="pre">[gdb]</span></code> section in cassandane.ini which allows for
@@ -807,13 +812,13 @@ depending on permissions. If they haven't been installed (and you're in the
 source/build tree), you need to run gdb from <code class="docutils literal notranslate"><span class="pre">libtool</span></code> in order for everything
 to work.</p>
 <p>For example, if you wanted to debug cyr_virusscan:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ libtool --mode<span class="o">=</span>execute gdb imap/cyr_virusscan
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>libtool<span class="w"> </span>--mode<span class="o">=</span>execute<span class="w"> </span>gdb<span class="w"> </span>imap/cyr_virusscan
 </pre></div>
 </div>
 <p>Command line arguments for a tool you're debugging, must be given to gdb before
 you run. Use something like <a class="reference external" href="https://sourceware.org/gdb/current/onlinedocs/gdb/Arguments.html#Arguments">set args [ ... ]</a>.</p>
 <p><a class="reference external" href="http://sourceware.org/gdb/current/onlinedocs/gdb/">More information on gdb</a>.</p>
-</div>
+</section>
 
 
           </div>
@@ -836,7 +841,7 @@ you run. Use something like <a class="reference external" href="https://sourcewa
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 24 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -859,9 +864,12 @@ you run. Use something like <a class="reference external" href="https://sourcewa
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

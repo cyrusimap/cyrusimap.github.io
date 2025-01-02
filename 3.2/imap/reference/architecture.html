@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>System Architecture &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -780,10 +785,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="system-architecture">
-<span id="architecture"></span><h1>System Architecture<a class="headerlink" href="#system-architecture" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="high-level-architecture">
-<h2>High Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permalink to this headline">¶</a></h2>
+  <section id="system-architecture">
+<span id="architecture"></span><h1>System Architecture<a class="headerlink" href="#system-architecture" title="Permalink to this heading">¶</a></h1>
+<section id="high-level-architecture">
+<h2>High Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permalink to this heading">¶</a></h2>
 <p>A birds-eye view of Cyrus.</p>
 <a class="reference internal image-reference" href="../../_images/architecture.jpg"><img alt="High level architecture diagram." class="align-center" src="../../_images/architecture.jpg" style="width: 636px; height: 400px;" /></a>
 <p>Mail is delivered over smtp to the <a class="reference external" href="https://en.wikipedia.org/wiki/Message_transfer_agent">MTA</a> (Message/Mail Transfer Agent).
@@ -806,9 +811,9 @@ editing mailbox details, etc - use <a class="reference internal" href="manpages/
 command, not a daemon, and it communicates with cyrus imapd via the
 IMAP protocol, and authenticating as an admin user.</p>
 <p>For security between the user and cyrus, usually SSL is applied.</p>
-</div>
-<div class="section" id="cyrus-murder">
-<span id="architecture-murder"></span><h2>Cyrus Murder<a class="headerlink" href="#cyrus-murder" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cyrus-murder">
+<span id="architecture-murder"></span><h2>Cyrus Murder<a class="headerlink" href="#cyrus-murder" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus Murder, or IMAP Aggregation, provides the ability to split a
 common IMAP mailbox namespace(s) across multiple backends. Cyrus
 murder is not <a class="reference internal" href="#architecture-replication"><span class="std std-ref">replication</span></a>; it is load
@@ -830,10 +835,6 @@ master which then notifies all the frontends of the latest mapping.</p>
 either: it can be split across disk partitions or backends.</p>
 <p>The mapping on mupdate goes something like this:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>&lt;user&gt;.&lt;folder&gt;</p></th>
 <th class="head"><p>&lt;backend&gt;!&lt;disk partition&gt;</p></th>
@@ -860,9 +861,9 @@ data, and any frontend can also behave as a backend (and vice versa),
 this is known as <strong>Unified Murder</strong>: where everything has everything.</p>
 <p>See the <a class="reference internal" href="admin/murder/murder.html#murder"><span class="std std-ref">Cyrus Murder installation and admin guide</span></a>
 for more information.</p>
-</div>
-<div class="section" id="replication">
-<span id="architecture-replication"></span><h2>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="replication">
+<span id="architecture-replication"></span><h2>Replication<a class="headerlink" href="#replication" title="Permalink to this heading">¶</a></h2>
 <p>Replication is not Aggregation or <a class="reference internal" href="#architecture-murder"><span class="std std-ref">Cyrus Murder</span></a>.
 Replication provides high availability and hot backups. It is designed to
 replicate the mailstore on a standalone Cyrus install, or multiple backend
@@ -883,8 +884,8 @@ that of the particular sync_client who processed the change.</p>
 <p>Replication is idempotent: you can safely run the same log multiple times.</p>
 <p>See the <a class="reference internal" href="admin/sop/replication.html#replication"><span class="std std-ref">Replication installation and admin guide</span></a>
 for more information.</p>
-<div class="section" id="channels">
-<h3>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h3>
+<section id="channels">
+<h3>Channels<a class="headerlink" href="#channels" title="Permalink to this heading">¶</a></h3>
 <p>A channel is a way of describing the linkage between a replication master and one
 of its replicas. It encompasses the configuration on the master to know
 which sync logs to write to, and the configuration on the master to
@@ -902,9 +903,9 @@ you have two replicas in a different data centre, you can chain them and
 avoid sending all the data over the link twice.  You can always re-
 establish replication to the second replica by creating a direct channel
 and running <code class="docutils literal notranslate"><span class="pre">sync_client</span> <span class="pre">-A</span></code> to make sure everything is up-to-date.</p>
-</div>
-<div class="section" id="log-file">
-<h3>Log file<a class="headerlink" href="#log-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="log-file">
+<h3>Log file<a class="headerlink" href="#log-file" title="Permalink to this heading">¶</a></h3>
 <p>The log file is a list of users and/or mailboxes which have been
 altered.  When sync_log is enabled, all of the daemons which might
 alter a mailbox or user will write a line to this log each time they do
@@ -920,10 +921,10 @@ changes to perform the synchronisation.</p>
 with ‘-m’, etc.  All the entries in the sync_log file are triggers to
 replicate with that same value, so a line <code class="docutils literal notranslate"><span class="pre">USER</span> <span class="pre">vader&#64;darth.net</span></code> is
 the same as running <code class="docutils literal notranslate"><span class="pre">sync_client</span> <span class="pre">-u</span> <span class="pre">vader&#64;darth.net</span></code>.</p>
-</div>
-</div>
-<div class="section" id="invoking-cyrus">
-<span id="architecture-invoking"></span><h2>Invoking Cyrus<a class="headerlink" href="#invoking-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="invoking-cyrus">
+<span id="architecture-invoking"></span><h2>Invoking Cyrus<a class="headerlink" href="#invoking-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus has two primary configuration files which control its operation:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -931,13 +932,13 @@ the same as running <code class="docutils literal notranslate"><span class="pre"
 <li><p>/etc/cyrus.conf</p></li>
 </ol>
 </div></blockquote>
-<div class="section" id="imapd-conf">
-<h3>imapd.conf<a class="headerlink" href="#imapd-conf" title="Permalink to this headline">¶</a></h3>
+<section id="imapd-conf">
+<h3>imapd.conf<a class="headerlink" href="#imapd-conf" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus is invoked via <code class="docutils literal notranslate"><span class="pre">imapd</span> <span class="pre">-C</span> <span class="pre">path/to/imapd.conf</span></code>.</p>
 <p>The format of <a class="reference internal" href="manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> is in <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pairs.</p>
-</div>
-<div class="section" id="cyrus-conf">
-<h3>cyrus.conf<a class="headerlink" href="#cyrus-conf" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyrus-conf">
+<h3>cyrus.conf<a class="headerlink" href="#cyrus-conf" title="Permalink to this heading">¶</a></h3>
 <p>This is the config file for the Cyrus master process. The format of
 <a class="reference internal" href="manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> defines</p>
 <blockquote>
@@ -947,9 +948,9 @@ the same as running <code class="docutils literal notranslate"><span class="pre"
 <li><p><strong>EVENTS</strong>: What processes to periodically invoke, similar to cron.</p></li>
 </ol>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -972,7 +973,7 @@ the same as running <code class="docutils literal notranslate"><span class="pre"
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 16 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -995,9 +996,12 @@ the same as running <code class="docutils literal notranslate"><span class="pre"
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

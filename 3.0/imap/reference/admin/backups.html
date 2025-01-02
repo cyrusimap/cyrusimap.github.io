@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Backups &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,9 +763,9 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-backups">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">Cyrus Backups</a><a class="headerlink" href="#cyrus-backups" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
+  <section id="cyrus-backups">
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">Cyrus Backups</a><a class="headerlink" href="#cyrus-backups" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#cyrus-backups" id="id2">Cyrus Backups</a></p>
@@ -807,9 +812,9 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="introduction">
-<h2><a class="toc-backref" href="#id3">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus Backups are a replication-based backup service for Cyrus IMAP servers.
 This is currently an experimental feature. If you have the resources to try it
 out alongside your existing backup solutions, feedback would be appreciated.</p>
@@ -821,9 +826,9 @@ configuring and maintaining Cyrus IMAP servers generally, and will only discuss
 backup-related portions in detail.</p>
 <p>This document assumes a passing familiarity with
 <a class="reference internal" href="sop/replication.html#replication"><span class="std std-ref">Cyrus Replication</span></a>.</p>
-</div>
-<div class="section" id="limitations">
-<h2><a class="toc-backref" href="#id4">Limitations</a><a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="limitations">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Limitations</a><a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus Backups are experimental and incomplete.</p>
 <p>The following components exist and appear to work:</p>
 <ul class="simple">
@@ -860,9 +865,9 @@ recover them don’t yet exist:</p>
 <ul class="simple">
 <li><p>quota information</p></li>
 </ul>
-</div>
-<div class="section" id="architecture">
-<h2><a class="toc-backref" href="#id5">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="architecture">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus Backups are designed to run on one or more standalone, dedicated backup
 servers, with suitably-sized storage partitions. These servers generally do
 not run an IMAP daemon, nor do they have conventional mailbox storage.</p>
@@ -874,18 +879,18 @@ current state of the backed up data. User backup files are stored in a hashed
 subdirectory of their containing partition.</p>
 <p>A twoskip database, backups.db, stores mappings of users to their backup file
 locations</p>
-</div>
-<div class="section" id="installation">
-<h2><a class="toc-backref" href="#id6">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="requirements">
-<h3><a class="toc-backref" href="#id7">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="installation">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Installation</a><a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<section id="requirements">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>At least one Cyrus IMAP server, serving and storing user data.</p></li>
 <li><p>At least one machine which will become the first backup server.</p></li>
 </ul>
-</div>
-<div class="section" id="cyrus-backups-server">
-<h3><a class="toc-backref" href="#id8">Cyrus Backups server</a><a class="headerlink" href="#cyrus-backups-server" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyrus-backups-server">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Cyrus Backups server</a><a class="headerlink" href="#cyrus-backups-server" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p>Compile cyrus with the <code class="docutils literal notranslate"><span class="pre">--enable-backup</span></code> configure option and install it.</p></li>
 <li><p>Set up an <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file for it with the following options
@@ -958,9 +963,9 @@ of delayed recovery of storage space.</p>
 <li><p>Start up the server, and use <a class="reference internal" href="../manpages/usercommands/synctest.html#std-cyrusman-synctest-1">synctest(1)</a> to verify that you can
 authenticate to backupd</p></li>
 </ol>
-</div>
-<div class="section" id="cyrus-imap-servers">
-<h3><a class="toc-backref" href="#id9">Cyrus IMAP servers</a><a class="headerlink" href="#cyrus-imap-servers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyrus-imap-servers">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Cyrus IMAP servers</a><a class="headerlink" href="#cyrus-imap-servers" title="Permalink to this heading">¶</a></h3>
 <p>Your Cyrus IMAP servers must be running version 3 or later of Cyrus, and must
 have been compiled with the <code class="docutils literal notranslate"><span class="pre">--enable-replication</span></code> configure option.  It does
 <em>not</em> need to be recompiled with the <code class="docutils literal notranslate"><span class="pre">--enable-backup</span></code> option.</p>
@@ -978,8 +983,8 @@ configurations</p>
 <dt><em>channel</em>_sync_password: …</dt><dd><p>Credentials for authenticating to the Cyrus Backup server</p>
 </dd>
 </dl>
-<div class="section" id="using-rolling-replication">
-<h4><a class="toc-backref" href="#id10">Using rolling replication</a><a class="headerlink" href="#using-rolling-replication" title="Permalink to this headline">¶</a></h4>
+<section id="using-rolling-replication">
+<h4><a class="toc-backref" href="#id10" role="doc-backlink">Using rolling replication</a><a class="headerlink" href="#using-rolling-replication" title="Permalink to this heading">¶</a></h4>
 <p>You can configure backups to use rolling replication.  Depending on the sync
 repeat interval you configure, this can be used to keep your backups very
 current – potentially as current as your other replicas.</p>
@@ -1001,9 +1006,9 @@ options.</p>
 <p>See <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> for additional <em>sync_</em> settings that can
 be used to affect the replication behaviour.  Many can be prefixed with
 a channel to limit their affect to only backups, if necessary.</p>
-</div>
-<div class="section" id="using-scheduled-replication-push">
-<h4><a class="toc-backref" href="#id11">Using scheduled replication (push)</a><a class="headerlink" href="#using-scheduled-replication-push" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-scheduled-replication-push">
+<h4><a class="toc-backref" href="#id11" role="doc-backlink">Using scheduled replication (push)</a><a class="headerlink" href="#using-scheduled-replication-push" title="Permalink to this heading">¶</a></h4>
 <p>You can configure backups to occur on a schedule determined by the IMAP
 server.</p>
 <p>To do this, add <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> invocations to the EVENTS section
@@ -1013,9 +1018,9 @@ whatever other options you need for selecting users to back up. See the
 <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> manpage for details.</p>
 <p>You could also invoke <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> in a similar way from a
 custom script running on the IMAP server.</p>
-</div>
-<div class="section" id="using-scheduled-replication-pull">
-<h4><a class="toc-backref" href="#id12">Using scheduled replication (pull)</a><a class="headerlink" href="#using-scheduled-replication-pull" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-scheduled-replication-pull">
+<h4><a class="toc-backref" href="#id12" role="doc-backlink">Using scheduled replication (pull)</a><a class="headerlink" href="#using-scheduled-replication-pull" title="Permalink to this heading">¶</a></h4>
 <p>You can configure backups to occur on a schedule determined by the
 backup server.  For example, you may have a custom script that examines
 the existing backups, and provokes fresh backups to occur if they are
@@ -1042,13 +1047,13 @@ specified, default sync configuration will be used.</p>
 </pre></div>
 </div>
 <p>This replicates all users to the channel <em>backup</em>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="administration">
-<h2><a class="toc-backref" href="#id13">Administration</a><a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="storage-requirements">
-<h3><a class="toc-backref" href="#id14">Storage requirements</a><a class="headerlink" href="#storage-requirements" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="administration">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Administration</a><a class="headerlink" href="#administration" title="Permalink to this heading">¶</a></h2>
+<section id="storage-requirements">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Storage requirements</a><a class="headerlink" href="#storage-requirements" title="Permalink to this heading">¶</a></h3>
 <p>It’s not really known yet how to predict the storage requirements for a backup
 server. Experimentation in dev environment suggests around 20-40% compressed
 backup file size relative to the backed up data, depending on compact settings,
@@ -1063,9 +1068,9 @@ anyway.)</p>
 <p>Certain invocations of ctl_backups and cyr_backup also require staging spool
 space, due to the way replication protocol (and thus backup data) parsing
 handles messages. So keep this in mind I suppose.</p>
-</div>
-<div class="section" id="initial-backups">
-<h3><a class="toc-backref" href="#id15">Initial backups</a><a class="headerlink" href="#initial-backups" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="initial-backups">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Initial backups</a><a class="headerlink" href="#initial-backups" title="Permalink to this heading">¶</a></h3>
 <p>Once a Cyrus Backup system is configured and running, new users that are
 created on the IMAP servers will be backed up seamlessly without administrator
 intervention.</p>
@@ -1077,42 +1082,42 @@ mailboxes at a time, until all/most of your mailboxes have been backed up at
 least once. Also run the <a class="reference internal" href="../manpages/systemcommands/ctl_backups.html#std-cyrusman-ctl_backups-8">ctl_backups(8)</a> <code class="docutils literal notranslate"><span class="pre">compact</span></code> command on the
 backups, to break up big chunks, if you wish.  Only then should you enable
 rolling/scheduled replication.</p>
-</div>
-<div class="section" id="restoring-from-backups">
-<h3><a class="toc-backref" href="#id16">Restoring from backups</a><a class="headerlink" href="#restoring-from-backups" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="restoring-from-backups">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Restoring from backups</a><a class="headerlink" href="#restoring-from-backups" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference internal" href="../manpages/systemcommands/restore.html#std-cyrusman-restore-8">restore(8)</a> tool will restore mailboxes and messages from a
 specified backup to a specified destination server. The destination server must
 be running a replication-capable <a class="reference internal" href="../manpages/systemcommands/imapd.html#std-cyrusman-imapd-8">imapd(8)</a> or
 <a class="reference internal" href="../manpages/systemcommands/sync_server.html#std-cyrusman-sync_server-8">sync_server(8)</a>. The restore tool should be run from the backup
 server containing the specified backup.</p>
-</div>
-<div class="section" id="file-locking">
-<h3><a class="toc-backref" href="#id17">File locking</a><a class="headerlink" href="#file-locking" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="file-locking">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">File locking</a><a class="headerlink" href="#file-locking" title="Permalink to this heading">¶</a></h3>
 <p>All <a class="reference internal" href="../manpages/systemcommands/backupd.html#std-cyrusman-backupd-8">backupd(8)</a>/<a class="reference internal" href="../manpages/systemcommands/ctl_backups.html#std-cyrusman-ctl_backups-8">ctl_backups(8)</a>/<a class="reference internal" href="../manpages/systemcommands/cyr_backup.html#std-cyrusman-cyr_backup-8">cyr_backup(8)</a>
 operations first obtain a lock on the relevant backup file.  ctl_backups and
 cyr_backup will try to do this without blocking (unless told otherwise),
 whereas backupd will never block.</p>
-</div>
-<div class="section" id="moving-backup-files-to-different-backup-partitions">
-<h3><a class="toc-backref" href="#id18">Moving backup files to different backup partitions</a><a class="headerlink" href="#moving-backup-files-to-different-backup-partitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="moving-backup-files-to-different-backup-partitions">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Moving backup files to different backup partitions</a><a class="headerlink" href="#moving-backup-files-to-different-backup-partitions" title="Permalink to this heading">¶</a></h3>
 <p>There’s no tool for this (yet). To do it manually, stop backupd, copy the files
 to the new partition, then use <a class="reference internal" href="../manpages/systemcommands/cyr_dbtool.html#std-cyrusman-cyr_dbtool-8">cyr_dbtool(8)</a> to update the user’s
 backups.db entry to point to the new location. Run the
 <a class="reference internal" href="../manpages/systemcommands/ctl_backups.html#std-cyrusman-ctl_backups-8">ctl_backups(8)</a> <code class="docutils literal notranslate"><span class="pre">verify</span></code> command on both the new filename (<code class="docutils literal notranslate"><span class="pre">-f</span></code>
 mode) and the user’s userid (<code class="docutils literal notranslate"><span class="pre">-u</span></code> mode) to ensure everything is okay, then
 restart backupd.</p>
-</div>
-<div class="section" id="provoking-a-backup-for-a-particular-user-user-group-everyone-etc-right-now">
-<h3><a class="toc-backref" href="#id19">Provoking a backup for a particular user/user group/everyone/etc right now</a><a class="headerlink" href="#provoking-a-backup-for-a-particular-user-user-group-everyone-etc-right-now" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="provoking-a-backup-for-a-particular-user-user-group-everyone-etc-right-now">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Provoking a backup for a particular user/user group/everyone/etc right now</a><a class="headerlink" href="#provoking-a-backup-for-a-particular-user-user-group-everyone-etc-right-now" title="Permalink to this heading">¶</a></h3>
 <p>Just run <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> by hand with appropriate options (as cyrus
 user, of course). See its man page for ways of specifying items to replicate.</p>
 <p>If the IMAP server with the user’s mail has been configured with the
 <code class="docutils literal notranslate"><span class="pre">xbackup_enabled:</span> <span class="pre">yes</span></code> option in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, then an admin
 user can cause a backup to occur by sending the IMAP server an <code class="docutils literal notranslate"><span class="pre">XBACKUP</span></code>
 command.</p>
-</div>
-<div class="section" id="what-about-tape-backups">
-<h3><a class="toc-backref" href="#id20">What about tape backups?</a><a class="headerlink" href="#what-about-tape-backups" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="what-about-tape-backups">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">What about tape backups?</a><a class="headerlink" href="#what-about-tape-backups" title="Permalink to this heading">¶</a></h3>
 <p>As long as backupd, ctl_backups and cyr_backup are not currently running (and
 assuming no-one’s poking around in things otherwise), it’s safe to take/restore
 a filesystem snapshot of backup partitions. So to schedule, say, a nightly tape
@@ -1129,48 +1134,48 @@ when you restart the backupd after restoring a filesystem snapshot, the next
 time your Cyrus IMAP server replicates to it, the restored backups will be
 brought up to date. Probably not what you wanted – so don’t restart backupd
 until you’ve done whatever you were doing.</p>
-</div>
-<div class="section" id="multiple-imap-servers-one-backup-server">
-<h3><a class="toc-backref" href="#id21">Multiple IMAP servers, one backup server</a><a class="headerlink" href="#multiple-imap-servers-one-backup-server" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-imap-servers-one-backup-server">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Multiple IMAP servers, one backup server</a><a class="headerlink" href="#multiple-imap-servers-one-backup-server" title="Permalink to this heading">¶</a></h3>
 <p>This is fine, as long as each user being backed up is only being backed up by
 one server (or they are otherwise synchronised). If IMAP servers have different
 ideas about the state of a user’s mailboxes, one of those will be in sync with
 the backup server and the other will get a lot of replication failures.</p>
-</div>
-<div class="section" id="multiple-imap-servers-multiple-backup-servers">
-<h3><a class="toc-backref" href="#id22">Multiple IMAP servers, multiple backup servers</a><a class="headerlink" href="#multiple-imap-servers-multiple-backup-servers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-imap-servers-multiple-backup-servers">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Multiple IMAP servers, multiple backup servers</a><a class="headerlink" href="#multiple-imap-servers-multiple-backup-servers" title="Permalink to this heading">¶</a></h3>
 <p>Make sure your <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> configuration(s) on each IMAP server
 knows which users are being backed up to which backup servers, and selects
 them appropriately. See the <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> man page for options for
 specifying users, and run it as an event (rather than rolling).</p>
 <p>Or just distribute it at server granularity, such that backup server A serves
 IMAP servers A, B and C, and backup server B serves IMAP servers D, E, F, etc.</p>
-</div>
-<div class="section" id="one-imap-server-multiple-backup-servers">
-<h3><a class="toc-backref" href="#id23">One IMAP server, multiple backup servers</a><a class="headerlink" href="#one-imap-server-multiple-backup-servers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="one-imap-server-multiple-backup-servers">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">One IMAP server, multiple backup servers</a><a class="headerlink" href="#one-imap-server-multiple-backup-servers" title="Permalink to this heading">¶</a></h3>
 <p>Configure one channel plus one rolling <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> per backup
 server, and your IMAP server can be more or less simultaneously backed up to
 multiple backup destinations.</p>
-</div>
-<div class="section" id="reducing-load">
-<h3><a class="toc-backref" href="#id24">Reducing load</a><a class="headerlink" href="#reducing-load" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reducing-load">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Reducing load</a><a class="headerlink" href="#reducing-load" title="Permalink to this heading">¶</a></h3>
 <p>To reduce load on your client-facing IMAP servers, configure sync log chaining
 on their replicas and let those take the load of replicating to the backup
 servers.</p>
 <p>To reduce network traffic, do the same thing, specifically using replicas that
 are already co-located with the backup server.</p>
-</div>
-<div class="section" id="other-setups">
-<h3><a class="toc-backref" href="#id25">Other setups</a><a class="headerlink" href="#other-setups" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-setups">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Other setups</a><a class="headerlink" href="#other-setups" title="Permalink to this heading">¶</a></h3>
 <p>The use of the replication protocol and <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> allows a lot
 of interesting configuration possibilities to shake out. Have a rummage in the
 <a class="reference internal" href="../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> man page for inspiration.</p>
-</div>
-</div>
-<div class="section" id="tools">
-<h2><a class="toc-backref" href="#id26">Tools</a><a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ctl-backups">
-<h3><a class="toc-backref" href="#id27">ctl_backups</a><a class="headerlink" href="#ctl-backups" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="tools">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Tools</a><a class="headerlink" href="#tools" title="Permalink to this heading">¶</a></h2>
+<section id="ctl-backups">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">ctl_backups</a><a class="headerlink" href="#ctl-backups" title="Permalink to this heading">¶</a></h3>
 <p>This tool is generally for mass operations that require few/fixed arguments
 across multiple/all backups</p>
 <p>Supported operations:</p>
@@ -1203,9 +1208,9 @@ non-cyrus tools.</p>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../manpages/systemcommands/ctl_backups.html#std-cyrusman-ctl_backups-8">ctl_backups(8)</a> man page for more information.</p>
-</div>
-<div class="section" id="cyr-backup">
-<h3><a class="toc-backref" href="#id28">cyr_backup</a><a class="headerlink" href="#cyr-backup" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyr-backup">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">cyr_backup</a><a class="headerlink" href="#cyr-backup" title="Permalink to this heading">¶</a></h3>
 <p>This tool is generally for operations on a single mailbox that require multiple
 additional arguments</p>
 <p>Supported operations</p>
@@ -1221,9 +1226,9 @@ message (useful for manually restoring)</p>
 </dd>
 </dl>
 <p>See the <a class="reference internal" href="../manpages/systemcommands/cyr_backup.html#std-cyrusman-cyr_backup-8">cyr_backup(8)</a> man page for more information.</p>
-</div>
-<div class="section" id="restore">
-<h3><a class="toc-backref" href="#id29">restore</a><a class="headerlink" href="#restore" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="restore">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">restore</a><a class="headerlink" href="#restore" title="Permalink to this heading">¶</a></h3>
 <p>This tool is for restoring mail from backup files.</p>
 <p>Required arguments are a destination server (in ip:port or host:port format),
 a backup file, and mboxnames, uniqueids or guids specifying the mailboxes or
@@ -1236,9 +1241,9 @@ that client state remains consistent.</p>
 messages will be assigned new, unused uids and will appear to the client as new
 messages.</p>
 <p>See the <a class="reference internal" href="../manpages/systemcommands/restore.html#std-cyrusman-restore-8">restore(8)</a> man page for more information.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1261,7 +1266,7 @@ messages.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jun 22 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1284,9 +1289,12 @@ messages.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

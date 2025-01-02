@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>CalDAV &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,11 +794,11 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="caldav">
-<span id="id1"></span><h1>CalDAV<a class="headerlink" href="#caldav" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="sidebar">
+  <section id="caldav">
+<span id="id1"></span><h1>CalDAV<a class="headerlink" href="#caldav" title="Permalink to this heading">¶</a></h1>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<aside class="sidebar">
 <p class="sidebar-title">calendarprefix</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -807,7 +812,7 @@ hierarchy will be at the toplevel of the shared namespace.  A
 user's personal calendar hierarchy will be a child of their Inbox.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>When enabled, the CalDAV module allows Cyrus to function as a calendar and
 scheduling server. This module uses a subset of the mailbox hierarchy as
 calendar collections, the toplevel of which is specified by the <code class="docutils literal notranslate"><span class="pre">calendarprefix</span></code>
@@ -826,7 +831,7 @@ mailboxes will not returned by Cyrus imapd in response to an IMAP client's
 request for the available calendar list, but Cyrus imapd can not otherwise
 prevent an IMAP client from accessing them.</p>
 </div>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">caldav_allowscheduling</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -840,18 +845,18 @@ possible.
 Allowed values: <em>off</em>, <em>on</em>, <em>apple</em></p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>By default, the CalDAV module will automatically perform scheduling operations
 when a scheduling object (invite or reply) is stored on or deleted from the
 server. Support for the calendar-auto-schedule feature can be disabled with the
 <code class="docutils literal notranslate"><span class="pre">caldav_allowscheduling</span></code> option.</p>
-</div>
-<div class="section" id="administration">
-<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="administration">
+<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this heading">¶</a></h2>
 <p>The CalDAV module will <em>automatically</em> create the required calendars for a user
 the first time that the user authenticates to the CalDAV server. Note that the
 user MUST have an existing IMAP Inbox in order for the calendars to be created.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">autocreate options</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -874,7 +879,7 @@ user MUST have an existing IMAP Inbox in order for the calendars to be created.<
 <div><p>Create the 'Inbox' and 'Outbox' calendars if they don't already exist</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>Autocreate of the various calendars can be disabled with the
 &quot;caldav_create_default/sched/attach&quot; options, if you have an alternate
 mechanism to create calendars.</p>
@@ -891,7 +896,7 @@ It allows you to:</p>
 </div></blockquote>
 <p>The Cyrus web GUI for CalDAV Collection Management is disabled by
 default, but can be enabled with the &quot;caldav_allowcalendaradmin&quot; option.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">caldav_allowcalendaradmin</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -902,11 +907,11 @@ default, but can be enabled with the &quot;caldav_allowcalendaradmin&quot; optio
 <div><p>Enable per-user calendar administration web UI on the CalDAV server.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>To access the Cyrus web GUI for CalDAV Collection Management, point
 a web browser at <code class="docutils literal notranslate"><span class="pre">https://&lt;servername&gt;/dav/calendars/user/&lt;username&gt;</span></code></p>
-<div class="section" id="calendar-access-controls">
-<span id="calendar-acl"></span><h3>Calendar access controls<a class="headerlink" href="#calendar-access-controls" title="Permalink to this headline">¶</a></h3>
+<section id="calendar-access-controls">
+<span id="calendar-acl"></span><h3>Calendar access controls<a class="headerlink" href="#calendar-access-controls" title="Permalink to this heading">¶</a></h3>
 <p>The CalDAV module uses the same access controls as the other Cyrus services. The
 <a class="reference internal" href="../../../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a> tool can be used to adjust ACLs on calendars as needed.
 The tables below show how the access controls are used by the CalDAV module.</p>
@@ -1092,10 +1097,10 @@ The tables below show how the access controls are used by the CalDAV module.</p>
 </table><div class="line-block">
 <div class="line"><br /></div>
 </div>
-</div>
-</div>
-<div class="section" id="freebusy-url">
-<h2>Freebusy URL<a class="headerlink" href="#freebusy-url" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="freebusy-url">
+<h2>Freebusy URL<a class="headerlink" href="#freebusy-url" title="Permalink to this heading">¶</a></h2>
 <p>When enabled in conjunction with the CalDAV module, the Freebusy URL module
 allows non-CalDAV and/or remote calendaring clients to query the freebusy
 information of Cyrus CalDAV users.</p>
@@ -1112,24 +1117,24 @@ collections, when they have explicitly &quot;freebusy&quot; ACL (9) set, is done
 <a class="reference external" href="http://www.calconnect.org/pubdocs/CD0903%20Freebusy%20Read%20URL.pdf">Freebusy Read URL</a>,
 allowing the user to choose to set the start, end, period and format of
 their query results.</p>
-</div>
-<div class="section" id="time-zone-distribution-service-tzdist">
-<h2>Time Zone Distribution Service (TZDist)<a class="headerlink" href="#time-zone-distribution-service-tzdist" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-is-tzdist">
-<h3>What is TZDist<a class="headerlink" href="#what-is-tzdist" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="time-zone-distribution-service-tzdist">
+<h2>Time Zone Distribution Service (TZDist)<a class="headerlink" href="#time-zone-distribution-service-tzdist" title="Permalink to this heading">¶</a></h2>
+<section id="what-is-tzdist">
+<h3>What is TZDist<a class="headerlink" href="#what-is-tzdist" title="Permalink to this heading">¶</a></h3>
 <p>The TZDist module allows Cyrus to function as a Time Zone Distribution
-Service (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7808.html"><strong>RFC 7808</strong></a> and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7809.html"><strong>RFC 7809</strong></a>), providing time zone data for CalDAV
+Service (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7808.html"><strong>RFC 7808</strong></a> and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7809.html"><strong>RFC 7809</strong></a>), providing time zone data for CalDAV
 and calendaring clients, without having to wait for their client vendor and/or
 OS vendor to update the timezone information. The responsibility for keeping
 the time zone information up to date then falls upon the Cyrus administrator.</p>
 <p>TZDist is optional: without Cyrus having TZDist enabled, calendar clients should
 still be able to get their timezone information from their client or their OS.</p>
 <p>TZDist strips known VTIMEZONEs from incoming iCalendar data (as
-advertised by the <code class="docutils literal notranslate"><span class="pre">calendar-no-timezone</span></code> DAV option from <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7809.html"><strong>RFC 7809</strong></a>).</p>
-</div>
-<div class="section" id="id2">
-<h3>Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="sidebar">
+advertised by the <code class="docutils literal notranslate"><span class="pre">calendar-no-timezone</span></code> DAV option from <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7809.html"><strong>RFC 7809</strong></a>).</p>
+</section>
+<section id="id2">
+<h3>Configuration<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<aside class="sidebar">
 <p class="sidebar-title">zoneinfo config</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -1166,15 +1171,15 @@ definitions libical finds will be used.</p>
 be specified.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>The TZDist module requires the <code class="docutils literal notranslate"><span class="pre">zoneinfo_dir</span></code> setting in <a class="reference internal" href="../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 to be set to the directory where your time zone data is stored.</p>
 <p>The data is indexed by a database whose location is specified by the
 <code class="docutils literal notranslate"><span class="pre">zoneinfo_db_path</span></code> option, using the format specified by the <code class="docutils literal notranslate"><span class="pre">zoneinfo_db</span></code>
 option.</p>
-</div>
-<div class="section" id="id3">
-<h3>Administration<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>Administration<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>The TZDist module is designed to use the IANA Time Zone Database data (a.k.a.
 Olson Database) converted to the iCalendar format.</p>
 <p><a class="reference external" href="https://github.com/libical/vzic">vzic</a> does convert the IANA TZ DB to iCalendar
@@ -1221,12 +1226,12 @@ zone data, colon, and the version of the data (e.g. &quot;IANA Time Zone Databas
 <li><p>Check that the zoneinfo index database and all iCalendar data files/links
 are readable by the cyrus user.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="ischedule">
-<h2>iSchedule<a class="headerlink" href="#ischedule" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="about-ischedule">
-<h3>About iSchedule<a class="headerlink" href="#about-ischedule" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ischedule">
+<h2>iSchedule<a class="headerlink" href="#ischedule" title="Permalink to this heading">¶</a></h2>
+<section id="about-ischedule">
+<h3>About iSchedule<a class="headerlink" href="#about-ischedule" title="Permalink to this heading">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>iSchedule support in Cyrus is a work in progress.</p>
@@ -1240,7 +1245,7 @@ to set up a good meeting time, which cannot be done over email.</p></li>
 participants automatically. This is not done when scheduling over email as it
 would result in too much mail traffic and extra manual overhead for the users.</p></li>
 </ul>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">caldav_allowscheduling</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -1254,7 +1259,7 @@ possible.
 Allowed values: <em>off</em>, <em>on</em>, <em>apple</em></p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>iSchedule is automatically enabled in Cyrus if both the CalDAV module and the
 <code class="docutils literal notranslate"><span class="pre">caldav_allowscheduling</span></code> options are enabled in a
 <a class="reference internal" href="../../../reference/admin/murder/murder.html#murder"><span class="std std-ref">Cyrus Murder</span></a>. In this instance, Cyrus uses iSchedule to move
@@ -1264,9 +1269,9 @@ as there is the burden of authorization to verify the authenticity and
 integrity of these messages to prevent inadvertent or malicious data leaks
 or corruption.</p>
 <p>What mechanism to use for authorization is under discussion with the <a class="reference external" href="https://www.calconnect.org/">CalConnect</a> standards body, whether this is <a class="reference external" href="http://www.dkim.org/">DKIM</a> or some other type of message signature.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1289,7 +1294,7 @@ or corruption.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Feb 13 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1312,9 +1317,12 @@ or corruption.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

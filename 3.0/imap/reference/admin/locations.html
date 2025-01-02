@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>File &amp; Directory Locations &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,8 +763,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="file-directory-locations">
-<span id="imap-admin-locations"></span><h1>File &amp; Directory Locations<a class="headerlink" href="#file-directory-locations" title="Permalink to this headline">¶</a></h1>
+  <section id="file-directory-locations">
+<span id="imap-admin-locations"></span><h1>File &amp; Directory Locations<a class="headerlink" href="#file-directory-locations" title="Permalink to this heading">¶</a></h1>
 <p>Cyrus IMAP maintains several directories for configuration, state and
 data storage.  The locations of these directories and, in many cases,
 of individual files, may be controlled by settings in
@@ -776,8 +781,8 @@ of individual files, may be controlled by settings in
 <li class="toctree-l1"><a class="reference internal" href="locations/searchtiers.html">Search Tiers</a></li>
 </ul>
 </div>
-<div class="section" id="partitions">
-<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<section id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this heading">¶</a></h2>
 <p>Partitioning is a means to divide storage resources into separate pools
 and may be defined for the following types of data:</p>
 <blockquote>
@@ -794,8 +799,8 @@ document on <a class="reference internal" href="../../concepts/features/mailbox-
 <p>In general, Cyrus allows one to maintain several separate partitions for
 each of these data types, and to establish rules governing distribution
 of data within each pool.</p>
-<div class="section" id="types-of-partitions">
-<h3>Types of Partitions<a class="headerlink" href="#types-of-partitions" title="Permalink to this headline">¶</a></h3>
+<section id="types-of-partitions">
+<h3>Types of Partitions<a class="headerlink" href="#types-of-partitions" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus supports several different types of partitions:</p>
 <ul class="simple">
 <li><p>Mail Spool Partitions</p></li>
@@ -836,16 +841,16 @@ and N to Z in the other.</p></li>
 <span class="n">tier1searchpartition</span><span class="o">-</span><span class="n">ntoz</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">slow</span><span class="o">/</span><span class="n">search</span><span class="o">/</span><span class="n">ntoz</span><span class="o">/</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="working-with-partitions">
-<h2>Working With Partitions<a class="headerlink" href="#working-with-partitions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="working-with-partitions">
+<h2>Working With Partitions<a class="headerlink" href="#working-with-partitions" title="Permalink to this heading">¶</a></h2>
 <p>All partition operations are controlled via settings in
 <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, and thus require server restarts to effect.
 There are no administrative commands to manipulate partitions.</p>
 <p>Here are the settings for each class of partition:</p>
-<div class="section" id="mail-spool-partitions">
-<h3>Mail Spool Partitions<a class="headerlink" href="#mail-spool-partitions" title="Permalink to this headline">¶</a></h3>
+<section id="mail-spool-partitions">
+<h3>Mail Spool Partitions<a class="headerlink" href="#mail-spool-partitions" title="Permalink to this heading">¶</a></h3>
 <p>While Cyrus itself has no default values for these settings, most
 distributions use <code class="docutils literal notranslate"><span class="pre">default</span></code> and <code class="docutils literal notranslate"><span class="pre">/var/spool/cyrus</span></code> or
 <code class="docutils literal notranslate"><span class="pre">/var/spool/cyrus</span></code>:</p>
@@ -870,9 +875,9 @@ value of the <strong>defaultpartion</strong> option is <strong>part1</strong>, t
 <strong>partition-part1</strong> field is required.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="metadata-partitions">
-<h3>Metadata Partitions<a class="headerlink" href="#metadata-partitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="metadata-partitions">
+<h3>Metadata Partitions<a class="headerlink" href="#metadata-partitions" title="Permalink to this heading">¶</a></h3>
 <p>Metadata is information used to process the mailbox data, rather than
 the contents of the messages withing the mailbox.  Examples include
 headers, caches, indexes, etc.</p>
@@ -898,9 +903,9 @@ partition.
 Allowed values: <em>header</em>, <em>index</em>, <em>cache</em>, <em>expunge</em>, <em>squat</em>, <em>annotations</em>, <em>lock</em>, <em>dav</em>, <em>archivecache</em></p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="archive-partitions">
-<h3>Archive Partitions<a class="headerlink" href="#archive-partitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="archive-partitions">
+<h3>Archive Partitions<a class="headerlink" href="#archive-partitions" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus Archiving will migrate mailbox data from the normal mail spool
 partitions to separate archive partitions, based upon criteria such as
 age and size.  Typical use cases would be to keep so-called “hot” data,
@@ -919,9 +924,9 @@ to have a corresponding <strong>archivepartition-name</strong> option, but that
 without one there’s no benefit to enabling archiving.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="search-partitions">
-<h3>Search Partitions<a class="headerlink" href="#search-partitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="search-partitions">
+<h3>Search Partitions<a class="headerlink" href="#search-partitions" title="Permalink to this heading">¶</a></h3>
 <p>Modern Cyrus uses the Xapian search engine to index messages for
 server-side search support.  Index data are stored in search “tiers”
 which are themselves related to search partitions.  There are two key
@@ -952,9 +957,9 @@ store this tier1’s search index for the part1 partition.</p>
 </div></blockquote>
 </div></blockquote>
 <p>Back to <a class="reference internal" href="../admin.html#imap-admin"><span class="std std-ref">Administrator Guide</span></a></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -977,7 +982,7 @@ store this tier1’s search index for the part1 partition.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Jan 05 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1000,9 +1005,12 @@ store this tier1’s search index for the part1 partition.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

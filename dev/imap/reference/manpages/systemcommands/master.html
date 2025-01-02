@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>master &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,17 +789,17 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-master-8"><span id="std:cyrusman-master(8)"></span></span><div class="section" id="master">
-<span id="imap-reference-manpages-systemcommands-master"></span><h1><strong>master</strong><a class="headerlink" href="#master" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-master-8"></span><section id="master">
+<span id="imap-reference-manpages-systemcommands-master"></span><h1><strong>master</strong><a class="headerlink" href="#master" title="Permalink to this heading">¶</a></h1>
 <p>The Cyrus IMAP master process.</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>master</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> <em>alternate cyrus.conf</em> ]
     [ <strong>-l</strong> <em>listen queue</em> ] [ <strong>-p</strong> <em>pidfile</em> ] [ <strong>-r</strong> <em>ready_file</em> ]
     [ <strong>-j</strong> <em>janitor period</em> ] [ <strong>-d</strong> | <strong>-D</strong> ] [ <strong>-L</strong> <em>logfile</em> ]</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>master</strong> is the process that controls all of the Cyrus
 processes. This process is responsible for creating all imapd, pop3d,
 lmtpd and timsieved child processes. This process also performs scheduled
@@ -802,24 +807,24 @@ cleanup/maintenance.</p>
 <p>If this process dies, then no new sessions will be started.</p>
 <p>It kills itself and all child processes when it receives a SIGTERM.</p>
 <p><strong>master</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-master-C">
-<span id="cmdoption-master-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname">&#160; <span class="pre">alternate</span> <span class="pre">imapd.conf</span></code><a class="headerlink" href="#cmdoption-master-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-C">
+<span id="cmdoption-master-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname">&#160; <span class="pre">alternate</span> <span class="pre">imapd.conf</span></span><a class="headerlink" href="#cmdoption-master-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-M">
-<span id="cmdoption-master-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname">&#160; <span class="pre">alternate</span> <span class="pre">cyrus.conf</span></code><a class="headerlink" href="#cmdoption-master-M" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-M">
+<span id="cmdoption-master-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname">&#160; <span class="pre">alternate</span> <span class="pre">cyrus.conf</span></span><a class="headerlink" href="#cmdoption-master-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies an alternate cyrus.conf for use by master.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-l">
-<code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname">&#160; <span class="pre">listen</span> <span class="pre">queue</span> <span class="pre">backlog</span></code><a class="headerlink" href="#cmdoption-master-l" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-l">
+<span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname">&#160; <span class="pre">listen</span> <span class="pre">queue</span> <span class="pre">backlog</span></span><a class="headerlink" href="#cmdoption-master-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the listen queue backlog. By default, the listen queue is
 set to 32.   On systems with a high connection rate, it may be
 desirable to increase this value. refer to <em class="manpage">listen(2)</em> for
@@ -827,8 +832,8 @@ details.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-j">
-<code class="sig-name descname"><span class="pre">-j</span></code><code class="sig-prename descclassname">&#160; <span class="pre">janitor</span> <span class="pre">full-sweeps</span> <span class="pre">per</span> <span class="pre">second</span></code><a class="headerlink" href="#cmdoption-master-j" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-j">
+<span class="sig-name descname"><span class="pre">-j</span></span><span class="sig-prename descclassname">&#160; <span class="pre">janitor</span> <span class="pre">full-sweeps</span> <span class="pre">per</span> <span class="pre">second</span></span><a class="headerlink" href="#cmdoption-master-j" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the number of times per second the janitor should sweep the
 entire child table.  Leave it at the default of 1 unless you have a
 really high fork rate (and you have not increased the child hash
@@ -837,45 +842,45 @@ entries).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-p">
-<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">pidfile</span></code><a class="headerlink" href="#cmdoption-master-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname">&#160; <span class="pre">pidfile</span></span><a class="headerlink" href="#cmdoption-master-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use <em>pidfile</em> as the pidfile.  If not specified, defaults to
 <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
 defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.pid</span></code></p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-r">
-<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname">&#160; <span class="pre">ready_file</span></code><a class="headerlink" href="#cmdoption-master-r" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-r">
+<span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname">&#160; <span class="pre">ready_file</span></span><a class="headerlink" href="#cmdoption-master-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use <em>ready_file</em> as the ready file.  If not specified, uses
 <code class="docutils literal notranslate"><span class="pre">master_ready_file</span></code> from <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, which
 defaults to <code class="docutils literal notranslate"><span class="pre">{configdirectory}/master.ready</span></code></p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-d">
-<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-master-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-master-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start in daemon mode (run in background and disconnect from
 controlling terminal).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-D">
-<code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-master-D" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-master-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't close stdin/stdout/stderr. Primarily useful for debugging.
 Note that <strong>-d</strong> and <strong>-D</strong> cannot be used together; consider using
 <strong>-L</strong> instead.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-master-L">
-<code class="sig-name descname"><span class="pre">-L</span></code><code class="sig-prename descclassname">&#160; <span class="pre">logfile</span></code><a class="headerlink" href="#cmdoption-master-L" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-master-L">
+<span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname">&#160; <span class="pre">logfile</span></span><a class="headerlink" href="#cmdoption-master-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Redirect stdout and stderr to the given <em>logfile</em>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
 <p>Upon execution, <strong>master</strong> reads its configuration information
 out of the <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> file, or an alternative if <strong>-M</strong>
 is used.</p>
@@ -895,28 +900,28 @@ connection when SIGHUP is received are allowed to run until the client
 logouts before being recycled. It may take a long time until the client
 logouts, so a log message is generated for processes that have not been
 recycled within 30s.</p>
-</div>
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
 <p>The environment variable <strong>CYRUS_VERBOSE</strong> can be set to log additional
 debugging information. Setting the value to 1 results in base level logging.
 Setting it higher results in more log messages being generated.</p>
 <p>The <a class="reference internal" href="cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> utility's <code class="docutils literal notranslate"><span class="pre">proc</span></code> subcommand can be used to
 list the active processes that <strong>master</strong> is managing.</p>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/cyrus.conf,
 /etc/imapd.conf,
 /var/run/master.pid</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="imapd.html#std-cyrusman-imapd-8">imapd(8)</a>,
 <a class="reference internal" href="pop3d.html#std-cyrusman-pop3d-8">pop3d(8)</a>, <a class="reference internal" href="lmtpd.html#std-cyrusman-lmtpd-8">lmtpd(8)</a>, <a class="reference internal" href="timsieved.html#std-cyrusman-timsieved-8">timsieved(8)</a>,
 <a class="reference internal" href="idled.html#std-cyrusman-idled-8">idled(8)</a>, <a class="reference internal" href="cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -939,7 +944,7 @@ list the active processes that <strong>master</strong> is managing.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 08 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -962,9 +967,12 @@ list the active processes that <strong>master</strong> is managing.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

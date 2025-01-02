@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus NNTP &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,10 +788,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-nntp">
-<span id="id1"></span><h1>Cyrus NNTP<a class="headerlink" href="#cyrus-nntp" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <section id="cyrus-nntp">
+<span id="id1"></span><h1>Cyrus NNTP<a class="headerlink" href="#cyrus-nntp" title="Permalink to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The NNTP support in Cyrus is still relatively young in the grand scheme of things, and has not been tested under a heavy Usenet load. That being said, the code appears to be stable and is currently running in production serving 50-60 newsgroups with a volume of about 6000 messages per day.</p>
@@ -794,9 +799,9 @@
 <p>Cyrus includes a NNTP server. The NNTP works a lot like the IMAP server, it uses the same authentication and authorization. It also stores messages like IMAP. This means the messages are stored in one file per post.</p>
 <p>Cyrus has the ability to export Usenet via IMAP and/or export shared IMAP mailboxes via NNTP.</p>
 <p>This <a class="reference download internal" download="" href="../../../_downloads/f801c38f1857536dd11df837f858aaee/netnews.png"><code class="xref download docutils literal notranslate"><span class="pre">diagram</span></code></a> shows how the various NNTP components interact.</p>
-</div>
-<div class="section" id="nntp-setup">
-<h2>NNTP Setup<a class="headerlink" href="#nntp-setup" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="nntp-setup">
+<h2>NNTP Setup<a class="headerlink" href="#nntp-setup" title="Permalink to this heading">¶</a></h2>
 <p>Decide where the newsgroup mailboxes will reside: either at the toplevel of the hierarchy (eg, comp.mail.imap) or rooted elsewhere (eg, netnews.comp.mail.imap). If the newsgroup mailboxes are not at the toplevel of the hierarchy, then the parent must be specified using <strong>newsprefix</strong> in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <ol class="arabic">
 <li><p>Make sure that Cyrus is built with NNTP support using the <code class="docutils literal notranslate"><span class="pre">--enable-nntp</span></code> switch. This builds nntpd and the associated utilities.</p>
@@ -833,9 +838,9 @@
 </li>
 <li><p>Restart your server.</p></li>
 </ol>
-</div>
-<div class="section" id="defining-newsgroups">
-<h2>Defining Newsgroups<a class="headerlink" href="#defining-newsgroups" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="defining-newsgroups">
+<h2>Defining Newsgroups<a class="headerlink" href="#defining-newsgroups" title="Permalink to this heading">¶</a></h2>
 <p>Create a mailbox for each newsgroup to receive/export. If some groups are private, be sure to set the ACLs accordingly. The <a class="reference internal" href="../manpages/systemcommands/mknewsgroups.html#std-cyrusman-mknewsgroups-8">mknewsgroups(8)</a> script can be used to help facilitate mass creation of newsgroup mailboxes. When using this script, be sure to add posting rights for ‘anyone’ (eg. <code class="docutils literal notranslate"><span class="pre">mknewsgroups</span> <span class="pre">-a</span> <span class="pre">'anyone</span> <span class="pre">+p'</span> <span class="pre">...</span></code>) so that articles can be fed/posted.</p>
 <p>News groups can be defined in two ways:</p>
 <ol class="arabic simple">
@@ -843,8 +848,8 @@
 <li><p>Use <a class="reference internal" href="../manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a>, and create a new mailbox for news.</p></li>
 </ol>
 <p>Some distributions such as debian do not include mknewsgroups.</p>
-<div class="section" id="using-cyradm">
-<h3>Using Cyradm<a class="headerlink" href="#using-cyradm" title="Permalink to this headline">¶</a></h3>
+<section id="using-cyradm">
+<h3>Using Cyradm<a class="headerlink" href="#using-cyradm" title="Permalink to this heading">¶</a></h3>
 <p>Create a new group like creating a new mailbox:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cm ournews/mynewsgroup
 </pre></div>
@@ -854,40 +859,40 @@
 </pre></div>
 </div>
 <p>The above gives <strong>L</strong> Lookup, <strong>R</strong> Read, <strong>S</strong> Seen, and <strong>P</strong> Post permissions (basically read/write – see the man page for more) to anyone logged into the server. More restrictive permissions are possible. (Note: This example assumes <em>unixhierarchysep</em> is being used in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>)</p>
-</div>
-</div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="push-traditional-feeds">
-<h3>Push (traditional) feeds<a class="headerlink" href="#push-traditional-feeds" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<section id="push-traditional-feeds">
+<h3>Push (traditional) feeds<a class="headerlink" href="#push-traditional-feeds" title="Permalink to this heading">¶</a></h3>
 <p>If the usenet peer will be pushing articles to the server, no further configuration is necessary, beyond providing peer access to the Cyrus server on port 119 (nntp).</p>
-</div>
-<div class="section" id="pull-suck-feeds">
-<h3>Pull (suck) feeds<a class="headerlink" href="#pull-suck-feeds" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pull-suck-feeds">
+<h3>Pull (suck) feeds<a class="headerlink" href="#pull-suck-feeds" title="Permalink to this heading">¶</a></h3>
 <p>If pulling articles from the peer is preferred (and the provider allows it), then use the <code class="docutils literal notranslate"><span class="pre">fetchnews</span></code> utility which will retrieve articles from the peer and feed them to the Cyrus server. If supported by the peer, fetchnews will use the NEWNEWS command, otherwise it will fallback to keeping track of the high water mark of each group. Configure fetchnews as an EVENT in <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> to be called periodically (eg, once an hour, every 15 minutes, etc).</p>
-</div>
-<div class="section" id="imapfeed">
-<h3>imapfeed<a class="headerlink" href="#imapfeed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="imapfeed">
+<h3>imapfeed<a class="headerlink" href="#imapfeed" title="Permalink to this heading">¶</a></h3>
 <p>Alternatively, if there is an INN v2.3 server in-house use the included <code class="docutils literal notranslate"><span class="pre">imapfeed</span></code> utility (written by the authors of Cyrus) to feed articles to the Cyrus server via LMTP. Consult the INN documentation for further details.</p>
-</div>
-<div class="section" id="control-messages">
-<h3>Control Messages<a class="headerlink" href="#control-messages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="control-messages">
+<h3>Control Messages<a class="headerlink" href="#control-messages" title="Permalink to this heading">¶</a></h3>
 <p>Control messages are accepted, parsed and delivered to the corresponding <code class="docutils literal notranslate"><span class="pre">control.*</span></code> pseudo-group (eg, control.newgroup, control.cancel, etc) if it exists, so that they may be reviewed by an administrator.</p>
 <p>Automatic execution of control messages is only performed if the newsmaster (default = “news”) user has the proper access control for the given mailbox. For example, to allow cancel control messages to be performed for <code class="docutils literal notranslate"><span class="pre">misc.test</span></code> articles, give the “news” user the ‘d’ right on “misc.test”. To allow newgroup, rmgroup and mvgroup control messages to be performed on the “misc” hierarchy, give the “news” user the ‘c’ right on “misc”.</p>
 <p>NOTE: No sender or PGP verification of control messages is currently implemented.</p>
-</div>
-<div class="section" id="reading-posting-articles">
-<h3>Reading/Posting articles<a class="headerlink" href="#reading-posting-articles" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reading-posting-articles">
+<h3>Reading/Posting articles<a class="headerlink" href="#reading-posting-articles" title="Permalink to this heading">¶</a></h3>
 <p>In order to have articles posted by your local users propagate to the outside world, you must specify the name of your usenet peer(s) with the newspeer option in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>. This is the host(s) that nntpd contacts to feed outgoing articles. Depending on the configuration of the newspeer option, articles will be fed to the upstream server(s) using either the POST or IHAVE command. Also note that you may specify an optional wildmat to filter which groups will be fed (see <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> for details).</p>
 <p>Newsgroups can also be gatewayed to email by setting <code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-imapd/news2mail</span></code> mailbox <a class="reference internal" href="../faqs/o-annotations.html#faqs-o-annotations"><span class="std std-ref">annotations</span></a> to the corresponding email addresses.</p>
-</div>
-<div class="section" id="news-clients">
-<h3>News clients<a class="headerlink" href="#news-clients" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="news-clients">
+<h3>News clients<a class="headerlink" href="#news-clients" title="Permalink to this heading">¶</a></h3>
 <p>If anonymous logins are disabled (default) in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, then your news clients will have to be configured to login with a username and password, otherwise they will not be allowed to post. Furthermore, if plaintext logins are disabled in imapd.conf, then you might have to configure your news clients to use SSL/TLS and enable the nntps service in <a class="reference internal" href="../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
 <p>If you want to allow your news clients to use the NNTP NEWNEWS command, you will have to enable the <strong>allownewnews</strong> option in imapd.conf.</p>
-</div>
-<div class="section" id="email-clients">
-<h3>Email clients<a class="headerlink" href="#email-clients" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="email-clients">
+<h3>Email clients<a class="headerlink" href="#email-clients" title="Permalink to this heading">¶</a></h3>
 <p>If you are exporting Usenet via IMAP, and your users’ messaging clients are not savvy enough to reply to and post articles via NNTP, then you will have to configure your server so your users can reply to and post articles via SMTP.</p>
 <p>To help facilitate this, you can set the <strong>newspostuser</strong> option to a pseudo user which will be used to construct email delivery addresses for each incoming article. These addresses are inserted into a Reply-To: in the article. For example, if set to “post”, an article posted to comp.mail.imap will have an address of “post+comp.mail.imap” inserted into the Reply-To: header. This will allow a user to easily reply to an article via email. Otherwise, the users will have to learn the correct email address format for posting and replying to articles.</p>
 <p>In order for these email messages to be fed into your news server (and subsequently to the outside world) you need to use an email to news gateway, such as lmtp2nntp. You need to configure your MTA (Sendmail, Postfix, etc) so that lmtp2nntp is used as the local mailer whenever it receives a news article. A simple rule for doing this in Sendmail is shown below:</p>
@@ -898,20 +903,20 @@ Rpost + $+ &lt; @ $=w . &gt;              $#lmtp2nntp $@ localhost $: $1
 </div>
 <p>For other configurations, consult the lmtp2nntp and documentation and your MTA documentation.</p>
 <p>NOTE: If anonymous logins are disabled (default) in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, then you should configure lmtp2nntp to use its “feed” operation mode.</p>
-</div>
-<div class="section" id="expiring-articles">
-<h3>Expiring articles<a class="headerlink" href="#expiring-articles" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="expiring-articles">
+<h3>Expiring articles<a class="headerlink" href="#expiring-articles" title="Permalink to this heading">¶</a></h3>
 <p>Expiration of articles is done by the <a class="reference internal" href="../manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> utility. Control over when articles are expunged is accomplished with the <code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-imapd/expire</span></code> mailbox <a class="reference internal" href="../faqs/o-annotations.html#faqs-o-annotations"><span class="std std-ref">annotation</span></a>. This annotation sets the number of days that messages should be kept in the mailbox before they expire. All entries in the duplicate deliver database that correspond to these messages are also kept for the same number of days before they are purged (overriding the <code class="docutils literal notranslate"><span class="pre">cyr_expire</span> <span class="pre">-E</span></code> option).</p>
 <p>Setting the expire time to 0 (zero) for a mailbox will ensure that neither the messages nor the corresponding database entries will ever be expired. This can be useful for shared mailboxes (e.g. mailing list archives) which are being exported via NNTP. Note that this will cause the duplicate delivery database to consistently grow in proportion to the number of messages in such mailboxes.</p>
 <p>If a mailbox does not have an expire time set on it, then the messages will never be expunged, but the corresponding database entries WILL be expired after the default number of days (<code class="docutils literal notranslate"><span class="pre">cyr_expire</span> <span class="pre">-E</span></code> option).</p>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-imapd/expire</span></code> mailbox <a class="reference internal" href="../faqs/o-annotations.html#faqs-o-annotations"><span class="std std-ref">annotation</span></a> is inherited by child mailboxes, so that you may control expiration on an entire mailbox/newsgroup hierarchy simply by setting the annotation on the root of the hierarchy. For example, if you set the annotation on <code class="docutils literal notranslate"><span class="pre">comp</span></code>, then ALL of the newsgroups in the <code class="docutils literal notranslate"><span class="pre">comp</span></code> hierarchy will be expired at the same time. Similarly, if you set the annotation on <code class="docutils literal notranslate"><span class="pre">alt.binaries</span></code>, all of the binary newsgroups under <code class="docutils literal notranslate"><span class="pre">alt</span></code> will be expired at the same time (independently from <code class="docutils literal notranslate"><span class="pre">comp</span></code>).</p>
-</div>
-</div>
-<div class="section" id="further-information">
-<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="further-information">
+<h2>Further information<a class="headerlink" href="#further-information" title="Permalink to this heading">¶</a></h2>
 <p>This thread from the info-cyrus <a class="reference internal" href="../../support/feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing list</span></a> may be of use: <a class="reference external" href="http://www.mail-archive.com/info-cyrus%40lists.andrew.cmu.edu/msg22725.html">Cyrus and Usenet</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -934,7 +939,7 @@ Rpost + $+ &lt; @ $=w . &gt;              $#lmtp2nntp $@ localhost $: $1
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 11 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -957,9 +962,12 @@ Rpost + $+ &lt; @ $=w . &gt;              $#lmtp2nntp $@ localhost $: $1
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

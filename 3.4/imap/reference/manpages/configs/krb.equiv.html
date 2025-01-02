@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>krb.equiv &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,20 +788,20 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-krb.equiv-5"><span id="std:cyrusman-krb.equiv(5)"></span></span><div class="section" id="krb-equiv">
-<span id="imap-reference-manpages-configs-krb-equiv"></span><h1><strong>krb.equiv</strong><a class="headerlink" href="#krb-equiv" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-krb.equiv-5"></span><section id="krb-equiv">
+<span id="imap-reference-manpages-configs-krb-equiv"></span><h1><strong>krb.equiv</strong><a class="headerlink" href="#krb-equiv" title="Permalink to this heading">¶</a></h1>
 <p>Kerberos equivalences</p>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>krb.equiv</strong> contains zero or more lines, each of which describes a
 mapping of a kerberos principal (<em>userid&#64;host</em>) to a local user
 (<em>userid</em> or alias). Each line of the file consists of two fields,
 separated by at least one whitespace character; other blanks are
 ignored.  The first field is the kerberos principal name to remap, and
 the second is the name of the corresponding local user.</p>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p>Sample file contents:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tyq4</span><span class="nd">@ANDY</span><span class="o">.</span><span class="n">CMU</span><span class="o">.</span><span class="n">EDU</span> <span class="n">tyq4</span>
@@ -809,17 +814,17 @@ the second is the name of the corresponding local user.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf,
 &lt;configdirectory&gt;/krb.equiv</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -842,7 +847,7 @@ the second is the name of the corresponding local user.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -865,9 +870,12 @@ the second is the name of the corresponding local user.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

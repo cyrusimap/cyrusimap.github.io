@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Configuration file locations &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,8 +790,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="configuration-file-locations">
-<span id="imap-admin-locations-config"></span><h1>Configuration file locations<a class="headerlink" href="#configuration-file-locations" title="Permalink to this headline">¶</a></h1>
+  <section id="configuration-file-locations">
+<span id="imap-admin-locations-config"></span><h1>Configuration file locations<a class="headerlink" href="#configuration-file-locations" title="Permalink to this heading">¶</a></h1>
 <p>The main configuration file for Cyrus IMAP is <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 and its path is compiled into the executable files, based upon the
 <code class="docutils literal notranslate"><span class="pre">--sysconfdir</span></code> build flag.  For many utilities, this may be
@@ -805,8 +810,8 @@ required.</p>
 </div></blockquote>
 <p>While Cyrus itself has no default values for this setting, most
 distributions use <code class="docutils literal notranslate"><span class="pre">/var/lib/imap</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/lib/cyrus</span></code>.</p>
-<div class="section" id="state-databases">
-<h2>State Databases<a class="headerlink" href="#state-databases" title="Permalink to this headline">¶</a></h2>
+<section id="state-databases">
+<h2>State Databases<a class="headerlink" href="#state-databases" title="Permalink to this heading">¶</a></h2>
 <p>Despite the name, most of what’s stored in <code class="docutils literal notranslate"><span class="pre">&lt;configdirectory&gt;</span></code> is state
 information.  Here’s a list of files typically located therein:</p>
 <blockquote>
@@ -905,8 +910,8 @@ will be configdirectory/user_deny.db</p>
 will be configdirectory/zoneinfo.db</p>
 </div></blockquote>
 </div></blockquote>
-<div class="section" id="ephemeral-databases">
-<h3>Ephemeral Databases<a class="headerlink" href="#ephemeral-databases" title="Permalink to this headline">¶</a></h3>
+<section id="ephemeral-databases">
+<h3>Ephemeral Databases<a class="headerlink" href="#ephemeral-databases" title="Permalink to this heading">¶</a></h3>
 <p>Several of the state databases may be located in RAM-backed locations,
 such as <code class="docutils literal notranslate"><span class="pre">/run</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/run</span></code> or where ever your OS roots such
 filesystems (i.e. <code class="docutils literal notranslate"><span class="pre">tmpfs</span></code> on Linux or <code class="docutils literal notranslate"><span class="pre">mfs</span></code> on FreeBSD). Cyrus 3.0 will
@@ -928,11 +933,11 @@ the <code class="docutils literal notranslate"><span class="pre">tls_sessions_db
 remove the <code class="docutils literal notranslate"><span class="pre">tlsprune</span></code> task from <code class="docutils literal notranslate"><span class="pre">START{}</span></code> and schedule it in
 <code class="docutils literal notranslate"><span class="pre">EVENTS{}</span></code>, further down.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="state-directories">
-<h1>State Directories<a class="headerlink" href="#state-directories" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+</section>
+<section id="state-directories">
+<h1>State Directories<a class="headerlink" href="#state-directories" title="Permalink to this heading">¶</a></h1>
 <p>In addition to the files, are several directories:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1018,9 +1023,9 @@ match the path specified in cyrus.conf(5).</p>
 <div><p>Unix domain socket that the mail notification daemon listens on.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="per-user-state-directories">
-<h1>Per-user State Directories<a class="headerlink" href="#per-user-state-directories" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="per-user-state-directories">
+<h1>Per-user State Directories<a class="headerlink" href="#per-user-state-directories" title="Permalink to this heading">¶</a></h1>
 <p>There are several things tracked per-user, and the data files for these
 items, such as subscriptions and seen state, are stored in
 &lt;configdirectory&gt;/user.  These files may not be relocated from &lt;configdirectory&gt;.  They
@@ -1035,7 +1040,7 @@ are:</p>
 </ul>
 </div></blockquote>
 <p>Please follow those links for more information on these files.</p>
-</div>
+</section>
 
 
           </div>
@@ -1058,7 +1063,7 @@ are:</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 18 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1081,9 +1086,12 @@ are:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

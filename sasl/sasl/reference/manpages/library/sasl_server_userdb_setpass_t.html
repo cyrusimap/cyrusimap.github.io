@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_server_userdb_setpass_t - UserDB Plaintext Password Setting Callback &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -485,43 +490,43 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="sasl-server-userdb-setpass-t-userdb-plaintext-password-setting-callback">
-<span id="sasl-reference-manpages-library-sasl-server-userdb-setpass-t"></span><span id="std-saslman-sasl_server_userdb_setpass_t-3"></span><span id="std:saslman-sasl_server_userdb_setpass_t(3)"></span><h1><strong>sasl_server_userdb_setpass_t</strong> - UserDB Plaintext Password Setting Callback<a class="headerlink" href="#sasl-server-userdb-setpass-t-userdb-plaintext-password-setting-callback" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/sasl.h&gt;</span><span class="cp"></span>
+  <section id="sasl-server-userdb-setpass-t-userdb-plaintext-password-setting-callback">
+<span id="sasl-reference-manpages-library-sasl-server-userdb-setpass-t"></span><span id="std-saslman-sasl_server_userdb_setpass_t-3"></span><h1><strong>sasl_server_userdb_setpass_t</strong> - UserDB Plaintext Password Setting Callback<a class="headerlink" href="#sasl-server-userdb-setpass-t-userdb-plaintext-password-setting-callback" title="Permalink to this heading">¶</a></h1>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/sasl.h&gt;</span>
 
-<span class="kt">int</span> <span class="n">sasl_server_userdb_setpass_t</span><span class="p">(</span><span class="n">sasl_conn_t</span> <span class="o">*</span><span class="n">conn</span><span class="p">,</span>
-                                 <span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">user</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pass</span><span class="p">,</span>
-                                 <span class="kt">unsigned</span> <span class="n">passlen</span><span class="p">,</span>
-                                 <span class="k">struct</span> <span class="nc">propctx</span> <span class="o">*</span><span class="n">propctx</span><span class="p">,</span>
-                                 <span class="kt">unsigned</span> <span class="n">flags</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sasl_server_userdb_setpass_t</span><span class="p">(</span><span class="n">sasl_conn_t</span><span class="w"> </span><span class="o">*</span><span class="n">conn</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span>
+<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">user</span><span class="p">,</span>
+<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pass</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">passlen</span><span class="p">,</span>
+<span class="w">                                 </span><span class="k">struct</span><span class="w"> </span><span class="nc">propctx</span><span class="w"> </span><span class="o">*</span><span class="n">propctx</span><span class="p">,</span>
+<span class="w">                                 </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">flags</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
-<dt>
-<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_server_userdb_setpass_t(sasl_conn_t</span> <span class="pre">*conn,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">void</span> <span class="pre">*context,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*user,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*pass,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">passlen,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">struct</span> <span class="pre">propctx</span> <span class="pre">*propctx,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">flags)</span></code></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_server_userdb_setpass_t(sasl_conn_t</span> <span class="pre">*conn,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">void</span> <span class="pre">*context,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*user,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*pass,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">passlen,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">struct</span> <span class="pre">propctx</span> <span class="pre">*propctx,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">flags)</span></span></dt>
 <dd><p><strong>sasl_server_userdb_setpass_t</strong> is used to store or change  a plaintext
 password  in the callback‐supplier’s user database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>conn</strong> – is the SASL connection</p></li>
 <li><p><strong>context</strong> – context from the callback record</p></li>
@@ -536,20 +541,20 @@ password  in the callback‐supplier’s user database.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
 <p>SASL  callback  functions should return SASL return codes.
 See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.html#c.SASL_OK" title="SASL_OK"><code class="xref c c-macro docutils literal notranslate"><span class="pre">SASL_OK</span></code></a> indicates success.</p>
 <p>Other return codes indicate errors and should be handled.</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4422.html"><strong>RFC 4422</strong></a>,:saslman:<cite>sasl(3)</cite>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>
 <a class="reference internal" href="sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a>, <a class="reference internal" href="sasl_server_userdb_checkpass_t.html#std-saslman-sasl_server_userdb_checkpass_t-3">sasl_server_userdb_checkpass_t(3)</a>,
 <a class="reference internal" href="sasl_setpass.html#std-saslman-sasl_setpass-3">sasl_setpass(3)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -572,7 +577,7 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -596,9 +601,12 @@ See sasl.h for a complete list. <a class="reference internal" href="sasl_errors.
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_dbtool &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -780,16 +785,16 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-cyr_dbtool-8"><span id="std:cyrusman-cyr_dbtool(8)"></span></span><div class="section" id="cyr-dbtool">
-<span id="imap-reference-manpages-systemcommands-cyr-dbtool"></span><h1><strong>cyr_dbtool</strong><a class="headerlink" href="#cyr-dbtool" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-cyr_dbtool-8"></span><section id="cyr-dbtool">
+<span id="imap-reference-manpages-systemcommands-cyr-dbtool"></span><h1><strong>cyr_dbtool</strong><a class="headerlink" href="#cyr-dbtool" title="Permalink to this heading">¶</a></h1>
 <p>Manage Cyrus databases</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>cyr_dbtool</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-M</strong> ] [ <strong>-n</strong> ] [ <strong>-o</strong> ] [ <strong>-T</strong> ]
         <em>db-file</em> <em>db-backend</em> <em>action</em> [ <em>key</em> ] [ <em>value</em> ]</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>cyr_dbtool</strong> is used to manage a cyrusdb file. The usable actions are:</p>
 <blockquote>
 <div><p><strong>show</strong> <em>[&lt;prefix&gt;]</em></p>
@@ -819,44 +824,44 @@ file, and must be supplied on the command line.</p>
 file doc/internal/database-formats.html.  Please consult that for
 details.</p>
 </div>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-cyr_dbtool-C">
-<span id="cmdoption-cyr-dbtool-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_dbtool-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_dbtool-C">
+<span id="cmdoption-cyr-dbtool-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_dbtool-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_dbtool-M">
-<span id="cmdoption-cyr-dbtool-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_dbtool-M" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_dbtool-M">
+<span id="cmdoption-cyr-dbtool-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_dbtool-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses improved MBOX list sort</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_dbtool-n">
-<span id="cmdoption-cyr-dbtool-n"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_dbtool-n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_dbtool-n">
+<span id="cmdoption-cyr-dbtool-n"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_dbtool-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the database file if it doesn’t already exist.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_dbtool-o">
-<span id="cmdoption-cyr-dbtool-o"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_dbtool-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_dbtool-o">
+<span id="cmdoption-cyr-dbtool-o"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_dbtool-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store all the output in memory and only print it once the transaction
 is completed.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_dbtool-T">
-<span id="cmdoption-cyr-dbtool-t"></span><code class="sig-name descname"><span class="pre">-T</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-cyr_dbtool-T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_dbtool-T">
+<span id="cmdoption-cyr-dbtool-t"></span><span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-cyr_dbtool-T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use a transaction to do the action (most especially for ‘show’) - the
 default used to be transactions.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p>This series of examples address manipulating the <em>user_deny.db</em>
 database, which is used to deny users access to specific services.  This
 is typically a Cyrus “flat” format database.</p>
@@ -883,8 +888,8 @@ failures, and log entries like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># grep baduser /var/log/mail.log</span>
 <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">57</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">635</span><span class="p">]:</span> <span class="n">fetching</span> <span class="n">user_deny</span><span class="o">.</span><span class="n">db</span> <span class="n">entry</span> <span class="k">for</span> <span class="s1">&#39;baduser&#39;</span>
 <span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">57</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">635</span><span class="p">]:</span> <span class="n">user</span> <span class="s1">&#39;baduser&#39;</span> <span class="n">denied</span> <span class="n">access</span> <span class="n">to</span> <span class="n">service</span> <span class="s1">&#39;imap&#39;</span>
-<span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">57</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">635</span><span class="p">]:</span> <span class="n">badlogin</span><span class="p">:</span> <span class="n">cyrus</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span> <span class="p">[</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">190.14</span><span class="p">]</span> <span class="n">plaintext</span> <span class="n">baduser</span> <span class="n">SASL</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">):</span> <span class="n">authorization</span> <span class="n">failure</span><span class="p">:</span> <span class="n">user</span> <span class="s1">&#39;baduser&#39;</span> <span class="ow">is</span> <span class="n">denied</span> <span class="n">access</span> <span class="n">to</span> <span class="n">service</span> <span class="s1">&#39;imap&#39;</span>
-<span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">21</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">816</span><span class="p">]:</span> <span class="n">badlogin</span><span class="p">:</span> <span class="n">cyrus</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span> <span class="p">[</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">190.14</span><span class="p">]</span> <span class="n">plaintext</span> <span class="n">baduser</span> <span class="n">SASL</span><span class="p">(</span><span class="o">-</span><span class="mi">13</span><span class="p">):</span> <span class="n">authentication</span> <span class="n">failure</span><span class="p">:</span> <span class="n">checkpass</span> <span class="n">failed</span>
+<span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">57</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">635</span><span class="p">]:</span> <span class="n">badlogin</span><span class="p">:</span> <span class="n">cyrus</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span> <span class="p">[</span><span class="mf">192.168.190.14</span><span class="p">]</span> <span class="n">plaintext</span> <span class="n">baduser</span> <span class="n">SASL</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">):</span> <span class="n">authorization</span> <span class="n">failure</span><span class="p">:</span> <span class="n">user</span> <span class="s1">&#39;baduser&#39;</span> <span class="ow">is</span> <span class="n">denied</span> <span class="n">access</span> <span class="n">to</span> <span class="n">service</span> <span class="s1">&#39;imap&#39;</span>
+<span class="n">Sep</span> <span class="mi">19</span> <span class="mi">14</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">21</span> <span class="n">cyrushost</span> <span class="n">cyrus</span><span class="o">/</span><span class="n">imap</span><span class="p">[</span><span class="mi">816</span><span class="p">]:</span> <span class="n">badlogin</span><span class="p">:</span> <span class="n">cyrus</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span> <span class="p">[</span><span class="mf">192.168.190.14</span><span class="p">]</span> <span class="n">plaintext</span> <span class="n">baduser</span> <span class="n">SASL</span><span class="p">(</span><span class="o">-</span><span class="mi">13</span><span class="p">):</span> <span class="n">authentication</span> <span class="n">failure</span><span class="p">:</span> <span class="n">checkpass</span> <span class="n">failed</span>
 </pre></div>
 </div>
 <pre class="literal-block"><strong>cyr_dbtool</strong> /var/lib/imap/user_deny.db flat show</pre>
@@ -901,16 +906,16 @@ failures, and log entries like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>       <span class="n">pop3</span><span class="p">,</span><span class="n">imap</span>       <span class="n">Denied</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -933,7 +938,7 @@ failures, and log entries like this:</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jan 10 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -956,9 +961,12 @@ failures, and log entries like this:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

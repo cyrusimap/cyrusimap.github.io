@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Compiling &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -781,8 +786,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="compiling">
-<span id="id1"></span><h1>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h1>
+  <section id="compiling">
+<span id="id1"></span><h1>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading">¶</a></h1>
 <p>These instructions are based on Debian 8.0 because it has to be based on
 something. Other Linux distributions will be similar in the broad ideas but may
 differ in the specifics. If you already have a preferred distro, use that (we
@@ -790,19 +795,13 @@ assume you know how to use its package management system). If you don’t alread
 have a preferred distro, maybe consider using Debian.</p>
 <p>First make sure you have a <a class="reference internal" href="../download/getcyrus.html#getcyrus"><span class="std std-ref">copy of the source</span></a>. You can either
 fetch the latest source from git, or download one of our release tarballs.</p>
-<div class="section" id="setting-up-dependencies">
-<h2>Setting up dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="required-build-dependencies">
-<h3>Required Build Dependencies<a class="headerlink" href="#required-build-dependencies" title="Permalink to this headline">¶</a></h3>
+<section id="setting-up-dependencies">
+<h2>Setting up dependencies<a class="headerlink" href="#setting-up-dependencies" title="Permalink to this heading">¶</a></h2>
+<section id="required-build-dependencies">
+<h3>Required Build Dependencies<a class="headerlink" href="#required-build-dependencies" title="Permalink to this heading">¶</a></h3>
 <p>Building a basic Cyrus that can send and receive email: the minimum libraries
 required to build a functional cyrus-imapd.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
 <th class="head"><p>Debian</p></th>
@@ -889,33 +888,33 @@ required to build a functional cyrus-imapd.</p>
 </tbody>
 </table>
 <p>To install all dependencies from packages on Debian Jessie, use this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install git build-essential autoconf automake libtool <span class="se">\</span>
-    pkg-config bison flex libssl-dev libjansson-dev libxml2-dev <span class="se">\</span>
-    libsqlite3-dev libical-dev libsasl2-dev libpcre2-dev uuid-dev <span class="se">\</span>
-    libicu-dev
-sudo apt-get -t jessie-backports install libxapian-dev
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>libtool<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>pkg-config<span class="w"> </span>bison<span class="w"> </span>flex<span class="w"> </span>libssl-dev<span class="w"> </span>libjansson-dev<span class="w"> </span>libxml2-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libsqlite3-dev<span class="w"> </span>libical-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span>libpcre2-dev<span class="w"> </span>uuid-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>libicu-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>-t<span class="w"> </span>jessie-backports<span class="w"> </span>install<span class="w"> </span>libxapian-dev
 </pre></div>
 </div>
-</div>
-<div class="section" id="build-dependencies-for-additional-functionality">
-<h3>Build dependencies for additional functionality<a class="headerlink" href="#build-dependencies-for-additional-functionality" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="build-dependencies-for-additional-functionality">
+<h3>Build dependencies for additional functionality<a class="headerlink" href="#build-dependencies-for-additional-functionality" title="Permalink to this heading">¶</a></h3>
 <p>The following dependencies enable additional functionality, help with
 code maintenance tasks or are required for building the documentation.</p>
-<div class="section" id="developers-only">
-<h4>Developers only<a class="headerlink" href="#developers-only" title="Permalink to this headline">¶</a></h4>
+<section id="developers-only">
+<h4>Developers only<a class="headerlink" href="#developers-only" title="Permalink to this heading">¶</a></h4>
 <p>The developer dependencies are required if you are building from git sources,
 have modified certain source files from the release tarball, or have configured
 with <code class="docutils literal notranslate"><span class="pre">--enable-maintainer-mode</span></code> in order to build a new package.</p>
 <p>If you are building normally from a pure release tarball, then you don’t need
 these dependencies. The files, these dependencies produce, have been pre-built
 and included in the release, and do not normally need to be re-built.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 45%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 5.0%" />
+<col style="width: 45.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -985,16 +984,16 @@ and CardDAV support.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="sasl-authentication">
-<h4>SASL Authentication<a class="headerlink" href="#sasl-authentication" title="Permalink to this headline">¶</a></h4>
-<table class="colwidths-given docutils align-default">
+</section>
+<section id="sasl-authentication">
+<h4>SASL Authentication<a class="headerlink" href="#sasl-authentication" title="Permalink to this heading">¶</a></h4>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 45%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 5.0%" />
+<col style="width: 45.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -1037,16 +1036,16 @@ known as the authentication mechanism <em>GSSAPI</em>. Configure option:
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="alternate-database-formats">
-<h4>Alternate database formats<a class="headerlink" href="#alternate-database-formats" title="Permalink to this headline">¶</a></h4>
-<table class="colwidths-given docutils align-default">
+</section>
+<section id="alternate-database-formats">
+<h4>Alternate database formats<a class="headerlink" href="#alternate-database-formats" title="Permalink to this heading">¶</a></h4>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 45%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 5.0%" />
+<col style="width: 45.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -1077,16 +1076,16 @@ for its databases. Configure option: <code class="docutils literal notranslate">
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="caldav-carddav-or-jmap-httpd-subsystem">
-<h4>CalDAV, CardDAV, or JMAP (httpd subsystem)<a class="headerlink" href="#caldav-carddav-or-jmap-httpd-subsystem" title="Permalink to this headline">¶</a></h4>
-<table class="colwidths-given docutils align-default">
+</section>
+<section id="caldav-carddav-or-jmap-httpd-subsystem">
+<h4>CalDAV, CardDAV, or JMAP (httpd subsystem)<a class="headerlink" href="#caldav-carddav-or-jmap-httpd-subsystem" title="Permalink to this heading">¶</a></h4>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 45%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 5.0%" />
+<col style="width: 45.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -1162,16 +1161,16 @@ support for http communications.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="other">
-<h4>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h4>
-<table class="colwidths-given docutils align-default">
+</section>
+<section id="other">
+<h4>Other<a class="headerlink" href="#other" title="Permalink to this heading">¶</a></h4>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 5%" />
-<col style="width: 45%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 5.0%" />
+<col style="width: 45.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Package</p></th>
@@ -1258,15 +1257,15 @@ SMTP servers that insist on it.</p></td>
 </ul>
 </dd>
 </dl>
-</div>
-</div>
-</div>
-<div class="section" id="compile-cyrus">
-<h2>Compile Cyrus<a class="headerlink" href="#compile-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="compile-cyrus">
+<h2>Compile Cyrus<a class="headerlink" href="#compile-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>There are additional <a class="reference internal" href="install-xapian.html#imapinstall-xapian"><span class="std std-ref">compile and installation steps</span></a>
 if you are using Xapian for searching, or if you are <a class="reference internal" href="jmap.html#developer-jmap"><span class="std std-ref">using jmap</span></a>.</p>
-<div class="section" id="default-build-mail-only">
-<h3>Default build: mail only<a class="headerlink" href="#default-build-mail-only" title="Permalink to this headline">¶</a></h3>
+<section id="default-build-mail-only">
+<h3>Default build: mail only<a class="headerlink" href="#default-build-mail-only" title="Permalink to this heading">¶</a></h3>
 <pre class="literal-block">$ <strong class="command">autoreconf -i</strong>
 $ <strong class="command">./configure</strong> [options]</pre>
 <p>Check the summary after <code class="docutils literal notranslate"><span class="pre">./configure</span></code> completes to ensure it
@@ -1280,44 +1279,44 @@ please see:</p>
 setting them in the environment before running configure, allows their
 values to be logged in config.log.  This is useful for diagnosing problems.</p>
 </div>
-</div>
-<div class="section" id="optional-dependencies">
-<h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="optional-dependencies">
+<h3>Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this heading">¶</a></h3>
 <p>Some features are disabled by default and must be explicitly enabled
 via configure.</p>
 <p>Sieve is enabled by default.</p>
-<div class="section" id="caldav-carddav-webdav-jmap">
-<h4>CalDAV, CardDAV, WebDAV, JMAP<a class="headerlink" href="#caldav-carddav-webdav-jmap" title="Permalink to this headline">¶</a></h4>
+<section id="caldav-carddav-webdav-jmap">
+<h4>CalDAV, CardDAV, WebDAV, JMAP<a class="headerlink" href="#caldav-carddav-webdav-jmap" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-http</span> <span class="pre">--enable-calalarmd</span> <span class="pre">--enable-jmap</span></code></p>
 </div></blockquote>
-</div>
-<div class="section" id="murder">
-<h4>Murder<a class="headerlink" href="#murder" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="murder">
+<h4>Murder<a class="headerlink" href="#murder" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-murder</span></code></p>
 </div></blockquote>
-</div>
-<div class="section" id="replication">
-<h4>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="replication">
+<h4>Replication<a class="headerlink" href="#replication" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--enable-replication</span></code></p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="compile">
-<h3>Compile<a class="headerlink" href="#compile" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /path/to/cyrus-imapd
+</section>
+</section>
+<section id="compile">
+<h3>Compile<a class="headerlink" href="#compile" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/cyrus-imapd
 
-autoreconf -i -s   <span class="c1"># generates a configure script, and its various dependencies</span>
+autoreconf<span class="w"> </span>-i<span class="w"> </span>-s<span class="w">   </span><span class="c1"># generates a configure script, and its various dependencies</span>
 
-./configure <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-W -Wno-unused-parameter -g -O0 -Wall -Wextra -Werror -fPIC&quot;</span> <span class="se">\</span>
---enable-coverage --enable-calalarmd --enable-autocreate <span class="se">\</span>
---enable-nntp --enable-http --enable-unit-tests <span class="se">\</span>
---enable-replication --with-openssl<span class="o">=</span>yes --enable-murder <span class="se">\</span>
---enable-idled --prefix<span class="o">=</span>/usr/cyrus
+./configure<span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-W -Wno-unused-parameter -g -O0 -Wall -Wextra -Werror -fPIC&quot;</span><span class="w"> </span><span class="se">\</span>
+--enable-coverage<span class="w"> </span>--enable-calalarmd<span class="w"> </span>--enable-autocreate<span class="w"> </span><span class="se">\</span>
+--enable-nntp<span class="w"> </span>--enable-http<span class="w"> </span>--enable-unit-tests<span class="w"> </span><span class="se">\</span>
+--enable-replication<span class="w"> </span>--with-openssl<span class="o">=</span>yes<span class="w"> </span>--enable-murder<span class="w"> </span><span class="se">\</span>
+--enable-idled<span class="w"> </span>--prefix<span class="o">=</span>/usr/cyrus
 
-make lex-fix   <span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
+make<span class="w"> </span>lex-fix<span class="w">   </span><span class="c1"># you need this if compile fails with errors from sieve/sieve.c</span>
 
 make
 </pre></div>
@@ -1336,10 +1335,10 @@ it includes the following additional line:</p>
 <p>Without this, when you attempt to start Cyrus, it reports <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">while</span> <span class="pre">loading</span>
 <span class="pre">shared</span> <span class="pre">libraries:</span> <span class="pre">libcyrus_imap.so.0:</span> <span class="pre">cannot</span> <span class="pre">open</span> <span class="pre">shared</span> <span class="pre">object</span> <span class="pre">file:</span> <span class="pre">No</span> <span class="pre">such</span>
 <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code> because it can’t find the Cyrus library in /usr/local/lib.</p>
-</div>
-<div class="section" id="check">
-<h3>Check<a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make check    <span class="c1"># this runs the cunit tests.</span>
+</section>
+<section id="check">
+<h3>Check<a class="headerlink" href="#check" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>check<span class="w">    </span><span class="c1"># this runs the cunit tests.</span>
 </pre></div>
 </div>
 <p>This runs the cunit tests and is used for testing that the libraries support
@@ -1347,9 +1346,9 @@ all the expected behaviour. If this fails, please <a class="reference internal" 
 cyrus-dev mailing list</span></a> with details of your source
 version, operating system and affected libraries.</p>
 <p>Next: <a class="reference internal" href="../installing.html#installing"><span class="std std-ref">installing Cyrus</span></a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1372,7 +1371,7 @@ version, operating system and affected libraries.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Nov 08 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1395,9 +1394,12 @@ version, operating system and affected libraries.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

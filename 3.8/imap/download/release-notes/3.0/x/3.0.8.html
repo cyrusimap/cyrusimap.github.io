@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP 3.0.8 Release Notes &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../download.html">Download</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -789,8 +794,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-imap-3-0-8-release-notes">
-<h1>Cyrus IMAP 3.0.8 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-8-release-notes" title="Permalink to this headline">¶</a></h1>
+  <section id="cyrus-imap-3-0-8-release-notes">
+<h1>Cyrus IMAP 3.0.8 Release Notes<a class="headerlink" href="#cyrus-imap-3-0-8-release-notes" title="Permalink to this heading">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This is a bug-fix release in the stable 3.0 series.</p>
@@ -804,22 +809,22 @@ about the 3.0 series, including upgrading instructions.</p>
 <li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.8/cyrus-imapd-3.0.8.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.0.8/cyrus-imapd-3.0.8.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="changes-since-3-0-7">
-<span id="relnotes-3-0-8-changes"></span><h2>Changes Since 3.0.7<a class="headerlink" href="#changes-since-3-0-7" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="release-changes">
-<h3>Release changes<a class="headerlink" href="#release-changes" title="Permalink to this headline">¶</a></h3>
+<section id="changes-since-3-0-7">
+<span id="relnotes-3-0-8-changes"></span><h2>Changes Since 3.0.7<a class="headerlink" href="#changes-since-3-0-7" title="Permalink to this heading">¶</a></h2>
+<section id="release-changes">
+<h3>Release changes<a class="headerlink" href="#release-changes" title="Permalink to this heading">¶</a></h3>
 <p>We're trialing using the Github Releases feature.  If you have trouble downloading
 this release, please report this to the mailing lists.  Thanks!</p>
-</div>
-<div class="section" id="new-configuration-options">
-<h3>New configuration options<a class="headerlink" href="#new-configuration-options" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="new-configuration-options">
+<h3>New configuration options<a class="headerlink" href="#new-configuration-options" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The &quot;search_fuzzy_always&quot; option in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> can be set to
 true to enable RFC6203 FUZZY search for all IMAP searches.</p></li>
 </ul>
-</div>
-<div class="section" id="bug-fixes">
-<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bug-fixes">
+<h3>Bug fixes<a class="headerlink" href="#bug-fixes" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2026">Issue #2026</a>: managesieve is now linked correctly (thanks Jason Tibbits)</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2355">Issue #2355</a>: regex library detection decoupled from sieve feature
@@ -837,9 +842,9 @@ recently deleted users</p></li>
 <li><p>Fixed <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2466">Issue #2466</a>: <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyrdump.html#std-cyrusman-cyrdump-8">cyrdump(8)</a> and <a class="reference internal" href="../../../../reference/manpages/systemcommands/mbexamine.html#std-cyrusman-mbexamine-8">mbexamine(8)</a> are
 no longer so crashy</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -862,7 +867,7 @@ no longer so crashy</p></li>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 10 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -885,9 +890,12 @@ no longer so crashy</p></li>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../../_static/sphinx_highlight.js"></script>
 
   
 

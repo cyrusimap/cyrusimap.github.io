@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>arbitron &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,16 +788,16 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-arbitron-8"><span id="std:cyrusman-arbitron(8)"></span></span><div class="section" id="arbitron">
-<span id="imap-reference-manpages-systemcommands-arbitron"></span><h1><strong>arbitron</strong><a class="headerlink" href="#arbitron" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-arbitron-8"></span><section id="arbitron">
+<span id="imap-reference-manpages-systemcommands-arbitron"></span><h1><strong>arbitron</strong><a class="headerlink" href="#arbitron" title="Permalink to this heading">¶</a></h1>
 <p>Report readership statistics for mailboxes on the server.</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>arbitron</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-o</strong> ] [ <strong>-u</strong> ] [ <strong>-l</strong> ] [ <strong>-p</strong> <em>months</em> ]
          [ <strong>-d</strong> <em>days</em> | <strong>-D</strong> <em>mmddyyyy</em>[<strong>:</strong><em>mmddyyyy</em>] ] <em>mailbox</em>...</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>arbitron</strong> collects and reports readership statistics for mailboxes
 on the server. It also optionally prunes the mailboxes of <code class="docutils literal notranslate"><span class="pre">\Seen</span></code>
 state for dormant users.</p>
@@ -815,38 +820,38 @@ the specified <strong>-D</strong> <em>date</em>[<strong>:</strong><em>range</em>
 mailboxes are not reported unless there is at least one reader other
 than the mailboxes owner.</p>
 <p><strong>arbitron</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arbitron-C">
-<span id="cmdoption-arbitron-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-arbitron-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-C">
+<span id="cmdoption-arbitron-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-arbitron-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arbitron-o">
-<code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arbitron-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Report “the old way” – not including subscribers.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arbitron-l">
-<code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-l">
+<span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arbitron-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable long reporting (comma delimited table consisting of mbox,
 userid, r/s, start time, end time).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arbitron-d">
-<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"> <span class="pre">days</span></code><a class="headerlink" href="#cmdoption-arbitron-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-d">
+<span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"> <span class="pre">days</span></span><a class="headerlink" href="#cmdoption-arbitron-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count as a reader an authorization identity which has used the
 mailbox within the past <em>days</em> days.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arbitron-D">
-<code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"> <span class="pre">mmddyyyy[:mmddyyyy]</span></code><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-D">
+<span class="sig-name descname"><span class="pre">-D</span></span><span class="sig-prename descclassname"> <span class="pre">mmddyyyy[:mmddyyyy]</span></span><a class="headerlink" href="#cmdoption-arbitron-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count as a reader an authorization identity which has used the
 mailbox within the given date range.</p>
 <p>The start date and optionally the end date are specified as 2-digit
@@ -861,15 +866,15 @@ not [<em>ddmmyyyy</em>].</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arbitron-p">
-<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">months</span></code><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arbitron-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">months</span></span><a class="headerlink" href="#cmdoption-arbitron-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prune <code class="docutils literal notranslate"><span class="pre">\Seen</span></code> state for users who have not used the mailbox within
 the past <em>months</em> months. The default is infinity.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>arbitron -l</strong></pre>
 <blockquote>
 <div><p>Long-format list.</p>
@@ -944,16 +949,16 @@ the past <em>months</em> months. The default is infinity.</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">Other</span> <span class="mi">0</span> <span class="mi">4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -976,7 +981,7 @@ the past <em>months</em> months. The default is infinity.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 05 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -999,9 +1004,12 @@ the past <em>months</em> months. The default is infinity.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

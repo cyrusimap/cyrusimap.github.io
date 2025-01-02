@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sasl_chalprompt_t - Realm acquisition callback &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -485,39 +490,39 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="sasl-chalprompt-t-realm-acquisition-callback">
-<span id="sasl-reference-manpages-library-sasl-chalprompt-t"></span><span id="std-saslman-sasl_chalprompt_t-3"></span><span id="std:saslman-sasl_chalprompt_t(3)"></span><h1><strong>sasl_chalprompt_t</strong> - Realm acquisition callback<a class="headerlink" href="#sasl-chalprompt-t-realm-acquisition-callback" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sasl/prop.h&gt;</span><span class="cp"></span>
+  <section id="sasl-chalprompt-t-realm-acquisition-callback">
+<span id="sasl-reference-manpages-library-sasl-chalprompt-t"></span><span id="std-saslman-sasl_chalprompt_t-3"></span><h1><strong>sasl_chalprompt_t</strong> - Realm acquisition callback<a class="headerlink" href="#sasl-chalprompt-t-realm-acquisition-callback" title="Permalink to this heading">¶</a></h1>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sasl/prop.h&gt;</span>
 
-<span class="kt">int</span> <span class="n">sasl_chalprompt_t</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">context</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">challenge</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">prompt</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">defresult</span><span class="p">,</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">result</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="o">*</span><span class="n">len</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">sasl_chalprompt_t</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">challenge</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">prompt</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">defresult</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="o">*</span><span class="n">len</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <dl class="c function">
-<dt>
-<code class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_chalprompt_t(void</span> <span class="pre">*context,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">int</span> <span class="pre">id,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*challenge,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*prompt,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*defresult,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**result,</span></code></dt>
-<dt>
-<code class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*len)</span></code></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">int</span> <span class="pre">sasl_chalprompt_t(void</span> <span class="pre">*context,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">int</span> <span class="pre">id,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*challenge,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*prompt,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">*defresult,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">const</span> <span class="pre">char</span> <span class="pre">**result,</span></span></dt>
+<dt class="sig sig-object c">
+<span class="sig-name descname"><span class="pre">unsigned</span> <span class="pre">*len)</span></span></dt>
 <dd><p><strong>sasl_chalprompt_t</strong>  is used to prompt for input in response to a server challenge.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>context</strong> – is the context from the callback record</p></li>
 <li><p><strong>id</strong> – is the callback id (either SASL_CB_ECHOPROMPT or  SASL_CB_NOECHOPROMPT)</p></li>
@@ -527,22 +532,22 @@
 <li><p><strong>len</strong> – Length of the user’s response.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Result</dt>
+<dt class="field-even">Result<span class="colon">:</span></dt>
 <dd class="field-even"><p>The user’s response (a NUL terminated string) or SASL error code.</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="return-value">
-<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="return-value">
+<h2>Return Value<a class="headerlink" href="#return-value" title="Permalink to this heading">¶</a></h2>
 <p>The user’s response (NUL terminated), or a SASL error code. See <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>.</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="sasl.html#std-saslman-sasl-3">sasl(3)</a>, <a class="reference internal" href="sasl_errors.html#std-saslman-sasl_errors-3">sasl_errors(3)</a>, <a class="reference internal" href="sasl_callbacks.html#std-saslman-sasl_callbacks-3">sasl_callbacks(3)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -565,7 +570,7 @@
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -589,9 +594,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

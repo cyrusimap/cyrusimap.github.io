@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>sieveshell &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -799,8 +804,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="sieveshell">
-<span id="imap-admin-systemcommands-sieveshell"></span><h1><code class="docutils literal notranslate"><span class="pre">sieveshell</span></code><a class="headerlink" href="#sieveshell" title="Permalink to this headline">¶</a></h1>
+  <section id="sieveshell">
+<span id="imap-admin-systemcommands-sieveshell"></span><h1><code class="docutils literal notranslate"><span class="pre">sieveshell</span></code><a class="headerlink" href="#sieveshell" title="Permalink to this heading">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">sieveshell</span></code> utility allows users to manipulate their scripts on a remote server. Placing a script and activating it on the server also compiles the script to bytecode for faster execution.</p>
 <p>Sieveshell works via MANAGESIEVE, a work in progress.</p>
 <p class="rubric">Synopsis</p>
@@ -811,60 +816,60 @@
 </div>
 <p class="rubric">Command-Line Options</p>
 <dl class="std option">
-<dt id="cmdoption-sieveshell-u">
-<span id="cmdoption-sieveshell-user"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--user</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;user&gt;</span></code><a class="headerlink" href="#cmdoption-sieveshell-u" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-sieveshell-u">
+<span id="cmdoption-sieveshell-user"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--user</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;user&gt;</span></span><a class="headerlink" href="#cmdoption-sieveshell-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>The authorization name to request; by default, derived from the authentication credentials.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-sieveshell-a">
-<span id="cmdoption-sieveshell-authname"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--authname</span></code><code class="sig-prename descclassname"><span class="pre">=&lt;authname&gt;</span></code><a class="headerlink" href="#cmdoption-sieveshell-a" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-sieveshell-a">
+<span id="cmdoption-sieveshell-authname"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--authname</span></span><span class="sig-prename descclassname"><span class="pre">=&lt;authname&gt;</span></span><a class="headerlink" href="#cmdoption-sieveshell-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>The user to use for authentication (defaults to current user).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-sieveshell-r">
-<span id="cmdoption-sieveshell-realm"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--realm</span></code><code class="sig-prename descclassname"><span class="pre">=&lt;realm&gt;</span></code><a class="headerlink" href="#cmdoption-sieveshell-r" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-sieveshell-r">
+<span id="cmdoption-sieveshell-realm"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--realm</span></span><span class="sig-prename descclassname"><span class="pre">=&lt;realm&gt;</span></span><a class="headerlink" href="#cmdoption-sieveshell-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>The realm to attempt authentication in.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-sieveshell-e">
-<span id="cmdoption-sieveshell-exec"></span><code class="sig-name descname"><span class="pre">-e</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--exec</span></code><code class="sig-prename descclassname"><span class="pre">=&lt;script&gt;</span></code><a class="headerlink" href="#cmdoption-sieveshell-e" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-sieveshell-e">
+<span id="cmdoption-sieveshell-exec"></span><span class="sig-name descname"><span class="pre">-e</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--exec</span></span><span class="sig-prename descclassname"><span class="pre">=&lt;script&gt;</span></span><a class="headerlink" href="#cmdoption-sieveshell-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of working interactively, run commands from script, and exit when done.</p>
 </dd></dl>
 
-<div class="section" id="list">
-<span id="imap-admin-systemcommands-sieveshell-list"></span><h2>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<section id="list">
+<span id="imap-admin-systemcommands-sieveshell-list"></span><h2>list<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h2>
 <p>List scripts on server.</p>
 <pre class="literal-block">&gt; <strong class="command">list</strong></pre>
-</div>
-<div class="section" id="put">
-<span id="imap-admin-systemcommands-sieveshell-put"></span><h2>put<a class="headerlink" href="#put" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="put">
+<span id="imap-admin-systemcommands-sieveshell-put"></span><h2>put<a class="headerlink" href="#put" title="Permalink to this heading">¶</a></h2>
 <p>Uploads &lt;filename&gt; script to server.</p>
 <pre class="literal-block">&gt; <strong class="command">put &lt;filename&gt;</strong></pre>
-</div>
-<div class="section" id="get">
-<span id="imap-admin-systemcommands-sieveshell-get"></span><h2>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="get">
+<span id="imap-admin-systemcommands-sieveshell-get"></span><h2>get<a class="headerlink" href="#get" title="Permalink to this heading">¶</a></h2>
 <p>Fetches a script from the server. If no &lt;filename&gt; is provided, display script contents to stdout.</p>
 <pre class="literal-block">&gt; <strong class="command">get &lt;name&gt; [&lt;filename&gt;]</strong></pre>
-</div>
-<div class="section" id="delete">
-<span id="imap-admin-systemcommands-sieveshell-delete"></span><h2>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="delete">
+<span id="imap-admin-systemcommands-sieveshell-delete"></span><h2>delete<a class="headerlink" href="#delete" title="Permalink to this heading">¶</a></h2>
 <p>Deletes a script from the server.</p>
 <pre class="literal-block">&gt; <strong class="command">delete &lt;name&gt;</strong></pre>
-</div>
-<div class="section" id="activate">
-<span id="imap-admin-systemcommands-sieveshell-activate"></span><h2>activate<a class="headerlink" href="#activate" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="activate">
+<span id="imap-admin-systemcommands-sieveshell-activate"></span><h2>activate<a class="headerlink" href="#activate" title="Permalink to this heading">¶</a></h2>
 <p>Activates the script on the server.</p>
 <pre class="literal-block">&gt; <strong class="command">activate &lt;name&gt;</strong></pre>
-</div>
-<div class="section" id="deactivate">
-<span id="imap-admin-systemcommands-sieveshell-deactivate"></span><h2>deactivate<a class="headerlink" href="#deactivate" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deactivate">
+<span id="imap-admin-systemcommands-sieveshell-deactivate"></span><h2>deactivate<a class="headerlink" href="#deactivate" title="Permalink to this heading">¶</a></h2>
 <p>deactivate deactivate all scripts.</p>
 <pre class="literal-block">&gt; <strong class="command">deactivate</strong></pre>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -887,7 +892,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -911,9 +916,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

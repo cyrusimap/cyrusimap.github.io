@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Roadmap &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,8 +798,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-roadmap">
-<span id="id1"></span><h1>Cyrus Roadmap<a class="headerlink" href="#cyrus-roadmap" title="Permalink to this headline">¶</a></h1>
+  <section id="cyrus-roadmap">
+<span id="id1"></span><h1>Cyrus Roadmap<a class="headerlink" href="#cyrus-roadmap" title="Permalink to this heading">¶</a></h1>
 <p>This is a very general, high-level view of where the Cyrus project is heading
 in the future, and the amount of code support you may expect to receive if
 you're running an older version of Cyrus.</p>
@@ -803,19 +808,19 @@ testing/documentation you'd like to see improved, we'd love to have your
 involvement to help make it happen. We're here to support you.
 <a class="reference internal" href="../support.html#support"><span class="std std-ref">Contact us</span></a> and take a look at the
 <a class="reference internal" href="../contribute.html#contribute"><span class="std std-ref">Contributor guides</span></a>.</p>
-<div class="section" id="high-level-roadmap">
-<h2>High Level Roadmap<a class="headerlink" href="#high-level-roadmap" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="future">
-<h3>Future<a class="headerlink" href="#future" title="Permalink to this headline">¶</a></h3>
+<section id="high-level-roadmap">
+<h2>High Level Roadmap<a class="headerlink" href="#high-level-roadmap" title="Permalink to this heading">¶</a></h2>
+<section id="future">
+<h3>Future<a class="headerlink" href="#future" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>JMAP support (Contacts, calendars and emails)</p></li>
 <li><p>Improved CalDAV and CardDAV support</p></li>
 <li><p>Improved backup support</p></li>
 <li><p>Multi-master replication</p></li>
 </ul>
-</div>
-<div class="section" id="x">
-<h3>3.0.x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="x">
+<h3>3.0.x<a class="headerlink" href="#x" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Cross-folder conversations</p></li>
 <li><p>Support for fuzzy Xapian search.</p></li>
@@ -824,37 +829,37 @@ involvement to help make it happen. We're here to support you.
 <li><p>Basic object storage</p></li>
 <li><p>Archive partition support</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h3>2.5.x<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>2.5.x<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Support ANNOTATE (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a>)</p></li>
-<li><p>Support some of ESORT/ESEARCH (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5256.html"><strong>RFC 5256</strong></a>)</p></li>
-<li><p>Support LIST-EXT STATUS (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5819.html"><strong>RFC 5819</strong></a>)</p></li>
-<li><p>Support SORT=DISPLAY (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5957.html"><strong>RFC 5957</strong></a>)</p></li>
-<li><p>Support SpecialUse (<span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a>)</p></li>
+<li><p>Support ANNOTATE (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5257.html"><strong>RFC 5257</strong></a>)</p></li>
+<li><p>Support some of ESORT/ESEARCH (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5256.html"><strong>RFC 5256</strong></a>)</p></li>
+<li><p>Support LIST-EXT STATUS (<span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5819.html"><strong>RFC 5819</strong></a>)</p></li>
+<li><p>Support SORT=DISPLAY (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5957.html"><strong>RFC 5957</strong></a>)</p></li>
+<li><p>Support SpecialUse (<span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6154.html"><strong>RFC 6154</strong></a>)</p></li>
 <li><p>Autocreate/autosieve (needs to be -enabled in config)</p></li>
 <li><p>Complete compliance with all tests from <a class="reference external" href="http://www.imapwiki.org/ImapTest">ImapTest</a> (integrated with Cassandane)</p></li>
 <li><p>cyr_info utility - configuration 'lint' and dumping tool.</p></li>
-<li><p>MESSAGE quota support (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2087.html"><strong>RFC 2087</strong></a>)</p></li>
+<li><p>MESSAGE quota support (<span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2087.html"><strong>RFC 2087</strong></a>)</p></li>
 <li><p>Some CalDAV calendaring support.</p></li>
 <li><p>Some CardDAV contact support.</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h3>2.4.x<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>2.4.x<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>security backports only</p></li>
 </ul>
-</div>
-<div class="section" id="and-earlier">
-<h3>2.3 and earlier<a class="headerlink" href="#and-earlier" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="and-earlier">
+<h3>2.3 and earlier<a class="headerlink" href="#and-earlier" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>unsupported</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -877,7 +882,7 @@ involvement to help make it happen. We're here to support you.
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jul 17 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -900,9 +905,12 @@ involvement to help make it happen. We're here to support you.
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

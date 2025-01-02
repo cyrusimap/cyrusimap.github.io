@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Installation &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../download.html">Download</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul class="current">
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -485,18 +490,18 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
 <p>Are you looking for the:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#installation-quick"><span class="std std-ref">Quick install</span></a> guide, or</p></li>
 <li><p><a class="reference internal" href="#installation-detailed"><span class="std std-ref">Detailed installation instructions for compiling from source</span></a></p></li>
 </ul>
-<div class="section" id="quick-install-guide">
-<span id="installation-quick"></span><h2>Quick install guide<a class="headerlink" href="#quick-install-guide" title="Permalink to this headline">¶</a></h2>
+<section id="quick-install-guide">
+<span id="installation-quick"></span><h2>Quick install guide<a class="headerlink" href="#quick-install-guide" title="Permalink to this heading">¶</a></h2>
 <p>You can install Cyrus SASL via packages or via tarball.</p>
-<div class="section" id="tarball-installation">
-<h3>Tarball installation<a class="headerlink" href="#tarball-installation" title="Permalink to this headline">¶</a></h3>
+<section id="tarball-installation">
+<h3>Tarball installation<a class="headerlink" href="#tarball-installation" title="Permalink to this heading">¶</a></h3>
 <p>Fetch the latest Cyrus SASL tarball from
 <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl/releases">https://github.com/cyrusimap/cyrus-sasl/releases</a></p>
 <p>Untar it then:</p>
@@ -508,25 +513,25 @@
 </pre></div>
 </div>
 <p>Contributors will want to <a class="reference external" href="developer/installation.html">compile from source</a>.</p>
-</div>
-<div class="section" id="unix-package-installation">
-<h3>Unix package Installation<a class="headerlink" href="#unix-package-installation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unix-package-installation">
+<h3>Unix package Installation<a class="headerlink" href="#unix-package-installation" title="Permalink to this heading">¶</a></h3>
 <p>Are you <a class="reference internal" href="#upgrading-from-cyrus-saslv1">upgrading from Cyrus SASLv1</a>?</p>
 <p>Please see the file install.php for instructions on how to install this package.</p>
 <p>Note that the library can use the environment variable SASL_PATH to locate the directory where the mechanisms are; this should be a colon-separated list of directories containing plugins. Otherwise it will default to the value of <cite>–with-plugindir</cite> as supplied to <cite>configure</cite> (which itself defaults to <cite>/usr/local/lib</cite>).</p>
 <p>Extra information for <a class="reference internal" href="macosx.html#install-macos"><span class="std std-ref">Mac OSX installation</span></a>.</p>
 <p>Extra information for <a class="reference internal" href="windows.html#install-windows"><span class="std std-ref">Windows installation</span></a>. This configuration has not been extensively tested.</p>
-</div>
-<div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h3>
 <p>There are two main ways to configure the SASL library for a given application. The first (and typically easiest) is to make use of the application’s configuration files. Provided the application supports it (via the <cite>SASL_CB_GETOPT</cite> callback), please refer to that documentation for how to supply SASL options.</p>
 <p>Alternatively, Cyrus SASL looks for configuration files in <cite>/usr/lib/sasl/Appname.conf</cite> where Appname is settable by the application (for example, Sendmail 8.10 and later set this to “Sendmail”).</p>
 <p>Configuration using the application’s configuration files (via the getopt callback) will override those supplied by the SASL configuration files.</p>
 <p>For a detailed guide on configuring libsasl, please look at sysadmin.php and options.php</p>
-</div>
-</div>
-<div class="section" id="detailed-installation-guide">
-<span id="installation-detailed"></span><span id="upgrading-from-cyrus-saslv1"></span><h2>Detailed installation guide<a class="headerlink" href="#detailed-installation-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="detailed-installation-guide">
+<span id="installation-detailed"></span><span id="upgrading-from-cyrus-saslv1"></span><h2>Detailed installation guide<a class="headerlink" href="#detailed-installation-guide" title="Permalink to this heading">¶</a></h2>
 <p>Before reading this section, please be sure you are comfortable with
 the concepts presented in the <a class="reference internal" href="components.html#components"><span class="std std-ref">components</span></a> guide
 and in the <a class="reference internal" href="quickstart.html#quickstart"><span class="std std-ref">Quickstart</span></a> guide.</p>
@@ -557,8 +562,8 @@ you want to use?  On most systems, the correct answer is the default
 to be more stable than equivalent Solaris systems using unix sockets.</p>
 <p>Once you have answered these questions, properly configuring a working
 configuration of Cyrus SASL becomes easier.</p>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>You’ll need the source from <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl">https://github.com/cyrusimap/cyrus-sasl</a></p></li>
 <li><p>You’ll need <a class="reference external" href="ftp://ftp.gnu.org/pub/gnu/make/">GNU make</a>.</p></li>
@@ -574,9 +579,9 @@ v2.1.27 (or higher) or v2.2.6 (or higher) is supported.</p></li>
 <li><p>For GSSAPI support you will need either <a class="reference external" href="https://web.mit.edu/kerberos/www/">MIT Kerberos 5</a>,
 the <a class="reference external" href="https://www-local.pdc.kth.se/heimdal/">Heimdal</a> or <a class="reference external" href="https://cybersafe.com">CyberSafe</a>.</p></li>
 </ol>
-</div>
-<div class="section" id="build-configuration">
-<h3>Build Configuration<a class="headerlink" href="#build-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="build-configuration">
+<h3>Build Configuration<a class="headerlink" href="#build-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Once you have answered all the necessary questions and installed
 (and tested!) any required packages for your configuration, you are
 ready to build SASL.  Building SASL is done with the aid of
@@ -616,9 +621,9 @@ your time to disable its use entirely with the <code class="docutils literal not
 option.</p>
 <p>If you are planning on using LDAP with saslauthd, be sure to specify
 the <code class="docutils literal notranslate"><span class="pre">--with-ldap=PATH</span></code> option to <code class="docutils literal notranslate"><span class="pre">configure</span></code>.</p>
-</div>
-<div class="section" id="building-and-installation">
-<h3>Building and Installation<a class="headerlink" href="#building-and-installation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="building-and-installation">
+<h3>Building and Installation<a class="headerlink" href="#building-and-installation" title="Permalink to this heading">¶</a></h3>
 <p>After configure runs, you should be able to build SASL just by
 running <code class="docutils literal notranslate"><span class="pre">make</span></code>.  If this runs into problems, be sure that you
 have disabled everything that your system doesn’t need, and that you have
@@ -627,17 +632,17 @@ correctly specified paths to any dependencies you may have.</p>
 <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">/usr/local/lib/sasl2</span> <span class="pre">/usr/lib/sasl2</span></code> (modified for your
 installation path as appropriate).  Be sure to do this last step or
 SASL will not be able to locate your plugins!</p>
-</div>
-<div class="section" id="compilation-hints">
-<h3>Compilation Hints<a class="headerlink" href="#compilation-hints" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="compilation-hints">
+<h3>Compilation Hints<a class="headerlink" href="#compilation-hints" title="Permalink to this heading">¶</a></h3>
 <p>You may need to play with your CPPFLAGS and LDFLAGS  if you’re
 using vendor compilers. We use <code class="docutils literal notranslate"><span class="pre">gcc</span></code> extensively, but you’ll
 probably have more luck if you use the same compiler for the library
 as you do for your applications. You can see what compilers we use on
 our platforms by looking at the “SMakefile”.</p>
-</div>
-<div class="section" id="application-configuration">
-<h3>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="application-configuration">
+<h3>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Please read about the <a class="reference internal" href="options.html#options"><span class="std std-ref">SASL Options</span></a> to learn what
 needs to be configured so that applications can successfully use the SASL
 library.</p>
@@ -652,10 +657,10 @@ at boot.  If you are not going to be using saslauthd, then this is
 not necessary.</p>
 <p>Many of these pieces are covered in more detail in the
 <a class="reference internal" href="sysadmin.html#sysadmin"><span class="std std-ref">SASL System Administrator’s Guide</span></a>.</p>
-</div>
-</div>
-<div class="section" id="supported-platforms">
-<h2>Supported platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="supported-platforms">
+<h2>Supported platforms<a class="headerlink" href="#supported-platforms" title="Permalink to this heading">¶</a></h2>
 <p>This has been tested under Linux 2.2, Linux 2.4, Solaris 2.7 and
 Solaris 2.8.  It should work under any platform where dynamic objects
 can be linked against other dynamic objects, and where the dynamic
@@ -665,8 +670,8 @@ files correctly.  There is also documentation for
 <a class="reference internal" href="os390.html#install-os390"><span class="std std-ref">OS/390</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -689,7 +694,7 @@ files correctly.  There is also documentation for
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -713,9 +718,12 @@ files correctly.  There is also documentation for
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

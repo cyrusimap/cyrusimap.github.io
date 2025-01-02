@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Documentation &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -781,16 +786,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="documentation">
-<span id="contribute-docs"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <section id="documentation">
+<span id="contribute-docs"></span><h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>Our documentation for the website is held under git source control, the same as the source. We’d love to have your contributions, which can be sent to the <a class="reference internal" href="../support/feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing list</span></a> or you can submit a patch directly against the source.</p>
 <p>Our helpfile source uses <a class="reference external" href="http://sphinx-doc.org">Sphinx</a> and <a class="reference external" href="http://docutils.sourceforge.net/rst.html">Restructured Text</a>.</p>
 <p>While editing the documentation can take place in any text editor, you’ll need tools to fetch the source, generate man pages and html for testing.</p>
-</div>
-<div class="section" id="documentation-tools">
-<h2>Documentation Tools<a class="headerlink" href="#documentation-tools" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="documentation-tools">
+<h2>Documentation Tools<a class="headerlink" href="#documentation-tools" title="Permalink to this heading">¶</a></h2>
 <p>For basic reStructured Text operations, we are using Sphinx version 1.3.6:</p>
 <ul class="simple">
 <li><p>python-sphinx</p></li>
@@ -843,9 +848,9 @@ python package for performing datestamp operations:</p>
 <li><p>git</p></li>
 <li><p>git-stuff</p></li>
 </ul>
-</div>
-<div class="section" id="building-the-files">
-<h2>Building the files<a class="headerlink" href="#building-the-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="building-the-files">
+<h2>Building the files<a class="headerlink" href="#building-the-files" title="Permalink to this heading">¶</a></h2>
 <p>The best way to build the documentation is to use the toplevel Makefile (generated as part of
 <a class="reference internal" href="compiling.html#compiling"><span class="std std-ref">building the source</span></a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">doc</span>
@@ -859,44 +864,44 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
 </div>
 <p>This generates the manpages and the html files. The results are in <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">make</span></code> with no arguments for a list of available output targets.</p>
-</div>
-<div class="section" id="submitting-updates">
-<h2>Submitting updates<a class="headerlink" href="#submitting-updates" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="using-github-pull-requests">
-<h3>Using GitHub pull requests<a class="headerlink" href="#using-github-pull-requests" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="submitting-updates">
+<h2>Submitting updates<a class="headerlink" href="#submitting-updates" title="Permalink to this heading">¶</a></h2>
+<section id="using-github-pull-requests">
+<h3>Using GitHub pull requests<a class="headerlink" href="#using-github-pull-requests" title="Permalink to this heading">¶</a></h3>
 <p>We operate on the GitHub fork/pull model. We’d love to have your pull request come through!</p>
 <p>If you’re new to GitHub or the fork/pull model, we have a <a class="reference internal" href="github-guide.html#github-guide"><span class="std std-ref">Quick GitHub guide</span></a> to get you going.</p>
-</div>
-<div class="section" id="patches-through-the-mailing-list">
-<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="patches-through-the-mailing-list">
+<h3>Patches through the mailing list<a class="headerlink" href="#patches-through-the-mailing-list" title="Permalink to this heading">¶</a></h3>
 <p>If you’re not planning on regularly submitting changes, you can just send your patch through to the <a class="reference internal" href="../support/feedback-mailing-lists.html#feedback-mailing-lists"><span class="std std-ref">mailing list</span></a> and one of the regular maintainers will incorporate it.</p>
-</div>
-</div>
-<div class="section" id="special-tags">
-<h2>Special Tags<a class="headerlink" href="#special-tags" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="special-tags">
+<h2>Special Tags<a class="headerlink" href="#special-tags" title="Permalink to this heading">¶</a></h2>
 <p>Our Sphinx setup has a few additional tags that are of note.</p>
-<div class="section" id="rfc">
-<h3>rfc<a class="headerlink" href="#rfc" title="Permalink to this headline">¶</a></h3>
+<section id="rfc">
+<h3>rfc<a class="headerlink" href="#rfc" title="Permalink to this heading">¶</a></h3>
 <p>In HTML output, this generates a link to the referenced document.</p>
 <p>Usage: <code class="docutils literal notranslate"><span class="pre">:rfc:`&lt;number&gt;`</span></code></p>
-<p>Example: <code class="docutils literal notranslate"><span class="pre">:rfc:`3501`</span></code> produces <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a>.</p>
-</div>
-<div class="section" id="cyrusman">
-<h3>cyrusman<a class="headerlink" href="#cyrusman" title="Permalink to this headline">¶</a></h3>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">:rfc:`3501`</span></code> produces <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3501.html"><strong>RFC 3501</strong></a>.</p>
+</section>
+<section id="cyrusman">
+<h3>cyrusman<a class="headerlink" href="#cyrusman" title="Permalink to this heading">¶</a></h3>
 <p>In HTML output, this generates an internal link to the referenced man page.</p>
 <p>Currently we support sections 1, 5 and 8. These look for their man pages in the <em>commands</em> (1,8) and <em>config</em> (5) directories within the source.</p>
 <p>Usage: <code class="docutils literal notranslate"><span class="pre">:cyrusman:`&lt;command&gt;(&lt;section&gt;)`</span></code> or <code class="docutils literal notranslate"><span class="pre">:cyrusman:`&lt;configfile&gt;.conf(5)`</span></code></p>
 <p>Example: <code class="docutils literal notranslate"><span class="pre">:cyrusman:`imapd.conf(5)`</span></code> produces <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="imap-current-stable-version">
-<h3>imap_current_stable_version<a class="headerlink" href="#imap-current-stable-version" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="imap-current-stable-version">
+<h3>imap_current_stable_version<a class="headerlink" href="#imap-current-stable-version" title="Permalink to this heading">¶</a></h3>
 <p>This is a replacement tag and will output the current stable version number defined in conf.py.</p>
 <p>Usage: <code class="docutils literal notranslate"><span class="pre">|imap_current_stable_version|</span></code></p>
 <p>Produces 3.10.0.</p>
-</div>
-</div>
-<div class="section" id="conventions-man-pages">
-<h2>Conventions: Man Pages<a class="headerlink" href="#conventions-man-pages" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="conventions-man-pages">
+<h2>Conventions: Man Pages<a class="headerlink" href="#conventions-man-pages" title="Permalink to this heading">¶</a></h2>
 <p>For Unix manual, or “man” pages, we follow the conventions laid out in the man page for man(1) itself:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -914,8 +919,8 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
 <p class="admonition-title">Note</p>
 <p>Exact rendering may vary depending on the output device. For instance, man will usually not be able to render italics when running in a terminal, and will typically use underlined or coloured text instead. The command or function illustration is a pattern that should match all possible invocations. In some cases it is advisable to illustrate several exclusive invocations as is shown in the SYNOPSIS section of this manual page.</p>
 </div>
-<div class="section" id="synopsis">
-<h3>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h3>
+<section id="synopsis">
+<h3>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h3>
 <p>In reStructured Text, this means a SYNOPSIS section might look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Synopsis</span>
 <span class="o">========</span>
@@ -928,9 +933,9 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
 <p>Rendering output like this:</p>
 <p>SYNOPSIS</p>
 <p><strong>ipurge</strong> [ <strong>-f</strong> ] [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-x</strong> ] [ <strong>-X</strong> ] [ <strong>-i</strong> ] [ <strong>-s</strong> ] [ <strong>-o</strong> ] [ <strong>-d</strong> <em>days</em> | <strong>-b</strong> <em>bytes</em> | <strong>-k</strong> <em>Kbytes</em> | <strong>-m</strong> <em>Mbytes</em> ] [ <em>mailbox-pattern</em>… ]</p>
-</div>
-<div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h3>
 <p>In order to preserve space in traditional man page output, we’re using the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">only::</span> <span class="pre">html</span></code> directive in the reStructured Text (.rst) files for the verbose output of the Examples for commands.</p>
 <p>For example, this is good, and follows the style of the man(8) manpage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examples</span>
@@ -977,9 +982,9 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
 <span class="n">tech</span><span class="o">.</span><span class="n">Commits</span><span class="o">.</span><span class="n">archive</span> <span class="mi">0</span> <span class="mi">4</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1002,7 +1007,7 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jun 19 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1025,9 +1030,12 @@ on its own, from the <cite>docsrc/`</cite> directory run:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

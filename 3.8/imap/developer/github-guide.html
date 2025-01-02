@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>GitHub guide &mdash; Cyrus IMAP 3.8.4 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -738,7 +743,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -787,8 +792,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="github-guide">
-<span id="id1"></span><h1>GitHub guide<a class="headerlink" href="#github-guide" title="Permalink to this headline">¶</a></h1>
+  <section id="github-guide">
+<span id="id1"></span><h1>GitHub guide<a class="headerlink" href="#github-guide" title="Permalink to this heading">¶</a></h1>
 <p>A walkthrough for using <a class="reference external" href="https://github.com">GitHub</a> with a view to providing updates (source or documentation or testing) to the <a class="reference external" href="https://github.com/cyrusimap/">Cyrus repository</a>.</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#github-guide-account"><span class="std std-ref">Create a GitHub account</span></a></p></li>
@@ -797,22 +802,22 @@
 <li><p><a class="reference internal" href="#github-guide-pull"><span class="std std-ref">Issue a pull request</span></a> to request that your changes are incorporated back into the master codebase.</p></li>
 </ol>
 <p>This guide assumes you are familiar with the workings of <a class="reference external" href="https://help.github.com/articles/set-up-git/">Git</a> for source control.</p>
-<div class="section" id="create-a-github-account">
-<span id="github-guide-account"></span><h2>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h2>
+<section id="create-a-github-account">
+<span id="github-guide-account"></span><h2>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this heading">¶</a></h2>
 <p>Go to <a class="reference external" href="https://github.com">GitHub</a> and sign up for an account. You only need the free plan to contribute to Cyrus.</p>
 <p>Their <a class="reference external" href="https://help.github.com/articles/signing-up-for-a-new-github-account/">help pages</a> have more information
 on filling out your profile and setting up two-factor authentication for additional security.</p>
-</div>
-<div class="section" id="add-your-ssh-key">
-<span id="github-guide-sshkey"></span><h2>2. Add your ssh key<a class="headerlink" href="#add-your-ssh-key" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="add-your-ssh-key">
+<span id="github-guide-sshkey"></span><h2>2. Add your ssh key<a class="headerlink" href="#add-your-ssh-key" title="Permalink to this heading">¶</a></h2>
 <p>It's worth adding a ssh key to your account, so you're not having to input your password every time you access the repository.</p>
 <p>If you don't have an ssh key already (and <a class="reference external" href="https://help.github.com/articles/checking-for-existing-ssh-keys/">here's how to check</a>),
 you can <a class="reference external" href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">generate a new key</a>. Once you have a key,
 <a class="reference external" href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">add it to GitHub</a> and
 <a class="reference external" href="https://help.github.com/articles/testing-your-ssh-connection/">test it out</a>.</p>
-</div>
-<div class="section" id="fork-the-repository">
-<span id="github-guide-fork"></span><h2>3. Fork the repository<a class="headerlink" href="#fork-the-repository" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="fork-the-repository">
+<span id="github-guide-fork"></span><h2>3. Fork the repository<a class="headerlink" href="#fork-the-repository" title="Permalink to this heading">¶</a></h2>
 <p>Whether you're contributing to <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd">Cyrus</a> (source, or documentation),
 or into helping out with <a class="reference external" href="https://github.com/cyrusimap/cyrus-sasl">SASL</a> or
 any of the other <a class="reference external" href="https://github.com/cyrusimap">Cyrus component projects</a>, use the Fork button to make a copy of the repository into your own GitHub work space.</p>
@@ -842,15 +847,15 @@ upstream  https://github.com/cyrusimap/ORIGINAL_REPOSITORY.git (push)
 <p>We recommend you create a topic branch and make your changes (don't forget to <a class="reference internal" href="developer-testing.html#developer-testing"><span class="std std-ref">test!</span></a>). Using a topic branch means you can keep your master
 source in sync without affecting your changes. It also means that if your patch undergoes further revisions before inclusion, you
 can easily do so.</p>
-</div>
-<div class="section" id="issue-a-pull-request">
-<span id="github-guide-pull"></span><h2>4. Issue a pull request<a class="headerlink" href="#issue-a-pull-request" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="issue-a-pull-request">
+<span id="github-guide-pull"></span><h2>4. Issue a pull request<a class="headerlink" href="#issue-a-pull-request" title="Permalink to this heading">¶</a></h2>
 <p>When your changes are done, you <a class="reference external" href="https://help.github.com/articles/using-pull-requests/">issue a pull request</a>.
 This is done by logging into the GitHub interface, swapping to your branch, then selecting New Pull Request.</p>
 <p>When submitting the pull request, note if there's a particular filed bug your patch addresses. The Cyrus Team
 will review your pull request and make sure it gets integrated!</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -873,7 +878,7 @@ will review your pull request and make sure it gets integrated!</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Nov 24 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -896,9 +901,12 @@ will review your pull request and make sure it gets integrated!</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

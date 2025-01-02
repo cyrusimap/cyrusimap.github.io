@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Replication Protocol v2.4+ &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,10 +788,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-guidance-replication-protocol"></span><div class="section" id="cyrus-imap-server-replication-protocol-v2-4">
-<h1>Cyrus IMAP Server: Replication Protocol v2.4+<a class="headerlink" href="#cyrus-imap-server-replication-protocol-v2-4" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="dlist-1-0">
-<h2>DList 1.0<a class="headerlink" href="#dlist-1-0" title="Permalink to this headline">¶</a></h2>
+  <span class="target" id="imap-developer-guidance-replication-protocol"></span><section id="cyrus-imap-server-replication-protocol-v2-4">
+<h1>Cyrus IMAP Server: Replication Protocol v2.4+<a class="headerlink" href="#cyrus-imap-server-replication-protocol-v2-4" title="Permalink to this heading">¶</a></h1>
+<section id="dlist-1-0">
+<h2>DList 1.0<a class="headerlink" href="#dlist-1-0" title="Permalink to this heading">¶</a></h2>
 <p>The DList protocol is based closely on the IMAP wire protocol, using
 atoms and literals as the basis, but with two extended types of data:</p>
 <ul class="simple">
@@ -796,60 +801,60 @@ atoms and literals as the basis, but with two extended types of data:</p>
 <p>A wart of the protocol is the rfc822-object, which contains an explicit
 cyrus backend partition. This will be removed in future versions of
 Cyrus.</p>
-<div class="section" id="types">
-<h3>types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="atom">
-<h4>atom<a class="headerlink" href="#atom" title="Permalink to this headline">¶</a></h4>
+<section id="types">
+<h3>types<a class="headerlink" href="#types" title="Permalink to this heading">¶</a></h3>
+<section id="atom">
+<h4>atom<a class="headerlink" href="#atom" title="Permalink to this heading">¶</a></h4>
 <p>An atom is actually a sequence of any character other than ‘\0’, the
 NULL byte. Character encoding is not specified, but it can contain 8 bit
 characters, and is probably utf8</p>
-</div>
-<div class="section" id="flag">
-<h4>flag<a class="headerlink" href="#flag" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="flag">
+<h4>flag<a class="headerlink" href="#flag" title="Permalink to this heading">¶</a></h4>
 <p>Flag is a horrible special case of atom to allow \word to be
 represented as an IMAP atom on the wire. This is one of many special
 cases in the IMAP protocol, and is duplicated into dlist just to make it
 easier to read</p>
-</div>
-<div class="section" id="num32-num">
-<h4>num32/num<a class="headerlink" href="#num32-num" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="num32-num">
+<h4>num32/num<a class="headerlink" href="#num32-num" title="Permalink to this heading">¶</a></h4>
 <p>Both stored as 64 bit integers internally, and sent as decimal numbers
 over the wire, this type exists only in the API, it just looks like a
 string on the wire.</p>
-</div>
-<div class="section" id="hex32-hex">
-<h4>hex32/hex<a class="headerlink" href="#hex32-hex" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="hex32-hex">
+<h4>hex32/hex<a class="headerlink" href="#hex32-hex" title="Permalink to this heading">¶</a></h4>
 <p>Stored like num internally, but sent as an 8 or 16 character hexadecimal
 string on the wire</p>
-</div>
-<div class="section" id="map">
-<h4>map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="map">
+<h4>map<a class="headerlink" href="#map" title="Permalink to this heading">¶</a></h4>
 <p>Like atom, but can contain NULL. All values are parsed off the wire as
 ‘map’ type and then converted on demand into the requested type</p>
-</div>
-<div class="section" id="list">
-<h4>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="list">
+<h4>list<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h4>
 <p>Encoded in parentheses like so (item item item) a list type can be
 nested inside other lists: (item (sub sub) item)</p>
-</div>
-<div class="section" id="kvlist">
-<h4>kvlist<a class="headerlink" href="#kvlist" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="kvlist">
+<h4>kvlist<a class="headerlink" href="#kvlist" title="Permalink to this heading">¶</a></h4>
 <p>A kvlist allows named parameters, and is indicated with a leading %
 character. % is invalid in atoms, so parsing is unambiguous, e.g:</p>
 <p>%(key1 value1 key2 (list of values) key3 value3)</p>
-</div>
-<div class="section" id="rfc822-object-file">
-<h4>rfc822-object/file<a class="headerlink" href="#rfc822-object-file" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="rfc822-object-file">
+<h4>rfc822-object/file<a class="headerlink" href="#rfc822-object-file" title="Permalink to this heading">¶</a></h4>
 <p>Finally the ugly one. These look like a literal, but with a leading %
 and two more fields:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="p">{</span><span class="n">partition</span> <span class="n">sha1</span> <span class="n">size</span><span class="p">}</span>\<span class="n">r</span>\<span class="n">n</span>
 <span class="n">data</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -872,7 +877,7 @@ and two more fields:</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 19 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -895,9 +900,12 @@ and two more fields:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

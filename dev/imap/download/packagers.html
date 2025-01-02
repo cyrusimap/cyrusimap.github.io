@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Notes for Packagers &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../download.html">Download</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -782,27 +787,27 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="notes-for-packagers">
-<h1>Notes for Packagers<a class="headerlink" href="#notes-for-packagers" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="binary-naming">
-<h2>Binary naming<a class="headerlink" href="#binary-naming" title="Permalink to this headline">¶</a></h2>
+  <section id="notes-for-packagers">
+<h1>Notes for Packagers<a class="headerlink" href="#notes-for-packagers" title="Permalink to this heading">¶</a></h1>
+<section id="binary-naming">
+<h2>Binary naming<a class="headerlink" href="#binary-naming" title="Permalink to this heading">¶</a></h2>
 <p>Prevent namespace clashes. We suggest renaming all binaries with <code class="docutils literal notranslate"><span class="pre">cyr_</span></code> at
 the front, including renaming the <code class="docutils literal notranslate"><span class="pre">ctl_*</span></code> to <code class="docutils literal notranslate"><span class="pre">cyr_</span></code>.</p>
 <p>The Cyrus team are looking to fix this in the core bundle in upcoming releases
 so packagers have less to do.</p>
-</div>
-<div class="section" id="sample-configuration-files">
-<h2>Sample configuration files<a class="headerlink" href="#sample-configuration-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sample-configuration-files">
+<h2>Sample configuration files<a class="headerlink" href="#sample-configuration-files" title="Permalink to this heading">¶</a></h2>
 <p>There are several samples of <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> and
 <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> located in the <code class="docutils literal notranslate"><span class="pre">doc/examples</span></code> directory of
 the distribution tarball.  Please install these to your preferred
 documentation directory (i.e. <code class="docutils literal notranslate"><span class="pre">/usr/share/doc/cyrus-imapd</span></code>) as a
 reference for your users.</p>
-</div>
-<div class="section" id="predefined-configurations">
-<h2>Predefined configurations<a class="headerlink" href="#predefined-configurations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="the-configuration-file-for-master-cyrus-conf">
-<h3>The configuration file for master: cyrus.conf<a class="headerlink" href="#the-configuration-file-for-master-cyrus-conf" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="predefined-configurations">
+<h2>Predefined configurations<a class="headerlink" href="#predefined-configurations" title="Permalink to this heading">¶</a></h2>
+<section id="the-configuration-file-for-master-cyrus-conf">
+<h3>The configuration file for master: cyrus.conf<a class="headerlink" href="#the-configuration-file-for-master-cyrus-conf" title="Permalink to this heading">¶</a></h3>
 <p>When installing a predefined <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> for your users,
 please pay attention to new features and how these may impact users.
 For example, for some time now, Cyrus has supported placing several
@@ -812,8 +817,8 @@ and ensures DB consistency in event of a crash or other system
 disruptive events. But, in light of this, actions which depend on the
 existence of these database files <em>should not</em> be placed in the
 <strong>START</strong> section of <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
-<div class="section" id="section-purpose">
-<h4>Section Purpose<a class="headerlink" href="#section-purpose" title="Permalink to this headline">¶</a></h4>
+<section id="section-purpose">
+<h4>Section Purpose<a class="headerlink" href="#section-purpose" title="Permalink to this heading">¶</a></h4>
 <p>A new section, DAEMON, was added to <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> in
 version 2.5.  Please consult <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> for details.
 Please refer to the notes in <strong>Section Descriptions</strong> pertaining to the
@@ -851,17 +856,17 @@ it should shut down and clean up after.</p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="the-configuration-file-for-the-various-programs-imapd-conf">
-<h3>The configuration file for the various programs: imapd.conf<a class="headerlink" href="#the-configuration-file-for-the-various-programs-imapd-conf" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-configuration-file-for-the-various-programs-imapd-conf">
+<h3>The configuration file for the various programs: imapd.conf<a class="headerlink" href="#the-configuration-file-for-the-various-programs-imapd-conf" title="Permalink to this heading">¶</a></h3>
 <p>The sample <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> files must be adapted for use from
 site to site.  Here, therefore, we'll attempt to point you towards some
 reasonable settings which take advantage of recent improvements and
 features, and may help guide you and your users to a better performing
 Cyrus installation.</p>
-<div class="section" id="ephemeral-files-and-temporary-filesystems">
-<h4>Ephemeral files and temporary filesystems<a class="headerlink" href="#ephemeral-files-and-temporary-filesystems" title="Permalink to this headline">¶</a></h4>
+<section id="ephemeral-files-and-temporary-filesystems">
+<h4>Ephemeral files and temporary filesystems<a class="headerlink" href="#ephemeral-files-and-temporary-filesystems" title="Permalink to this heading">¶</a></h4>
 <p>In addition to Unix domain sockets and lock files, several databases
 used by Cyrus programs may be located in temporary filesystems, such as
 those backed by RAM (i.e. tmpfs, md, etc.).  Here's a list of such
@@ -884,24 +889,24 @@ not</strong> be placed in the <strong>START</strong> section of
 <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, or the server will not start as
 expected.</p>
 </div>
-</div>
-<div class="section" id="new-default-settings">
-<h4>New default settings<a class="headerlink" href="#new-default-settings" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="new-default-settings">
+<h4>New default settings<a class="headerlink" href="#new-default-settings" title="Permalink to this heading">¶</a></h4>
 <p>A new stable series means the defaults for some settings may have changed.
 Please consult <a class="reference internal" href="upgrade.html#upgrade"><span class="std std-ref">Upgrading to 3.10</span></a> for details.</p>
-</div>
-<div class="section" id="new-or-improved-features">
-<h4>New or improved features<a class="headerlink" href="#new-or-improved-features" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="new-or-improved-features">
+<h4>New or improved features<a class="headerlink" href="#new-or-improved-features" title="Permalink to this heading">¶</a></h4>
 <p>A new stable series means new features, and improvements to existing features.
 Some of these may be features which previously were not considered ripe for
 packaging, but merit new consideration.</p>
 <p>Please see <a class="reference internal" href="release-notes/3.2/index.html#imap-release-notes-3-2"><span class="std std-ref">Cyrus IMAP 3.2 Releases</span></a> for details, and consider enabling
 these features in the <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> you ship in your packages.</p>
-</div>
-</div>
-</div>
-<div class="section" id="services-in-etc-services">
-<h2>Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code><a class="headerlink" href="#services-in-etc-services" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="services-in-etc-services">
+<h2>Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code><a class="headerlink" href="#services-in-etc-services" title="Permalink to this heading">¶</a></h2>
 <p>Listing named services through <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code> aids in cross-system
 consistency and cross-platform interoperability. Furthermore, it enables
 administrators and users to refer to the service by name (for example in
@@ -928,8 +933,8 @@ are required for any host using the listed services:</p>
 </pre></div>
 </div>
 <p>Make sure that these lines are present or add them if they are missing.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -952,7 +957,7 @@ are required for any host using the listed services:</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Apr 29 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -975,9 +980,12 @@ are required for any host using the listed services:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

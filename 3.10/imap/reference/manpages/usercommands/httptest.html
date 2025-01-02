@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>httptest &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,48 +798,48 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="httptest">
-<span id="imap-reference-manpages-usercommands-httptest"></span><span id="std-cyrusman-httptest-1"></span><span id="std:cyrusman-httptest(1)"></span><h1><strong>httptest</strong><a class="headerlink" href="#httptest" title="Permalink to this headline">¶</a></h1>
+  <section id="httptest">
+<span id="imap-reference-manpages-usercommands-httptest"></span><span id="std-cyrusman-httptest-1"></span><h1><strong>httptest</strong><a class="headerlink" href="#httptest" title="Permalink to this heading">¶</a></h1>
 <p>Interactive HTTP test program.</p>
 <p>This is actually installed as a hard linked copy of <a class="reference internal" href="imtest.html#std-cyrusman-imtest-1">imtest(1)</a>.</p>
 <p>It allows you to authenticate and send HTTP commands to the server.</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>imtest</strong> [ <strong>-t</strong> <em>keyfile</em> ] [ <strong>-p</strong> <em>port</em> ] [ <strong>-m</strong> <em>mechanism</em> ]
     [ <strong>-a</strong> <em>userid</em> ] [ <strong>-u</strong> <em>userid</em> ] [ <strong>-k</strong> <em>num</em> ] [ <strong>-l</strong> <em>num</em> ]
     [ <strong>-r</strong> <em>realm</em> ] [ <strong>-f</strong> <em>file</em> ] [ <strong>-n</strong> <em>num</em> ] [ <strong>-s</strong> ] [ <strong>-q</strong> ]
     [ <strong>-c</strong> ] [ <strong>-i</strong> ] [ <strong>-z</strong> ] [ <strong>-v</strong> ] [ <strong>-I</strong> <em>file</em> ] [ <strong>-x</strong> <em>file</em> ]
     [ <strong>-X</strong> <em>file</em> ] [ <strong>-w</strong> <em>passwd</em> ] [ <strong>-o</strong> <em>option</em>=<em>value</em> ] <em>hostname</em></pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>imtest</strong> is a utility that allows you to authenticate to an IMAP server
 and interactively issue commands to it. Once authenticated you may issue
 any IMAP command by simply typing it in. It is capable of multiple SASL
 authentication mechanisms and handles encryption layers transparently.
 This utility is often used for testing the operation of an IMAP server.
 Also those developing IMAP clients find it useful.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-imtest-t">
-<span id="cmdoption-imtest-keyfile"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"> <span class="pre">keyfile</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--keyfile</span></code><code class="sig-prename descclassname"><span class="pre">=keyfile</span></code><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-t">
+<span id="cmdoption-imtest-keyfile"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"> <span class="pre">keyfile</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--keyfile</span></span><span class="sig-prename descclassname"><span class="pre">=keyfile</span></span><a class="headerlink" href="#cmdoption-imtest-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable TLS.  <em>keyfile</em> contains the TLS public and private keys.
 Specify <strong>&quot;&quot;</strong> to negotiate a TLS encryption layer but not use TLS
 authentication.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-p">
-<span id="cmdoption-imtest-port"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">port</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--port</span></code><code class="sig-prename descclassname"><span class="pre">=port</span></code><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-p">
+<span id="cmdoption-imtest-port"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">port</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--port</span></span><span class="sig-prename descclassname"><span class="pre">=port</span></span><a class="headerlink" href="#cmdoption-imtest-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port to connect to. If left off this defaults to <strong>imap</strong> as defined
 in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-m">
-<span id="cmdoption-imtest-mechanism"></span><code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">mechanism</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--mechanism</span></code><code class="sig-prename descclassname"><span class="pre">=mechanism</span></code><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-m">
+<span id="cmdoption-imtest-mechanism"></span><span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"> <span class="pre">mechanism</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--mechanism</span></span><span class="sig-prename descclassname"><span class="pre">=mechanism</span></span><a class="headerlink" href="#cmdoption-imtest-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force <strong>imtest</strong> to use <em>mechanism</em> for authentication. If not
 specified the strongest authentication mechanism supported by the
 server is chosen.  Specify <em>login</em> to use the LOGIN command instead
@@ -842,16 +847,16 @@ of AUTHENTICATE.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-a">
-<span id="cmdoption-imtest-authname"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"> <span class="pre">userid</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--authname</span></code><code class="sig-prename descclassname"><span class="pre">=userid</span></code><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-a">
+<span id="cmdoption-imtest-authname"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"> <span class="pre">userid</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--authname</span></span><span class="sig-prename descclassname"><span class="pre">=userid</span></span><a class="headerlink" href="#cmdoption-imtest-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authentication; defaults to the current user.
 This is the userid whose password or credentials will be presented to
 the server for verification.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-u">
-<span id="cmdoption-imtest-username"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"> <span class="pre">userid</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--username</span></code><code class="sig-prename descclassname"><span class="pre">=userid</span></code><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-u">
+<span id="cmdoption-imtest-username"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"> <span class="pre">userid</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--username</span></span><span class="sig-prename descclassname"><span class="pre">=userid</span></span><a class="headerlink" href="#cmdoption-imtest-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Userid to use for authorization; defaults to the current user.
 This is the userid whose identity will be assumed after
 authentication.</p>
@@ -863,14 +868,14 @@ authentication.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-k">
-<span id="cmdoption-imtest-minssf"></span><code class="sig-name descname"><span class="pre">-k</span></code><code class="sig-prename descclassname"> <span class="pre">num</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--minssf</span></code><code class="sig-prename descclassname"><span class="pre">=num</span></code><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-k">
+<span id="cmdoption-imtest-minssf"></span><span class="sig-name descname"><span class="pre">-k</span></span><span class="sig-prename descclassname"> <span class="pre">num</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--minssf</span></span><span class="sig-prename descclassname"><span class="pre">=num</span></span><a class="headerlink" href="#cmdoption-imtest-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum protection layer required.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-l">
-<span id="cmdoption-imtest-maxssf"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"> <span class="pre">num</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--maxssf</span></code><code class="sig-prename descclassname"><span class="pre">=num</span></code><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-l">
+<span id="cmdoption-imtest-maxssf"></span><span class="sig-name descname"><span class="pre">-l</span></span><span class="sig-prename descclassname"> <span class="pre">num</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--maxssf</span></span><span class="sig-prename descclassname"><span class="pre">=num</span></span><a class="headerlink" href="#cmdoption-imtest-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum protection layer to use (<strong>0</strong>=none; <strong>1</strong>=integrity;
 etc).  For example if you are using the KERBEROS_V4 authentication
 mechanism specifying <strong>0</strong> will force imtest to not use any layer
@@ -879,106 +884,106 @@ default the maximum supported protection layer will be used.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-r">
-<span id="cmdoption-imtest-realm"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">realm</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--realm</span></code><code class="sig-prename descclassname"><span class="pre">=realm</span></code><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-r">
+<span id="cmdoption-imtest-realm"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"> <span class="pre">realm</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--realm</span></span><span class="sig-prename descclassname"><span class="pre">=realm</span></span><a class="headerlink" href="#cmdoption-imtest-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the <em>realm</em> to use. Certain authentication mechanisms
 (e.g. DIGEST-MD5) may require one to specify the realm.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-f">
-<span id="cmdoption-imtest-input-filename"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">file</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--input-filename</span></code><code class="sig-prename descclassname"><span class="pre">=file</span></code><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-f">
+<span id="cmdoption-imtest-input-filename"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">file</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--input-filename</span></span><span class="sig-prename descclassname"><span class="pre">=file</span></span><a class="headerlink" href="#cmdoption-imtest-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pipe <em>file</em> into connection after authentication.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-n">
-<span id="cmdoption-imtest-reauth-attempts"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">num</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--reauth-attempts</span></code><code class="sig-prename descclassname"><span class="pre">=num</span></code><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-n">
+<span id="cmdoption-imtest-reauth-attempts"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">num</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--reauth-attempts</span></span><span class="sig-prename descclassname"><span class="pre">=num</span></span><a class="headerlink" href="#cmdoption-imtest-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of authentication attempts; default = 1.  The client will
 attempt to do SSL/TLS session reuse and/or fast reauth
 (e.g. DIGEST-MD5), if possible.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-s">
-<span id="cmdoption-imtest-require-tls"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--require-tls</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-s">
+<span id="cmdoption-imtest-require-tls"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--require-tls</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable SSL over chosen protocol.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-q">
-<span id="cmdoption-imtest-require-compression"></span><code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--require-compression</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-q">
+<span id="cmdoption-imtest-require-compression"></span><span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--require-compression</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable IMAP COMPRESSion (after authentication).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-c">
-<span id="cmdoption-imtest-do-challenge"></span><code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--do-challenge</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-c">
+<span id="cmdoption-imtest-do-challenge"></span><span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--do-challenge</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable challenge prompt callbacks.  This will cause the OTP mechanism
 to ask for the one-time password instead of the secret pass-phrase
 (library generates the correct response).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-i">
-<span id="cmdoption-imtest-no-initial-response"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--no-initial-response</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-i">
+<span id="cmdoption-imtest-no-initial-response"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-initial-response</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don't send an initial client response for SASL mechanisms, even if
 the protocol supports it.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-I">
-<span id="cmdoption-imtest-pidfile"></span><code class="sig-name descname"><span class="pre">-I</span></code><code class="sig-prename descclassname"> <span class="pre">file</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--pidfile</span></code><code class="sig-prename descclassname"><span class="pre">=file</span></code><a class="headerlink" href="#cmdoption-imtest-I" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-I">
+<span id="cmdoption-imtest-pidfile"></span><span class="sig-name descname"><span class="pre">-I</span></span><span class="sig-prename descclassname"> <span class="pre">file</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--pidfile</span></span><span class="sig-prename descclassname"><span class="pre">=file</span></span><a class="headerlink" href="#cmdoption-imtest-I" title="Permalink to this definition">¶</a></dt>
 <dd><p>Echo the PID of the running process into <em>file</em> (This can be useful
 with -X).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-v">
-<span id="cmdoption-imtest-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-v">
+<span id="cmdoption-imtest-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Verbose. Print out more information than usual.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-z">
-<span id="cmdoption-imtest-run-stress-test"></span><code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--run-stress-test</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-z">
+<span id="cmdoption-imtest-run-stress-test"></span><span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--run-stress-test</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-imtest-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Timing test.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-x">
-<span id="cmdoption-imtest-output-socket"></span><code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"> <span class="pre">file</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--output-socket</span></code><code class="sig-prename descclassname"><span class="pre">=file</span></code><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-x">
+<span id="cmdoption-imtest-output-socket"></span><span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"> <span class="pre">file</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--output-socket</span></span><span class="sig-prename descclassname"><span class="pre">=file</span></span><a class="headerlink" href="#cmdoption-imtest-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the named socket for the interactive portion.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-X">
-<code class="sig-name descname"><span class="pre">-X</span></code><code class="sig-prename descclassname"> <span class="pre">file</span></code><a class="headerlink" href="#cmdoption-imtest-X" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-X">
+<span class="sig-name descname"><span class="pre">-X</span></span><span class="sig-prename descclassname"> <span class="pre">file</span></span><a class="headerlink" href="#cmdoption-imtest-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Like -x, only close all file descriptors &amp; daemonize the process.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-w">
-<span id="cmdoption-imtest-password"></span><code class="sig-name descname"><span class="pre">-w</span></code><code class="sig-prename descclassname"> <span class="pre">password</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--password</span></code><code class="sig-prename descclassname"><span class="pre">=password</span></code><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-w">
+<span id="cmdoption-imtest-password"></span><span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"> <span class="pre">password</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--password</span></span><span class="sig-prename descclassname"><span class="pre">=password</span></span><a class="headerlink" href="#cmdoption-imtest-w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Password to use (if not supplied, we will prompt).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-imtest-o">
-<span id="cmdoption-imtest-sasl-option"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"> <span class="pre">option=value</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--sasl-option</span></code><code class="sig-prename descclassname"><span class="pre">=option=value</span></code><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-imtest-o">
+<span id="cmdoption-imtest-sasl-option"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"> <span class="pre">option=value</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--sasl-option</span></span><span class="sig-prename descclassname"><span class="pre">=option=value</span></span><a class="headerlink" href="#cmdoption-imtest-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the SASL <em>option</em> to <em>value</em>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../systemcommands/imapd.html#std-cyrusman-imapd-8">imapd(8)</a></p>
 <p><a class="reference internal" href="../systemcommands/httpd.html#std-cyrusman-httpd-8">httpd(8)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1001,7 +1006,7 @@ with -X).</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 15 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1024,9 +1029,12 @@ with -X).</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

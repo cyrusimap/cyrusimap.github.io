@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP 3.2.0-beta3 Release Notes &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../../download.html">Download</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,8 +790,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-imap-3-2-0-beta3-release-notes">
-<h1>Cyrus IMAP 3.2.0-beta3 Release Notes<a class="headerlink" href="#cyrus-imap-3-2-0-beta3-release-notes" title="Permalink to this headline">¶</a></h1>
+  <section id="cyrus-imap-3-2-0-beta3-release-notes">
+<h1>Cyrus IMAP 3.2.0-beta3 Release Notes<a class="headerlink" href="#cyrus-imap-3-2-0-beta3-release-notes" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is a beta release and may contain fun bugs.  Testing it
@@ -800,14 +805,14 @@ not run this on your production mail stores!</p>
 <li><p><a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.0-beta3/cyrus-imapd-3.2.0-beta3.tar.gz.sig">https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.2.0-beta3/cyrus-imapd-3.2.0-beta3.tar.gz.sig</a></p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="major-changes-since-the-3-0-x-series">
-<span id="relnotes-3-2-0-beta3-changes"></span><h2>Major changes since the 3.0.x series<a class="headerlink" href="#major-changes-since-the-3-0-x-series" title="Permalink to this headline">¶</a></h2>
+<section id="major-changes-since-the-3-0-x-series">
+<span id="relnotes-3-2-0-beta3-changes"></span><h2>Major changes since the 3.0.x series<a class="headerlink" href="#major-changes-since-the-3-0-x-series" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Sieve bug fixes and features</p></li>
 <li><p>Replication safety improvements</p></li>
 <li><p>Caldav and Carddav improvements</p></li>
-<li><p>Support for JMAP core protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a>)</p></li>
-<li><p>Support for JMAP Mail (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8621.html"><strong>RFC 8621</strong></a>)</p></li>
+<li><p>Support for JMAP core protocol (<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc8620.html"><strong>RFC 8620</strong></a>)</p></li>
+<li><p>Support for JMAP Mail (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc8621.html"><strong>RFC 8621</strong></a>)</p></li>
 <li><p>Experimental support for JMAP Contacts (requires
 <cite>jmap_nonstandard_extensions: yes</cite> in <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>)</p></li>
 <li><p>Experimental support for JMAP Calendars (requires
@@ -863,9 +868,9 @@ directory Cyrus should look for timezone definitions in.  The default is
 to let libical find them itself.  If the <cite>tzdist</cite> http module is enabled,
 this option is mandatory.</p></li>
 </ul>
-</div>
-<div class="section" id="updates-to-default-configuration">
-<h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="updates-to-default-configuration">
+<h2>Updates to default configuration<a class="headerlink" href="#updates-to-default-configuration" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../../../../reference/manpages/systemcommands/cyr_info.html#std-cyrusman-cyr_info-8">cyr_info(8)</a> <cite>conf</cite>, <cite>conf-all</cite> and <cite>conf-default</cite> subcommands
 now accept an <cite>-s &lt;version&gt;</cite> argument to highlight <a class="reference internal" href="../../../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 options that are new or whose behaviour has changed since the specified
@@ -887,22 +892,22 @@ being hardcoded to “{configdirectory}/zoneinfo”.  If you are using this
 module, you MUST now set this option explicitly.  Calendaring services
 will use the same timezone definitions.</p></li>
 </ul>
-</div>
-<div class="section" id="security-fixes">
-<h2>Security fixes<a class="headerlink" href="#security-fixes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="security-fixes">
+<h2>Security fixes<a class="headerlink" href="#security-fixes" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14230">CVE-2017-14230</a></p></li>
 <li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-18928">CVE-2019-18928</a></p></li>
 <li><p>Contains fix for <a class="reference external" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19783">CVE-2019-19783</a></p></li>
 </ul>
-</div>
-<div class="section" id="significant-bugfixes">
-<h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="significant-bugfixes">
+<h2>Significant bugfixes<a class="headerlink" href="#significant-bugfixes" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Contains fix for <a class="reference external" href="https://github.com/cyrusimap/cyrus-imapd/issues/2839">Issue #2839</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -925,7 +930,7 @@ will use the same timezone definitions.</p></li>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 06 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -948,9 +953,12 @@ will use the same timezone definitions.</p></li>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../../_static/sphinx_highlight.js"></script>
 
   
 

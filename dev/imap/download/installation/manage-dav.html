@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>HTTP modules &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,10 +789,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="http-modules">
-<span id="manage-dav"></span><h1>HTTP modules<a class="headerlink" href="#http-modules" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-http-module-support">
-<h2>About http module support<a class="headerlink" href="#about-http-module-support" title="Permalink to this headline">¶</a></h2>
+  <section id="http-modules">
+<span id="manage-dav"></span><h1>HTTP modules<a class="headerlink" href="#http-modules" title="Permalink to this heading">¶</a></h1>
+<section id="about-http-module-support">
+<h2>About http module support<a class="headerlink" href="#about-http-module-support" title="Permalink to this heading">¶</a></h2>
 <p>This assumes you already have the relevant modules enabled in your Cyrus
 <a class="reference internal" href="../../../setup.html#setup"><span class="std std-ref">installation</span></a>, either via packages, or through a
 manual installation.</p>
@@ -798,7 +803,7 @@ Its feature set is limited to:</p>
 <li><dl class="simple">
 <dt>Calendaring (CalDAV)</dt><dd><ul>
 <li><p>Acts as a calendar and scheduling server by using IMAP mailboxes as calendar
-collections and <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store iCalendar data.</p></li>
+collections and <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store iCalendar data.</p></li>
 <li><p>Allows non-CalDAV/remote calendar clients to query freebusy information of
 Cyrus CalDAV users via freebusy URLs.</p></li>
 <li><p>Allows scheduling transactions between separate calendaring and
@@ -813,7 +818,7 @@ used within a Cyrus Murder).</p></li>
 <li><dl class="simple">
 <dt>Contacts (CardDAV)</dt><dd><ul>
 <li><p>Acts as a contacts server by using IMAP mailboxes as addressbook
-collections and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store vCard data.</p></li>
+collections and <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> messages to store vCard data.</p></li>
 </ul>
 </dd>
 </dl>
@@ -821,7 +826,7 @@ collections and <span class="target" id="index-1"></span><a class="rfc reference
 <li><dl class="simple">
 <dt>File Storage (WebDAV)</dt><dd><ul>
 <li><p>Acts as a remote storage server server by using IMAP mailboxes as
-collections and <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a> message to store files.</p></li>
+collections and <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> message to store files.</p></li>
 </ul>
 </dd>
 </dl>
@@ -843,13 +848,13 @@ CalDAV/CardDAV web GUIs).</p></li>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="httpd-configuration">
-<h2>HTTPD Configuration<a class="headerlink" href="#httpd-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-configuration">
-<h3>General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="httpd-configuration">
+<h2>HTTPD Configuration<a class="headerlink" href="#httpd-configuration" title="Permalink to this heading">¶</a></h2>
+<section id="general-configuration">
+<h3>General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus httpd service is configured using options in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">httpmodules</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">httpmodules:</span></code> &lt;empty string&gt;</p>
@@ -863,7 +868,7 @@ enabled.
 Allowed values: <em>admin</em>, <em>caldav</em>, <em>carddav</em>, <em>cgi</em>, <em>domainkey</em>, <em>freebusy</em>, <em>ischedule</em>, <em>jmap</em>, <em>prometheus</em>, <em>rss</em>, <em>tzdist</em>, <em>webdav</em></p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>The support for RSS, CalDAV, and CardDAV is divided into separate modules which
 run as part of the Cyrus httpd service. Selection of which module(s) are enabled
 is done by setting the <code class="docutils literal notranslate"><span class="pre">httpmodules</span></code> option. <strong>By default, no modules
@@ -872,12 +877,12 @@ are enabled.</strong></p>
 <code class="docutils literal notranslate"><span class="pre">httpdocroot</span></code> option. Any content contained in the specified directory (including
 sub-directories) will be served as static content only. Cyrus httpd does NOT
 have the ability to execute any server-side scripts.</p>
-</div>
-<div class="section" id="authentication">
-<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">¶</a></h3>
 <p>As with other Cyrus services, the Cyrus httpd service uses
 <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL</span></a> to perform its authentication.</p>
-<div class="sidebar">
+<aside class="sidebar">
 <p class="sidebar-title">allowplaintext</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -893,7 +898,7 @@ TLS/SSL encryption layer to be negotiated prior to ANY
 authentication, see the <em>tls_required</em> option.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>Similar to plaintext login commands supported by the other Cyrus services (IMAP
 LOGIN, POP3 USER/PASS), the Cyrus httpd service determines whether to advertise
 the HTTP Basic authentication scheme based on the <code class="docutils literal notranslate"><span class="pre">allowplaintext</span></code> option and
@@ -905,10 +910,10 @@ the GSS-SPNEGO, SCRAM-SHA-1, and SCRAM-SHA-256 values enable
 support for the Negotiate (Kerberos only), SCRAM-SHA-1, and
 SCRAM-SHA-256 authentication schemes respectively, provided that the plugins
 are installed on the server.</p>
-</div>
-</div>
-<div class="section" id="module-specific-information">
-<h2>Module-specific information<a class="headerlink" href="#module-specific-information" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="module-specific-information">
+<h2>Module-specific information<a class="headerlink" href="#module-specific-information" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="http/caldav.html">CalDAV</a><ul>
@@ -943,9 +948,9 @@ are installed on the server.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="for-end-users">
-<h2>For end users<a class="headerlink" href="#for-end-users" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="for-end-users">
+<h2>For end users<a class="headerlink" href="#for-end-users" title="Permalink to this heading">¶</a></h2>
 <p>Some information must be passed on to your end users so that they know how to
 configure their clients in order to access their data on Cyrus. The list below
 needs to be customized to your specific hostnames.</p>
@@ -993,8 +998,8 @@ needs to be customized to your specific hostnames.</p>
 </dl>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1017,7 +1022,7 @@ needs to be customized to your specific hostnames.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 23 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1040,9 +1045,12 @@ needs to be customized to your specific hostnames.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

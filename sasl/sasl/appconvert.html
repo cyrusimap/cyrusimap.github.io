@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Converting Applications from v1 to v2 &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,8 +488,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="converting-applications-from-v1-to-v2">
-<span id="appconvert"></span><h1>Converting Applications from v1 to v2<a class="headerlink" href="#converting-applications-from-v1-to-v2" title="Permalink to this headline">¶</a></h1>
+  <section id="converting-applications-from-v1-to-v2">
+<span id="appconvert"></span><h1>Converting Applications from v1 to v2<a class="headerlink" href="#converting-applications-from-v1-to-v2" title="Permalink to this heading">¶</a></h1>
 <p>This documents our conversion experience with Cyrus IMAPd, an application
 that uses almost every part of SASL, so it should give a good idea what caveats
 need to be looked for when one is converting an application which uses SASLv1
@@ -495,8 +500,8 @@ means that if the application allocates something (for example, an interaction
 or callback response), it must free it.  Likewise, the application does
 NOT free anything handed to it by the SASL library, such as responses
 given by sasl_client_step or sasl_decode.</p>
-<div class="section" id="tips-for-both-clients-and-servers">
-<h2>Tips for both clients and servers<a class="headerlink" href="#tips-for-both-clients-and-servers" title="Permalink to this headline">¶</a></h2>
+<section id="tips-for-both-clients-and-servers">
+<h2>Tips for both clients and servers<a class="headerlink" href="#tips-for-both-clients-and-servers" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Change configure scripts to search for libsasl2 and include files
 prefixed with sasl/ (sasl/sasl.h, sasl/saslutil.h, etc)</p></li>
@@ -534,9 +539,9 @@ instead of setting their (now nonexistent) reply parameter.</p></li>
 you can only read 4096 bytes at a time, be sure to only pass at most
 that much at a time to the SASL library!</p></li>
 </ul>
-</div>
-<div class="section" id="tips-for-clients">
-<h2>Tips for clients<a class="headerlink" href="#tips-for-clients" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tips-for-clients">
+<h2>Tips for clients<a class="headerlink" href="#tips-for-clients" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>In <code class="docutils literal notranslate"><span class="pre">sasl_client_new</span></code> you can now pass ip address strings as
 parameters 3 and 4 instead of calling setprop later on sockaddr’s.
@@ -556,9 +561,9 @@ const clientout parameters that you are no longer responsible for freeing
 <li><p>When interactions and callbacks happen you are responsible for freeing
 the results.</p></li>
 </ul>
-</div>
-<div class="section" id="tips-for-servers">
-<h2>Tips for Servers<a class="headerlink" href="#tips-for-servers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tips-for-servers">
+<h2>Tips for Servers<a class="headerlink" href="#tips-for-servers" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>SASL_SECURITY_LAYER flag no longer exists, whether or not to use a
 security layer is solely determined by the security properties information,
@@ -576,8 +581,8 @@ callback you should now separate the functionality of authorization and
 canonicalization.  That is, only do authorization in SASL_CB_PROXY_POLICY,
 and do canonicalization in the SASL_CB_CANON_USER callback</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -600,7 +605,7 @@ and do canonicalization in the SASL_CB_CANON_USER callback</p></li>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -624,9 +629,12 @@ and do canonicalization in the SASL_CB_CANON_USER callback</p></li>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

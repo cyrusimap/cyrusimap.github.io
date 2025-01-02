@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>masssievec &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,32 +798,32 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="masssievec">
-<span id="imap-reference-manpages-systemcommands-masssievec"></span><span id="std-cyrusman-masssievec-8"></span><span id="std:cyrusman-masssievec(8)"></span><h1><strong>masssievec</strong><a class="headerlink" href="#masssievec" title="Permalink to this headline">¶</a></h1>
+  <section id="masssievec">
+<span id="imap-reference-manpages-systemcommands-masssievec"></span><span id="std-cyrusman-masssievec-8"></span><h1><strong>masssievec</strong><a class="headerlink" href="#masssievec" title="Permalink to this heading">¶</a></h1>
 <p>Script to compile a mass of sieve scripts in one pass.</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>masssievec</strong> &lt;path to sievec&gt; [ <em>imapd.conf</em> ]</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>masssievec</strong> compiles a set of sieve scripts, using <a class="reference internal" href="sievec.html#std-cyrusman-sievec-8">sievec(8)</a> based on the files found in the <strong>sievedir</strong>  config from the <code class="docutils literal notranslate"><span class="pre">imapd.conf</span></code> file.</p>
 <p>It cannot compile scripts stored in user's home directories.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-masssievec-arg-imapd.conf">
-<span id="cmdoption-masssievec-arg-imapd-conf"></span><code class="sig-name descname"><span class="pre">imapd.conf</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-masssievec-arg-imapd.conf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-masssievec-arg-imapd.conf">
+<span id="cmdoption-masssievec-arg-imapd-conf"></span><span class="sig-name descname"><span class="pre">imapd.conf</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-masssievec-arg-imapd.conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide an alternate imapd.conf. If not specified, uses <code class="docutils literal notranslate"><span class="pre">/etc/imapd.conf</span></code>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="sievec.html#std-cyrusman-sievec-8">sievec(8)</a>, <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -841,7 +846,7 @@
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Mar 19 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -864,9 +869,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

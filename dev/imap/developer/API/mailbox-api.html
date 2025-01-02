@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Mailbox API &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,18 +789,18 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-api-mailbox"></span><div class="section" id="mailbox-api">
-<h1>Mailbox API<a class="headerlink" href="#mailbox-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+  <span class="target" id="imap-developer-api-mailbox"></span><section id="mailbox-api">
+<h1>Mailbox API<a class="headerlink" href="#mailbox-api" title="Permalink to this heading">¶</a></h1>
+<section id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading">¶</a></h2>
 <p>The Mailbox API is implemented in <code class="docutils literal notranslate"><span class="pre">imap/mailbox.h</span></code> and
 <code class="docutils literal notranslate"><span class="pre">imap/mailbox.c</span></code>. It wraps the data structures of the
 <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code>, <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> and <code class="docutils literal notranslate"><span class="pre">cyrus.cache</span></code> files in a
 psuedo-object-oriented way, allowing easy changes to the mailbox while
 keeping the internal cached data structures consistent.</p>
-</div>
-<div class="section" id="opening-and-closing">
-<h2>Opening and closing<a class="headerlink" href="#opening-and-closing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="opening-and-closing">
+<h2>Opening and closing<a class="headerlink" href="#opening-and-closing" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">mailbox</span> <span class="o">*</span><span class="n">mailbox</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
 <span class="nb">int</span> <span class="n">r</span><span class="p">;</span>
 <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">mboxname</span> <span class="o">=</span> <span class="s2">&quot;user.brong&quot;</span><span class="p">;</span>
@@ -816,11 +821,6 @@ keeping the internal cached data structures consistent.</p>
 because the index header read must be consistent. The locks are as
 follows:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 51%" />
-<col style="width: 24%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
 <th class="head"><p>Namelock</p></th>
@@ -857,9 +857,9 @@ status command on the currently select mailbox) then the same mailbox
 will be returned. It must be unlocked (see below or the open command
 will return IMAP_MAILBOX_LOCKED). The matching close will reduce the
 refcount, and only the final close will do the cleanup actions.</p>
-</div>
-<div class="section" id="locking-and-unlocking">
-<h2>Locking and unlocking<a class="headerlink" href="#locking-and-unlocking" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="locking-and-unlocking">
+<h2>Locking and unlocking<a class="headerlink" href="#locking-and-unlocking" title="Permalink to this heading">¶</a></h2>
 <p>You can keep a mailbox &quot;open&quot;, maintaining the namelock, while releasing
 the index lock to allow other processes to make changes to the mailbox.
 By holding the namelock, you know that record numbers won't change, and
@@ -897,9 +897,9 @@ mailbox_unlock_index(state-&gt;mailbox, &amp;sdata);
 </div>
 <p>See &quot;delayed actions&quot; below for delayed actions performed during an
 unlock.</p>
-</div>
-<div class="section" id="creating-renaming-and-deleting">
-<h2>Creating, renaming and deleting<a class="headerlink" href="#creating-renaming-and-deleting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-renaming-and-deleting">
+<h2>Creating, renaming and deleting<a class="headerlink" href="#creating-renaming-and-deleting" title="Permalink to this heading">¶</a></h2>
 <p><strong>WARNING:</strong> These functions only change the mailbox files on disk. They
 don't update the mailboxes.db records or contact murder servers. In most
 cases you are probably looking for the <code class="docutils literal notranslate"><span class="pre">mboxlist_</span></code> functions instead.</p>
@@ -938,9 +938,9 @@ header. The interesting work is actually done in <code class="docutils literal n
 below under &quot;delayed actions&quot;.</p>
 <p><code class="docutils literal notranslate"><span class="pre">mailbox_delete</span></code> requires an exclusive index lock, but can complete
 quite happily with only a shared namelock.</p>
-</div>
-<div class="section" id="reading-and-writing-records">
-<h2>Reading and writing records<a class="headerlink" href="#reading-and-writing-records" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reading-and-writing-records">
+<h2>Reading and writing records<a class="headerlink" href="#reading-and-writing-records" title="Permalink to this heading">¶</a></h2>
 <p>Ok - so you have a mailbox, it's opened, and the index is locked. Time
 to start reading and writing some records!</p>
 <p>At the mailbox level there is no concept of &quot;message numbers&quot; from imap,
@@ -1001,8 +1001,8 @@ see &quot;delayed actions&quot;</p>
 rewriting or appending, the <code class="docutils literal notranslate"><span class="pre">record.modseq</span></code> and
 <code class="docutils literal notranslate"><span class="pre">record.last_updated</span></code> values will be changed. This allows condstore to
 work correctly.</p>
-<div class="section" id="appending">
-<h3>Appending<a class="headerlink" href="#appending" title="Permalink to this headline">¶</a></h3>
+<section id="appending">
+<h3>Appending<a class="headerlink" href="#appending" title="Permalink to this heading">¶</a></h3>
 <p>To append a record, the file must have already been copied into place
 (XXX - plan to move to a stage based system where the mailbox API
 handles the staging, but that's not finished yet) and been parsed into
@@ -1010,17 +1010,17 @@ the record struct. The UID must be set already, and must be greater than
 the UID of any existing record in the mailbox. There are a range of
 consistency checks done.</p>
 <p>The internal consistency counts are updated by append as well.</p>
-</div>
-<div class="section" id="committing">
-<h3>Committing<a class="headerlink" href="#committing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="committing">
+<h3>Committing<a class="headerlink" href="#committing" title="Permalink to this heading">¶</a></h3>
 <p>When you have finished making any changes, you need to &quot;commit&quot;. This
 will write the updated values for any index header fields, rewite the
 <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file if needed and fsync all changes to disk.</p>
 <p>It is a fatal error to unlock (or close) a mailbox that has had changes
 without committing, as it can leave the mailbox in a corrupted state.</p>
-</div>
-<div class="section" id="cache-records">
-<h3>Cache records<a class="headerlink" href="#cache-records" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cache-records">
+<h3>Cache records<a class="headerlink" href="#cache-records" title="Permalink to this heading">¶</a></h3>
 <p>Cache records are accessed through <code class="docutils literal notranslate"><span class="pre">record.crec</span></code> which is not filled
 by read_index_record. The cache file is only read and mapped into
 memory as needed, so you if you want to access cache records, the basic
@@ -1049,14 +1049,14 @@ those fields in the mailbox internal format documentation.</p>
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">imap/mailbox.h</span></code> for the full list of constants.</p>
-</div>
-</div>
-<div class="section" id="delayed-actions">
-<h2>Delayed Actions<a class="headerlink" href="#delayed-actions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="delayed-actions">
+<h2>Delayed Actions<a class="headerlink" href="#delayed-actions" title="Permalink to this heading">¶</a></h2>
 <p>Here's the bit you've been waiting for! What happens during unlock and
 close</p>
-<div class="section" id="first-unlock">
-<h3>first, unlock<a class="headerlink" href="#first-unlock" title="Permalink to this headline">¶</a></h3>
+<section id="first-unlock">
+<h3>first, unlock<a class="headerlink" href="#first-unlock" title="Permalink to this heading">¶</a></h3>
 <p>Anything that makes any changes sets the mailbox-&gt;has_changed flag. If
 this is set, then before the index gets unlocked:</p>
 <ul class="simple">
@@ -1065,9 +1065,9 @@ this is set, then before the index gets unlocked:</p>
 <li><p>the statuscache value gets erased (or replaced if you passed in an
 updated value).</p></li>
 </ul>
-</div>
-<div class="section" id="then-close">
-<h3>then: close<a class="headerlink" href="#then-close" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="then-close">
+<h3>then: close<a class="headerlink" href="#then-close" title="Permalink to this heading">¶</a></h3>
 <p>next the index is unlocked (see above)</p>
 <p>third, any &quot;unlink&quot; commands scheduled for email files are run. These
 can't be done until after the mailbox_commit to ensure consistency -
@@ -1082,9 +1082,9 @@ succeeds, then go ahead with either <code class="docutils literal notranslate"><
 <code class="docutils literal notranslate"><span class="pre">mailbox_index_repack</span></code> as appropriate.</p>
 <p>After this it's just a matter of releasing malloc'd memory and finally
 releasing the name lock.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1107,7 +1107,7 @@ releasing the name lock.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 17 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1130,9 +1130,12 @@ releasing the name lock.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Supported Platforms and System Requirements &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,8 +788,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="supported-platforms-and-system-requirements">
-<h1>Supported Platforms and System Requirements<a class="headerlink" href="#supported-platforms-and-system-requirements" title="Permalink to this headline">¶</a></h1>
+  <section id="supported-platforms-and-system-requirements">
+<h1>Supported Platforms and System Requirements<a class="headerlink" href="#supported-platforms-and-system-requirements" title="Permalink to this heading">¶</a></h1>
 <p>Cyrus IMAP supports the following platforms;</p>
 <ul>
 <li><p>FreeBSD</p></li>
@@ -808,14 +813,14 @@ following distributions, in no particular order other than alphabetic;</p>
 </ul>
 <p>By reasonably recent versions of Linux, we intend to indicate the Cyrus project
 can keep up with the latest distribution release earmarked stable.</p>
-<div class="section" id="building-cyrus-imap">
-<h2>Building Cyrus IMAP<a class="headerlink" href="#building-cyrus-imap" title="Permalink to this headline">¶</a></h2>
+<section id="building-cyrus-imap">
+<h2>Building Cyrus IMAP<a class="headerlink" href="#building-cyrus-imap" title="Permalink to this heading">¶</a></h2>
 <p>In this section, we only list the aspects of building Cyrus IMAP of particular
 interest to most common deployment scenarios. For more information on all
 <code class="docutils literal notranslate"><span class="pre">configure</span></code> options with full details, we refer you to <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--help</span></code>.</p>
-</div>
-<div class="section" id="required-software-components">
-<h2>Required Software Components<a class="headerlink" href="#required-software-components" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="required-software-components">
+<h2>Required Software Components<a class="headerlink" href="#required-software-components" title="Permalink to this heading">¶</a></h2>
 <p>The following software components are required for Cyrus IMAP to build at all,
 with minimal functionality;</p>
 <ul class="simple">
@@ -824,38 +829,38 @@ with minimal functionality;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">zlib</span></code> (Development Headers)</p></li>
 </ul>
 <p>Obviously, the list is not complete</p>
-</div>
-<div class="section" id="recommended-software-components">
-<h2>Recommended Software Components<a class="headerlink" href="#recommended-software-components" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="recommended-software-components">
+<h2>Recommended Software Components<a class="headerlink" href="#recommended-software-components" title="Permalink to this heading">¶</a></h2>
 <p>We recommend you consider building Cyrus IMAP with the following software
 components included;</p>
-<div class="section" id="idled-support">
-<h3>Idled Support<a class="headerlink" href="#idled-support" title="Permalink to this headline">¶</a></h3>
+<section id="idled-support">
+<h3>Idled Support<a class="headerlink" href="#idled-support" title="Permalink to this heading">¶</a></h3>
 <p>To enable near real-time client updates through IMAP IDLE (as described in
-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>), configure Cyrus IMAP with the <code class="docutils literal notranslate"><span class="pre">--enable-idled</span></code> option.</p>
-</div>
-<div class="section" id="murder-support">
-<h3>Murder Support<a class="headerlink" href="#murder-support" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2177.html"><strong>RFC 2177</strong></a>), configure Cyrus IMAP with the <code class="docutils literal notranslate"><span class="pre">--enable-idled</span></code> option.</p>
+</section>
+<section id="murder-support">
+<h3>Murder Support<a class="headerlink" href="#murder-support" title="Permalink to this heading">¶</a></h3>
 <p>To enable horizontal scalability, Cyrus IMAP supports the distribution of
 mailboxes across Cyrus IMAP servers in a Murder setup. To enable murder support
 in Cyrus IMAP, configure Cyrus IMAP with the <code class="docutils literal notranslate"><span class="pre">--enable-murder</span></code> option.</p>
-</div>
-<div class="section" id="replication-support">
-<h3>Replication Support<a class="headerlink" href="#replication-support" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="replication-support">
+<h3>Replication Support<a class="headerlink" href="#replication-support" title="Permalink to this heading">¶</a></h3>
 <p>To enable replication support in Cyrus IMAP, configure Cyrus IMAP with the
 <code class="docutils literal notranslate"><span class="pre">--enable-replication</span></code> option.</p>
 <p>Obviously, the list is not complete</p>
-</div>
-</div>
-<div class="section" id="recommended-software-components-enabled-by-default">
-<h2>Recommended Software Components Enabled by Default<a class="headerlink" href="#recommended-software-components-enabled-by-default" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sieve-support">
-<h3>Sieve Support<a class="headerlink" href="#sieve-support" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="recommended-software-components-enabled-by-default">
+<h2>Recommended Software Components Enabled by Default<a class="headerlink" href="#recommended-software-components-enabled-by-default" title="Permalink to this heading">¶</a></h2>
+<section id="sieve-support">
+<h3>Sieve Support<a class="headerlink" href="#sieve-support" title="Permalink to this heading">¶</a></h3>
 <p>Without any additional effort, Sieve support is already enabled by default. To
 disable Sieve, use the <code class="docutils literal notranslate"><span class="pre">--disable-sieve</span></code> option to <code class="docutils literal notranslate"><span class="pre">configure</span></code>.</p>
-</div>
-<div class="section" id="optional-software-components">
-<h3>Optional Software Components<a class="headerlink" href="#optional-software-components" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="optional-software-components">
+<h3>Optional Software Components<a class="headerlink" href="#optional-software-components" title="Permalink to this heading">¶</a></h3>
 <p>When including the following software components during the build process,
 and providing the options listed here, additional optional functionality can
 be implemented;</p>
@@ -883,9 +888,9 @@ following options;</p>
 </pre></div>
 </div>
 <p>Obviously, the list is not complete</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -908,7 +913,7 @@ following options;</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 17 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -931,9 +936,12 @@ following options;</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

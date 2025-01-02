@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyr_info &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,27 +798,27 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-cyr_info-8"><span id="std:cyrusman-cyr_info(8)"></span></span><div class="section" id="cyr-info">
-<span id="imap-reference-manpages-systemcommands-cyr-info"></span><h1><strong>cyr_info</strong><a class="headerlink" href="#cyr-info" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-cyr_info-8"></span><section id="cyr-info">
+<span id="imap-reference-manpages-systemcommands-cyr-info"></span><h1><strong>cyr_info</strong><a class="headerlink" href="#cyr-info" title="Permalink to this heading">¶</a></h1>
 <p>General cyrus inspection tool</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>cyr_info</strong> [OPTIONS] conf
 <strong>cyr_info</strong> [OPTIONS] conf-default
 <strong>cyr_info</strong> [OPTIONS] conf-all
 <strong>cyr_info</strong> [OPTIONS] conf-lint
 <strong>cyr_info</strong> [OPTIONS] proc</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>cyr_info</strong> is a tool for getting information from Cyrus.  The intent
 is to extend this tool with useful commands to make managing and
 configuring Cyrus easier.</p>
 <p><strong>cyr_info</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
 <p><strong>cyr_info</strong> provides the following sub-commands:</p>
 <dl class="std option">
-<dt id="cmdoption-arg-conf">
-<code class="sig-name descname"><span class="pre">conf</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-conf" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-conf">
+<span class="sig-name descname"><span class="pre">conf</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the configuration options which have been set to a value
 other than their default, and their value.</p>
 <p>With <strong>-s version</strong>, configuration options whose behaviour has
@@ -821,8 +826,8 @@ changed since <em>version</em> will be highlighted.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-conf-all">
-<code class="sig-name descname"><span class="pre">conf-all</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-conf-all" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-conf-all">
+<span class="sig-name descname"><span class="pre">conf-all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-conf-all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print ALL configuration options and their configured values (including
 those using their default value).  This command shows which options
 will be in effect at runtime.</p>
@@ -831,16 +836,16 @@ whose behaviour has changed since <em>version</em> will be highlighted.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-conf-default">
-<code class="sig-name descname"><span class="pre">conf-default</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-conf-default" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-conf-default">
+<span class="sig-name descname"><span class="pre">conf-default</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-conf-default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the default values for all available configuration options.</p>
 <p>With <strong>-s version</strong>, configuration options which have been added or
 whose behaviour has changed since <em>version</em> will be highlighted.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-conf-lint">
-<code class="sig-name descname"><span class="pre">conf-lint</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-conf-lint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-conf-lint">
+<span class="sig-name descname"><span class="pre">conf-lint</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-conf-lint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print only configuration options which are NOT recognised.  This
 command should not print anything.  It uses cyrus.conf to find
 the names of configured services to avoid displaying any known
@@ -848,35 +853,35 @@ configuration options for the named service.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-proc">
-<code class="sig-name descname"><span class="pre">proc</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-proc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-proc">
+<span class="sig-name descname"><span class="pre">proc</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-arg-proc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print active processes that <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a> is managing.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-cyr_info-C">
-<span id="cmdoption-cyr-info-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_info-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_info-C">
+<span id="cmdoption-cyr-info-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_info-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_info-M">
-<span id="cmdoption-cyr-info-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-cyr_info-M" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_info-M">
+<span id="cmdoption-cyr-info-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-cyr_info-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read service specifications from <em>config-file</em> (cyrus.conf format).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_info-n">
-<span id="cmdoption-cyr-info-n"></span><span id="cmdoption-cyr_info-service"></span><span id="cmdoption-cyr-info-service"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">name</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--service</span></code><code class="sig-prename descclassname"><span class="pre">=name</span></code><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_info-n">
+<span id="cmdoption-cyr-info-n"></span><span id="cmdoption-cyr_info-service"></span><span id="cmdoption-cyr-info-service"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--service</span></span><span class="sig-prename descclassname"><span class="pre">=name</span></span><a class="headerlink" href="#cmdoption-cyr_info-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the configuration as if for the service named <em>name</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-cyr_info-s">
-<span id="cmdoption-cyr-info-s"></span><span id="cmdoption-cyr_info-since"></span><span id="cmdoption-cyr-info-since"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"> <span class="pre">version</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--since</span></code><code class="sig-prename descclassname"><span class="pre">=version</span></code><a class="headerlink" href="#cmdoption-cyr_info-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-cyr_info-s">
+<span id="cmdoption-cyr-info-s"></span><span id="cmdoption-cyr_info-since"></span><span id="cmdoption-cyr-info-since"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"> <span class="pre">version</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--since</span></span><span class="sig-prename descclassname"><span class="pre">=version</span></span><a class="headerlink" href="#cmdoption-cyr_info-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Highlight configuration options that have been added or whose behaviour
 has been modified since <em>version</em>.  Use this option after a server upgrade,
 specifying your previous version, to find which options you need to review
@@ -884,9 +889,9 @@ and maybe change before starting up the upgraded server.</p>
 <p>For use with the <strong>conf</strong>, <strong>conf-all</strong>, and <strong>conf-default</strong> sub-commands.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>cyr_info</strong> <em>proc</em></pre>
 <blockquote>
 <div><p>List the active processes that master is managing</p>
@@ -903,26 +908,26 @@ and maybe change before starting up the upgraded server.</p>
 </div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">duplicate_mailbox_mode</span><span class="p">:</span> <span class="n">uniqueid</span>
 <span class="n">archivepartition</span><span class="o">-</span><span class="n">default</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">spool</span><span class="o">-</span><span class="n">archive</span>
-<span class="n">rudolf_sync_host</span><span class="p">:</span> <span class="mf">10.202</span><span class="o">.</span><span class="mf">79.15</span>
-<span class="n">prancer_sync_host</span><span class="p">:</span> <span class="mf">10.206</span><span class="o">.</span><span class="mf">51.80</span>
+<span class="n">rudolf_sync_host</span><span class="p">:</span> <span class="mf">10.202.79.15</span>
+<span class="n">prancer_sync_host</span><span class="p">:</span> <span class="mf">10.206.51.80</span>
 <span class="n">user_folder_limit</span><span class="p">:</span> <span class="mi">5000</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
 <p>This command was introduced in version 3.0.</p>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf,
 /etc/cyrus.conf</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -945,7 +950,7 @@ and maybe change before starting up the upgraded server.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 26 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -968,9 +973,12 @@ and maybe change before starting up the upgraded server.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

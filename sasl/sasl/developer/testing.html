@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Testing &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,19 +488,19 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="testing">
-<span id="id1"></span><h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+  <section id="testing">
+<span id="id1"></span><h1>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This document is mainly useful for people doing libsasl development
 or users having a lot of difficulty getting libsasl to work.</p>
 </div>
-<div class="section" id="testing-the-cmu-sasl-library-with-the-included-sample-applications">
-<h2>Testing the CMU SASL Library with the included sample applications<a class="headerlink" href="#testing-the-cmu-sasl-library-with-the-included-sample-applications" title="Permalink to this headline">¶</a></h2>
+<section id="testing-the-cmu-sasl-library-with-the-included-sample-applications">
+<h2>Testing the CMU SASL Library with the included sample applications<a class="headerlink" href="#testing-the-cmu-sasl-library-with-the-included-sample-applications" title="Permalink to this heading">¶</a></h2>
 <p>The CMU SASL library comes with two small sample programs:
 sample-client and sample-server.  Each of these programs dump base-64
 SASL iterations to STDOUT, and read the next iteration from STDIN.
-Lines preceded by “C: ” are from the client, and from “S: ” are from
+Lines preceded by “C: “ are from the client, and from “S: “ are from
 the server.</p>
 <p>This makes it fairly straightforward to test mechanisms; simply run
 the sample-client on the “client” machine, and sample-server on the
@@ -505,15 +510,15 @@ to force the mechanism used in the exchange.  GSSAPI requires
 that the IP addresses of both client and server be set, along with the
 service name, and the server’s fully-qualified hostname; these are
 done through more command line arguments.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <p>Here’s the client side of an exchange.  The mechanism selection code
 chooses GSSAPI; negotiation takes place, and the client is
 authenticated.  This is being run on the machine SPOOKY.ANDREW.CMU.EDU
 (128.2.121.162), pretending to be talking to an “rcmd” service running
 on port 23 (note the semicolons in the IP address.  There is a strong
 chance these will need to be escaped for proper interpretation by the shell):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">n</span> <span class="n">SPOOKY</span><span class="o">.</span><span class="n">ANDREW</span><span class="o">.</span><span class="n">CMU</span><span class="o">.</span><span class="n">EDU</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">client</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2.121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2.121.162</span><span class="p">;</span><span class="mi">23</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">n</span> <span class="n">SPOOKY</span><span class="o">.</span><span class="n">ANDREW</span><span class="o">.</span><span class="n">CMU</span><span class="o">.</span><span class="n">EDU</span>
 <span class="n">Waiting</span> <span class="k">for</span> <span class="n">mechanism</span> <span class="nb">list</span> <span class="kn">from</span> <span class="nn">server...</span>
 <span class="n">S</span><span class="p">:</span> <span class="n">UExBSU4gQU5PTllNT1VTIEtFUkJFUk9TX1Y0IERJR0VTVC1NRDUgQ1JBTS1NRDUgAAAAAED5EEA</span><span class="o">=</span>
 <span class="n">Choosing</span> <span class="n">best</span> <span class="n">mechanism</span> <span class="n">from</span><span class="p">:</span> <span class="n">PLAIN</span> <span class="n">ANONYMOUS</span> <span class="n">GSSAPI</span> <span class="n">CRAM</span><span class="o">-</span><span class="n">MD5</span>
@@ -534,7 +539,7 @@ chance these will need to be escaped for proper interpretation by the shell):</p
 </pre></div>
 </div>
 <p>Here’s the server side of the same dialog:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2</span><span class="o">.</span><span class="mf">121.162</span><span class="p">;</span><span class="mi">23</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">./</span><span class="n">sample</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="n">rcmd</span> <span class="o">-</span><span class="n">i</span> <span class="n">local</span><span class="o">=</span><span class="mf">128.2.121.162</span><span class="p">;</span><span class="mi">23</span><span class="p">,</span><span class="n">remote</span><span class="o">=</span><span class="mf">128.2.121.162</span><span class="p">;</span><span class="mi">23</span>
 <span class="n">Generating</span> <span class="n">client</span> <span class="n">mechanism</span> <span class="nb">list</span><span class="o">...</span>
 <span class="n">Sending</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">5</span> <span class="n">mechanism</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">S</span><span class="p">:</span> <span class="n">UExBSU4gQU5PTllNT1VTIEtFUkJFUk9TX1Y0IERJR0VTVC1NRDUgQ1JBTS1NRDUgAAAAAED5EEA</span><span class="o">=</span>
@@ -555,17 +560,17 @@ chance these will need to be escaped for proper interpretation by the shell):</p
 <span class="o">&gt;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="running-the-testsuite-application">
-<h2>Running the Testsuite application<a class="headerlink" href="#running-the-testsuite-application" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="running-the-testsuite-application">
+<h2>Running the Testsuite application<a class="headerlink" href="#running-the-testsuite-application" title="Permalink to this heading">¶</a></h2>
 <p>The Testsuite application in the utils directory tries out all the
 functionality of libsasl against itself. When you run the application
 it displays some requirements for running, such as being able to read
 and write to the sasldb file. If this program is set up correctly and
 still fails we’d like to hear about it at <a class="reference external" href="mailto:cyrus-bugs&#37;&#52;&#48;andrew&#46;cmu&#46;edu">cyrus-bugs<span>&#64;</span>andrew<span>&#46;</span>cmu<span>&#46;</span>edu</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -588,7 +593,7 @@ still fails we’d like to hear about it at <a class="reference external" href="
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -612,9 +617,12 @@ still fails we’d like to hear about it at <a class="reference external" href="
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

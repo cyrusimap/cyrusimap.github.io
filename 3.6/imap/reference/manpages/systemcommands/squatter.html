@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>squatter &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,11 +788,11 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-squatter-8"><span id="std:cyrusman-squatter(8)"></span></span><div class="section" id="squatter">
-<span id="imap-reference-manpages-systemcommands-squatter"></span><h1><strong>squatter</strong><a class="headerlink" href="#squatter" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-squatter-8"></span><section id="squatter">
+<span id="imap-reference-manpages-systemcommands-squatter"></span><h1><strong>squatter</strong><a class="headerlink" href="#squatter" title="Permalink to this heading">¶</a></h1>
 <p>Create SQUAT and Xapian indexes for mailboxes</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block">general:
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [<strong>mode</strong>] [<strong>options</strong>] [<strong>source</strong>]
 
@@ -798,9 +803,9 @@ i.e.:
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-R</strong> [ <strong>-n</strong> <em>channel</em> ] [ <strong>-d</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-a</strong> ] <strong>-f</strong> <em>synclogfile</em> [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-Z</strong> ]
 <strong>squatter</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-v</strong> ] <strong>-t</strong> <em>srctier(s)</em>... <strong>-z</strong> <em>desttier</em> [ <strong>-B</strong> ] [ <strong>-F</strong> ] [ <strong>-U</strong> ] [ <strong>-T</strong> <em>reindextiers</em> ] [ <strong>-X</strong> ] [ <strong>-o</strong> ] [ <strong>-S</strong> <em>seconds</em> ] [ <strong>-u</strong> <em>user</em>... ]</pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The name “<strong>squatter</strong>” once referred both to the SQUAT indexing
@@ -873,18 +878,18 @@ run <strong>squatter</strong> periodically as an EVENT in <code class="docutils 
 SEARCHed, just not as quickly as those with an index.</p>
 </div>
 <p><strong>squatter</strong> reads its configuration options out of the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file unless specified otherwise by <strong>-C</strong>.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-squatter-C">
-<span id="cmdoption-squatter-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-squatter-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-C">
+<span id="cmdoption-squatter-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-squatter-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-a">
-<span id="cmdoption-squatter-squat-annot"></span><code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--squat-annot</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-a" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-a">
+<span id="cmdoption-squatter-squat-annot"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--squat-annot</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only create indexes for mailboxes which have the shared
 <em>/vendor/cmu/cyrus-imapd/squat</em> annotation set to “true”.</p>
 <p>The value of the <em>/vendor/cmu/cyrus-imapd/squat</em> annotation is
@@ -898,23 +903,23 @@ implicit value of <em>/vendor/cmu/cyrus-imapd/squat</em> is “false”.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-A">
-<span id="cmdoption-squatter-audit"></span><code class="sig-name descname"><span class="pre">-A</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--audit</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-A" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-A">
+<span id="cmdoption-squatter-audit"></span><span class="sig-name descname"><span class="pre">-A</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--audit</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Audits the specified mailboxes (or all), reports any unindexed messages.
 This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-d">
-<span id="cmdoption-squatter-nodaemon"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--nodaemon</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-d">
+<span id="cmdoption-squatter-nodaemon"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--nodaemon</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>In rolling mode, don’t background and do emit log messages on
 standard error.  Useful for debugging.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-B">
-<span id="cmdoption-squatter-b"></span><span id="cmdoption-squatter-skip-locked"></span><code class="sig-name descname"><span class="pre">-B</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--skip-locked</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-B" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-B">
+<span id="cmdoption-squatter-b"></span><span id="cmdoption-squatter-skip-locked"></span><span class="sig-name descname"><span class="pre">-B</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--skip-locked</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-B" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, use non-blocking lock to start and skip any
 users who have their xapianactive file locked at the time (i.e
 another reindex task)
@@ -922,8 +927,8 @@ This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-F">
-<span id="cmdoption-squatter-f"></span><span id="cmdoption-squatter-filter"></span><code class="sig-name descname"><span class="pre">-F</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--filter</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-F" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-F">
+<span id="cmdoption-squatter-f"></span><span id="cmdoption-squatter-filter"></span><span class="sig-name descname"><span class="pre">-F</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--filter</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-F" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, filter the resulting database to only include
 messages which are not expunged in mailboxes with existing
 name/uidvalidity.
@@ -931,35 +936,35 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-0">
-<span id="cmdoption-squatter-synclog"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">synclogfile</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--synclog</span></code><code class="sig-prename descclassname"><span class="pre">=synclogfile</span></code><a class="headerlink" href="#cmdoption-squatter-0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-0">
+<span id="cmdoption-squatter-synclog"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"> <span class="pre">synclogfile</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--synclog</span></span><span class="sig-prename descclassname"><span class="pre">=synclogfile</span></span><a class="headerlink" href="#cmdoption-squatter-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the <em>synclogfile</em> and incrementally index all the mailboxes
 listed therein, then exit.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-h">
-<span id="cmdoption-squatter-help"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--help</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-h" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-h">
+<span id="cmdoption-squatter-help"></span><span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--help</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display this usage information.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-i">
-<span id="cmdoption-squatter-incremental"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--incremental</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-i" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-i">
+<span id="cmdoption-squatter-incremental"></span><span class="sig-name descname"><span class="pre">-i</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--incremental</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Incremental updates where indexes already exist.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-N">
-<span id="cmdoption-squatter-n"></span><span id="cmdoption-squatter-name"></span><code class="sig-name descname"><span class="pre">-N</span></code><code class="sig-prename descclassname"> <span class="pre">name</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--name</span></code><code class="sig-prename descclassname"><span class="pre">=name</span></code><a class="headerlink" href="#cmdoption-squatter-N" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-N">
+<span id="cmdoption-squatter-n"></span><span id="cmdoption-squatter-name"></span><span class="sig-name descname"><span class="pre">-N</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--name</span></span><span class="sig-prename descclassname"><span class="pre">=name</span></span><a class="headerlink" href="#cmdoption-squatter-N" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only index mailboxes beginning with <em>name</em> while iterating through
 the mailbox list derived from other options.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-1">
-<span id="cmdoption-squatter-channel"></span><code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">channel</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--channel</span></code><code class="sig-prename descclassname"><span class="pre">=channel</span></code><a class="headerlink" href="#cmdoption-squatter-1" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-1">
+<span id="cmdoption-squatter-channel"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">channel</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--channel</span></span><span class="sig-prename descclassname"><span class="pre">=channel</span></span><a class="headerlink" href="#cmdoption-squatter-1" title="Permalink to this definition">¶</a></dt>
 <dd><p>In rolling mode, specify the name of the sync log <em>channel</em> that
 <strong>squatter</strong> will listen to.  The default is “squatter”.  This
 channel <strong>must</strong> be defined in <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> before
@@ -968,16 +973,16 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-o">
-<span id="cmdoption-squatter-copydb"></span><code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--copydb</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-o">
+<span id="cmdoption-squatter-copydb"></span><span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--copydb</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, if only one source database is selected, just copy
 it to the destination rather than compacting.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-p">
-<span id="cmdoption-squatter-allow-partials"></span><code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--allow-partials</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-p">
+<span id="cmdoption-squatter-allow-partials"></span><span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--allow-partials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-p" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>When indexing, allow messages to be partially indexed. This may
 occur if attachment indexing is enabled but indexing failed for
@@ -988,8 +993,8 @@ Xapian only.
 This feature is only available on the master branch.</p>
 </div></blockquote>
 <dl class="std option">
-<dt id="cmdoption-squatter-P">
-<span id="cmdoption-squatter-reindex-partials"></span><code class="sig-name descname"><span class="pre">-P</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--reindex-partials</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-P" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-P">
+<span id="cmdoption-squatter-reindex-partials"></span><span class="sig-name descname"><span class="pre">-P</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--reindex-partials</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>When reindexing, then attempt to reindex any partially indexed
 messages (see <strong>-p</strong>). Setting this flag implies <strong>-Z</strong>.
 Xapian only.
@@ -997,8 +1002,8 @@ This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-L">
-<span id="cmdoption-squatter-l"></span><span id="cmdoption-squatter-reindex-minlevel"></span><code class="sig-name descname"><span class="pre">-L</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--reindex-minlevel</span></code><code class="sig-prename descclassname"><span class="pre">=level</span></code><a class="headerlink" href="#cmdoption-squatter-L" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-L">
+<span id="cmdoption-squatter-l"></span><span id="cmdoption-squatter-reindex-minlevel"></span><span class="sig-name descname"><span class="pre">-L</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--reindex-minlevel</span></span><span class="sig-prename descclassname"><span class="pre">=level</span></span><a class="headerlink" href="#cmdoption-squatter-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>When reindexing, index all messages that have an index level
 less than level. Currently, Cyrus only supports two index levels:
 A message for which attachment indexing was never attempted has
@@ -1015,8 +1020,8 @@ This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-R">
-<span id="cmdoption-squatter-r"></span><span id="cmdoption-squatter-rolling"></span><code class="sig-name descname"><span class="pre">-R</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--rolling</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-R" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-R">
+<span id="cmdoption-squatter-r"></span><span id="cmdoption-squatter-rolling"></span><span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--rolling</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run in rolling mode; <strong>squatter</strong> runs as a daemon listening to a
 sync log channel and continuously incrementally indexing mailboxes.
 See also <strong>-d</strong> and <strong>-n</strong>.
@@ -1024,15 +1029,15 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-2">
-<span id="cmdoption-squatter-recursive"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--recursive</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-2">
+<span id="cmdoption-squatter-recursive"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--recursive</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively create indexes for all sub-mailboxes of the user,
 mailboxes or mailbox prefixes given as arguments.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-s">
-<span id="cmdoption-squatter-squat-skip"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"> <span class="pre">delta</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--squat-skip</span></code><code class="sig-prename descclassname"><span class="pre">=delta</span></code><a class="headerlink" href="#cmdoption-squatter-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-s">
+<span id="cmdoption-squatter-squat-skip"></span><span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"> <span class="pre">delta</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--squat-skip</span></span><span class="sig-prename descclassname"><span class="pre">=delta</span></span><a class="headerlink" href="#cmdoption-squatter-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skip mailboxes that have not been modified since last index. This is
 achieved by comparing the last modification time of a mailbox to
 the last time the squat index of this mailbox got updated. If the
@@ -1046,16 +1051,16 @@ Squat only.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-S">
-<span id="cmdoption-squatter-sleep"></span><code class="sig-name descname"><span class="pre">-S</span></code><code class="sig-prename descclassname"> <span class="pre">seconds</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--sleep</span></code><code class="sig-prename descclassname"><span class="pre">=seconds</span></code><a class="headerlink" href="#cmdoption-squatter-S" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-S">
+<span id="cmdoption-squatter-sleep"></span><span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"> <span class="pre">seconds</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--sleep</span></span><span class="sig-prename descclassname"><span class="pre">=seconds</span></span><a class="headerlink" href="#cmdoption-squatter-S" title="Permalink to this definition">¶</a></dt>
 <dd><p>After processing each mailbox, sleep for “seconds” before
 continuing. Can be used to provide some load balancing.  Accepts
 fractional amounts. This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-T">
-<span id="cmdoption-squatter-t"></span><span id="cmdoption-squatter-reindex-tier"></span><code class="sig-name descname"><span class="pre">-T</span></code><code class="sig-prename descclassname"> <span class="pre">reindextiers</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--reindex-tier</span></code><code class="sig-prename descclassname"><span class="pre">=reindextiers</span></code><a class="headerlink" href="#cmdoption-squatter-T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-T">
+<span id="cmdoption-squatter-t"></span><span id="cmdoption-squatter-reindex-tier"></span><span class="sig-name descname"><span class="pre">-T</span></span><span class="sig-prename descclassname"> <span class="pre">reindextiers</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--reindex-tier</span></span><span class="sig-prename descclassname"><span class="pre">=reindextiers</span></span><a class="headerlink" href="#cmdoption-squatter-T" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, a comma-separated subset of the source tiers
 (see <strong>-t</strong>) to be reindexed.  Similar to <strong>-X</strong> but allows
 limiting the tiers that will be reindexed.
@@ -1063,8 +1068,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-3">
-<span id="cmdoption-squatter-srctier"></span><code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"> <span class="pre">srctiers</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--srctier</span></code><code class="sig-prename descclassname"><span class="pre">=srctiers</span></code><a class="headerlink" href="#cmdoption-squatter-3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-3">
+<span id="cmdoption-squatter-srctier"></span><span class="sig-name descname"><span class="pre">-t</span></span><span class="sig-prename descclassname"> <span class="pre">srctiers</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--srctier</span></span><span class="sig-prename descclassname"><span class="pre">=srctiers</span></span><a class="headerlink" href="#cmdoption-squatter-3" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, the comma-separated source tier(s) for the compacted
 indices.  At least one source tier must be specified in compact mode.
 Xapian only.
@@ -1072,24 +1077,24 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-u">
-<span id="cmdoption-squatter-user"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"> <span class="pre">name</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--user</span></code><code class="sig-prename descclassname"><span class="pre">=name</span></code><a class="headerlink" href="#cmdoption-squatter-u" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-u">
+<span id="cmdoption-squatter-user"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--user</span></span><span class="sig-prename descclassname"><span class="pre">=name</span></span><a class="headerlink" href="#cmdoption-squatter-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra options refer to usernames (e.g. <a class="reference external" href="mailto:foo&#37;&#52;&#48;bar&#46;com">foo<span>&#64;</span>bar<span>&#46;</span>com</a>) rather than
 mailbox names.  Usernames are space-separated.
 This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-U">
-<span id="cmdoption-squatter-only-upgrade"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--only-upgrade</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-U" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-U">
+<span id="cmdoption-squatter-only-upgrade"></span><span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--only-upgrade</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, only compact if re-indexing.
 Xapian only.
 This feature is only available on the master branch.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-v">
-<span id="cmdoption-squatter-verbose"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--verbose</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-v" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-v">
+<span id="cmdoption-squatter-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Increase the verbosity of progress/status messages.  Sometimes additional messages
 are emitted on the terminal with this option and the messages are unconditionally sent
 to syslog.  Sometimes messages are sent to syslog, only if -v is provided.  In rolling and
@@ -1097,8 +1102,8 @@ synclog modes, -vv sends even more messages to syslog.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-X">
-<span id="cmdoption-squatter-x"></span><span id="cmdoption-squatter-reindex"></span><code class="sig-name descname"><span class="pre">-X</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--reindex</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-X" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-X">
+<span id="cmdoption-squatter-x"></span><span id="cmdoption-squatter-reindex"></span><span class="sig-name descname"><span class="pre">-X</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--reindex</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-X" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reindex all the messages before compacting.  This mode reads all
 the lists of messages indexed by the listed tiers, and re-indexes
 them into a temporary database before compacting that into place.
@@ -1107,8 +1112,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-z">
-<span id="cmdoption-squatter-compact"></span><code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"> <span class="pre">desttier</span></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--compact</span></code><code class="sig-prename descclassname"><span class="pre">=desttier</span></code><a class="headerlink" href="#cmdoption-squatter-z" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-z">
+<span id="cmdoption-squatter-compact"></span><span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"> <span class="pre">desttier</span></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--compact</span></span><span class="sig-prename descclassname"><span class="pre">=desttier</span></span><a class="headerlink" href="#cmdoption-squatter-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>In compact mode, the destination tier for the compacted indices.
 This must be specified in compact mode.
 Xapian only.
@@ -1116,8 +1121,8 @@ This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-squatter-Z">
-<span id="cmdoption-squatter-internalindex"></span><code class="sig-name descname"><span class="pre">-Z</span></code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname"><span class="pre">,</span> </code><code class="sig-name descname"><span class="pre">--internalindex</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-squatter-Z" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-squatter-Z">
+<span id="cmdoption-squatter-internalindex"></span><span class="sig-name descname"><span class="pre">-Z</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--internalindex</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-squatter-Z" title="Permalink to this definition">¶</a></dt>
 <dd><p>When indexing messages, use the Xapian internal cyrusid rather than
 referencing the ranges of already indexed messages to know if a
 particular message is indexed.  Useful if the ranges get out of
@@ -1126,9 +1131,9 @@ Xapian only.
 This feature is only available on the master branch.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p><strong>squatter</strong> is typically deployed via entries in
 <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, in either the DAEMON or EVENTS sections.</p>
 <p>For the older SQUAT search engine, which offers poor performance in
@@ -1190,9 +1195,9 @@ settings in <a class="reference internal" href="../configs/imapd.conf.html#std-c
 Xapian documentation in this release before using Xapian.</p>
 </div>
 <p>[NB: More examples needed]</p>
-</div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
 <p>Support for additional search engines was added in version 3.0.</p>
 <p>The following command-line switches were added in version 3.0:</p>
 <blockquote>
@@ -1202,18 +1207,18 @@ Xapian documentation in this release before using Xapian.</p>
 <blockquote>
 <div><pre class="literal-block"><strong>-S</strong> <em>&lt;seconds&gt;</em>, <strong>-T</strong> <em>&lt;directory&gt;</em>, <strong>-f</strong> <em>&lt;synclogfile&gt;</em>, <strong>-n</strong> <em>&lt;channel&gt;</em>, <strong>-t</strong> <em>srctier</em>..., <strong>-z</strong> <em>desttier</em></pre>
 </div></blockquote>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf,
 /etc/cyrus.conf</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="../configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a></p>
 <p><a class="reference internal" href="../../../developer/install-xapian.html#configuring-xapian"><span class="std std-ref">Configuring Xapian</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1236,7 +1241,7 @@ Xapian documentation in this release before using Xapian.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 21 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1259,9 +1264,12 @@ Xapian documentation in this release before using Xapian.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Access Control Defaults &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -799,18 +804,18 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="access-control-defaults">
-<span id="imap-admin-access-control-defaults"></span><h1>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="administrators">
-<h2>Administrators<a class="headerlink" href="#administrators" title="Permalink to this headline">¶</a></h2>
+  <section id="access-control-defaults">
+<span id="imap-admin-access-control-defaults"></span><h1>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this heading">¶</a></h1>
+<section id="administrators">
+<h2>Administrators<a class="headerlink" href="#administrators" title="Permalink to this heading">¶</a></h2>
 <p>The admin users (<a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> variable “admins”) get automatic go-everywhere, do-everything privileges on every mailbox. They can also see across domains which normal users can’t.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>An admin user should not be a normal email account.</p>
 </div>
-</div>
-<div class="section" id="mailbox-owners">
-<h2>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mailbox-owners">
+<h2>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this heading">¶</a></h2>
 <p>The user who owns a mailbox folder has additional rights which are set regardless of any additional ACLs. These are:</p>
 <ul class="simple">
 <li><p><strong>l</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-l"><span class="std std-ref">lookup</span></a></p></li>
@@ -819,9 +824,9 @@
 <li><p><strong>a</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-a"><span class="std std-ref">administer</span></a></p></li>
 </ul>
 <p>These are set in <strong>implicit_owner_rights</strong> of <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="default">
-<h2>Default<a class="headerlink" href="#default" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="default">
+<h2>Default<a class="headerlink" href="#default" title="Permalink to this heading">¶</a></h2>
 <p>For all other mailboxes not owned by a user, any user accessing these mailboxes have the following default privileges:</p>
 <ul class="simple">
 <li><p><strong>l</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-l"><span class="std std-ref">lookup</span></a></p></li>
@@ -829,8 +834,8 @@
 <li><p><strong>s</strong> - <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-s"><span class="std std-ref">seen</span></a></p></li>
 </ul>
 <p>These are set in <strong>defaultacl</strong> of <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -853,7 +858,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -877,9 +882,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

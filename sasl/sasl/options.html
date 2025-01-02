@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Options &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,8 +488,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="options">
-<span id="id1"></span><h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
+  <section id="options">
+<span id="id1"></span><h1>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h1>
 <p>This document contains information on what options are used by the
 Cyrus SASL library and bundled mechanisms.  The most commonly used
 options (and those that are therefore most commonly misunderstood
@@ -492,7 +497,7 @@ are <a class="reference internal" href="#cmdoption-arg-pwcheck_method"><code cla
 that you have configured these correctly if things don’t seem to
 be working right.  Additionally, <a class="reference internal" href="#cmdoption-arg-mech_list"><code class="xref std std-option docutils literal notranslate"><span class="pre">mech_list</span></code></a> can be an easy
 way to limit what mechanisms a given application will use.</p>
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#sasl-library" id="id3">SASL Library</a></p></li>
 <li><p><a class="reference internal" href="#auxiliary-property-plugin" id="id4">Auxiliary Property Plugin</a></p></li>
@@ -504,19 +509,19 @@ way to limit what mechanisms a given application will use.</p>
 <li><p><a class="reference internal" href="#srp" id="id10">SRP</a></p></li>
 <li><p><a class="reference internal" href="#kerberos-v4" id="id11">Kerberos V4</a></p></li>
 </ul>
-</div>
-<div class="section" id="sasl-library">
-<h2><a class="toc-backref" href="#id3">SASL Library</a><a class="headerlink" href="#sasl-library" title="Permalink to this headline">¶</a></h2>
+</nav>
+<section id="sasl-library">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">SASL Library</a><a class="headerlink" href="#sasl-library" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-authdaemon_path">
-<span id="cmdoption-arg-authdaemon-path"></span><code class="sig-name descname"><span class="pre">authdaemon_path</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-authdaemon_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-authdaemon_path">
+<span id="cmdoption-arg-authdaemon-path"></span><span class="sig-name descname"><span class="pre">authdaemon_path</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-authdaemon_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to Courier-IMAP authdaemond’s unix socket.</p>
 <p>Default: /dev/null</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-auto_transition">
-<span id="cmdoption-arg-auto-transition"></span><code class="sig-name descname"><span class="pre">auto_transition</span></code><code class="sig-prename descclassname"> <span class="pre">[yes|noplain|no]</span></code><a class="headerlink" href="#cmdoption-arg-auto_transition" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-auto_transition">
+<span id="cmdoption-arg-auto-transition"></span><span class="sig-name descname"><span class="pre">auto_transition</span></span><span class="sig-prename descclassname"> <span class="pre">[yes|noplain|no]</span></span><a class="headerlink" href="#cmdoption-arg-auto_transition" title="Permalink to this definition">¶</a></dt>
 <dd><p>When set to ‘yes’ or ‘noplain’,
 and when using an auxprop plugin, automatically transition
 users to other mechs when they do a successful plaintext
@@ -528,23 +533,23 @@ OTP, SCRAM and SRP.</em></p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-canon_user_plugin">
-<span id="cmdoption-arg-canon-user-plugin"></span><code class="sig-name descname"><span class="pre">canon_user_plugin</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;name&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-canon_user_plugin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-canon_user_plugin">
+<span id="cmdoption-arg-canon-user-plugin"></span><span class="sig-name descname"><span class="pre">canon_user_plugin</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;name&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-canon_user_plugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of canon_user plugin to use</p>
 <p>Default: INTERNAL</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-log_level">
-<span id="cmdoption-arg-log-level"></span><code class="sig-name descname"><span class="pre">log_level</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;numeric</span> <span class="pre">log</span> <span class="pre">level&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-log_level" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-log_level">
+<span id="cmdoption-arg-log-level"></span><span class="sig-name descname"><span class="pre">log_level</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;numeric</span> <span class="pre">log</span> <span class="pre">level&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-log_level" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Numeric</strong> Logging Level (see <code class="docutils literal notranslate"><span class="pre">SASL_LOG_*</span></code> in <code class="docutils literal notranslate"><span class="pre">sasl.h</span></code>
 for values and descriptions)</p>
 <p>Default: 1 (SASL_LOG_ERR)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-mech_list">
-<span id="cmdoption-arg-mech-list"></span><code class="sig-name descname"><span class="pre">mech_list</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;mechanism</span> <span class="pre">list&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-mech_list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-mech_list">
+<span id="cmdoption-arg-mech-list"></span><span class="sig-name descname"><span class="pre">mech_list</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;mechanism</span> <span class="pre">list&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-mech_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whitespace separated list of mechanisms to allow (e.g. ‘plain
 otp’).  Used to restrict the mechanisms to a subset of the installed
 plugins.</p>
@@ -552,15 +557,15 @@ plugins.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-plugin_list">
-<span id="cmdoption-arg-plugin-list"></span><code class="sig-name descname"><span class="pre">plugin_list</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-plugin_list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-plugin_list">
+<span id="cmdoption-arg-plugin-list"></span><span class="sig-name descname"><span class="pre">plugin_list</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-plugin_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of Plugin list (Unsupported)</p>
 <p>Default: none</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-pwcheck_method">
-<span id="cmdoption-arg-pwcheck-method"></span><code class="sig-name descname"><span class="pre">pwcheck_method</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">mechanisms&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-pwcheck_method" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-pwcheck_method">
+<span id="cmdoption-arg-pwcheck-method"></span><span class="sig-name descname"><span class="pre">pwcheck_method</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">mechanisms&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-pwcheck_method" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whitespace separated list of mechanisms used to verify passwords,
 used by sasl_checkpass. Possible values: ‘auxprop’, ‘saslauthd’,
 ‘pwcheck’, ‘authdaemond’ [if compiled with –with-authdaemond])
@@ -569,35 +574,35 @@ and ‘alwaystrue’ [if compiled with –enable-alwaystrue])</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-saslauthd_path">
-<span id="cmdoption-arg-saslauthd-path"></span><code class="sig-name descname"><span class="pre">saslauthd_path</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-saslauthd_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-saslauthd_path">
+<span id="cmdoption-arg-saslauthd-path"></span><span class="sig-name descname"><span class="pre">saslauthd_path</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-saslauthd_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to saslauthd run directory (<strong>including</strong> the “/mux” named pipe)</p>
 </dd></dl>
 
-</div>
-<div class="section" id="auxiliary-property-plugin">
-<h2><a class="toc-backref" href="#id4">Auxiliary Property Plugin</a><a class="headerlink" href="#auxiliary-property-plugin" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="auxiliary-property-plugin">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Auxiliary Property Plugin</a><a class="headerlink" href="#auxiliary-property-plugin" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-auxprop_plugin">
-<span id="cmdoption-arg-auxprop-plugin"></span><code class="sig-name descname"><span class="pre">auxprop_plugin</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">plugin</span> <span class="pre">names&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-auxprop_plugin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-auxprop_plugin">
+<span id="cmdoption-arg-auxprop-plugin"></span><span class="sig-name descname"><span class="pre">auxprop_plugin</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">plugin</span> <span class="pre">names&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-auxprop_plugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of auxiliary plugin to use, you may specify a space-separated
 list of plugin names, and the plugins will be queried in order.</p>
 <p>Default: empty - queries all plugins.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="gssapi">
-<h2><a class="toc-backref" href="#id5">GSSAPI</a><a class="headerlink" href="#gssapi" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="gssapi">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">GSSAPI</a><a class="headerlink" href="#gssapi" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-keytab">
-<code class="sig-name descname"><span class="pre">keytab</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-keytab" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-keytab">
+<span class="sig-name descname"><span class="pre">keytab</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-keytab" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of keytab file</p>
 <p>Default: /etc/krb5.keytab (system dependant)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ccache_store">
-<span id="cmdoption-arg-ccache-store"></span><code class="sig-name descname"><span class="pre">ccache_store</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ccache_store" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ccache_store">
+<span id="cmdoption-arg-ccache-store"></span><span class="sig-name descname"><span class="pre">ccache_store</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ccache_store" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location where cached credentials are stored, For example this could
 be <a class="reference external" href="FILE:/path/to/credstore/krb5cc_%U">FILE:/path/to/credstore/krb5cc_%U</a>. Formatting options are:</p>
 <p>%u UID of the logged in user (only valid for existing UNIX users)
@@ -617,16 +622,16 @@ empty or invalid KRB5CCNAME will be used.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ad_compat">
-<span id="cmdoption-arg-ad-compat"></span><code class="sig-name descname"><span class="pre">ad_compat</span></code><code class="sig-prename descclassname"> <span class="pre">[yes</span> <span class="pre">|</span> <span class="pre">no]</span></code><a class="headerlink" href="#cmdoption-arg-ad_compat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ad_compat">
+<span id="cmdoption-arg-ad-compat"></span><span class="sig-name descname"><span class="pre">ad_compat</span></span><span class="sig-prename descclassname"> <span class="pre">[yes</span> <span class="pre">|</span> <span class="pre">no]</span></span><a class="headerlink" href="#cmdoption-arg-ad_compat" title="Permalink to this definition">¶</a></dt>
 <dd><p>When set to ‘yes’, ‘on’, ‘1’ or ‘true’, a client will request both
 confidentiality and integrity when required by Active Directory.</p>
 <p>Default: no</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-service_principal">
-<span id="cmdoption-arg-service-principal"></span><code class="sig-name descname"><span class="pre">service_principal</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;GSS_C_NT_HOSTBASED_SERVICE&gt;</span> <span class="pre">|</span> <span class="pre">*]</span></code><a class="headerlink" href="#cmdoption-arg-service_principal" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-service_principal">
+<span id="cmdoption-arg-service-principal"></span><span class="sig-name descname"><span class="pre">service_principal</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;GSS_C_NT_HOSTBASED_SERVICE&gt;</span> <span class="pre">|</span> <span class="pre">*]</span></span><a class="headerlink" href="#cmdoption-arg-service_principal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Service principal to use when accepting a connection as a server. The
 principal name must be in GSS_C_NT_HOSTBASED_SERVICE form, e.g.
 “<a class="reference external" href="mailto:someservice&#37;&#52;&#48;someinstance">someservice<span>&#64;</span>someinstance</a>” or “someservice”, or the string “*”, which
@@ -634,41 +639,41 @@ causes the server to accept any valid principal present in its keytab.</p>
 <p>Default: &lt;SASL Service Name&gt;&#64;&lt;Server FQDN&gt;</p>
 </dd></dl>
 
-</div>
-<div class="section" id="ldapdb">
-<h2><a class="toc-backref" href="#id6">LDAPDB</a><a class="headerlink" href="#ldapdb" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ldapdb">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">LDAPDB</a><a class="headerlink" href="#ldapdb" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_uri">
-<span id="cmdoption-arg-ldapdb-uri"></span><code class="sig-name descname"><span class="pre">ldapdb_uri</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">URIs&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_uri" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_uri">
+<span id="cmdoption-arg-ldapdb-uri"></span><span class="sig-name descname"><span class="pre">ldapdb_uri</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">URIs&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_uri" title="Permalink to this definition">¶</a></dt>
 <dd><p>URI to the LDAP server. You can specify a space-separated list of URIs -
 ldapi:// or ldaps://ldap1/ ldaps://ldap2/</p>
 <p>Default: none</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_id">
-<span id="cmdoption-arg-ldapdb-id"></span><code class="sig-name descname"><span class="pre">ldapdb_id</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;auth</span> <span class="pre">id&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_id" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_id">
+<span id="cmdoption-arg-ldapdb-id"></span><span class="sig-name descname"><span class="pre">ldapdb_id</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;auth</span> <span class="pre">id&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>ldap SASL authentication id</p>
 <p>Default: none</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_mech">
-<span id="cmdoption-arg-ldapdb-mech"></span><code class="sig-name descname"><span class="pre">ldapdb_mech</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;mechanism&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_mech" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_mech">
+<span id="cmdoption-arg-ldapdb-mech"></span><span class="sig-name descname"><span class="pre">ldapdb_mech</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;mechanism&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_mech" title="Permalink to this definition">¶</a></dt>
 <dd><p>LDAP SASL mechanism for authentication.</p>
 <p>Default: none</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_pw">
-<span id="cmdoption-arg-ldapdb-pw"></span><code class="sig-name descname"><span class="pre">ldapdb_pw</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;password&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_pw" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_pw">
+<span id="cmdoption-arg-ldapdb-pw"></span><span class="sig-name descname"><span class="pre">ldapdb_pw</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;password&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_pw" title="Permalink to this definition">¶</a></dt>
 <dd><p>LDAP password for SASL authentication id</p>
 <p>Default: none</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_rc">
-<span id="cmdoption-arg-ldapdb-rc"></span><code class="sig-name descname"><span class="pre">ldapdb_rc</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;filename&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_rc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_rc">
+<span id="cmdoption-arg-ldapdb-rc"></span><span class="sig-name descname"><span class="pre">ldapdb_rc</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;filename&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_rc" title="Permalink to this definition">¶</a></dt>
 <dd><p>The filename specified here will be put into the server’s LDAPRC
 environment variable, and libldap-specific config options may be set
 in that ldaprc file.</p>
@@ -680,8 +685,8 @@ optimal way to use this plugin when the servers are on separate machines.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_starttls">
-<span id="cmdoption-arg-ldapdb-starttls"></span><code class="sig-name descname"><span class="pre">ldapdb_starttls</span></code><code class="sig-prename descclassname"> <span class="pre">[try|demand]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_starttls" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_starttls">
+<span id="cmdoption-arg-ldapdb-starttls"></span><span class="sig-name descname"><span class="pre">ldapdb_starttls</span></span><span class="sig-prename descclassname"> <span class="pre">[try|demand]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_starttls" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use StartTLS.  This option may be set to ‘try’ or ‘demand’.
 When set to “try” any failure in StartTLS is ignored.
 When set to “demand” then any failure aborts the connection.</p>
@@ -689,8 +694,8 @@ When set to “demand” then any failure aborts the connection.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-ldapdb_canon_attr">
-<span id="cmdoption-arg-ldapdb-canon-attr"></span><code class="sig-name descname"><span class="pre">ldapdb_canon_attr</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;user's</span> <span class="pre">canonical</span> <span class="pre">name&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-ldapdb_canon_attr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-ldapdb_canon_attr">
+<span id="cmdoption-arg-ldapdb-canon-attr"></span><span class="sig-name descname"><span class="pre">ldapdb_canon_attr</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;user's</span> <span class="pre">canonical</span> <span class="pre">name&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-ldapdb_canon_attr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the value of the specified attribute as the user’s
 canonical name. The attribute will be looked up in the user’s LDAP
 entry. This setting must be configured in order to use LDAPDB as
@@ -698,8 +703,8 @@ a canonuser plugin.</p>
 <p>Default: none</p>
 </dd></dl>
 
-<div class="section" id="notes-on-ldapdb">
-<h3>Notes on LDAPDB<a class="headerlink" href="#notes-on-ldapdb" title="Permalink to this headline">¶</a></h3>
+<section id="notes-on-ldapdb">
+<h3>Notes on LDAPDB<a class="headerlink" href="#notes-on-ldapdb" title="Permalink to this heading">¶</a></h3>
 <p>Unlike other LDAP-enabled plugins for other services that are common
 on the web, this plugin does not require you to configure DN search
 patterns to map usernames to LDAP DNs. This plugin requires SASL name
@@ -717,9 +722,9 @@ by slapd, you can stop it by creating /usr/lib/sasl2/slapd.conf with:</p>
 </pre></div>
 </div>
 <p>which will force the SASL library to ignore all other auxprop modules.</p>
-</div>
-<div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ldapdb_uri</span><span class="p">:</span> <span class="n">ldap</span><span class="p">:</span><span class="o">//</span><span class="n">ldap</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
 <span class="n">ldapdb_id</span><span class="p">:</span> <span class="n">root</span>
 <span class="n">ldapdb_pw</span><span class="p">:</span> <span class="n">secret</span>
@@ -747,37 +752,37 @@ sasl-regexp uid=(.*),cn=external,cn=auth
     ldap:///dc=example,dc=com??sub?(uid=$1)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="otp">
-<h2><a class="toc-backref" href="#id7">OTP</a><a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="otp">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">OTP</a><a class="headerlink" href="#otp" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-opiekeys">
-<code class="sig-name descname"><span class="pre">opiekeys</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-opiekeys" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-opiekeys">
+<span class="sig-name descname"><span class="pre">opiekeys</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-opiekeys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of the opiekeys file</p>
 <p>Default: /etc/opiekeys</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-otp_mda">
-<span id="cmdoption-arg-otp-mda"></span><code class="sig-name descname"><span class="pre">otp_mda</span></code><code class="sig-prename descclassname"> <span class="pre">[md4</span> <span class="pre">|</span> <span class="pre">md5</span> <span class="pre">|</span> <span class="pre">sha1]</span></code><a class="headerlink" href="#cmdoption-arg-otp_mda" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-otp_mda">
+<span id="cmdoption-arg-otp-mda"></span><span class="sig-name descname"><span class="pre">otp_mda</span></span><span class="sig-prename descclassname"> <span class="pre">[md4</span> <span class="pre">|</span> <span class="pre">md5</span> <span class="pre">|</span> <span class="pre">sha1]</span></span><a class="headerlink" href="#cmdoption-arg-otp_mda" title="Permalink to this definition">¶</a></dt>
 <dd><p>(Without opie) Message digest algorithm for one-time passwords, used by sasl_setpass</p>
 <p>Default: md5</p>
 </dd></dl>
 
-</div>
-<div class="section" id="sasldb">
-<h2><a class="toc-backref" href="#id8">SASLDB</a><a class="headerlink" href="#sasldb" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sasldb">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">SASLDB</a><a class="headerlink" href="#sasldb" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-sasldb_path">
-<span id="cmdoption-arg-sasldb-path"></span><code class="sig-name descname"><span class="pre">sasldb_path</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path</span> <span class="pre">to</span> <span class="pre">sasldb</span> <span class="pre">file&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-sasldb_path" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sasldb_path">
+<span id="cmdoption-arg-sasldb-path"></span><span class="sig-name descname"><span class="pre">sasldb_path</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path</span> <span class="pre">to</span> <span class="pre">sasldb</span> <span class="pre">file&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-sasldb_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Path to sasldb file</p>
 <p>Default: /etc/sasldb2 (system dependant)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sasldb_mapsize">
-<span id="cmdoption-arg-sasldb-mapsize"></span><code class="sig-name descname"><span class="pre">sasldb_mapsize</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;size</span> <span class="pre">in</span> <span class="pre">bytes&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-sasldb_mapsize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sasldb_mapsize">
+<span id="cmdoption-arg-sasldb-mapsize"></span><span class="sig-name descname"><span class="pre">sasldb_mapsize</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;size</span> <span class="pre">in</span> <span class="pre">bytes&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-sasldb_mapsize" title="Permalink to this definition">¶</a></dt>
 <dd><p>For sasldb with LMDB. Size of the memory map used by the DB. This is also the maximum possible
 size of the database, so it must be set to a value large enough to contain
 all the desired user records.</p>
@@ -785,76 +790,76 @@ all the desired user records.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sasldb_maxreaders">
-<span id="cmdoption-arg-sasldb-maxreaders"></span><code class="sig-name descname"><span class="pre">sasldb_maxreaders</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;max</span> <span class="pre">threads&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-sasldb_maxreaders" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sasldb_maxreaders">
+<span id="cmdoption-arg-sasldb-maxreaders"></span><span class="sig-name descname"><span class="pre">sasldb_maxreaders</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;max</span> <span class="pre">threads&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-sasldb_maxreaders" title="Permalink to this definition">¶</a></dt>
 <dd><p>For sasldb with LMDB. Maximum number of threads (or processes) that may concurrently read the
 database.</p>
 <p>Default: 126</p>
 </dd></dl>
 
-<div class="section" id="notes-on-sasldb-with-lmdb">
-<h3>Notes on sasldb with LMDB<a class="headerlink" href="#notes-on-sasldb-with-lmdb" title="Permalink to this headline">¶</a></h3>
+<section id="notes-on-sasldb-with-lmdb">
+<h3>Notes on sasldb with LMDB<a class="headerlink" href="#notes-on-sasldb-with-lmdb" title="Permalink to this heading">¶</a></h3>
 <p>The OpenLDAP LMDB library is an extremely compact, extremely high performance
 B+tree database. The code for it is available in the regular OpenLDAP source
 distributions and it is distributed under the terms of the OpenLDAP Public License.</p>
 <p>Full documentation, plus papers and presentations are available on
 <a class="reference external" href="symas.com/lmdb/">the LMDB page</a>.</p>
-</div>
-</div>
-<div class="section" id="sql-plugin">
-<h2><a class="toc-backref" href="#id9">SQL Plugin</a><a class="headerlink" href="#sql-plugin" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="sql-plugin">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">SQL Plugin</a><a class="headerlink" href="#sql-plugin" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-sql_engine">
-<span id="cmdoption-arg-sql-engine"></span><code class="sig-name descname"><span class="pre">sql_engine</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;name&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-sql_engine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_engine">
+<span id="cmdoption-arg-sql-engine"></span><span class="sig-name descname"><span class="pre">sql_engine</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;name&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-sql_engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of SQL engine to use (possible values: ‘mysql’, ‘pgsql’, ‘sqlite’, ‘sqlite3’).</p>
 <p>Default: mysql</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_hostnames">
-<span id="cmdoption-arg-sql-hostnames"></span><code class="sig-name descname"><span class="pre">sql_hostnames</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">SQL</span> <span class="pre">servers&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-sql_hostnames" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_hostnames">
+<span id="cmdoption-arg-sql-hostnames"></span><span class="sig-name descname"><span class="pre">sql_hostnames</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;list</span> <span class="pre">of</span> <span class="pre">SQL</span> <span class="pre">servers&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-sql_hostnames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Comma separated list of SQL servers (in host[:port] format).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_user">
-<span id="cmdoption-arg-sql-user"></span><code class="sig-name descname"><span class="pre">sql_user</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;username&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_user" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_user">
+<span id="cmdoption-arg-sql-user"></span><span class="sig-name descname"><span class="pre">sql_user</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;username&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_user" title="Permalink to this definition">¶</a></dt>
 <dd><p>Username to use for authentication to the SQL server.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_passwd">
-<span id="cmdoption-arg-sql-passwd"></span><code class="sig-name descname"><span class="pre">sql_passwd</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;password&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_passwd" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_passwd">
+<span id="cmdoption-arg-sql-passwd"></span><span class="sig-name descname"><span class="pre">sql_passwd</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;password&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_passwd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Password to use for authentication to the SQL server.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_database">
-<span id="cmdoption-arg-sql-database"></span><code class="sig-name descname"><span class="pre">sql_database</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;database</span> <span class="pre">name&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_database" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_database">
+<span id="cmdoption-arg-sql-database"></span><span class="sig-name descname"><span class="pre">sql_database</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;database</span> <span class="pre">name&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the database which contains the auxiliary properties.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_select">
-<span id="cmdoption-arg-sql-select"></span><code class="sig-name descname"><span class="pre">sql_select</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_select" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_select">
+<span id="cmdoption-arg-sql-select"></span><span class="sig-name descname"><span class="pre">sql_select</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_select" title="Permalink to this definition">¶</a></dt>
 <dd><p>SELECT statement to use for fetching properties.  This option is
 <strong>required</strong> in order to use the SQL plugin.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_insert">
-<span id="cmdoption-arg-sql-insert"></span><code class="sig-name descname"><span class="pre">sql_insert</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_insert" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_insert">
+<span id="cmdoption-arg-sql-insert"></span><span class="sig-name descname"><span class="pre">sql_insert</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>INSERT statement to use for creating properties for new users.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-arg-sql_update">
-<span id="cmdoption-arg-sql-update"></span><code class="sig-name descname"><span class="pre">sql_update</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></code><a class="headerlink" href="#cmdoption-arg-sql_update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-sql_update">
+<span id="cmdoption-arg-sql-update"></span><span class="sig-name descname"><span class="pre">sql_update</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;statement&gt;</span></span><a class="headerlink" href="#cmdoption-arg-sql_update" title="Permalink to this definition">¶</a></dt>
 <dd><p>UPDATE statement to use for modifying properties.</p>
 </dd></dl>
 
-<div class="section" id="notes-on-sql">
-<h3>Notes on SQL<a class="headerlink" href="#notes-on-sql" title="Permalink to this headline">¶</a></h3>
+<section id="notes-on-sql">
+<h3>Notes on SQL<a class="headerlink" href="#notes-on-sql" title="Permalink to this heading">¶</a></h3>
 <p>The sql_insert and sql_update options are
 optional and are only needed if you wish to allow the SASL library
 (e.g., saslpasswd2) and plugins (e.g., OTP) to write properties to the
@@ -886,9 +891,9 @@ the property itself, but is generally a userPassword.</p>
 <p>Note: DO NOT put quotes around the entire SQL
 statement, but each individual %u, %r and %v argument MUST be
 quoted.</p>
-</div>
-<div class="section" id="id2">
-<h3>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3>Examples<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">sql_select:</span> <span class="pre">SELECT</span> <span class="pre">%p</span> <span class="pre">FROM</span> <span class="pre">user_table</span> <span class="pre">WHERE</span> <span class="pre">username</span> <span class="pre">=</span> <span class="pre">'%u'</span> <span class="pre">and</span> <span class="pre">realm</span> <span class="pre">=</span> <span class="pre">'%r'</span></code></p>
 </div></blockquote>
@@ -912,29 +917,29 @@ realm “madoka.surf.org.uk” with userPassword “wert”:</p>
 </pre></div>
 </div>
 <p>is a valid value for sql_select.</p>
-</div>
-</div>
-<div class="section" id="srp">
-<h2><a class="toc-backref" href="#id10">SRP</a><a class="headerlink" href="#srp" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="srp">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">SRP</a><a class="headerlink" href="#srp" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-srp_mda">
-<span id="cmdoption-arg-srp-mda"></span><code class="sig-name descname"><span class="pre">srp_mda</span></code><code class="sig-prename descclassname"> <span class="pre">[md5</span> <span class="pre">|</span> <span class="pre">sha1</span> <span class="pre">|</span> <span class="pre">rmd160]</span></code><a class="headerlink" href="#cmdoption-arg-srp_mda" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-srp_mda">
+<span id="cmdoption-arg-srp-mda"></span><span class="sig-name descname"><span class="pre">srp_mda</span></span><span class="sig-prename descclassname"> <span class="pre">[md5</span> <span class="pre">|</span> <span class="pre">sha1</span> <span class="pre">|</span> <span class="pre">rmd160]</span></span><a class="headerlink" href="#cmdoption-arg-srp_mda" title="Permalink to this definition">¶</a></dt>
 <dd><p>Message digest algorithm for SRP calculations</p>
 <p>Default: sha1</p>
 </dd></dl>
 
-</div>
-<div class="section" id="kerberos-v4">
-<h2><a class="toc-backref" href="#id11">Kerberos V4</a><a class="headerlink" href="#kerberos-v4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="kerberos-v4">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Kerberos V4</a><a class="headerlink" href="#kerberos-v4" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-arg-srvtab">
-<code class="sig-name descname"><span class="pre">srvtab</span></code><code class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></code><a class="headerlink" href="#cmdoption-arg-srvtab" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-arg-srvtab">
+<span class="sig-name descname"><span class="pre">srvtab</span></span><span class="sig-prename descclassname"> <span class="pre">[&lt;path&gt;]</span></span><a class="headerlink" href="#cmdoption-arg-srvtab" title="Permalink to this definition">¶</a></dt>
 <dd><p>Location of the srvtab file</p>
 <p>Default: /etc/srvtab</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -957,7 +962,7 @@ realm “madoka.surf.org.uk” with userPassword “wert”:</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -981,9 +986,12 @@ realm “madoka.surf.org.uk” with userPassword “wert”:</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

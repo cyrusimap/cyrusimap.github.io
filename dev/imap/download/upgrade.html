@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Upgrading to 3.10 &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -782,8 +787,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="upgrading-to-3-10">
-<span id="upgrade"></span><h1>Upgrading to 3.10<a class="headerlink" href="#upgrading-to-3-10" title="Permalink to this headline">¶</a></h1>
+  <section id="upgrading-to-3-10">
+<span id="upgrade"></span><h1>Upgrading to 3.10<a class="headerlink" href="#upgrading-to-3-10" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This guide assumes that you are familiar and comfortable with administration
@@ -791,7 +796,7 @@ of a Cyrus installation, and system administration in general.</p>
 <p>It assumes you are installing from source or tarball. If you want to install
 from package, use the upgrade instructions from the package provider.</p>
 </div>
-<div class="contents local topic" id="upgrading-an-overview">
+<nav class="contents local" id="upgrading-an-overview">
 <p class="topic-title">Upgrading: an overview</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#preparation" id="id1">1. Preparation</a></p>
@@ -830,12 +835,12 @@ from package, use the upgrade instructions from the package provider.</p>
 <li><p><a class="reference internal" href="#upgrade-complete" id="id25">10. Upgrade complete</a></p></li>
 <li><p><a class="reference internal" href="#special-note-for-murder-configurations" id="id26">Special note for Murder configurations</a></p></li>
 </ul>
-</div>
-<div class="section" id="preparation">
-<h2><a class="toc-backref" href="#id1">1. Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+</nav>
+<section id="preparation">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">1. Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this heading">¶</a></h2>
 <p>Things to consider <strong>before</strong> you begin:</p>
-<div class="section" id="versions-to-upgrade-from">
-<h3><a class="toc-backref" href="#id2">Versions to upgrade from</a><a class="headerlink" href="#versions-to-upgrade-from" title="Permalink to this headline">¶</a></h3>
+<section id="versions-to-upgrade-from">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Versions to upgrade from</a><a class="headerlink" href="#versions-to-upgrade-from" title="Permalink to this heading">¶</a></h3>
 <p>Before upgrading to 3.10, your deployment should be running one of:</p>
 <ul class="simple">
 <li><p>3.6.3 (or later)</p></li>
@@ -844,15 +849,15 @@ from package, use the upgrade instructions from the package provider.</p>
 <p>If your existing deployment predates these releases, you should first upgrade
 to one of these versions, let it run for a while, resolve any issues that
 come up, and only then upgrade to 3.10.</p>
-</div>
-<div class="section" id="installation-from-tarball">
-<h3><a class="toc-backref" href="#id3">Installation from tarball</a><a class="headerlink" href="#installation-from-tarball" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="installation-from-tarball">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Installation from tarball</a><a class="headerlink" href="#installation-from-tarball" title="Permalink to this heading">¶</a></h3>
 <p>You will need to install from our packaged tarball. We provide a full list of
 libraries that Debian requires, but we aren't able to test all platforms: you
 may find you need to install additional or different libraries to support v3.8.</p>
-</div>
-<div class="section" id="storage-changes">
-<h3><a class="toc-backref" href="#id4">Storage changes</a><a class="headerlink" href="#storage-changes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="storage-changes">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Storage changes</a><a class="headerlink" href="#storage-changes" title="Permalink to this heading">¶</a></h3>
 <p>In 3.6 and later, mailboxes and user metadata directories are organised on
 disk by UUID rather than by mailbox name.</p>
 <p>At startup (or when you first run the updated <cite>ctl_cyrusdb -r</cite> manually),
@@ -873,11 +878,11 @@ to convert them to the new style.</p>
 the <cite>sieve_folder</cite> <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option).  No manual steps are
 necessary for upgrade: Cyrus recognises the old style storage and will
 convert to the new style automatically as necessary.</p>
-</div>
-<div class="section" id="jmap-caldav-changes">
-<h3><a class="toc-backref" href="#id5">JMAP/CalDAV changes</a><a class="headerlink" href="#jmap-caldav-changes" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="x-jmap-privacy-since-3-8">
-<span id="upgrade-3-8-0-jmap-caldav-changes"></span><h4><a class="toc-backref" href="#id6">X-JMAP-PRIVACY (since 3.8)</a><a class="headerlink" href="#x-jmap-privacy-since-3-8" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="jmap-caldav-changes">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">JMAP/CalDAV changes</a><a class="headerlink" href="#jmap-caldav-changes" title="Permalink to this heading">¶</a></h3>
+<section id="x-jmap-privacy-since-3-8">
+<span id="upgrade-3-8-0-jmap-caldav-changes"></span><h4><a class="toc-backref" href="#id6" role="doc-backlink">X-JMAP-PRIVACY (since 3.8)</a><a class="headerlink" href="#x-jmap-privacy-since-3-8" title="Permalink to this heading">¶</a></h4>
 <p>Prior to 3.8, Cyrus determined the JMAP CalendarEvent privacy of an iCalendar
 VEVENT by the CLASS property. Since 3.8, this now gets determined by the newly
 introduced X-JMAP-PRIVACY property, but the CalDAV indexes may already have
@@ -897,9 +902,9 @@ userids to migrate. In absence of this argument, all users are migrated</p></li>
 dav.db</p></li>
 <li><p>followed by calling <cite>dav_reconstruct</cite> for that user</p></li>
 </ul>
-</div>
-<div class="section" id="default-alarms">
-<span id="upgrade-jmap-default-alarms"></span><h4><a class="toc-backref" href="#id7">Default alarms</a><a class="headerlink" href="#default-alarms" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="default-alarms">
+<span id="upgrade-jmap-default-alarms"></span><h4><a class="toc-backref" href="#id7" role="doc-backlink">Default alarms</a><a class="headerlink" href="#default-alarms" title="Permalink to this heading">¶</a></h4>
 <p>Prior to 3.10, JMAP default alarms were stored on a calendar mailbox
 in the following annotations:</p>
 <ul class="simple">
@@ -932,27 +937,27 @@ calendar id to either null on success, or an error.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">notMigrated:</span> <span class="pre">Id[SetError]</span></code>: For each userid, contains an error that
 prevented migrating this users default alarms.</p></li>
 </ul>
-</div>
-<div class="section" id="calendareventnotifications">
-<h4><a class="toc-backref" href="#id8">CalendarEventNotifications</a><a class="headerlink" href="#calendareventnotifications" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="calendareventnotifications">
+<h4><a class="toc-backref" href="#id8" role="doc-backlink">CalendarEventNotifications</a><a class="headerlink" href="#calendareventnotifications" title="Permalink to this heading">¶</a></h4>
 <p>The default maximum count of CalendarEventNotifications is set to 200
 per account. Installations that need any other count or want to not
 prune notifications must update the <code class="docutils literal notranslate"><span class="pre">jmap_max_calendareventnotifs</span></code>
 <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> option.</p>
-</div>
-</div>
-<div class="section" id="sieve-changes">
-<span id="upgrade-sieve-changes"></span><span id="upgrade-3-8-0-sieve-changes"></span><h3><a class="toc-backref" href="#id9">Sieve changes</a><a class="headerlink" href="#sieve-changes" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sieve-changes">
+<span id="upgrade-sieve-changes"></span><span id="upgrade-3-8-0-sieve-changes"></span><h3><a class="toc-backref" href="#id9" role="doc-backlink">Sieve changes</a><a class="headerlink" href="#sieve-changes" title="Permalink to this heading">¶</a></h3>
 <p>3.10 no longer supports the deprecated <code class="docutils literal notranslate"><span class="pre">denotify</span></code> action or <code class="docutils literal notranslate"><span class="pre">notify</span></code>
-actions using the legacy (pre-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a>) syntax.</p>
+actions using the legacy (pre-<span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5435.html"><strong>RFC 5435</strong></a>) syntax.</p>
 <p>Existing bytecode containing these actions will still be executed.</p>
 <p>Scripts that contain the deprecated <code class="docutils literal notranslate"><span class="pre">denotify</span></code> action should be rewritten
 to remove them.</p>
 <p>Scripts that contain notify actions using the legacy syntax should be rewritten
-to use the syntax in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a>.</p>
-</div>
-<div class="section" id="master-pid-and-master-ready-files">
-<span id="upgrade-master-pid-ready-files"></span><h3><a class="toc-backref" href="#id10">master.pid and master.ready files</a><a class="headerlink" href="#master-pid-and-master-ready-files" title="Permalink to this headline">¶</a></h3>
+to use the syntax in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5435.html"><strong>RFC 5435</strong></a>.</p>
+</section>
+<section id="master-pid-and-master-ready-files">
+<span id="upgrade-master-pid-ready-files"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink">master.pid and master.ready files</a><a class="headerlink" href="#master-pid-and-master-ready-files" title="Permalink to this heading">¶</a></h3>
 <p>If you have something that monitors syslog looking for master's &quot;ready for
 work&quot; message, you might consider switching to monitoring the master.ready
 file instead, perhaps using Linux inotify.</p>
@@ -961,9 +966,9 @@ file instead, perhaps using Linux inotify.</p>
 file, you should either update it to look in the new default location, or set
 <code class="docutils literal notranslate"><span class="pre">master_pid_file</span></code> in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to override the default.  The
 <code class="docutils literal notranslate"><span class="pre">-p</span></code> option to <a class="reference internal" href="../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> can still be used to override it.</p>
-</div>
-<div class="section" id="pcre2-support">
-<span id="upgrade-pcre2-support"></span><h3><a class="toc-backref" href="#id11">PCRE2 support</a><a class="headerlink" href="#pcre2-support" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pcre2-support">
+<span id="upgrade-pcre2-support"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink">PCRE2 support</a><a class="headerlink" href="#pcre2-support" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus 3.10 will prefer PCRE2 over PCRE if both are installed.  If you have both
 installed and wish to use PCRE rather than PCRE2, run configure with
 <code class="docutils literal notranslate"><span class="pre">--disable-pcre2</span></code>.</p>
@@ -975,20 +980,20 @@ libpcre2-dev so Cyrus can use it, or configure Cyrus with <code class="docutils 
 so that it ignores the partial installation.</p>
 <p>Please note that on Debian-based systems, PCRE (the old one, no longer
 maintained) is called &quot;pcre3&quot;.  Yes, this is confusing.</p>
-</div>
-<div class="section" id="cyrus-backups-feature-is-deprecated-as-of-3-10">
-<h3><a class="toc-backref" href="#id12">Cyrus Backups feature is deprecated as of 3.10</a><a class="headerlink" href="#cyrus-backups-feature-is-deprecated-as-of-3-10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyrus-backups-feature-is-deprecated-as-of-3-10">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Cyrus Backups feature is deprecated as of 3.10</a><a class="headerlink" href="#cyrus-backups-feature-is-deprecated-as-of-3-10" title="Permalink to this heading">¶</a></h3>
 <p>Deployments that rely on the experimental Cyrus Backup feature should
 start planning for an alternative backup solution, as this feature will
 be removed in the future.</p>
-</div>
-<div class="section" id="how-are-you-planning-on-upgrading">
-<h3><a class="toc-backref" href="#id13">How are you planning on upgrading?</a><a class="headerlink" href="#how-are-you-planning-on-upgrading" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="how-are-you-planning-on-upgrading">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">How are you planning on upgrading?</a><a class="headerlink" href="#how-are-you-planning-on-upgrading" title="Permalink to this heading">¶</a></h3>
 <p>Ideally, you will do a sandboxed test installation of 3.10 using a snapshot of
 your existing data before you switch off your existing installation. The rest
 of the instructions are assuming a sandboxed 3.10 installation.</p>
-<div class="section" id="upgrade-by-replicating">
-<h4><a class="toc-backref" href="#id14">Upgrade by replicating</a><a class="headerlink" href="#upgrade-by-replicating" title="Permalink to this headline">¶</a></h4>
+<section id="upgrade-by-replicating">
+<h4><a class="toc-backref" href="#id14" role="doc-backlink">Upgrade by replicating</a><a class="headerlink" href="#upgrade-by-replicating" title="Permalink to this heading">¶</a></h4>
 <p>If you're familiar with replication, and your current installation is 2.4 or
 newer, you can set up your existing installation to replicate data to a new
 3.10 installation and failover to the new installation when you're ready. The
@@ -1012,9 +1017,9 @@ parameter.</p></li>
 so it's better to identify the mailboxes needing attention and target them
 specifically.  But if you have a small amount of data, it might be less work
 to just <cite>reconstruct -G -V max</cite> everything.</p>
-</div>
-<div class="section" id="upgrade-in-place">
-<h4><a class="toc-backref" href="#id15">Upgrade in place</a><a class="headerlink" href="#upgrade-in-place" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="upgrade-in-place">
+<h4><a class="toc-backref" href="#id15" role="doc-backlink">Upgrade in place</a><a class="headerlink" href="#upgrade-in-place" title="Permalink to this heading">¶</a></h4>
 <p>If you are upgrading in place, you will need to shut down Cyrus
 entirely while you install the new package.  If your old installation
 was using Berkeley DB format databases, you will need to convert or
@@ -1038,10 +1043,10 @@ metadata and/or mailboxes.</p>
 <p>If you have this configuration, you will need to upgrade by
 replicating, not in place.</p>
 </div>
-</div>
-</div>
-<div class="section" id="do-what-as-who">
-<h3><a class="toc-backref" href="#id16">Do What As Who?</a><a class="headerlink" href="#do-what-as-who" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="do-what-as-who">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Do What As Who?</a><a class="headerlink" href="#do-what-as-who" title="Permalink to this heading">¶</a></h3>
 <p>Since the various files, databases, directories, etc. used by Cyrus
 must be readable and writable as the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, please make sure
 to <strong>always</strong> perform Cyrus commands <em>as</em> the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user, and not
@@ -1059,10 +1064,10 @@ sudo -u cyrus /usr/local/bin/cyr_info conf-lint -C /etc/imapd.conf -M /etc/cyrus
 <em>should</em> or <strong>must</strong> be run as <code class="docutils literal notranslate"><span class="pre">root</span></code>.  These are always standard *nix
 commands, such as <code class="docutils literal notranslate"><span class="pre">rsync</span></code> or <code class="docutils literal notranslate"><span class="pre">scp</span></code>.</p>
 <p>We strongly recommend that you read this entire document before upgrading.</p>
-</div>
-</div>
-<div class="section" id="install-new-3-10-cyrus">
-<h2><a class="toc-backref" href="#id17">2. Install new 3.10 Cyrus</a><a class="headerlink" href="#install-new-3-10-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="install-new-3-10-cyrus">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">2. Install new 3.10 Cyrus</a><a class="headerlink" href="#install-new-3-10-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>Download the release <a class="reference internal" href="getcyrus.html#getcyrus"><span class="std std-ref">3.10 package tarball</span></a>.</p>
 <p>Fetch the libraries for your platform. The full list (including all optional
 packages) for Debian is:</p>
@@ -1095,15 +1100,15 @@ if your server restarts in the middle of the upgrade.</p>
 involve something like <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">disable</span> <span class="pre">cyrus-imapd</span></code> or
 <code class="docutils literal notranslate"><span class="pre">update-rc.d</span> <span class="pre">cyrus-imapd</span> <span class="pre">disable</span></code></p>
 </div>
-</div>
-<div class="section" id="shut-down-existing-cyrus">
-<h2><a class="toc-backref" href="#id18">3. Shut down existing Cyrus</a><a class="headerlink" href="#shut-down-existing-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="shut-down-existing-cyrus">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">3. Shut down existing Cyrus</a><a class="headerlink" href="#shut-down-existing-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>Shut down your existing Cyrus installation with its init script or
 whatever method you normally use.</p>
 <p>This is necessary to guarantee a clean data snapshot.</p>
-</div>
-<div class="section" id="backup-and-copy-existing-data">
-<h2><a class="toc-backref" href="#id19">4. Backup and Copy existing data</a><a class="headerlink" href="#backup-and-copy-existing-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="backup-and-copy-existing-data">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">4. Backup and Copy existing data</a><a class="headerlink" href="#backup-and-copy-existing-data" title="Permalink to this heading">¶</a></h2>
 <p>We recommend backing up all your data before continuing.</p>
 <ul class="simple">
 <li><p>Sieve scripts</p></li>
@@ -1142,9 +1147,9 @@ storage, such as <code class="docutils literal notranslate"><span class="pre">/r
 or whatever suitable tmpfs is provided on your distro.  It will place
 less IO load on your disks and run faster.</p>
 </div>
-</div>
-<div class="section" id="copy-config-files-and-update">
-<h2><a class="toc-backref" href="#id20">5. Copy config files and update</a><a class="headerlink" href="#copy-config-files-and-update" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="copy-config-files-and-update">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">5. Copy config files and update</a><a class="headerlink" href="#copy-config-files-and-update" title="Permalink to this heading">¶</a></h2>
 <p>Again, check the locations on your specific installation.  For example,
 on FreeBSD systems, the configuration files <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>
 and <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> are in <code class="docutils literal notranslate"><span class="pre">/usr/local/etc</span></code>, rather than
@@ -1182,9 +1187,9 @@ DAEMON section.</p>
 -E, -X, -D, or -A <a class="reference internal" href="../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> arguments must adapt these to only
 use integer durations such as &quot;1d12h&quot;.  You may have such entries in the EVENTS
 section of <a class="reference internal" href="../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>, or cron etc.</p>
-</div>
-<div class="section" id="upgrade-specific-items">
-<h2><a class="toc-backref" href="#id21">6. Upgrade specific items</a><a class="headerlink" href="#upgrade-specific-items" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upgrade-specific-items">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">6. Upgrade specific items</a><a class="headerlink" href="#upgrade-specific-items" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Special-Use flags</p>
 <blockquote>
@@ -1217,9 +1222,9 @@ quotas.</p>
 <p class="admonition-title">Note</p>
 <p>The <a class="reference internal" href="../reference/manpages/systemcommands/cvt_cyrusdb.html#std-cyrusman-cvt_cyrusdb-8">cvt_cyrusdb(8)</a> command does not accept relative paths.</p>
 </div>
-</div>
-<div class="section" id="start-new-3-10-cyrus-and-verify">
-<h2><a class="toc-backref" href="#id22">7. Start new 3.10 Cyrus and verify</a><a class="headerlink" href="#start-new-3-10-cyrus-and-verify" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="start-new-3-10-cyrus-and-verify">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">7. Start new 3.10 Cyrus and verify</a><a class="headerlink" href="#start-new-3-10-cyrus-and-verify" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo ./master/master -d
 </pre></div>
 </div>
@@ -1237,9 +1242,9 @@ until you're able to finish your 3.10 installation.</p>
 step 2, remember to re-enable them.  Use something like <code class="docutils literal notranslate"><span class="pre">systemctl</span>
 <span class="pre">enable</span> <span class="pre">cyrus-imapd</span></code> or <code class="docutils literal notranslate"><span class="pre">update-rc.d</span> <span class="pre">cyrus-imapd</span> <span class="pre">enable</span></code></p>
 </div>
-</div>
-<div class="section" id="reconstruct-databases-and-cache">
-<h2><a class="toc-backref" href="#id23">8. Reconstruct databases and cache</a><a class="headerlink" href="#reconstruct-databases-and-cache" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reconstruct-databases-and-cache">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">8. Reconstruct databases and cache</a><a class="headerlink" href="#reconstruct-databases-and-cache" title="Permalink to this heading">¶</a></h2>
 <p>The following steps can each take a long time, so we recommend
 running them one at a time (to reduce locking contention and high I/O load).</p>
 <p>To upgrade all the mailboxes to the latest version. This will take hours,
@@ -1291,19 +1296,19 @@ and then fixed during 3.5 development.</p>
 <p>3.10 contains fixes to bugs in the Squat search backend.  If you use the Squat
 search backend, your search indexes may benefit from a full (not incremental)
 reindex using <a class="reference internal" href="../reference/manpages/systemcommands/squatter.html#std-cyrusman-squatter-8">squatter(8)</a>.</p>
-</div>
-<div class="section" id="do-you-want-any-new-features">
-<h2><a class="toc-backref" href="#id24">9. Do you want any new features?</a><a class="headerlink" href="#do-you-want-any-new-features" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="do-you-want-any-new-features">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">9. Do you want any new features?</a><a class="headerlink" href="#do-you-want-any-new-features" title="Permalink to this heading">¶</a></h2>
 <p>3.10 comes with many lovely new features. Consider which ones you want to
 enable.  Check the <a class="reference internal" href="release-notes/3.10/index.html#imap-release-notes-3-10"><span class="std std-ref">3.10 release notes</span></a> for the
 full list.</p>
-</div>
-<div class="section" id="upgrade-complete">
-<h2><a class="toc-backref" href="#id25">10. Upgrade complete</a><a class="headerlink" href="#upgrade-complete" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upgrade-complete">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">10. Upgrade complete</a><a class="headerlink" href="#upgrade-complete" title="Permalink to this heading">¶</a></h2>
 <p>Your upgrade is complete, congratulations!</p>
-</div>
-<div class="section" id="special-note-for-murder-configurations">
-<h2><a class="toc-backref" href="#id26">Special note for Murder configurations</a><a class="headerlink" href="#special-note-for-murder-configurations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="special-note-for-murder-configurations">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Special note for Murder configurations</a><a class="headerlink" href="#special-note-for-murder-configurations" title="Permalink to this heading">¶</a></h2>
 <p>If you upgrade murder frontends before you upgrade all the backends,
 they may advertise features to clients which the backends don't support,
 which will cause the commands to fail when they are proxied to the backend.</p>
@@ -1324,8 +1329,8 @@ not recognise 3.10, and will downgrade mailboxes to the oldest supported format
 <p>If your existing backends are 2.4 or 2.5, there are equivalent patches for
 recognising 3.8+ on the cyrus-imapd-2.4 and cyrus-imapd-2.5 git branches, but
 these are not in any released version.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1348,7 +1353,7 @@ these are not in any released version.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jul 24 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1371,9 +1376,12 @@ these are not in any released version.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

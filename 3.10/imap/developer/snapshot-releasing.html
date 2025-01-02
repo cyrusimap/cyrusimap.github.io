@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Releasing Cyrus IMAP - developer snapshots &mdash; Cyrus IMAP 3.10.0 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -744,7 +749,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -793,9 +798,9 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="releasing-cyrus-imap-developer-snapshots">
-<span id="imap-developer-snapshot-releasing"></span><h1><a class="toc-backref" href="#id1">Releasing Cyrus IMAP - developer snapshots</a><a class="headerlink" href="#releasing-cyrus-imap-developer-snapshots" title="Permalink to this headline">¶</a></h1>
-<div class="contents topic" id="contents">
+  <section id="releasing-cyrus-imap-developer-snapshots">
+<span id="imap-developer-snapshot-releasing"></span><h1><a class="toc-backref" href="#id1" role="doc-backlink">Releasing Cyrus IMAP - developer snapshots</a><a class="headerlink" href="#releasing-cyrus-imap-developer-snapshots" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#releasing-cyrus-imap-developer-snapshots" id="id1">Releasing Cyrus IMAP - developer snapshots</a></p>
@@ -814,7 +819,7 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>These instructions describe the process of producing &quot;developer snapshots&quot;
 from the master branch.  These are tag-only releases: no release tarball
 is published.</p>
@@ -823,12 +828,12 @@ is published.</p>
 document and process a work in progress, which we'll refine as we go.</p>
 <p>You can look at the tag cyrus-imapd-3.3.1 and a few commits before it to
 get a sense of the kind of things this process involves.</p>
-<div class="section" id="prerequisites">
-<h2><a class="toc-backref" href="#id2">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<section id="prerequisites">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <p>Same as for normal releases</p>
-</div>
-<div class="section" id="make-sure-master-is-good">
-<h2><a class="toc-backref" href="#id3">Make sure master is good</a><a class="headerlink" href="#make-sure-master-is-good" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="make-sure-master-is-good">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Make sure master is good</a><a class="headerlink" href="#make-sure-master-is-good" title="Permalink to this heading">¶</a></h2>
 <p>With the master branch checked out and up to date:</p>
 <ol class="arabic">
 <li><p>Ensure your git repository is clean, using something like
@@ -869,9 +874,9 @@ time).</p></li>
 </ol>
 </li>
 </ol>
-</div>
-<div class="section" id="mixed-version-cassandane-testing">
-<h2><a class="toc-backref" href="#id4">Mixed-version Cassandane testing</a><a class="headerlink" href="#mixed-version-cassandane-testing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mixed-version-cassandane-testing">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Mixed-version Cassandane testing</a><a class="headerlink" href="#mixed-version-cassandane-testing" title="Permalink to this heading">¶</a></h2>
 <p>This is a good point to make sure that replication and murder setups can talk
 to each other between versions.</p>
 <ol class="arabic simple">
@@ -899,9 +904,9 @@ stable branch, and running Cassandane from the master branch</p></li>
 the master branch, and running Cassandane from the current stable branch</p></li>
 <li><p>Same as 3, but running Cassandane from the master branch</p></li>
 </ol>
-</div>
-<div class="section" id="lib-imapoptions">
-<h2><a class="toc-backref" href="#id5">lib/imapoptions</a><a class="headerlink" href="#lib-imapoptions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lib-imapoptions">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">lib/imapoptions</a><a class="headerlink" href="#lib-imapoptions" title="Permalink to this heading">¶</a></h2>
 <p>I'm not sure about whether we want to do this step at each snapshot, or
 save it for a big batch at the next major release.  The difference is
 whether we conceptually treat these tags as releases of the feature or
@@ -916,9 +921,9 @@ as.</p></li>
 to (re)generate <cite>lib/imapopts.c</cite>.  You can run
 <code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">lib/imapoptions</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">lib/imapopts.c</span></code> to check</p></li>
 </ol>
-</div>
-<div class="section" id="release-notes">
-<h2><a class="toc-backref" href="#id6">Release notes</a><a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="release-notes">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Release notes</a><a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h2>
 <p>Snapshot release notes are like major x.y.0 release notes, in that they
 contain a high-level overview of the new features/etc, but not a blow-by-blow
 of every commit.  They describe the changes since the <em>last stable series</em>,
@@ -953,15 +958,15 @@ as they're integrated into a snapshot, that will be less confusing, but it
 will be harder to do a holistic review later.  Maybe they can be moved
 aside somewhere instead of removed, to <cite>changes/&lt;snapshot-version&gt;</cite> or
 something...</p>
-</div>
-<div class="section" id="docsrc-conf-py">
-<h2><a class="toc-backref" href="#id7">docsrc/conf.py</a><a class="headerlink" href="#docsrc-conf-py" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="docsrc-conf-py">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">docsrc/conf.py</a><a class="headerlink" href="#docsrc-conf-py" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Update all the relevant version strings in <cite>docsrc/conf.py</cite></p></li>
 </ol>
-</div>
-<div class="section" id="check-documentation">
-<h2><a class="toc-backref" href="#id8">check documentation</a><a class="headerlink" href="#check-documentation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="check-documentation">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">check documentation</a><a class="headerlink" href="#check-documentation" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Make sure your RST changes are good:  <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">doc-html</span></code>.  Pay attention
 to any errors or warnings (they will be coloured).  There will be some
@@ -971,18 +976,18 @@ The generated documentation will be under the <cite>doc/html/</cite> directory -
 examine it in your browser to make sure all your formatting and such makes
 sense.</p></li>
 </ol>
-</div>
-<div class="section" id="pr-and-or-commit">
-<h2><a class="toc-backref" href="#id9">PR and/or commit</a><a class="headerlink" href="#pr-and-or-commit" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pr-and-or-commit">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">PR and/or commit</a><a class="headerlink" href="#pr-and-or-commit" title="Permalink to this heading">¶</a></h2>
 <p>Once you're satisfied that you've done everything that needed doing here,
 commit the changes to a branch and submit a PR.  Historically we've usually
 just made these changes directly on master, but since our workflow uses
 PRs these days, let's try that.</p>
 <p>Once the PR has been approved, rebase your branch on top of current master,
 force-push it, and then &quot;Merge&quot; it through the GitHub UI.</p>
-</div>
-<div class="section" id="tag">
-<h2><a class="toc-backref" href="#id10">Tag</a><a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tag">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Tag</a><a class="headerlink" href="#tag" title="Permalink to this heading">¶</a></h2>
 <p>You'll want to apply the tag to the merge commit where the PR landed.  Usually
 this will be the head of master, but if there's been hang time between merging
 the PR and starting this step, other merges might have snuck in on top of it.
@@ -1002,19 +1007,19 @@ you're done though, we don't publish it.</p></li>
 <li><p>Push the new tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">ci</span> <span class="pre">cyrus-imapd-&lt;snapshot-version&gt;</span></code></p></li>
 </ol>
 <p>Fastmail specific: also push the new tag to the Fastmail repo.</p>
-</div>
-<div class="section" id="tell-the-world">
-<h2><a class="toc-backref" href="#id11">Tell the world</a><a class="headerlink" href="#tell-the-world" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tell-the-world">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Tell the world</a><a class="headerlink" href="#tell-the-world" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Send an announcement to the cyrus-devel list.</p></li>
 </ol>
-</div>
-<div class="section" id="update-this-document">
-<h2><a class="toc-backref" href="#id12">Update this document</a><a class="headerlink" href="#update-this-document" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="update-this-document">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Update this document</a><a class="headerlink" href="#update-this-document" title="Permalink to this heading">¶</a></h2>
 <p>The process probably changed a little in practice.  Update this document to
 match reality!</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1037,7 +1042,7 @@ match reality!</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Feb 03 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1060,9 +1065,12 @@ match reality!</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

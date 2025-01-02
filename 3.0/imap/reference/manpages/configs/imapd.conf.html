@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>imapd.conf &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,11 +763,11 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="imapd-conf">
-<span id="imap-reference-manpages-configs-imapd-conf"></span><span id="std-cyrusman-imapd.conf-5"></span><span id="std:cyrusman-imapd.conf(5)"></span><h1>imapd.conf<a class="headerlink" href="#imapd-conf" title="Permalink to this headline">¶</a></h1>
+  <section id="imapd-conf">
+<span id="imap-reference-manpages-configs-imapd-conf"></span><span id="std-cyrusman-imapd.conf-5"></span><h1>imapd.conf<a class="headerlink" href="#imapd-conf" title="Permalink to this heading">¶</a></h1>
 <p>IMAP configuration file</p>
-<div class="section" id="description">
-<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<section id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p><strong>/etc/imapd.conf</strong>
 is the configuration file for the Cyrus IMAP server.  It defines
@@ -796,9 +801,9 @@ using ``\’’ character(s) is still considered a single line.</p>
 ``true’’ and ``1’’ turn the option on, the values ``no’’, ``off’’,
 ``f’’, ``false’’ and ``0’’ turn the option off.</p>
 </div></blockquote>
-</div>
-<div class="section" id="field-descriptions">
-<h2>FIELD DESCRIPTIONS<a class="headerlink" href="#field-descriptions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="field-descriptions">
+<h2>FIELD DESCRIPTIONS<a class="headerlink" href="#field-descriptions" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>The sections below detail options that can be placed in the
 <strong>/etc/imapd.conf</strong> file, and show each option’s default value.
@@ -929,7 +934,7 @@ has the following form:</p>
 <em>attrib-names</em>, <em>acl</em></p>
 </div></blockquote>
 <dl>
-<dt><em>name</em></dt><dd><p>is the hierarchical name as in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a> or <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5464.html"><strong>RFC 5464</strong></a> (in the latter case,
+<dt><em>name</em></dt><dd><p>is the hierarchical name as in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5257.html"><strong>RFC 5257</strong></a> or <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5464.html"><strong>RFC 5464</strong></a> (in the latter case,
 without the leading <strong>/shared</strong> or <strong>/private</strong>).  For example,
 /vendor/acme/blurdybloop.</p>
 </dd>
@@ -971,7 +976,7 @@ warning.</p>
 </dd>
 <dt><em>extra-permissions</em></dt><dd><p>is the extra ACL permission bits required for setting this annotation, in
 standard IMAP ACL permission bit string format.  Note that this is
-in addition to the permission bits specified in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a> and <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5464.html"><strong>RFC 5464</strong></a>,
+in addition to the permission bits specified in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5257.html"><strong>RFC 5257</strong></a> and <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5464.html"><strong>RFC 5464</strong></a>,
 so leaving this field empty is harmless.  Note also that there is no way
 to specify that an annotation can only be set by an admin user; in
 particular the <strong>a</strong> permission bit does not achieve this.</p>
@@ -1470,14 +1475,14 @@ immediately.</p>
 <p><code class="docutils literal notranslate"><span class="pre">delete_unsubscribe:</span></code> 0</p>
 <blockquote>
 <div><p>Whether to also unsubscribe from mailboxes when they are deleted.
-Note that this behaviour contravenes <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a> section 6.3.9, but
+Note that this behaviour contravenes <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3501.html"><strong>RFC 3501</strong></a> section 6.3.9, but
 may be useful for avoiding user/client software confusion.
 The default is ‘no’.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">deleteright:</span></code> c</p>
 <blockquote>
 <div><p>Deprecated - only used for backwards compatibility with existing
-installations.  Lists the old <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2086.html"><strong>RFC 2086</strong></a> right which was used to
+installations.  Lists the old <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2086.html"><strong>RFC 2086</strong></a> right which was used to
 grant the user the ability to delete a mailbox.  If a user has this
 right, they will automatically be given the new ‘x’ right.</p>
 </div></blockquote>
@@ -1570,7 +1575,7 @@ Set ALL for any folder</p>
 <p><code class="docutils literal notranslate"><span class="pre">event_notifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Notifyd(8) method to use for “EVENT” notifications which are based on
-the <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
+the <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">expunge_mode:</span></code> delayed</p>
 <blockquote>
@@ -1757,7 +1762,7 @@ mailboxes.</p>
 <p><code class="docutils literal notranslate"><span class="pre">imipnotifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Notifyd(8) method to use for “IMIP” notifications which are based on
-the <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, “IMIP” notifications are disabled.</p>
+the <span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6047.html"><strong>RFC 6047</strong></a>.  If not set, “IMIP” notifications are disabled.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">implicit_owner_rights:</span></code> lkxa</p>
 <blockquote>
@@ -2028,7 +2033,7 @@ set to 3.</p>
 <p><code class="docutils literal notranslate"><span class="pre">literalminus:</span></code> 0</p>
 <blockquote>
 <div><p>if enabled, CAPABILITIES will reply with LITERAL- rather than
-LITERAL+ (<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn’t actually size-restrict uploads though</p>
+LITERAL+ (<span class="target" id="index-8"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7888.html"><strong>RFC 7888</strong></a>).  Doesn’t actually size-restrict uploads though</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">lmtp_downcase_rcpt:</span></code> 1</p>
 <blockquote>
@@ -2056,7 +2061,7 @@ failure won’t occur until the mailbox is already over quota.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">lmtp_strict_rfc2821:</span></code> 1</p>
 <blockquote>
-<div><p>By default, lmtpd will be strict (per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
+<div><p>By default, lmtpd will be strict (per <span class="target" id="index-9"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2821.html"><strong>RFC 2821</strong></a>) with regards to which
 envelope addresses are allowed.  If this option is set to false, 8bit
 characters in the local-part of envelope addresses are changed to ‘X’
 instead.  This is useful to avoid generating backscatter with
@@ -2201,7 +2206,7 @@ Allowed values: <em>standard</em>, <em>unified</em>, <em>replicated</em></p>
 headers.  The 8-bit characters are changed to `X’.  If
 <strong>reject8bit</strong> is enabled, setting <strong>munge8bit</strong> has no effect.
 (A proper solution to non-ASCII characters in headers is offered by
-<span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</p>
+<span class="target" id="index-10"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2047.html"><strong>RFC 2047</strong></a> and its predecessors.)</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">mupdate_connections_max:</span></code> 128</p>
 <blockquote>
@@ -2356,23 +2361,23 @@ notifications.</p>
 command line options:</p>
 <blockquote>
 <div><dl class="std option">
-<dt id="cmdoption-c">
-<code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">class</span></code><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-c">
+<span class="sig-name descname"><span class="pre">-c</span></span><span class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">class</span></span><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-p">
-<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">priority</span></code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">priority</span></span><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-u">
-<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">user</span></code><a class="headerlink" href="#cmdoption-u" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-u">
+<span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">user</span></span><a class="headerlink" href="#cmdoption-u" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-m">
-<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">mailbox</span></code><a class="headerlink" href="#cmdoption-m" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-m">
+<span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname">&#160;&#160;&#160; <span class="pre">mailbox</span></span><a class="headerlink" href="#cmdoption-m" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>And the notification message will be available on <em>stdin</em>.</p>
@@ -2657,7 +2662,7 @@ will either add or remove reverse ACL pointers from mailboxes.db</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">rfc2046_strict:</span></code> 0</p>
 <blockquote>
-<div><p>If enabled, imapd will be strict (per <span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
+<div><p>If enabled, imapd will be strict (per <span class="target" id="index-11"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2046.html"><strong>RFC 2046</strong></a>) when matching MIME
 boundary strings.  This means that boundaries containing other
 boundaries as substrings will be treated as identical.  Since
 enabling this option will break some messages created by Eudora 5.1
@@ -2668,14 +2673,14 @@ there is good reason to do otherwise.</p>
 <blockquote>
 <div><p>If enabled, imapd will parse any non-encoded character sequence in
 MIME header values as UTF8. This is useful for installations that
-either advertise the UTF8SMTP (<span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
+either advertise the UTF8SMTP (<span class="target" id="index-12"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5335.html"><strong>RFC 5335</strong></a>) extension or receive mails
 with improperly escaped UTF-8 byte sequences. It is recommended that
 this option is left disabled unless there is good reason to do
 otherwise.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">rfc3028_strict:</span></code> 1</p>
 <blockquote>
-<div><p>If enabled, Sieve will be strict (per <span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
+<div><p>If enabled, Sieve will be strict (per <span class="target" id="index-13"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3028.html"><strong>RFC 3028</strong></a>) with regards to
 which headers are allowed to be used in address and envelope tests.
 This means that only those headers which are defined to contain addresses
 will be allowed in address tests and only “to” and “from” will be
@@ -2772,7 +2777,7 @@ folders.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">search_fuzzy_always:</span></code> 0</p>
 <blockquote>
-<div><p>Whether to enable <span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
+<div><p>Whether to enable <span class="target" id="index-14"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6203.html"><strong>RFC 6203</strong></a> FUZZY search for all IMAP SEARCH. If turned
 on, search attributes will be searched using FUZZY search by default.
 If turned off, clients have to explicitly use the FUZZY search key to
 enable fuzzy search for regular SEARCH commands.</p>
@@ -2799,7 +2804,7 @@ of no value means search “forever” until other timeouts.</p>
 <blockquote>
 <div><p>When searching, should diacriticals be stripped from the search
 terms.  The default is “true”, a search for “hav” will match
-“Håvard”.  This is not <span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
+“Håvard”.  This is not <span class="target" id="index-15"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5051.html"><strong>RFC 5051</strong></a> compliant, but it backwards
 compatible, and may be preferred by some sites.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">search_skiphtml:</span></code> 0</p>
@@ -3018,7 +3023,7 @@ Allowed values: <em>skiplist</em>, <em>twoskip</em>, <em>lmdb</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">specialuse_extra:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Whitespace separated list of extra special-use attributes
-that can be set on a mailbox. <span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
+that can be set on a mailbox. <span class="target" id="index-16"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6154.html"><strong>RFC 6154</strong></a> currently lists
 what special-use attributes can be set. This allows
 extending that list in the future or adding your own
 if needed.</p>
@@ -3242,7 +3247,7 @@ minutes.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">imapidletimeout:</span></code> 0</p>
 <blockquote>
-<div><p>Timeout for idling clients (<span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a>) in minutes. If set to
+<div><p>Timeout for idling clients (<span class="target" id="index-17"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2177.html"><strong>RFC 2177</strong></a>) in minutes. If set to
 zero (the default) or less, the value of “timeout” will be
 used instead.</p>
 </div></blockquote>
@@ -3532,16 +3537,16 @@ on HTTP 1.1 using a RESTful architecture</p>
 <div><p>If enabled, use FastMail style sharing (oldschool full server paths)</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="see-also">
-<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p><strong>imapd(8)</strong>, <strong>pop3d(8)</strong>, <strong>nntpd(8)</strong>, <strong>lmtpd(8)</strong>,
 <strong>httpd(8)</strong>, <strong>timsieved(8)</strong>, <strong>idled(8)</strong>, <strong>notifyd(8)</strong>,
 <strong>deliver(8)</strong>, <strong>master(8)</strong>, <strong>ciphers(1)</strong></p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -3564,7 +3569,7 @@ on HTTP 1.1 using a RESTful architecture</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -3587,9 +3592,12 @@ on HTTP 1.1 using a RESTful architecture</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

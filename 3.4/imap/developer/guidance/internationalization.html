@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus IMAP Server: Internationalization &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,10 +788,10 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="imap-developer-guidance-internationalization"></span><div class="section" id="cyrus-imap-server-internationalization">
-<h1>Cyrus IMAP Server: Internationalization<a class="headerlink" href="#cyrus-imap-server-internationalization" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <span class="target" id="imap-developer-guidance-internationalization"></span><section id="cyrus-imap-server-internationalization">
+<h1>Cyrus IMAP Server: Internationalization<a class="headerlink" href="#cyrus-imap-server-internationalization" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus currently transcodes characters to a canonical UTF-8 form for
 searching. The base spec of IMAP4 only requires understanding multiple
 character sets to properly implement SEARCH. Since the base spec came
@@ -807,9 +812,9 @@ isn’t seen to be a major problem.</p>
 to refer to the 16-bit character set of the BMP, regardless of encoding.
 “Character”, unless otherwise specified, refers to a single Unicode
 character <code class="docutils literal notranslate"><span class="pre">ffff</span></code> or under.</p>
-</div>
-<div class="section" id="cyrus-canonical-form">
-<h2>cyrus canonical form<a class="headerlink" href="#cyrus-canonical-form" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cyrus-canonical-form">
+<h2>cyrus canonical form<a class="headerlink" href="#cyrus-canonical-form" title="Permalink to this heading">¶</a></h2>
 <p>Since when users search e-mail messages it’s much easier for them to
 eliminate false positives than realize there are hits that aren’t
 displayed, the Cyrus searching algorithm errs on the side of more
@@ -838,9 +843,9 @@ and very compact, thus somewhat intimidating. During compilation, Cyrus
 builds up a large number of tables (see <a class="reference external" href="#mkchartable">mkchartable</a>)
 and uses them so that it never has to consider more than a single octet
 at a time while outputting the Cyrus canonical form for an input string.</p>
-</div>
-<div class="section" id="external-interface">
-<h2>external interface<a class="headerlink" href="#external-interface" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="external-interface">
+<h2>external interface<a class="headerlink" href="#external-interface" title="Permalink to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">lib/charset.h</span></code> is the public interface for Cyrus lib clients to get
 character canonicalization and searching support. In contains the
 following functions:</p>
@@ -888,9 +893,9 @@ encoding <em>encoding</em>. <code class="docutils literal notranslate"><span cla
 not described here.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="the-translate-macro-using-the-transcoding-tables">
-<h2>the TRANSLATE macro: using the transcoding tables<a class="headerlink" href="#the-translate-macro-using-the-transcoding-tables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-translate-macro-using-the-transcoding-tables">
+<h2>the TRANSLATE macro: using the transcoding tables<a class="headerlink" href="#the-translate-macro-using-the-transcoding-tables" title="Permalink to this heading">¶</a></h2>
 <p>The external interface is implemented with the help of the <code class="docutils literal notranslate"><span class="pre">START</span></code> and
 <code class="docutils literal notranslate"><span class="pre">TRANSLATE</span></code> macros:</p>
 <dl class="simple">
@@ -916,8 +921,8 @@ translations followed by a control code or a series of control codes. In
 effect, the translation for a given octet is a mini-program that
 consists either of UTF-8 octets or control codes. One of the control
 codes RET, END, JSR, or JMP must occur in the 4 octet translation.</p>
-<div class="section" id="control-codes">
-<h3>control codes<a class="headerlink" href="#control-codes" title="Permalink to this headline">¶</a></h3>
+<section id="control-codes">
+<h3>control codes<a class="headerlink" href="#control-codes" title="Permalink to this heading">¶</a></h3>
 <p>Control codes are represented by uppercase US-ASCII characters since no
 uppercase characters can appear in the output translation (recall that
 Cyrus canonical form downcases). Any uppercase US-ASCII character
@@ -928,9 +933,9 @@ output.</p>
 <p>The names of control codes are actually C pre-processor defines to
 uppercase US-ASCII characters. As the mnenomics are easier to
 understand, I use them in discussing their semantics.</p>
-</div>
-<div class="section" id="control-code-reference">
-<h3>control code reference<a class="headerlink" href="#control-code-reference" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="control-code-reference">
+<h3>control code reference<a class="headerlink" href="#control-code-reference" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">TRANSLATE</span></code> recognizes the following “normal” control codes:</p>
 <dl>
 <dt>XLT</dt><dd><p>This is the first octet of the four octet sequence, indicating that
@@ -999,22 +1004,22 @@ characters and has an implicit jump to the 1st table of UTF-8.</p>
 <p>Finally, it’s useful to mention the special character <code class="docutils literal notranslate"><span class="pre">EMPTY</span></code> which is
 guaranteed not to match any character. It is also represented by an
 uppercase US-ASCII character.</p>
-</div>
-</div>
-<div class="section" id="searching-and-compiled-patterns">
-<h2>searching and compiled patterns<a class="headerlink" href="#searching-and-compiled-patterns" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="boyer-moore">
-<h3>boyer-moore<a class="headerlink" href="#boyer-moore" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="searching-and-compiled-patterns">
+<h2>searching and compiled patterns<a class="headerlink" href="#searching-and-compiled-patterns" title="Permalink to this heading">¶</a></h2>
+<section id="boyer-moore">
+<h3>boyer-moore<a class="headerlink" href="#boyer-moore" title="Permalink to this heading">¶</a></h3>
 <p>brief description of boyer-moore xxx</p>
-</div>
-<div class="section" id="cyrus-implementation">
-<h3>cyrus implementation<a class="headerlink" href="#cyrus-implementation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cyrus-implementation">
+<h3>cyrus implementation<a class="headerlink" href="#cyrus-implementation" title="Permalink to this heading">¶</a></h3>
 <p>why two arrays? us-ascii optimization, really kinda useless now xxx</p>
 <p>meta-data stored at the end xxx</p>
-</div>
-</div>
-<div class="section" id="generating-the-tables-mkchartable">
-<h2>generating the tables: <code class="docutils literal notranslate"><span class="pre">mkchartable</span></code><a class="headerlink" href="#generating-the-tables-mkchartable" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="generating-the-tables-mkchartable">
+<h2>generating the tables: <code class="docutils literal notranslate"><span class="pre">mkchartable</span></code><a class="headerlink" href="#generating-the-tables-mkchartable" title="Permalink to this heading">¶</a></h2>
 <p>The program <code class="docutils literal notranslate"><span class="pre">mkchartable</span></code> is used to generate the charset transcoding
 tables used by TRANSLATE. These tables are carefully constructed so no
 more than a single octet need be examined at a time; this octet results
@@ -1022,8 +1027,8 @@ in either an output stream of UTF-8 characters being generated or some
 sort of state change.</p>
 <p><code class="docutils literal notranslate"><span class="pre">mkchartable</span></code> uses three different sorts of input files to generate
 these tables. These files are located in the <code class="docutils literal notranslate"><span class="pre">lib/charset</span></code> directory.</p>
-<div class="section" id="charset-tables">
-<h3>charset tables<a class="headerlink" href="#charset-tables" title="Permalink to this headline">¶</a></h3>
+<section id="charset-tables">
+<h3>charset tables<a class="headerlink" href="#charset-tables" title="Permalink to this heading">¶</a></h3>
 <p>Each charset file maps a single charset to the corresponding Unicode
 characters. For the US-ASCII and ISO-8859-x character sets this is
 trivial: each input byte corresponds to a single Unicode character.
@@ -1054,9 +1059,9 @@ generated. A JMP instruction is generated by a transition of
 “default action” which is used for input bytes that are not otherwise
 defined for the mode. If the default action is not explicitly stated, it
 is a translation to EMPTY.</p>
-</div>
-<div class="section" id="unicode-data-table">
-<h3>unicode data table<a class="headerlink" href="#unicode-data-table" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unicode-data-table">
+<h3>unicode data table<a class="headerlink" href="#unicode-data-table" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">unidata2.txt</span></code> file is verbatim from the Unicode standard. More
 recent versions should be available <a class="reference external" href="http://www.unicode.org/xxx">from their
 website</a>. Each entry in the file
@@ -1080,51 +1085,51 @@ semicolons:</p>
 </ul>
 <p>In general, Cyrus uses the lower case equivalent if there is one, and
 the decomposed value otherwise.</p>
-</div>
-<div class="section" id="unicode-fixup-table">
-<h3>unicode fixup table<a class="headerlink" href="#unicode-fixup-table" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unicode-fixup-table">
+<h3>unicode fixup table<a class="headerlink" href="#unicode-fixup-table" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">unifix.txt</span></code> file contains Cyrus-specific mappings for characters.
 It overrides the <code class="docutils literal notranslate"><span class="pre">unidata2.txt</span></code> table. Each rule in the file is
 explained with a comment. It’s helpful to remember that the Unicode
 general categories starting with <code class="docutils literal notranslate"><span class="pre">Z</span></code> represent whitespace, and
 whitespace is always removed.</p>
-</div>
-<div class="section" id="generating-chartable-c">
-<h3>generating <code class="docutils literal notranslate"><span class="pre">chartable.c</span></code><a class="headerlink" href="#generating-chartable-c" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="generating-chartable-c">
+<h3>generating <code class="docutils literal notranslate"><span class="pre">chartable.c</span></code><a class="headerlink" href="#generating-chartable-c" title="Permalink to this heading">¶</a></h3>
 <p>how <code class="docutils literal notranslate"><span class="pre">mkchartable</span></code> works: collapses the encoding modes, the unicode
 translations, and other normalizations into the output tables described
 above xxx</p>
-</div>
-</div>
-<div class="section" id="for-the-future">
-<h2>for the future<a class="headerlink" href="#for-the-future" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sieve-acap-comparators">
-<h3>Sieve/ACAP comparators<a class="headerlink" href="#sieve-acap-comparators" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="adjustable-normalization">
-<h3>adjustable normalization?<a class="headerlink" href="#adjustable-normalization" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="for-the-future">
+<h2>for the future<a class="headerlink" href="#for-the-future" title="Permalink to this heading">¶</a></h2>
+<section id="sieve-acap-comparators">
+<h3>Sieve/ACAP comparators<a class="headerlink" href="#sieve-acap-comparators" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="adjustable-normalization">
+<h3>adjustable normalization?<a class="headerlink" href="#adjustable-normalization" title="Permalink to this heading">¶</a></h3>
 <p>The use of uppercase US-ASCII characters is one of the annoyances in
 trying to generalize the charset transcoding. If we continue to restrict
 the characters under consideration to the BMP, switching to UTF-8
 control codes that start 4 or 5 byte sequences is possible.</p>
 <p>Another possibility is to use a NUL character as an escape sequence,
 though this increases the size of each control code by 1 octet.</p>
-</div>
-<div class="section" id="handle-2-octet-input-characters">
-<h3>handle &gt;2 octet input characters<a class="headerlink" href="#handle-2-octet-input-characters" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="make-utf-8-more-regular">
-<h3>make UTF-8 more regular<a class="headerlink" href="#make-utf-8-more-regular" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="handle-2-octet-input-characters">
+<h3>handle &gt;2 octet input characters<a class="headerlink" href="#handle-2-octet-input-characters" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="make-utf-8-more-regular">
+<h3>make UTF-8 more regular<a class="headerlink" href="#make-utf-8-more-regular" title="Permalink to this heading">¶</a></h3>
 <p>consider whether we really need U83, U83_2, U83_3. also consider
 changing <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">U83,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0</span> <span class="pre">}</span></code> translations to <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">U83,</span> <span class="pre">JMP,</span> <span class="pre">0,</span> <span class="pre">1</span> <span class="pre">}</span></code>
 sequences to at least eliminate the implicit jump.</p>
-</div>
-<div class="section" id="require-minimal-utf-8-characters">
-<h3>require minimal UTF-8 characters<a class="headerlink" href="#require-minimal-utf-8-characters" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="references">
-<h2>references<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="require-minimal-utf-8-characters">
+<h3>require minimal UTF-8 characters<a class="headerlink" href="#require-minimal-utf-8-characters" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="references">
+<h2>references<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <p>xxx</p>
 <ul class="simple">
 <li><p>[UNICODE] Unicode / ISO 10646</p></li>
@@ -1133,8 +1138,8 @@ sequences to at least eliminate the implicit jump.</p>
 <li><p>[BM] boyer-moore</p></li>
 <li><p>[ACAP] the comparators reference. see section XXX of RFC 2244.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1157,7 +1162,7 @@ sequences to at least eliminate the implicit jump.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Mar 06 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1180,9 +1185,12 @@ sequences to at least eliminate the implicit jump.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

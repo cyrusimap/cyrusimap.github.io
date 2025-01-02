@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>When is What ... Deleted, Expired, Expunged or Purged? &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,8 +789,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="when-is-what-deleted-expired-expunged-or-purged">
-<span id="imap-admin-deleted-expired-expunged-purged"></span><h1>When is What ... Deleted, Expired, Expunged or Purged?<a class="headerlink" href="#when-is-what-deleted-expired-expunged-or-purged" title="Permalink to this headline">¶</a></h1>
+  <section id="when-is-what-deleted-expired-expunged-or-purged">
+<span id="imap-admin-deleted-expired-expunged-purged"></span><h1>When is What ... Deleted, Expired, Expunged or Purged?<a class="headerlink" href="#when-is-what-deleted-expired-expunged-or-purged" title="Permalink to this heading">¶</a></h1>
 <p>The terminology sometimes plays administrators for fools -- which they
 are obviously not -- but an article clarifying what it is that is meant
 by either term of Deleted, Expired, Expunged or Purged goes a long way.</p>
@@ -814,8 +819,8 @@ autonomously.</p>
 but the message file is removed from the filesystem, or in the
 context of folders, the mail folder is removed from the filesystem.</p>
 </div></blockquote>
-<div class="section" id="users-and-imap-clients-deleting-messages">
-<h2>Users and IMAP Clients Deleting Messages<a class="headerlink" href="#users-and-imap-clients-deleting-messages" title="Permalink to this headline">¶</a></h2>
+<section id="users-and-imap-clients-deleting-messages">
+<h2>Users and IMAP Clients Deleting Messages<a class="headerlink" href="#users-and-imap-clients-deleting-messages" title="Permalink to this heading">¶</a></h2>
 <p>When a <strong>message</strong> is deleted by a user, this means that the user's IMAP
 client has in fact <em>flagged</em> the message with <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code>, or
 alternatively, the IMAP client has moved the message to a trash folder
@@ -823,8 +828,8 @@ alternatively, the IMAP client has moved the message to a trash folder
 <p>What is the exact behavior depends on the IMAP client software, and if
 so allowed, the user's preferences specified within the IMAP client
 software, and the Cyrus IMAP server configuration.</p>
-<div class="section" id="flagged-as-deleted">
-<h3>Flagged As <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code><a class="headerlink" href="#flagged-as-deleted" title="Permalink to this headline">¶</a></h3>
+<section id="flagged-as-deleted">
+<h3>Flagged As <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code><a class="headerlink" href="#flagged-as-deleted" title="Permalink to this heading">¶</a></h3>
 <p>When a message is merely flagged with <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code>, the message itself
 as such remains available to the IMAP client, but the IMAP client used
 may not make it possible for the user to view a list of messages flagged
@@ -835,7 +840,7 @@ may be on its way.</p>
 resides in the same IMAP folder, and still resides on the filesystem.</p>
 <p>Only when the user (or the user's IMAP client as is often the case)
 issues an <code class="docutils literal notranslate"><span class="pre">EXPUNGE</span></code> against the folder, or a <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">EXPUNGE</span></code> against
-the message <a class="footnote-reference brackets" href="#id2" id="id1">1</a>, will the message be actually removed -- at least from
+the message <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, will the message be actually removed -- at least from
 the user's perspective. It then becomes irretrievable even if the IMAP
 client allows the listing of messages flagged with <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code>.</p>
 <p>Issuing an <code class="docutils literal notranslate"><span class="pre">EXPUNGE</span></code> may come in the form of a button to &quot;compact&quot; the
@@ -875,9 +880,9 @@ filesystem too quickly for anyone to recover.</p>
 sessions keeping the mailbox open. Cyrus IMAP ensures no mailbox
 records disappear from underneath an existing open mailbox session.</p>
 </div>
-</div>
-<div class="section" id="moved-to-trash-folder">
-<h3>Moved to Trash Folder<a class="headerlink" href="#moved-to-trash-folder" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="moved-to-trash-folder">
+<h3>Moved to Trash Folder<a class="headerlink" href="#moved-to-trash-folder" title="Permalink to this heading">¶</a></h3>
 <p>Should the IMAP client normally, or allow the user to specify through
 preferences, that messages being deleted should be moved in to a trash
 folder, then the user will usually be able to recover from accidental
@@ -888,17 +893,17 @@ usually counts towards the user's resource usage (a.k.a.
 <a class="reference internal" href="../../concepts/features/quota.html#imap-features-quota"><span class="std std-ref">Quota</span></a>); many IMAP clients therefore allow the user
 to specify a preference to empty the trash folder at the end of a
 session, or otherwise periodically.</p>
-<p>If the IMAP client does not support <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6851.html"><strong>RFC 6851</strong></a> (for <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>), the
+<p>If the IMAP client does not support <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6851.html"><strong>RFC 6851</strong></a> (for <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>), the
 client may choose to <code class="docutils literal notranslate"><span class="pre">COPY</span></code> the message then flag the original with
 <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code>, then <code class="docutils literal notranslate"><span class="pre">EXPUNGE</span></code> the folder or <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">EXPUNGE</span></code>
-(<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4315.html"><strong>RFC 4315</strong></a>) the message.</p>
+(<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4315.html"><strong>RFC 4315</strong></a>) the message.</p>
 <p>This does not fare well in situations where the user is over quota,
 though, and (other) messages will need to be flagged as <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code> and
 expunged, and/or folders within the quota root hierarchy will need to be
 deleted.</p>
-</div>
-<div class="section" id="expunged-messages">
-<h3>Expunged Messages<a class="headerlink" href="#expunged-messages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="expunged-messages">
+<h3>Expunged Messages<a class="headerlink" href="#expunged-messages" title="Permalink to this heading">¶</a></h3>
 <p>Messages in expunged folders, or messages that have been expunged
 individually, can not autonomously be restored by a user, and are gone
 permanently unless <code class="docutils literal notranslate"><span class="pre">expunge_mode:</span> <span class="pre">delayed</span></code> is used.</p>
@@ -923,10 +928,10 @@ purge message files from the filesystem only after 69 days: two
 months plus the maximum margin for a first Saturday to Sunday night
 of the week.</p>
 </div>
-</div>
-</div>
-<div class="section" id="deleting-folders">
-<h2>Deleting Folders<a class="headerlink" href="#deleting-folders" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="deleting-folders">
+<h2>Deleting Folders<a class="headerlink" href="#deleting-folders" title="Permalink to this heading">¶</a></h2>
 <p>When folders are deleted the IMAP client tends to either delete the
 folder, or rename the folder to a hierarchy in a trash folder.</p>
 <div class="admonition note">
@@ -953,9 +958,9 @@ the deleted prefix, to be removed later by
 immediately. Note that for large folders, this can be a
 comparatively expensive operation.</p>
 </div></blockquote>
-</div>
-<div class="section" id="where-are-the-messages">
-<h2>Where are the Messages?<a class="headerlink" href="#where-are-the-messages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="where-are-the-messages">
+<h2>Where are the Messages?<a class="headerlink" href="#where-are-the-messages" title="Permalink to this heading">¶</a></h2>
 <p>This part of the documentation assumes that you have run with the
 default settings of <code class="docutils literal notranslate"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code> and
 <code class="docutils literal notranslate"><span class="pre">expunge_mode:</span> <span class="pre">delayed</span></code>.</p>
@@ -982,7 +987,7 @@ and can be retrieved using <a class="reference internal" href="../manpages/syste
 </li>
 <li><p>The message was moved in to the trash folder, implying the original
 message is expunged from the source folder -- through <code class="docutils literal notranslate"><span class="pre">UID</span> <span class="pre">MOVE</span></code>
-or <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6851.html"><strong>RFC 6851</strong></a> support <em>since version 2.5.0</em>.</p>
+or <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6851.html"><strong>RFC 6851</strong></a> support <em>since version 2.5.0</em>.</p>
 <p>The trash folder may or may not have been &quot;emptied&quot;.</p>
 <p>Result: A copy of the message still exists in the original folder
 and can be retrieved using <a class="reference internal" href="../manpages/systemcommands/unexpunge.html#imap-reference-manpages-systemcommands-unexpunge"><span class="std std-ref">unexpunge</span></a>.</p>
@@ -999,14 +1004,15 @@ namespace.</p>
 </li>
 </ul>
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Only if the IMAP client supports <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4315.html"><strong>RFC 4315</strong></a>, the IMAP UIDPLUS
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Only if the IMAP client supports <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4315.html"><strong>RFC 4315</strong></a>, the IMAP UIDPLUS
 Extension.</p>
-</dd>
-</dl>
-</div>
-</div>
+</aside>
+</aside>
+</section>
+</section>
 
 
           </div>
@@ -1029,7 +1035,7 @@ Extension.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1052,9 +1058,12 @@ Extension.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

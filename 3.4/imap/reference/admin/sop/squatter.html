@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Using Squatter for Faster IMAP SEARCH &mdash; Cyrus IMAP 3.4.9 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,9 +790,9 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="using-squatter-for-faster-imap-search">
-<h1>Using Squatter for Faster IMAP SEARCH<a class="headerlink" href="#using-squatter-for-faster-imap-search" title="Permalink to this headline">¶</a></h1>
-<p>IMAP SEARCH, as described in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a>, is a IMAP4 (Rev1) command issued by
+  <section id="using-squatter-for-faster-imap-search">
+<h1>Using Squatter for Faster IMAP SEARCH<a class="headerlink" href="#using-squatter-for-faster-imap-search" title="Permalink to this heading">¶</a></h1>
+<p>IMAP SEARCH, as described in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3501.html"><strong>RFC 3501</strong></a>, is a IMAP4 (Rev1) command issued by
 the client, but executed on the server. The Cyrus IMAP server will search the
 mailbox for the content matching the search command issued. This may be an
 intensive operation if executed on large mailboxes, and may therefor delay the
@@ -795,15 +800,15 @@ response to the client.</p>
 <p>To significantly speed up the searching, Cyrus IMAP can create a cache of
 message contents and meta-data using cyrus-squatter(8). This chapter explains
 how to generate and maintain these caches.</p>
-<div class="section" id="squatter-invocation">
-<h2>Squatter Invocation<a class="headerlink" href="#squatter-invocation" title="Permalink to this headline">¶</a></h2>
+<section id="squatter-invocation">
+<h2>Squatter Invocation<a class="headerlink" href="#squatter-invocation" title="Permalink to this heading">¶</a></h2>
 <p>Consider the following implications of running cyrus-squatter;</p>
 <ul class="simple">
 <li><p>Squatter creates the search index from all messages in the mailbox</p></li>
 </ul>
-</div>
-<div class="section" id="generating-the-search-indexes">
-<h2>Generating the Search Indexes<a class="headerlink" href="#generating-the-search-indexes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="generating-the-search-indexes">
+<h2>Generating the Search Indexes<a class="headerlink" href="#generating-the-search-indexes" title="Permalink to this heading">¶</a></h2>
 <p>To generate the search index for all mailboxes, issue the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ squatter -v
 </pre></div>
@@ -811,8 +816,8 @@ how to generate and maintain these caches.</p>
 <p>While the Cyrus IMAP server now has the search index available for the mailbox
 contents, it does not automatically update the search index with new messages
 coming in.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -835,7 +840,7 @@ coming in.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Jul 17 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -858,9 +863,12 @@ coming in.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

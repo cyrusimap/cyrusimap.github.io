@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>RSS Feeds &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -760,22 +765,22 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="rss-feeds">
-<span id="rss"></span><h1>RSS Feeds<a class="headerlink" href="#rss-feeds" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-rss-feeds">
-<h2>About RSS Feeds<a class="headerlink" href="#about-rss-feeds" title="Permalink to this headline">¶</a></h2>
+  <section id="rss-feeds">
+<span id="rss"></span><h1>RSS Feeds<a class="headerlink" href="#rss-feeds" title="Permalink to this heading">¶</a></h1>
+<section id="about-rss-feeds">
+<h2>About RSS Feeds<a class="headerlink" href="#about-rss-feeds" title="Permalink to this heading">¶</a></h2>
 <p>Use the RSS module to allow read-only access to some mailboxes over RSS.</p>
 <p>An authenticated user can see the list of available mailboxes at the <cite>/rss/</cite>
 URL on the Cyrus server. The mailbox list for RSS is limited to only the
 mailboxes the RSS module has been configured to expose <strong>and</strong> the mailboxes
 the authenticated user has permission to see, according to the normal mailbox
 <a class="reference internal" href="../../../reference/admin/access-control.html#imap-admin-access-control-lists"><span class="std std-ref">ACLs</span></a>.</p>
-</div>
-<div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="list-of-mailboxes-rss-feeds">
-<h3>List of mailboxes: rss_feeds<a class="headerlink" href="#list-of-mailboxes-rss-feeds" title="Permalink to this headline">¶</a></h3>
-<div class="sidebar">
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<section id="list-of-mailboxes-rss-feeds">
+<h3>List of mailboxes: rss_feeds<a class="headerlink" href="#list-of-mailboxes-rss-feeds" title="Permalink to this heading">¶</a></h3>
+<aside class="sidebar">
 <p class="sidebar-title">rss_feeds</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -789,7 +794,7 @@ have their messages available via RSS.  If not set, a default
 wildmat of “*” (ALL mailboxes) will be used.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>The list of available RSS feeds can be obtained by clients by accessing the
 <code class="docutils literal notranslate"><span class="pre">/rss/</span></code> URL on the Cyrus server.</p>
 <p>The rss_feeds option uses the
@@ -809,10 +814,10 @@ rss-cool and rss-important will be included, for example.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*,!user</span></code> - will serve all shared mailboxes, but no personal mailboxes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> - will serve all shared and personal mailboxes.</p></li>
 </ul>
-</div>
-<div class="section" id="display-of-mailbox-list-rss-feedlist-template">
-<h3>Display of mailbox list: rss_feedlist_template<a class="headerlink" href="#display-of-mailbox-list-rss-feedlist-template" title="Permalink to this headline">¶</a></h3>
-<div class="sidebar">
+</section>
+<section id="display-of-mailbox-list-rss-feedlist-template">
+<h3>Display of mailbox list: rss_feedlist_template<a class="headerlink" href="#display-of-mailbox-list-rss-feedlist-template" title="Permalink to this heading">¶</a></h3>
+<aside class="sidebar">
 <p class="sidebar-title">rss_feedlist_template</p>
 <blockquote>
 <div><p><em>This shows the default value: change it in imapd.conf to suit your needs.</em></p>
@@ -830,7 +835,7 @@ feeds based on the HTML template will be accessible at the “/rss”
 URL on the server.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
+</aside>
 <p>By default, the server will present the list as a
 simple unordered list in an HTML document. To customize the look and feel of the
 feed list, the <code class="docutils literal notranslate"><span class="pre">rss_feedlist_template</span></code> option can be used to point to a HTML
@@ -841,9 +846,9 @@ required contents of this custom file.</p>
 <p>Note that for sites running Cyrus Murder, <code class="docutils literal notranslate"><span class="pre">rss_feedlist_template</span></code> only needs
 to be set on frontend servers, since only those servers have the complete
 mailbox list.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -866,7 +871,7 @@ mailbox list.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -889,9 +894,12 @@ mailbox list.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

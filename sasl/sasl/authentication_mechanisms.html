@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Authentication Mechanisms &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,44 +488,44 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="authentication-mechanisms">
-<span id="id1"></span><h1>Authentication Mechanisms<a class="headerlink" href="#authentication-mechanisms" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="mechanisms">
-<h2>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="anonymous">
-<h3>ANONYMOUS<a class="headerlink" href="#anonymous" title="Permalink to this headline">¶</a></h3>
+  <section id="authentication-mechanisms">
+<span id="id1"></span><h1>Authentication Mechanisms<a class="headerlink" href="#authentication-mechanisms" title="Permalink to this heading">¶</a></h1>
+<section id="mechanisms">
+<h2>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this heading">¶</a></h2>
+<section id="anonymous">
+<h3>ANONYMOUS<a class="headerlink" href="#anonymous" title="Permalink to this heading">¶</a></h3>
 <p>This mechanism does not require the client to authenticate or provide any information.</p>
-<p>Defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2245.html"><strong>RFC 2245</strong></a></p>
-</div>
-<div class="section" id="external">
-<h3>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
+<p>Defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2245.html"><strong>RFC 2245</strong></a></p>
+</section>
+<section id="external">
+<h3>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this heading">¶</a></h3>
 <p>EXTERNAL is a SASL Mechanism that allows a client to request the server to use credentials established by means external to the mechanism to authenticate the client.</p>
-<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
+<p>SASL EXTERNAL means may be, for instance, IP Security (<span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4301.html"><strong>RFC 4301</strong></a>) or TLS services.
 In absence of a prior agreement between the client and the server, the client cannot make any assumption as to what SASL EXTERNAL means the server has used to obtain the client’s credentials, nor make an assumption as to the form of credentials.
 For example, the client cannot assume that the server will use the credentials the client has established via TLS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The server will not offer EXTERNAL unless other credentials are already available in the session, such as a client certificate used in establishing a TLS connection.</p>
 </div>
-</div>
-<div class="section" id="gs2">
-<h3>GS2<a class="headerlink" href="#gs2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="gs2">
+<h3>GS2<a class="headerlink" href="#gs2" title="Permalink to this heading">¶</a></h3>
 <p>Generic Security Service Application Program Interface (GSS-API).
 The GS2 mechanism family offers a number of improvements over the previous <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">Configuring GSSAPI and Cyrus SASL</span></a> mechanism.</p>
-<p>Defined in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
-</div>
-<div class="section" id="gssapi">
-<span id="mech-gssapi"></span><h3>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this headline">¶</a></h3>
+<p>Defined in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5801.html"><strong>RFC 5801</strong></a></p>
+</section>
+<section id="gssapi">
+<span id="mech-gssapi"></span><h3>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this heading">¶</a></h3>
 <p>Not sure how to get GSSAPI going? Check out our <a class="reference internal" href="gssapi.html#gssapi"><span class="std std-ref">GSSAPI configuration guide</span></a>.</p>
-</div>
-<div class="section" id="gss-spnego">
-<h3>GSS-SPNEGO<a class="headerlink" href="#gss-spnego" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="gss-spnego">
+<h3>GSS-SPNEGO<a class="headerlink" href="#gss-spnego" title="Permalink to this heading">¶</a></h3>
 <p>This is a Microsoft specific customization of GSSAPI.</p>
-<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
-</div>
-<div class="section" id="otp">
-<h3>OTP<a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h3>
-<p>OTP is the One-Time Password system described in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2289.html"><strong>RFC 2289</strong></a>.
+<p>Described in the <a class="reference external" href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e1cbe214-d73b-4c58-aad2-bee399ccdfb8">Microsoft documentation</a> and <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4178.html"><strong>RFC 4178</strong></a></p>
+</section>
+<section id="otp">
+<h3>OTP<a class="headerlink" href="#otp" title="Permalink to this heading">¶</a></h3>
+<p>OTP is the One-Time Password system described in <span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2289.html"><strong>RFC 2289</strong></a>.
 This mechanism is secure against replay attacks and also avoids storing password or password equivalents on the server.
 Only a digest of a seed and a passphrase is ever transmitted across the network.</p>
 <blockquote>
@@ -530,9 +535,9 @@ Only a digest of a seed and a passphrase is ever transmitted across the network.
 <li><p>OTP-SHA1</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="passdss">
-<h3>PASSDSS<a class="headerlink" href="#passdss" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="passdss">
+<h3>PASSDSS<a class="headerlink" href="#passdss" title="Permalink to this heading">¶</a></h3>
 <p>DSS Secured Password Authentication Mechanism (PASSDSS)</p>
 <p>Documented in a <a class="reference external" href="https://tools.ietf.org/html/draft-newman-sasl-passdss">RFC Draft: draft-newman-sasl-passdss</a></p>
 <blockquote>
@@ -540,30 +545,30 @@ Only a digest of a seed and a passphrase is ever transmitted across the network.
 <li><p>PASSDSS-3DES-1</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="plain">
-<span id="mech-plain"></span><h3>PLAIN<a class="headerlink" href="#plain" title="Permalink to this headline">¶</a></h3>
-<p>Defined in <span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
+</section>
+<section id="plain">
+<span id="mech-plain"></span><h3>PLAIN<a class="headerlink" href="#plain" title="Permalink to this heading">¶</a></h3>
+<p>Defined in <span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
 <p>This is the simplest mechanism.
 The users authentication details are transmitted in plain text.
 This mechanism should not be provided unless an encrypted link is in use - typically after TLS has been negotiated.</p>
-</div>
-<div class="section" id="scram">
-<h3>SCRAM<a class="headerlink" href="#scram" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="scram">
+<h3>SCRAM<a class="headerlink" href="#scram" title="Permalink to this heading">¶</a></h3>
 <p>Salted Challenge Response Authentication Mechanism (SCRAM) is a family of modern, password-based challenge–response authentication mechanisms providing authentication of a user to a server.</p>
-<p>Defined in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
+<p>Defined in <span class="target" id="index-6"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5802.html"><strong>RFC 5802</strong></a></p>
 <blockquote>
 <div><ul class="simple">
 <li><p>SCRAM-SHA-1(-PLUS)</p></li>
 <li><p>SCRAM-SHA-224(-PLUS)</p></li>
-<li><p>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7677.html"><strong>RFC 7677</strong></a>)</p></li>
+<li><p>SCRAM-SHA-256(-PLUS) (<span class="target" id="index-7"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7677.html"><strong>RFC 7677</strong></a>)</p></li>
 <li><p>SCRAM-SHA-384(-PLUS)</p></li>
 <li><p>SCRAM-SHA-512(-PLUS)</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="srp">
-<h3>SRP<a class="headerlink" href="#srp" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="srp">
+<h3>SRP<a class="headerlink" href="#srp" title="Permalink to this heading">¶</a></h3>
 <p>The Secure Remote Password (SRP) is a password-based, zero-knowledge,
 authentication and key-exchange protocol.
 It has good performance, is not plaintext-equivalent and maintains perfect forward secrecy.
@@ -575,34 +580,17 @@ It provides authentication (optionally mutual authentication) and the negotiatio
 <li><p>confidentiality=des-ofb,des-ede-ofb,aes-128-ofb,bf-ofb,cast5-ofb,idea-ofb</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="non-sasl-authentication">
-<h3>Non-SASL Authentication<a class="headerlink" href="#non-sasl-authentication" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+</section>
+<section id="non-sasl-authentication">
+<h3>Non-SASL Authentication<a class="headerlink" href="#non-sasl-authentication" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>This table shows what security flags and features are supported by each
 of the mechanisms provided by the Cyrus SASL Library.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 7%" />
-<col style="width: 6%" />
-<col style="width: 7%" />
-<col style="width: 6%" />
-<col style="width: 4%" />
-<col style="width: 6%" />
-<col style="width: 8%" />
-<col style="width: 10%" />
-<col style="width: 7%" />
-<col style="width: 5%" />
-<col style="width: 4%" />
-<col style="width: 4%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td></td>
 <td rowspan="2"><p>MAX SSF</p></td>
@@ -809,8 +797,8 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -833,7 +821,7 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -857,9 +845,12 @@ of the mechanisms provided by the Cyrus SASL Library.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

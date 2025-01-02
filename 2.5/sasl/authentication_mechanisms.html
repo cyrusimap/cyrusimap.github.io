@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SASL Authentication Mechanisms &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../imap/introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../imap/installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#sasl">SASL</a></li>
@@ -797,54 +802,54 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="sasl-authentication-mechanisms">
-<h1>SASL Authentication Mechanisms<a class="headerlink" href="#sasl-authentication-mechanisms" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="external">
-<h2>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="anonymous">
-<h2>ANONYMOUS<a class="headerlink" href="#anonymous" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="plain">
-<h2>PLAIN<a class="headerlink" href="#plain" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="login">
-<h2>LOGIN<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="cram-md5">
-<h2>CRAM-MD5<a class="headerlink" href="#cram-md5" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="digest-md5">
-<h2>DIGEST-MD5<a class="headerlink" href="#digest-md5" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="scram-sha-1">
-<h2>SCRAM-SHA-1<a class="headerlink" href="#scram-sha-1" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="gssapi">
-<h2>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="gs2-krb5">
-<h2>GS2-KRB5<a class="headerlink" href="#gs2-krb5" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="gs2-iakerb">
-<h2>GS2-IAKERB<a class="headerlink" href="#gs2-iakerb" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="ntlm">
-<h2>NTLM<a class="headerlink" href="#ntlm" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="srp">
-<h2>SRP<a class="headerlink" href="#srp" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="pssdss">
-<h2>PSSDSS<a class="headerlink" href="#pssdss" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="otp">
-<h2>OTP<a class="headerlink" href="#otp" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="non-sasl-authentication">
-<h2>Non-SASL Authentication<a class="headerlink" href="#non-sasl-authentication" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+  <section id="sasl-authentication-mechanisms">
+<h1>SASL Authentication Mechanisms<a class="headerlink" href="#sasl-authentication-mechanisms" title="Permalink to this heading">¶</a></h1>
+<section id="external">
+<h2>EXTERNAL<a class="headerlink" href="#external" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="anonymous">
+<h2>ANONYMOUS<a class="headerlink" href="#anonymous" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="plain">
+<h2>PLAIN<a class="headerlink" href="#plain" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="login">
+<h2>LOGIN<a class="headerlink" href="#login" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="cram-md5">
+<h2>CRAM-MD5<a class="headerlink" href="#cram-md5" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="digest-md5">
+<h2>DIGEST-MD5<a class="headerlink" href="#digest-md5" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="scram-sha-1">
+<h2>SCRAM-SHA-1<a class="headerlink" href="#scram-sha-1" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="gssapi">
+<h2>GSSAPI<a class="headerlink" href="#gssapi" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="gs2-krb5">
+<h2>GS2-KRB5<a class="headerlink" href="#gs2-krb5" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="gs2-iakerb">
+<h2>GS2-IAKERB<a class="headerlink" href="#gs2-iakerb" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="ntlm">
+<h2>NTLM<a class="headerlink" href="#ntlm" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="srp">
+<h2>SRP<a class="headerlink" href="#srp" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="pssdss">
+<h2>PSSDSS<a class="headerlink" href="#pssdss" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="otp">
+<h2>OTP<a class="headerlink" href="#otp" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="non-sasl-authentication">
+<h2>Non-SASL Authentication<a class="headerlink" href="#non-sasl-authentication" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
 
 
           </div>
@@ -867,7 +872,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -891,9 +896,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

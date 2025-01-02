@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Replication: Installation and Administration &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -785,14 +790,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="replication-installation-and-administration">
-<span id="replication"></span><h1>Replication: Installation and Administration<a class="headerlink" href="#replication-installation-and-administration" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+  <section id="replication-installation-and-administration">
+<span id="replication"></span><h1>Replication: Installation and Administration<a class="headerlink" href="#replication-installation-and-administration" title="Permalink to this heading">¶</a></h1>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../../architecture.html#architecture-replication"><span class="std std-ref">Overall structure of replication</span></a>.</p>
-</div>
-<div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>Host</dt><dd><p>A computer chassis, slot or cabinet.  A machine.</p>
 </dd>
@@ -813,16 +818,16 @@ replicated.</p>
 an instance of sync_server and to the resultant dataset.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="operating-modes">
-<h2>Operating Modes<a class="headerlink" href="#operating-modes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="operating-modes">
+<h2>Operating Modes<a class="headerlink" href="#operating-modes" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus replication supports two modes of operation: Rolling and
 Periodic. The difference is that rolling replication is a more or less
 continuous process whereas periodic replication occurs on demand,
 triggered by some manual or automated process such as
 <em class="manpage">cron(8)</em>.</p>
-<div class="section" id="rolling-replication">
-<h3>Rolling Replication<a class="headerlink" href="#rolling-replication" title="Permalink to this headline">¶</a></h3>
+<section id="rolling-replication">
+<h3>Rolling Replication<a class="headerlink" href="#rolling-replication" title="Permalink to this heading">¶</a></h3>
 <p>Rolling replication is enabled by setting <code class="docutils literal notranslate"><span class="pre">sync_log</span></code> to True in
 <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.  With <code class="docutils literal notranslate"><span class="pre">sync_log:</span> <span class="pre">true</span></code>, any process which
 alters the mail spool will update the <code class="docutils literal notranslate"><span class="pre">sync_log</span></code> files with details
@@ -847,23 +852,23 @@ This may be re-run as needed.</p>
 <p class="admonition-title">Note</p>
 <p>Please also see <a class="reference internal" href="#replication-other-uses"><span class="std std-ref">below for other uses of sync_log</span></a>.</p>
 </div>
-</div>
-<div class="section" id="periodic-replication">
-<h3>Periodic Replication<a class="headerlink" href="#periodic-replication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="periodic-replication">
+<h3>Periodic Replication<a class="headerlink" href="#periodic-replication" title="Permalink to this heading">¶</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">sync_log</span></code> set to the default False, replication must be
 triggered either by manually running <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a>, or by
 doing so via <code class="docutils literal notranslate"><span class="pre">cron</span></code> or an entry in <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
 <p>In either event, command line switches control the operation of
 <code class="docutils literal notranslate"><span class="pre">sync_client</span></code>.</p>
 <p>Once the process completes its work, it will exit.</p>
-</div>
-<div class="section" id="idempotency">
-<h3>Idempotency<a class="headerlink" href="#idempotency" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="idempotency">
+<h3>Idempotency<a class="headerlink" href="#idempotency" title="Permalink to this heading">¶</a></h3>
 <p>Synchronization itself is idempotent in either mode, so log files may
 be “replayed” without concern of damage to the replica’s mail spools.</p>
-</div>
-<div class="section" id="sync-chains">
-<h3>Sync Chains<a class="headerlink" href="#sync-chains" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sync-chains">
+<h3>Sync Chains<a class="headerlink" href="#sync-chains" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus supports chained replication, in which one replica replicates to
 another.  I.e. A replicates to B; B replicates to C.  If you wish to
 use this approach, please see the <code class="docutils literal notranslate"><span class="pre">sync_log_chain</span></code> setting:</p>
@@ -876,10 +881,10 @@ chaining of replicas.  Use this on ‘B’ for A =&gt; B =&gt; C replication lay
 </div></blockquote>
 <p>Note that sync_log_chain is to be set on the middle server(s) in a
 chain, not on the first or last.</p>
-</div>
-</div>
-<div class="section" id="transport">
-<h2>Transport<a class="headerlink" href="#transport" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="transport">
+<h2>Transport<a class="headerlink" href="#transport" title="Permalink to this heading">¶</a></h2>
 <p>Older versions (pre-3.0) of Cyrus used the dedicated <code class="docutils literal notranslate"><span class="pre">csync</span></code>
 transport – typically over TCP port 2005 – and server process –
 <a class="reference internal" href="../../manpages/systemcommands/sync_server.html#std-cyrusman-sync_server-8">sync_server(8)</a> – for replication. This is no longer
@@ -898,9 +903,9 @@ sync_client will only use csync.  Prefix with a channel name to
 apply only for that channel</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <p>One must <a class="reference internal" href="../../../developer/compiling.html#compiling"><span class="std std-ref">build Cyrus IMAPd</span></a> with the
 <code class="docutils literal notranslate"><span class="pre">--enable-replication</span></code> configure option. This builds the replication
 client/server applications and utilities.</p>
@@ -910,8 +915,8 @@ client/server applications and utilities.</p>
 separate package for replication support.  For example, on Debian
 and derived distros, install the <code class="docutils literal notranslate"><span class="pre">cyrus-replication</span></code> package.</p>
 </div>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>At least one Cyrus IMAP server instance to be the <strong>master</strong>.</p></li>
 <li><p>At least one Cyrus IMAP server instance to be the <strong>replica</strong>.</p></li>
@@ -921,9 +926,9 @@ and derived distros, install the <code class="docutils literal notranslate"><spa
 <p>Sample configurations for both “master” and “replica” instances are
 included in the standard distribution.</p>
 </div>
-</div>
-<div class="section" id="replica-server-configuration">
-<h3>Replica server configuration<a class="headerlink" href="#replica-server-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="replica-server-configuration">
+<h3>Replica server configuration<a class="headerlink" href="#replica-server-configuration" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>replica</strong> is a standalone server instance which listens for and
 processes synchronization messages from a single <strong>master</strong> server. The
 replica server needs to be configured to accept synchronization
@@ -966,9 +971,9 @@ the following in the SERVICES section of <a class="reference internal" href="../
 </li>
 <li><p>Start/restart <code class="docutils literal notranslate"><span class="pre">/usr/cyrus/bin/master</span></code>.</p></li>
 </ol>
-</div>
-<div class="section" id="master-server-configuration">
-<h3>Master server configuration<a class="headerlink" href="#master-server-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="master-server-configuration">
+<h3>Master server configuration<a class="headerlink" href="#master-server-configuration" title="Permalink to this heading">¶</a></h3>
 <p>The <strong>master</strong> server is a standalone or backend Cyrus IMAP server
 instance which is actively serving mailboxes to clients. This server
 needs to be configured to synchronize its mailstore with a <strong>replica</strong>
@@ -1018,9 +1023,9 @@ or specify the default “” (the two-character string U+22 U+22).</p>
 <p>Add invocation specifications to <a class="reference internal" href="../../manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> to spawn
 <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> as desired (for each channel used) as
 described below in Rolling Replication or Periodic Replication.</p>
-</div>
-<div class="section" id="compression">
-<h3>Compression<a class="headerlink" href="#compression" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="compression">
+<h3>Compression<a class="headerlink" href="#compression" title="Permalink to this heading">¶</a></h3>
 <p>If one runs replication over a WAN link, the trade-off between
 bandwidth and CPU usage will tilt strongly in favour of enabling
 compression to save bandwidth at a slight increase in CPU cost.  Set
@@ -1033,9 +1038,9 @@ spec in <a class="reference internal" href="../../manpages/configs/cyrus.conf.ht
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">syncclient</span>       <span class="n">cmd</span><span class="o">=</span><span class="s2">&quot;/usr/cyrus/bin/sync_client -r -z&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="rolling-replication-configuration">
-<h3>Rolling Replication Configuration<a class="headerlink" href="#rolling-replication-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rolling-replication-configuration">
+<h3>Rolling Replication Configuration<a class="headerlink" href="#rolling-replication-configuration" title="Permalink to this heading">¶</a></h3>
 <p><strong>Rolling Replication</strong> means that the master instance continuously
 synchronizes itself with a replica.</p>
 <p>To configure rolling replication, perform the following:</p>
@@ -1071,9 +1076,9 @@ the command line:</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="terminating-rolling-replication">
-<h3>Terminating Rolling Replication<a class="headerlink" href="#terminating-rolling-replication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="terminating-rolling-replication">
+<h3>Terminating Rolling Replication<a class="headerlink" href="#terminating-rolling-replication" title="Permalink to this heading">¶</a></h3>
 <p>To be able to stop rolling replication at any time, configure the
 <code class="docutils literal notranslate"><span class="pre">sync_shutdown_file</span></code> option in <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> to point to
 a non-existant file, the appearance of this file will trigger a
@@ -1081,17 +1086,17 @@ shutdown of a <a class="reference internal" href="../../manpages/systemcommands/
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sync_shutdown_file</span><span class="p">:</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">syncstop</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tweaking-rolling-replication">
-<h3>Tweaking Rolling Replication<a class="headerlink" href="#tweaking-rolling-replication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tweaking-rolling-replication">
+<h3>Tweaking Rolling Replication<a class="headerlink" href="#tweaking-rolling-replication" title="Permalink to this heading">¶</a></h3>
 <p>The default frequency of replication runs is 3 seconds.  Lengthening
 this produces higher efficiency at the cost of slightly more stale data
 on the replica.  Alter this via the sync_repeat_interval in
 <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> or by using the “-d” argument in the
 invocation of <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a>.</p>
-</div>
-<div class="section" id="periodic-replication-configuration">
-<h3>Periodic Replication Configuration<a class="headerlink" href="#periodic-replication-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="periodic-replication-configuration">
+<h3>Periodic Replication Configuration<a class="headerlink" href="#periodic-replication-configuration" title="Permalink to this heading">¶</a></h3>
 <p>In Periodic Replication the sync_client instance must be spawned
 from time to time, causing replication to start at that time.  This may
 be handled via a <em class="manpage">cron(8)</em> job, or by adding an entry to the
@@ -1116,9 +1121,9 @@ mailboxes are synced.  As the man page <a class="reference internal" href="../..
 notes, “… this could be considered a bug and maybe it should do
 those mailboxes independently.”</p>
 </div>
-</div>
-<div class="section" id="tweaking-replication">
-<h3>Tweaking Replication<a class="headerlink" href="#tweaking-replication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tweaking-replication">
+<h3>Tweaking Replication<a class="headerlink" href="#tweaking-replication" title="Permalink to this heading">¶</a></h3>
 <p>You may control the number of messages replicated in each batch, via
 the <code class="docutils literal notranslate"><span class="pre">sync_batchsize</span></code> setting:</p>
 <blockquote>
@@ -1129,10 +1134,10 @@ Default is 8192.  If there are more than this many messages appended
 to the mailbox, generate a synthetic partial state and send that.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="channels">
-<span id="replication-channels"></span><h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="channels">
+<span id="replication-channels"></span><h2>Channels<a class="headerlink" href="#channels" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus replication scheme is very flexible, and supports meshes in
 which masters running on various hosts may replicate to instances on
 other hosts.  This is achieved by use of the Channels feature of the
@@ -1189,9 +1194,9 @@ exercise:</p>
 <p>Again, this is just an example for illustration.  The system provides so
 much flexibility, and one can combine channels with chaining to achieve
 even more.</p>
-</div>
-<div class="section" id="other-considerations">
-<span id="replication-other-uses"></span><h2>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-considerations">
+<span id="replication-other-uses"></span><h2>Other Considerations<a class="headerlink" href="#other-considerations" title="Permalink to this heading">¶</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This section is currently under development.  If you believe you
@@ -1212,11 +1217,11 @@ process.  This is only really useful to allow rolling search indexing
 on a replica.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="administration">
-<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="manual-replication">
-<h3>Manual replication<a class="headerlink" href="#manual-replication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="administration">
+<h2>Administration<a class="headerlink" href="#administration" title="Permalink to this heading">¶</a></h2>
+<section id="manual-replication">
+<h3>Manual replication<a class="headerlink" href="#manual-replication" title="Permalink to this heading">¶</a></h3>
 <p>To manually synchronize any part of the mailstore, run
 <a class="reference internal" href="../../manpages/systemcommands/sync_client.html#std-cyrusman-sync_client-8">sync_client(8)</a> with the appropriate command line options.
 Note that manual synchronization DOES NOT interfere with rolling
@@ -1228,12 +1233,12 @@ replication.</p>
 </div>
 <p>One can run <a class="reference internal" href="../../manpages/systemcommands/cyr_synclog.html#std-cyrusman-cyr_synclog-8">cyr_synclog(8)</a> instead, which will insert the
 record into the rolling replication log.</p>
-</div>
-<div class="section" id="failover">
-<h3>Failover<a class="headerlink" href="#failover" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+<section id="failover">
+<h3>Failover<a class="headerlink" href="#failover" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1256,7 +1261,7 @@ record into the rolling replication log.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 25 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1279,9 +1284,12 @@ record into the rolling replication log.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

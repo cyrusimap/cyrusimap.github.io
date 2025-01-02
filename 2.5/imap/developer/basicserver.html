@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Running a basic server &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -797,8 +802,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="running-a-basic-server">
-<span id="basicserver"></span><h1>Running a basic server<a class="headerlink" href="#running-a-basic-server" title="Permalink to this headline">¶</a></h1>
+  <section id="running-a-basic-server">
+<span id="basicserver"></span><h1>Running a basic server<a class="headerlink" href="#running-a-basic-server" title="Permalink to this heading">¶</a></h1>
 <p>Now you have <a class="reference internal" href="installguide.html#imapinstallguide"><span class="std std-ref">compiled and installed Cyrus</span></a>, it’s time to get real.</p>
 <p>At the end of this guide, you will be up and running with a local instance of Cyrus. It will have with basic incoming and outgoing mail flow, with caldav and carddav support.</p>
 <div class="admonition note">
@@ -807,39 +812,39 @@
 <p>Please note that <strong>this guide is meant to get you a working environment quickly, not to allow you to customize everything from the get go</strong>.</p>
 <p>This guide will set up Cyrus to work with the Sendmail SMTP server - and there will be no instructions for using Postfix. Once you have a working environment, you are encouraged to experiment further and set up Postfix instead of Sendmail, use different kinds of authentication schemes, etc.</p>
 </div>
-<div class="section" id="update-your-system">
-<h2>1. Update your system<a class="headerlink" href="#update-your-system" title="Permalink to this headline">¶</a></h2>
+<section id="update-your-system">
+<h2>1. Update your system<a class="headerlink" href="#update-your-system" title="Permalink to this heading">¶</a></h2>
 <p>First things first, let’s update our existing system to ensure everything is current. This may take some time; you can check <a class="reference external" href="https://news.ycombinator.com/">Hacker News</a> in the meantime :-)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="install-cyrus-3rd-party-dependencies">
-<h2>2. Install Cyrus 3rd party dependencies<a class="headerlink" href="#install-cyrus-3rd-party-dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="install-cyrus-3rd-party-dependencies">
+<h2>2. Install Cyrus 3rd party dependencies<a class="headerlink" href="#install-cyrus-3rd-party-dependencies" title="Permalink to this heading">¶</a></h2>
 <p>Now, let’s install libraries and tools used by Cyrus IMAP. This includes a C compiler, some Perl libraries (used for Cyrus’s command line utilities such as cyradm) or C clients for various databases (ie Mysql, Postgresql, etc). Just like the previous command, this one may take a few minutes to complete. But it’s worth it!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y autoconf automake autotools-dev bash-completion bison build-essential comerr-dev <span class="se">\</span>
-debhelper flex g++ git gperf groff heimdal-dev libbsd-resource-perl libclone-perl libconfig-inifiles-perl <span class="se">\</span>
-libcunit1-dev libdatetime-perl libdb-dev libdigest-sha-perl libencode-imaputf7-perl libfile-chdir-perl <span class="se">\</span>
-libglib2.0-dev libical-dev libio-socket-inet6-perl libio-stringy-perl libjansson-dev libldap2-dev <span class="se">\</span>
-libmysqlclient-dev libnet-server-perl libnews-nntpclient-perl libpam0g-dev libpcre3-dev libsasl2-dev <span class="se">\</span>
-libsnmp-dev libsqlite3-dev libssl-dev libtest-unit-perl libtool libunix-syslog-perl liburi-perl <span class="se">\</span>
-libxapian-dev libxml-generator-perl libxml-xpath-perl libxml2-dev libwrap0-dev libzephyr-dev lsb-base <span class="se">\</span>
-net-tools perl php5-cli php5-curl pkg-config po-debconf tcl-dev <span class="se">\</span>
-transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sudo acl telnet
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>autotools-dev<span class="w"> </span>bash-completion<span class="w"> </span>bison<span class="w"> </span>build-essential<span class="w"> </span>comerr-dev<span class="w"> </span><span class="se">\</span>
+debhelper<span class="w"> </span>flex<span class="w"> </span>g++<span class="w"> </span>git<span class="w"> </span>gperf<span class="w"> </span>groff<span class="w"> </span>heimdal-dev<span class="w"> </span>libbsd-resource-perl<span class="w"> </span>libclone-perl<span class="w"> </span>libconfig-inifiles-perl<span class="w"> </span><span class="se">\</span>
+libcunit1-dev<span class="w"> </span>libdatetime-perl<span class="w"> </span>libdb-dev<span class="w"> </span>libdigest-sha-perl<span class="w"> </span>libencode-imaputf7-perl<span class="w"> </span>libfile-chdir-perl<span class="w"> </span><span class="se">\</span>
+libglib2.0-dev<span class="w"> </span>libical-dev<span class="w"> </span>libio-socket-inet6-perl<span class="w"> </span>libio-stringy-perl<span class="w"> </span>libjansson-dev<span class="w"> </span>libldap2-dev<span class="w"> </span><span class="se">\</span>
+libmysqlclient-dev<span class="w"> </span>libnet-server-perl<span class="w"> </span>libnews-nntpclient-perl<span class="w"> </span>libpam0g-dev<span class="w"> </span>libpcre3-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span><span class="se">\</span>
+libsnmp-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libtest-unit-perl<span class="w"> </span>libtool<span class="w"> </span>libunix-syslog-perl<span class="w"> </span>liburi-perl<span class="w"> </span><span class="se">\</span>
+libxapian-dev<span class="w"> </span>libxml-generator-perl<span class="w"> </span>libxml-xpath-perl<span class="w"> </span>libxml2-dev<span class="w"> </span>libwrap0-dev<span class="w"> </span>libzephyr-dev<span class="w"> </span>lsb-base<span class="w"> </span><span class="se">\</span>
+net-tools<span class="w"> </span>perl<span class="w"> </span>php5-cli<span class="w"> </span>php5-curl<span class="w"> </span>pkg-config<span class="w"> </span>po-debconf<span class="w"> </span>tcl-dev<span class="w"> </span><span class="se">\</span>
+transfig<span class="w"> </span>uuid-dev<span class="w"> </span>vim<span class="w"> </span>wamerican<span class="w"> </span>wget<span class="w"> </span>xutils-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>sasl2-bin<span class="w"> </span>rsyslog<span class="w"> </span>sudo<span class="w"> </span>acl<span class="w"> </span>telnet
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-cyrus-mail-user">
-<h2>3. The cyrus:mail user<a class="headerlink" href="#the-cyrus-mail-user" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-cyrus-mail-user">
+<h2>3. The cyrus:mail user<a class="headerlink" href="#the-cyrus-mail-user" title="Permalink to this heading">¶</a></h2>
 <p>Now let’s create a <strong>special user account just for the Cyrus server</strong> to sandbox Cyrus: called <code class="docutils literal notranslate"><span class="pre">cyrus</span></code>. We’ll also create a <code class="docutils literal notranslate"><span class="pre">mail</span></code> group as well. This allows Cyrus to give other programs some permissions if they are run under the <code class="docutils literal notranslate"><span class="pre">mail</span></code> group, again, without causing a Cyrus bug to delete all of your cat pictures. Disaster!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">groupadd</span> <span class="o">-</span><span class="n">r</span> <span class="n">mail</span>
 <span class="n">useradd</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;Cyrus IMAP Server&quot;</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">imap</span> <span class="o">-</span><span class="n">g</span> <span class="n">mail</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">r</span> <span class="n">cyrus</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-up-authentication-with-sasl">
-<h2>4. Setting up authentication with SASL<a class="headerlink" href="#setting-up-authentication-with-sasl" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="setting-up-authentication-with-sasl">
+<h2>4. Setting up authentication with SASL<a class="headerlink" href="#setting-up-authentication-with-sasl" title="Permalink to this heading">¶</a></h2>
 <p>Now, let’s set up <strong>SASL</strong>. This will allow you to connect to your local IMAP server and login, just like any IMAP user would before checking for new emails.</p>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">saslauth</span></code> group and add the <code class="docutils literal notranslate"><span class="pre">cyrus</span></code> user to the group, so Cyrus can access SASL.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">groupadd</span> <span class="o">-</span><span class="n">r</span> <span class="n">saslauth</span>
@@ -870,12 +875,12 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 <p class="admonition-title">Note</p>
 <p>For some reason I don’t understand yet, setting up a user like this doesn’t seem to be persistent on my machine. This means I have to create the user with saslpasswd2 every time I restart my PC. This may or may not apply to you too.</p>
 </div>
-</div>
-<div class="section" id="enabling-mail-delivery-with-lmtp">
-<h2>5. Enabling mail delivery with LMTP<a class="headerlink" href="#enabling-mail-delivery-with-lmtp" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="enabling-mail-delivery-with-lmtp">
+<h2>5. Enabling mail delivery with LMTP<a class="headerlink" href="#enabling-mail-delivery-with-lmtp" title="Permalink to this heading">¶</a></h2>
 <p>Your Cyrus IMAP server will want to receive the emails accepted by your SMTP server (ie Sendmail, Postfix, etc). In Cyrus, this happens via a protocol called LMTP, which is usually supported by your SMTP server.</p>
-<div class="section" id="install-sendmail">
-<h3>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this headline">¶</a></h3>
+<section id="install-sendmail">
+<h3>Install Sendmail<a class="headerlink" href="#install-sendmail" title="Permalink to this heading">¶</a></h3>
 <p>We’ll set up LMTP with the Sendmail SMTP server.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">sendmail</span>
 </pre></div>
@@ -893,9 +898,9 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sendmailconfig</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sendmail-communication">
-<h3>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sendmail-communication">
+<h3>Sendmail communication<a class="headerlink" href="#sendmail-communication" title="Permalink to this heading">¶</a></h3>
 <p>One last thing we need to do for LMTP to work with Sendmail is to create a folder that will contain the UNIX socket used by Sendmail and Cyrus to deliver/receive emails:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
 <span class="n">sudo</span> <span class="n">chown</span> <span class="n">cyrus</span><span class="p">:</span><span class="n">mail</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">cyrus</span><span class="o">/</span><span class="n">socket</span>
@@ -906,10 +911,10 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 <p class="admonition-title">Note</p>
 <p>For some reason, the /var/run/cyrus/socket folder disappears when I reboot my PC. I need to recreate it when I reboot. You may or may not have to do that too.</p>
 </div>
-</div>
-</div>
-<div class="section" id="protocol-ports">
-<h2>6. Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="protocol-ports">
+<h2>6. Protocol ports<a class="headerlink" href="#protocol-ports" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus uses assorted protocols, which need to have their ports defined in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code>. Make sure that these lines are present and add them if they are missing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pop3</span>      <span class="mi">110</span><span class="o">/</span><span class="n">tcp</span>
 <span class="n">nntp</span>      <span class="mi">119</span><span class="o">/</span><span class="n">tcp</span>
@@ -925,9 +930,9 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 <span class="n">fud</span>       <span class="mi">4201</span><span class="o">/</span><span class="n">udp</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configuring-cyrus">
-<h2>7. Configuring Cyrus<a class="headerlink" href="#configuring-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuring-cyrus">
+<h2>7. Configuring Cyrus<a class="headerlink" href="#configuring-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>(Nearly there)</p>
 <p>Set up a simple directory structure for Cyrus to store emails, owned by the <code class="docutils literal notranslate"><span class="pre">cyrus:mail</span></code> account:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">imap</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">imap</span>
@@ -984,17 +989,17 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">cyrus</span> <span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">mkimap</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="launch-cyrus">
-<h2>8. Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="launch-cyrus">
+<h2>8. Launch Cyrus<a class="headerlink" href="#launch-cyrus" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">master</span><span class="o">/</span><span class="n">master</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
 </div>
 <p>Check <code class="docutils literal notranslate"><span class="pre">/var/log/syslog</span></code> for errors so you can quickly understand potential problems.</p>
 <p>Time to cheer!</p>
-</div>
-<div class="section" id="optional-setting-up-ssl-certificates">
-<h2>Optional: Setting up SSL certificates<a class="headerlink" href="#optional-setting-up-ssl-certificates" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="optional-setting-up-ssl-certificates">
+<h2>Optional: Setting up SSL certificates<a class="headerlink" href="#optional-setting-up-ssl-certificates" title="Permalink to this heading">¶</a></h2>
 <p>Let’s set up encryption with TLS. Create a TLS certificate using OpenSSL. Generate the certificate and store it in the /var/imap/server.pem file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">openssl</span> <span class="n">req</span> <span class="o">-</span><span class="n">new</span> <span class="o">-</span><span class="n">x509</span> <span class="o">-</span><span class="n">nodes</span> <span class="o">-</span><span class="n">out</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">server</span><span class="o">.</span><span class="n">pem</span> \
 <span class="o">-</span><span class="n">keyout</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">imap</span><span class="o">/</span><span class="n">server</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">days</span> <span class="mi">365</span> \
@@ -1022,9 +1027,9 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 </pre></div>
 </div>
 <p>Make sure to replace <cite>imapuser</cite> with whatever user you set up with saslpasswd2 before, and to replace <cite>secret</cite> with the actual password you set for that user.</p>
-</div>
-<div class="section" id="sending-a-test-email">
-<h2>Sending a test email<a class="headerlink" href="#sending-a-test-email" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sending-a-test-email">
+<h2>Sending a test email<a class="headerlink" href="#sending-a-test-email" title="Permalink to this heading">¶</a></h2>
 <p>We will now send a test email to our local development environment to see if everything works as expected:</p>
 <ul class="simple">
 <li><p>Sendmail should accept the incoming email,</p></li>
@@ -1049,7 +1054,7 @@ transfig uuid-dev vim wamerican wget xutils-dev zlib1g-dev sasl2-bin rsyslog sud
 </div>
 <p>You should see a prompt appear:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Trying</span> <span class="p">::</span><span class="mf">1.</span><span class="o">..</span>
-<span class="n">Trying</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="o">...</span>
+<span class="n">Trying</span> <span class="mf">127.0.0.1</span><span class="o">...</span>
 <span class="n">Connected</span> <span class="n">to</span> <span class="n">localhost</span><span class="o">.</span>
 <span class="n">Escape</span> <span class="n">character</span> <span class="ow">is</span> <span class="s1">&#39;^]&#39;</span><span class="o">.</span>
 <span class="mi">220</span> <span class="o">...</span> <span class="n">ESMTP</span> <span class="n">Sendmail</span> <span class="o">...</span>
@@ -1069,56 +1074,56 @@ QUIT
 <p>If you see a message like <strong>250 2.0.0 … Message accepted for delivery</strong>, you did it! You should now have a file called <cite>1.</cite> in the <cite>/var/spool/imap/user/example</cite> directory, with the content of the email you sent just before.</p>
 <p>If not, you may want to check <cite>syslog</cite> to see if any error messages show up and go through the previous steps again.</p>
 <p>You should also be able to hook up a regular mail client to your shiny new mailserver and access the mailbox for <a class="reference external" href="mailto:example&#37;&#52;&#48;localhost">example<span>&#64;</span>localhost</a> via IMAP and see the message.</p>
-</div>
-<div class="section" id="checking-carddav">
-<h2>Checking carddav<a class="headerlink" href="#checking-carddav" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="checking-carddav">
+<h2>Checking carddav<a class="headerlink" href="#checking-carddav" title="Permalink to this heading">¶</a></h2>
 <p>To be written.</p>
-</div>
-<div class="section" id="checking-caldav">
-<h2>Checking caldav<a class="headerlink" href="#checking-caldav" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="checking-caldav">
+<h2>Checking caldav<a class="headerlink" href="#checking-caldav" title="Permalink to this heading">¶</a></h2>
 <p>To be written.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
 <p>Some common issues are explained below.</p>
-<div class="section" id="i-have-all-kinds-of-weird-perl-errors-when-running-cyradm">
-<h3>I have all kinds of weird Perl errors when running cyradm<a class="headerlink" href="#i-have-all-kinds-of-weird-perl-errors-when-running-cyradm" title="Permalink to this headline">¶</a></h3>
+<section id="i-have-all-kinds-of-weird-perl-errors-when-running-cyradm">
+<h3>I have all kinds of weird Perl errors when running cyradm<a class="headerlink" href="#i-have-all-kinds-of-weird-perl-errors-when-running-cyradm" title="Permalink to this heading">¶</a></h3>
 <p>The solution is to set the Perl library path right. To be honest, I was too lazy to figure out exactly which path was right, so I added this snippet to my <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PERL5LIB</span><span class="o">=</span><span class="s2">&quot;$PERL5LIB:$(find path/to/cyrus/perl -type d | tr &quot;</span>\\<span class="n">n</span><span class="s2">&quot; &quot;</span><span class="p">:</span><span class="s2">&quot;)&quot;</span>
 </pre></div>
 </div>
 <p>Just make sure to change <strong>path/to/cyrus</strong> to the actual path to the Cyrus source code directory. This should be something like <code class="docutils literal notranslate"><span class="pre">/home/jack/cyrus-src/perl</span></code>.</p>
-</div>
-<div class="section" id="i-can-t-connect-to-the-imap-server">
-<h3>I can’t connect to the IMAP server<a class="headerlink" href="#i-can-t-connect-to-the-imap-server" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="i-can-t-connect-to-the-imap-server">
+<h3>I can’t connect to the IMAP server<a class="headerlink" href="#i-can-t-connect-to-the-imap-server" title="Permalink to this heading">¶</a></h3>
 <p>Make sure that the SASL auth daemon is running. You can start it with this command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">saslauthd</span> <span class="n">start</span>
 </pre></div>
 </div>
 <p>You can safely run this command even if you don’t know whether the SASL auth daemon is already running or not.</p>
-</div>
-<div class="section" id="emails-are-not-being-delivered-to-cyrus">
-<h3>Emails are not being delivered to Cyrus<a class="headerlink" href="#emails-are-not-being-delivered-to-cyrus" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="emails-are-not-being-delivered-to-cyrus">
+<h3>Emails are not being delivered to Cyrus<a class="headerlink" href="#emails-are-not-being-delivered-to-cyrus" title="Permalink to this heading">¶</a></h3>
 <p>Make sure that you have started Sendmail, which you can do like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">sendmail</span> <span class="n">start</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="something-is-not-working-but-i-can-t-figure-out-why">
-<h3>Something is not working but I can’t figure out why<a class="headerlink" href="#something-is-not-working-but-i-can-t-figure-out-why" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="something-is-not-working-but-i-can-t-figure-out-why">
+<h3>Something is not working but I can’t figure out why<a class="headerlink" href="#something-is-not-working-but-i-can-t-figure-out-why" title="Permalink to this heading">¶</a></h3>
 <p>More information is almost always logged to <strong>syslog</strong>. Make sure you start syslog with this command before starting the Cyrus server:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">rsyslog</span> <span class="n">start</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="my-question-isn-t-answered-here">
-<h3>My question isn’t answered here<a class="headerlink" href="#my-question-isn-t-answered-here" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="my-question-isn-t-answered-here">
+<h3>My question isn’t answered here<a class="headerlink" href="#my-question-isn-t-answered-here" title="Permalink to this heading">¶</a></h3>
 <p>Join us on the mailing lists if you need help or just want to chat about Cyrus,
 IMAP, donuts, etc.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1141,7 +1146,7 @@ IMAP, donuts, etc.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1165,9 +1170,12 @@ IMAP, donuts, etc.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

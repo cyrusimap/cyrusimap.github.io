@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Test Coverage &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,8 +789,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="test-coverage">
-<span id="coverage"></span><h1>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this headline">¶</a></h1>
+  <section id="test-coverage">
+<span id="coverage"></span><h1>Test Coverage<a class="headerlink" href="#test-coverage" title="Permalink to this heading">¶</a></h1>
 <p>This assumes you have a single user development environment where you can
 already build and install Cyrus, and run the CUnit and Cassandane tests.  It
 also assumes your Cyrus install and Cassandane setup do not use &quot;destdir&quot;,
@@ -797,10 +802,10 @@ files alongside the source files.  CUnit runs as you, but Cassandane runs as
 cyrus, so we need to arrange for both these users to be able to write to the
 source directory.  We'll do that using group memberships and the
 group-writeable file mode bit.</p>
-<div class="section" id="one-time-setup">
-<h2>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="group-membership">
-<h3>Group membership<a class="headerlink" href="#group-membership" title="Permalink to this headline">¶</a></h3>
+<section id="one-time-setup">
+<h2>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this heading">¶</a></h2>
+<section id="group-membership">
+<h3>Group membership<a class="headerlink" href="#group-membership" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Add the &quot;cyrus&quot; user account to your own user group</p></li>
 <li><p>Perhaps: also add your user account to the &quot;cyrus&quot; user's group.  This might
@@ -809,9 +814,9 @@ remember if this is actually necessary for coverage, or if I have it for
 something else, so skip it unless it becomes necessary (and update this
 doc!)</p></li>
 </ol>
-</div>
-<div class="section" id="file-permissions">
-<h3>File permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="file-permissions">
+<h3>File permissions<a class="headerlink" href="#file-permissions" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Change into your cyrus-imapd directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/path/to/cyrus-imapd</span></code></p></li>
 <li><p>Start from a clean state: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clean</span> <span class="pre">-xfd</span></code></p></li>
@@ -821,17 +826,17 @@ doc!)</p></li>
 you'll have to remember to fix up file permissions every time you want to
 make a coverage report</p></li>
 </ol>
-</div>
-<div class="section" id="dependencies">
-<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h3>
 <p>You'll need the <code class="docutils literal notranslate"><span class="pre">lcov</span></code> and <code class="docutils literal notranslate"><span class="pre">genhtml</span></code> tools for producing human-readable
 reports.  On Debian, these are both found in the <code class="docutils literal notranslate"><span class="pre">lcov</span></code> package.</p>
-</div>
-</div>
-<div class="section" id="preparing-a-coverage-report">
-<h2>Preparing a coverage report<a class="headerlink" href="#preparing-a-coverage-report" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="compile-cyrus-and-run-cunit-tests">
-<h3>Compile Cyrus and run CUnit tests<a class="headerlink" href="#compile-cyrus-and-run-cunit-tests" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="preparing-a-coverage-report">
+<h2>Preparing a coverage report<a class="headerlink" href="#preparing-a-coverage-report" title="Permalink to this heading">¶</a></h2>
+<section id="compile-cyrus-and-run-cunit-tests">
+<h3>Compile Cyrus and run CUnit tests<a class="headerlink" href="#compile-cyrus-and-run-cunit-tests" title="Permalink to this heading">¶</a></h3>
 <p>The collection of coverage data slows things down, and it might also log a lot
 of complaints about overwriting old coverage data, or being unable to.  So I
 do not recommend routinely compiling with coverage enabled -- only do this when
@@ -845,15 +850,15 @@ you're preparing a coverage report.</p>
 <li><p>Run the CUnit tests: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-j4</span> <span class="pre">check</span></code></p></li>
 <li><p>Install Cyrus (might need sudo): <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code></p></li>
 </ol>
-</div>
-<div class="section" id="run-cassandane">
-<h3>Run Cassandane<a class="headerlink" href="#run-cassandane" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="run-cassandane">
+<h3>Run Cassandane<a class="headerlink" href="#run-cassandane" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Run Cassandane on the installed Cyrus as you usually would</p></li>
 </ol>
-</div>
-<div class="section" id="generate-report">
-<h3>Generate report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="generate-report">
+<h3>Generate report<a class="headerlink" href="#generate-report" title="Permalink to this heading">¶</a></h3>
 <p>I'd suggest making a script to automate this part.  I use one like <a class="reference external" href="https://github.com/elliefm/cyrus-build-tools/blob/master/cyrus-coverage">this</a></p>
 <ol class="arabic">
 <li><p>Change into your cyrus-imapd directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/path/to/cyrus-imapd</span></code></p></li>
@@ -879,9 +884,9 @@ something like this will do it:
 give you a link to copy and paste:
 <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">file://$PWD/coverage/index.html</span></code></p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -904,7 +909,7 @@ give you a link to copy and paste:
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Dec 04 2023
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -927,9 +932,12 @@ give you a link to copy and paste:
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

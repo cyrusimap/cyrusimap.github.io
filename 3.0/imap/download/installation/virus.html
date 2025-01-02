@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Virus Scanner &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -758,10 +763,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="virus-scanner">
-<span id="install-virus"></span><h1>Virus Scanner<a class="headerlink" href="#virus-scanner" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-virus-scan-support">
-<h2>About virus scan support<a class="headerlink" href="#about-virus-scan-support" title="Permalink to this headline">¶</a></h2>
+  <section id="virus-scanner">
+<span id="install-virus"></span><h1>Virus Scanner<a class="headerlink" href="#virus-scanner" title="Permalink to this heading">¶</a></h1>
+<section id="about-virus-scan-support">
+<h2>About virus scan support<a class="headerlink" href="#about-virus-scan-support" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus can use an external virus scanner to check for infected mail. Currently,
 only <a class="reference external" href="https://www.clamav.net">ClamAV</a> is supported.</p>
 <p>Infected mail can be reported on, or removed.</p>
@@ -769,11 +774,11 @@ only <a class="reference external" href="https://www.clamav.net">ClamAV</a> is s
 by passing in an IMAP SEARCH string. Messages matching that string are treated
 as infected.</p>
 <p>For more information, see <a class="reference internal" href="../../reference/manpages/systemcommands/cyr_virusscan.html#std-cyrusman-cyr_virusscan-8">cyr_virusscan(8)</a>.</p>
-</div>
-<div class="section" id="virus-scanner-configuration">
-<h2>Virus Scanner Configuration<a class="headerlink" href="#virus-scanner-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-configuration">
-<h3>General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="virus-scanner-configuration">
+<h2>Virus Scanner Configuration<a class="headerlink" href="#virus-scanner-configuration" title="Permalink to this heading">¶</a></h2>
+<section id="general-configuration">
+<h3>General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Once the virus scanner has been installed, Cyrus must be recompiled: the
 configure step will detect the presence of a supported virus library and
 use it.</p>
@@ -781,15 +786,15 @@ use it.</p>
 periodically by cron(8) via crontab(5) or your preferred method
 (i.e. /etc/cron.hourly), or by <a class="reference internal" href="../../reference/manpages/systemcommands/master.html#std-cyrusman-master-8">master(8)</a> in the EVENTS{} section in
 <a class="reference internal" href="../../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a>.</p>
-</div>
-<div class="section" id="id1">
-<h3>ClamAV<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>ClamAV<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus does not need any special configuration to work with <a class="reference external" href="https://www.clamav.net">ClamAV</a>:
 once ClamAV is installed, compiling Cyrus will automatically detect and use
 the ClamAV libraries.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -812,7 +817,7 @@ the ClamAV libraries.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on Sep 22 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -835,9 +840,12 @@ the ClamAV libraries.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

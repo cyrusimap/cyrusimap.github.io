@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>About Cyrus &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imap/download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,35 +789,35 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="about-cyrus">
-<h1>About Cyrus<a class="headerlink" href="#about-cyrus" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-cyrus">
-<h2>What is Cyrus<a class="headerlink" href="#what-is-cyrus" title="Permalink to this headline">¶</a></h2>
+  <section id="about-cyrus">
+<h1>About Cyrus<a class="headerlink" href="#about-cyrus" title="Permalink to this heading">¶</a></h1>
+<section id="what-is-cyrus">
+<h2>What is Cyrus<a class="headerlink" href="#what-is-cyrus" title="Permalink to this heading">¶</a></h2>
 <p>Electronic mail is a major infrastructure service of most organizations. At Carnegie Mellon the use of electronic mail has overshadowed the use of all other distributed services since the early 1990s. At that time, the Andrew Mail and Bulletin Board System (AMS) was a universally available service, and departments without AMS ran their own mail systems. AMS has since been deprecated, and Project Cyrus is now the campus-wide mail system.</p>
 <p>Cyrus is a highly scalable enterprise mail system designed for use in enterprise environments of various sizes using standards based technologies. Cyrus technologies scale from independent use in email departments to a system centrally managed in a large enterprise.</p>
-</div>
-<div class="section" id="what-is-imap">
-<h2>What is IMAP?<a class="headerlink" href="#what-is-imap" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-is-imap">
+<h2>What is IMAP?<a class="headerlink" href="#what-is-imap" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus IMAP (Internet Message Access Protocol) server provides access to personal mail and system-wide bulletin boards through the IMAP protocol. The Cyrus IMAP server is a scalable enterprise mail system designed for use from small to large enterprise environments using standards-based technologies.</p>
 <p>A full Cyrus IMAP implementation allows a seamless mail and bulletin board environment to be set up across multiple servers. It differs from other IMAP server implementations in that it is run on &quot;sealed&quot; servers, where users are not normally permitted to log in. The mailbox database is stored in parts of the filesystem that are private to the Cyrus IMAP system. All user access to mail is through software using the IMAP, POP3, or JMAP protocols.</p>
 <p>The private mailbox database design gives the server large advantages in efficiency, scalability, and administrability. Multiple concurrent read/write connections to the same mailbox are permitted. The server supports access control lists on mailboxes and storage quotas on mailbox hierarchies.</p>
-</div>
-<div class="section" id="imap-version-4-imap4">
-<h2>IMAP Version 4 (IMAP4)<a class="headerlink" href="#imap-version-4-imap4" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="imap-version-4-imap4">
+<h2>IMAP Version 4 (IMAP4)<a class="headerlink" href="#imap-version-4-imap4" title="Permalink to this heading">¶</a></h2>
 <p>The core technology used by Project Cyrus is the Internet Message Access Protocol (IMAP4). IMAP4 specifies a network protocol for accessing a remote message store from a client application. It is an Internet Standard (RFC 3501), and it is quickly gaining acceptance as the Internet standard for mail store access. Many major universities are basing their future distributed mail solutions on IMAP4. The previous versions of IMAP, IMAP2 and IMAP2bis are backward compatible with IMAP4 and are already in widespread use. There are already clients in existence on every major platform and many more in the works.</p>
 <p>IMAP4 is an improvement over other popular Internet mail protocols when it comes to scale and availability. The Post Office Protocol (POP) family, and similar protocols, are less useful to a student-heavy user base, as they are designed to act primarily as store and forward engines. Clients contact a remote message store and download all their mail to a local message store. When the messages have been downloaded from the remote message store to the client, mobility becomes a real problem: The downloaded messages are no longer easily accessible from other clients. Even more importantly, many of the clients that students use have no permanent storage for their use, necessitating use of a remote filesystem for storage, which leads to problems with access and scale.</p>
 <p>IMAP4 is a super-set of the functionality provided by POP3 -- that is, all the functionality of a POP3 client can be mimicked using the IMAP4 protocol. The IMAP4 revision of the IMAP protocol adds support for disconnected operation. This will allow for a client on a notebook computer to download portions of a mail store and keep them synchronized with the mail store over time.</p>
-</div>
-<div class="section" id="mime">
-<h2>Mime<a class="headerlink" href="#mime" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mime">
+<h2>Mime<a class="headerlink" href="#mime" title="Permalink to this heading">¶</a></h2>
 <p>One of the goals of Project Cyrus is to support the MIME internet standard message interchange format. IMAP4 has rich support for MIME, allowing the MIME structure to be examined without downloading the whole message to the client and for individual MIME parts to be downloaded. For example, if a MIME message includes a 5meg audio portion and your client does not support audio, IMAP4 will allow all of the message to be downloaded with the exception of that MIME part. This is also important functionality for disconnected and slow link operation.</p>
-</div>
-<div class="section" id="smtp">
-<h2>SMTP<a class="headerlink" href="#smtp" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="smtp">
+<h2>SMTP<a class="headerlink" href="#smtp" title="Permalink to this heading">¶</a></h2>
 <p>The Simple Mail Transport Protocol (SMTP) is the Internet standard for transporting mail. It is widely implemented and must be used by anyone who wants to communicate with the Internet community. SMTP is used solely for delivery of mail. It is not intended for dilail servers, gateways, and clients deliver mail to mail stores and gateways. SMTP is not intended for delivery of mail directly to clients. In addition, it is not wise to have clients deliver mail to the final destination in all cases. Often mail can not be delivered to the destination because of bad network connections, temporary machine downtime, or load problems at either end. In these cases the SMTP delivery agent must re-queue the mail and try again later. Since mail clients can be office machines which are not guaranteed to remain on or operational, it is not optimal for them to be delivering directly to remote destinations. To solve this, most mail clients deliver mail to post office machines which will deliver the mail on their behalf. Other reasons for this include better name resolution and error handling.</p>
 <p>Project Cyrus uses SMTP as the protocol for mail transport. For internal use between Cyrus clients and Cyrus post office machines, Kerberos extensions have been added to SMTP to allow for better guarantees of the originator of the message. Some time in the future, the Kerberos extensions may be replaced or augmented by some form of Privacy Enhanced Mail (PEM), but that is not in the original scope of Project Cyrus.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -835,7 +840,7 @@
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jun 23 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -858,9 +863,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

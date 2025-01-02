@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Archiving &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -780,10 +785,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="archiving">
-<span id="imap-features-archiving"></span><h1>Archiving<a class="headerlink" href="#archiving" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+  <section id="archiving">
+<span id="imap-features-archiving"></span><h1>Archiving<a class="headerlink" href="#archiving" title="Permalink to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>When we talk about “Archiving” in Cyrus (from 3.0 onwards) we’re not
 talking about data retention, what we’re really talking about is
 time-tiered storage.  Elsewhere in these documents we discuss
@@ -791,18 +796,18 @@ time-tiered storage.  Elsewhere in these documents we discuss
 things like space limitations or <a class="reference internal" href="../deployment/storage.html#imap-deployment-storage-scalability"><span class="std std-ref">scalability</span></a>.  Archiving is somewhat like
 this, but with an accompanying configuration syntax which determines
 the management of the tiered data on an ongoing basis.</p>
-</div>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading">¶</a></h2>
 <p>The general intent of archiving, as deployed within Cyrus, is to allow
 administrators to dictate that there be two tiers of data storage for
 each mail spool partition: “current” and “archive.”  The common use case
 is to use higher speed storage media for the former, and lower cost
 media for the latter; Current goes on SSDs, and Archive goes on
 traditional spinning media.</p>
-</div>
-<div class="section" id="enabling">
-<h2>Enabling<a class="headerlink" href="#enabling" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="enabling">
+<h2>Enabling<a class="headerlink" href="#enabling" title="Permalink to this heading">¶</a></h2>
 <p>Archive operation in Cyrus is enabled via the <code class="docutils literal notranslate"><span class="pre">archive_enabled</span></code>
 setting in <a class="reference internal" href="../../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>:</p>
 <blockquote>
@@ -814,9 +819,9 @@ to be stored on slower, cheaper disks - even within the same
 mailbox, as distinct from partitions.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="defining">
-<h2>Defining<a class="headerlink" href="#defining" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="defining">
+<h2>Defining<a class="headerlink" href="#defining" title="Permalink to this heading">¶</a></h2>
 <p>The configuration suite provides directives to define these partitions:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">archivepartition-name:</span></code> &lt;none&gt;</p>
@@ -830,9 +835,9 @@ to have a corresponding <strong>archivepartition-name</strong> option, but that
 without one there’s no benefit to enabling archiving.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="controlling">
-<h2>Controlling<a class="headerlink" href="#controlling" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="controlling">
+<h2>Controlling<a class="headerlink" href="#controlling" title="Permalink to this heading">¶</a></h2>
 <p>And to control the criteria used to manage migration of data between
 partitions:</p>
 <blockquote>
@@ -870,9 +875,9 @@ number of “current” messages.</p>
 will be archived, but rather is the threshold above which they will
 immediately be.</p>
 </div>
-</div>
-<div class="section" id="performing">
-<h2>Performing<a class="headerlink" href="#performing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="performing">
+<h2>Performing<a class="headerlink" href="#performing" title="Permalink to this heading">¶</a></h2>
 <p>Finally, the actual migration is handled by invoking
 <a class="reference internal" href="../../reference/manpages/systemcommands/cyr_expire.html#std-cyrusman-cyr_expire-8">cyr_expire(8)</a> with its <code class="docutils literal notranslate"><span class="pre">-A</span></code> flag, as shown here in
 a sample snippet from <a class="reference internal" href="../../reference/manpages/configs/cyrus.conf.html#std-cyrusman-cyrus.conf-5">cyrus.conf(5)</a> (but could also be done
@@ -884,8 +889,8 @@ via <code class="docutils literal notranslate"><span class="pre">cron</span></co
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -908,7 +913,7 @@ via <code class="docutils literal notranslate"><span class="pre">cron</span></co
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on Aug 10 2020
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -931,9 +936,12 @@ via <code class="docutils literal notranslate"><span class="pre">cron</span></co
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

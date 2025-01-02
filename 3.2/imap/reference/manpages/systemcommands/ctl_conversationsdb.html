@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ctl_conversationsdb &mdash; Cyrus IMAP 3.2.12 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -731,7 +736,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -780,18 +785,18 @@
 </div>
           <div role="main" class="document">
             
-  <span class="target" id="std-cyrusman-ctl_conversationsdb-8"><span id="std:cyrusman-ctl_conversationsdb(8)"></span></span><div class="section" id="ctl-conversationsdb">
-<span id="imap-reference-manpages-systemcommands-ctl-conversationsdb"></span><h1><strong>ctl_conversationsdb</strong><a class="headerlink" href="#ctl-conversationsdb" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="std-cyrusman-ctl_conversationsdb-8"></span><section id="ctl-conversationsdb">
+<span id="imap-reference-manpages-systemcommands-ctl-conversationsdb"></span><h1><strong>ctl_conversationsdb</strong><a class="headerlink" href="#ctl-conversationsdb" title="Permalink to this heading">¶</a></h1>
 <p>Perform operations on the conversations databases</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>ctl_conversationsdb</strong> [ -C <em>config-file</em> ] <strong>-d</strong> <em>userid</em> &gt; text
 <strong>ctl_conversationsdb</strong> [ -C <em>config-file</em> ] <strong>-u</strong> <em>userid</em> &lt; text
 <strong>ctl_conversationsdb</strong> [ -C <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-z</strong> | <strong>-b</strong> | <strong>-R</strong> ] <em>userid</em>
 <strong>ctl_conversationsdb</strong> [ -C <em>config-file</em> ] [ <strong>-v</strong> ] [ <strong>-z</strong> | <strong>-b</strong> | <strong>-R</strong> ] <strong>-r</strong></pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>ctl_conversationsdb</strong> is used to perform various administrative
 operations on a conversations database and associated information in
 <em>cyrus.index</em> files.</p>
@@ -808,26 +813,26 @@ in various ways for a specific user, and the fourth to reconstruct
 conversations information for all users.  See <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> below for
 details.</p>
 <p>This command was introduced in version 3.0.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-C">
-<span id="cmdoption-ctl-conversationsdb-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname"> <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-C">
+<span id="cmdoption-ctl-conversationsdb-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname"> <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-d">
-<span id="cmdoption-ctl-conversationsdb-d"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"> <span class="pre">userid</span></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-d" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-d">
+<span id="cmdoption-ctl-conversationsdb-d"></span><span class="sig-name descname"><span class="pre">-d</span></span><span class="sig-prename descclassname"> <span class="pre">userid</span></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the conversations database which corresponds to the user <em>userid</em>
 to standard output in an ASCII format.  The resulting file can be
 used to recreate a database using the <strong>-u</strong> option.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-u">
-<span id="cmdoption-ctl-conversationsdb-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"> <span class="pre">userid</span></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-u" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-u">
+<span id="cmdoption-ctl-conversationsdb-u"></span><span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"> <span class="pre">userid</span></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Undumps” the conversations database corresponding to the user <em>userid</em>,
 i.e. replaces all the entries with data from ASCII records parsed
 from standard input.  The output from the <strong>-d</strong> option can be used
@@ -835,21 +840,21 @@ as input.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-v">
-<span id="cmdoption-ctl-conversationsdb-v"></span><code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-v" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-v">
+<span id="cmdoption-ctl-conversationsdb-v"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Be more verbose when running.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-r">
-<span id="cmdoption-ctl-conversationsdb-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-r" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-r">
+<span id="cmdoption-ctl-conversationsdb-r"></span><span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Be recursive; apply the main operation to every user.  Warning: do
 not combine with <strong>-u</strong>, it will not do what you expect.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-z">
-<span id="cmdoption-ctl-conversationsdb-z"></span><code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-z" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-z">
+<span id="cmdoption-ctl-conversationsdb-z"></span><span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all conversation information from the conversations database
 for user <em>userid</em>, and from all the user’s mailboxes.  The
 information can all be recalculated (eventually) from message
@@ -857,8 +862,8 @@ headers, using the <strong>-b</strong> option.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-b">
-<span id="cmdoption-ctl-conversationsdb-b"></span><code class="sig-name descname"><span class="pre">-b</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-b" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-b">
+<span id="cmdoption-ctl-conversationsdb-b"></span><span class="sig-name descname"><span class="pre">-b</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rebuild all conversation information in the conversations database
 for user <em>userid</em>, and in all the user’s mailboxes, from the header
 information in messages.  Does not affect messages which already
@@ -872,8 +877,8 @@ message file.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-R">
-<code class="sig-name descname"><span class="pre">-R</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-R" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recalculate counts of messages stored in existing conversations in
 the conversations database for user <em>userid</em>.  This is a limited
 subset of <strong>-b</strong>; in particular it does not create conversations or
@@ -881,31 +886,31 @@ assign messages to conversations.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-ctl_conversationsdb-S">
-<span id="cmdoption-ctl-conversationsdb-s"></span><code class="sig-name descname"><span class="pre">-S</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ctl_conversationsdb-S" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-ctl_conversationsdb-S">
+<span id="cmdoption-ctl-conversationsdb-s"></span><span class="sig-name descname"><span class="pre">-S</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-ctl_conversationsdb-S" title="Permalink to this definition">¶</a></dt>
 <dd><p>If given with <strong>-b</strong>, allows splitting of conversations during the
 rewrite.   Only do this is changing the maximum conversation size
 and you need to split those existing conversations.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p>[NB: Examples needed]</p>
-</div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
 <p>This command was introduced in version 3.0.</p>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf, &lt;configurationdir&gt;/conversations.db</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, <a class="reference internal" href="master.html#std-cyrusman-master-8">master(8)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -928,7 +933,7 @@ and you need to split those existing conversations.</p>
         &copy; Copyright 1993-2018, The Cyrus Team. Last updated on May 15 2018
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -951,9 +956,12 @@ and you need to split those existing conversations.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

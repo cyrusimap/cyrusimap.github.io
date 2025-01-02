@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Tweaking Cyrus IMAP &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -784,10 +789,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="tweaking-cyrus-imap">
-<h1>Tweaking Cyrus IMAP<a class="headerlink" href="#tweaking-cyrus-imap" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="storage-tiering">
-<span id="admin-tweaking-cyrus-imapd-storage-tiering"></span><h2>Storage Tiering<a class="headerlink" href="#storage-tiering" title="Permalink to this headline">¶</a></h2>
+  <section id="tweaking-cyrus-imap">
+<h1>Tweaking Cyrus IMAP<a class="headerlink" href="#tweaking-cyrus-imap" title="Permalink to this heading">¶</a></h1>
+<section id="storage-tiering">
+<span id="admin-tweaking-cyrus-imapd-storage-tiering"></span><h2>Storage Tiering<a class="headerlink" href="#storage-tiering" title="Permalink to this heading">¶</a></h2>
 <p>Various opportunities exist to tier storage. With storage
 tiering, we mean to distribute payload over different levels of storage,
 where levels mean to refer to storage cost, performance and capacity, in
@@ -858,18 +863,18 @@ entirely from metadata.</p>
 the message file is opened.</p>
 </li>
 </ol>
-<div class="section" id="partitioning-the-mail-spool">
-<span id="admin-tweaking-cyrus-imap-storage-tiering-partitioning"></span><h3>Partitioning the Mail Spool<a class="headerlink" href="#partitioning-the-mail-spool" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="distributing-the-mail-spool">
-<span id="admin-tweaking-cyrus-imap-storage-tiering-distributing"></span><h3>Distributing the Mail Spool<a class="headerlink" href="#distributing-the-mail-spool" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="using-metadata-partitions">
-<span id="admin-tweaking-cyrus-imap-storage-tiering-metadata"></span><h3>Using Metadata Partitions<a class="headerlink" href="#using-metadata-partitions" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="synchronous-file-operations">
-<h2>Synchronous File Operations<a class="headerlink" href="#synchronous-file-operations" title="Permalink to this headline">¶</a></h2>
+<section id="partitioning-the-mail-spool">
+<span id="admin-tweaking-cyrus-imap-storage-tiering-partitioning"></span><h3>Partitioning the Mail Spool<a class="headerlink" href="#partitioning-the-mail-spool" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="distributing-the-mail-spool">
+<span id="admin-tweaking-cyrus-imap-storage-tiering-distributing"></span><h3>Distributing the Mail Spool<a class="headerlink" href="#distributing-the-mail-spool" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="using-metadata-partitions">
+<span id="admin-tweaking-cyrus-imap-storage-tiering-metadata"></span><h3>Using Metadata Partitions<a class="headerlink" href="#using-metadata-partitions" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="synchronous-file-operations">
+<h2>Synchronous File Operations<a class="headerlink" href="#synchronous-file-operations" title="Permalink to this heading">¶</a></h2>
 <p>A default Kolab Groupware installation comes with a set of settings
 suitable for the vast majority of our users -- mostly home users and
 other small(er) deployments.</p>
@@ -896,8 +901,8 @@ for our Cyrus IMAP packages is to ensure the mail spool
 </div>
 </li>
 </ol>
-<div class="section" id="mailbox-locking">
-<h3>Mailbox locking<a class="headerlink" href="#mailbox-locking" title="Permalink to this headline">¶</a></h3>
+<section id="mailbox-locking">
+<h3>Mailbox locking<a class="headerlink" href="#mailbox-locking" title="Permalink to this heading">¶</a></h3>
 <p>Cyrus IMAP uses fcntl(2) based file locking for mailboxes, for example during
 SELECT commands. To mitigate race conditions it locks mailbox names even
 for non-existing mailboxes. For example, if user foo issued the following
@@ -917,9 +922,9 @@ command</p>
 <p>This has in practice not shown to be an issue. If this is a concern however,
 keeping the lock file directory in a tmpfs allows for both fast locking and
 to purge stale locks during controlled Cyrus downtimes.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -942,7 +947,7 @@ to purge stale locks during controlled Cyrus downtimes.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Aug 24 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -965,9 +970,12 @@ to purge stale locks during controlled Cyrus downtimes.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

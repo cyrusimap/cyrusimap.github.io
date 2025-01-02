@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Concepts &mdash; Cyrus IMAP 3.0.18 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../download/getcyrus.html">Get Cyrus</a><ul>
@@ -709,7 +714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -756,14 +761,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="concepts">
-<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
+  <section id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this heading">¶</a></h1>
 <p>This section gives an overview of several aspects of the Cyrus IMAP
 server, as they relate to deployment.  In an effort to reduce
 duplication of information, we will often direct you to documentation
 in other areas.  Please do follow such referrals.</p>
-<div class="section" id="access-control-lists">
-<h2>Access Control Lists<a class="headerlink" href="#access-control-lists" title="Permalink to this headline">¶</a></h2>
+<section id="access-control-lists">
+<h2>Access Control Lists<a class="headerlink" href="#access-control-lists" title="Permalink to this heading">¶</a></h2>
 <p>Access to each mailbox is controlled by access control
 lists. Access Control Lists (ACLs) provide a powerful mechanism for
 specifying the users, or groups of users, who have permission to access
@@ -773,8 +778,8 @@ mailbox, an Access Control Identifier (ACI) and a set of rights. The
 ACI specifies the user or group of users for which the entry
 applies. The set of rights is one or more letters or digits, each
 letter or digit conferring a particular privilege.</p>
-<div class="section" id="working-with-acls">
-<h3>Working with ACLs<a class="headerlink" href="#working-with-acls" title="Permalink to this headline">¶</a></h3>
+<section id="working-with-acls">
+<h3>Working with ACLs<a class="headerlink" href="#working-with-acls" title="Permalink to this heading">¶</a></h3>
 <p>ACLs are manipulated via these subcommands within the
 <a class="reference internal" href="../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a> program:</p>
 <blockquote>
@@ -784,9 +789,9 @@ letter or digit conferring a particular privilege.</p>
 <li><p><a class="reference internal" href="../reference/manpages/systemcommands/cyradm.html#imap-reference-manpages-systemcommands-cyradm-deleteaclmailbox"><span class="std std-ref">deleteaclmailbox</span></a></p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="sample-acl">
-<h3>Sample ACL<a class="headerlink" href="#sample-acl" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sample-acl">
+<h3>Sample ACL<a class="headerlink" href="#sample-acl" title="Permalink to this heading">¶</a></h3>
 <p>A typical ACL is expressed like this:</p>
 <pre class="literal-block"><strong>setaclmailbox</strong> <em>mailbox</em> <em>id</em> <em>rights</em> [<em>id</em> <em>rights</em> ...]</pre>
 <p>where <em>mailbox</em> is the name of the mailbox to which the ACL is applied,
@@ -824,9 +829,9 @@ user/bovik/Spam:
   bovik lrswipkxtecda
 user/bovik/Trash:
   bovik lrswipkxtecda</pre>
-</div>
-<div class="section" id="access-rights">
-<h3>Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="access-rights">
+<h3>Access Rights<a class="headerlink" href="#access-rights" title="Permalink to this heading">¶</a></h3>
 <p>The following lists Access Rights that can be used in an Access Control
 List entry.</p>
 <dl class="simple">
@@ -872,11 +877,11 @@ mailbox (<strong>administer</strong>).</p>
 <a class="reference internal" href="../reference/admin/access-control/rights-reference.html#imap-admin-access-control-lists-rights-reference"><span class="std std-ref">Access Control Lists Rights Reference</span></a></p>
 <p>Rights are combined through concatenation.  Please see
 <a class="reference internal" href="../reference/admin/access-control/combining-rights.html#imap-admin-access-control-combining-rights"><span class="std std-ref">Combining Access Rights</span></a></p>
-</div>
-<div class="section" id="access-control-defaults">
-<h3>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="administrators">
-<h4>Administrators<a class="headerlink" href="#administrators" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="access-control-defaults">
+<h3>Access Control Defaults<a class="headerlink" href="#access-control-defaults" title="Permalink to this heading">¶</a></h3>
+<section id="administrators">
+<h4>Administrators<a class="headerlink" href="#administrators" title="Permalink to this heading">¶</a></h4>
 <p>Regardless of the ACL on a mailbox, users who are listed in the
 <code class="docutils literal notranslate"><span class="pre">admins</span></code> configuration option in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> implicitly
 have the <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> rights on all mailboxes.</p>
@@ -885,9 +890,9 @@ have the <code class="docutils literal notranslate"><span class="pre">l</span></
 <p class="admonition-title">Warning</p>
 <p>An admin user should not be a normal email account.</p>
 </div>
-</div>
-<div class="section" id="mailbox-owners">
-<h4>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="mailbox-owners">
+<h4>Mailbox owners<a class="headerlink" href="#mailbox-owners" title="Permalink to this heading">¶</a></h4>
 <p>The user who owns a mailbox folder has additional rights which are set
 regardless of any additional ACLs. These are:</p>
 <ul class="simple">
@@ -897,9 +902,9 @@ regardless of any additional ACLs. These are:</p>
 <li><p><strong>a</strong> - <a class="reference internal" href="../reference/admin/access-control/rights-reference.html#imap-admin-access-control-right-a"><span class="std std-ref">administer</span></a></p></li>
 </ul>
 <p>These are set in <code class="docutils literal notranslate"><span class="pre">implicit_owner_rights</span></code> of <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="default">
-<h4>Default<a class="headerlink" href="#default" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="default">
+<h4>Default<a class="headerlink" href="#default" title="Permalink to this heading">¶</a></h4>
 <p>For all other mailboxes not owned by a user, any user accessing these
 mailboxes have the following default privileges:</p>
 <ul class="simple">
@@ -908,20 +913,20 @@ mailboxes have the following default privileges:</p>
 <li><p><strong>s</strong> - <a class="reference internal" href="../reference/admin/access-control/rights-reference.html#imap-admin-access-control-right-s"><span class="std std-ref">seen</span></a></p></li>
 </ul>
 <p>These are set in <code class="docutils literal notranslate"><span class="pre">defaultacl</span></code> of <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="initial-acls-for-newly-created-mailboxes">
-<h4>Initial ACLs for Newly Created Mailboxes<a class="headerlink" href="#initial-acls-for-newly-created-mailboxes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="initial-acls-for-newly-created-mailboxes">
+<h4>Initial ACLs for Newly Created Mailboxes<a class="headerlink" href="#initial-acls-for-newly-created-mailboxes" title="Permalink to this heading">¶</a></h4>
 <p>When a mailbox is created, its ACL starts off with a copy of the ACL of its closest parent mailbox. When a user is created, the ACL on the user’s <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> starts off with a single entry granting all rights to the user. When a non-user mailbox is created and does not have a parent, its ACL is initialized to the value of the <code class="docutils literal notranslate"><span class="pre">defaultacl</span></code> option in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
-</div>
-<div class="section" id="other-implicit-rights">
-<h4>Other Implicit Rights<a class="headerlink" href="#other-implicit-rights" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="other-implicit-rights">
+<h4>Other Implicit Rights<a class="headerlink" href="#other-implicit-rights" title="Permalink to this heading">¶</a></h4>
 <p>Note that some rights are available implicitly, for example ‘anonymous’
 always has ‘p’ on user INBOXes, and users always have <code class="docutils literal notranslate"><span class="pre">la</span></code> rights on
 mailboxes within their INBOX hierarchy.</p>
-</div>
-</div>
-<div class="section" id="access-control-identifier-aci">
-<h3>Access Control Identifier (ACI)<a class="headerlink" href="#access-control-identifier-aci" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="access-control-identifier-aci">
+<h3>Access Control Identifier (ACI)<a class="headerlink" href="#access-control-identifier-aci" title="Permalink to this heading">¶</a></h3>
 <p>The Access Control Identifier (ACI) part of an ACL entry specifies the
 user or group for which the entry applies.  Group identifiers are
 distinguished be the prefix “group:”.  For example, “group:accounting”.</p>
@@ -929,17 +934,17 @@ distinguished be the prefix “group:”.  For example, “group:accounting”.<
 explained below. The meaning of other identifiers usually depends on
 the authorization mechanism being used (selected by <code class="docutils literal notranslate"><span class="pre">--with-auth</span></code> at
 compile time, defaulting to Unix).</p>
-<div class="section" id="anonymous-and-anyone">
-<h4><code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code><a class="headerlink" href="#anonymous-and-anyone" title="Permalink to this headline">¶</a></h4>
+<section id="anonymous-and-anyone">
+<h4><code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code><a class="headerlink" href="#anonymous-and-anyone" title="Permalink to this heading">¶</a></h4>
 <p>With any authorization mechanism, two special identifiers are defined.
 The identifier <code class="docutils literal notranslate"><span class="pre">anonymous</span></code> refers to the anonymous, or unauthenticated
 user. The identifier <code class="docutils literal notranslate"><span class="pre">anyone</span></code> refers to all users, including the
 anonymous user.</p>
 <p>Both <code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and <code class="docutils literal notranslate"><span class="pre">anyone</span></code> may commonly be used with the <strong>post</strong>
 right <code class="docutils literal notranslate"><span class="pre">p</span></code> to allow message insertion to mailboxes.</p>
-</div>
-<div class="section" id="kerberos-vs-unix-authorization">
-<h4>Kerberos vs. Unix Authorization<a class="headerlink" href="#kerberos-vs-unix-authorization" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="kerberos-vs-unix-authorization">
+<h4>Kerberos vs. Unix Authorization<a class="headerlink" href="#kerberos-vs-unix-authorization" title="Permalink to this heading">¶</a></h4>
 <p>The Cyrus IMAP server comes with four authorization mechanisms, one is
 compatible with Unix-style (<code class="docutils literal notranslate"><span class="pre">/etc/passwd</span></code>) authorization, one for use
 with Kerberos 4, one for use with Kerberos 5, and one for use with an
@@ -954,8 +959,8 @@ the act of determining what rights you have. Authentication is
 discussed in the <a class="reference internal" href="#imap-concepts-login-authentication"><span class="std std-ref">Login Authentication</span></a> part of
 this document.</p>
 </div>
-<div class="section" id="unix-authorization">
-<h5>Unix Authorization<a class="headerlink" href="#unix-authorization" title="Permalink to this headline">¶</a></h5>
+<section id="unix-authorization">
+<h5>Unix Authorization<a class="headerlink" href="#unix-authorization" title="Permalink to this heading">¶</a></h5>
 <p>In the Unix authorization mechanism, ACIs are either a valid userid or
 the string <code class="docutils literal notranslate"><span class="pre">group:</span></code> followed by a group listed in <code class="docutils literal notranslate"><span class="pre">/etc/group</span></code>.
 Thus:</p>
@@ -974,9 +979,9 @@ be configured to have the groups available, one of which includes
 <p>NSS augmentations, such as <code class="docutils literal notranslate"><span class="pre">nss_ldap</span></code>, <code class="docutils literal notranslate"><span class="pre">pam_ldap</span></code> or <code class="docutils literal notranslate"><span class="pre">sssd</span></code>
 may be used to provide Cyrus access to group information via NSS.</p>
 </div>
-</div>
-<div class="section" id="kerberos-authorization">
-<h5>Kerberos Authorization<a class="headerlink" href="#kerberos-authorization" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="kerberos-authorization">
+<h5>Kerberos Authorization<a class="headerlink" href="#kerberos-authorization" title="Permalink to this heading">¶</a></h5>
 <p>Using the Kerberos authorization mechanism, ACIs are of the form:</p>
 <blockquote>
 <div><p><em>$principal</em>.*$instance*&#64;*$realm*</p>
@@ -993,24 +998,24 @@ the second identity during canonicalization. For example, a line in
 </div>
 <p>will cause the identity <code class="docutils literal notranslate"><span class="pre">bovik&#64;REMOTE.COM</span></code> to be treated as if it
 were the local identity <code class="docutils literal notranslate"><span class="pre">bovik</span></code>.</p>
-</div>
-<div class="section" id="alternative-authorization">
-<h5>Alternative Authorization<a class="headerlink" href="#alternative-authorization" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="alternative-authorization">
+<h5>Alternative Authorization<a class="headerlink" href="#alternative-authorization" title="Permalink to this heading">¶</a></h5>
 <p>A site may wish to write their own authorization mechanism, perhaps to
 implement a local group mechanism. If it does so (by implementing an
 <code class="docutils literal notranslate"><span class="pre">auth_[whatever]</span></code> PTS module), it will dictate its own form and
 meaning of identifiers.</p>
-</div>
-</div>
-</div>
-<div class="section" id="negative-rights">
-<h3>Negative Rights<a class="headerlink" href="#negative-rights" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="negative-rights">
+<h3>Negative Rights<a class="headerlink" href="#negative-rights" title="Permalink to this heading">¶</a></h3>
 <p>Any of the above defined identifiers may be prefixed with a <code class="docutils literal notranslate"><span class="pre">-</span></code>
 character. The associated rights are then removed from that identifier.
 These are referred to as <em>negative rights</em>.</p>
-</div>
-<div class="section" id="calculating-a-users-rights">
-<h3>Calculating a Users’ Rights<a class="headerlink" href="#calculating-a-users-rights" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="calculating-a-users-rights">
+<h3>Calculating a Users’ Rights<a class="headerlink" href="#calculating-a-users-rights" title="Permalink to this heading">¶</a></h3>
 <p>To calculate the set of rights granted to a user, the server first
 calculates the union of all of the rights granted to the user and to
 all groups the user is a member of. The server then calculates and
@@ -1023,23 +1028,23 @@ all groups the user is a member of.</p>
 </div>
 <p>The user <code class="docutils literal notranslate"><span class="pre">fred</span></code> will be granted the rights <code class="docutils literal notranslate"><span class="pre">lrswip</span></code> and the
 anonymous user will be granted the rights <code class="docutils literal notranslate"><span class="pre">lrp</span></code>.</p>
-</div>
-</div>
-<div class="section" id="login-authentication">
-<span id="imap-concepts-login-authentication"></span><h2>Login Authentication<a class="headerlink" href="#login-authentication" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="login-authentication">
+<span id="imap-concepts-login-authentication"></span><h2>Login Authentication<a class="headerlink" href="#login-authentication" title="Permalink to this heading">¶</a></h2>
 <p>This section discusses different types of authentication (ways of logging in) that can be used with Cyrus IMAP.</p>
 <p>The Cyrus IMAP server uses the Cyrus SASL library for authentication. This section describes how to configure SASL with use with Cyrus imapd. Please consult the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL System Administrator’s Guide</span></a> for more detailed, up-to-date information.</p>
-<div class="section" id="anonymous-login">
-<h3>Anonymous Login<a class="headerlink" href="#anonymous-login" title="Permalink to this headline">¶</a></h3>
+<section id="anonymous-login">
+<h3>Anonymous Login<a class="headerlink" href="#anonymous-login" title="Permalink to this heading">¶</a></h3>
 <p>Regardless of the SASL mechanism used by an individual connection, the
 server may support anonymous login. If the <code class="docutils literal notranslate"><span class="pre">allowanonymouslogin</span></code>
 option in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> is turned on, then the server will
 permit plaintext password logins using the user <code class="docutils literal notranslate"><span class="pre">anonymous</span></code> and any
 password.</p>
 <p>Additionally, the server will enable any SASL mechanisms that allow anonymous logins.</p>
-</div>
-<div class="section" id="plaintext-authentication">
-<h3>Plaintext Authentication<a class="headerlink" href="#plaintext-authentication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plaintext-authentication">
+<h3>Plaintext Authentication<a class="headerlink" href="#plaintext-authentication" title="Permalink to this heading">¶</a></h3>
 <p>The SASL library has several ways of verifying plaintext passwords. Plaintext passwords are passed either by the IMAP <code class="docutils literal notranslate"><span class="pre">LOGIN</span></code> command or by the SASL <code class="docutils literal notranslate"><span class="pre">PLAIN</span></code> mechanism (under a TLS layer).</p>
 <ul class="simple">
 <li><p>PAM</p></li>
@@ -1049,24 +1054,24 @@ password.</p>
 </ul>
 <p>The method of plaintext password verification is always through the SASL library, even in the case of the internal LOGIN command. This is to allow the SASL library to be the only source of authentication information. You’ll want to look at the <code class="docutils literal notranslate"><span class="pre">sasl_pwcheck_method</span></code> option in the SASL documentation to understand how to configure a plaintext password verifier for your system.</p>
 <p>To disallow the use of plaintext passwords for authentication, you can set <code class="docutils literal notranslate"><span class="pre">allowplaintext:</span> <span class="pre">no</span></code> in imapd.conf. This will still allow PLAIN under TLS, but IMAP LOGIN commands will now fail.</p>
-</div>
-<div class="section" id="kerberos-logins">
-<h3>Kerberos Logins<a class="headerlink" href="#kerberos-logins" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="kerberos-logins">
+<h3>Kerberos Logins<a class="headerlink" href="#kerberos-logins" title="Permalink to this heading">¶</a></h3>
 <p>The Kerberos SASL mechanism supports the <code class="docutils literal notranslate"><span class="pre">KERBEROS_V4</span></code> authentication mechanism. The mechanism requires that a <code class="docutils literal notranslate"><span class="pre">srvtab</span></code> file exist in the location given in the <code class="docutils literal notranslate"><span class="pre">srvtab</span></code> configuration option. The <code class="docutils literal notranslate"><span class="pre">srvtab</span></code> file must be readable by the Cyrus server and must contain a <code class="docutils literal notranslate"><span class="pre">imap.$host&#64;$realm</span></code> service key, where <code class="docutils literal notranslate"><span class="pre">$host</span></code> is the first component of the server’s host name and <code class="docutils literal notranslate"><span class="pre">$realm</span></code> is the server’s Kerberos realm.</p>
 <p>The server will permit logins by identities in the local realm and identities in the realms listed in the <code class="docutils literal notranslate"><span class="pre">loginrealms</span></code> option in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">/etc/krb.equiv</span></code> contains mappings between Kerberos principals. The file contains zero or more lines, each containing two fields. Any identity matching the first field of a line is permitted to log in as the identity in the second field.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">loginuseacl</span></code> configuration option is turned on, than any Kerberos identity that is granted the <code class="docutils literal notranslate"><span class="pre">a</span></code> right on the user’s <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> is permitted to log in as that user.</p>
-</div>
-<div class="section" id="shared-secrets-logins">
-<h3>Shared Secrets Logins<a class="headerlink" href="#shared-secrets-logins" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="shared-secrets-logins">
+<h3>Shared Secrets Logins<a class="headerlink" href="#shared-secrets-logins" title="Permalink to this heading">¶</a></h3>
 <p>Some mechanisms require the user and the server to share a secret (generally a password) that can be used for comparison without actually passing the password in the clear across the network. For these mechanism (such as CRAM-MD5 and DIGEST-MD5), you will need to supply a source of passwords, such as the sasldb (which is described more fully in the <a class="reference external" href="https://www.cyrusimap.org/sasl/index.html#sasl-index" title="(in Cyrus SASL v2.1.28)"><span class="xref std std-ref">Cyrus SASL distribution</span></a>)</p>
-</div>
-</div>
-<div class="section" id="quotas">
-<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="quotas">
+<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this heading">¶</a></h2>
 <p>Quotas allow server administrators to limit resources used by hierarchies of mailboxes on the server.</p>
-<div class="section" id="working-with-quotas">
-<h3>Working with Quotas<a class="headerlink" href="#working-with-quotas" title="Permalink to this headline">¶</a></h3>
+<section id="working-with-quotas">
+<h3>Working with Quotas<a class="headerlink" href="#working-with-quotas" title="Permalink to this heading">¶</a></h3>
 <p>Quotas are manipulated via these subcommands within the
 <a class="reference internal" href="../reference/manpages/systemcommands/cyradm.html#std-cyrusman-cyradm-8">cyradm(8)</a> program:</p>
 <blockquote>
@@ -1076,9 +1081,9 @@ password.</p>
 <li><p><a class="reference internal" href="../reference/manpages/systemcommands/cyradm.html#imap-reference-manpages-systemcommands-cyradm-listquotaroot"><span class="std std-ref">listquotaroot</span></a></p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="monitor-and-repair">
-<h3>Monitor and Repair<a class="headerlink" href="#monitor-and-repair" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="monitor-and-repair">
+<h3>Monitor and Repair<a class="headerlink" href="#monitor-and-repair" title="Permalink to this heading">¶</a></h3>
 <p>Quotas may be monitored and repaired via the <a class="reference internal" href="../reference/manpages/systemcommands/quota.html#std-cyrusman-quota-8">quota(8)</a>
 command:</p>
 <blockquote>
@@ -1086,9 +1091,9 @@ command:</p>
 <li><p><a class="reference internal" href="../reference/manpages/systemcommands/quota.html#imap-reference-manpages-systemcommands-quota"><span class="std std-ref">quota</span></a></p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="supported-quota-types">
-<h3>Supported Quota Types<a class="headerlink" href="#supported-quota-types" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="supported-quota-types">
+<h3>Supported Quota Types<a class="headerlink" href="#supported-quota-types" title="Permalink to this heading">¶</a></h3>
 <p>The Cyrus IMAP server supports quotas on Storage (KB), Messages (#),
 Folders (#) and Annotation Storage (KB).  These types each have their
 own identifier:</p>
@@ -1100,26 +1105,26 @@ own identifier:</p>
 <li><p>X-ANNOTATION-STORAGE</p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="storage-quotas">
-<h4>Storage Quotas<a class="headerlink" href="#storage-quotas" title="Permalink to this headline">¶</a></h4>
+<section id="storage-quotas">
+<h4>Storage Quotas<a class="headerlink" href="#storage-quotas" title="Permalink to this heading">¶</a></h4>
 <p>Storage quotas are defined as the number of kilobytes (KB) of the
-relevant <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> messages located within a quota root. Each copy of
+relevant <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a> messages located within a quota root. Each copy of
 a message is counted independently, even when the server can conserve
 disk space use by making hard links to message files. The additional
 disk space overhead used by mailbox index and cache files is not
 charged against a quota. On servers with <code class="docutils literal notranslate"><span class="pre">delete_mode:</span> <span class="pre">delayed</span></code>
 and/or <code class="docutils literal notranslate"><span class="pre">expunge_mode:delayed</span></code> space used by deleted mailboxes or
 expunged messages are not charged against quota.</p>
-</div>
-<div class="section" id="numeric-quotas">
-<h4>Numeric Quotas<a class="headerlink" href="#numeric-quotas" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="numeric-quotas">
+<h4>Numeric Quotas<a class="headerlink" href="#numeric-quotas" title="Permalink to this heading">¶</a></h4>
 <p>Numeric Quotas are quite simply a limit on the number of a particular
 class of object.  Cyrus IMAP currently supports quotas on the number of
 messages and/or folders below a given quota root.</p>
-</div>
-</div>
-<div class="section" id="quota-roots">
-<h3>Quota Roots<a class="headerlink" href="#quota-roots" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="quota-roots">
+<h3>Quota Roots<a class="headerlink" href="#quota-roots" title="Permalink to this heading">¶</a></h3>
 <p>Quotas are applied to quota roots, which can be at any level of the mailbox hierarchy. Quota roots need not also be mailboxes.</p>
 <p>Quotas on a quota root apply to the sum of the usage of any mailbox at that level and any sub-mailboxes of that level that are not underneath a quota root on a sub-hierarchy. This means that each mailbox is limited by at most one quota root.</p>
 <p>For example, if the mailboxes</p>
@@ -1141,18 +1146,18 @@ messages and/or folders below a given quota root.</p>
 <a class="reference internal" href="../reference/manpages/systemcommands/cyradm.html#imap-reference-manpages-systemcommands-cyradm-setquota"><span class="std std-ref">setquota</span></a> command. Quota
 roots may not be deleted through the protocol, see Removing Quota Roots
 for instructions on how to delete them.</p>
-</div>
-<div class="section" id="controlling-quota-behavior">
-<h3>Controlling Quota Behavior<a class="headerlink" href="#controlling-quota-behavior" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="controlling-quota-behavior">
+<h3>Controlling Quota Behavior<a class="headerlink" href="#controlling-quota-behavior" title="Permalink to this heading">¶</a></h3>
 <p>How restrictive quotas will be may be tailored to the needs of different
 sites, via the use of several settings in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <p>Please consult the <a class="reference internal" href="../reference/admin/quotas.html#imap-admin-quotas-config"><span class="std std-ref">Controlling Quota Behavior</span></a> section of the Cyrus
 IMAP Administrator Guide for complete details.</p>
-</div>
-<div class="section" id="mail-delivery-behavior">
-<h3>Mail Delivery Behavior<a class="headerlink" href="#mail-delivery-behavior" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="mailboxes-near-quota">
-<h4>Mailboxes Near Quota<a class="headerlink" href="#mailboxes-near-quota" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="mail-delivery-behavior">
+<h3>Mail Delivery Behavior<a class="headerlink" href="#mail-delivery-behavior" title="Permalink to this heading">¶</a></h3>
+<section id="mailboxes-near-quota">
+<h4>Mailboxes Near Quota<a class="headerlink" href="#mailboxes-near-quota" title="Permalink to this heading">¶</a></h4>
 <p>Normally, in order for a message to be <em>appended</em> into a mailbox, the
 quota root for the mailbox must have enough unused storage that
 appending the message will not cause the quota to go over limit.</p>
@@ -1179,9 +1184,9 @@ use the <a class="reference internal" href="../reference/manpages/systemcommands
 users at or near quota, so administrators may nag them or so that
 warnings may be issued to users via some other mechanism.</p>
 </div>
-</div>
-<div class="section" id="mailboxes-over-quota">
-<h4>Mailboxes Over Quota<a class="headerlink" href="#mailboxes-over-quota" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="mailboxes-over-quota">
+<h4>Mailboxes Over Quota<a class="headerlink" href="#mailboxes-over-quota" title="Permalink to this heading">¶</a></h4>
 <p>If the usage is over the limit, mail delivery will fail with a temporary
 error (LMTP error 452), unless <code class="docutils literal notranslate"><span class="pre">lmtp_over_quota_perm_failure:</span> <span class="pre">on</span></code>
 is set in <a class="reference internal" href="../reference/manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> in which case a permanent error
@@ -1196,20 +1201,20 @@ the sender.</p>
 EXIM or Postfix) and as such is outside the purview of this
 document.</p>
 </div>
-</div>
-</div>
-<div class="section" id="quota-warnings-upon-select-when-user-has-d-rights">
-<h3>Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights<a class="headerlink" href="#quota-warnings-upon-select-when-user-has-d-rights" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="quota-warnings-upon-select-when-user-has-d-rights">
+<h3>Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights<a class="headerlink" href="#quota-warnings-upon-select-when-user-has-d-rights" title="Permalink to this heading">¶</a></h3>
 <p>When a user selects a mailbox whose quota root has usage that is close to or over the limit and the user has <code class="docutils literal notranslate"><span class="pre">d</span></code> rights on the mailbox, the server will issue an alert notifying the user that usage is close to or over the limit. The threshold of usage at which the server will issue quota warnings is set by the <code class="docutils literal notranslate"><span class="pre">quotawarn</span></code> configuration option.</p>
 <p>The server only issues warnings when the user has <code class="docutils literal notranslate"><span class="pre">d</span></code> rights because only users with <code class="docutils literal notranslate"><span class="pre">d</span></code> rights are capable of correcting the problem.</p>
-</div>
-<div class="section" id="quotas-and-partitions">
-<h3>Quotas and Partitions<a class="headerlink" href="#quotas-and-partitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="quotas-and-partitions">
+<h3>Quotas and Partitions<a class="headerlink" href="#quotas-and-partitions" title="Permalink to this heading">¶</a></h3>
 <p>Quota roots are independent of partitions. A single quota root can apply to mailboxes in different partitions.</p>
-</div>
-</div>
-<div class="section" id="new-mail-notification">
-<h2>New Mail Notification<a class="headerlink" href="#new-mail-notification" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="new-mail-notification">
+<h2>New Mail Notification<a class="headerlink" href="#new-mail-notification" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus IMAP server comes with a notification daemon which supports
 multiple mechanisms for notifying users of new mail. Notifications can
 be configured to be sent upon normal delivery (<code class="docutils literal notranslate"><span class="pre">MAIL</span></code> class) and/or
@@ -1223,17 +1228,17 @@ to use for <code class="docutils literal notranslate"><span class="pre">MAIL</sp
 method to use for <code class="docutils literal notranslate"><span class="pre">SIEVE</span></code> class notifications (when no method is
 specified by the Sieve action)</p></li>
 </ul>
-</div>
-<div class="section" id="partitions">
-<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this heading">¶</a></h2>
 <p>Partitions allow administrators to store different mailboxes in different parts of the Unix filesystem.  This is intended to be used to allow hierarchies of mailboxes to be spread across multiple disks.</p>
-<div class="section" id="specifying-partitions-with-create">
-<h3>Specifying Partitions with “create”<a class="headerlink" href="#specifying-partitions-with-create" title="Permalink to this headline">¶</a></h3>
+<section id="specifying-partitions-with-create">
+<h3>Specifying Partitions with “create”<a class="headerlink" href="#specifying-partitions-with-create" title="Permalink to this heading">¶</a></h3>
 <p>When an administrator creates a new mailbox, the name of the partition for the mailbox may be specified using an optional second argument to the “create” command.  Non-administrators are not permitted to specify the partition of a mailbox.  If the partition is not specified, then the mailbox inherits the partition of its most immediate parent mailbox.  If the mailbox has no parent, it gets the partition specified in the “defaultpartition” configuration option.</p>
 <p>The optional second argument to the “create” command can usually be given only when using a specialized Cyrus-aware administrative client such as <code class="docutils literal notranslate"><span class="pre">cyradm</span></code>.</p>
-</div>
-<div class="section" id="changing-partitions-with-rename">
-<h3>Changing Partitions with “rename”<a class="headerlink" href="#changing-partitions-with-rename" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="changing-partitions-with-rename">
+<h3>Changing Partitions with “rename”<a class="headerlink" href="#changing-partitions-with-rename" title="Permalink to this heading">¶</a></h3>
 <p>An administrator may change the partition of a mailbox by using the
 rename command with an optional third argument.  When a third argument
 to rename is given, the first and second arguments can be the
@@ -1243,15 +1248,15 @@ argument is not <code class="docutils literal notranslate"><span class="pre">INB
 If a third argument to rename is not given and the first argument is
 <code class="docutils literal notranslate"><span class="pre">INBOX</span></code>, the newly created mailbox gets the same partition it would
 get from the <code class="docutils literal notranslate"><span class="pre">create</span></code> command.</p>
-</div>
-</div>
-<div class="section" id="news">
-<h2>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="news">
+<h2>News<a class="headerlink" href="#news" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus has the ability to export Usenet via IMAP and/or export shared
 IMAP mailboxes via an NNTP server which is included with Cyrus.</p>
-</div>
-<div class="section" id="pop3-server">
-<h2>POP3 Server<a class="headerlink" href="#pop3-server" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pop3-server">
+<h2>POP3 Server<a class="headerlink" href="#pop3-server" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus IMAP server software comes with a compatibility POP3 server.
 Due to limitations in the POP3 protocol, the server can only access a
 user’s <code class="docutils literal notranslate"><span class="pre">INBOX</span></code> and only one instance of a POP3 server may exist for any
@@ -1265,9 +1270,9 @@ uses the server identity
 name and <code class="docutils literal notranslate"><span class="pre">realm</span></code> is the server’s Kerberos realm.
 When the POP3 server is invoked with the <code class="docutils literal notranslate"><span class="pre">-k</span></code> switch, the
 server exports MIT’s KPOP protocol instead of generic POP3.</p>
-</div>
-<div class="section" id="the-syslog-facility">
-<h2>The syslog facility<a class="headerlink" href="#the-syslog-facility" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-syslog-facility">
+<h2>The syslog facility<a class="headerlink" href="#the-syslog-facility" title="Permalink to this heading">¶</a></h2>
 <p>The Cyrus IMAP server software sends log messages to the <code class="docutils literal notranslate"><span class="pre">local6</span></code>
 syslog facility.  The severity levels used are:</p>
 <ul class="simple">
@@ -1277,18 +1282,18 @@ syslog facility.  The severity levels used are:</p>
 <li><p><strong>NOTICE</strong> - Authentications, both successful and unsuccessful</p></li>
 <li><p><strong>INFO</strong> - Mailbox openings, duplicate delivery suppression</p></li>
 </ul>
-</div>
-<div class="section" id="mail-directory-recovery">
-<h2>Mail Directory Recovery<a class="headerlink" href="#mail-directory-recovery" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mail-directory-recovery">
+<h2>Mail Directory Recovery<a class="headerlink" href="#mail-directory-recovery" title="Permalink to this heading">¶</a></h2>
 <p>This section describes the various databases used by the Cyrus IMAP
 server software and what can be done to recover from various
 inconsistencies in these databases.</p>
-<div class="section" id="reconstructing-mailbox-directories">
-<h3>Reconstructing Mailbox Directories<a class="headerlink" href="#reconstructing-mailbox-directories" title="Permalink to this headline">¶</a></h3>
+<section id="reconstructing-mailbox-directories">
+<h3>Reconstructing Mailbox Directories<a class="headerlink" href="#reconstructing-mailbox-directories" title="Permalink to this heading">¶</a></h3>
 <p>The largest database is the mailbox directories.  Each
 mailbox directory contains the following files:</p>
 <dl>
-<dt>message files</dt><dd><p>There is one file per message, containing the message in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a> format.  Lines in the message are separated by CRLF, not just LF.  The file name of each message is the message’s UID followed by a dot (.).</p>
+<dt>message files</dt><dd><p>There is one file per message, containing the message in <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc822.html"><strong>RFC 822</strong></a> format.  Lines in the message are separated by CRLF, not just LF.  The file name of each message is the message’s UID followed by a dot (.).</p>
 <p>In netnews newsgroups, the message files instead follow the format and naming conventions imposed by the netnews software.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code></dt><dd><p>This file contains a magic number and variable-length information about the mailbox itself.</p>
@@ -1314,9 +1319,9 @@ can of the other files.</p>
 recorded in any quota root files.  After running reconstruct, it is
 advisable to run <code class="docutils literal notranslate"><span class="pre">quota</span> <span class="pre">-f</span></code> (described below) in order to fix
 the quota root files.</p>
-</div>
-<div class="section" id="reconstructing-the-mailboxes-file">
-<h3>Reconstructing the Mailboxes File<a class="headerlink" href="#reconstructing-the-mailboxes-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reconstructing-the-mailboxes-file">
+<h3>Reconstructing the Mailboxes File<a class="headerlink" href="#reconstructing-the-mailboxes-file" title="Permalink to this heading">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>CURRENTLY UNAVAILABLE</p>
@@ -1334,9 +1339,9 @@ put in the mailboxes file.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> file in each mailbox directory stores a
 redundant copy of the mailbox ACL, to be used as a backup when
 rebuilding the mailboxes file.</p>
-</div>
-<div class="section" id="reconstructing-quota-roots">
-<h3>Reconstructing Quota Roots<a class="headerlink" href="#reconstructing-quota-roots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reconstructing-quota-roots">
+<h3>Reconstructing Quota Roots<a class="headerlink" href="#reconstructing-quota-roots" title="Permalink to this heading">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The following instructions are valid where <code class="docutils literal notranslate"><span class="pre">quota_db:</span> <span class="pre">quotalegacy</span></code>
@@ -1350,29 +1355,29 @@ files store the quota usage and limits of each of the quota roots.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">quota</span></code> program, when invoked with the <code class="docutils literal notranslate"><span class="pre">-f</span></code>
 switch, recalculates the quota root of each mailbox and the quota
 usage of each quota root.</p>
-</div>
-<div class="section" id="removing-quota-roots">
-<h3>Removing Quota Roots<a class="headerlink" href="#removing-quota-roots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="removing-quota-roots">
+<h3>Removing Quota Roots<a class="headerlink" href="#removing-quota-roots" title="Permalink to this heading">¶</a></h3>
 <p>To remove a quota root, remove the quota root’s file.  Then run
 <code class="docutils literal notranslate"><span class="pre">quota</span> <span class="pre">-f</span></code> to make the quota files consistent again.</p>
-</div>
-<div class="section" id="subscriptions">
-<h3>Subscriptions<a class="headerlink" href="#subscriptions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="subscriptions">
+<h3>Subscriptions<a class="headerlink" href="#subscriptions" title="Permalink to this heading">¶</a></h3>
 <p>The subdirectory <code class="docutils literal notranslate"><span class="pre">user</span></code> of the configuration directory contains user
 subscriptions.  There is one file per user, with a filename of the
 userid followed by <code class="docutils literal notranslate"><span class="pre">.sub</span></code>.  Each file contains a sorted list of
 subscribed mailboxes.</p>
 <p>There is no program to recover from damaged subscription files.  A
 site may recover from lost subscription files by restoring from backups.</p>
-</div>
-</div>
-<div class="section" id="configuration-directory">
-<h2>Configuration Directory<a class="headerlink" href="#configuration-directory" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="configuration-directory">
+<h2>Configuration Directory<a class="headerlink" href="#configuration-directory" title="Permalink to this heading">¶</a></h2>
 <p>Many objects in the configuration directory are discussed in
 the Database Recovery section. This section documents two
 other directories that reside in the configuration directory.</p>
-<div class="section" id="log-directory">
-<h3>Log Directory<a class="headerlink" href="#log-directory" title="Permalink to this headline">¶</a></h3>
+<section id="log-directory">
+<h3>Log Directory<a class="headerlink" href="#log-directory" title="Permalink to this heading">¶</a></h3>
 <p>The subdirectory <code class="docutils literal notranslate"><span class="pre">log</span></code> under the configuration directory permits
 administrators to keep protocol telemetry logs on a per-user basis.</p>
 <p>If a subdirectory of <code class="docutils literal notranslate"><span class="pre">log</span></code> exists with the same name as a user, the
@@ -1380,9 +1385,9 @@ IMAP and POP3 servers will keep a telemetry log of protocol sessions
 authenticating as that user.  The telemetry log is stored in the
 subdirectory with a filename of the server process-id and starts with
 the first command following authentication.</p>
-</div>
-<div class="section" id="proc-directory">
-<h3>Proc Directory<a class="headerlink" href="#proc-directory" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="proc-directory">
+<h3>Proc Directory<a class="headerlink" href="#proc-directory" title="Permalink to this heading">¶</a></h3>
 <p>The subdirectory <code class="docutils literal notranslate"><span class="pre">proc</span></code> under the configuration directory
 contains one file per active server process.  The file name is the ASCII
 representation of the process id and the file contains the following
@@ -1396,17 +1401,17 @@ tab-separated fields:</p>
 character.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">proc</span></code> subdirectory is normally be cleaned out on
 server reboot.</p>
-</div>
-</div>
-<div class="section" id="message-delivery">
-<h2>Message Delivery<a class="headerlink" href="#message-delivery" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="message-delivery">
+<h2>Message Delivery<a class="headerlink" href="#message-delivery" title="Permalink to this heading">¶</a></h2>
 <p>Mail transport agents such as Sendmail, Postfix, or Exim communicate
 with the Cyrus server via LMTP (the Local Mail Transport Protocol)
 implemented by the LMTP daemon.  This can be done either directly by the
 MTA (prefered, for performance reasons) or via the <code class="docutils literal notranslate"><span class="pre">deliver</span></code> LMTP
 client.</p>
-<div class="section" id="local-mail-transfer-protocol-lmtp">
-<h3>Local Mail Transfer Protocol (lmtp)<a class="headerlink" href="#local-mail-transfer-protocol-lmtp" title="Permalink to this headline">¶</a></h3>
+<section id="local-mail-transfer-protocol-lmtp">
+<h3>Local Mail Transfer Protocol (lmtp)<a class="headerlink" href="#local-mail-transfer-protocol-lmtp" title="Permalink to this heading">¶</a></h3>
 <p>LMTP, the Local Mail Transfer Protocol, is a variant of SMTP design for
 transferring mail to the final message store.  LMTP allows MTAs to deliver
 “local” mail over a network.  This is an easy optimization so that the
@@ -1428,9 +1433,9 @@ control is accomplished by controlling access to the socket).</p>
 <p>Note that if a user has a sieve script, the sieve script runs authorized
 as <em>that</em> user, and the rights of the posting user are ignored for the purposes
 of determining the outcome of the sieve script.</p>
-</div>
-<div class="section" id="single-instance-store">
-<h3>Single Instance Store<a class="headerlink" href="#single-instance-store" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="single-instance-store">
+<h3>Single Instance Store<a class="headerlink" href="#single-instance-store" title="Permalink to this heading">¶</a></h3>
 <p>If a delivery attempt mentions several recipients (only possible if
 the MTA is speaking LMTP to <code class="docutils literal notranslate"><span class="pre">lmtpd</span></code>), the server attempts to
 store as few copies of a message as possible.  It will store one copy
@@ -1438,28 +1443,28 @@ of the message per partition, and create hard links for all other
 recipients of the message.</p>
 <p>Single instance store can be turned off by using the
 “singleinstancestore” flag in the configuration file.</p>
-</div>
-<div class="section" id="duplicate-delivery-suppression">
-<h3>Duplicate Delivery Suppression<a class="headerlink" href="#duplicate-delivery-suppression" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="duplicate-delivery-suppression">
+<h3>Duplicate Delivery Suppression<a class="headerlink" href="#duplicate-delivery-suppression" title="Permalink to this heading">¶</a></h3>
 <p>A message is considered a duplicate if two copies of a message with
 the same message-id and the same envelope recipient are received.
 Cyrus uses the duplicate delivery database to hold this information,
 and it looks approximately 3 days back in the default install.</p>
 <p>Duplicate delivery suppression can be turned off by using the
 “duplicatesuppression” flag in the configuration file.</p>
-</div>
-</div>
-<div class="section" id="sieve-a-mail-filtering-language">
-<h2>Sieve, a Mail Filtering Language<a class="headerlink" href="#sieve-a-mail-filtering-language" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="sieve-a-mail-filtering-language">
+<h2>Sieve, a Mail Filtering Language<a class="headerlink" href="#sieve-a-mail-filtering-language" title="Permalink to this heading">¶</a></h2>
 <p>Sieve is a mail filtering language that can filter mail into an appropriate
 IMAP mailbox as it is delivered via lmtp.</p>
-</div>
-<div class="section" id="cyrus-murder-the-imap-aggregator">
-<h2>Cyrus Murder, the IMAP Aggregator<a class="headerlink" href="#cyrus-murder-the-imap-aggregator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cyrus-murder-the-imap-aggregator">
+<h2>Cyrus Murder, the IMAP Aggregator<a class="headerlink" href="#cyrus-murder-the-imap-aggregator" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus now supports the distribution of mailboxes across a number of IMAP
 servers to allow for horizontal scalability.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1482,7 +1487,7 @@ servers to allow for horizontal scalability.</p>
         &copy; Copyright 1993-2017, The Cyrus Team. Last updated on May 29 2019
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1505,9 +1510,12 @@ servers to allow for horizontal scalability.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

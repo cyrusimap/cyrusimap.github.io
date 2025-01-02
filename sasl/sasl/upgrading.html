@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Upgrading from v1 to v2 &mdash; Cyrus SASL 2.1.28 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../getsasl.html">Get SASL</a><ul>
@@ -440,7 +445,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a></li>
 </ul>
-<p class="caption"><span class="caption-text">IMAP</span></p>
+<p class="caption" role="heading"><span class="caption-text">IMAP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org">Cyrus IMAP</a></li>
 </ul>
@@ -483,8 +488,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="upgrading-from-v1-to-v2">
-<span id="upgrading-v1-v2"></span><h1>Upgrading from v1 to v2<a class="headerlink" href="#upgrading-from-v1-to-v2" title="Permalink to this headline">¶</a></h1>
+  <section id="upgrading-from-v1-to-v2">
+<span id="upgrading-v1-v2"></span><h1>Upgrading from v1 to v2<a class="headerlink" href="#upgrading-from-v1-to-v2" title="Permalink to this heading">¶</a></h1>
 <p>This document covers issues with upgrading from SASLv1 to SASLv2.
 To upgrade:</p>
 <ul>
@@ -524,8 +529,8 @@ onwards to understand the ramifications.</p></li>
 <li><p>If you want to learn how to port applications from libsasl v1 to
 libsasl v2, you should read the <a class="reference internal" href="appconvert.html#appconvert"><span class="std std-ref">converting applications guide</span></a>.</p></li>
 </ul>
-<div class="section" id="backwards-compatibility">
-<h2>Backwards Compatibility<a class="headerlink" href="#backwards-compatibility" title="Permalink to this headline">¶</a></h2>
+<section id="backwards-compatibility">
+<h2>Backwards Compatibility<a class="headerlink" href="#backwards-compatibility" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus SASLv2 is incompatible with applications that use
 Cyrus SASLv1.  This means that applications are unable to
 simultaneously link both versions of the library, and developers are
@@ -541,9 +546,9 @@ the old method and allows the database to be easy to transition to
 another format, when the need arises.)  Mechanisms requiring a more
 secure password database backend (e.g. SRP) should implement their own
 or use alternate property names within sasldb.</p>
-</div>
-<div class="section" id="coexistence-with-saslv1">
-<span id="coexist"></span><h2>Coexistence with SASLv1<a class="headerlink" href="#coexistence-with-saslv1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="coexistence-with-saslv1">
+<span id="coexist"></span><h2>Coexistence with SASLv1<a class="headerlink" href="#coexistence-with-saslv1" title="Permalink to this heading">¶</a></h2>
 <p>The two library versions and the associated utilities should be able
 to coexist on the same system.  The man pages will be unable to
 coexist (but luckily the new manpages are much better!).  The libsasl
@@ -551,9 +556,9 @@ v2-specific utilities have had a “2” appended to their name for this
 purpose (e.g. <code class="docutils literal notranslate"><span class="pre">saslpasswd2</span></code>, <code class="docutils literal notranslate"><span class="pre">sasldblistusers2</span></code>).  The
 new-style sasldb now defaults to the name <code class="docutils literal notranslate"><span class="pre">/etc/sasldb2</span></code>, but
 this is configurable.</p>
-</div>
-<div class="section" id="database-upgrades">
-<span id="upgrading-db"></span><h2>Database Upgrades<a class="headerlink" href="#database-upgrades" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="database-upgrades">
+<span id="upgrading-db"></span><h2>Database Upgrades<a class="headerlink" href="#database-upgrades" title="Permalink to this heading">¶</a></h2>
 <p>While there does not seem to be any conflict with the keys stored in
 the database, it is not recommended for both versions of the library
 to use the same database file.  Included in the utils directory is a
@@ -561,15 +566,15 @@ program called <code class="docutils literal notranslate"><span class="pre">dbco
 from the old-format database to the new format.  Note that if you continue to
 run older applications that rely on Cyrus SASLv1, the databases for SASLv1
 and SASLv2 will not automatically be kept in sync.</p>
-</div>
-<div class="section" id="errors-on-migration">
-<h2>Errors on migration<a class="headerlink" href="#errors-on-migration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="errors-on-migration">
+<h2>Errors on migration<a class="headerlink" href="#errors-on-migration" title="Permalink to this heading">¶</a></h2>
 <p>When migrating the <code class="docutils literal notranslate"><span class="pre">/etc/sasldb</span></code> database using the <code class="docutils literal notranslate"><span class="pre">utils/dbconverter-2</span></code>
 utility, you may encounter the error message “Error opening password
 file”. This is usually due to the fact your SASL V1 library was compiled
 using a different type of database than the SASL V2 library.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -592,7 +597,7 @@ using a different type of database than the SASL V2 library.</p>
         &copy; Copyright 1993-2022, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -616,9 +621,12 @@ using a different type of database than the SASL V2 library.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 

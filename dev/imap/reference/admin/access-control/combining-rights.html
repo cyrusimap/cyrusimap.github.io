@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Combining Access Rights &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -786,15 +791,15 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="combining-access-rights">
-<span id="imap-admin-access-control-combining-rights"></span><h1>Combining Access Rights<a class="headerlink" href="#combining-access-rights" title="Permalink to this headline">¶</a></h1>
+  <section id="combining-access-rights">
+<span id="imap-admin-access-control-combining-rights"></span><h1>Combining Access Rights<a class="headerlink" href="#combining-access-rights" title="Permalink to this heading">¶</a></h1>
 <p>Access rights can combined to set a typical set of &quot;read&quot;, &quot;write&quot; and
 &quot;full control&quot;, potentially making it easier for client implementors to
 present their users with an interface to administer the ACLs to their
 mailboxes easily.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4314.html"><strong>RFC 4314</strong></a> defines combinations of rights that should resulted in
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4314.html"><strong>RFC 4314</strong></a> defines combinations of rights that should resulted in
 an untagged <code class="docutils literal notranslate"><span class="pre">READ-ONLY</span></code> or <code class="docutils literal notranslate"><span class="pre">READ-WRITE</span></code> response to a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>
 command, depending on whether the user has flag modification rights
 such as the <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-t"><span class="std std-ref">t</span></a> for maintaining
@@ -810,15 +815,15 @@ and the user selecting the mailbox is not given the
 <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-t"><span class="std std-ref">t</span></a> or
 <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-w"><span class="std std-ref">w</span></a> right.</p>
 </div>
-<div class="section" id="lrs">
-<h2>lrs<a class="headerlink" href="#lrs" title="Permalink to this headline">¶</a></h2>
+<section id="lrs">
+<h2>lrs<a class="headerlink" href="#lrs" title="Permalink to this heading">¶</a></h2>
 <p>The set of rights often referred to as &quot;read-only&quot;. The ACI subject is
 allowed to lookup the folder, read its contents and maintain <code class="docutils literal notranslate"><span class="pre">\Seen</span></code>
 flags on messages. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">\Recent</span></code> flags are maintained for
 the ACI subject as well.</p>
-</div>
-<div class="section" id="lirstw">
-<h2>lirstw<a class="headerlink" href="#lirstw" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lirstw">
+<h2>lirstw<a class="headerlink" href="#lirstw" title="Permalink to this heading">¶</a></h2>
 <p>The set of rights that could arguably be referred to &quot;semi-full&quot;.</p>
 <p>The ACI subject is allowed to lookup the folder, read its contents and
 maintain flags on messages, as well as insert new messages in to the
@@ -839,25 +844,25 @@ client used can be configured to show or hide messages flagged
 <code class="docutils literal notranslate"><span class="pre">/vendor/cmu/cyrus-imapd/sharedseen</span></code> on the folder has no bearing on
 the <code class="docutils literal notranslate"><span class="pre">\Deleted</span></code> flag, but only on the <code class="docutils literal notranslate"><span class="pre">\Seen</span></code> flag. To be more
 precise, all flags other than <code class="docutils literal notranslate"><span class="pre">\Seen</span></code> are global.</p>
-</div>
-<div class="section" id="acl-macros">
-<h2>ACL &quot;Macros&quot;<a class="headerlink" href="#acl-macros" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="acl-macros">
+<h2>ACL &quot;Macros&quot;<a class="headerlink" href="#acl-macros" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus administration supports short-hand macros you may use:</p>
-<div class="section" id="none">
-<h3>none<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h3>
+<section id="none">
+<h3>none<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>Remove any existing ACL for this ACI</p>
 </div></blockquote>
-</div>
-<div class="section" id="read-lrs">
-<h3>read (lrs)<a class="headerlink" href="#read-lrs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="read-lrs">
+<h3>read (lrs)<a class="headerlink" href="#read-lrs" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>Grant the ACI read-only access to the mailbox (<em>lookup</em>, <em>read</em> and
 <em>seen</em>).</p>
 </div></blockquote>
-</div>
-<div class="section" id="post-lrsp">
-<h3>post (lrsp)<a class="headerlink" href="#post-lrsp" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="post-lrsp">
+<h3>post (lrsp)<a class="headerlink" href="#post-lrsp" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>Give the ACI read access to the mailbox, and allow them to post to
 the mailbox using the delivery system (<em>lookup</em>, <em>read</em>, <em>seen</em> and
@@ -865,41 +870,41 @@ the mailbox using the delivery system (<em>lookup</em>, <em>read</em>, <em>seen<
 <p>Most delivery systems do not provide authentication, so the <code class="docutils literal notranslate"><span class="pre">p</span></code>
 right usually has meaning only for the &quot;anonymous&quot; user.</p>
 </div></blockquote>
-</div>
-<div class="section" id="append-lrsip">
-<h3>append (lrsip)<a class="headerlink" href="#append-lrsip" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="append-lrsip">
+<h3>append (lrsip)<a class="headerlink" href="#append-lrsip" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The ACI can read and append to the mailbox, either through IMAP, or
 through the delivery system.</p>
 </div></blockquote>
-</div>
-<div class="section" id="write-lrswipkxtecd">
-<h3>write (lrswipkxtecd)<a class="headerlink" href="#write-lrswipkxtecd" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="write-lrswipkxtecd">
+<h3>write (lrswipkxtecd)<a class="headerlink" href="#write-lrswipkxtecd" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The ACI may do pretty much anything with a mailbox, and folders
 within it.</p>
 </div></blockquote>
-</div>
-<div class="section" id="delete-lrxte">
-<h3>delete (lrxte)<a class="headerlink" href="#delete-lrxte" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="delete-lrxte">
+<h3>delete (lrxte)<a class="headerlink" href="#delete-lrxte" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The ACI may list, read, delete and expunge messages and delete
 folders.</p>
 </div></blockquote>
-</div>
-<div class="section" id="all-lrswipkxtecda">
-<h3>all (lrswipkxtecda)<a class="headerlink" href="#all-lrswipkxtecda" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="all-lrswipkxtecda">
+<h3>all (lrswipkxtecda)<a class="headerlink" href="#all-lrswipkxtecda" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>Same as write, plus admin rights.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="features-and-combined-access-rights">
-<h2>Features and Combined Access Rights<a class="headerlink" href="#features-and-combined-access-rights" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="features-and-combined-access-rights">
+<h2>Features and Combined Access Rights<a class="headerlink" href="#features-and-combined-access-rights" title="Permalink to this heading">¶</a></h2>
 <p>For most features, ACI subjects need certain access rights on a folder
 in order to perform or control the feature.</p>
-<div class="section" id="metadata">
-<h3>METADATA<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+<section id="metadata">
+<h3>METADATA<a class="headerlink" href="#metadata" title="Permalink to this heading">¶</a></h3>
 <p>In order to be allowed to retrieve and/or set annotations on a folder,
 the ACI subject requires the <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-l"><span class="std std-ref">l</span></a>
 right, and any one of the <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-r"><span class="std std-ref">r</span></a>,
@@ -907,9 +912,9 @@ right, and any one of the <a class="reference internal" href="rights-reference.h
 <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-w"><span class="std std-ref">w</span></a>,
 <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-i"><span class="std std-ref">i</span></a> or
 <a class="reference internal" href="rights-reference.html#imap-admin-access-control-right-p"><span class="std std-ref">p</span></a> rights.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -932,7 +937,7 @@ right, and any one of the <a class="reference internal" href="rights-reference.h
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on May 08 2017
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -955,9 +960,12 @@ right, and any one of the <a class="reference internal" href="rights-reference.h
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 

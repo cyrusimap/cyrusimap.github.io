@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Event Source &mdash; Cyrus IMAP 3.6.6 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -734,7 +739,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -783,22 +788,22 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-event-source">
-<span id="cyrus-eventsource"></span><h1>Cyrus Event Source<a class="headerlink" href="#cyrus-event-source" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <section id="cyrus-event-source">
+<span id="cyrus-eventsource"></span><h1>Cyrus Event Source<a class="headerlink" href="#cyrus-event-source" title="Permalink to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus can be configured to send events to another program any time something changes in a mailbox. The event contains details about the type of action that occurred, identifying information about the message and other useful information. Cyrus generates events for pretty much everything – every user action, data change, and other interesting things like calendar alarms.</p>
-<p>The notifications are compliant with <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>, though Cyrus includes some additional events outside of the RFC.</p>
+<p>The notifications are compliant with <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5423.html"><strong>RFC 5423</strong></a>, though Cyrus includes some additional events outside of the RFC.</p>
 <p>By default, Cyrus ships with <a class="reference internal" href="../manpages/systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a> which listens for events from Cyrus. Mostly it is used for sending email notifications triggered by Sieve scripts, or by calendar alarms triggered by <code class="docutils literal notranslate"><span class="pre">calalarmd</span></code>.</p>
-</div>
-<div class="section" id="compile-options">
-<h2>Compile options<a class="headerlink" href="#compile-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compile-options">
+<h2>Compile options<a class="headerlink" href="#compile-options" title="Permalink to this heading">¶</a></h2>
 <p>You can control what kind of events Cyrus generates during the <code class="docutils literal notranslate"><span class="pre">configure</span></code> step of compilation.</p>
 <p><code class="docutils literal notranslate"><span class="pre">--enable_event_notification</span></code>: Set this to “yes” to have Cyrus generate mailbox related events. This is enabled by default.</p>
 <p><code class="docutils literal notranslate"><span class="pre">--enable-apple-push-service</span></code>: Set this to “yes” to enable support for the Apple Push service. This is <em>disabled</em> by default as Apple does not provide licenses for Push support to developers at this stage.</p>
-</div>
-<div class="section" id="configuration-options">
-<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration-options">
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this heading">¶</a></h2>
 <p>These need to be set in <a class="reference internal" href="../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">event_content_inclusion_mode:</span></code> standard</p>
@@ -851,20 +856,20 @@ Set ALL for any folder</p>
 <div><p><code class="docutils literal notranslate"><span class="pre">event_notifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Notifyd(8) method to use for “EVENT” notifications which are based on
-the <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
+the <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="event-types">
-<h2>Event Types<a class="headerlink" href="#event-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="event-types">
+<h2>Event Types<a class="headerlink" href="#event-types" title="Permalink to this heading">¶</a></h2>
 <p>These are detailed in <a class="reference internal" href="../../concepts/features/event-notifications.html#imap-features-event-notifications"><span class="std std-ref">Event Notifications</span></a>.</p>
-</div>
-<div class="section" id="accessing-events">
-<h2>Accessing events<a class="headerlink" href="#accessing-events" title="Permalink to this headline">¶</a></h2>
-<p>While Cyrus only communicates with a single notification process, it doesn’t have to be its standard <a class="reference internal" href="../manpages/systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a>. It’s possible to write your own, providing it conforms with <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5465.html"><strong>RFC 5465</strong></a>.</p>
-</div>
-<div class="section" id="apple-push-service">
-<h2>Apple Push Service<a class="headerlink" href="#apple-push-service" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-events">
+<h2>Accessing events<a class="headerlink" href="#accessing-events" title="Permalink to this heading">¶</a></h2>
+<p>While Cyrus only communicates with a single notification process, it doesn’t have to be its standard <a class="reference internal" href="../manpages/systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a>. It’s possible to write your own, providing it conforms with <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5465.html"><strong>RFC 5465</strong></a>.</p>
+</section>
+<section id="apple-push-service">
+<h2>Apple Push Service<a class="headerlink" href="#apple-push-service" title="Permalink to this heading">¶</a></h2>
 <p>While Cyrus supports the Apple Push Service, Apple has only licensed Apple Push
 for mail to a couple of large mail providers: Fastmail and Yahoo. If you own an
 OS X Server license, you also get a key for personal use. But it’s not generally
@@ -872,8 +877,8 @@ a supported option for third party developers that we’re aware of,
 unfortunately.</p>
 <p>We have discussed pulling the XAPPLEPUSH code out from upstream Cyrus, but right
 now it remains against the day that Apple do decide to open up access.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -896,7 +901,7 @@ now it remains against the day that Apple do decide to open up access.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Jul 27 2021
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -919,9 +924,12 @@ now it remains against the day that Apple do decide to open up access.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

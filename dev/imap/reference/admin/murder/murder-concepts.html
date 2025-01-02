@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Murder: Concepts &mdash; Cyrus IMAP 3.11.0-alpha0 (dev) documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   
@@ -104,7 +109,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Cyrus IMAP</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../download.html">Download</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../download/getcyrus.html">Get Cyrus</a><ul>
@@ -735,7 +740,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
 </ul>
@@ -786,16 +791,16 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-murder-concepts">
-<span id="murder-concepts"></span><h1>Cyrus Murder: Concepts<a class="headerlink" href="#cyrus-murder-concepts" title="Permalink to this headline">¶</a></h1>
+  <section id="cyrus-murder-concepts">
+<span id="murder-concepts"></span><h1>Cyrus Murder: Concepts<a class="headerlink" href="#cyrus-murder-concepts" title="Permalink to this heading">¶</a></h1>
 <p>The Cyrus IMAP Aggregator transparently distributes IMAP and POP
 mailboxes across multiple servers. Unlike other systems for load
 balancing IMAP mailboxes, the aggregator allows users to access
 mailboxes on any of the IMAP servers in the system.</p>
 <p>Note that although this document focuses on IMAP and POP, the same
 concepts also apply to NNTP and HTTP (CalDAV, CardDAV, RSS).</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>Scaling a service usually takes one of two paths:</p>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -817,7 +822,7 @@ the system may be harder to implement as well as harder to manage.</p>
 </ol>
 <p>In the IMAP space, the approach of buying a larger machine is pretty
 obvious. Distributing the load is a bit trickier since there is no
-concept of mailbox location in IMAP (excluding <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2193.html"><strong>RFC 2193</strong></a> mailbox
+concept of mailbox location in IMAP (excluding <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2193.html"><strong>RFC 2193</strong></a> mailbox
 referrals, which are not widely implemented by clients). Clients
 traditionally assume that the server they are talking to is the server
 with the mailbox they are looking for.</p>
@@ -831,9 +836,9 @@ IMAP Aggregator. The Cyrus aggregator takes a <a class="reference internal" href
 servers and presents a server independent view to the clients. That is,
 <strong>all the mailboxes across all the IMAP servers are aggregated to a single
 image</strong>, thereby appearing to be only one IMAP server to the clients.</p>
-</div>
-<div class="section" id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>The Cyrus IMAP Aggregator has three classes of servers:</dt><dd><ol class="arabic simple">
 <li><p>IMAP frontend,</p></li>
@@ -847,8 +852,8 @@ end user clients and the backend servers. The frontends use the MUPDATE
 server as an authoritative source for mailbox names, locations, and
 permissions. The backend servers store the actual IMAP data (and keep
 the MUPDATE server appraised as to changes in the Mailbox list).</p>
-<div class="section" id="backend-servers">
-<h3>Backend Servers<a class="headerlink" href="#backend-servers" title="Permalink to this headline">¶</a></h3>
+<section id="backend-servers">
+<h3>Backend Servers<a class="headerlink" href="#backend-servers" title="Permalink to this heading">¶</a></h3>
 <p>The backend servers serve the actual data and are fully functional
 standalone IMAP servers that serve a set of mailboxes. Each backend
 server maintains a local mailboxes database that lists what mailboxes
@@ -865,9 +870,9 @@ the MUPDATE server to insure that other backend servers aren't creating
 the same mailbox before proceeding. Once the local aspects of mailbox
 creation are complete, the mailbox is activated on the MUPDATE server,
 and is considered available to any client through the frontends.</p>
-</div>
-<div class="section" id="frontend-servers">
-<h3>Frontend Servers<a class="headerlink" href="#frontend-servers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="frontend-servers">
+<h3>Frontend Servers<a class="headerlink" href="#frontend-servers" title="Permalink to this heading">¶</a></h3>
 <p>The frontend servers, unlike the backend servers, are fully
 interchangeable with each other and the frontend servers can be
 considered 'dataless'; any loss of a proxy results in no loss of data.
@@ -875,16 +880,16 @@ The only persistent data that is needed (the mailbox list) is kept on
 the MUPDATE master server. This list is synchronized between the
 frontend and the MUPDATE master when the frontend comes up.</p>
 <p>The list of mailboxes in the murder is maintained by the MUPDATE server.
-The MUPDATE protocol is described at <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3656.html"><strong>RFC 3656</strong></a>.</p>
+The MUPDATE protocol is described at <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc3656.html"><strong>RFC 3656</strong></a>.</p>
 <p>For IMAP service on a frontend, there are two main types of processes,
 the proxyd and the mupdate (slave mode) synchronization process. The
 proxyd handles the IMAP session with clients. It relies on a consistent
 and complete mailboxes database that reflects the state of the world. It
 never writes to the mailboxes database. Instead, the mailboxes database
 is kept in sync with the master by a slave mupdate process.</p>
-</div>
-<div class="section" id="mail-delivery">
-<h3>Mail Delivery<a class="headerlink" href="#mail-delivery" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="mail-delivery">
+<h3>Mail Delivery<a class="headerlink" href="#mail-delivery" title="Permalink to this heading">¶</a></h3>
 <p>The incoming mail messages go to an lmtp proxy (either running on a
 frontend, a mail exchanger, or any other server). The lmtp proxy running
 on the frontend server uses the master MUPDATE server to determine the
@@ -902,10 +907,10 @@ is.</p>
 holds the requirement that all of a user's mailboxes live on the
 same backend.</p>
 </div>
-</div>
-<div class="section" id="clients">
-<h3>Clients<a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h3>
-<p>Clients that support <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2193.html"><strong>RFC 2193</strong></a> IMAP referrals can bypass the
+</section>
+<section id="clients">
+<h3>Clients<a class="headerlink" href="#clients" title="Permalink to this heading">¶</a></h3>
+<p>Clients that support <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2193.html"><strong>RFC 2193</strong></a> IMAP referrals can bypass the
 aggregator frontend. See <a class="reference internal" href="#id1">IMAP Referrals</a> for more details.</p>
 <p>Clients are encouraged to bypass the frontends via approved mechanisms.
 This should result in better performance for the client and less load
@@ -919,12 +924,12 @@ back ends which are firewalled. Please consult
 <a class="reference internal" href="../../manpages/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> for details of the
 <code class="docutils literal notranslate"><span class="pre">proxyd_disable_mailbox_referrals</span></code> setting.</p>
 </div>
-</div>
-</div>
-<div class="section" id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="assumptions">
-<h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">¶</a></h2>
+<section id="assumptions">
+<h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p>Operations that change the mailbox list are (comparatively) rare.
 The vast majority of IMAP sessions do not manipulate the state of the
@@ -956,9 +961,9 @@ current session. The straightforward case that must work correctly is
 </li>
 <li><p>Accesses to non-existent mailboxes are rare.</p></li>
 </ul>
-</div>
-<div class="section" id="authentication">
-<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">¶</a></h3>
 <p>The user authenticates to the frontend server via any supported SASL
 mechanism or via plaintext. If authentication is successful, the front
 end server will authenticate to the backend server using a SASL
@@ -973,9 +978,9 @@ changes, etc) must be done directly from the client to the backend, as
 administrative permissions are not granted to any of the proxy servers.
 IMAP Referrals provide a way to accomplish this with minimal client UI
 changes.</p>
-</div>
-<div class="section" id="subscriptions">
-<h3>Subscriptions<a class="headerlink" href="#subscriptions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="subscriptions">
+<h3>Subscriptions<a class="headerlink" href="#subscriptions" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[LSUB,</span> <span class="pre">SUBSCRIBE,</span> <span class="pre">UNSUBSCRIBE]</span></code></p>
 <p>The frontend server directs the LSUB to the backend server that has
 the user's INBOX. As such, the backend server may have entries in the
@@ -987,9 +992,9 @@ active within the murder.</p>
 aggregator replies with NO with an appropriate error message. Clients
 should not assume that the user has no subscriptions (though apparently
 some clients do this).</p>
-</div>
-<div class="section" id="finding-a-mailbox">
-<h3>Finding a Mailbox<a class="headerlink" href="#finding-a-mailbox" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="finding-a-mailbox">
+<h3>Finding a Mailbox<a class="headerlink" href="#finding-a-mailbox" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[SETQUOTA,</span> <span class="pre">GETQUOTA,</span> <span class="pre">EXAMINE,</span> <span class="pre">STATUS]</span></code></p>
 <p>The frontend machine looks up the location of the mailbox, connects
 via IMAP to the backend server, and issues the equivalent command there.
@@ -1013,16 +1018,16 @@ the assumption is that this does not frequently occur (or if it
 does, it is just after the mailbox has been created and the
 frontend hasn't seen the update yet).</p>
 </div></blockquote>
-</div>
-<div class="section" id="operations-within-a-mailbox">
-<h3>Operations within a Mailbox<a class="headerlink" href="#operations-within-a-mailbox" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="operations-within-a-mailbox">
+<h3>Operations within a Mailbox<a class="headerlink" href="#operations-within-a-mailbox" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[APPEND,</span> <span class="pre">CHECK,</span> <span class="pre">CLOSE,</span> <span class="pre">EXPUNGE,</span> <span class="pre">SEARCH,</span> <span class="pre">FETCH,</span> <span class="pre">STORE,</span> <span class="pre">UID]</span></code></p>
 <p>These commands are sent to the appropriate backend server.
 The aggregator does not need to modify any of these commands
 before sending them to the backend server.</p>
-</div>
-<div class="section" id="copy">
-<h3>COPY<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="copy">
+<h3>COPY<a class="headerlink" href="#copy" title="Permalink to this heading">¶</a></h3>
 <p>COPY is somewhat special as it acts upon messages in the currently
 SELECT'd mailbox but then interacts with another mailbox.</p>
 <p>In the case where the destination mailbox is on the same backend server
@@ -1031,9 +1036,9 @@ server and the backend server takes care of the command.</p>
 <p>If the destination folder is on a different backend server, the
 frontend intervenes and does the COPY by FETCHing the messages from the
 source backend server and then APPENDs the messages to the destination server.</p>
-</div>
-<div class="section" id="operations-on-the-mailbox-list">
-<h3>Operations on the Mailbox List<a class="headerlink" href="#operations-on-the-mailbox-list" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="operations-on-the-mailbox-list">
+<h3>Operations on the Mailbox List<a class="headerlink" href="#operations-on-the-mailbox-list" title="Permalink to this heading">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">[CREATE,</span> <span class="pre">DELETE,</span> <span class="pre">RENAME,</span> <span class="pre">SETACL]</span></code></p>
 <blockquote>
 <div><p>These commands are all done by the backend server using the MUPDATE
@@ -1103,10 +1108,10 @@ complete it is activated on the new server in MUPDATE. The
 deactivation prevents clients from accessing the mailbox, and
 causes mail delivery to temporarily fail.</p>
 </div></blockquote>
-</div>
-<div class="section" id="imap-referrals">
-<span id="id1"></span><h3>IMAP Referrals<a class="headerlink" href="#imap-referrals" title="Permalink to this headline">¶</a></h3>
-<p>If clients support IMAP Mailbox Referrals (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2193.html"><strong>RFC 2193</strong></a>), the client can
+</section>
+<section id="imap-referrals">
+<span id="id1"></span><h3>IMAP Referrals<a class="headerlink" href="#imap-referrals" title="Permalink to this heading">¶</a></h3>
+<p>If clients support IMAP Mailbox Referrals (<span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2193.html"><strong>RFC 2193</strong></a>), the client can
 improve performance and reduce the load on the aggregator by using the
 IMAP referrals that are sent to it and going to the appropriate
 backend servers.</p>
@@ -1123,32 +1128,32 @@ the IMAP server directly. Most commands performing operations within
 a mailbox (cf Section 3.3) fall into this category. Some commands will
 not be possible without a referrals-capable client (such as most
 commands done as administrator).</p>
-<p><span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2193.html"><strong>RFC 2193</strong></a> indicates that the client does not stick the referred
+<p><span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2193.html"><strong>RFC 2193</strong></a> indicates that the client does not stick the referred
 server. As such the SELECT will get issued to the frontend server and
 not the referred server. Additionally, CREATE, RENAME, and DELETE get
 sent to the frontend which will proxy the command to the correct
 backend server.</p>
-</div>
-<div class="section" id="pop">
-<h3>POP<a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pop">
+<h3>POP<a class="headerlink" href="#pop" title="Permalink to this heading">¶</a></h3>
 <p>POP is easy given that POP only allows access to the user's INBOX. When
 it comes to POP, the IMAP Aggregator acts just like a <a class="reference internal" href="#appendix-b-imap-multiplexing"><span class="std std-ref">multiplexor</span></a>. The user authenticates to frontend
 server. The frontend determines where the user's INBOX is located and
 does a direct pass through of the POP commands from the client to the
 appropriate backend server.</p>
-</div>
-<div class="section" id="mupdate">
-<h3>MUPDATE<a class="headerlink" href="#mupdate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="mupdate">
+<h3>MUPDATE<a class="headerlink" href="#mupdate" title="Permalink to this heading">¶</a></h3>
 <p>The mupdate (slave) process (one per frontend) holds open a MUPDATE
 connection and listens for updates from the MUPDATE master server (as
 backends inform it of updates). The slave makes these modifications on
 the local copy of the mailboxes database.</p>
-</div>
-</div>
-<div class="section" id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="mailboxes-database">
-<h3>Mailboxes Database<a class="headerlink" href="#mailboxes-database" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">¶</a></h2>
+<section id="mailboxes-database">
+<h3>Mailboxes Database<a class="headerlink" href="#mailboxes-database" title="Permalink to this heading">¶</a></h3>
 <p>A benefit of having the mailbox information on the frontend is that
 LIST is very cheap. The frontend servers can process this request
 without having to contact each backend server.</p>
@@ -1157,11 +1162,11 @@ of the mailbox operations and thus should be the case to optimize. (In
 addition to the fact that any operation that needs to be forwarded to a
 backend needs to know to which backend it is being forwarded, so lookups
 in the mailbox list are also quite frequent).</p>
-</div>
-<div class="section" id="failure-mode-analysis">
-<h3>Failure Mode Analysis<a class="headerlink" href="#failure-mode-analysis" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="what-happens-when-a-backend-server-comes-up">
-<h4>What happens when a backend server comes up?<a class="headerlink" href="#what-happens-when-a-backend-server-comes-up" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="failure-mode-analysis">
+<h3>Failure Mode Analysis<a class="headerlink" href="#failure-mode-analysis" title="Permalink to this heading">¶</a></h3>
+<section id="what-happens-when-a-backend-server-comes-up">
+<h4>What happens when a backend server comes up?<a class="headerlink" href="#what-happens-when-a-backend-server-comes-up" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p>Resynchronization with the MUPDATE server. Any mailboxes that exist
 locally but are not in MUPDATE are pushed to MUPDATE. Any mailboxes
@@ -1169,26 +1174,26 @@ that exist locally but are in MUPDATE as living on a different
 server are deleted. Any mailboxes that do not exist locally but
 exist in MUPDATE as living on this server are removed from MUPDATE.</p>
 </div></blockquote>
-</div>
-<div class="section" id="what-happens-when-a-frontend-server-comes-up">
-<h4>What happens when a frontend server comes up?<a class="headerlink" href="#what-happens-when-a-frontend-server-comes-up" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="what-happens-when-a-frontend-server-comes-up">
+<h4>What happens when a frontend server comes up?<a class="headerlink" href="#what-happens-when-a-frontend-server-comes-up" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p>The only thing that needs to happen is for the frontend to connect
 to the MUPDATE server, issue an UPDATE command, and resynchronize
 its local database copy with the copy on the master server.</p>
 </div></blockquote>
-</div>
-<div class="section" id="where-s-the-true-mailboxes-file">
-<h4>Where's the true mailboxes file?<a class="headerlink" href="#where-s-the-true-mailboxes-file" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="where-s-the-true-mailboxes-file">
+<h4>Where's the true mailboxes file?<a class="headerlink" href="#where-s-the-true-mailboxes-file" title="Permalink to this heading">¶</a></h4>
 <blockquote>
 <div><p>The MUPDATE master contains authoritative information as to the
 location of any mailbox (in the case of a conflict), but the
 backends are authoritative as to which mailboxes actually exist.</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="summary-of-benefits">
-<h3>Summary of Benefits<a class="headerlink" href="#summary-of-benefits" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="summary-of-benefits">
+<h3>Summary of Benefits<a class="headerlink" href="#summary-of-benefits" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p><strong>Availability</strong> - By allowing multiple frontends, failures of the
 frontend only result in a reduction of capacity. Users currently
@@ -1231,10 +1236,10 @@ hierarchy can also exist across multiple machines.</p></li>
 </div></blockquote>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="futures">
-<h2>Futures<a class="headerlink" href="#futures" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="futures">
+<h2>Futures<a class="headerlink" href="#futures" title="Permalink to this heading">¶</a></h2>
 <p>It would be nice to be able to replicate the messages in a mailbox
 among multiple servers and not just do partitioning for availability.</p>
 <p>We are also evaluating using the aggregator to be able to provide
@@ -1248,11 +1253,11 @@ insufficient for the needs of the Aggregator.</p>
 <p>It would be nice if quotaroots had some better semantics with respect
 to the murder (either make them first-class entities, or have them
 apply across servers).</p>
-</div>
-<div class="section" id="appendices">
-<h2>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="appendix-a-dns-name-load-balancing">
-<h3>Appendix A: DNS Name Load Balancing<a class="headerlink" href="#appendix-a-dns-name-load-balancing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="appendices">
+<h2>Appendices<a class="headerlink" href="#appendices" title="Permalink to this heading">¶</a></h2>
+<section id="appendix-a-dns-name-load-balancing">
+<h3>Appendix A: DNS Name Load Balancing<a class="headerlink" href="#appendix-a-dns-name-load-balancing" title="Permalink to this heading">¶</a></h3>
 <p>One method of load balancing is to use DNS to spread your users to
 multiple machines.</p>
 <p>One method is to create a DNS CNAME for each letter of the alphabet.
@@ -1270,9 +1275,9 @@ growth can be accommodated without any user reconfiguration.</p>
 multiple servers and users must potentially configure a server for each
 user with a shared folder he wishes to view. Also, the user's INBOX
 hierarchy must also reside on a single machine.</p>
-</div>
-<div class="section" id="appendix-b-imap-multiplexing">
-<span id="id2"></span><h3>Appendix B: IMAP Multiplexing<a class="headerlink" href="#appendix-b-imap-multiplexing" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="appendix-b-imap-multiplexing">
+<span id="id2"></span><h3>Appendix B: IMAP Multiplexing<a class="headerlink" href="#appendix-b-imap-multiplexing" title="Permalink to this heading">¶</a></h3>
 <p>Another method of spreading out the load is to use IMAP multiplexing.
 This is very similar to the IMAP Aggregator in that there are frontend
 and backend servers. The frontend servers do the lookup and then
@@ -1293,9 +1298,9 @@ a different backend server.</p>
 also does content filtering.</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="appendix-c-definitions">
-<h3>Appendix C: Definitions<a class="headerlink" href="#appendix-c-definitions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="appendix-c-definitions">
+<h3>Appendix C: Definitions<a class="headerlink" href="#appendix-c-definitions" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>IMAP connection</dt><dd><p>A single IMAP TCP/IP session with a single IMAP server is a
 &quot;connection&quot;.</p>
@@ -1332,9 +1337,9 @@ resides on one partition on one server. For rationale, see section
 xxx.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -1357,7 +1362,7 @@ xxx.</p>
         &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Oct 24 2024
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
         </div>
@@ -1380,9 +1385,12 @@ xxx.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
 
   
 
