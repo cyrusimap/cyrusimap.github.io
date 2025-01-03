@@ -1,0 +1,33 @@
+name: Build a demo version of the site
+
+on:
+  push:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cyrusimap/cyrus-site-builder:latest
+
+    steps:
+    - name: Build test site
+      run: |
+        /app/build-cyrus-site --only-dev
+    - name: Upload test site as an artifact
+      id: test-site
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: /tmp/CYRUS_DOCS_BUILD_DIR/cyrus-site/
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      id-token: write
+      pages: write
+
+    steps:
+    - name: Publish test site
+      uses: actions/deploy-pages@v4
+      id: test-site
+
