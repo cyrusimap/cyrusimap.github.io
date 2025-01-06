@@ -3,6 +3,8 @@ name: Build a demo version of the site
 on:
   push:
     branches: [ 'main', 'master' ]
+  schedule:
+    cron: '33 */4 * * *'
 
 jobs:
   build:
