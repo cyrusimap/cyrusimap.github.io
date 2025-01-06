@@ -7,12 +7,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/cyrusimap/cyrus-site-builder:latest
+    container: ghcr.io/cyrusimap/cyrus-docker:bookworm
 
     steps:
+    - name: Check out repo
+      uses: actions/checkout@v4
+
     - name: Build test site
       run: |
-        /app/build-cyrus-site --only-dev
+        ./build-cyrus-site --only-dev
+
     - name: Upload test site as an artifact
       id: test-site
       uses: actions/upload-pages-artifact@v3
