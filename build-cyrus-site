@@ -83,7 +83,7 @@ if ($opt->only_dev) {
 }
 
 sub run_or_die ($cmd, @args) {
-    print "===> running $cmd @args\n";
+    say "===> running $cmd @args";
     system $cmd $cmd, @args;
     return if $? == 0;
 
@@ -101,7 +101,7 @@ sub run_or_die ($cmd, @args) {
 }
 
 sub run_and_ignore_nonzero ($cmd, @args) {
-    print "===> running $cmd @args\n";
+    say "===> running $cmd @args";
     system $cmd $cmd, @args;
     return if $? == 0;
 
@@ -119,7 +119,7 @@ sub run_and_ignore_nonzero ($cmd, @args) {
 
 # set up PATH
 $ENV{PATH} = join(q{:}, qw( /usr/local/bin /usr/bin /bin ));
-print "#### \$PATH is \"$ENV{PATH}\"\n";
+say qq{#### \$PATH is "$ENV{PATH}"};
 
 # set up our basedir
 make_path($basedir);
@@ -127,9 +127,9 @@ chdir $basedir or die "chdir $basedir: $!\n";
 
 # pull the target
 if (-d $builddir) {
-    print "#### we already have a build directory, cool...\n";
+    say "#### we already have a build directory, cool...";
 } else {
-    print "#### creating a build dir...\n";
+    say "#### creating a build dir...";
     make_path($builddir);
 }
 
@@ -145,24 +145,24 @@ foreach my $source_name (sort keys %source) {
 
     if ($details->{is_archive}) {
         $src = canonpath("$workdir/archived-versions/$details->{version}");
-        print "#### will use archived version from $src...\n";
+        say "#### will use archived version from $src...";
     } else {
         # first make sure we have the source tree
         if (! -d $dir) {
             my $repo_url = $repo{ $details->{repo} };
-            print "#### cloning repo for $source_name...\n";
+            say "#### cloning repo for $source_name...";
             run_or_die('git', 'clone', $repo_url,
                        '--branch', $branch,
                        '--single-branch',
                        '--no-tags',
                        $dir);
         } else {
-            print "#### updating repo for $source_name...\n";
+            say "#### updating repo for $source_name...";
             run_or_die('git', '-C', $dir,
                        'fetch', 'origin');
         }
 
-        print "#### building docs for $source_name...\n";
+        say "#### building docs for $source_name...";
         run_or_die('git', '-C', $dir,
                    'checkout', '-q', "origin/$branch");
         run_or_die('make', '-C', canonpath("$dir/docsrc"), 'html');
@@ -171,7 +171,7 @@ foreach my $source_name (sort keys %source) {
     }
 
     for my $path ($details->{paths}->@*) {
-        print "#### rsyncing $source_name docs to $path...\n";
+        say "#### rsyncing $source_name docs to $path...";
         my $dst = canonpath("$builddir/$path");
 
         # n.b. trailing / on src argument is load-bearing
@@ -181,7 +181,7 @@ foreach my $source_name (sort keys %source) {
     say "::endgroup::"; # GitHub Actions log
 }
 
-print "#### all done!\n";
+say "#### all done!";
 
 #### SUBS ONLY BELOW
 
