@@ -55,22 +55,25 @@ my $builddir = canonpath("$basedir/cyrus-site");
 sub cyrus_branch ($branch, $paths = undef) {
     return (
         $branch => {
-            repo   => 'https://github.com/cyrusimap/cyrus-imapd.git',
+            repo   => 'imapd',
             branch => $branch,
             paths  => $paths // [ "/" . ($branch =~ s{^cyrus-imapd-}{}r) ]
         },
     );
 }
 
-# The sources that various parts of the website will be built from, referred
-# to by webpaths below
-# If no branch name is set, the source name will be used as the branch name
-my $sources = {
+my %repo = (
+  sasl  => 'https://github.com/cyrusimap/cyrus-sasl.git',
+  imapd => 'https://github.com/cyrusimap/cyrus-imapd.git',
+);
+
+my %source = (
     'cyrus-sasl' => {
-        repo    => 'https://github.com/cyrusimap/cyrus-sasl.git',
+        repo    => 'sasl',
         branch  => 'master',
         paths   => [ '/sasl' ],
     },
+
     cyrus_branch('master', [ '/dev' ]),
     cyrus_branch('cyrus-imapd-2.5'),
     cyrus_branch('cyrus-imapd-3.0'),
@@ -80,10 +83,10 @@ my $sources = {
     cyrus_branch('cyrus-imapd-3.8'),
     cyrus_branch('cyrus-imapd-3.10', [ '/3.10', '/', '/stable' ]),
     cyrus_branch('cyrus-imapd-3.12'),
-};
+);
 
 if ($opt->only_dev) {
-    $sources = { cyrus_branch('master', [ '/' ]) };
+    %source = { cyrus_branch('master', [ '/' ]) };
 }
 
 sub run_or_die ($cmd, @args) {
@@ -138,33 +141,34 @@ if (-d $builddir) {
 }
 
 # build the docs from each source
-foreach my $source (sort keys %{$sources}) {
-    my $details = $sources->{$source};
-    my $dir = canonpath("$basedir/$source");
-    my $branch = $details->{branch} || $source;
+foreach my $source_name (sort keys %source) {
+    my $details = $source{$source_name};
+    my $dir = canonpath("$basedir/$source_name");
+    my $branch = $details->{branch} || $source_name;
 
     # first make sure we have the source tree
     if (! -d $dir) {
-        print "#### cloning repo for $source...\n";
-        run_or_die('git', 'clone', $details->{repo},
+        my $repo_url = $repo{ $details->{repo} };
+        print "#### cloning repo for $source_name...\n";
+        run_or_die('git', 'clone', $repo_url,
                    '--branch', $branch,
                    '--single-branch',
                    '--no-tags',
                    $dir);
     } else {
-        print "#### updating repo for $source...\n";
+        print "#### updating repo for $source_name...\n";
         run_or_die('git', '-C', $dir,
                    'fetch', 'origin');
     }
 
-    print "#### building docs for $source...\n";
+    print "#### building docs for $source_name...\n";
     run_or_die('git', '-C', $dir,
                'checkout', '-q', "origin/$branch");
     run_or_die('make', '-C', canonpath("$dir/docsrc"), 'html');
 
     for my $path ($details->{paths}->@*) {
-        print "#### rsyncing $source docs to $path...\n";
-        my $src = canonpath("$basedir/$source/docsrc/build/html");
+        print "#### rsyncing $source_name docs to $path...\n";
+        my $src = canonpath("$basedir/$source_name/docsrc/build/html");
         my $dest = canonpath("$builddir/$path");
 
         # n.b. trailing / on src argument is load-bearing
