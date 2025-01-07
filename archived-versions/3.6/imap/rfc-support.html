@@ -1,0 +1,1823 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RFCs Supported by Cyrus IMAP &mdash; Cyrus IMAP 3.6.6 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/cyrus.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Cyrus IMAP 3.6.6 documentation" href="../index.html"/> 
+
+  
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+
+  
+
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../download.html">Download</a></li>
+    <li><a href="../contribute.html">Contribute</a></li>
+    <li><a href="../support.html">Support</a></li>
+    <li><a href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
+  </ul>
+  <div>
+    <a href="../index.html">
+      <h1>Cyrus IMAP</h1>
+      <!-- <img src="../_static/logo.gif" alt="CYRUS" /> -->
+    </a>
+  </div>
+</div>
+<div style="clear: both;"></div>
+
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+ 
+          <a href="../index.html">
+ 
+
+          
+          <h1>Cyrus IMAP</h1>
+          
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Cyrus IMAP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download/getcyrus.html">Get Cyrus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download/getcyrus.html#distribution-package">Distribution Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/centos.html">CentOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/debian.html">Debian</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/fedora.html">Fedora</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/opensuse.html">openSUSE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/rhel.html">Red Hat Enterprise Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/distributions/ubuntu.html">Ubuntu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/getcyrus.html#build-and-install-yourself">Build and Install Yourself</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/getcyrus.html#use-a-release-packaged-tarball">Use a release packaged tarball</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/getcyrus.html#use-the-source-from-git">Use the source from Git</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/getcyrus.html#external-tools">External Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/getcyrus.html#licensing">Licensing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download/release-notes/index.html">Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download/release-notes/index.html#stable-version">Stable Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/release-notes/index.html#development-version">Development Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/release-notes/index.html#supported-product-series">Supported Product Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-3-6">Series 3.6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-3-4">Series 3.4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-3-2">Series 3.2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-3-0">Series 3.0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-2-5">Series 2.5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/release-notes/index.html#development-snapshots">Development snapshots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/3.7/index.html">Cyrus IMAP 3.7 Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/3.5/index.html">Cyrus IMAP 3.5 Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/3.3/index.html">Cyrus IMAP 3.3 Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/3.1/index.html">Cyrus IMAP 3.1 Tags</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/release-notes/index.html#older-versions">Older Versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-1">Series 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/release-notes/index.html#series-2-2-0-2-4">Series 2: 2.0 - 2.4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download/packagers.html">Notes for Packagers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download/packagers.html#binary-naming">Binary naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/packagers.html#sample-configuration-files">Sample configuration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/packagers.html#predefined-configurations">Predefined configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/packagers.html#the-configuration-file-for-master-cyrus-conf">The configuration file for master: cyrus.conf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/packagers.html#the-configuration-file-for-the-various-programs-imapd-conf">The configuration file for the various programs: imapd.conf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/packagers.html#services-in-etc-services">Services in <code class="docutils literal notranslate"><span class="pre">/etc/services</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart/introduction.html">Introduction to Cyrus IMAP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/introduction.html#what-is-imap">What is IMAP?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#quick-install">Quick install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#install-cyrus-package-s">1. Install Cyrus package(s)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#setup-the-cyrus-mail-user-and-group">2. Setup the cyrus:mail user and group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#setting-up-authentication-with-sasl">3. Setting up authentication with SASL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#setup-mail-delivery-from-your-mta">4. Setup mail delivery from your MTA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#protocol-ports">5. Protocol ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#configuring-cyrus">6. Configuring Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html#launch-cyrus">7. Launch Cyrus</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts/features.html">Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#security-and-authentication">Security and Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/authentication-kerberos.html">Kerberos Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/authentication-ldap.html">LDAP Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/authentication-sql.html">SQL Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/access-control.html">Access Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/sealed-system.html">Sealed System Design</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#mailbox-management">Mailbox Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/automatic-creation-of-mailboxes.html">Automatic Creation of Mailboxes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/namespaces.html">Mailbox Namespaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/virtual-domains.html">Virtual Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/mailbox-annotations.html">Mailbox Annotations (METADATA)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/mailbox-distribution.html">Mailbox Distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#message-management">Message Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/delayed-delete.html">Delayed Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/delayed-expunge.html">Delayed Expunge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/message-annotations.html">Message Annotations (METADATA)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/duplicate-message-delivery-suppression.html">Duplicate Message Delivery Suppression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/shared-seen-state.html">Shared Seen State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/server-side-filtering.html">Server Side Filtering (Sieve)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/event-notifications.html">Event Notifications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#calendar-and-contact-dav-collection-management">Calendar and Contact (DAV) Collection Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/caldav-collections.html">CalDAV Collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/dav-components.html">DAV Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/dav-collection-mgmt.html">DAV Collection Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/carddav.html">CardDAV Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#storage">Storage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/mail-spool-partitions.html">Mail Spool Partitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/mailbox-metadata-partitions.html">Mailbox Metadata Partitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/archiving.html">Archiving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/quota.html">Quota</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/single-instance-store.html">Single-Instance Store</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/features.html#load-management">Load Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/features/server-aggregation.html">Cyrus IMAP Murder (Server Aggregation)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/overview_and_concepts.html">Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#access-control-lists">Access Control Lists</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#working-with-acls">Working with ACLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#sample-acl">Sample ACL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#access-rights">Access Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#access-control-defaults">Access Control Defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#access-control-identifier-aci">Access Control Identifier (ACI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#negative-rights">Negative Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#calculating-a-users-rights">Calculating a Users’ Rights</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#login-authentication">Login Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#anonymous-login">Anonymous Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#plaintext-authentication">Plaintext Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#kerberos-logins">Kerberos Logins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#shared-secrets-logins">Shared Secrets Logins</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#quotas">Quotas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#working-with-quotas">Working with Quotas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#monitor-and-repair">Monitor and Repair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#supported-quota-types">Supported Quota Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#quota-roots">Quota Roots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#controlling-quota-behavior">Controlling Quota Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#mail-delivery-behavior">Mail Delivery Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#quota-warnings-upon-select-when-user-has-d-rights">Quota Warnings Upon Select When User Has <code class="docutils literal notranslate"><span class="pre">d</span></code> Rights</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#quotas-and-partitions">Quotas and Partitions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#new-mail-notification">New Mail Notification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#partitions">Partitions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#specifying-partitions-with-create">Specifying Partitions with “create”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#changing-partitions-with-rename">Changing Partitions with “rename”</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#news">News</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#pop3-server">POP3 Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#the-syslog-facility">The syslog facility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#mail-directory-recovery">Mail Directory Recovery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#reconstructing-mailbox-directories">Reconstructing Mailbox Directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#reconstructing-the-mailboxes-file">Reconstructing the Mailboxes File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#reconstructing-quota-roots">Reconstructing Quota Roots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#removing-quota-roots">Removing Quota Roots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#subscriptions">Subscriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#configuration-directory">Configuration Directory</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#log-directory">Log Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#proc-directory">Proc Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#message-delivery">Message Delivery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#local-mail-transfer-protocol-lmtp">Local Mail Transfer Protocol (lmtp)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#single-instance-store">Single Instance Store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/overview_and_concepts.html#duplicate-delivery-suppression">Duplicate Delivery Suppression</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#sieve-a-mail-filtering-language">Sieve, a Mail Filtering Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/overview_and_concepts.html#cyrus-murder-the-imap-aggregator">Cyrus Murder, the IMAP Aggregator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/compiling.html">Compiling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/compiling.html#setting-up-dependencies">Setting up dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#required-build-dependencies">Required Build Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#build-dependencies-for-additional-functionality">Build dependencies for additional functionality</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/compiling.html#compile-cyrus">Compile Cyrus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#default-build-mail-only">Default build: mail only</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#optional-dependencies">Optional dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#compile">Compile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html#check">Check</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html">Installing Cyrus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#install-cyrus">Install Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#optional-components">Optional Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/manage-dav.html">HTTP modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/installation/virus.html">Virus Scanner</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#setting-up-syslog">Setting up syslog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#create-cyrus-environment">Create Cyrus environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#set-up-the-cyrus-mail-user-and-group">Set up the cyrus:mail user and group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#authentication-with-sasl">Authentication with SASL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#mail-delivery-from-your-mta">Mail delivery from your MTA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#protocol-ports">Protocol ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#cyrus-config-files">Cyrus config files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#optional-setting-up-tls-certificates">Optional: Setting up TLS certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html#prepare-ephemeral-run-time-storage-directories">Prepare ephemeral (run-time) storage directories</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#launch-cyrus">Launch Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#send-a-test-email">Send a test email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#checking-carddav-and-caldav">Checking CardDAV and CalDAV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installing.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="download/upgrade.html">Upgrading to 3.6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#preparation">1. Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="download/upgrade.html#versions-to-upgrade-from">Versions to upgrade from</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/upgrade.html#installation-from-tarball">Installation from tarball</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/upgrade.html#storage-changes">Storage changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/upgrade.html#how-are-you-planning-on-upgrading">How are you planning on upgrading?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="download/upgrade.html#do-what-as-who">Do What As Who?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#install-new-3-6-cyrus">2. Install new 3.6 Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#shut-down-existing-cyrus">3. Shut down existing Cyrus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#backup-and-copy-existing-data">4. Backup and Copy existing data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#copy-config-files-and-update">5. Copy config files and update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#upgrade-specific-items">6. Upgrade specific items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#start-new-3-6-cyrus-and-verify">7. Start new 3.6 Cyrus and verify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#reconstruct-databases-and-cache">8. Reconstruct databases and cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#do-you-want-any-new-features">9. Do you want any new features?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#upgrade-complete">10. Upgrade complete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="download/upgrade.html#special-note-for-murder-configurations">Special note for Murder configurations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/deployment.html">Configuration Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html">Deployment Scenarios</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#single-server-deployments">Single Server Deployments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#multi-server-deployments">Multi Server Deployments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#cyrus-murder-server-aggregation">Cyrus Murder: Server aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#the-discrete-murder">The Discrete Murder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#the-unified-murder">The Unified Murder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#the-shared-murder">The Shared Murder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#cyrus-replication">Cyrus Replication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/deployment_scenarios.html#hosted-environments">Hosted Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/databases.html">Databases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/databases.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/databases.html#file-list">File list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/databases.html#storage-types">Storage types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html">Mailbox Creation Distribution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#selection-mode">Selection Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#special-cases">Special cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#partitions-exclusion">Partitions Exclusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#partitions-usage-data-reset">Partitions Usage Data Reset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#mailbox-creation-distribution-through-murder-frontend">Mailbox Creation Distribution Through <code class="docutils literal notranslate"><span class="pre">murder</span> <span class="pre">frontend</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#backends-exclusion">Backends Exclusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/mailbox_creation_distribution.html#backends-usage-data-reset">Backends Usage Data Reset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/known_protocol_limitations.html">Known Protocol Limitations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/known_protocol_limitations.html#pop3-and-mailbox-locking">POP3 and Mailbox Locking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/known_protocol_limitations.html#cyrus-imap-pop3-implementation">Cyrus IMAP POP3 Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/authentication_and_authorization.html">Authentication and Authorization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/authentication_and_authorization.html#client-authentication">Client Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/authentication_and_authorization.html#users-and-mailboxes">Users and Mailboxes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/performance_recommendations.html">Performance Recommendations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/performance_recommendations.html#databases-on-temporary-filesystems">Databases on Temporary Filesystems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/performance_recommendations.html#certificates">Certificates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/storage.html">Storage Considerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#general-notes-on-storage">General Notes on Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#redundancy">Redundancy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#availability">Availability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#performance">Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#scalability">Scalability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#capacity">Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/storage.html#cost">Cost</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concepts/deployment/supported-platforms.html">Supported Platforms and System Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/supported-platforms.html#building-cyrus-imap">Building Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/supported-platforms.html#required-software-components">Required Software Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/supported-platforms.html#recommended-software-components">Recommended Software Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concepts/deployment/supported-platforms.html#recommended-software-components-enabled-by-default">Recommended Software Components Enabled by Default</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../operations.html">Operations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/manpages/index.html">Man pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/manpages/index.html#configuration-files">(5) Configuration Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/configs/cyrus.conf.html"><strong>cyrus.conf</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/configs/imapd.conf.html"><strong>imapd.conf</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/configs/krb.equiv.html"><strong>krb.equiv</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/manpages/index.html#system-commands">(8) System Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/arbitron.html"><strong>arbitron</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/backupd.html"><strong>backupd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/chk_cyrus.html"><strong>chk_cyrus</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_backups.html"><strong>ctl_backups</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_conversationsdb.html"><strong>ctl_conversationsdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_cyrusdb.html"><strong>ctl_cyrusdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_deliver.html"><strong>ctl_deliver</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_mboxlist.html"><strong>ctl_mboxlist</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ctl_zoneinfo.html"><strong>ctl_zoneinfo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cvt_cyrusdb.html"><strong>cvt_cyrusdb</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cvt_xlist_specialuse.html"><strong>cvt_xlist_specialuse</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_backup.html"><strong>cyr_backup</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_buildinfo.html"><strong>cyr_buildinfo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_dbtool.html"><strong>cyr_dbtool</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_deny.html"><strong>cyr_deny</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_df.html"><strong>cyr_df</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_expire.html"><strong>cyr_expire</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_info.html"><strong>cyr_info</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_ls.html"><strong>cyr_ls</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_synclog.html"><strong>cyr_synclog</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_userseen.html"><strong>cyr_userseen</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyr_virusscan.html"><strong>cyr_virusscan</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyradm.html"><strong>cyradm</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/cyrdump.html"><strong>cyrdump</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/deliver.html"><strong>deliver</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/fetchnews.html"><strong>fetchnews</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/fud.html"><strong>fud</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/httpd.html"><strong>httpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/idled.html"><strong>idled</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/imapd.html"><strong>imapd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ipurge.html"><strong>ipurge</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/lmtpd.html"><strong>lmtpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/lmtpproxyd.html"><strong>lmtpproxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/masssievec.html"><strong>masssievec</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/master.html"><strong>master</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mbexamine.html"><strong>mbexamine</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mbpath.html"><strong>mbpath</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mbtool.html"><strong>mbtool</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mkimap.html"><strong>mkimap</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mknewsgroups.html"><strong>mknewsgroups</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/mupdate.html"><strong>mupdate</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/nntpd.html"><strong>nntpd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/notifyd.html"><strong>notifyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/pop3d.html"><strong>pop3d</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/pop3proxyd.html"><strong>pop3proxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/promstatsd.html"><strong>promstatsd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/proxyd.html"><strong>proxyd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ptdump.html"><strong>ptdump</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ptexpire.html"><strong>ptexpire</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/ptloader.html"><strong>ptloader</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/quota.html"><strong>quota</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/reconstruct.html"><strong>reconstruct</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/rehash.html"><strong>rehash</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/relocate_by_id.html"><strong>relocate_by_id</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/restore.html"><strong>restore</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/sievec.html"><strong>sievec</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/sieved.html"><strong>sieved</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/smmapd.html"><strong>smmapd</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/squatter.html"><strong>squatter</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/sync_client.html"><strong>sync_client</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/sync_reset.html"><strong>sync_reset</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/sync_server.html"><strong>sync_server</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/timsieved.html"><strong>timsieved</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/tls_prune.html"><strong>tls_prune</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/translatesieve.html"><strong>translatesieve</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/systemcommands/unexpunge.html"><strong>unexpunge</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/manpages/index.html#user-commands">(1) User Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/arbitronsort.pl.html"><strong>arbitronsort.pl</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/dav_reconstruct.html"><strong>dav_reconstruct</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/httptest.html"><strong>httptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/imtest.html"><strong>imtest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/installsieve.html"><strong>installsieve</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/lmtptest.html"><strong>lmtptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/mupdatetest.html"><strong>mupdatetest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/nntptest.html"><strong>nntptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/pop3test.html"><strong>pop3test</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/sieveshell.html"><strong>sieveshell</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/sivtest.html"><strong>sivtest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/smtptest.html"><strong>smtptest</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/manpages/usercommands/synctest.html"><strong>synctest</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/admin.html">Administrator Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/admin.html#architecture">Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/architecture.html">System Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/admin.html#management">Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/locations.html">File &amp; Directory Locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/ports-sockets.html">Ports and Sockets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/access-control.html">Access Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/quotas.html">Quotas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/sieve.html">Cyrus Sieve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/backups.html">Cyrus Backups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/nntp.html">Cyrus NNTP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/protlayer.html">Cyrus Prot Layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/sop.html">Standard Operating Procedures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/eventsource.html">Cyrus Event Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/monitoring.html">Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/config-mailboxdistribution.html">Mailbox Distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/murder/murder.html">Cyrus Murder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/nginx-proxy.html">HOWTO: Using an NGINX IMAP Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/admin/tweaking.html">Tweaking Cyrus IMAP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/faq.html#features">Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/feature-database-backend.html">Which database backend should I use for which databases?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/feature-duplicate-delivery.html">Duplicate Delivery Suppression</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/faq.html#installation-problems">Installation Problems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/install-compilationerrors.html">Compilation errors about kssl.h and krb5.h on Red Hat Linux/Fedora</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/install-install-help.html">Help! There must be an easier way to get all this going…</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/install-linkerwarnings.html">OpenSSL Version Mismatches</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/faq.html#common-feature-requests">Common Feature Requests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/r-murder-ha.html">Does the Cyrus Murder support High Availability configurations?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/r-pop3-logging.html">Can I configure pop3d to log amount and size of messages fetched by user?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/r-publicssharedfolders.html">How can I make CyrusSieve work with public shared folders?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/r-subfolders.html">Can I have subfolders not appear under INBOX?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/faq.html#common-operational-questions">Common Operational Questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-acls.html">How do I view ACLs on a mailbox?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-annotations.html">What annotations are available?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-configdir-tempfs.html">Is it safe to put &lt;configdirectory&gt;/proc and &lt;configdirectory&gt;/lock on a tmpfs filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-coredump.html">How to enable core dumps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-delete-mailbox.html">Why can I not delete a mailbox as an admin user?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-deleted-expired-expunged-purged.html">When is What … Deleted, Expired, Expunged or Purged?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-deliverdb-size.html">Why is deliver.db so large?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-freezes.html">I have multiple imapd-SERVICES configured and experience occasional freezes when I try to log in!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-gdb.html">How to run gdb on Cyrus components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-mailbox-doesnotexist.html">Cyrus delivers claims that the mailbox does not exist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-mixedcase.html">Why is mail being rejected with No Mailbox found due to MiXed CaSe incoming e-mail?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-otherdatabases.html">Can I use MySQL (or another SQL database) as the primary mail store?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-pop3slow.html">Why do POP3 connections take so long, but once the connection is established all is well?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-reconstruct.html">Why does reconstruct -m not work?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-sharedfilesystem-gpfs.html">Shared File Systems GPFS for high availability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-telemetry.html">How to enable telemetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-toomanyprocesses.html">The process count keeps growing!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-unable-join-environment.html">“unable to join environment” error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/o-vacation-mailfrom.html">Why does Cyrus set the MAIL FROM address of the sender of vacation responses to ‘&lt;&gt;’?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/faq.html#common-interoperability-problems">Common Interoperability Problems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/interop-8bit.html">Why does Cyrus reject 8-bit characters in the headers of my messages?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/interop-barenewlines.html">Why does Cyrus reject messages with “bare newlines”?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/interop-sieve-exim.html">How do I get Cyrus Sieve to play nice with Exim?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/faqs/interop-slow-delivery.html">Why does mail delivery go slow or hang sometimes?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developers.html">Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">We need your help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/documentation.html">Contribute docs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#documentation-tools">Documentation Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#building-the-files">Building the files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#submitting-updates">Submitting updates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#using-github-pull-requests">Using GitHub pull requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#patches-through-the-mailing-list">Patches through the mailing list</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#special-tags">Special Tags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#rfc">rfc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#cyrusman">cyrusman</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#imap-current-stable-version">imap_current_stable_version</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/documentation.html#conventions-man-pages">Conventions: Man Pages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/documentation.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html">Contribute code and tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer.html#getting-started">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/process.html">Development Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/overview.html">Overview of Cyrus development environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/github-guide.html">GitHub guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/compiling.html">Compiling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installing.html">Installing Cyrus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/developer-testing.html">Developer Test Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/jmap.html">JMAP support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer.html#system-files-and-databases">System files and Databases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/namespaces.html">Namespaces: a developer view</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer.html#resources">Resources</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/libraries.html">Developer Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer.html#releasing">Releasing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/releasing.html">Releasing Cyrus IMAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/ancient-releasing.html">Releasing new builds of ancient Cyrus IMAP versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="developer/cyrusworks.html">Cyrus.Works</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/cyrusworks.html#about-cyrus-works">About Cyrus Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="developer/cyrusworks.html#how-it-works">How it works</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers.html#cyrus-internals">Cyrus Internals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/API.html">Cyrus APIs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/API/cyrusdb.html">CyrusDB API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/API/cyrusdb2.html">cyrusdb API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/API/index-api.html">Index API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/API/mailbox-api.html">Mailbox API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/thoughts.html">Thoughts &amp; Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/backup.html">Notes for backup implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/bytecode.html">Cyrus IMAP Server: Sieve Bytecode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/caldav_scheduling_flowchart.html">Cyrus CalDAV Scheduling Flowchart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/improved_mboxlist_sort.html">Enabling improved_mboxlist_sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/notes.html">Cyrus IMAP Server: Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/thoughts/prot-events.html">Cyrus IMAP Server: Prot Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="developer/guidance.html">Guidance for Developers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/hacking.html">Cyrus IMAP Server: Hacking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/internationalization.html">Cyrus IMAP Server: Internationalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/locking.html">Cyrus IMAP Server: Locking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/mailbox-format.html">Cyrus IMAP Server: Mailbox File Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/namelocks.html">Cyrus IMAP Server: Namelocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/prot.html">Cyrus IMAP Server: prot layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/replication_examples.html">Cyrus IMAP Server: Replication Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/replication_protocol.html">Cyrus IMAP Server: Replication Protocol v2.4+</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/special_chars.html">Cyrus IMAP Server: Special Characters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/guidance/var_directory_structure.html">Cyrus IMAP Server: var directory structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developers.html#unit-tests">Unit Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="developer/unit-tests.html">Unit Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#introduction">1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#what-is-a-unit-test">2. What Is A Unit Test?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#running-the-tests">3. Running The Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#debugging-a-test">3.6 Debugging A Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#adding-your-own-tests">4. Adding Your Own Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#where-to-put-your-tests">4.1 Where To Put Your Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#adding-a-new-suite">4.1 Adding A New Suite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#adding-a-test-to-a-suite">4.2 Adding A Test To A Suite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/unit-tests.html#suite-setup-and-teardown">4.3 Suite Setup And Teardown</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support/Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support/feedback-bugs.html">Found a bug?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/feedback-mailing-lists.html">Mailing lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support/feedback-meetings.html">Weekly meetings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/about_cyrus.html">About</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/what_is_cyrus.html">What is Cyrus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/what_is_cyrus.html#what-is-cyrus">What is Cyrus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/what_is_cyrus.html#what-is-imap">What is IMAP?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/what_is_cyrus.html#imap-version-4-imap4">IMAP Version 4 (IMAP4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/what_is_cyrus.html#mime">Mime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/what_is_cyrus.html#smtp">SMTP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/who_is_cyrus.html">Who Is Cyrus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/who_is_cyrus.html#core-contributors">Core Contributors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/who_is_cyrus.html#individual-contributors-and-past-contributors">Individual contributors and past contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/cyrus_roadmap.html">Cyrus Roadmap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_roadmap.html#high-level-roadmap">High Level Roadmap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/cyrus_history.html">Cyrus History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/cyrus_bylaws.html">Cyrus Bylaws</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#i-the-cyrus-governance-board">I. The Cyrus Governance Board</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#ii-the-cyrus-core-developers-group">II. The Cyrus Core Developers Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#iii-the-release-engineer">III. The Release Engineer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#iv-the-cyrus-roadmap">IV. The Cyrus Roadmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#v-development-process">V. Development Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../overview/cyrus_bylaws.html#vi-changes-to-the-bylaws">VI. Changes to the Bylaws</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="http://www.cyrusimap.org/sasl">Cyrus SASL</a></li>
+</ul>
+
+          
+        
+      </div>
+        
+<div class="buildstatus">
+    <a href="https://github.com/cyrusimap/cyrus-imapd/actions" target="_blank">cyrus-imapd-3.6: <img src="https://github.com/cyrusimap/cyrus-imapd/actions/workflows/main.yml/badge.svg?branch=cyrus-imapd-3.6"></a>
+</div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Cyrus IMAP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html">Docs v3.6.6</a> &raquo;</li>
+      
+    <li>RFCs Supported by Cyrus IMAP</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/cyrusimap/cyrus-imapd/blob/cyrus-imapd-3.6/docsrc/imap/rfc-support.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="rfcs-supported-by-cyrus-imap">
+<span id="imap-rfc-support"></span><h1>RFCs Supported by Cyrus IMAP<a class="headerlink" href="#rfcs-supported-by-cyrus-imap" title="Permalink to this headline">¶</a></h1>
+<p>The following is an inventory of RFCs supported by Cyrus IMAP.</p>
+<p><span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc822.html"><strong>RFC 822</strong></a></p>
+<blockquote>
+<div><p>Standard for the format of ARPA Internet text messages, obsoleted by
+<span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc977.html"><strong>RFC 0977</strong></a></p>
+<blockquote>
+<div><p>Network News Transfer Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-3"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1036.html"><strong>RFC 1036</strong></a></p>
+<blockquote>
+<div><p>Standard for interchange of USENET messages</p>
+</div></blockquote>
+<p><span class="target" id="index-4"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1176.html"><strong>RFC 1176</strong></a></p>
+<blockquote>
+<div><p>Interactive Mail Access Protocol: Version 2</p>
+</div></blockquote>
+<p><span class="target" id="index-5"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1342.html"><strong>RFC 1342</strong></a></p>
+<blockquote>
+<div><p>Representation of Non-ASCII Text in Internet Message Headers</p>
+</div></blockquote>
+<p><span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1652.html"><strong>RFC 1652</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for 8bit-MIMEtransport</p>
+</div></blockquote>
+<p><span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1730.html"><strong>RFC 1730</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - version 4, obsoleted by
+<span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a>, <span class="target" id="index-9"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2061.html"><strong>RFC 2061</strong></a>, <span class="target" id="index-10"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-11"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1869.html"><strong>RFC 1869</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-12"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1870.html"><strong>RFC 1870</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for Message Size Declaration</p>
+</div></blockquote>
+<p><span class="target" id="index-13"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1939.html"><strong>RFC 1939</strong></a></p>
+<blockquote>
+<div><p>Post Office Protocol - Version 3 (POP3)</p>
+</div></blockquote>
+<p><span class="target" id="index-14"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1951.html"><strong>RFC 1951</strong></a></p>
+<blockquote>
+<div><p>DEFLATE Compressed Data Format Specification version 1.3</p>
+</div></blockquote>
+<p><span class="target" id="index-15"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc1952.html"><strong>RFC 1952</strong></a></p>
+<blockquote>
+<div><p>GZIP file format specification version 4.3</p>
+</div></blockquote>
+<p><span class="target" id="index-16"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2033.html"><strong>RFC 2033</strong></a></p>
+<blockquote>
+<div><p>Local Mail Transfer Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-17"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2034.html"><strong>RFC 2034</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for Returning Enhanced Error Codes</p>
+</div></blockquote>
+<p><span class="target" id="index-18"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2045.html"><strong>RFC 2045</strong></a></p>
+<blockquote>
+<div><p>Multipurpose Internet Mail Extensions (MIME) Part One: Format of
+Internet Message Bodies</p>
+</div></blockquote>
+<p><span class="target" id="index-19"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2046.html"><strong>RFC 2046</strong></a></p>
+<blockquote>
+<div><p>Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</p>
+</div></blockquote>
+<p><span class="target" id="index-20"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2047.html"><strong>RFC 2047</strong></a></p>
+<blockquote>
+<div><p>MIME (Multipurpose Internet Mail Extensions) Part Three: Message
+Header Extensions for Non-ASCII Text</p>
+</div></blockquote>
+<p><span class="target" id="index-21"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2060.html"><strong>RFC 2060</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - Version 4rev1, obsoleted by
+<span class="target" id="index-22"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-23"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2086.html"><strong>RFC 2086</strong></a></p>
+<blockquote>
+<div><p>IMAP4 ACL Extension, obsoleted by <span class="target" id="index-24"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4314.html"><strong>RFC 4314</strong></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Backwards compatibility with this RFC is to be obsoleted.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-25"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2087.html"><strong>RFC 2087</strong></a></p>
+<blockquote>
+<div><p>IMAP4 QUOTA extension</p>
+</div></blockquote>
+<p><span class="target" id="index-26"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2088.html"><strong>RFC 2088</strong></a></p>
+<blockquote>
+<div><p>IMAP4 non-synchronizing literals</p>
+</div></blockquote>
+<p><span class="target" id="index-27"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2177.html"><strong>RFC 2177</strong></a></p>
+<blockquote>
+<div><p>IMAP4 IDLE command</p>
+</div></blockquote>
+<p><span class="target" id="index-28"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2192.html"><strong>RFC 2192</strong></a></p>
+<blockquote>
+<div><p>IMAP URL Scheme, obsoleted by
+<span class="target" id="index-29"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5092.html"><strong>RFC 5092</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-30"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2193.html"><strong>RFC 2193</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Mailbox Referrals</p>
+</div></blockquote>
+<p><span class="target" id="index-31"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2195.html"><strong>RFC 2195</strong></a></p>
+<blockquote>
+<div><p>IMAP/POP AUTHorize Extension for Simple Challenge/Response</p>
+</div></blockquote>
+<p><span class="target" id="index-32"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2246.html"><strong>RFC 2246</strong></a></p>
+<blockquote>
+<div><p>The TLS Protocol Version 1.0</p>
+</div></blockquote>
+<p><span class="target" id="index-33"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2298.html"><strong>RFC 2298</strong></a></p>
+<blockquote>
+<div><p>Extensible Message Format for Message Disposition Notifications
+(MDNs)</p>
+</div></blockquote>
+<p><span class="target" id="index-34"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2342.html"><strong>RFC 2342</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Namespace</p>
+</div></blockquote>
+<p><span class="target" id="index-35"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2359.html"><strong>RFC 2359</strong></a></p>
+<blockquote>
+<div><p>IMAP4 UIDPLUS extension, obsoleted by <span class="target" id="index-36"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4315.html"><strong>RFC 4315</strong></a></p>
+</div></blockquote>
+<p><span class="target" id="index-37"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2425.html"><strong>RFC 2425</strong></a></p>
+<blockquote>
+<div><p>A MIME Content-Type for Directory Information</p>
+</div></blockquote>
+<p><span class="target" id="index-38"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2426.html"><strong>RFC 2426</strong></a></p>
+<blockquote>
+<div><p>vCard MIME Directory Profile</p>
+</div></blockquote>
+<p><span class="target" id="index-39"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2444.html"><strong>RFC 2444</strong></a></p>
+<blockquote>
+<div><p>The One-Time-Password SASL Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-40"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2449.html"><strong>RFC 2449</strong></a></p>
+<blockquote>
+<div><p>POP3 Extension Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-41"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2518.html"><strong>RFC 2518</strong></a></p>
+<blockquote>
+<div><p>HTTP Extensions for Distributed Authoring – WEBDAV</p>
+</div></blockquote>
+<p><span class="target" id="index-42"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2595.html"><strong>RFC 2595</strong></a></p>
+<blockquote>
+<div><p>Using TLS with IMAP, POP3 and ACAP</p>
+</div></blockquote>
+<p><span class="target" id="index-43"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2617.html"><strong>RFC 2617</strong></a></p>
+<blockquote>
+<div><p>HTTP Authentication: Basic and Digest Access Authentication,
+updated by <span class="target" id="index-44"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7615.html"><strong>RFC 7615</strong></a>, <span class="target" id="index-45"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7616.html"><strong>RFC 7616</strong></a>, <span class="target" id="index-46"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7617.html"><strong>RFC 7617</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-47"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2817.html"><strong>RFC 2817</strong></a></p>
+<blockquote>
+<div><p>HTTP Upgrading to TLS Within HTTP/1.1</p>
+</div></blockquote>
+<p><span class="target" id="index-48"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2818.html"><strong>RFC 2818</strong></a></p>
+<blockquote>
+<div><p>HTTP Over TLS</p>
+</div></blockquote>
+<p><span class="target" id="index-49"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2821.html"><strong>RFC 2821</strong></a></p>
+<blockquote>
+<div><p>Simple Mail Transfer Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-50"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a></p>
+<blockquote>
+<div><p>Internet Message Format</p>
+</div></blockquote>
+<p><span class="target" id="index-51"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2831.html"><strong>RFC 2831</strong></a></p>
+<blockquote>
+<div><p>Using Digest Authentication as a SASL Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-52"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2920.html"><strong>RFC 2920</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for Command Pipelining</p>
+</div></blockquote>
+<p><span class="target" id="index-53"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2971.html"><strong>RFC 2971</strong></a></p>
+<blockquote>
+<div><p>IMAP4 ID extension</p>
+</div></blockquote>
+<p><span class="target" id="index-54"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2980.html"><strong>RFC 2980</strong></a></p>
+<blockquote>
+<div><p>Common NNTP Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-55"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3028.html"><strong>RFC 3028</strong></a></p>
+<blockquote>
+<div><p>Sieve: A Mail Filtering Language</p>
+</div></blockquote>
+<p><span class="target" id="index-56"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3206.html"><strong>RFC 3206</strong></a></p>
+<blockquote>
+<div><p>The SYS and AUTH POP Response Codes</p>
+</div></blockquote>
+<p><span class="target" id="index-57"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3207.html"><strong>RFC 3207</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for Secure SMTP over TLS</p>
+</div></blockquote>
+<p><span class="target" id="index-58"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3253.html"><strong>RFC 3253</strong></a></p>
+<blockquote>
+<div><p>Versioning Extensions to WebDAV (Web Distributed Authoring and
+Versioning)</p>
+</div></blockquote>
+<p><span class="target" id="index-59"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3339.html"><strong>RFC 3339</strong></a></p>
+<blockquote>
+<div><p>Date and Time on the Internet: Timestamps</p>
+</div></blockquote>
+<p><span class="target" id="index-60"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3348.html"><strong>RFC 3348</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Child Mailbox Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-61"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3431.html"><strong>RFC 3431</strong></a></p>
+<blockquote>
+<div><p>Sieve Extension: Relational Tests</p>
+</div></blockquote>
+<p><span class="target" id="index-62"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3463.html"><strong>RFC 3463</strong></a></p>
+<blockquote>
+<div><p>Enhanced Mail System Status Codes</p>
+</div></blockquote>
+<p><span class="target" id="index-63"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3501.html"><strong>RFC 3501</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - version 4rev1</p>
+</div></blockquote>
+<p><span class="target" id="index-64"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3502.html"><strong>RFC 3502</strong></a></p>
+<blockquote>
+<div><p>IMAP MULTIAPPEND extension</p>
+</div></blockquote>
+<p><span class="target" id="index-65"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3516.html"><strong>RFC 3516</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Binary Content Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-66"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3598.html"><strong>RFC 3598</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering – Subaddress Extension, obsoleted by
+<span class="target" id="index-67"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5233.html"><strong>RFC 5233</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-68"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3656.html"><strong>RFC 3656</strong></a></p>
+<blockquote>
+<div><p>MUPDATE Protocol (For Cyrus Murder)</p>
+</div></blockquote>
+<p><span class="target" id="index-69"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3691.html"><strong>RFC 3691</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) UNSELECT command</p>
+</div></blockquote>
+<p><span class="target" id="index-70"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3744.html"><strong>RFC 3744</strong></a></p>
+<blockquote>
+<div><p>Web Distributed Authoring and Versioning (WebDAV) Access Control
+Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-71"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3834.html"><strong>RFC 3834</strong></a></p>
+<blockquote>
+<div><p>Recommendations for Automatic Responses to Electronic Mail</p>
+</div></blockquote>
+<p><span class="target" id="index-72"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3848.html"><strong>RFC 3848</strong></a></p>
+<blockquote>
+<div><p>ESMTP and LMTP Transmission Types Registration</p>
+</div></blockquote>
+<p><span class="target" id="index-73"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3894.html"><strong>RFC 3894</strong></a></p>
+<blockquote>
+<div><p>Sieve Extension: Copying Without Side Effects</p>
+</div></blockquote>
+<p><span class="target" id="index-74"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3977.html"><strong>RFC 3977</strong></a></p>
+<blockquote>
+<div><p>Network News Transfer Protocol (NNTP)</p>
+</div></blockquote>
+<p><span class="target" id="index-75"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4287.html"><strong>RFC 4287</strong></a></p>
+<blockquote>
+<div><p>The Atom Syndication Format</p>
+</div></blockquote>
+<p><span class="target" id="index-76"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4314.html"><strong>RFC 4314</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Access Control List (ACL) Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-77"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4315.html"><strong>RFC 4315</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) - UIDPLUS extension</p>
+</div></blockquote>
+<p><span class="target" id="index-78"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4331.html"><strong>RFC 4331</strong></a></p>
+<blockquote>
+<div><p>Quota and Size Properties for Distributed Authoring and Versioning
+(DAV) Collections</p>
+</div></blockquote>
+<p><span class="target" id="index-79"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4346.html"><strong>RFC 4346</strong></a></p>
+<blockquote>
+<div><p>The Transport Layer Security (TLS) Protocol Version 1.1</p>
+</div></blockquote>
+<p><span class="target" id="index-80"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4422.html"><strong>RFC 4422</strong></a></p>
+<blockquote>
+<div><p>Simple Authentication and Security Layer (SASL)</p>
+</div></blockquote>
+<p><span class="target" id="index-81"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4466.html"><strong>RFC 4466</strong></a></p>
+<blockquote>
+<div><p>Collected Extensions to IMAP4 ABNF</p>
+</div></blockquote>
+<p><span class="target" id="index-82"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4467.html"><strong>RFC 4467</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) - URLAUTH Extension, updated
+by <span class="target" id="index-83"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5092.html"><strong>RFC 5092</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-84"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4469.html"><strong>RFC 4469</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) CATENATE Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-85"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4505.html"><strong>RFC 4505</strong></a></p>
+<blockquote>
+<div><p>Anonymous Simple Authentication and Security Layer (SASL) Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-86"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4550.html"><strong>RFC 4550</strong></a></p>
+<blockquote>
+<div><p>Internet Email to Support Diverse Service Environments (Lemonade)
+Profile</p>
+</div></blockquote>
+<p><span class="target" id="index-87"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4551.html"><strong>RFC 4551</strong></a></p>
+<blockquote>
+<div><p>IMAP Extension for Conditional STORE Operation or Quick Flag Changes
+Resynchronization</p>
+</div></blockquote>
+<p><span class="target" id="index-88"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4559.html"><strong>RFC 4559</strong></a></p>
+<blockquote>
+<div><p>SPNEGO-based Kerberos and NTLM HTTP Authentication in Microsoft
+Windows</p>
+</div></blockquote>
+<p><span class="target" id="index-89"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4616.html"><strong>RFC 4616</strong></a></p>
+<blockquote>
+<div><p>The PLAIN Simple Authentication and Security Layer (SASL) Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-90"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4642.html"><strong>RFC 4642</strong></a></p>
+<blockquote>
+<div><p>Using Transport Layer Security (TLS) with Network News Transfer
+Protocol (NNTP)</p>
+</div></blockquote>
+<p><span class="target" id="index-91"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4643.html"><strong>RFC 4643</strong></a></p>
+<blockquote>
+<div><p>Network News Transfer Protocol (NNTP) Extension for Authentication</p>
+</div></blockquote>
+<p><span class="target" id="index-92"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4644.html"><strong>RFC 4644</strong></a></p>
+<blockquote>
+<div><p>Network News Transfer Protocol (NNTP) Extension for Streaming Feeds</p>
+</div></blockquote>
+<p><span class="target" id="index-93"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4731.html"><strong>RFC 4731</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension to SEARCH Command for Controlling What Kind of
+Information Is Returned</p>
+</div></blockquote>
+<p><span class="target" id="index-94"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4791.html"><strong>RFC 4791</strong></a></p>
+<blockquote>
+<div><p>Calendaring Extensions to WebDAV (CalDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-95"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4918.html"><strong>RFC 4918</strong></a></p>
+<blockquote>
+<div><p>HTTP Extensions for Web Distributed Authoring and Versioning
+(WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-96"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4954.html"><strong>RFC 4954</strong></a></p>
+<blockquote>
+<div><p>SMTP Service Extension for Authentication</p>
+</div></blockquote>
+<p><span class="target" id="index-97"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4959.html"><strong>RFC 4959</strong></a></p>
+<blockquote>
+<div><p>IMAP Extension for Simple Authentication and Security Layer (SASL)
+Initial Client Response</p>
+</div></blockquote>
+<p><span class="target" id="index-98"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4978.html"><strong>RFC 4978</strong></a></p>
+<blockquote>
+<div><p>The IMAP COMPRESS Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-99"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5032.html"><strong>RFC 5032</strong></a></p>
+<blockquote>
+<div><p>WITHIN Search Extension to the IMAP Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-100"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5034.html"><strong>RFC 5034</strong></a></p>
+<blockquote>
+<div><p>The Post Office Protocol (POP3) Simple Authentication and Security
+Layer (SASL) Authentication Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-101"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5092.html"><strong>RFC 5092</strong></a></p>
+<blockquote>
+<div><p>IMAP URL Scheme, updated by <span class="target" id="index-102"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5593.html"><strong>RFC 5593</strong></a>.</p>
+</div></blockquote>
+<p><span class="target" id="index-103"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5161.html"><strong>RFC 5161</strong></a></p>
+<blockquote>
+<div><p>The IMAP ENABLE Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-104"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5162.html"><strong>RFC 5162</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extensions for Quick Mailbox Resynchronization</p>
+</div></blockquote>
+<p><span class="target" id="index-105"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5173.html"><strong>RFC 5173</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Body Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-106"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5183.html"><strong>RFC 5183</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Environment Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-107"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5228.html"><strong>RFC 5228</strong></a></p>
+<blockquote>
+<div><p>Sieve: A Mail Filtering Language</p>
+</div></blockquote>
+<p><span class="target" id="index-108"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5229.html"><strong>RFC 5229</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Variables Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-109"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5230.html"><strong>RFC 5230</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Vacation Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-110"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5231.html"><strong>RFC 5231</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Relational Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-111"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5232.html"><strong>RFC 5232</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Imap4flags Extension</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.5.0.</span></p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-112"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5233.html"><strong>RFC 5233</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Subaddress Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-113"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5235.html"><strong>RFC 5235</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Spamtest and Virustest Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-114"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5256.html"><strong>RFC 5256</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - SORT and THREAD Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-115"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5257.html"><strong>RFC 5257</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - ANNOTATE Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-116"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5258.html"><strong>RFC 5258</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol version 4 - LIST Command Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-117"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5260.html"><strong>RFC 5260</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Date and Index Extensions</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.5.0.</span></p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-118"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5267.html"><strong>RFC 5267</strong></a></p>
+<blockquote>
+<div><p>Contexts for IMAP4</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ESORT capability is implemented.  The CONTEXT=SEARCH and
+CONTEXT=SORT capabilities are not implemented.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-119"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5293.html"><strong>RFC 5293</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Editheader Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-120"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5321.html"><strong>RFC 5321</strong></a></p>
+<blockquote>
+<div><p>Simple Mail Transfer Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-121"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5322.html"><strong>RFC 5322</strong></a></p>
+<blockquote>
+<div><p>Internet Message Format</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The JMAP mapping is incomplete.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-122"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5397.html"><strong>RFC 5397</strong></a></p>
+<blockquote>
+<div><p>WebDAV Current Principal Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-123"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a></p>
+<blockquote>
+<div><p>Internet Message Store Events</p>
+</div></blockquote>
+<p><span class="target" id="index-124"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5429.html"><strong>RFC 5429</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Reject and Extended Reject Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-125"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5435.html"><strong>RFC 5435</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Extension for Notifications</p>
+</div></blockquote>
+<p><span class="target" id="index-126"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5436.html"><strong>RFC 5436</strong></a></p>
+<blockquote>
+<div><p>Sieve Notification Mechanism: mailto</p>
+</div></blockquote>
+<p><span class="target" id="index-127"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5463.html"><strong>RFC 5463</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Ihave Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-128"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5464.html"><strong>RFC 5464</strong></a></p>
+<blockquote>
+<div><p>The IMAP METADATA Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-129"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5490.html"><strong>RFC 5490</strong></a></p>
+<blockquote>
+<div><p>The Sieve Mail-Filtering Language – Extensions for Checking Mailbox
+Status and Accessing Mailbox Metadata</p>
+</div></blockquote>
+<p><span class="target" id="index-130"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5524.html"><strong>RFC 5524</strong></a></p>
+<blockquote>
+<div><p>Extended URLFETCH for Binary and Converted Parts</p>
+</div></blockquote>
+<p><span class="target" id="index-131"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5536.html"><strong>RFC 5536</strong></a></p>
+<blockquote>
+<div><p>Netnews Article Format</p>
+</div></blockquote>
+<p><span class="target" id="index-132"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5537.html"><strong>RFC 5537</strong></a></p>
+<blockquote>
+<div><p>Netnews Architecture and Protocols</p>
+</div></blockquote>
+<p><span class="target" id="index-133"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5545.html"><strong>RFC 5545</strong></a></p>
+<blockquote>
+<div><p>Internet Calendaring and Scheduling Core Object Specification
+(iCalendar)</p>
+</div></blockquote>
+<p><span class="target" id="index-134"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5546.html"><strong>RFC 5546</strong></a></p>
+<blockquote>
+<div><p>iCalendar Transport-Independent Interoperability Protocol (iTIP)</p>
+</div></blockquote>
+<p><span class="target" id="index-135"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5593.html"><strong>RFC 5593</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) - URL Access Identifier
+Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-136"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5689.html"><strong>RFC 5689</strong></a></p>
+<blockquote>
+<div><p>Extended MKCOL for Web Distributed Authoring and Versioning (WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-137"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5703.html"><strong>RFC 5703</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: MIME Part Tests, Iteration, Extraction,
+Replacement, and Enclosure</p>
+</div></blockquote>
+<p><span class="target" id="index-138"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5804.html"><strong>RFC 5804</strong></a></p>
+<blockquote>
+<div><p>A protocol for Remotely Managing Sieve Scripts</p>
+</div></blockquote>
+<p><span class="target" id="index-139"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5819.html"><strong>RFC 5819</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension for Returning STATUS Information in Extended LIST</p>
+</div></blockquote>
+<p><span class="target" id="index-140"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5957.html"><strong>RFC 5957</strong></a></p>
+<blockquote>
+<div><p>Display-Based Address Sorting for the IMAP4 SORT Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-141"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5995.html"><strong>RFC 5995</strong></a></p>
+<blockquote>
+<div><p>Using POST to Add Members to Web Distributed Authoring and
+Versioning (WebDAV) Collections</p>
+</div></blockquote>
+<p><span class="target" id="index-142"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6009.html"><strong>RFC 6009</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Delivery Status Notifications and
+Deliver-By Extensions</p>
+</div></blockquote>
+<p><span class="target" id="index-143"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6047.html"><strong>RFC 6047</strong></a></p>
+<blockquote>
+<div><p>iCalendar Message-Based Interoperability Protocol (iMIP)</p>
+</div></blockquote>
+<p><span class="target" id="index-144"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6101.html"><strong>RFC 6101</strong></a></p>
+<blockquote>
+<div><p>The Secure Sockets Layer (SSL) Protocol Version 3.0</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SSLv3 is considered insecure as it is vulnerable to POODLE.</p>
+<p>Support for SSLv3 is being deprecated and removed.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-145"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6131.html"><strong>RFC 6131</strong></a></p>
+<blockquote>
+<div><p>Sieve Vacation Extension: “Seconds” Parameter</p>
+</div></blockquote>
+<p><span class="target" id="index-146"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6134.html"><strong>RFC 6134</strong></a></p>
+<blockquote>
+<div><p>Sieve Extension: Externally Stored Lists</p>
+</div></blockquote>
+<p><span class="target" id="index-147"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6154.html"><strong>RFC 6154</strong></a></p>
+<blockquote>
+<div><p>IMAP LIST Extension for Special-Use Mailboxes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The LIST and LSUB commands return the special-use flags, unless the
+<code class="docutils literal notranslate"><span class="pre">specialusealways</span></code> configuration variable is explicitly turned off.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-148"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6203.html"><strong>RFC 6203</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension for Fuzzy Search</p>
+</div></blockquote>
+<p><span class="target" id="index-149"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6321.html"><strong>RFC 6321</strong></a></p>
+<blockquote>
+<div><p>xCal: The XML Format for iCalendar</p>
+</div></blockquote>
+<p><span class="target" id="index-150"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6350.html"><strong>RFC 6350</strong></a></p>
+<blockquote>
+<div><p>vCard Format Specification</p>
+</div></blockquote>
+<p><span class="target" id="index-151"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6352.html"><strong>RFC 6352</strong></a></p>
+<blockquote>
+<div><p>CardDAV: vCard Extensions to Web Distributed Authoring and
+Versioning (WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-152"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6376.html"><strong>RFC 6376</strong></a></p>
+<blockquote>
+<div><p>DomainKeys Identified Mail (DKIM) Signatures</p>
+</div></blockquote>
+<p><span class="target" id="index-153"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6558.html"><strong>RFC 6558</strong></a></p>
+<blockquote>
+<div><p>Sieve Extension for Converting Messages before Delivery</p>
+</div></blockquote>
+<p><span class="target" id="index-154"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6455.html"><strong>RFC 6455</strong></a></p>
+<blockquote>
+<div><p>The WebSocket Protocol</p>
+</div></blockquote>
+<p><span class="target" id="index-155"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6578.html"><strong>RFC 6578</strong></a></p>
+<blockquote>
+<div><p>Collection Synchronization for Web Distributed Authoring and
+Versioning (WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-156"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6585.html"><strong>RFC 6585</strong></a></p>
+<blockquote>
+<div><p>Additional HTTP Status Codes</p>
+</div></blockquote>
+<p><span class="target" id="index-157"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6609.html"><strong>RFC 6609</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Include Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-158"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6638.html"><strong>RFC 6638</strong></a></p>
+<blockquote>
+<div><p>Scheduling Extensions to CalDAV</p>
+</div></blockquote>
+<p><span class="target" id="index-159"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6764.html"><strong>RFC 6764</strong></a></p>
+<blockquote>
+<div><p>Locating Services for Calendaring Extensions to WebDAV (CalDAV) and
+vCard Extensions to WebDAV (CardDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-160"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6797.html"><strong>RFC 6797</strong></a></p>
+<blockquote>
+<div><p>HTTP Strict Transport Security (HSTS)</p>
+</div></blockquote>
+<p><span class="target" id="index-161"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6851.html"><strong>RFC 6851</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) - MOVE Extension</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.5.0.</span></p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-162"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6901.html"><strong>RFC 6901</strong></a></p>
+<blockquote>
+<div><p>JavaScript Object Notation (JSON) Pointer</p>
+</div></blockquote>
+<p><span class="target" id="index-163"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7230.html"><strong>RFC 7230</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</p>
+</div></blockquote>
+<p><span class="target" id="index-164"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7231.html"><strong>RFC 7231</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</p>
+</div></blockquote>
+<p><span class="target" id="index-165"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7232.html"><strong>RFC 7232</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</p>
+</div></blockquote>
+<p><span class="target" id="index-166"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7233.html"><strong>RFC 7233</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Range Requests</p>
+</div></blockquote>
+<p><span class="target" id="index-167"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7234.html"><strong>RFC 7234</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Caching</p>
+</div></blockquote>
+<p><span class="target" id="index-168"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7235.html"><strong>RFC 7235</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP/1.1): Authentication</p>
+</div></blockquote>
+<p><span class="target" id="index-169"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7238.html"><strong>RFC 7238</strong></a></p>
+<blockquote>
+<div><p>The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect)</p>
+</div></blockquote>
+<p><span class="target" id="index-170"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7239.html"><strong>RFC 7239</strong></a></p>
+<blockquote>
+<div><p>Forwarded HTTP Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-171"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7240.html"><strong>RFC 7240</strong></a></p>
+<blockquote>
+<div><p>Prefer Header for HTTP</p>
+</div></blockquote>
+<p><span class="target" id="index-172"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7265.html"><strong>RFC 7265</strong></a></p>
+<blockquote>
+<div><p>jCal: The JSON Format for iCalendar</p>
+</div></blockquote>
+<p><span class="target" id="index-173"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7352.html"><strong>RFC 7352</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Detecting Duplicate Deliveries</p>
+</div></blockquote>
+<p><span class="target" id="index-174"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7529.html"><strong>RFC 7529</strong></a></p>
+<blockquote>
+<div><p>Non-Gregorian Recurrence Rules in the Internet Calendaring and
+Scheduling Core Object Specification (iCalendar)</p>
+</div></blockquote>
+<p><span class="target" id="index-175"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7540.html"><strong>RFC 7540</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol Version 2 (HTTP/2)</p>
+</div></blockquote>
+<p><span class="target" id="index-176"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7615.html"><strong>RFC 7615</strong></a></p>
+<blockquote>
+<div><p>HTTP Authentication-Info and Proxy-Authentication-Info Response
+Header Fields</p>
+</div></blockquote>
+<p><span class="target" id="index-177"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7616.html"><strong>RFC 7616</strong></a></p>
+<blockquote>
+<div><p>HTTP Digest Access Authentication</p>
+</div></blockquote>
+<p><span class="target" id="index-178"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7617.html"><strong>RFC 7617</strong></a></p>
+<blockquote>
+<div><p>The ‘Basic’ HTTP Authentication Scheme</p>
+</div></blockquote>
+<p><span class="target" id="index-179"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7692.html"><strong>RFC 7692</strong></a></p>
+<blockquote>
+<div><p>Compression Extensions for WebSocket</p>
+</div></blockquote>
+<p><span class="target" id="index-180"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7694.html"><strong>RFC 7694</strong></a></p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP) Client-Initiated Content-Encoding</p>
+</div></blockquote>
+<p><span class="target" id="index-181"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7725.html"><strong>RFC 7725</strong></a></p>
+<blockquote>
+<div><p>An HTTP Status Code to Report Legal Obstacles</p>
+</div></blockquote>
+<p><span class="target" id="index-182"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7804.html"><strong>RFC 7804</strong></a></p>
+<blockquote>
+<div><p>Salted Challenge Response HTTP Authentication Mechanism</p>
+</div></blockquote>
+<p><span class="target" id="index-183"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7808.html"><strong>RFC 7808</strong></a></p>
+<blockquote>
+<div><p>Time Zone Data Distribution Service</p>
+</div></blockquote>
+<p><span class="target" id="index-184"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7809.html"><strong>RFC 7809</strong></a></p>
+<blockquote>
+<div><p>CalDAV: Time Zones by Reference</p>
+</div></blockquote>
+<p><span class="target" id="index-185"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7889.html"><strong>RFC 7889</strong></a></p>
+<blockquote>
+<div><p>The IMAP APPENDLIMIT Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-186"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7932.html"><strong>RFC 7932</strong></a></p>
+<blockquote>
+<div><p>Brotli Compressed Data Format</p>
+</div></blockquote>
+<p><span class="target" id="index-187"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7953.html"><strong>RFC 7953</strong></a></p>
+<blockquote>
+<div><p>Calendar Availability</p>
+</div></blockquote>
+<p><span class="target" id="index-188"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7986.html"><strong>RFC 7986</strong></a></p>
+<blockquote>
+<div><p>New Properties for iCalendar</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support here means, that when the iCalendar stream is retrieved with HTTP GET,
+Cyrus IMAP inserts the color, description and name from the WebDAV properties.
+IMAGE, SOURCE, multi-lingual calendar DESCRIPTIONs, URL, LAST-MODIFIED, CATEGORIES,
+and REFRESH-INTERVAL are not exported on iCalendar streams retrieved with GET.</p>
+<p>Individual iCalendar objects (VEVENT, VTODO, VJOURNAL) can be uploaded and
+downloaded with the New Properties for iCalendar.</p>
+</div>
+</div></blockquote>
+<p><span class="target" id="index-189"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8144.html"><strong>RFC 8144</strong></a></p>
+<blockquote>
+<div><p>Use of the Prefer Header Field in Web Distributed Authoring and
+Versioning (WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-190"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8246.html"><strong>RFC 8246</strong></a></p>
+<blockquote>
+<div><p>HTTP Immutable Responses</p>
+</div></blockquote>
+<p><span class="target" id="index-191"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8288.html"><strong>RFC 8288</strong></a></p>
+<blockquote>
+<div><p>Web Linking</p>
+</div></blockquote>
+<p><span class="target" id="index-192"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8297.html"><strong>RFC 8297</strong></a></p>
+<blockquote>
+<div><p>An HTTP Status Code for Indicating Hints</p>
+</div></blockquote>
+<p><span class="target" id="index-193"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8437.html"><strong>RFC 8437</strong></a></p>
+<blockquote>
+<div><p>IMAP UNAUTHENTICATE Extension for Connection Reuse</p>
+</div></blockquote>
+<p><span class="target" id="index-194"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8438.html"><strong>RFC 8438</strong></a></p>
+<blockquote>
+<div><p>IMAP Extension for STATUS=SIZE</p>
+</div></blockquote>
+<p><span class="target" id="index-195"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8440.html"><strong>RFC 8440</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension for Returning MYRIGHTS Information in Extended LIST</p>
+</div></blockquote>
+<p><span class="target" id="index-196"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8441.html"><strong>RFC 8441</strong></a></p>
+<blockquote>
+<div><p>Bootstrapping WebSockets with HTTP/2</p>
+</div></blockquote>
+<p><span class="target" id="index-197"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8474.html"><strong>RFC 8474</strong></a></p>
+<blockquote>
+<div><p>IMAP Extension for Object Identifiers</p>
+</div></blockquote>
+<p><span class="target" id="index-198"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8514.html"><strong>RFC 8514</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol (IMAP) - SAVEDATE Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-199"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8579.html"><strong>RFC 8579</strong></a></p>
+<blockquote>
+<div><p>Sieve Email Filtering: Delivering to Special-Use Mailboxes</p>
+</div></blockquote>
+<p><span class="target" id="index-200"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8580.html"><strong>RFC 8580</strong></a></p>
+<blockquote>
+<div><p>Sieve Extension: File Carbon Copy (FCC)</p>
+</div></blockquote>
+<p><span class="target" id="index-201"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8607.html"><strong>RFC 8607</strong></a></p>
+<blockquote>
+<div><p>Calendaring Extensions to WebDAV (CalDAV): Managed Attachments</p>
+</div></blockquote>
+<p><span class="target" id="index-202"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8620.html"><strong>RFC 8620</strong></a></p>
+<blockquote>
+<div><p>The JSON Meta Application Protocol (JMAP)</p>
+</div></blockquote>
+<p><span class="target" id="index-203"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8621.html"><strong>RFC 8621</strong></a></p>
+<blockquote>
+<div><p>The JSON Meta Application Protocol (JMAP) for Mail</p>
+</div></blockquote>
+<p><span class="target" id="index-204"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8878.html"><strong>RFC 8878</strong></a></p>
+<blockquote>
+<div><p>Zstandard Compression and the application/zstd Media Type</p>
+</div></blockquote>
+<p><span class="target" id="index-205"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8887.html"><strong>RFC 8887</strong></a></p>
+<blockquote>
+<div><p>A JSON Meta Application Protocol (JMAP) Subprotocol for WebSocket</p>
+</div></blockquote>
+<p><span class="target" id="index-206"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8970.html"><strong>RFC 8970</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension: Message Preview Generation</p>
+</div></blockquote>
+<div class="section" id="ietf-rfc-drafts">
+<h2>IETF RFC Drafts<a class="headerlink" href="#ietf-rfc-drafts" title="Permalink to this headline">¶</a></h2>
+<p>draft-ietf-extra-sieve-mailboxid</p>
+<blockquote>
+<div><p>Sieve Email Filtering: delivery by mailboxid</p>
+</div></blockquote>
+<p>draft-ietf-extra-sieve-snooze</p>
+<blockquote>
+<div><p>Sieve Email Filtering: Snooze Extension</p>
+</div></blockquote>
+<p>draft-ietf-jmap-calendars</p>
+<blockquote>
+<div><p>JMAP for Calendars</p>
+</div></blockquote>
+<p>draft-ietf-jmap-sieve</p>
+<blockquote>
+<div><p>JMAP for Sieve Scripts</p>
+</div></blockquote>
+<p>draft-murchison-lmtp-ignorequota</p>
+<blockquote>
+<div><p>LMTP Service Extension for Ignoring Recipient Quotas</p>
+</div></blockquote>
+<p>[MS-NTHT]   NTLM Over HTTP Protocol Specification</p>
+<p>draft-ietf-sieve-regex</p>
+<blockquote>
+<div><p>Sieve Email Filtering – Regular Expression Extension</p>
+</div></blockquote>
+<p>draft-martin-sieve-notify</p>
+<blockquote>
+<div><p>Sieve – An extension for providing instant notifications</p>
+</div></blockquote>
+<p>draft-york-vpoll</p>
+<blockquote>
+<div><p>VPOLL: Consensus Scheduling Component for iCalendar</p>
+</div></blockquote>
+<p>draft-desruisseaux-ischedule</p>
+<blockquote>
+<div><p>Internet Calendar Scheduling Protocol (iSchedule)</p>
+</div></blockquote>
+<p>draft-thomson-hybi-http-timeout</p>
+<blockquote>
+<div><p>Hypertext Transfer Protocol (HTTP) Keep-Alive Header</p>
+</div></blockquote>
+<blockquote>
+<div><p>caldav-ctag     Calendar Collection Entity Tag (CTag) in CalDAV
+Brief Header    Microsoft ‘Brief’ header extension</p>
+</div></blockquote>
+</div>
+<div class="section" id="rfc-wishlist">
+<h2>RFC Wishlist<a class="headerlink" href="#rfc-wishlist" title="Permalink to this headline">¶</a></h2>
+<p><span class="target" id="index-207"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2221.html"><strong>RFC 2221</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Login Referrals</p>
+</div></blockquote>
+<p><span class="target" id="index-208"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2295.html"><strong>RFC 2295</strong></a></p>
+<blockquote>
+<div><p>Transparent Content Negotiation in HTTP</p>
+</div></blockquote>
+<p><span class="target" id="index-209"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2369.html"><strong>RFC 2369</strong></a></p>
+<blockquote>
+<div><p>The Use of URLs as Meta-Syntax for Core Mail List Commands
+and their Transport through Message Header Fields</p>
+</div></blockquote>
+<p><span class="target" id="index-210"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc3229.html"><strong>RFC 3229</strong></a></p>
+<blockquote>
+<div><p>Delta encoding in HTTP</p>
+</div></blockquote>
+<p><span class="target" id="index-211"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5182.html"><strong>RFC 5182</strong></a></p>
+<blockquote>
+<div><p>IMAP Extension for Referencing the Last SEARCH Result</p>
+</div></blockquote>
+<p><span class="target" id="index-212"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5255.html"><strong>RFC 5255</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol Internationalization</p>
+</div></blockquote>
+<p><span class="target" id="index-213"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5259.html"><strong>RFC 5259</strong></a></p>
+<blockquote>
+<div><p>Internet Message Access Protocol - CONVERT Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-214"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5437.html"><strong>RFC 5437</strong></a></p>
+<blockquote>
+<div><p>Sieve Notification Mechanism: Extensible Messaging and Presence
+Protocol (XMPP)</p>
+</div></blockquote>
+<p><span class="target" id="index-215"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5465.html"><strong>RFC 5465</strong></a></p>
+<blockquote>
+<div><p>The IMAP NOTIFY Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-216"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5466.html"><strong>RFC 5466</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Extension for Named Searches (Filters)</p>
+</div></blockquote>
+<p><span class="target" id="index-217"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5550.html"><strong>RFC 5550</strong></a></p>
+<blockquote>
+<div><p>The Internet Email to Support Diverse Service Environments (Lemonade) Profile</p>
+</div></blockquote>
+<p><span class="target" id="index-218"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5842.html"><strong>RFC 5842</strong></a></p>
+<blockquote>
+<div><p>Binding Extensions to Web Distributed Authoring and Versioning (WebDAV)</p>
+</div></blockquote>
+<p><span class="target" id="index-219"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6468.html"><strong>RFC 6468</strong></a></p>
+<blockquote>
+<div><p>Sieve Notification Mechanism: SIP MESSAGE</p>
+</div></blockquote>
+<p><span class="target" id="index-220"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6785.html"><strong>RFC 6785</strong></a></p>
+<blockquote>
+<div><p>Support for Internet Message Access Protocol (IMAP) Events in Sieve</p>
+</div></blockquote>
+<p><span class="target" id="index-221"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc6855.html"><strong>RFC 6855</strong></a></p>
+<blockquote>
+<div><p>IMAP Support for UTF-8</p>
+</div></blockquote>
+<p><span class="target" id="index-222"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7162.html"><strong>RFC 7162</strong></a></p>
+<blockquote>
+<div><p>IMAP Extensions: Quick Flag Changes Resynchronization (CONDSTORE)
+and Quick Mailbox Resynchronization (QRESYNC)</p>
+</div></blockquote>
+<p><span class="target" id="index-223"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7377.html"><strong>RFC 7377</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Multimailbox SEARCH Extension</p>
+</div></blockquote>
+<p><span class="target" id="index-224"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc7888.html"><strong>RFC 7888</strong></a></p>
+<blockquote>
+<div><p>IMAP4 Non-synchronizing Literals</p>
+</div></blockquote>
+<p><span class="target" id="index-225"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8470.html"><strong>RFC 8470</strong></a></p>
+<blockquote>
+<div><p>Using Early Data in HTTP</p>
+</div></blockquote>
+<p><span class="target" id="index-226"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc8508.html"><strong>RFC 8508</strong></a></p>
+<blockquote>
+<div><p>IMAP REPLACE Extension</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 1993–2025, The Cyrus Team. Last updated on Sep 03 2023
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.6.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+<!--      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      }); -->
+  </script>
+  
+ 
+
+
+
+</body>
+</html>
