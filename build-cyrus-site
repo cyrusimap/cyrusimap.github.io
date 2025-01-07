@@ -48,19 +48,10 @@ pod2usage(0) if $opt->help;
 # (It's okay if this directory disappears, it will be remade automatically,
 # but it's better if it doesn't disappear, so we don't have to do all these
 # git clones every time)
+my $workdir = File::Spec->rel2abs('.');
 my $basedir = '/tmp/CYRUS_DOCS_BUILD_DIR';
 
 my $builddir = canonpath("$basedir/cyrus-site");
-
-sub cyrus_branch ($branch, $paths = undef) {
-    return (
-        $branch => {
-            repo   => 'imapd',
-            branch => $branch,
-            paths  => $paths // [ "/" . ($branch =~ s{^cyrus-imapd-}{}r) ]
-        },
-    );
-}
 
 my %repo = (
   sasl  => 'https://github.com/cyrusimap/cyrus-sasl.git',
@@ -75,11 +66,13 @@ my %source = (
     },
 
     cyrus_branch('master', [ '/dev' ]),
-    cyrus_branch('cyrus-imapd-2.5'),
-    cyrus_branch('cyrus-imapd-3.0'),
-    cyrus_branch('cyrus-imapd-3.2'),
-    cyrus_branch('cyrus-imapd-3.4'),
-    cyrus_branch('cyrus-imapd-3.6'),
+
+    archive_copy('2.5'),
+    archive_copy('3.0'),
+    archive_copy('3.2'),
+    archive_copy('3.4'),
+    archive_copy('3.6'),
+
     cyrus_branch('cyrus-imapd-3.8'),
     cyrus_branch('cyrus-imapd-3.10', [ '/3.10', '/', '/stable' ]),
     cyrus_branch('cyrus-imapd-3.12'),
@@ -146,34 +139,63 @@ foreach my $source_name (sort keys %source) {
     my $dir = canonpath("$basedir/$source_name");
     my $branch = $details->{branch} || $source_name;
 
-    # first make sure we have the source tree
-    if (! -d $dir) {
-        my $repo_url = $repo{ $details->{repo} };
-        print "#### cloning repo for $source_name...\n";
-        run_or_die('git', 'clone', $repo_url,
-                   '--branch', $branch,
-                   '--single-branch',
-                   '--no-tags',
-                   $dir);
-    } else {
-        print "#### updating repo for $source_name...\n";
-        run_or_die('git', '-C', $dir,
-                   'fetch', 'origin');
-    }
+    my $src;
 
-    print "#### building docs for $source_name...\n";
-    run_or_die('git', '-C', $dir,
-               'checkout', '-q', "origin/$branch");
-    run_or_die('make', '-C', canonpath("$dir/docsrc"), 'html');
+    if ($details->{is_archive}) {
+        $src = canonpath("$workdir/archived-versions/$details->{version}");
+        print "#### will use archived version from $src...\n";
+    } else {
+        # first make sure we have the source tree
+        if (! -d $dir) {
+            my $repo_url = $repo{ $details->{repo} };
+            print "#### cloning repo for $source_name...\n";
+            run_or_die('git', 'clone', $repo_url,
+                       '--branch', $branch,
+                       '--single-branch',
+                       '--no-tags',
+                       $dir);
+        } else {
+            print "#### updating repo for $source_name...\n";
+            run_or_die('git', '-C', $dir,
+                       'fetch', 'origin');
+        }
+
+        print "#### building docs for $source_name...\n";
+        run_or_die('git', '-C', $dir,
+                   'checkout', '-q', "origin/$branch");
+        run_or_die('make', '-C', canonpath("$dir/docsrc"), 'html');
+
+        $src = canonpath("$basedir/$source_name/docsrc/build/html");
+    }
 
     for my $path ($details->{paths}->@*) {
         print "#### rsyncing $source_name docs to $path...\n";
-        my $src = canonpath("$basedir/$source_name/docsrc/build/html");
-        my $dest = canonpath("$builddir/$path");
+        my $dst = canonpath("$builddir/$path");
 
         # n.b. trailing / on src argument is load-bearing
-        run_or_die('rsync', '-av', "$src/", $dest);
+        run_or_die('rsync', '-av', "$src/", $dst);
     }
 }
 
 print "#### all done!\n";
+
+#### SUBS ONLY BELOW
+
+sub archive_copy ($version) {
+    return $version => {
+        is_archive => 1,
+        version    => $version,
+        paths      => [ "/$version" ],
+    };
+}
+
+sub cyrus_branch ($branch, $paths = undef) {
+    return (
+        $branch => {
+            repo   => 'imapd',
+            branch => $branch,
+            paths  => $paths // [ "/" . ($branch =~ s{^cyrus-imapd-}{}r) ]
+        },
+    );
+}
+
