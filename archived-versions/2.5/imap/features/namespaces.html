@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Mailbox Namespaces &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -797,8 +802,8 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="mailbox-namespaces">
-<h1>Mailbox Namespaces<a class="headerlink" href="#mailbox-namespaces" title="Permalink to this headline">¶</a></h1>
+  <section id="mailbox-namespaces">
+<h1>Mailbox Namespaces<a class="headerlink" href="#mailbox-namespaces" title="Permalink to this heading">¶</a></h1>
 <p>Cyrus IMAP supports the personal, the other users and zero or more
 shared namespaces.</p>
 <p>With a history in news-groups, Cyrus IMAP versions prior to version
@@ -810,8 +815,8 @@ shared namespaces.</p>
 this particular part of the documentation is pending the resolution
 of <a href="#id1"><span class="problematic" id="id2">:task:`47`</span></a>.</p>
 </div>
-<div class="section" id="namespace-convention-netnews">
-<h2>Namespace Convention: <strong>netnews</strong><a class="headerlink" href="#namespace-convention-netnews" title="Permalink to this headline">¶</a></h2>
+<section id="namespace-convention-netnews">
+<h2>Namespace Convention: <strong>netnews</strong><a class="headerlink" href="#namespace-convention-netnews" title="Permalink to this heading">¶</a></h2>
 <p>By default, up to versions prior to Cyrus IMAP version
 3.0, Cyrus IMAP uses the
 <em>netnews</em> namespace convention – a <code class="docutils literal notranslate"><span class="pre">.</span></code> (dot) character is used as the
@@ -844,8 +849,8 @@ naming convention. This poses a problem without the use of the <code class="docu
 (dot) character as a mailbox hierarchy separator.</p>
 <p>To illustrate the effects on an environment, please examine the
 following procedure, starting from a clean Cyrus IMAP installation:</p>
-<div class="section" id="example-effects-of-using-the-netnews-namespace-convention">
-<h3>Example Effects of Using the Netnews Namespace Convention<a class="headerlink" href="#example-effects-of-using-the-netnews-namespace-convention" title="Permalink to this headline">¶</a></h3>
+<section id="example-effects-of-using-the-netnews-namespace-convention">
+<h3>Example Effects of Using the Netnews Namespace Convention<a class="headerlink" href="#example-effects-of-using-the-netnews-namespace-convention" title="Permalink to this heading">¶</a></h3>
 <p>In <a class="reference internal" href="../admin/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>, ensure the following settings are
 configured:</p>
 <ul class="simple">
@@ -891,10 +896,10 @@ localhost&gt; <strong class="command">cm user.john&#64;example.org</strong>
 createmailbox: Permission denied</pre>
 <p>A mailbox name of <code class="docutils literal notranslate"><span class="pre">user.john&#64;example.org</span></code> is still not considered
 valid.</p>
-</div>
-</div>
-<div class="section" id="namespace-convention-not-netnews">
-<h2>Namespace Convention: “not netnews”<a class="headerlink" href="#namespace-convention-not-netnews" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="namespace-convention-not-netnews">
+<h2>Namespace Convention: “not netnews”<a class="headerlink" href="#namespace-convention-not-netnews" title="Permalink to this heading">¶</a></h2>
 <p>An alternative hierarchy separator can be used to allow the use of <code class="docutils literal notranslate"><span class="pre">.</span></code>
 (dot) characters in mailbox names: the UNIX hierarchy separator.</p>
 <p>The UNIX hierarchy separator is a <code class="docutils literal notranslate"><span class="pre">/</span></code> (forward slash) character, and
@@ -936,9 +941,9 @@ localhost&gt;</pre>
 <p>As you can see, the mailbox has been created succesfully using the
 shorthand qualifier, and has been created using the fully qualified user
 identifier as well.</p>
-</div>
-<div class="section" id="alternate-namespace">
-<h2>Alternate Namespace<a class="headerlink" href="#alternate-namespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="alternate-namespace">
+<h2>Alternate Namespace<a class="headerlink" href="#alternate-namespace" title="Permalink to this heading">¶</a></h2>
 <p>In a default situation, with Cyrus IMAP versions prior to version
 3.0 using the <em>netnews</em> namespace
 convention, a user <em>John Doe &lt;john&#64;example.org&gt;</em> would start out with a
@@ -974,14 +979,14 @@ hierarchy separator):</p>
 <p>Changing <code class="docutils literal notranslate"><span class="pre">altnamespace</span></code> in a currently operating environment will
 cause all IMAP clients to need to resync the entire hierarchy.</p>
 </div>
-</div>
-<div class="section" id="internal-namespace">
-<h2>Internal Namespace<a class="headerlink" href="#internal-namespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="internal-namespace">
+<h2>Internal Namespace<a class="headerlink" href="#internal-namespace" title="Permalink to this heading">¶</a></h2>
 <p>The internal namespace refers to how Cyrus IMAP maintains lists of
 mailboxes. It is literaly internal to Cyrus IMAP, and should be
 considered in contrast to <a class="reference internal" href="#imap-features-namespaces-administrator"><span class="std std-ref">Administrator Namespaces</span></a>.</p>
-<div class="section" id="personal-namespace">
-<h3>Personal Namespace<a class="headerlink" href="#personal-namespace" title="Permalink to this headline">¶</a></h3>
+<section id="personal-namespace">
+<h3>Personal Namespace<a class="headerlink" href="#personal-namespace" title="Permalink to this heading">¶</a></h3>
 <p>A mailbox in the <a class="reference internal" href="#imap-features-namespaces-personal"><span class="std std-ref">Personal Namespace</span></a> is a mailbox
 that belongs to a user account. As such, in the internal namespace,
 these mailboxes start with the literal string <code class="docutils literal notranslate"><span class="pre">user.</span></code>.</p>
@@ -1000,10 +1005,10 @@ to <em>John</em> as being in the
 <a class="reference internal" href="#imap-features-namespaces-other-users"><span class="std std-ref">Other Users Namespace</span></a>, however the internal
 accounting for it remains the same.</p>
 </div>
-</div>
-</div>
-<div class="section" id="administrator-namespaces">
-<span id="imap-features-namespaces-administrator"></span><h2>Administrator Namespaces<a class="headerlink" href="#administrator-namespaces" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="administrator-namespaces">
+<span id="imap-features-namespaces-administrator"></span><h2>Administrator Namespaces<a class="headerlink" href="#administrator-namespaces" title="Permalink to this heading">¶</a></h2>
 <p>An administrator – a user for which the username is included in the
 <code class="docutils literal notranslate"><span class="pre">admins</span></code> setting in <a class="reference internal" href="../admin/configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> – has a different
 perspective when using the IMAP protocol to perform administrative
@@ -1074,9 +1079,9 @@ being presented as <code class="docutils literal notranslate"><span class="pre">
 actually unrealmed <code class="docutils literal notranslate"><span class="pre">user/john</span></code> mailbox that exists on the system
 as well.</p>
 </div>
-</div>
-<div class="section" id="imap-features-namespaces-personal">
-<span id="id3"></span><h2>Personal Namespace<a class="headerlink" href="#imap-features-namespaces-personal" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="imap-features-namespaces-personal">
+<span id="id3"></span><h2>Personal Namespace<a class="headerlink" href="#imap-features-namespaces-personal" title="Permalink to this heading">¶</a></h2>
 <p>The personal namespace refers to the hierarchy of mailboxes that a
 Cyrus IMAP user owns, such as user <em>John Doe &lt;john.doe&#64;example.org&gt;</em>
 being the owner of the <code class="docutils literal notranslate"><span class="pre">user/john.doe&#64;example.org</span></code> hierarchy.</p>
@@ -1108,9 +1113,9 @@ in <strong>her personal namespace</strong>:</p>
 </div>
 <p>Note that the prefix used here is “Other Users” to indicate the mailbox
 in question is in fact a part of another user’s personal namespace.</p>
-</div>
-<div class="section" id="other-users-namespace">
-<span id="imap-features-namespaces-other-users"></span><h2>Other Users Namespace<a class="headerlink" href="#other-users-namespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="other-users-namespace">
+<span id="imap-features-namespaces-other-users"></span><h2>Other Users Namespace<a class="headerlink" href="#other-users-namespace" title="Permalink to this heading">¶</a></h2>
 <p>The Other Users namespace is a namespace that is reserved for mailboxes
 in other user’s personal namespaces, that have been shared with the
 current user.</p>
@@ -1119,9 +1124,9 @@ current user.</p>
 can be advantageous to larger environments because of the nature of the
 <a class="reference internal" href="access-control.html#imap-features-access-control-lists-discretionary"><span class="std std-ref">Discretionary Access Control</span></a> Cyrus IMAP
 entertains by default.</p>
-</div>
-<div class="section" id="shared-namespaces">
-<span id="imap-features-namespaces-shared"></span><h2>Shared Namespaces<a class="headerlink" href="#shared-namespaces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="shared-namespaces">
+<span id="imap-features-namespaces-shared"></span><h2>Shared Namespaces<a class="headerlink" href="#shared-namespaces" title="Permalink to this heading">¶</a></h2>
 <p>Shared namespaces contain – as the name already suggests – mailboxes
 that are not owned by any one particular user, albeit one or more actual
 users may have administrative rights on the folders.</p>
@@ -1148,8 +1153,8 @@ users may have administrative rights on the folders.</p>
 can be advantageous to larger environments that want to avoid all LIST
 operations to result in very large, long lists of folders.</p>
 <p>Back to <a class="reference internal" href="../features.html#imap-features"><span class="std std-ref">IMAP Features</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1172,7 +1177,7 @@ operations to result in very large, long lists of folders.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1196,9 +1201,12 @@ operations to result in very large, long lists of folders.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

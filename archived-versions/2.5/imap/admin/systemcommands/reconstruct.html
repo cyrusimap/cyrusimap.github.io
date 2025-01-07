@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>reconstruct &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -799,11 +804,11 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="reconstruct">
-<span id="imap-admin-systemcommands-reconstruct"></span><span id="std-cyrusman-reconstruct-8"></span><span id="std:cyrusman-reconstruct(8)"></span><h1><strong>reconstruct</strong><a class="headerlink" href="#reconstruct" title="Permalink to this headline">¶</a></h1>
+  <section id="reconstruct">
+<span id="imap-admin-systemcommands-reconstruct"></span><span id="std-cyrusman-reconstruct-8"></span><h1><strong>reconstruct</strong><a class="headerlink" href="#reconstruct" title="Permalink to this heading">¶</a></h1>
 <p>Reconstruct mailboxes</p>
-<div class="section" id="synopsis">
-<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] [ <strong>-p</strong> <em>partition</em> ] [ <strong>-x</strong> ] [ <strong>-r</strong> ]
     [ <strong>-f</strong> ] [ <strong>-U</strong> ] [ <strong>-s</strong> ] [ <strong>-q</strong> ] [ <strong>-G</strong> ] [ <strong>-R</strong> ] [ <strong>-o</strong> ]
     [ <strong>-O</strong> ] [ <strong>-M</strong> ] <em>mailbox</em>...
@@ -813,9 +818,9 @@
     [ <strong>-O</strong> ] [ <strong>-M</strong> ] [ -u ] <em>users</em>...
 
 <strong>reconstruct</strong> [ <strong>-C</strong> <em>config-file</em> ] <strong>-m</strong></pre>
-</div>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p><strong>reconstruct</strong> rebuilds one or more IMAP mailboxes.  When invoked with
 the <strong>-m</strong> switch, it rebuilds the master mailboxes file.  It can be
 used to recover from almost any sort of data corruption.</p>
@@ -831,26 +836,26 @@ assumed to be in news format.</p>
 root files.  After running <strong>reconstruct</strong>, it is advisable to run
 <em class="manpage">quota(8)</em> with the <strong>-f</strong> switch in order to fix the quota
 root files.</p>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
 <dl class="std option">
-<dt id="cmdoption-reconstruct-C">
-<span id="cmdoption-reconstruct-c"></span><code class="sig-name descname"><span class="pre">-C</span></code><code class="sig-prename descclassname">&#160; <span class="pre">config-file</span></code><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-C">
+<span id="cmdoption-reconstruct-c"></span><span class="sig-name descname"><span class="pre">-C</span></span><span class="sig-prename descclassname">&#160; <span class="pre">config-file</span></span><a class="headerlink" href="#cmdoption-reconstruct-C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the specified configuration file <em>config-file</em> rather than the default <em class="manpage">imapd.conf(5)</em>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-p">
-<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname">&#160; <span class="pre">partition</span></code><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname">&#160; <span class="pre">partition</span></span><a class="headerlink" href="#cmdoption-reconstruct-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for the listed (non-existant) mailboxes on the indicated
 <em>partition</em>. Create the mailboxes in the database in addition to
 reconstructing them. (not compatible with the use of wildcards)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-x">
-<code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-x">
+<span class="sig-name descname"><span class="pre">-x</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>When processing a mailbox which is not in the mailbox list (e.g.
 via the <strong>-p</strong> or <strong>-f</strong> options), do not import the metadata from
 the mailbox, instead create it anew (this specifically affects at
@@ -859,52 +864,52 @@ ACL).</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-r">
-<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-r">
+<span class="sig-name descname"><span class="pre">-r</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recursively reconstruct all sub-mailboxes of the mailboxes or
 mailbox prefixes given as arguments.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-f">
-<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-f">
+<span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Examine the filesystem underneath mailbox, adding all directories
 with a <code class="docutils literal notranslate"><span class="pre">cyrus.header</span></code> found there as new mailboxes.  Useful for
 restoring mailboxes from backups.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-s">
-<code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-s">
+<span class="sig-name descname"><span class="pre">-s</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don’t stat underlying files.  This makes reconstruct run faster, at
 the expense of not noticing some issues (like zero byte files or
 size mistmatches).  “<strong>reconstruct -s</strong>” should be quite fast.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-q">
-<code class="sig-name descname"><span class="pre">-q</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-q">
+<span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Emit less verbose information to syslog.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-n">
-<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-n">
+<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Don’t make any changes.  This gives equivalent behaviour to
 <a class="reference internal" href="chk_cyrus.html#std-cyrusman-chk_cyrus-8">chk_cyrus(8)</a> where problems are reported, but not fixed.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-G">
-<span id="cmdoption-reconstruct-g"></span><code class="sig-name descname"><span class="pre">-G</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-G">
+<span id="cmdoption-reconstruct-g"></span><span class="sig-name descname"><span class="pre">-G</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-G" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force re-parsing of the underlying message (checks GUID
 correctness). Reconstruct with -G should fix all possible
 individual message issues, including corrupted data files.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-R">
-<code class="sig-name descname"><span class="pre">-R</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-R">
+<span class="sig-name descname"><span class="pre">-R</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform a UID upgrade operation on GUID mismatch files.  Use this
 option if you think your index is corrupted rather than your
 message files, or if all backup attempts have failed and you’re
@@ -912,8 +917,8 @@ happy to be served the missing files.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-U">
-<span id="cmdoption-reconstruct-u"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-U">
+<span id="cmdoption-reconstruct-u"></span><span class="sig-name descname"><span class="pre">-U</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this option if you have corrupt message files in your spool and
 have been unable to restore them from backup.  This will make the
 mailbox IOERROR free and fix replication.</p>
@@ -923,29 +928,29 @@ exhausted other options first!</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-o">
-<code class="sig-name descname"><span class="pre">-o</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-o" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ignore odd files in your mailbox disk directories.  Probably useful
 if you are using some tool which adds additional tracking files.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-O">
-<code class="sig-name descname"><span class="pre">-O</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-O">
+<span class="sig-name descname"><span class="pre">-O</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-O" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete odd files.  This is the opposite of <strong>-o</strong>.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-M">
-<span id="cmdoption-reconstruct-m"></span><code class="sig-name descname"><span class="pre">-M</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-M">
+<span id="cmdoption-reconstruct-m"></span><span class="sig-name descname"><span class="pre">-M</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-M" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prefer mailboxes.db over cyrus.header - will rewrite ACL or
 uniqueid from the mailboxes.db into the header file rather than the
 other way around.  This feature was introduced in version 3.0.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-V">
-<span id="cmdoption-reconstruct-v"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname">&#160; <span class="pre">version</span></code><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-V">
+<span id="cmdoption-reconstruct-v"></span><span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname">&#160; <span class="pre">version</span></span><a class="headerlink" href="#cmdoption-reconstruct-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the <code class="docutils literal notranslate"><span class="pre">cyrus.index</span></code> minor version to a specific <em>version</em>.
 This can be useful for upgrades or downgrades. Use a magical
 version of <em>max</em> to upgrade to the latest available database format
@@ -953,14 +958,14 @@ version.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-0">
-<code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-0">
+<span class="sig-name descname"><span class="pre">-u</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instead of mailbox prefixes, give usernames on the command line</p>
 </dd></dl>
 
 <dl class="std option">
-<dt id="cmdoption-reconstruct-1">
-<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-reconstruct-1" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object std" id="cmdoption-reconstruct-1">
+<span class="sig-name descname"><span class="pre">-m</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-reconstruct-1" title="Permalink to this definition">¶</a></dt>
 <dd><p>NOTE:
 CURRENTLY UNAVAILABLE</p>
 <p>Rebuild the <em>mailboxes</em> file.  Use whatever data in the existing
@@ -968,9 +973,9 @@ CURRENTLY UNAVAILABLE</p>
 in the <a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a> file for additional mailboxes.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <pre class="literal-block"><strong>reconstruct -r -f</strong> <em>tech.support</em></pre>
 <blockquote>
 <div><p>Recursively reconstruct all mailboxes within the <em>tech.support</em>
@@ -1022,23 +1027,23 @@ restoring any directories containing <code class="docutils literal notranslate">
 <span class="n">user</span><span class="o">.</span><span class="n">jsmith</span><span class="o">.</span><span class="n">Trash</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="history">
-<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
 <p>The options <strong>-k</strong> (keep flags) and <strong>-g</strong> (clear GUID) have been
 deprecated in Cyrus version 2.4.</p>
 <p>The <strong>-u</strong> and <strong>-V</strong> options were added in Cyrus version 2.5.</p>
 <p>The <strong>-M</strong> option was added in Cyrus version 3.0.</p>
-</div>
-<div class="section" id="files">
-<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">¶</a></h2>
 <p>/etc/imapd.conf</p>
-</div>
-<div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference internal" href="../configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1061,7 +1066,7 @@ deprecated in Cyrus version 2.4.</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1085,9 +1090,12 @@ deprecated in Cyrus version 2.4.</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

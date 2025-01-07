@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>cyradm &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -799,14 +804,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyradm">
-<h1><strong>cyradm</strong><a class="headerlink" href="#cyradm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="name">
-<h2>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+  <section id="cyradm">
+<h1><strong>cyradm</strong><a class="headerlink" href="#cyradm" title="Permalink to this heading">¶</a></h1>
+<section id="name">
+<h2>NAME<a class="headerlink" href="#name" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus::IMAP::Shell - Perl version of cyradm</p>
-</div>
-<div class="section" id="synopsis">
-<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="synopsis">
+<h2>SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span><span class="w"> </span><span class="nv">cyradm</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">authid</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">authz</span><span class="w"> </span><span class="n">authzid</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="p">[</span><span class="k">no</span><span class="p">]</span><span class="n">rc</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">systemrc</span><span class="w"> </span><span class="n">file</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">userrc</span><span class="w"> </span><span class="n">file</span><span class="p">]</span><span class="w"> </span><span class="o">\</span>
 <span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">port</span><span class="w"> </span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">auth</span><span class="w"> </span><span class="n">mechanism</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="o">--</span><span class="n">server</span><span class="p">]</span><span class="w"> </span><span class="n">server</span>
 </pre></div>
@@ -821,15 +826,15 @@
 <span class="n">run</span><span class="p">(</span><span class="s">&#39;myscriptname&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="description">
-<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="description">
+<h2>DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>This module implements <strong>cyradm</strong> in Perl.  It is a shell around
 <a class="reference external" href="http://search.cpan.org/search?query=Cyrus%3a%3aIMAP%3a%3aAdmin&amp;mode=module">Cyrus::IMAP::Admin</a>.  Commands are provided in both Tcl-compatible
 forms and GNU-style long option forms.</p>
-</div>
-<div class="section" id="commands">
-<h2>COMMANDS<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="commands">
+<h2>COMMANDS<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">authenticate</span></code> [<code class="docutils literal notranslate"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal notranslate"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal notranslate"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal notranslate"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal notranslate"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal notranslate"><span class="pre">--notls</span></code>] [<code class="docutils literal notranslate"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal notranslate"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">auth</span></code> [<code class="docutils literal notranslate"><span class="pre">--minssf</span></code> <em>N</em>] [<code class="docutils literal notranslate"><span class="pre">--maxssf</span></code> <em>N</em>] [<code class="docutils literal notranslate"><span class="pre">--mechanisms</span></code> <em>list</em>] [<code class="docutils literal notranslate"><span class="pre">--service</span></code> <em>name</em>] [<code class="docutils literal notranslate"><span class="pre">--tlskey</span></code> <em>keyfile</em>] [<code class="docutils literal notranslate"><span class="pre">--notls</span></code>] [<code class="docutils literal notranslate"><span class="pre">--cafile</span></code> <em>cacertfile</em>] [<code class="docutils literal notranslate"><span class="pre">--capath</span></code> <em>cacertdir</em>] [<em>user</em>]</p></li>
@@ -1194,9 +1199,9 @@ The <em>value</em> may be the special string <code class="docutils literal notra
 Both old-style and getopt-style usages are accepted; combining them will
 produce an error.</p>
 </div></blockquote>
-</div>
-<div class="section" id="notes">
-<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
 <p>GNU-style long options must be given in their entirety; Tcl-style options
 may be abbreviated.</p>
 <p>Tcl-style options are provided as a compatibility feature.  They will
@@ -1218,18 +1223,18 @@ available, <strong>cyradm</strong> will use it.</p>
 <p>An alias facility is implemented internally, but no access is currently
 provided to it.  This will change, if only to allow some of the predefined
 aliases to be removed if they conflict with useful shell commands.</p>
-</div>
-<div class="section" id="author">
-<h2>AUTHOR<a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="author">
+<h2>AUTHOR<a class="headerlink" href="#author" title="Permalink to this heading">¶</a></h2>
 <p>Brandon S. Allbery, <a class="reference external" href="mailto:allbery&#37;&#52;&#48;ece&#46;cmu&#46;edu">allbery<span>&#64;</span>ece<span>&#46;</span>cmu<span>&#46;</span>edu</a></p>
-</div>
-<div class="section" id="see-also">
-<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="see-also">
+<h2>SEE ALSO<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus::IMAP::Admin
 Term::ReadLine
 sh(1), perl(1), imapd(8).</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1252,7 +1257,7 @@ sh(1), perl(1), imapd(8).</p>
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -1276,9 +1281,12 @@ sh(1), perl(1), imapd(8).</p>
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Overview of Cyrus development environment &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -797,10 +802,10 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="overview-of-cyrus-development-environment">
-<h1>Overview of Cyrus development environment<a class="headerlink" href="#overview-of-cyrus-development-environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-pre-requisites">
-<h2>The pre-requisites<a class="headerlink" href="#the-pre-requisites" title="Permalink to this headline">¶</a></h2>
+  <section id="overview-of-cyrus-development-environment">
+<h1>Overview of Cyrus development environment<a class="headerlink" href="#overview-of-cyrus-development-environment" title="Permalink to this heading">¶</a></h1>
+<section id="the-pre-requisites">
+<h2>The pre-requisites<a class="headerlink" href="#the-pre-requisites" title="Permalink to this heading">¶</a></h2>
 <dl class="simple">
 <dt>While Cyrus itself can be run under many operating systems, we recommend the following operating systems for development, because the depencies and libraries are known. If you get a development environment working under a different operating system, we’d love to <a class="reference internal" href="../../feedback.html#feedback"><span class="std std-ref">hear about it</span></a>.</dt><dd><ul class="simple">
 <li><p>Debian / Ubuntu</p></li>
@@ -808,11 +813,11 @@
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="the-components">
-<h2>The components<a class="headerlink" href="#the-components" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="source">
-<h3>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-components">
+<h2>The components<a class="headerlink" href="#the-components" title="Permalink to this heading">¶</a></h2>
+<section id="source">
+<h3>Source<a class="headerlink" href="#source" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>Cyrus IMAPd</dt><dd><p>Can’t do anything without this!</p>
 <p>Follow the <a class="reference internal" href="installguide.html#imapinstallguide"><span class="std std-ref">Cyrus IMAP installation guide</span></a>.</p>
@@ -821,9 +826,9 @@
 <p>When developing against Cyrus, however, we assume that Cyrus SASL is a third party pre-built component. There is a separate section on compiling from source if you’re interested in <a class="reference internal" href="../../sasl/developer/installation.html#sasldevinstallguide"><span class="std std-ref">contributing to Cyrus SASL</span></a>.</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="testing-tools">
-<h3>Testing tools<a class="headerlink" href="#testing-tools" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="testing-tools">
+<h3>Testing tools<a class="headerlink" href="#testing-tools" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>Cassandane</dt><dd><p>System test suite for Cyrus IMAPd.</p>
 <p>The <a class="reference internal" href="installguide.html#imapinstallguide"><span class="std std-ref">Cyrus IMAP installation guide</span></a> has instructions for <a class="reference internal" href="developer-testing.html#imapinstallguide-cassandane"><span class="std std-ref">installing Cassandane</span></a>.</p>
@@ -835,17 +840,17 @@
 <p>Installation information: <a class="reference external" href="http://www.imapwiki.org/ImapTest">http://www.imapwiki.org/ImapTest</a></p>
 </dd>
 </dl>
-</div>
-<div class="section" id="development-hub">
-<h3>Development hub<a class="headerlink" href="#development-hub" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="development-hub">
+<h3>Development hub<a class="headerlink" href="#development-hub" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>Phabricator</dt><dd><p>We use <a class="reference external" href="https://git.cyrus.foundation">Phabricator</a> for our collaboration and change tracking. Diffusion provides repository browsing, Differential provides code review, Maniphest provides bug tracking. <a class="reference external" href="https://secure.phabricator.com/book/phabricator/article/arcanist/">Arcanist</a> provides a command-line interface to Phabricator.</p>
 <p>Check out our <a class="reference internal" href="process.html#devprocess"><span class="std std-ref">development process</span></a> for a guide on how to contribute your changes to the community.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -868,7 +873,7 @@
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -892,9 +897,12 @@
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 

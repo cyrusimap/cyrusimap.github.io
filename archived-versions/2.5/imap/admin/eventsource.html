@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Cyrus Event Source &mdash; Cyrus IMAP 2.5.17 documentation</title>
@@ -27,6 +28,10 @@
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
 
+  
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   
     <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   
@@ -102,7 +107,7 @@
         
           
           
-              <p class="caption"><span class="caption-text">Welcome to Cyrus</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Welcome to Cyrus</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Cyrus IMAP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html#what-is-imap">What is IMAP?</a></li>
@@ -241,7 +246,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Administrators</span></p>
+<p class="caption" role="heading"><span class="caption-text">Administrators</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">IMAP Installation Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-using-packages">Installation Using Packages</a><ul>
@@ -597,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Developers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#contribute-financially">Contribute Financially</a></li>
@@ -698,7 +703,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Cyrus SASL</span></p>
+<p class="caption" role="heading"><span class="caption-text">Cyrus SASL</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../sasl/getting_started.html">SASL Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sasl/getting_started.html#sasl">SASL</a></li>
@@ -797,22 +802,22 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="cyrus-event-source">
-<span id="cyrus-eventsource"></span><h1>Cyrus Event Source<a class="headerlink" href="#cyrus-event-source" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+  <section id="cyrus-event-source">
+<span id="cyrus-eventsource"></span><h1>Cyrus Event Source<a class="headerlink" href="#cyrus-event-source" title="Permalink to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>Cyrus can be configured to send events to another program any time something changes in a mailbox. The event contains details about the type of action that occurred, identifying information about the message and other useful information. Cyrus generates events for pretty much everything – every user action, data change, and other interesting things like calendar alarms.</p>
-<p>The notifications are compliant with <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>, though Cyrus includes some additional events outside of the RFC.</p>
+<p>The notifications are compliant with <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5423.html"><strong>RFC 5423</strong></a>, though Cyrus includes some additional events outside of the RFC.</p>
 <p>By default, Cyrus ships with <a class="reference internal" href="systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a> which listens for events from Cyrus. Mostly it is used for sending email notifications triggered by Sieve scripts, or by calendar alarms triggered by <code class="docutils literal notranslate"><span class="pre">calalarmd</span></code>.</p>
-</div>
-<div class="section" id="compile-options">
-<h2>Compile options<a class="headerlink" href="#compile-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compile-options">
+<h2>Compile options<a class="headerlink" href="#compile-options" title="Permalink to this heading">¶</a></h2>
 <p>You can control what kind of events Cyrus generates during the <code class="docutils literal notranslate"><span class="pre">configure</span></code> step of compilation.</p>
 <p><strong>–enable_event_notification</strong>: Set this to “yes” to have Cyrus generate mailbox related events. This is enabled by default.</p>
 <p><strong>–enable-apple-push-service</strong>: Set this to “yes” to enable support for the Apple Push service. This is <em>disabled</em> by default.</p>
-</div>
-<div class="section" id="configuration-options">
-<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configuration-options">
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this heading">¶</a></h2>
 <p>These need to be set in <a class="reference internal" href="configs/imapd.conf.html#std-cyrusman-imapd.conf-5">imapd.conf(5)</a>.</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">event_content_inclusion_mode:</span></code> standard</p>
@@ -865,24 +870,24 @@ Set ALL for any folder</p>
 <div><p><code class="docutils literal notranslate"><span class="pre">event_notifier:</span></code> &lt;none&gt;</p>
 <blockquote>
 <div><p>Notifyd(8) method to use for “EVENT” notifications which are based on
-the <span class="target" id="index-1"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
+the <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5423.html"><strong>RFC 5423</strong></a>.  If not set, “EVENT” notifications are disabled.</p>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="event-types">
-<h2>Event Types<a class="headerlink" href="#event-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="event-types">
+<h2>Event Types<a class="headerlink" href="#event-types" title="Permalink to this heading">¶</a></h2>
 <p>These are detailed in <a class="reference internal" href="../features/event-notifications.html#imap-features-event-notifications"><span class="std std-ref">Event Notifications</span></a>.</p>
-</div>
-<div class="section" id="accessing-events">
-<h2>Accessing events<a class="headerlink" href="#accessing-events" title="Permalink to this headline">¶</a></h2>
-<p>While Cyrus only communicates with a single notification process, it doesn’t have to be its standard <a class="reference internal" href="systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a>. It’s possible to write your own, providing it conforms with <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc5465.html"><strong>RFC 5465</strong></a>.</p>
-</div>
-<div class="section" id="apple-push-service">
-<h2>Apple Push Service<a class="headerlink" href="#apple-push-service" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-events">
+<h2>Accessing events<a class="headerlink" href="#accessing-events" title="Permalink to this heading">¶</a></h2>
+<p>While Cyrus only communicates with a single notification process, it doesn’t have to be its standard <a class="reference internal" href="systemcommands/notifyd.html#std-cyrusman-notifyd-8">notifyd(8)</a>. It’s possible to write your own, providing it conforms with <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5465.html"><strong>RFC 5465</strong></a>.</p>
+</section>
+<section id="apple-push-service">
+<h2>Apple Push Service<a class="headerlink" href="#apple-push-service" title="Permalink to this heading">¶</a></h2>
 <p>While Cyrus supports the <a class="reference external" href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9">Apple Push Service</a>, each provider needs its own account with Apple to use the Push Service.</p>
 <p>Should you wish to support the Apple Push Service, you will need to write your own notifier daemon with APS support.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -905,7 +910,7 @@ the <span class="target" id="index-1"></span><a class="rfc reference external" h
         &copy; Copyright 1993-2017, The Cyrus Team.
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0 using a modified <a href="https://readthedocs.org">Read the Docs</a> <a href="https://github.com/snide/sphinx_rtd_theme">theme</a>.
 
 </footer>
 
@@ -929,9 +934,12 @@ the <span class="target" id="index-1"></span><a class="rfc reference external" h
             HAS_SOURCE:  true
         };
     </script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
   
 
