@@ -135,6 +135,8 @@ if (-d $builddir) {
 
 # build the docs from each source
 foreach my $source_name (sort keys %source) {
+    say "::group::building $source_name section of site"; # GitHub Actions log
+
     my $details = $source{$source_name};
     my $dir = canonpath("$basedir/$source_name");
     my $branch = $details->{branch} || $source_name;
@@ -175,6 +177,8 @@ foreach my $source_name (sort keys %source) {
         # n.b. trailing / on src argument is load-bearing
         run_or_die('rsync', '-av', "$src/", $dst);
     }
+
+    say "::endgroup::"; # GitHub Actions log
 }
 
 print "#### all done!\n";
