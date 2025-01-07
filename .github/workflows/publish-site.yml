@@ -16,9 +16,21 @@ jobs:
     - name: Check out repo
       uses: actions/checkout@v4
 
+    - name: Restore previous build state
+      uses: actions/cache/restore@v4
+      with:
+        path: /tmp/CYRUS_DOCS_BUILD_DIR
+        key: 'last-cyrus-site-build'
+
     - name: Build test site
       run: |
         ./build-cyrus-site
+
+    - name: Save this build state
+      uses: actions/cache/save@v4
+      with:
+        path: /tmp/CYRUS_DOCS_BUILD_DIR
+        key: 'last-cyrus-site-build'
 
     - name: Upload test site as an artifact
       id: test-site
