@@ -52,69 +52,38 @@ my $basedir = '/tmp/CYRUS_DOCS_BUILD_DIR';
 
 my $builddir = canonpath("$basedir/cyrus-site");
 
+sub cyrus_branch ($branch, $paths = undef) {
+    return (
+        $branch => {
+            repo   => 'https://github.com/cyrusimap/cyrus-imapd.git',
+            branch => $branch,
+            paths  => $paths // [ "/" . ($branch =~ s{^cyrus-imapd-}{}r) ]
+        },
+    );
+}
+
 # The sources that various parts of the website will be built from, referred
 # to by webpaths below
 # If no branch name is set, the source name will be used as the branch name
 my $sources = {
     'cyrus-sasl' => {
-        repo => 'https://github.com/cyrusimap/cyrus-sasl.git',
-        branch => 'master',
+        repo    => 'https://github.com/cyrusimap/cyrus-sasl.git',
+        branch  => 'master',
+        paths   => [ '/sasl' ],
     },
-    'cyrus-imapd' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-        branch => 'master',
-    },
-    'cyrus-imapd-2.5' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.0' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.2' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.4' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.6' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.8' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.10' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-    'cyrus-imapd-3.12' => {
-        repo => 'https://github.com/cyrusimap/cyrus-imapd.git',
-    },
-};
-
-# Maps web paths to sources from above
-# Each web path is built from a single source, but some sources are used to
-# build multiple web paths
-# '/' and '/stable' should always be the current stable release,
-# '/dev' should always be the cyrus-imapd master,
-# '/sasl' should always be the cyrus-sasl master,
-# Hopefully the rest is self-evident
-my $webpaths = {
-    '/'         => 'cyrus-imapd-3.10',
-    '/stable'   => 'cyrus-imapd-3.10',
-    '/dev'      => 'cyrus-imapd',
-    '/sasl'     => 'cyrus-sasl',
-    '/2.5'      => 'cyrus-imapd-2.5',
-    '/3.0'      => 'cyrus-imapd-3.0',
-    '/3.2'      => 'cyrus-imapd-3.2',
-    '/3.4'      => 'cyrus-imapd-3.4',
-    '/3.6'      => 'cyrus-imapd-3.6',
-    '/3.8'      => 'cyrus-imapd-3.8',
-    '/3.10'     => 'cyrus-imapd-3.10',
-    '/3.12'     => 'cyrus-imapd-3.12',
+    cyrus_branch('master', [ '/dev' ]),
+    cyrus_branch('cyrus-imapd-2.5'),
+    cyrus_branch('cyrus-imapd-3.0'),
+    cyrus_branch('cyrus-imapd-3.2'),
+    cyrus_branch('cyrus-imapd-3.4'),
+    cyrus_branch('cyrus-imapd-3.6'),
+    cyrus_branch('cyrus-imapd-3.8'),
+    cyrus_branch('cyrus-imapd-3.10', [ '/3.10', '/', '/stable' ]),
+    cyrus_branch('cyrus-imapd-3.12'),
 };
 
 if ($opt->only_dev) {
-  $sources  = { $sources->%{'cyrus-imapd'} };
-  $webpaths = { '/' => 'cyrus-imapd' };
+    $sources = { cyrus_branch('master', [ '/' ]) };
 }
 
 sub run_or_die ($cmd, @args) {
@@ -192,17 +161,15 @@ foreach my $source (sort keys %{$sources}) {
     run_or_die('git', '-C', $dir,
                'checkout', '-q', "origin/$branch");
     run_or_die('make', '-C', canonpath("$dir/docsrc"), 'html');
-}
 
-# rsync the generated docs into the target
-foreach my $webpath (sort keys %{$webpaths}) {
-    my $source = $webpaths->{$webpath};
-    my $src = canonpath("$basedir/$source/docsrc/build/html");
-    my $dest = canonpath("$builddir/$webpath");
+    for my $path ($details->{paths}->@*) {
+        print "#### rsyncing $source docs to $path...\n";
+        my $src = canonpath("$basedir/$source/docsrc/build/html");
+        my $dest = canonpath("$builddir/$path");
 
-    print "#### rsyncing $source docs to $webpath...\n";
-    # n.b. trailing / on src argument is load-bearing
-    run_or_die('rsync', '-av', "$src/", $dest);
+        # n.b. trailing / on src argument is load-bearing
+        run_or_die('rsync', '-av', "$src/", $dest);
+    }
 }
 
 print "#### all done!\n";
