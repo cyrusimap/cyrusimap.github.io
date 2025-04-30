@@ -74,8 +74,8 @@ my %source = (
     archive_copy('3.6'),
 
     cyrus_branch('cyrus-imapd-3.8'),
-    cyrus_branch('cyrus-imapd-3.10', [ '/3.10', '/', '/stable' ]),
-    cyrus_branch('cyrus-imapd-3.12'),
+    cyrus_branch('cyrus-imapd-3.10'),
+    cyrus_branch('cyrus-imapd-3.12', [ '/3.12', '/', '/stable' ]),
 );
 
 if ($opt->only_dev) {
